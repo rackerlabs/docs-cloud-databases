@@ -4,7 +4,7 @@
    <productname>Cloud Databases</productname>
    <webappname>cdb-wadls</webappname>
    <pominfo>
-      <groupid>com.rackspace.cloud.apidocs</groupid>
+      <groupid>com.rackspace.cloud.dbaas</groupid>
       <artifactid>dbaas-docs</artifactid>
       <name>CDB Wadl</name>
    </pominfo>
