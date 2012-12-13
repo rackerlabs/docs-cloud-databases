@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<products xmlns:xlink="http://www.w3.org/1999/xlink">
+   <docname>CDB Wadl</docname>
+   <productname>Cloud Databases</productname>
+   <webappname>cdb-wadls</webappname>
+   <pominfo>
+      <groupid>com.rackspace.cloud.dbaas</groupid>
+      <artifactid>dbaas-docs</artifactid>
+      <name>CDB Wadl</name>
+   </pominfo>
+</products>
