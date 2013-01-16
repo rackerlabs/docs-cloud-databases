@@ -22,11 +22,12 @@
 			<year>2010</year>
 			<year>2011</year>
 			<year>2012</year>
+			<year>2013</year>
 			<holder>Rackspace US, Inc.</holder>
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2012-12-19</pubdate>
+	<pubdate>2013-01-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -39,6 +40,15 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2013-01-15</date>
+				<revdescription>
+					<para xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>Updated for v1.0.18.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2012-12-19</date>
 				<revdescription>
@@ -152,6 +162,87 @@
 			previous versions. The most recent changes are described
 			in the table below:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="cdbv1.0.18" security="internal">
+		<title>v1.0.18, January 15, 2013</title>
+		<itemizedlist spacing="compact" security="internal">
+			<title>What's New</title>
+			<listitem>
+				<para>Yagi configuration change: log failures to graphite.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A39313"
+						>B-06000, </link>
+					<link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A353493"
+						>B-31914, </link>
+					<link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A285559"
+						>B-28570: </link>Added capability to perform
+					migrations within a cabinet pair.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/summary?oidToken=Story%3A459328"
+						>B-36715: </link>Updated guest agent logic to
+					confirm health of MySQL application before
+					proceeding with resize.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A498966"
+						>B-38892: </link>Updated guest agent to
+					explicitly control MySQL stop and restart. This
+					will allow the guest agent to update MyCNF file
+					before MySQL is running again.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story%3A498987"
+						>B-38897: </link>Updated guest agent MySQL
+					startup procedure.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para> Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Support for Cloud Databases is available for US
+					and UK customers 24x7x365 via phone, chat, or you
+					may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Please visit our <link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.17" security="internal">
 		<title>v1.0.17, December 19, 2012</title>

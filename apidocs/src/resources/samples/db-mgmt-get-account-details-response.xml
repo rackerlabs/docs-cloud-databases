@@ -1,12 +1,63 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 358
-Date: Tue, 24 Jul 2012 19:48:33 GMT
+Content-Length: 1321
+Date: Mon, 07 Jan 2013 21:50:53 GMT
 
-<account id="1234" xmlns="http://docs.openstack.org/database/api/v1.0">
-    <instances>
-        <instance host="hostname" id="6e038c18-902f-4a41-b2a2-5f46fa62fc1b" name="json_rack_instance" status="ACTIVE"/>
-        <instance host="hostname" id="72eed896-134e-4212-9f25-f81b4e0795e2" name="xml_rack_instance" status="ACTIVE"/>
-    </instances>
-</account>
+<usage xmlns="http://docs.openstack.org/database/api/v1.0">
+    <item>
+        <dataCenter>
+            DEV1
+        </dataCenter>
+        <resourceId>
+            ac019a26-acb5-4591-b337-9bbfa8e85727
+        </resourceId>
+        <rootAction>
+            reddwarf.instance.exists
+        </rootAction>
+        <startTime>
+            2013-01-06 15:59:00
+        </startTime>
+        <resourceName>
+            test_instance
+        </resourceName>
+        <id>
+            0f781f37-ef6d-4978-8dbc-f26d29a255a6
+        </id>
+        <region>
+            LOCAL_DEV
+        </region>
+        <tenantId>
+            d91c1201-6136-4b1e-aa16-45380d8733b8
+        </tenantId>
+        <environment>
+            LOCAL
+        </environment>
+        <version>
+            1
+        </version>
+        <dbaas:product>
+            <resourceType>
+                MYSQL
+            </resourceType>
+            <version>
+                1
+            </version>
+            <storage>
+                1
+            </storage>
+            <serviceCode>
+                CloudDatabase
+            </serviceCode>
+            <memory>
+                512
+            </memory>
+        </dbaas:product>
+        <endTime>
+            2013-01-07 16:00:00
+        </endTime>
+        <type>
+            USAGE
+        </type>
+    </item>
+</usage>
 

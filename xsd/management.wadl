@@ -30,7 +30,24 @@
               </resource>
             </resource>
               </resource>
-          </resource>
+          </resource>     
+      <resource id="usage" path="usage">
+        <method href="#getusageall"/>
+        <resource id="instance" path="instance">         
+           <resource id="instanceid" path="{instanceId}">
+             <param name="instanceId" style="template" type="xsd:string">
+               <doc>The instance ID for the specified instance.</doc></param>
+             <method href="#getusagebyinstance"/>
+           </resource>
+        </resource>
+        <resource id="account" path="account">          
+           <resource id="tenantid" path="{tenantId}">
+            <param name="tenantId" style="template" type="xsd:string">
+              <doc>The tenant ID for the specified account.</doc></param>
+            <method href="#getusagebytenant"/> 
+            </resource>
+         </resource>            
+      </resource>     
       <resource id="instances" path="instances">
         <method href="#getIndex"/>
         <resource id="instanceId" path="{instanceId}">
@@ -622,4 +639,159 @@
       &commonFaults;
       &getFaults;
   </method>
+  
+  <method name="GET" id="getusageall">
+    <wadl:doc xml:lang="EN" title="List All Usage Records" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Lists all of the usage records.
+      </para>
+      <para>This operation returns a list of all the usage records.</para>
+    </wadl:doc>
+    <request>
+      <param name="limit" style="query" type="xsd:integer">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook">
+          <para>This query parameter specifies the maximum number of usage records that can be returned. 
+            Its value must be set to a positive integer.
+          </para>
+        </wadl:doc>
+      </param>
+      <param name="marker" style="query" type="xsd:dateTime">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook">
+          <para>This query parameter specifies the date and time from which to begin returning records. 
+            Its value must be set to a urlencoded datetime string, for example 2013-01-01.
+          </para>
+        </wadl:doc>
+      </param>
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the the List All Usage Records requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="200">
+      <representation mediaType="application/xml" element="dbaas:Usage">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Usage Records responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Hosts">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <method name="GET" id="getusagebyinstance">
+    <wadl:doc xml:lang="EN" title="List Instance Usage Records" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Lists the usage records for an instance.
+      </para>
+      <para>This operation returns a list of the usage records for an instance.</para>
+    </wadl:doc>
+    <request>
+      <param name="limit" style="query" type="xsd:integer">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook">
+          <para>This query parameter specifies the maximum number of usage records that can be returned. 
+            Its value must be set to a positive integer.
+          </para>
+        </wadl:doc>
+      </param>
+      <param name="marker" style="query" type="xsd:dateTime">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook">
+          <para>This query parameter specifies the date and time from which to begin returning records. 
+            Its value must be set to a urlencoded datetime string, for example 2013-01-01.
+          </para>
+        </wadl:doc>
+      </param>
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the the List Instance Usage Records requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-instance-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-instance-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="200">
+      <representation mediaType="application/xml" element="dbaas:Usage">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Instance Usage Records responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-instance-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Hosts">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-instance-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  
+  <method name="GET" id="getusagebytenant">
+    <wadl:doc xml:lang="EN" title="List Account Usage Records" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Lists the usage records for an account.
+      </para>
+      <para>This operation returns a list of the usage records for an account.</para>
+    </wadl:doc>
+    <request>
+      <param name="limit" style="query" type="xsd:integer">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook">
+          <para>This query parameter specifies the maximum number of usage records that can be returned. 
+            Its value must be set to a positive integer.
+          </para>
+        </wadl:doc>
+      </param>
+      <param name="marker" style="query" type="xsd:dateTime">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook">
+          <para>This query parameter specifies the date and time from which to begin returning records. 
+            Its value must be set to a urlencoded datetime string, for example 2013-01-01.
+          </para>
+        </wadl:doc>
+      </param>
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the the List Account Usage Records requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-account-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-account-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="200">
+      <representation mediaType="application/xml" element="dbaas:Usage">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Account Usage Records responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-account-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Hosts">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-account-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
 </application>
