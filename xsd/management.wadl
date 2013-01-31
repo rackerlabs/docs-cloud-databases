@@ -40,7 +40,7 @@
              <method href="#getusagebyinstance"/>
            </resource>
         </resource>
-        <resource id="account" path="account">          
+        <resource id="tenant" path="tenant">          
            <resource id="tenantid" path="{tenantId}">
             <param name="tenantId" style="template" type="xsd:string">
               <doc>The tenant ID for the specified account.</doc></param>
@@ -646,25 +646,31 @@
         Lists all of the usage records.
       </para>
       <para>This operation returns a list of all the usage records.</para>
+          
+      <note security="writeronly"><para>This operation returns a list of all the usage records for the datacenter whose endpoint is specified in the call. For example, using the endpoint for ORD 
+        in the call (https://ord.databases.api.rackspacecloud.com/v1.0/1234/mgmt/usage) returns all usage records for the Chicago (ORD) datacenter.</para></note>
+      
     </wadl:doc>
     <request>
       <param name="limit" style="query" type="xsd:integer">
         <wadl:doc xmlns="http://docbook.org/ns/docbook">
           <para>This query parameter specifies the maximum number of usage records that can be returned. 
-            Its value must be set to a positive integer.
+            Its value must be set to a positive integer. By default the maximum number of records returned 
+            is 100. This default is configurable by the NebOps team.
           </para>
         </wadl:doc>
       </param>
       <param name="marker" style="query" type="xsd:dateTime">
         <wadl:doc xmlns="http://docbook.org/ns/docbook">
           <para>This query parameter specifies the date and time from which to begin returning records. 
-            Its value must be set to a urlencoded datetime string, for example 2013-01-01.
+            Its value must be set to a urlencoded datetime string, for example 2013-01-01. By default 
+            the oldest record (up to 90 days ago) up to the latest record are returned.
           </para>
         </wadl:doc>
       </param>
       <representation mediaType="application/xml">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following examples show the the List All Usage Records requests:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Usage Records requests:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-request.xml"/>
         </doc>
       </representation>
@@ -694,7 +700,7 @@
   <method name="GET" id="getusagebyinstance">
     <wadl:doc xml:lang="EN" title="List Instance Usage Records" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
-        Lists the usage records for an instance.
+        Lists the usage records for the specified instance.
       </para>
       <para>This operation returns a list of the usage records for an instance.</para>
     </wadl:doc>
@@ -702,14 +708,16 @@
       <param name="limit" style="query" type="xsd:integer">
         <wadl:doc xmlns="http://docbook.org/ns/docbook">
           <para>This query parameter specifies the maximum number of usage records that can be returned. 
-            Its value must be set to a positive integer.
+            Its value must be set to a positive integer. By default the maximum number of records returned 
+            is 100. This default is configurable by the NebOps team.
           </para>
         </wadl:doc>
       </param>
       <param name="marker" style="query" type="xsd:dateTime">
         <wadl:doc xmlns="http://docbook.org/ns/docbook">
           <para>This query parameter specifies the date and time from which to begin returning records. 
-            Its value must be set to a urlencoded datetime string, for example 2013-01-01.
+            Its value must be set to a urlencoded datetime string, for example 2013-01-01. By default 
+            the oldest record (up to 90 days ago) up to the latest record are returned.
           </para>
         </wadl:doc>
       </param>
@@ -746,22 +754,24 @@
   <method name="GET" id="getusagebytenant">
     <wadl:doc xml:lang="EN" title="List Account Usage Records" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
-        Lists the usage records for an account.
+        Lists the usage records for the specified account.
       </para>
-      <para>This operation returns a list of the usage records for an account.</para>
+      <para>This operation returns a list of the usage records for the specified account.</para>
     </wadl:doc>
     <request>
       <param name="limit" style="query" type="xsd:integer">
         <wadl:doc xmlns="http://docbook.org/ns/docbook">
           <para>This query parameter specifies the maximum number of usage records that can be returned. 
-            Its value must be set to a positive integer.
+            Its value must be set to a positive integer. By default the maximum number of records returned 
+            is 100. This default is configurable by the NebOps team.
           </para>
         </wadl:doc>
       </param>
       <param name="marker" style="query" type="xsd:dateTime">
         <wadl:doc xmlns="http://docbook.org/ns/docbook">
           <para>This query parameter specifies the date and time from which to begin returning records. 
-            Its value must be set to a urlencoded datetime string, for example 2013-01-01.
+            Its value must be set to a urlencoded datetime string, for example 2013-01-01. By default 
+            the oldest record (up to 90 days ago) up to the latest record are returned.
           </para>
         </wadl:doc>
       </param>
