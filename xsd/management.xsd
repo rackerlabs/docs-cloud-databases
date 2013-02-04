@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="../xslts/xslt/schema.xslt"?>
+
 <!--(C) 2010 Rackspace Hosting, All Rights Reserved-->
 <schema  elementFormDefault="qualified" 
          attributeFormDefault="unqualified" 

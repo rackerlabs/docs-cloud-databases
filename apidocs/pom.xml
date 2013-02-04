@@ -185,6 +185,14 @@
 		    	
 		    	
 		    	<!-- Now the management wadl on docs-internal -->
+			<copy todir="${project.build.directory}/generated-resources/normalized/api/v1.0">
+			  <fileset dir="src/resources">
+			  <include name="xslts/**"/>
+			  </fileset>
+			  <fileset dir="src/resources">
+			    <include name="samples/**"/>
+			  </fileset>
+			</copy>
 		    	<copy file="../xsd/management.xsd"      tofile="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/xsd/management.xsd"/>
 		    	<copy file="../xsd/dbaas.xsd"           tofile="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/xsd/cdb.xsd"/>
 		    	<copy file="src/resources/bookinfo.xml" tofile="${project.build.directory}/generated-resources/normalized-internal/bookinfo.xml"/>
