@@ -26,7 +26,7 @@
 	<artifactId>clouddocs-maven-plugin</artifactId>
 	<!-- this <version> relates only to the *plugin* used for document formatting -->
 	<!-- the version of the *API* that is the subject of the document is indicated within each document -->
-	<version>1.7.0</version>
+    <version>1.7.1-SNAPSHOT</version>
 	<executions>
 	  <execution>
 	    <id>cdb-mgmt-devguide</id>
@@ -185,8 +185,8 @@
 		    	
 		    	
 		    	<!-- Now the management wadl on docs-internal -->
-		    	<copy file="../xsd/management.xsd"      tofile="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/management.xsd"/>
-		    	<copy file="../xsd/dbaas.xsd"           tofile="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/cdb.xsd"/>
+		    	<copy file="../xsd/management.xsd"      tofile="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/xsd/management.xsd"/>
+		    	<copy file="../xsd/dbaas.xsd"           tofile="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/xsd/cdb.xsd"/>
 		    	<copy file="src/resources/bookinfo.xml" tofile="${project.build.directory}/generated-resources/normalized-internal/bookinfo.xml"/>
 		    	<java
 		    		jar="${net.sourceforge.saxon:saxon:jar}"
@@ -199,10 +199,10 @@
 		    	</java>		    
 		    	<replaceregexp file="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/management.wadl"
 		    		match="file:/.*/xsd/management.xsd"
-		    		replace="management.xsd"/>
+		    		replace="xsd/management.xsd"/>
 		    	<replaceregexp file="${project.build.directory}/generated-resources/normalized-internal/api/v1.0/management.wadl"
 		    		match="file:/.*/xsd/dbaas.xsd"
-		    		replace="cdb.xsd"/>
+		    		replace="xsd/cdb.xsd"/>
 		    	<war destfile="${project.build.directory}/docbkx/webhelp/cdb-wadls-internal.war" needxmlfile="false">
 		    		<fileset dir="${project.build.directory}/generated-resources/normalized-internal"/>			
 		    	</war>
