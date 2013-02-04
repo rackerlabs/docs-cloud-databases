@@ -185,7 +185,7 @@
 		    	
 		    	
 		    	<!-- Now the management wadl on docs-internal -->
-			<copy todir="${project.build.directory}/generated-resources/normalized/api/v1.0">
+			<copy todir="${project.build.directory}/generated-resources/normalized-internal/api/v1.0">
 			  <fileset dir="src/resources">
 			  <include name="xslts/**"/>
 			  </fileset>
