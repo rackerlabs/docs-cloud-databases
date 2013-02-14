@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-01-31</pubdate>
+        <pubdate>2013-02-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-02-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Corrected note for deleting database
+                                instances (refer to <xref
+                                   linkend="DELETE_deleteInstance__version___accountId__instances__instanceId__"
+                                /> ).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-01-31</date>
                 <revdescription>

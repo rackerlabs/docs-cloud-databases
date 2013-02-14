@@ -283,8 +283,7 @@
             <para role="shortdesc">Deletes the specified database instance.</para>
             <para>This operation deletes the specified database instance, including any associated data.</para>
             <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
-            <remark>Reviewer: please provide a description of read slaves that I can add to the previous note.</remark>
-            <note><para>This operation is not allowed when the instance state is either <code>REBUILDING</code> or <code>BUILDING</code>.</para></note>
+            <note><para>This operation is not allowed when the instance status is <code>BUILD</code>.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">
