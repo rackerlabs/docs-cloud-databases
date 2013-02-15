@@ -55,7 +55,7 @@
 					<para xmlns:svg="http://www.w3.org/2000/svg"
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml"
-						>Updated for v1.0.20.</para>
+						>Updated for v1.0.19 + Hotfix.</para>
 				</revdescription>
 			</revision>
 			<revision security="internal">
@@ -265,8 +265,9 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv1.0.20" security="internal">
-		<title>v1.0.20, February 14, 2013</title>
+	<chapter xml:id="cdbv1.0.19_Hotfix" security="internal">
+		<title>v1.0.19 + Hotfix - Deployed to LON3 Only, February 14,
+			2013</title>
 		<itemizedlist spacing="compact" security="internal">
 			<title>What's New</title>
 			<listitem>

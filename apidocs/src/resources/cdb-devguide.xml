@@ -354,8 +354,6 @@
         <?dbhtml stop-chunking?>
         <para> To use the Cloud Databases API effectively, you should
             understand several key concepts: </para>
-        <remark>Reviewer: Daniel  Morris is asking Daniel Salinas to
-            do an initial write-up of this chapter.</remark>
         <section xml:id="DatabaseInstance-d1e588">
             <title>Database Instance</title>
             <para>A database instance is an isolated MySQL instance in
