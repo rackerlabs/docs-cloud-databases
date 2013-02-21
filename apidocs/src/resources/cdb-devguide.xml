@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-02-13</pubdate>
+        <pubdate>2013-02-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,9 +78,18 @@
         
         <revhistory>
             <revision>
-                <date>2013-02-13</date>
+                <date>2013-02-21</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated auth example names and note
+                                about the authentication token's
+                                expiration time being formatted
+                                differently in the US and UK (refer to
+                                   <xref
+                                   linkend="Retrieving_Auth_Token"/>
+                                ).</para>
+                        </listitem>
                         <listitem>
                             <para>Corrected note for deleting database
                                 instances (refer to <xref
@@ -489,7 +498,7 @@
                     which you have subscribed rather than the sample
                     values shown here.</para>
                 <example>
-                    <title>Auth Request: XML</title>
+                    <title>Auth Request for US Endpoint: XML</title>
                     <programlistingco>
                         <areaspec>
                             <area xml:id="credentials.xml.user"
@@ -503,7 +512,7 @@
                     </programlistingco>
                 </example>
                 <example>
-                    <title>Auth Request: JSON</title>
+                    <title>Auth Request for US Endpoint: JSON</title>
                     <programlistingco>
                         <areaspec>
                             <area xml:id="credentials.json.user"
@@ -533,7 +542,7 @@
                     </callout>
                 </calloutlist>
                 <example>
-                    <title>Auth Response: XML</title>
+                    <title>Auth Response for US Endpoint: XML</title>
                     
                     <programlistingco>
                         <areaspec>
@@ -554,7 +563,7 @@
               
                 
                 <example xml:id="auth-response-example-json">
-                    <title>Auth Response: JSON</title>
+                    <title>Auth Response for US Endpoint: JSON</title>
                     
                     <programlistingco>
                         <areaspec>
@@ -603,8 +612,11 @@
                         <note>
                             <para>The token's expiration time is
                                 formatted differently in the US and
-                                UK. These examples show the US
-                                format.</para>
+                                UK. These response examples show the
+                                US format. For examples of the UK
+                                format please refer to <link
+                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_authenticate_v2.0_tokens_.html"
+                                    >http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_authenticate_v2.0_tokens_.html</link>.</para>
                         </note>
                         <para> </para>
                     </callout>
