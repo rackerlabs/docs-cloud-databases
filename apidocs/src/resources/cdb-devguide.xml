@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-02-21</pubdate>
+        <pubdate>2013-02-28</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,53 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-02-28</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new section <xref
+                                   linkend="Repose_Integration"/>
+                                ).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added five new API calls to <xref
+                                   linkend="user_management"
+                                   />:<itemizedlist spacing="compact">
+                                   <listitem>
+                                   <para>Change User(s) Password
+                                   (refer to <xref
+                                   linkend="PUT_changePass__version___accountId__instances__instanceId__users_"
+                                   />).</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>List User (refer to <xref
+                                   linkend="GET_listUser__version___accountId__instances__instanceId__users__name__"
+                                   />).</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>List User Access (refer to
+                                   <xref
+                                   linkend="GET_getUserAccess__version___accountId__instances__instanceId__users__name__databases_"
+                                   />).</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Grant User Access (refer to
+                                   <xref
+                                   linkend="PUT_grantUserAccess__version___accountId__instances__instanceId__users__name__databases_"
+                                   />).</para>
+                                   </listitem>
+                                   <listitem>
+                                   <para>Revoke User Access (refer to
+                                   <xref
+                                   linkend="DELETE_revokeUserAccess__version___accountId__instances__instanceId__users__name__databases__databaseName__"
+                                   />).</para>
+                                   </listitem>
+                                </itemizedlist></para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-02-21</date>
                 <revdescription>
@@ -1693,6 +1740,7 @@
                 resource within the same regional datacenter. For
                 example, a database instance in DFW can only be
                 accessed by a Cloud Server in DFW.</para>
+            
             <para>Note that using a public Cloud Load Balancer allows
                 you to access your ServiceNet database instance from
                 the public network by performing the following steps:<orderedlist>
@@ -1715,6 +1763,36 @@
                                 >http://docs.rackspace.com/api/</link>.</para>
                     </listitem>
                 </orderedlist></para>
+        </section>
+        <section xml:id="Repose_Integration">
+            <title>Repose Integration</title>
+            <para>Cloud Databases is now integrated with Repose, which
+                is used to validate authentication tokens. This means
+                additional header information including the specific
+                Repose version number is returned in all responses.
+                See the following example response header:</para>
+            
+            <example>
+                <title>Example Response Header with Repose
+                    Integration: JSON</title>
+                <?dbfo keep-together="always"?>
+                <programlisting language="json">
+<xi:include href="samples/db-auth-repose-header.json" parse="text"/>
+                    </programlisting>
+            </example>
+            <note><title>Notes</title>
+            <itemizedlist>
+                <listitem>
+                    <para>The Repose Version number shown in the
+                            response may vary: <code>Via: X.X Repose
+                                (Repose/X.X.X)</code>.</para>
+                </listitem>
+                <listitem>
+                    <para>The Repose header information is
+                                <emphasis>not</emphasis> shown in the
+                            response examples in this manual.</para>
+                </listitem>
+            </itemizedlist></note>
         </section>
     </chapter>
     
@@ -1797,15 +1875,39 @@
             <title>Users</title>
             <para>This section describes the operations that are
                 supported for managing database users.</para>
+            
+            <para>In this section, "user has access to a database"
+                means that the user has full create, read, update, and
+                delete access to the given database. In other words,
+                on a cloud database instance, a user named USER and a
+                database named DATABASE exist, and within MySQL, a
+                GRANT ALL ON DATABASE.* TO USER has been issued on the
+                instance. </para>
+            
+            <warning><para>There is a bug in a python library that development is using that may cause incorrect user deletions to occur 
+                if a period (.) is used in the user name. In this case, the user name is truncated to remove the portion of the 
+                name from the period to the end, leaving only the portion from the beginning up to the period. For example, for a 
+                user named "my.userA", the bug would truncate the user name to "my", and if the user "my" exists, that user will 
+                be incorrectly deleted. To avoid the problem, do not use periods in user names.</para></warning>
+            
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/dbaas.wadl#users">
                     <wadl:method href="createUser"/>
                     <wadl:method href="getUsers"/>
+                    <wadl:method href="changePass"/>
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#userId">
+                    <wadl:method href="listUser"/>
                     <wadl:method href="deleteUser"/>
-                </wadl:resource>
+                    <wadl:resource href="../../../xsd/dbaas.wadl#database">
+                       <wadl:method href="getUserAccess"/>
+                       <wadl:method href="grantUserAccess"/>
+                        <wadl:resource href="../../../xsd/dbaas.wadl#dbName">
+                            <wadl:method href="revokeUserAccess"/>
+                        </wadl:resource>
+                    </wadl:resource>
+                </wadl:resource>   
             </wadl:resources>
         </section>
            

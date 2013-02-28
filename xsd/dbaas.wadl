@@ -56,11 +56,23 @@
                         <resource id="users" path="users">
                             <method href="#createUser" />
                             <method href="#getUsers" />
+                            <method href="#changePass" />
                             <resource id="userId" path="{name}">
                                 <param name="name" style="template"
                                     type="xsd:string" >
                                     <doc>The name for the specified user.</doc></param>
                                 <method href="#deleteUser" />
+                                <method href="#listUser" />
+                                <resource id="database" path="databases">
+                                    <method href="#getUserAccess" />
+                                    <method href="#grantUserAccess" />
+                                    <resource id="dbName" path="{databaseName}">
+                                        <param name="databaseName" style="template"
+                                            type="xsd:string" >
+                                            <doc>The name for the specified database.</doc></param>
+                                        <method href="#revokeUserAccess" />
+                                    </resource>
+                                </resource>  
                             </resource>
                         </resource>
                         <resource id="root" path="root">
@@ -967,6 +979,47 @@
     &getFaults;
     </method>
 
+    <method name="PUT" id="changePass">
+        <wadl:doc xml:lang="EN" title="Change User(s) Password"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Changes the MySQL password of one or more users.</para>
+            <para>This operation changes the MySQL password of one or more users. </para>
+            <note><para>For information about choosing a valid password, please refer to 
+                <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for details.</para></note>         
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" element="dbaas:Users">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Change User(s) Password requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="202">
+            <representation mediaType="application/xml"
+                element="dbaas:Users" >
+                <doc>
+                    <?hard-pagebreak?>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Change User(s) Password responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Users" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+
+
     <method name="DELETE" id="deleteUser">
         <wadl:doc xml:lang="EN" title="Delete User"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the user identified by {name} for the specified database instance.</para>
@@ -1005,6 +1058,151 @@
         </response>
     &commonFaults;
     &getFaults;
+    </method>
+    
+    <method name="GET" id="listUser">
+        <wadl:doc xml:lang="EN" title="List User"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the specified user's name and a list of databases that the user can access.</para>
+            <para>This operation lists the specified user's name and a list of databases that the user can access.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200" >
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getUserAccess">
+        <wadl:doc xml:lang="EN" title="List User Access"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Shows a list of all databases a user has access to.</para>
+            <para>This operation shows a list of all databases a user has access to.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200" >
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="PUT" id="grantUserAccess">
+        <wadl:doc xml:lang="EN" title="Grant User Access"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Grant access for the specified user to one or more databases for the specified instance.</para>
+            <para>This operation grants access for the specified user to one or more databases for the specified instance. 
+                The user is granted ALL privileges on the database. Refer to the information at the beginning of <xref linkend="user_management"/> 
+                for more details on access.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" element="dbaas:Database">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Grant User Access requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="202" >
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Grant User Access responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="DELETE" id="revokeUserAccess">
+        <wadl:doc xml:lang="EN" title="Revoke User Access"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Remove access to the specified database for the specified user.</para>
+            <para>This operation removes access to the specified database for the specified user.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Revoke User Access requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="202" >
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Revoke User Access responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
     </method>
 
     <!-- Root -->

@@ -62,6 +62,7 @@
           </resource>
           <resource id="instanceAction" path="action">
             <method href="#rebootInstance" />
+            <method href="#resetInstanceTaskStatus" />
           </resource>
           <resource id="hwInfo" path="hwinfo">
             <method href="#getHwInfo" />
@@ -309,6 +310,7 @@
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
     <request>
+      
       <representation mediaType="application/xml" element="dbaas:Reboot">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Reboot Instance requests:</para>
@@ -338,6 +340,46 @@
     &getFaults;
     &postPutFaults;
   </method>
+  
+  <!-- Instance Actions -->
+  <method name="POST" id="resetInstanceTaskStatus">
+    <wadl:doc xml:lang="EN" title="Reset Instance Task Status"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Resets the instance's task status to NONE.</para>
+      <para>This operation resets the instance's task status to NONE.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/xml" element="dbaas:reset-task-status">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Reset Instance Task Status requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-reset-instance-task-status-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:reset-task-status">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-reset-instance-task-status-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Reset Instance Task Status responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-reset-instance-task-status-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-reset-instance-task-status-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
+  
+  
 
   <method name="POST" id="updateHostInstances">
     <wadl:doc xml:lang="EN" title="Update All Instances on Host"  xmlns="http://docbook.org/ns/docbook">
