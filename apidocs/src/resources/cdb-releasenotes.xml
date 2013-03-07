@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-02-28</pubdate>
+	<pubdate>2013-03-07</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -40,6 +40,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2013-03-07</date>
+				<revdescription>
+					<para>Updated for v1.0.20 + Hotfix.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-02-28</date>
 				<revdescription>
@@ -195,6 +201,85 @@
 			previous versions. The most recent changes are described
 			in the table below:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="cdbv1.0.20_Hotfix">
+		<title>v1.0.20 + Hotfix, March 7, 2013</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para><link
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:549164"
+						>B-42563: </link>Updated scheduler code to
+					enable use of filling algorithm configuration
+					value, however this filling algorithm is not
+					enabled at this time.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:570867"
+						>B-44178: </link> Increased storage limit to
+					150GB.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Upgraded Repose to 2.6.7.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Bug Fixes</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect%3A564615"
+						>D-11587: </link>Fixed defect where List User
+					API call returns error response code 500
+					(instanceFault) when XML is requested.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:568786"
+						>D-11660: </link>Fixed defect that returned an
+					error when Accept HTTP header was not
+					provided.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para> Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Support for Cloud Databases is available for US
+					and UK customers 24x7x365 via phone, chat, or you
+					may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Please visit our <link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.20">
 		<title>v1.0.20, February 28, 2013</title>
