@@ -1,9 +1,12 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 116
-Date: Tue, 24 Jul 2012 19:48:33 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 167
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <hosts xmlns="http://docs.openstack.org/database/api/v1.0">
-    <host instanceCount="2" name="hostname"/>
+    <host instanceCount="0" name="hostname_2"/>
+    <host instanceCount="2" name="hostname_1"/>
 </hosts>
 

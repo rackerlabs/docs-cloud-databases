@@ -1,7 +1,9 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 254
-Date: Tue, 24 Jul 2012 19:48:35 GMT
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <devices xmlns="http://docs.openstack.org/database/api/v1.0">
     <device name="fake_storage" type="test_type" used="10">

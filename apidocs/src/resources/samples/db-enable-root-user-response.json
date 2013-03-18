@@ -1,11 +1,13 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 78
-Date: Wed, 25 Jan 2012 21:58:11 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 47
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "user": {
         "name": "root", 
-        "password": "d4311cb1-d912-45be-8517-e8a46f54df66"
+        "password": "12345"
     }
 }

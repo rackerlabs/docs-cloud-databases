@@ -1,7 +1,9 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 209
-Date: Wed, 25 Jan 2012 21:53:05 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 206
+Date: Mon, 18 Mar 2013 16:46:23 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "flavor": {
@@ -16,7 +18,7 @@ Date: Wed, 25 Jan 2012 21:53:05 GMT
                 "rel": "bookmark"
             }
         ], 
-        "name": "m1.tiny", 
+        "name": "512MB Instance", 
         "ram": 512
     }
 }

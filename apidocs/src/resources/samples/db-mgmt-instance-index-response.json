@@ -1,88 +1,106 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1586
-Date: Tue, 24 Jul 2012 19:48:33 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 1891
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instances": [
         {
-            "created": "2012-07-24T19:48:27", 
+            "created": "2013-03-18T16:46:23", 
             "deleted": false, 
             "deleted_at": null, 
             "flavor": {
-                "id": "1", 
+                "id": "3", 
                 "links": [
                     {
-                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
                         "rel": "self"
                     }, 
                     {
-                        "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                        "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
                         "rel": "bookmark"
                     }
                 ]
             }, 
-            "host": "hostname", 
-            "id": "6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+            "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                     "rel": "bookmark"
                 }
             ], 
-            "local_id": 0, 
             "name": "json_rack_instance", 
-            "server_id": "64438fb6-4b98-4bd8-975e-222bc11daf74", 
+            "server": {
+                "deleted": false, 
+                "deleted_at": null, 
+                "host": "hostname_1", 
+                "id": "eeb1f46c-160f-4b76-920f-9851afd23223", 
+                "local_id": 0, 
+                "name": "json_rack_instance", 
+                "status": "ACTIVE", 
+                "tenant_id": "3000"
+            }, 
+            "service_status": "ACTIVE", 
             "status": "ACTIVE", 
             "task_description": "No tasks for the instance.", 
-            "tenant_id": "1234", 
-            "updated": "2012-07-24T19:48:29", 
+            "tenant_id": "3000", 
+            "updated": "2013-03-18T16:46:24", 
             "volume": {
-                "size": 2
+                "size": 4
             }
         }, 
         {
-            "created": "2012-07-24T19:48:27", 
+            "created": "2013-03-18T16:46:23", 
             "deleted": false, 
             "deleted_at": null, 
             "flavor": {
-                "id": "1", 
+                "id": "3", 
                 "links": [
                     {
-                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
                         "rel": "self"
                     }, 
                     {
-                        "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                        "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
                         "rel": "bookmark"
                     }
                 ]
             }, 
-            "host": "hostname", 
-            "id": "72eed896-134e-4212-9f25-f81b4e0795e2", 
+            "id": "4d298da0-6c51-4da5-87fb-7268642b1bb4", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/72eed896-134e-4212-9f25-f81b4e0795e2", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/72eed896-134e-4212-9f25-f81b4e0795e2", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4", 
                     "rel": "bookmark"
                 }
             ], 
-            "local_id": 0, 
             "name": "xml_rack_instance", 
-            "server_id": "6d93bc48-f736-41db-9ad7-c8594aac25fb", 
+            "server": {
+                "deleted": false, 
+                "deleted_at": null, 
+                "host": "hostname_1", 
+                "id": "269f05ac-c594-4ddd-bbed-fc1116aa24ff", 
+                "local_id": 0, 
+                "name": "xml_rack_instance", 
+                "status": "ACTIVE", 
+                "tenant_id": "3000"
+            }, 
+            "service_status": "ACTIVE", 
             "status": "ACTIVE", 
             "task_description": "No tasks for the instance.", 
-            "tenant_id": "1234", 
-            "updated": "2012-07-24T19:48:30", 
+            "tenant_id": "3000", 
+            "updated": "2013-03-18T16:46:24", 
             "volume": {
-                "size": 2
+                "size": 4
             }
         }
     ]

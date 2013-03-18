@@ -1,7 +1,9 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 21
-Date: Wed, 25 Jan 2012 21:58:13 GMT
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "rootEnabled": true

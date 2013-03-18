@@ -1,7 +1,9 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1768
-Date: Tue, 19 Jun 2012 19:52:45 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 1185
+Date: Mon, 18 Mar 2013 16:46:23 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "flavors": [
@@ -17,7 +19,7 @@ Date: Tue, 19 Jun 2012 19:52:45 GMT
                     "rel": "bookmark"
                 }
             ], 
-            "name": "m1.tiny", 
+            "name": "512MB Instance", 
             "ram": 512
         }, 
         {
@@ -32,7 +34,7 @@ Date: Tue, 19 Jun 2012 19:52:45 GMT
                     "rel": "bookmark"
                 }
             ], 
-            "name": "m1.small", 
+            "name": "1GB Instance", 
             "ram": 1024
         }, 
         {
@@ -47,7 +49,7 @@ Date: Tue, 19 Jun 2012 19:52:45 GMT
                     "rel": "bookmark"
                 }
             ], 
-            "name": "m1.medium", 
+            "name": "2GB Instance", 
             "ram": 2048
         }, 
         {
@@ -62,8 +64,38 @@ Date: Tue, 19 Jun 2012 19:52:45 GMT
                     "rel": "bookmark"
                 }
             ], 
-            "name": "m1.large", 
+            "name": "4B Instance", 
             "ram": 4096
         }, 
+        {
+            "id": 5, 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/5", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/5", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "8GB Instance", 
+            "ram": 8192
+        }, 
+        {
+            "id": 6, 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/6", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/6", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "16GB Instance", 
+            "ram": 16384
+        }
     ]
 }
