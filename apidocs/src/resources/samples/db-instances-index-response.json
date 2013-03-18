@@ -1,7 +1,9 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 1150
-Date: Tue, 19 Jun 2012 19:53:04 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 1038
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instances": [
@@ -19,18 +21,18 @@ Date: Tue, 19 Jun 2012 19:53:04 GMT
                     }
                 ]
             }, 
-            "id": "28d1b8f3-172a-4f6d-983d-36021508444a", 
+            "id": "4d298da0-6c51-4da5-87fb-7268642b1bb4", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/28d1b8f3-172a-4f6d-983d-36021508444a", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/28d1b8f3-172a-4f6d-983d-36021508444a", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4", 
                     "rel": "bookmark"
                 }
             ], 
-            "name": "json_rack_instance", 
+            "name": "xml_rack_instance", 
             "status": "ACTIVE", 
             "volume": {
                 "size": 2
@@ -50,18 +52,18 @@ Date: Tue, 19 Jun 2012 19:53:04 GMT
                     }
                 ]
             }, 
-            "id": "8fb081af-f237-44f5-80cc-b46be1840ca9", 
+            "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/8fb081af-f237-44f5-80cc-b46be1840ca9", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/8fb081af-f237-44f5-80cc-b46be1840ca9", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                     "rel": "bookmark"
                 }
             ], 
-            "name": "xml_rack_instance", 
+            "name": "json_rack_instance", 
             "status": "ACTIVE", 
             "volume": {
                 "size": 2

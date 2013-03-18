@@ -1,19 +1,21 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 748
-Date: Wed, 25 Jan 2012 21:53:23 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 724
+Date: Mon, 18 Mar 2013 16:46:23 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
-<?xml version="1.0" ?>
-<instance created="2012-01-25T21:53:18Z" hostname="e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com" id="692d8418-7a8f-47f1-8060-59846c6e024f" name="xml_rack_instance" status="BUILD" updated="2012-01-25T21:53:22Z" xmlns="http://docs.openstack.org/database/api/v1.0">
-	<links>
-		<link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f" rel="self"/>
-		<link href="https://ord.databases.api.rackspacecloud.com/instances/692d8418-7a8f-47f1-8060-59846c6e024f" rel="bookmark"/>
-	</links>
-	<volume size="2"/>
-	<flavor id="1">
-		<links>
-			<link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1" rel="self"/>
-			<link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
-		</links>
-	</flavor>
+<instance created="2013-03-18 16:46:23.801076" id="4d298da0-6c51-4da5-87fb-7268642b1bb4" name="xml_rack_instance" status="BUILD" updated="2013-03-18 16:46:23.801196" xmlns="http://docs.openstack.org/database/api/v1.0">
+    <links>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4" rel="self"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4" rel="bookmark"/>
+    </links>
+    <volume size="2"/>
+    <flavor id="1">
+        <links>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
+        </links>
+    </flavor>
 </instance>
+

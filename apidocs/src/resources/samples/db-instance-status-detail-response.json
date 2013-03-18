@@ -1,11 +1,13 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 685
-Date: Wed, 28 Mar 2012 21:37:29 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 621
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instance": {
-        "created": "2012-03-28T21:31:02Z", 
+        "created": "2013-03-18T16:46:23", 
         "flavor": {
             "id": "1", 
             "links": [
@@ -19,24 +21,23 @@ Date: Wed, 28 Mar 2012 21:37:29 GMT
                 }
             ]
         }, 
-        "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com", 
-        "id": "2450c73f-7805-4afe-a42c-4094ab42666b", 
+        "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
         "links": [
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/2450c73f-7805-4afe-a42c-4094ab42666b", 
+                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                 "rel": "self"
             }, 
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/instances/2450c73f-7805-4afe-a42c-4094ab42666b", 
+                "href": "https://ord.databases.api.rackspacecloud.com/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                 "rel": "bookmark"
             }
         ], 
-        "name": "xml_rack_instance",  
+        "name": "json_rack_instance", 
         "status": "ACTIVE", 
-        "updated": "2012-03-28T21:34:25Z", 
+        "updated": "2013-03-18T16:46:23", 
         "volume": {
             "size": 2, 
-            "used": 0.124542236328125
+            "used": 0.16368598397821188
         }
     }
 }

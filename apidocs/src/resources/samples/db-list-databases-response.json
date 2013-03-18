@@ -1,18 +1,20 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 136
-Date: Wed, 25 Jan 2012 21:58:01 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 129
+Date: Mon, 18 Mar 2013 16:46:23 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "databases": [
         {
-            "name": "anotherexampledb"
-        }, 
-        {
-            "name": "exampledb"
+            "name": "anotherdb"
         }, 
         {
             "name": "nextround"
+        }, 
+        {
+            "name": "oneMoreDB"
         }, 
         {
             "name": "sampledb"

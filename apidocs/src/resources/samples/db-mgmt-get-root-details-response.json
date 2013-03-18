@@ -1,12 +1,14 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 102
-Date: Tue, 24 Jul 2012 19:48:33 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 112
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "root_history": {
-        "enabled": "Never", 
-        "id": "6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
-        "user": "Nobody"
+        "enabled": "2013-03-18T16:46:24", 
+        "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
+        "user": null
     }
 }

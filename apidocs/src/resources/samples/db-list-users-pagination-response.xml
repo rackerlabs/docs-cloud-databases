@@ -1,7 +1,7 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 468
+Content-Length: 461
 Date: Mon, 18 Mar 2013 16:46:24 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
@@ -15,13 +15,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             <database name="databaseC"/>
         </databases>
     </user>
-    <user name="dbuser3">
-        <databases/>
-    </user>
-    <user name="demouser">
-        <databases>
-            <database name="sampledb"/>
-        </databases>
-    </user>
+    <links>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4/users?marker=dbuser2&amp;limit=2" rel="next"/>
+    </links>
 </users>
 

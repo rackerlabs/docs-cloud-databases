@@ -1,12 +1,15 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
-Content-Length: 248
-Date: Wed, 25 Jan 2012 21:58:02 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 241
+Date: Mon, 18 Mar 2013 16:46:23 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <databases xmlns="http://docs.openstack.org/database/api/v1.0">
-	<database name="anotherexampledb"/>
-	<database name="exampledb"/>
-	<database name="nextround"/>
-	<database name="sampledb"/>
-	<database name="testingdb"/>
+    <database name="anotherdb"/>
+    <database name="nextround"/>
+    <database name="oneMoreDB"/>
+    <database name="sampledb"/>
+    <database name="testingdb"/>
 </databases>
+
