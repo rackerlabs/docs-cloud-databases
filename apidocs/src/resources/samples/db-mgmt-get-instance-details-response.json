@@ -2,12 +2,12 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 1404
-Date: Mon, 18 Mar 2013 16:46:24 GMT
+Date: Mon, 18 Mar 2013 19:09:18 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instance": {
-        "created": "2013-03-18T16:46:23", 
+        "created": "2013-03-18T19:09:17", 
         "deleted": false, 
         "deleted_at": null, 
         "flavor": {
@@ -26,19 +26,19 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         "guest_status": {
             "state_description": "running"
         }, 
-        "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
+        "id": "44b277eb-39be-4921-be31-3d61b43651d7", 
         "links": [
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
+                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/44b277eb-39be-4921-be31-3d61b43651d7", 
                 "rel": "self"
             }, 
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
+                "href": "https://ord.databases.api.rackspacecloud.com/instances/44b277eb-39be-4921-be31-3d61b43651d7", 
                 "rel": "bookmark"
             }
         ], 
         "name": "json_rack_instance", 
-        "root_enabled": "2013-03-18T16:46:24", 
+        "root_enabled": "2013-03-18T19:09:17", 
         "root_enabled_by": null, 
         "server": {
             "addresses": {
@@ -51,7 +51,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             "deleted": false, 
             "deleted_at": null, 
             "host": "hostname_1", 
-            "id": "eeb1f46c-160f-4b76-920f-9851afd23223", 
+            "id": "48996795-5fd8-4bf7-8b33-3824a86f3b19", 
             "local_id": 0, 
             "name": "json_rack_instance", 
             "status": "ACTIVE", 
@@ -61,17 +61,17 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         "status": "ACTIVE", 
         "task_description": "No tasks for the instance.", 
         "tenant_id": "3000", 
-        "updated": "2013-03-18T16:46:24", 
+        "updated": "2013-03-18T19:09:18", 
         "volume": {
             "attachments": [
                 {
                     "device": "vdb", 
-                    "server_id": "eeb1f46c-160f-4b76-920f-9851afd23223"
+                    "server_id": "48996795-5fd8-4bf7-8b33-3824a86f3b19"
                 }
             ], 
             "availability_zone": "fake-availability-zone", 
             "created_at": "2001-01-01-12:30:30", 
-            "id": "VOL_04a7eeb6-12a7-4674-9f5c-d7bc34a4e935", 
+            "id": "VOL_70110787-f822-4cdf-8ead-44d25082befd", 
             "size": 4, 
             "status": "in-use", 
             "used": 0.16368598397821188
