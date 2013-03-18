@@ -2,7 +2,7 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 461
-Date: Mon, 18 Mar 2013 16:46:24 GMT
+Date: Mon, 18 Mar 2013 19:09:17 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <users xmlns="http://docs.openstack.org/database/api/v1.0">
@@ -16,7 +16,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         </databases>
     </user>
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4d298da0-6c51-4da5-87fb-7268642b1bb4/users?marker=dbuser2&amp;limit=2" rel="next"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/098653ba-218b-47ce-936a-e0b749101f81/users?marker=dbuser2&amp;limit=2" rel="next"/>
     </links>
 </users>
 
