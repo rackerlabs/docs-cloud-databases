@@ -1,8 +1,8 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 1599
-Date: Mon, 18 Mar 2013 16:46:23 GMT
+Content-Length: 1600
+Date: Mon, 18 Mar 2013 19:09:17 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <flavors xmlns="http://docs.openstack.org/database/api/v1.0">
@@ -24,7 +24,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             <link href="https://ord.databases.api.rackspacecloud.com/flavors/3" rel="bookmark"/>
         </links>
     </flavor>
-    <flavor id="4" name="4B Instance" ram="4096">
+    <flavor id="4" name="4GB Instance" ram="4096">
         <links>
             <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/4" rel="self"/>
             <link href="https://ord.databases.api.rackspacecloud.com/flavors/4" rel="bookmark"/>
