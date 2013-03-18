@@ -1,29 +1,31 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 411
-Date: Tue, 24 Jul 2012 19:48:33 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 456
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "host": {
         "instances": [
             {
-                "id": "6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+                "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
                 "name": "json_rack_instance", 
-                "server_id": "64438fb6-4b98-4bd8-975e-222bc11daf74", 
-                "status": "ACTIVE",
-                "tenant_id": "1234"
+                "server_id": "eeb1f46c-160f-4b76-920f-9851afd23223", 
+                "status": "ACTIVE", 
+                "tenant_id": "3000"
             }, 
             {
-                "id": "72eed896-134e-4212-9f25-f81b4e0795e2", 
+                "id": "4d298da0-6c51-4da5-87fb-7268642b1bb4", 
                 "name": "xml_rack_instance", 
-                "server_id": "6d93bc48-f736-41db-9ad7-c8594aac25fb", 
-                "status": "ACTIVE",
-                "tenant_id": "1234"
+                "server_id": "269f05ac-c594-4ddd-bbed-fc1116aa24ff", 
+                "status": "ACTIVE", 
+                "tenant_id": "3000"
             }
         ], 
-        "name": "hostname", 
-        "percentUsed": 51, 
+        "name": "hostname_1", 
+        "percentUsed": 204, 
         "totalRAM": 2004, 
-        "usedRAM": 1024
+        "usedRAM": 4096
     }
 }

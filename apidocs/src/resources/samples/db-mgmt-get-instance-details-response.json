@@ -1,22 +1,24 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 903
-Date: Tue, 24 Jul 2012 19:48:33 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 1404
+Date: Mon, 18 Mar 2013 16:46:24 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instance": {
-        "created": "2012-07-24T19:48:27", 
+        "created": "2013-03-18T16:46:23", 
         "deleted": false, 
         "deleted_at": null, 
         "flavor": {
-            "id": "1", 
+            "id": "3", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
                     "rel": "bookmark"
                 }
             ]
@@ -24,28 +26,55 @@ Date: Tue, 24 Jul 2012 19:48:33 GMT
         "guest_status": {
             "state_description": "running"
         }, 
-        "host": "hostname", 
-        "id": "6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+        "id": "54240726-ead8-4910-b2fc-d2ce7671a17d", 
         "links": [
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                 "rel": "self"
             }, 
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/instances/6e038c18-902f-4a41-b2a2-5f46fa62fc1b", 
+                "href": "https://ord.databases.api.rackspacecloud.com/instances/54240726-ead8-4910-b2fc-d2ce7671a17d", 
                 "rel": "bookmark"
             }
         ], 
-        "local_id": 0, 
         "name": "json_rack_instance", 
-        "server_id": "64438fb6-4b98-4bd8-975e-222bc11daf74", 
+        "root_enabled": "2013-03-18T16:46:24", 
+        "root_enabled_by": null, 
+        "server": {
+            "addresses": {
+                "private": [
+                    {
+                        "addr": "123.123.123.123"
+                    }
+                ]
+            }, 
+            "deleted": false, 
+            "deleted_at": null, 
+            "host": "hostname_1", 
+            "id": "eeb1f46c-160f-4b76-920f-9851afd23223", 
+            "local_id": 0, 
+            "name": "json_rack_instance", 
+            "status": "ACTIVE", 
+            "tenant_id": "3000"
+        }, 
+        "service_status": "ACTIVE", 
         "status": "ACTIVE", 
         "task_description": "No tasks for the instance.", 
-        "tenant_id": "1234", 
-        "updated": "2012-07-24T19:48:29", 
+        "tenant_id": "3000", 
+        "updated": "2013-03-18T16:46:24", 
         "volume": {
-            "id": "VOL_0fb3073c-15de-483b-bb85-376a8997dc8a", 
-            "size": 2
+            "attachments": [
+                {
+                    "device": "vdb", 
+                    "server_id": "eeb1f46c-160f-4b76-920f-9851afd23223"
+                }
+            ], 
+            "availability_zone": "fake-availability-zone", 
+            "created_at": "2001-01-01-12:30:30", 
+            "id": "VOL_04a7eeb6-12a7-4674-9f5c-d7bc34a4e935", 
+            "size": 4, 
+            "status": "in-use", 
+            "used": 0.16368598397821188
         }
     }
 }

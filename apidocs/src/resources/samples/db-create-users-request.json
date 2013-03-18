@@ -1,19 +1,15 @@
-POST /v1.0/1234/instances/1c59bdb8-03b6-4079-a7db-ba92d23a98b3/users HTTP/1.1
-User-Agent: python-example-client
+POST /v1.0/1234/instances/54240726-ead8-4910-b2fc-d2ce7671a17d/users HTTP/1.1
+User-Agent: python-reddwarfclient
 Host: ord.databases.api.rackspacecloud.com
-X-Auth-Token: bb64d788-2dec-4a6b-a670-7151d108cacf
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
 Accept: application/json
 Content-Type: application/json
 
 {
     "users": [
         {
-            "databases": [
-                {
-                    "name": "databaseA"
-                }
-            ], 
-            "name": "dbuser3", 
+            "database": "databaseA", 
+            "name": "dbuser1", 
             "password": "password"
         }, 
         {
@@ -25,7 +21,12 @@ Content-Type: application/json
                     "name": "databaseC"
                 }
             ], 
-            "name": "dbuser4", 
+            "name": "dbuser2", 
+            "password": "password"
+        }, 
+        {
+            "database": "databaseD", 
+            "name": "dbuser3", 
             "password": "password"
         }
     ]
