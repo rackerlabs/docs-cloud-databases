@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-02-28</pubdate>
+        <pubdate>2013-03-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,31 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-03-21</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added paginated examples for List
+                                Database for Instance API calls in
+                                   <xref
+                                   linkend="GET_getDatabases__version___accountId__instances__instanceId__databases_"
+                                /> and List Users in Database Instance
+                                API calls in <xref
+                                   linkend="GET_getUsers__version___accountId__instances__instanceId__users_"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated response examples for
+                                Flavors API calls in <xref
+                                   linkend="GET_getFlavors__version___accountId__flavors_"
+                                /> and  <xref
+                                   linkend="GET_getFlavorById__version___accountId__flavors__flavorId__"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-02-28</date>
                 <revdescription>

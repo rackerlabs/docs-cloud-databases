@@ -48,13 +48,25 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-02-21</pubdate>
+        <pubdate>2013-03-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2013-03-21</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated response examples for
+                                Flavors API calls in <xref
+                                   linkend="List_Flavors"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-02-21</date>
                 <revdescription>
@@ -713,11 +725,12 @@
         </example>
         <para>In the previous examples, you can see from the flavor
                 <code>name</code> that there are multiple flavors
-            available, including <code>medium</code> (with 1 virtual
-            CPU and 2 gigabytes of memory) and <code>tiny</code> (with
-            1 virtual CPU and 0.5 gigabytes of memory). </para>
-        <para>In this example, assume that you decide to use the tiny
-            flavor (id 1) to provide the needed capacity for your
+            available, including <code>2GB Instance</code> (with 1
+            virtual CPU and 2 gigabytes of memory) and <code>512MB
+                Instance</code> (with 1 virtual CPU and 0.5 gigabytes
+            of memory). </para>
+        <para>In this example, assume that you decide to use the 512MB
+            Instance (id 1) to provide the needed capacity for your
             database instance.</para>
         <para>Notice that there are two kinds of link relations
             associated with flavor resources. A <code>self</code> link
@@ -737,8 +750,8 @@
             a single tenant environment on a shared physical host
             machine. In the example below, you create a database
             instance with a database and a user. The example instance
-            uses the tiny flavor and a volume size of 2 gigabytes
-            (GB). </para>
+            uses the 512MB Instance flavor and a volume size of 2
+            gigabytes (GB). </para>
         <para>Refer to <link
             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_.html"
                 >Create Database</link> in the <citetitle>Cloud
@@ -747,7 +760,7 @@
         <para>The example creates a database instance
                 <code>myrackinstance</code>, with the following: <itemizedlist>
                 <listitem>
-                    <para>the tiny flavor</para>
+                    <para>the 512MB Instance flavor</para>
                 </listitem>
                 <listitem>
                     <para>volume size of 2 gigabytes (GB)</para>
@@ -771,8 +784,8 @@
             </itemizedlist>
         </para>
         <para>Notice that the request specifies the flavor reference
-                (<code>flavorRef</code>) to the tiny flavor (id 1)
-            that was returned by the List Flavors Details call:
+                (<code>flavorRef</code>) to the 512MB Instance flavor
+            (id 1) that was returned by the List Flavors Details call:
                 <code>"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1"</code>.
             This is the <code>self</code> link that is the versioned
             link to the flavor resource. Refer to the response

@@ -699,6 +699,18 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-request.json"/>
                 </doc>
             </representation>
+            
+            <representation mediaType="application/xml">
+                <doc title="List Databases for Instance Paged Request: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Databases for Instance requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List Databases for Instance Paged Request: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-request.json"/>
+                </doc>
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/xml"
@@ -712,6 +724,20 @@
                 element="dbaas:Databases" >
                 <doc>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-response.json"/>
+                </doc>
+            </representation>
+            
+            <representation mediaType="application/xml"
+                element="dbaas:Databases" >
+                <doc title="List Databases for Instance Paged Response: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Databases for Instance responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Databases" >
+                <doc title="List Databases for Instance Paged Response: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -958,11 +984,23 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-request.json"/>
                 </doc>
             </representation>
+            
+            <representation mediaType="application/xml">
+                <doc title="List Users in Database Instance Paged Request: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List Users in Database Instance Paged Request: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-request.json"/>
+                </doc>
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/xml"
                 element="dbaas:Users" >
-                <doc>
+                <doc title="List Users in Database Instance Paged Response: XML">
                     <?hard-pagebreak?>
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Users in Database Instance responses:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.xml"/>
@@ -970,10 +1008,25 @@
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
-                <doc>
+                <doc title="List Users in Database Instance Paged Response: JSON">
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
                 </doc>
             </representation>
+            
+            <representation mediaType="application/xml"
+                element="dbaas:Users" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Users" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.json"/>
+                </doc>
+            </representation>
+            
         </response>
     &commonFaults;
     &getFaults;

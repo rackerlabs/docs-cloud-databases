@@ -40,7 +40,7 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
-			<revision>
+			<revision security="internal">
 				<date>2013-03-21</date>
 				<revdescription>
 					<para>Updated for v1.0.21.</para>
@@ -214,13 +214,25 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
-	<chapter xml:id="cdbv1.0.21">
+	<chapter xml:id="cdbv1.0.21" security="internal">
 		<title>v1.0.21, March 21, 2013</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
-			<listitem security="internal">
-				<para>Added support for 8GB and 16GB Flavor
-					sizes.</para>
+			<listitem>
+				<para>Changed flavor names to be more descriptive. </para>
+			</listitem>
+			<listitem security="writeronly">
+				<para>For details see the List Flavors response
+					examples at <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Added support for 8GB and 16GB flavor sizes. </para>
+			</listitem>
+			<listitem security="writeronly">
+				<para>For details see the reference provided for the
+					previous item.</para>
 			</listitem>
 			<listitem security="internal">
 				<para><link
@@ -228,24 +240,11 @@
 						>B-42565: </link>Added new scheduler rules for
 					scheduler code.</para>
 			</listitem>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:549206"
-						>B-42566: </link>Added new Mgmt API call
-					Migrate To Host.</para>
-			</listitem>
-		</itemizedlist>
-		<itemizedlist spacing="compact">
-			<title>Bug Fixes</title>
-			<listitem>
-				<para><link security="internal"
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:572936"
-						>D-11724: </link>Fixed defect where query
-					parameters for pagination were not working
-					correctly. Refer to <link
-						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/pagination.html"
-						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/pagination.html</link>
-					for details about pagination.</para>
+						>B-42566: </link>Added new Migrate Instance
+					Mgmt API call.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">

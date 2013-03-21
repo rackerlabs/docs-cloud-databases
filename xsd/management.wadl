@@ -63,6 +63,7 @@
           <resource id="instanceAction" path="action">
             <method href="#rebootInstance" />
             <method href="#resetInstanceTaskStatus" />
+            <method href="#migrateInstance" />
           </resource>
           <resource id="hwInfo" path="hwinfo">
             <method href="#getHwInfo" />
@@ -379,6 +380,57 @@
     &postPutFaults;
   </method>
   
+  <!-- Instance Actions -->
+  <method name="POST" id="migrateInstance">
+    <wadl:doc xml:lang="EN" title="Migrate Instance"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Migrates the instance to a different host.</para>
+      <para>This operation migrates the instance to a different host. The migration can be forced to a specified host using the optional host parameter.
+        If there is not enough space on the host to migrate to the new host then the migrate will fail and you will still see the instance on the 
+        original host. You can verify this by calling the Management API List Database Instance Status and Details call and inspecting the server information.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/xml" element="dbaas:migrate">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Migrate Instance requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:migrate">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-request.json"/>
+        </doc>
+      </representation>
+      
+      <representation mediaType="application/xml" element="dbaas:migrate">
+        <doc title="Migrate Instance Forced Host Request: XML">
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Migrate Instance requests with the host parameter specified to force migration to a specific host:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-force-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:migrate">
+        <doc title="Migrate Instance Forced Host Request: JSON">
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-force-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc title="Migrate Instance Forced Host Response: XML">
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Migrate Instance responses for the host parameter specified to force migration to a specific host:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-force-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc title="Migrate Instance Forced Host Response: XML">
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-force-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
   
 
   <method name="POST" id="updateHostInstances">
