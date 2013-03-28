@@ -414,7 +414,7 @@
     <!-- Instance Actions -->
     <method name="POST" id="restartInstance">
         <wadl:doc xml:lang="EN" title="Restart Instance"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Restart the database service on the instance.</para>
+            <para role="shortdesc">Restarts the database service on the instance.</para>
             <para>The restart operation will restart only the MySQL Instance. Restarting MySQL will erase any dynamic configuration settings that you have made within MySQL.</para>
             <note><para>The MySQL service will be unavailable until the instance restarts.</para></note>
             <para>This operation returns a 202 Accepted response.</para>
@@ -452,7 +452,7 @@
 
     <method name="POST" id="resizeInstance">
         <wadl:doc xml:lang="EN" title="Resize the Instance"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Resize the memory of the instance.</para>
+            <para role="shortdesc">Resizes the memory of the instance.</para>
             <para>This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts MySQL in the process.</para>
         </wadl:doc>
         <request>
@@ -490,7 +490,7 @@
 
     <method name="POST" id="resizeVolume">
         <wadl:doc xml:lang="EN" title="Resize the Instance Volume"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Resize the <glossterm>volume</glossterm> attached to the Instance.</para>
+            <para role="shortdesc">Resizes the <glossterm>volume</glossterm> attached to the Instance.</para>
             <para>This operation supports resizing the attached volume for an instance. It supports only increasing the volume size and does not support decreasing the size.
                 The volume size is in gigabytes (GB) and must be an integer.</para>
             <note><para>You cannot increase the volume to a size larger than the API volume size limit specifies.</para></note>
@@ -1186,7 +1186,7 @@
     
     <method name="PUT" id="grantUserAccess">
         <wadl:doc xml:lang="EN" title="Grant User Access"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Grant access for the specified user to one or more databases for the specified instance.</para>
+            <para role="shortdesc">Grants access for the specified user to one or more databases for the specified instance.</para>
             <para>This operation grants access for the specified user to one or more databases for the specified instance. 
                 The user is granted ALL privileges on the database. Refer to the information at the beginning of <xref linkend="user_management"/> 
                 for more details on access.</para>
@@ -1224,7 +1224,7 @@
     
     <method name="DELETE" id="revokeUserAccess">
         <wadl:doc xml:lang="EN" title="Revoke User Access"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Remove access to the specified database for the specified user.</para>
+            <para role="shortdesc">Removes access to the specified database for the specified user.</para>
             <para>This operation removes access to the specified database for the specified user.</para>
             
         </wadl:doc>
@@ -1364,14 +1364,14 @@
                 element="dbaas:Flavors" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Flavors responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.xml"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response-no8_16.xml"/>
                 </doc>
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:Flavors" >
                 <doc>
                     <?hard-pagebreak?>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response-no8_16.json"/>
                 </doc>
             </representation>
         </response>

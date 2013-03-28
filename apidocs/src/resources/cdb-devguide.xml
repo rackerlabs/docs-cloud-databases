@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-03-21</pubdate>
+        <pubdate>2013-03-28</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,7 +78,7 @@
         
         <revhistory>
             <revision>
-                <date>2013-03-21</date>
+                <date>2013-03-28</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -92,10 +92,16 @@
                                 />.</para>
                         </listitem>
                         <listitem>
+                            <para>Fixed JSON request example for Grant
+                                User Access API call in <xref
+                                   linkend="PUT_grantUserAccess__version___accountId__instances__instanceId__users__name__databases_"
+                                /> .</para>
+                        </listitem>
+                        <listitem>
                             <para>Updated response examples for
                                 Flavors API calls in <xref
                                    linkend="GET_getFlavors__version___accountId__flavors_"
-                                /> and  <xref
+                                /> and <xref
                                    linkend="GET_getFlavorById__version___accountId__flavors__flavorId__"
                                 />.</para>
                         </listitem>
