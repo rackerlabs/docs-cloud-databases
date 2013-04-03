@@ -1364,14 +1364,14 @@
                 element="dbaas:Flavors" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Flavors responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response-no8_16.xml"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.xml"/>
                 </doc>
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:Flavors" >
                 <doc>
                     <?hard-pagebreak?>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response-no8_16.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.json"/>
                 </doc>
             </representation>
         </response>

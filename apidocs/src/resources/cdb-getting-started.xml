@@ -48,13 +48,25 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-03-28</pubdate>
+        <pubdate>2013-04-03</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2013-04-03</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated response examples for new
+                                8GB and 16GB flavors in <xref
+                                   linkend="List_Flavors"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-03-28</date>
                 <revdescription>
@@ -717,11 +729,11 @@
             Flavors:</para>
         <example>
             <title>List Flavors Response: XML</title>
-            <programlisting language="xml"><xi:include href="../../src/resources/samples/db-flavors-response-no8_16.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="xml"><xi:include href="../../src/resources/samples/db-flavors-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <example>
             <title>List Flavors Response: JSON</title>
-            <programlisting language="json"><xi:include href="../../src/resources/samples/db-flavors-response-no8_16.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
+            <programlisting language="json"><xi:include href="../../src/resources/samples/db-flavors-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
         </example>
         <para>In the previous examples, you can see from the flavor
                 <code>name</code> that there are multiple flavors
