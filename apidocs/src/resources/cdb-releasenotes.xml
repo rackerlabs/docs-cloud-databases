@@ -27,7 +27,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-04-03</pubdate>
+	<pubdate>2013-04-04</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -40,7 +40,7 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
-			<revision security="writeronly">
+			<revision>
 				<date>2013-04-04</date>
 				<revdescription>
 					<para>Updated for v1.0.23.</para>
@@ -232,34 +232,35 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
-	<chapter xml:id="cdbv1.0.23" security="writeronly">
+	<chapter xml:id="cdbv1.0.23">
 		<title>v1.0.23, April 4, 2013</title>
-		<itemizedlist spacing="compact" security="internal">
+		<itemizedlist spacing="compact">
 			<title>Bug Fixes</title>
 			<listitem>
 				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:583399"
-						>D-11945: </link>Repose - Fix links.</para>
+						>D-11945: </link>Corrected href links returned
+					from the List Flavors API call.</para>
 			</listitem>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:579260"
 						>D-11858: </link>Repose - Observer Role
 					Issues.</para>
 			</listitem>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:579271"
 						>D-11859: </link>Repose - Creator Role
 					Issues.</para>
 			</listitem>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:588844"
 						>D-12011: </link>Repose - New "User" Calls
 					fails.</para>
 			</listitem>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:588938"
 						>D-12015: </link>Repose - Change "User" pw
