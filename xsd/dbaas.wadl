@@ -1000,7 +1000,7 @@
         <response status="200">
             <representation mediaType="application/xml"
                 element="dbaas:Users" >
-                <doc title="List Users in Database Instance Paged Response: XML">
+                <doc title="List Users in Database Instance Response: XML">
                     <?hard-pagebreak?>
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Users in Database Instance responses:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.xml"/>
@@ -1008,21 +1008,21 @@
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
-                <doc title="List Users in Database Instance Paged Response: JSON">
+                <doc title="List Users in Database Instance Response: JSON">
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/xml"
                 element="dbaas:Users" >
-                <doc>
+                <doc title="List Users in Database Instance Paged Response: XML">
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance responses:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.xml"/>
                 </doc>
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
-                <doc>
+                <doc title="List Users in Database Instance Paged Response: JSON">
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.json"/>
                 </doc>
             </representation>

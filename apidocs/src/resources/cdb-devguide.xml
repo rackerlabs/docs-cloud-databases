@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-04-03</pubdate>
+        <pubdate>2013-04-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,17 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-04-11</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed formatting issues as needed
+                                for some paginated examples.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-04-03</date>
                 <revdescription>
@@ -110,7 +121,7 @@
                             <para>Fixed JSON request example for Grant
                                 User Access API call in <xref
                                    linkend="PUT_grantUserAccess__version___accountId__instances__instanceId__users__name__databases_"
-                                /> .</para>
+                                />.</para>
                         </listitem>
                         <listitem>
                             <para>Updated response examples for
@@ -127,11 +138,6 @@
                 <date>2013-02-28</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added new <xref
-                                   linkend="Repose_Integration"/>
-                                ).</para>
-                        </listitem>
                         <listitem>
                             <para>Added five new API calls to <xref
                                    linkend="user_management"
@@ -1464,7 +1470,7 @@
             </example>
             <example>
                 <title>List Instances Paged Response: JSON</title>
-                <?dbfo keep-together="always"?>
+                
                 <programlisting language="json">
 <xi:include href="samples/db-instances-index-pagination-response.json" parse="text"/>
                     </programlisting>
@@ -1809,36 +1815,6 @@
                                 >http://docs.rackspace.com/api/</link>.</para>
                     </listitem>
                 </orderedlist></para>
-        </section>
-        <section xml:id="Repose_Integration">
-            <title>Repose Integration</title>
-            <para>Cloud Databases is now integrated with Repose, which
-                is used to validate authentication tokens. This means
-                additional header information including the specific
-                Repose version number is returned in all responses.
-                See the following example response header:</para>
-            
-            <example>
-                <title>Example Response Header with Repose
-                    Integration: JSON</title>
-                <?dbfo keep-together="always"?>
-                <programlisting language="json">
-<xi:include href="samples/db-auth-repose-header.json" parse="text"/>
-                    </programlisting>
-            </example>
-            <note><title>Notes</title>
-            <itemizedlist>
-                <listitem>
-                    <para>The Repose Version number shown in the
-                            response may vary: <code>Via: X.X Repose
-                                (Repose/X.X.X)</code>.</para>
-                </listitem>
-                <listitem>
-                    <para>The Repose header information is
-                                <emphasis>not</emphasis> shown in the
-                            response examples in this manual.</para>
-                </listitem>
-            </itemizedlist></note>
         </section>
     </chapter>
     
