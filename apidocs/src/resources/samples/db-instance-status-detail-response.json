@@ -2,12 +2,12 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 621
-Date: Mon, 18 Mar 2013 19:09:17 GMT
+Date: Tue, 07 May 2013 19:35:34 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instance": {
-        "created": "2013-03-18T19:09:17", 
+        "created": "2013-05-07T19:35:33", 
         "flavor": {
             "id": "1", 
             "links": [
@@ -21,20 +21,20 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 }
             ]
         }, 
-        "id": "44b277eb-39be-4921-be31-3d61b43651d7", 
+        "id": "4fc6f076-c0dc-48ee-ae38-9eabfc241efa", 
         "links": [
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/44b277eb-39be-4921-be31-3d61b43651d7", 
+                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa", 
                 "rel": "self"
             }, 
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/instances/44b277eb-39be-4921-be31-3d61b43651d7", 
+                "href": "https://ord.databases.api.rackspacecloud.com/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa", 
                 "rel": "bookmark"
             }
         ], 
         "name": "json_rack_instance", 
         "status": "ACTIVE", 
-        "updated": "2013-03-18T19:09:17", 
+        "updated": "2013-05-07T19:35:33", 
         "volume": {
             "size": 2, 
             "used": 0.16368598397821188
