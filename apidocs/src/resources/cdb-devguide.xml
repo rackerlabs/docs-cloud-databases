@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-04-11</pubdate>
+        <pubdate>2013-05-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,22 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-05-09</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="user_access_restrict_by_host-dle387"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples to show the latest
+                                API changes.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-04-11</date>
                 <revdescription>
@@ -1815,6 +1831,53 @@
                                 >http://docs.rackspace.com/api/</link>.</para>
                     </listitem>
                 </orderedlist></para>
+        </section>
+        <section xml:id="security-dle214">
+            <title>Security</title>
+            <para>This section describes security features for Cloud
+                Databases.</para>
+            <section xml:id="user_access_restrict_by_host-dle387">
+                <title>User Access Restriction by Host</title>
+                <para>A <code>host</code> parameter has been added to
+                    database users mentioned in API requests and
+                    responses. This parameter supports the additional
+                    security measure for the API of restricting the
+                    hosts from which a database user is allowed to
+                    connect to the database. The <code>host</code>
+                    parameter specifies the host a user must connect
+                    from in order for the username and password to be
+                    allowed to connect to the database on an
+                    instance.</para>
+                <para>Current the <code>host</code> parameter must be
+                    a string containing either a numeric IPv4 address
+                    such as "192.168.1.12", or the string "%". The
+                    string "%" serves as a wildcard to MySQL, and
+                    means "from anywhere". Users created without
+                    mention of the <code>host</code> parameter are
+                    given the default value of "%", which allows them
+                    to connect to the database from any host.</para>
+                <para>Two database users with the same name but
+                    different hosts are treated as completely distinct
+                    from each other. This means that the username
+                    alone is not sufficient to refer to a user in some
+                    cases. To remove ambiguity, every API response
+                    that names users now also includes the
+                        <code>host</code> field.</para>
+                <para>The <code>host</code> field may optionally be
+                    provided for each user in the body of Create
+                    Instance, Create User, and Change User Password
+                    calls.</para>
+                <para>In the case of the List User, List User Access,
+                    Grant User Access, and Revoke User Access calls,
+                    the username is part of the request URL instead of
+                    a JSON or XML message body. In these cases, the
+                        <code>host</code> can be specified with the
+                    username using the format of username@host, for
+                    example <code>testuser@192.168.1.12</code>. Should
+                    a username contain the character '@', the hostname
+                    must be specified explicitly, as in
+                        <code>user@name@%</code>.</para>
+            </section>
         </section>
     </chapter>
     
