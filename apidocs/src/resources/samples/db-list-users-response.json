@@ -1,14 +1,15 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 228
-Date: Mon, 18 Mar 2013 19:09:17 GMT
+Content-Length: 287
+Date: Tue, 07 May 2013 19:35:34 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "users": [
         {
             "databases": [], 
+            "host": "%", 
             "name": "dbuser1"
         }, 
         {
@@ -20,10 +21,12 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     "name": "databaseC"
                 }
             ], 
+            "host": "10.0.0.1", 
             "name": "dbuser2"
         }, 
         {
             "databases": [], 
+            "host": "%", 
             "name": "dbuser3"
         }, 
         {
@@ -32,6 +35,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     "name": "sampledb"
                 }
             ], 
+            "host": "%", 
             "name": "demouser"
         }
     ]

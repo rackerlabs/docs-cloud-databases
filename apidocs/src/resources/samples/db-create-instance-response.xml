@@ -2,13 +2,13 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 724
-Date: Mon, 18 Mar 2013 19:09:17 GMT
+Date: Tue, 07 May 2013 19:35:33 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
-<instance created="2013-03-18 19:09:17.441489" id="098653ba-218b-47ce-936a-e0b749101f81" name="xml_rack_instance" status="BUILD" updated="2013-03-18 19:09:17.441606" xmlns="http://docs.openstack.org/database/api/v1.0">
+<instance created="2013-05-07 19:35:33.539799" id="6396dba7-dcb6-44eb-b829-63423c31dc9e" name="xml_rack_instance" status="BUILD" updated="2013-05-07 19:35:33.539944" xmlns="http://docs.openstack.org/database/api/v1.0">
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/098653ba-218b-47ce-936a-e0b749101f81" rel="self"/>
-        <link href="https://ord.databases.api.rackspacecloud.com/instances/098653ba-218b-47ce-936a-e0b749101f81" rel="bookmark"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="self"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="bookmark"/>
     </links>
     <volume size="2"/>
     <flavor id="1">

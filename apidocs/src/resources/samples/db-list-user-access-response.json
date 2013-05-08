@@ -1,15 +1,14 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
-Content-Length: 0
-Date: Wed, 27 Jun 2012 23:11:19 GMT
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 38
+Date: Tue, 07 May 2013 19:35:34 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
-   "databases": [
-      {
-         "name": "databaseA"
-      },
-      {
-         "name": "databaseB"
-      }
-   ]
+    "databases": [
+        {
+            "name": "databaseE"
+        }
+    ]
 }

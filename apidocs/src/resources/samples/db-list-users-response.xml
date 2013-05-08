@@ -1,24 +1,24 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 468
-Date: Mon, 18 Mar 2013 19:09:17 GMT
+Content-Length: 511
+Date: Tue, 07 May 2013 19:35:34 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <users xmlns="http://docs.openstack.org/database/api/v1.0">
-    <user name="dbuser1">
+    <user host="%" name="dbuser1">
         <databases/>
     </user>
-    <user name="dbuser2">
+    <user host="10.0.0.1" name="dbuser2">
         <databases>
             <database name="databaseB"/>
             <database name="databaseC"/>
         </databases>
     </user>
-    <user name="dbuser3">
+    <user host="%" name="dbuser3">
         <databases/>
     </user>
-    <user name="demouser">
+    <user host="%" name="demouser">
         <databases>
             <database name="sampledb"/>
         </databases>

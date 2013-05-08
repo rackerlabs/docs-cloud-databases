@@ -2,14 +2,14 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 3103
-Date: Mon, 18 Mar 2013 19:09:18 GMT
+Date: Tue, 07 May 2013 19:35:36 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <instances xmlns="http://docs.openstack.org/database/api/v1.0">
-    <instance created="2013-03-18 19:09:17.409294" deleted="False" deleted_at="None" id="44b277eb-39be-4921-be31-3d61b43651d7" name="json_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2013-03-18 19:09:18.248643">
+    <instance created="2013-05-07 19:35:33.360398" deleted="False" deleted_at="None" id="4fc6f076-c0dc-48ee-ae38-9eabfc241efa" name="json_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2013-05-07 19:35:35.847678">
         <links>
-            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/44b277eb-39be-4921-be31-3d61b43651d7" rel="self"/>
-            <link href="https://ord.databases.api.rackspacecloud.com/instances/44b277eb-39be-4921-be31-3d61b43651d7" rel="bookmark"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa" rel="bookmark"/>
         </links>
         <server>
             <status>
@@ -34,7 +34,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 None
             </deleted_at>
             <id>
-                48996795-5fd8-4bf7-8b33-3824a86f3b19
+                6e01d387-449f-4e10-ac86-53399f08fbad
             </id>
         </server>
         <volume size="4"/>
@@ -48,10 +48,10 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             </links>
         </flavor>
     </instance>
-    <instance created="2013-03-18 19:09:17.441489" deleted="False" deleted_at="None" id="098653ba-218b-47ce-936a-e0b749101f81" name="xml_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2013-03-18 19:09:18.280855">
+    <instance created="2013-05-07 19:35:33.539799" deleted="False" deleted_at="None" id="6396dba7-dcb6-44eb-b829-63423c31dc9e" name="xml_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2013-05-07 19:35:35.919427">
         <links>
-            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/098653ba-218b-47ce-936a-e0b749101f81" rel="self"/>
-            <link href="https://ord.databases.api.rackspacecloud.com/instances/098653ba-218b-47ce-936a-e0b749101f81" rel="bookmark"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="bookmark"/>
         </links>
         <server>
             <status>
@@ -76,7 +76,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 None
             </deleted_at>
             <id>
-                b3aca411-ef1c-4c47-88d3-5a309096c204
+                59de80b2-3b99-4804-af53-26474288b6a5
             </id>
         </server>
         <volume size="4"/>
