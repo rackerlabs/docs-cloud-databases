@@ -2,14 +2,14 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 1538
-Date: Mon, 18 Mar 2013 19:09:17 GMT
+Date: Tue, 07 May 2013 19:35:34 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <instances xmlns="http://docs.openstack.org/database/api/v1.0">
-    <instance id="098653ba-218b-47ce-936a-e0b749101f81" name="xml_rack_instance" status="ACTIVE">
+    <instance id="4fc6f076-c0dc-48ee-ae38-9eabfc241efa" name="json_rack_instance" status="ACTIVE">
         <links>
-            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/098653ba-218b-47ce-936a-e0b749101f81" rel="self"/>
-            <link href="https://ord.databases.api.rackspacecloud.com/instances/098653ba-218b-47ce-936a-e0b749101f81" rel="bookmark"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa" rel="bookmark"/>
         </links>
         <volume size="2"/>
         <flavor id="1">
@@ -19,10 +19,10 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             </links>
         </flavor>
     </instance>
-    <instance id="44b277eb-39be-4921-be31-3d61b43651d7" name="json_rack_instance" status="ACTIVE">
+    <instance id="6396dba7-dcb6-44eb-b829-63423c31dc9e" name="xml_rack_instance" status="ACTIVE">
         <links>
-            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/44b277eb-39be-4921-be31-3d61b43651d7" rel="self"/>
-            <link href="https://ord.databases.api.rackspacecloud.com/instances/44b277eb-39be-4921-be31-3d61b43651d7" rel="bookmark"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="bookmark"/>
         </links>
         <volume size="2"/>
         <flavor id="1">
@@ -33,7 +33,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         </flavor>
     </instance>
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances?marker=44b277eb-39be-4921-be31-3d61b43651d7&amp;limit=2" rel="next"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances?marker=6396dba7-dcb6-44eb-b829-63423c31dc9e&amp;limit=2" rel="next"/>
     </links>
 </instances>
 
