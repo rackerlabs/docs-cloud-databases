@@ -2,7 +2,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 192
-Date: Tue, 07 May 2013 19:35:34 GMT
+Date: Wed, 08 May 2013 22:43:34 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
@@ -13,7 +13,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
     ], 
     "links": [
         {
-            "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa/databases?marker=anotherdb&limit=1", 
+            "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/databases?marker=anotherdb&limit=1", 
             "rel": "next"
         }
     ]
