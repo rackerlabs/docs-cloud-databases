@@ -2,7 +2,7 @@ HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 1038
-Date: Tue, 07 May 2013 19:35:34 GMT
+Date: Wed, 08 May 2013 22:43:35 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
@@ -21,18 +21,18 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     }
                 ]
             }, 
-            "id": "4fc6f076-c0dc-48ee-ae38-9eabfc241efa", 
+            "id": "9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/4fc6f076-c0dc-48ee-ae38-9eabfc241efa", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
                     "rel": "bookmark"
                 }
             ], 
-            "name": "json_rack_instance", 
+            "name": "xml_rack_instance", 
             "status": "ACTIVE", 
             "volume": {
                 "size": 2
@@ -52,18 +52,18 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     }
                 ]
             }, 
-            "id": "6396dba7-dcb6-44eb-b829-63423c31dc9e", 
+            "id": "dcc5c518-73c7-4471-83e1-15fae67a98eb", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb", 
                     "rel": "bookmark"
                 }
             ], 
-            "name": "xml_rack_instance", 
+            "name": "json_rack_instance", 
             "status": "ACTIVE", 
             "volume": {
                 "size": 2

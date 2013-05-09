@@ -1,11 +1,11 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 90
+Content-Length: 108
 Date: Wed, 08 May 2013 22:43:35 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
-<rootEnabled xmlns="http://docs.openstack.org/database/api/v1.0">
-    True
-</rootEnabled>
+<user host="%" name="dbuser1" xmlns="http://docs.openstack.org/database/api/v1.0">
+    <databases/>
+</user>
 

@@ -1,4 +1,4 @@
-POST /v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e/users HTTP/1.1
+POST /v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9/users HTTP/1.1
 User-Agent: python-reddwarfclient
 Host: ord.databases.api.rackspacecloud.com
 X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7

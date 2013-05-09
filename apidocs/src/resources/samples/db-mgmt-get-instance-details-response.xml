@@ -2,13 +2,13 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 2401
-Date: Tue, 07 May 2013 19:35:36 GMT
+Date: Wed, 08 May 2013 22:43:36 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
-<instance created="2013-05-07 19:35:33.539799" deleted="False" deleted_at="None" id="6396dba7-dcb6-44eb-b829-63423c31dc9e" name="xml_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2013-05-07 19:35:35.919427" xmlns="http://docs.openstack.org/database/api/v1.0">
+<instance created="2013-05-08 22:43:34.487559" deleted="False" deleted_at="None" id="9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" name="xml_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2013-05-08 22:43:36.418123" xmlns="http://docs.openstack.org/database/api/v1.0">
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="self"/>
-        <link href="https://ord.databases.api.rackspacecloud.com/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e" rel="bookmark"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" rel="self"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" rel="bookmark"/>
     </links>
     <server>
         <status>
@@ -33,7 +33,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             None
         </deleted_at>
         <id>
-            59de80b2-3b99-4804-af53-26474288b6a5
+            58604f57-8c51-45f7-abfb-2e24ae5770db
         </id>
         <addresses>
             <private>
@@ -45,7 +45,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             </private>
         </addresses>
     </server>
-    <volume id="VOL_73a3f2b8-bbd8-4f97-a43d-6d714a1d519b" size="4" used="0.163685983978">
+    <volume id="VOL_d4ce6302-fa14-4e69-af97-b9a915706e15" size="4" used="0.163685983978">
         <status>
             in-use
         </status>
@@ -55,7 +55,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     vdb
                 </device>
                 <server_id>
-                    59de80b2-3b99-4804-af53-26474288b6a5
+                    58604f57-8c51-45f7-abfb-2e24ae5770db
                 </server_id>
             </attachment>
         </attachments>
@@ -71,7 +71,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         ACTIVE
     </service_status>
     <root_enabled>
-        2013-05-07 19:35:34.457268
+        2013-05-08 22:43:35.299402
     </root_enabled>
     <flavor id="3">
         <links>

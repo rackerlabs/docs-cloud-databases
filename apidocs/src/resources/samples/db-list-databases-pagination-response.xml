@@ -2,14 +2,14 @@ HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
 Content-Length: 321
-Date: Tue, 07 May 2013 19:35:34 GMT
+Date: Wed, 08 May 2013 22:43:34 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <databases xmlns="http://docs.openstack.org/database/api/v1.0">
     <database name="anotherdb"/>
     <database name="nextround"/>
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/6396dba7-dcb6-44eb-b829-63423c31dc9e/databases?marker=nextround&amp;limit=2" rel="next"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9/databases?marker=nextround&amp;limit=2" rel="next"/>
     </links>
 </databases>
 
