@@ -60,7 +60,11 @@
                             <resource id="userId" path="{name}">
                                 <param name="name" style="template"
                                     type="xsd:string" >
-                                    <doc>The name for the specified user.</doc></param>
+                                    <doc><para>The name for the specified user.</para> 
+                                        <para>Refer to <link
+                                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                                            >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html</link> for details about restricting the name to a particular host.</para> 
+                                        <para>Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP)</para></doc></param>
                                 <method href="#deleteUser" />
                                 <method href="#listUser" />
                                 <resource id="database" path="databases">
@@ -235,7 +239,7 @@
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
-                    <td colspan="1" rowspan="3">User</td>
+                    <td colspan="1" rowspan="4">User</td>
                     <td colspan="1">name</td>
                     <td colspan="3">Specifies user name for the database on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required xml/json format.</td>
                     <td colspan="1">No</td>
@@ -248,6 +252,12 @@
                 <tr>
                     <td colspan="1">(database) name</td>
                     <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required xml/json format.</td>
+                    <td colspan="1">No</td>
+                </tr>
+                <tr>
+                    <td colspan="1">host</td>
+                    <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
+                        Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                     <td colspan="1">No</td>
                 </tr>
             </tbody>
@@ -788,36 +798,42 @@
             <remark>Writer: please add the following note back into the doc once the List User Details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the "List User Details" section of this document).</remark>
             <para>If the corresponding request cannot be fulfilled due to insufficient or invalid data, an HTTP 400 "Bad Request" error response is returned with information regarding the nature of the failure. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.</para>
 
-            <para>The following table lists the required attributes for Create User. Refer to the request examples for the required xml/json format:</para>
+            <para>The following table lists the required and optional attributes for Create User. Refer to the request examples for the required xml/json format:</para>
             
             <table rules="all" width="500">
-                <caption>Required Attributes for Create User</caption>
+                <caption>Required and Optional Attributes for Create User</caption>
                 
                 <thead>
                     <tr>
                         <td colspan="1">Applies To</td>
                         <td colspan="1">Name </td>
-                        <td colspan="2">Description</td>
+                        <td colspan="3">Description</td>
                         <td colspan="1">Required</td>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td colspan="1" rowspan="3">User</td>
+                        <td colspan="1" rowspan="4">User</td>
                         <td colspan="1">name</td>
-                        <td colspan="2">Name of the user for the
+                        <td colspan="3">Name of the user for the
                             database.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
                         <td colspan="1">password</td>
-                        <td colspan="2">User password for database
+                        <td colspan="3">User password for database
                             access.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
                         <td colspan="1">(database) name</td>
-                        <td colspan="2"><para>Name of the database that the user can access. One or more database names must be specified.</para></td>
+                        <td colspan="3"><para>Name of the database that the user can access. One or more database names must be specified.</para></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">host</td>
+                        <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
+                            Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                         <td colspan="1">No</td>
                     </tr>
                 </tbody>
@@ -1010,6 +1026,7 @@
                 element="dbaas:Users" >
                 <doc title="List Users in Database Instance Response: JSON">
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for a description of the <code>host</code> field.</para>
                 </doc>
             </representation>
             
@@ -1077,11 +1094,7 @@
         <wadl:doc xml:lang="EN" title="Delete User"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the user identified by {name} for the specified database instance.</para>
             <para>This operation deletes the specified user for the specified database instance.</para>
-            <warning><para>There is a bug in a python library that development is using that may cause incorrect user deletions to occur 
-                if a period (.) is used in the user name. In this case, the user name is truncated to remove the portion of the 
-                name from the period to the end, leaving only the portion from the beginning up to the period. For example, for a 
-                user named "my.userA", the bug would truncate the user name to "my", and if the user "my" exists, that user will 
-                be incorrectly deleted. To avoid the problem, do not use periods in user names.</para></warning>
+            
         </wadl:doc>
         <request>
             <representation mediaType="application/xml">

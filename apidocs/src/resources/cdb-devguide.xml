@@ -1838,45 +1838,51 @@
                 Databases.</para>
             <section xml:id="user_access_restrict_by_host-dle387">
                 <title>User Access Restriction by Host</title>
-                <para>A <code>host</code> parameter has been added to
-                    database users mentioned in API requests and
-                    responses. This parameter supports the additional
-                    security measure for the API of restricting the
+                <para>Cloud Databases supports the specification of a
+                        <code>host</code> parameter when creating and
+                    modifying users. This parameter adds the
+                    additional security measure of restricting the
                     hosts from which a database user is allowed to
                     connect to the database. The <code>host</code>
                     parameter specifies the host a user must connect
                     from in order for the username and password to be
                     allowed to connect to the database on an
                     instance.</para>
-                <para>Current the <code>host</code> parameter must be
-                    a string containing either a numeric IPv4 address
-                    such as "192.168.1.12", or the string "%". The
-                    string "%" serves as a wildcard to MySQL, and
-                    means "from anywhere". Users created without
-                    mention of the <code>host</code> parameter are
-                    given the default value of "%", which allows them
-                    to connect to the database from any host.</para>
-                <para>Two database users with the same name but
-                    different hosts are treated as completely distinct
-                    from each other. This means that the username
-                    alone is not sufficient to refer to a user in some
-                    cases. To remove ambiguity, every API response
-                    that names users now also includes the
+                <para>The <code>host</code> parameter must be a string
+                    consisting of either a numeric IPv4 address such
+                    as "192.168.1.12", or the string "%". The string
+                    "%" serves as a wildcard to MySQL, and means "from
+                    anywhere". Users created without mention of the
+                        <code>host</code> parameter are given the
+                    default value of "%", which allows them to connect
+                    to the database from any host.</para>
+                <para>It is important to note that two database users
+                    with the same name but different hosts are treated
+                    as completely distinct from each other, especially
+                    when it comes to listing users and modifying their
+                    database access with the API. This means that the
+                    username alone is not sufficient to refer to a
+                    user in some cases. To remove ambiguity, every API
+                    response that names users now also includes the
                         <code>host</code> field.</para>
                 <para>The <code>host</code> field may optionally be
                     provided for each user in the body of Create
-                    Instance, Create User, and Change User Password
-                    calls.</para>
-                <para>In the case of the List User, List User Access,
-                    Grant User Access, and Revoke User Access calls,
-                    the username is part of the request URL instead of
-                    a JSON or XML message body. In these cases, the
-                        <code>host</code> can be specified with the
-                    username using the format of username@host, for
-                    example <code>testuser@192.168.1.12</code>. Should
-                    a username contain the character '@', the hostname
+                    Instance (<xref
+                        linkend="POST_createInstance__version___accountId__instances_"
+                    />), Create User (<xref
+                        linkend="POST_createUser__version___accountId__instances__instanceId__users_"
+                    />), and Change User Password  (<xref
+                        linkend="PUT_changePass__version___accountId__instances__instanceId__users_"
+                    />) calls. In the case of the List User, List User
+                    Access, Grant User Access, and Revoke User Access
+                    calls, the username is part of the request URL
+                    instead of a JSON or XML message body. In these
+                    cases, the host can be specified with the username
+                    using the format of username@host, for example
+                        <code>testuser@192.168.1.12</code>. Should a
+                    username contain the character '@', the hostname
                     must be specified explicitly, as in
-                        <code>user@name@%</code>.</para>
+                    user@name@%.</para>
             </section>
         </section>
     </chapter>
@@ -1968,12 +1974,6 @@
                 database named DATABASE exist, and within MySQL, a
                 GRANT ALL ON DATABASE.* TO USER has been issued on the
                 instance. </para>
-            
-            <warning><para>There is a bug in a python library that development is using that may cause incorrect user deletions to occur 
-                if a period (.) is used in the user name. In this case, the user name is truncated to remove the portion of the 
-                name from the period to the end, leaving only the portion from the beginning up to the period. For example, for a 
-                user named "my.userA", the bug would truncate the user name to "my", and if the user "my" exists, that user will 
-                be incorrectly deleted. To avoid the problem, do not use periods in user names.</para></warning>
             
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
