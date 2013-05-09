@@ -5,7 +5,7 @@ Content-Length: 747
 Date: Wed, 08 May 2013 22:43:35 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
-<instance created="2013-05-08 22:43:34.487559" id="9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" name="xml_rack_instance" status="ACTIVE" updated="2013-05-08 22:43:34.666211" xmlns="http://docs.openstack.org/database/api/v1.0">
+<instance created="2013-05-08 22:43:34.487559" hostname="e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com" id="9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" name="xml_rack_instance" status="ACTIVE" updated="2013-05-08 22:43:34.666211" xmlns="http://docs.openstack.org/database/api/v1.0">
     <links>
         <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" rel="self"/>
         <link href="https://ord.databases.api.rackspacecloud.com/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9" rel="bookmark"/>

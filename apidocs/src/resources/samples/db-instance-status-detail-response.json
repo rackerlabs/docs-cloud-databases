@@ -21,6 +21,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 }
             ]
         }, 
+        "hostame": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com",
         "id": "dcc5c518-73c7-4471-83e1-15fae67a98eb", 
         "links": [
             {

@@ -84,7 +84,8 @@
                         <listitem>
                             <para>Added <xref
                                    linkend="user_access_restrict_by_host-dle387"
-                                />.</para>
+                                /> and links to it from the affected
+                                sections in the manual.</para>
                         </listitem>
                         <listitem>
                             <para>Updated examples to show the latest
