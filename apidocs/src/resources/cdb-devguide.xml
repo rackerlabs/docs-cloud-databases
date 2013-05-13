@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-05-09</pubdate>
+        <pubdate>2013-05-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,22 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-05-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Corrected absolute limit for maximum
+                                volume size per instance from 50 to
+                                150GB in <xref
+                                   linkend="Absolute_Limits-d1e1397"/>
+                                and <xref
+                                   linkend="POST_createInstance__version___accountId__instances_"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-05-09</date>
                 <revdescription>
@@ -1313,7 +1329,7 @@
                             <td colspan="3">Maximum volume size per
                                 instance in gigabytes (GB) for your
                                 account</td>
-                            <td colspan="1">50</td>
+                            <td colspan="1">150</td>
                         </tr>
                     </tbody>
                 </table>

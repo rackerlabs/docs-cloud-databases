@@ -238,8 +238,8 @@
                     xlink:href="http://www.rackspace.com/cloud/public/databases/pricing"
                     >http://www.rackspace.com/cloud/public/databases/pricing</link>.
                 Cloud Servers is also part of the Rackspace Cloud and
-                your use through the Control Panel will be billed as
-                per the pricing schedule at <link
+                your use through the Cloud Control Panel will be
+                billed as per the pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/public/servers/pricing"
                     >http://www.rackspace.com/cloud/public/servers/pricing</link>.</para>
             <para>The Service Level Agreements (SLAs) for Cloud
@@ -451,7 +451,7 @@
                             Keys</guimenuitem> section (login here:
                             <link
                             xlink:href="http://mycloud.rackspace.com/"
-                            >Control Panel Login</link>).</para>
+                            >Cloud Control Panel</link>).</para>
                 </listitem>
             </itemizedlist></para>
         <para> To access the Authentication Service, you must know
@@ -1110,7 +1110,7 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
         <para>Create a Cloud Server using the Cloud Servers section of
             the Cloud Control Panel (login here: <link
                 xlink:href="http://mycloud.rackspace.com/"
-                >Control Panel Login</link>).</para>
+                >Cloud Control Panel</link>).</para>
         <procedure>
             <title>To create a Cloud Server using the Cloud Control
                 Panel:</title>
