@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-05-13</pubdate>
+        <pubdate>2013-06-17</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,37 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-06-17</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for
+                                authentication. See <xref
+                                   linkend="Geographic_Endpoints"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added Sydney (SYD) endpoint. See
+                                   <xref
+                                   linkend="Service_Access_Endpoints-d1e753"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Clarified definition for
+                                   <code>marker</code>. See <xref
+                                   linkend="pagination"/>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added warning for databases and
+                                users with periods (.) in their name,
+                                where such a name is the last section
+                                of the request URL. See <xref
+                                   linkend="security-dle214"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-05-13</date>
                 <revdescription>
@@ -559,18 +590,18 @@
                 <para> The Rackspace Cloud Authentication Service
                     serves as the entry point to all Rackspace Cloud
                     APIs and is itself a ReSTful web service. </para>
-                <para> To access the Authentication Service, you must
-                    know whether your account is US-based or UK-based: </para>
+                <para> You can use either of the following endpoints
+                    to access the Authentication Service, regardless
+                    of US or UK identities: </para>
                 <itemizedlist spacing="compact">
                     <listitem>
-                        <para> US-based accounts authenticate through
-                                <link xlink:href="&ENDPOINT-US-20;"
-                                >&ENDPOINT-US-20;</link>. </para>
+                        <para><link xlink:href="&ENDPOINT-US-20;"
+                                >&ENDPOINT-US-20;</link>
+                        </para>
                     </listitem>
                     <listitem>
-                        <para> UK-based accounts authenticate through
-                                <link xlink:href="&ENDPOINT-UK-20;"
-                                >&ENDPOINT-UK-20;</link>. </para>
+                        <para><link xlink:href="&ENDPOINT-UK-20;"
+                                >&ENDPOINT-UK-20;</link></para>
                     </listitem>
                 </itemizedlist>
                 <para> Your account may be based in either the US or
@@ -591,9 +622,6 @@
                             is a UK-based account. </para>
                     </listitem>
                 </itemizedlist>
-                <para> If you are unsure how your account was created,
-                    use the Rackspace contact information at either
-                    site to ask for help. </para>
             </section>
             <section xml:id="Retrieving_Auth_Token">
                 <title>Retrieving the Authentication Token</title>
@@ -946,6 +974,11 @@
                             <td colspan="2">London (LON)</td>
                             <td colspan="5">
                                 <code>https://lon.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
+                        </tr>
+                        <tr align="left" >
+                            <td colspan="2">Sydney (SYD)</td>
+                            <td colspan="5">
+                                <code>https://syd.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                         </tr>
                     </tbody>
                 </table>
@@ -1420,10 +1453,11 @@
                 that type that can be returned.
                     <emphasis>Marker</emphasis> is the ID of the last
                 item in the previous list returned. The ID is the UUID
-                in the case of instances, and the name in the case of
-                databases and users. For example, a query could
-                request the next 10 instances after the instance
-                "1234" as follows:
+                in the case of instances, the name in the case of
+                databases, and
+                    "<emphasis>name</emphasis>@<emphasis>host</emphasis>"
+                for users. For example, a query could request the next
+                10 instances after the instance "1234" as follows:
                     <code>?limit=10&amp;marker=1234</code>. Items are
                 displayed sorted by ID. </para>
             <para>Pagination applies only to the calls listed in the
@@ -1900,6 +1934,19 @@
                     username contain the character '@', the hostname
                     must be specified explicitly, as in
                     user@name@%.</para>
+                <warning>
+                    <para>Due to a limitation of the routing
+                        middleware, databases and users with periods
+                        (.) in their name can be parsed incorrectly in
+                        GET, DELETE, and PUT calls, where such a name
+                        is the last section of the request URL. In
+                        these cases, the periods can be escaped by
+                        url-encoding them as "%2E", so "some.database"
+                        would become "some%2Edatabase". Note that
+                        CREATE calls are not affected as these names
+                        are in JSON or XML data, and not part of the
+                        request's URL.</para>
+                </warning>
             </section>
         </section>
     </chapter>
