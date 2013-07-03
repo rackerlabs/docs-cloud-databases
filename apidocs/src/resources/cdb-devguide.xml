@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-06-17</pubdate>
+        <pubdate>2013-07-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,23 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-07-09</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information for restore. See
+                                   <xref
+                                   linkend="POST_createInstance__version___accountId__instances_"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <xref linkend="backups"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-06-17</date>
                 <revdescription>
@@ -2075,9 +2092,72 @@
                 </wadl:resource>
             </wadl:resources>
         </section>
+        
+        <section xml:id="backups">
+            <title>Backups</title>
+            <para>This section describes backups of database instances.</para>
+            <para>The following table lists the possible statuses
+                returned by the Backup API:</para>
+            <table rules="all">
+                <caption>Backup Statuses</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Status</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">NEW</td>
+                        <td colspan="3"><para>A new backup task was created.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">RUNNING</td>
+                        <td colspan="3"><para>The backup task is currently running.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">COMPLETED</td>
+                        <td colspan="3"><para>The backup task was successfully completed.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">FAILED</td>
+                        <td colspan="3"><para>The backup task failed to complete successfully.</para></td>
+                    </tr>
+                </tbody>
+            </table> 
+            <para>The Backup API supports the following operations:</para>
+            
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../../xsd/dbaas.wadl#backups">
+                    <wadl:method href="createBackup"/>
+                    <wadl:method href="getBackups"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#backupId">
+                    <wadl:method href="getBackupById"/>
+                    <wadl:method href="deleteBackup"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#backupsB">
+                    <wadl:method href="getBackupsByInstance"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#instances">
+                    <wadl:method href="restoreBackup"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+
+            
+        
     </chapter>
     <glossary>
         <title>Glossary</title>
+        <glossentry xml:id="Backup-d1e013">
+            <glossterm>backup</glossterm>
+            <glossdef>
+                <para>A copy of computer data for a database instance that can be used to restore the original instance if necessary.</para>
+            </glossdef>
+        </glossentry>
+        
         <glossentry xml:id="Database-d1e017">
             <glossterm>database</glossterm>
             <glossdef>

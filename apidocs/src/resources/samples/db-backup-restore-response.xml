@@ -1,0 +1,21 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 718
+Date: Thu, 27 Jun 2013 19:47:56 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+<instance created="2013-06-27 19:47:56.766831" id="d1470cdc-9319-4430-a0e4-20cd8b1e65af" name="xml_restore" status="BUILD" updated="2013-06-27 19:47:56.766968" xmlns="http://docs.openstack.org/database/api/v1.0">
+    <links>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d1470cdc-9319-4430-a0e4-20cd8b1e65af" rel="self"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/instances/d1470cdc-9319-4430-a0e4-20cd8b1e65af" rel="bookmark"/>
+    </links>
+    <volume size="2"/>
+    <flavor id="1">
+        <links>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
+        </links>
+    </flavor>
+</instance>
+

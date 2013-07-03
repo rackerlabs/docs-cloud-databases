@@ -68,6 +68,17 @@
           <resource id="hwInfo" path="hwinfo">
             <method href="#getHwInfo" />
           </resource>
+          <resource id="monitoring" path="monitoring">
+            <method href="#getMonitoringStatus" />
+            <resource id="agentAction" path="action">
+              <method href="#agentInstall" />
+              <method href="#agentRemove" />
+              <method href="#agentStart" />
+              <method href="#agentRestart" />
+              <method href="#agentStop" />
+              
+            </resource>
+          </resource>
         </resource>
       </resource>
       <resource id="storage" path="storage">
@@ -897,5 +908,282 @@
     &commonFaults;
     &getFaults;
   </method>
+  
+  <method name="GET" id="getMonitoringStatus">
+    <wadl:doc xml:lang="EN" title="Get Monitoring Status" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Retrieve the status of the Monitoring Agent on the specified instance.
+      </para>
+      <para>This operation retrieves the status of the Monitoring Agent on the customer's instance.</para>
+      <para>The following table lists the possible monitoring statuses:</para>
+      <table rules="all">
+        <caption>Monitoring Statuses</caption>
+        <thead>
+          <tr>
+            <td colspan="1">Status String</td>
+            <td colspan="1">Status Code</td>
+            <td colspan="3">Description</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="1">ACTIVE</td>
+            <td colspan="1">1</td>
+            <td colspan="3">Monitoring Agent is running.</td>
+          </tr>
+          <tr>
+            <td colspan="1">REMOVED</td>
+            <td colspan="1">2</td>
+            <td colspan="3">Monitoring Agent is not installed.</td>
+          </tr>
+          <tr>
+            <td colspan="1">SHUTDOWN</td>
+            <td colspan="1">3</td>
+            <td colspan="3">Monitoring Agent is not running.</td>
+          </tr>
+          <tr>
+            <td colspan="1">CRASHED</td>
+            <td colspan="1">4</td>
+            <td colspan="3">Monitoring Agent died after starting.</td>
+          </tr>
+          <tr>
+            <td colspan="1">BUILDING</td>
+            <td colspan="1">5</td>
+            <td colspan="3">Monitoring Agent is being installed or prepared.</td>
+          </tr>
+          <tr>
+            <td colspan="1">UNKNOWN</td>
+            <td colspan="1">6</td>
+            <td colspan="3">Monitoring Agent is unresponsive.</td>
+          </tr>
+          <tr>
+            <td colspan="1">NEW</td>
+            <td colspan="1">7</td>
+            <td colspan="3">Monitoring Agent is initialized.</td>
+          </tr>
+        </tbody>
+      </table>
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Get Monitoring Status requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="200">
+      <representation mediaType="application/xml" element="dbaas:DiagnosticsDetails">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Get Monitoring Status responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <!-- Monitoring Agent Actions -->
+  <method name="POST" id="agentInstall">
+    <wadl:doc xml:lang="EN" title="Install or Update Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Install or update the Monitoring Agent on the specified instance.</para>
+      <para>This operation installs or updates the Monitoring Agent on the specified instance.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/xml" element="dbaas:Install">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Install or Update Monitoring Agent requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Install">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Install or Update Monitoring Agent responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
+  
+  <method name="POST" id="agentRemove">
+    <wadl:doc xml:lang="EN" title="Remove Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Remove and uninstall the Monitoring Agent on the specified instance.</para>
+      <para>This operation removes and uninstalls the Monitoring Agent on the specified instance.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/xml" element="dbaas:Remove">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Remove Monitoring Agent requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Remove">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Remove Monitoring Agent responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
+  
+  <method name="POST" id="agentStart">
+    <wadl:doc xml:lang="EN" title="Start Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Start the Monitoring Agent on the specified instance.</para>
+      <para>This operation starts the Monitoring Agent on the specified instance.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/xml" element="dbaas:Start">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Start Monitoring Agent requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Start">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Start Monitoring Agent responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
+  
+  <method name="POST" id="agentRestart">
+    <wadl:doc xml:lang="EN" title="Restart Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Restart the Monitoring Agent on the specified instance.</para>
+      <para>This operation restarts the Monitoring Agent on the specified instance.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/xml" element="dbaas:Restart">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restart Monitoring Agent requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Restart">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restart Monitoring Agent responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
+  
+  <method name="POST" id="agentStop">
+    <wadl:doc xml:lang="EN" title="Stop Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Stop the Monitoring Agent on the specified instance.</para>
+      <para>This operation stops the Monitoring Agent on the specified instance.</para>
+      <para>This operation returns a 202 Accepted response.</para>
+    </wadl:doc>
+    <request>
+      
+      <representation mediaType="application/xml" element="dbaas:Stop">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Stop Monitoring Agent requests:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json" element="dbaas:Stop">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/xml">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following examples show the Stop Monitoring Agent responses:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+        </doc>
+      </representation>
+      <representation mediaType="application/json">
+        <doc>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+    &postPutFaults;
+  </method>
+  
   
 </application>

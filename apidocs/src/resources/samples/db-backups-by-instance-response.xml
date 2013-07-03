@@ -1,0 +1,36 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 687
+Date: Thu, 27 Jun 2013 19:47:56 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+<backups xmlns="http://docs.openstack.org/database/api/v1.0">
+    <backup>
+        <instance_id>
+            3f19e2e5-2135-4fd0-bd7b-4f3da4c6bb36
+        </instance_id>
+        <status>
+            COMPLETED
+        </status>
+        <updated>
+            2013-06-27 19:47:56.080763
+        </updated>
+        <locationRef>
+            http://localhost/path/to/backup
+        </locationRef>
+        <name>
+            snapshot
+        </name>
+        <created>
+            2013-06-27 19:47:55.970467
+        </created>
+        <id>
+            d2717413-cd66-495e-9ff1-d4eea261ffe4
+        </id>
+        <description>
+            My Backup
+        </description>
+    </backup>
+</backups>
+

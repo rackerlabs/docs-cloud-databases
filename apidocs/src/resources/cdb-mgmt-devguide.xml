@@ -59,7 +59,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-03-21</pubdate>
+        <pubdate>2013-07-16</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -74,6 +74,18 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-07-16</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added X <xref
+                                   linkend="POST_migrateInstance_mgmt_instances__instanceId__action_"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-03-21</date>
                 <revdescription>
@@ -1324,6 +1336,34 @@
                     <wadl:method href="getusagebytenant"/>
                 </wadl:resource>
             </wadl:resources>
+        </section>
+        <section xml:id="Monitoring">
+            <title>Monitoring Information</title>
+            <para>This section describes the operations that are
+                supported for monitoring.</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="../../../xsd/management.wadl#monitoring">
+                    <wadl:method href="getMonitoringStatus"/>
+                </wadl:resource>            
+            </wadl:resources>
+            <section xml:id="Monitoring_Actions">
+                <title>Monitoring Actions</title>
+                <para>This section describes the actions that are
+                    supported for monitoring.</para>
+                <wadl:resources
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource
+                        href="../../../xsd/management.wadl#agentAction">
+                        <wadl:method href="agentInstall"/>
+                        <wadl:method href="agentRemove"/>
+                        <wadl:method href="agentStart"/>
+                        <wadl:method href="agentRestart"/>
+                        <wadl:method href="agentStop"/>
+                    </wadl:resource>            
+                </wadl:resources>
+            </section>
         </section>  
            
     </chapter>

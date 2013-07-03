@@ -1,0 +1,42 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 585
+Date: Thu, 27 Jun 2013 19:47:56 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "instance": {
+        "created": "2013-06-27T19:47:56", 
+        "flavor": {
+            "id": "1", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                    "rel": "bookmark"
+                }
+            ]
+        }, 
+        "id": "84038d27-b33c-4af9-8aa7-1b0eec6fed0a", 
+        "links": [
+            {
+                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/84038d27-b33c-4af9-8aa7-1b0eec6fed0a", 
+                "rel": "self"
+            }, 
+            {
+                "href": "https://ord.databases.api.rackspacecloud.com/instances/84038d27-b33c-4af9-8aa7-1b0eec6fed0a", 
+                "rel": "bookmark"
+            }
+        ], 
+        "name": "json_restore", 
+        "status": "BUILD", 
+        "updated": "2013-06-27T19:47:56", 
+        "volume": {
+            "size": 2
+        }
+    }
+}

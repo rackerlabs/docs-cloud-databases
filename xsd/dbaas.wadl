@@ -31,6 +31,7 @@
                 <resource id="instances" path="instances">
                     <method href="#createInstance" />
                     <method href="#getInstance" />
+                    <method href="#restoreBackup" />
                     
                     <resource id="instanceId" path="{instanceId}">
                         <param name="instanceId" style="template"
@@ -61,12 +62,10 @@
                                 <param name="name" style="template"
                                     type="xsd:string" >
                                     <doc>The name for the specified user. 
-                                        Refer to  
-                                        
+                                        Refer to                             
                                         <link xmlns="http://docbook.org/ns/docbook"
                                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                                                 >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html</link>
-                                        
                                              for details about restricting the name to a particular host. 
                                              Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP)</doc></param>
                                 <method href="#deleteUser" />
@@ -87,6 +86,9 @@
                             <method href="#createRoot" />
                             <method href="#isRootEnabled" />
                         </resource>
+                        <resource id="backupsB" path="backups">
+                            <method href="#getBackupsByInstance" />
+                        </resource>
                     </resource>
                 </resource>
                 <resource id="flavors" path="flavors">
@@ -98,6 +100,19 @@
                         <method href="#getFlavorById" />
                     </resource>
                 </resource>
+                <resource id="backups" path="backups">
+                    <method href="#createBackup" />
+                    <method href="#getBackups" />
+                    <resource id="backupId" path="{backupId}">
+                        <param name="backupId" style="template" type="xsd:string" >
+                            <doc>The backup ID for the specified backup.</doc></param>
+                        <method href="#getBackupById" />
+                        <method href="#deleteBackup" />
+                    </resource>
+                    
+          
+                </resource>
+                
             </resource>
         </resource>
     </resources>
@@ -264,16 +279,38 @@
                         Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                     <td colspan="1">No</td>
                 </tr>
+                <tr>
+                    <td colspan="1" rowspan="1">Restore</td>
+                    <td colspan="1">restorePoint</td>
+                    <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
+                        <note><title>Notes</title><itemizedlist spacing="compact">
+                            <listitem>
+                                <para>You need to create a new database instance, 
+                                    by specifying the restorePoint attribute described in the table above, before performing a restore operation.</para>
+                            </listitem>
+                            <listitem>
+                                <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases.</para>
+                            </listitem>
+                            <listitem>
+                                <para>You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up.</para>
+                            </listitem>
+                            <listitem>
+                                <para>Refer to the Create Database Instance Restore Request and Response examples for the required xml/json format and details.</para>
+                            </listitem>
+                        </itemizedlist></note></td>
+                    <td colspan="1">No</td>
+                </tr>
             </tbody>
         </table>
-
-      <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+        
+        <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+        
     </wadl:doc>
         <request>
             <representation mediaType="application/xml"
                 element="dbaas:DatabaseInstance">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance requests and responses:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance requests:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.xml"/>
                 </doc>
             </representation>
@@ -282,10 +319,22 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.json"/>
                 </doc>
             </representation>
+            <representation mediaType="application/xml"  element="dbaas:DatabaseInstance">
+                <doc title="Create Database Instance Restore Request: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="Create Database Instance Restore Request: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
+                </doc>
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/xml" element="dbaas:DatabaseInstance" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance responses:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-response.xml"/>
                 </doc>
             </representation>
@@ -297,6 +346,19 @@
                         associated with resources. A <code>self</code> link contains a <emphasis>versioned</emphasis> link to the resource. These
                         links should be used in cases where the link will be followed immediately. A <code>bookmark</code>
                         link provides a permanent link to a resource that is appropriate for long term storage.</para>
+                </doc>
+            </representation>
+            <representation mediaType="application/xml"
+                element="dbaas:DatabaseInstance" >
+                <doc title="Create Database Instance Restore Response: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc title="Create Database Instance Restore Response: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -831,7 +893,7 @@
                     </tr>
                     <tr>
                         <td colspan="1">(database) name</td>
-                        <td colspan="3"><para>Name of the database that the user can access. One or more database names must be specified.</para></td>
+                        <td colspan="3"><para>Name of the database that the user can access.</para></td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -1499,6 +1561,330 @@
         </response>
     &commonFaults;
     &getFaults;
+    </method>
+    
+    <method name="POST" id="createBackup">
+        <wadl:doc xml:lang="EN" title="Create Backup" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new <glossterm>backup</glossterm> for a database instance.</para>
+            <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified database instance. 
+                This call requires the user to specify an instance ID to backup and a name for the backup. </para>
+            <para>The following table lists the required and optional attributes for Create Backup:</para>
+            
+           <table rules="all">
+               <caption>Required and Optional Attributes for Create Backup</caption>
+               <thead>
+                   <tr>
+                       <td colspan="1">Name</td>
+                       <td colspan="3">Description</td>
+                       <td colspan="1">Required</td>
+                   </tr>
+               </thead>
+               <tbody>
+                   <tr>
+                       <td colspan="1">name</td>
+                       <td colspan="3"><para>Specifies the short name of the backup.</para></td>
+                       <td colspan="1">Yes</td>
+                   </tr>
+                   <tr>
+                       <td colspan="1">instance</td>
+                       <td colspan="3"><para>Specifies the database instanceId to backup.</para></td>
+                       <td colspan="1">Yes</td>
+                   </tr>
+                   <tr>
+                       <td colspan="1">description</td>
+                       <td colspan="3"><para>Specifies a long description of the backup.</para></td>
+                       <td colspan="1">No</td>
+                   </tr>
+               </tbody>
+           </table> 
+            
+            <table rules="all">
+                <caption>Length Restrictions for Backup <code>name</code> Parameter</caption>
+                <thead>
+                    <tr>
+                        <td colspan="3">Restriction</td>
+                        <td colspan="1">Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3"><para>name maximum length</para></td>
+                        <td colspan="1">64</td>
+                    </tr>
+                </tbody>
+            </table> 
+            <note><title>Notes</title>
+                <itemizedlist>
+                    <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
+                        InnoDB Databases will continue to allow all operations.</para>
+                    </listitem>
+                    <listitem><para>During backup the files will be streamed to your Cloud Files account. 
+                        The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it. 
+                        In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. 
+                        You will be charged the normal rate for storage of these files. 
+                        You can delete old backups through the API. Refer to <xref
+                            linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
+                        /> for details.</para>
+                    </listitem>
+                    <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
+                        there may be some files that were placed in the container. 
+                        You should use the API to delete the backup to remove any leftover files. Refer to <xref
+                            linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
+                        /> for details.</para>
+                    </listitem>
+                </itemizedlist></note>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" element="dbaas:Backup">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Backup requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Backup responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Flavor" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getBackups">
+        <wadl:doc xml:lang="EN" title="List Backups" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all backups for all database instances.</para>
+            <para>This operation returns a list of all backups for all database instances.</para>
+            <para>The following table lists the required and optional attributes for List Backups:</para>         
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getBackupById">
+        <wadl:doc xml:lang="EN" title="List Backup By ID" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists details about a specified backup.</para>
+            <para>This operation lists the details for a specified backup.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backup By ID requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backup By ID responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+
+    <method name="GET" id="getBackupsByInstance">
+        <wadl:doc xml:lang="EN" title="List Backups for Instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all backups for a specified instance.</para>
+            <para>This operation lists all backups for a specified instance.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups for Instance requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml"
+                element="dbaas:RootEnabled" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups for Instance responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="POST" id="restoreBackup">
+        <wadl:doc xml:lang="EN" title="Restore Backup" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new database instance from a <glossterm>backup</glossterm>.</para>
+            <para>This operation restores a backup onto a new database instance.</para>
+            
+            <para>The following table lists the required and optional attributes for RestorePoint:</para>
+            
+            <table rules="all">
+                <caption>Required and Optional Attributes for RestorePoint</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">backupRef</td>
+                        <td colspan="3"><para>Specifies the id of the backup to restore.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table> 
+            
+            <note><title>Notes</title><itemizedlist>
+                <listitem>
+                    <para>Refer to <xref
+                        linkend="POST_createInstance__version___accountId__instances_"/> 
+                        for details on other options available during the creation of a new instance.</para>
+                </listitem>
+                <listitem>
+                    <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases. 
+                        You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up. </para>
+                </listitem>
+            </itemizedlist></note>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" element="dbaas:DatabaseInstance">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restore Backup requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restore Backup responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+
+    <method name="DELETE" id="deleteBackup">
+        <wadl:doc xml:lang="EN" title="Delete Backup"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes the specified backup.</para>
+            <para>This operation deletes the specified backup.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Backup requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="202" />
+        &commonFaults;
+        <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
+            <representation mediaType="application/xml" element="dbaas:unprocessableEntity">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Backup responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &getFaults;
     </method>
 
 </application>
