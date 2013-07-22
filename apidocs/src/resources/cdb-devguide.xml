@@ -82,6 +82,19 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
+                            <para>Added information for Cloud Files
+                                regarding pricing and SLA for storing
+                                backups. See <xref
+                                   linkend="Pricing_SLA-d1e1362"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated information for database
+                                instance status. See <xref
+                                   linkend="database_instance_status"
+                                />.</para>
+                        </listitem>
+                        <listitem>
                             <para>Added information for restore. See
                                    <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
@@ -90,6 +103,15 @@
                         <listitem>
                             <para>Added <xref linkend="backups"
                                 />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added Backup API calls to <xref
+                                   linkend="synchro_vs_async_faults"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Removed note about using mysqldump
+                                in <xref linkend="overview"/>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -416,12 +438,6 @@
             maintain and/or update MySQL. Interactions with Cloud
             Databases occur programmatically via the Cloud Databases
             API as described in this developer guide.</para>
-        <note>
-            <para>Rackspace recommends that Cloud Databases users back
-                up their data using <emphasis role="bold"
-                    >mysqldump</emphasis> until backups are supported
-                in Cloud Databases.</para>
-        </note>
         <para>The following figure shows an
             overview of Cloud Databases Infrastructure: <informalfigure>
                 <mediaobject>
@@ -535,6 +551,18 @@
                 Databases is available at <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_databases"
                     >http://www.rackspace.com/cloud/legal/sla/#cloud_databases</link>.</para>
+            <para>If you elect to use the Backups API in Cloud
+                Databases, your backups are stored using Cloud Files
+                and your use through the API will be billed as per the
+                pricing schedule at <link
+                    xlink:href="http://www.rackspace.com/cloud/public/files/pricing/"
+                    >http://www.rackspace.com/cloud/public/files/pricing/</link>.
+                See <xref linkend="backups"/> for details about the
+                Backup API. </para>
+            <para>The Service Level Agreement (SLA) for Cloud Files is
+                available at <link
+                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_files"
+                    >http://www.rackspace.com/cloud/legal/sla/#cloud_files</link>.</para>
         </section>
     </chapter>
     
@@ -1761,6 +1789,12 @@
                             <para>List Databases</para>
                         </listitem>
                         <listitem>
+                            <para>List Backups</para>
+                        </listitem>
+                        <listitem>
+                            <para>List Backups by Instance</para>
+                        </listitem>
+                        <listitem>
                             <para>Enable Root User</para>
                         </listitem>
                         <listitem>
@@ -1808,6 +1842,12 @@
                             <para>Delete User</para>
                         </listitem>
                         <listitem>
+                            <para>Create Backup</para>
+                        </listitem>
+                        <listitem>
+                            <para>Delete Backup</para>
+                        </listitem>
+                        <listitem>
                             <para>Resize Volume</para>
                         </listitem>
                         <listitem>
@@ -1840,6 +1880,10 @@
                 <listitem>
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
+                </listitem>
+                <listitem>
+                    <para>BACKUP &ndash; The database instance is
+                        currently running a backup process.</para>
                 </listitem>
                 <listitem>
                     <para>BLOCKED &ndash; The database instance is

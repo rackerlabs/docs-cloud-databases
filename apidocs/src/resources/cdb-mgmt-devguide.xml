@@ -79,8 +79,13 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added X <xref
-                                   linkend="POST_migrateInstance_mgmt_instances__instanceId__action_"
+                            <para>Added <xref linkend="Monitoring"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added new BACKUP status for database
+                                instances. Refer to <xref
+                                   linkend="database_instance_status"
                                 />.</para>
                         </listitem>
                     </itemizedlist>
@@ -1195,6 +1200,10 @@
                 <listitem>
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
+                </listitem>
+                <listitem>
+                    <para>BACKUP &ndash; The database instance is
+                        currently running a backup process.</para>
                 </listitem>
                 <listitem>
                     <para>BLOCKED &ndash; The database instance is

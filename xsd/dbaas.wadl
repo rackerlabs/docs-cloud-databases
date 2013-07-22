@@ -1618,10 +1618,21 @@
                     <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
                         InnoDB Databases will continue to allow all operations.</para>
                     </listitem>
+                    <listitem><para>While the instance is being backed up you will not be able to add/delete databases, add/delete users, or delete/stop/reboot the instance.</para>
+                    </listitem>
+                    <listitem><para>Users can only run one backup at a time. Duplicate requests will receive a 422 error.</para>
+                    </listitem>
+                    <listitem><para>Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to <xref
+                        linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
+                    /> for details.</para>
+                    </listitem>
                     <listitem><para>During backup the files will be streamed to your Cloud Files account. 
                         The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it. 
                         In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. 
-                        You will be charged the normal rate for storage of these files. 
+                        You will be charged the normal Cloud Files rate for storage of these files. For pricing details, refer to <link xmlns="http://docbook.org/ns/docbook"
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
+                            >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
+                        No additional Cloud Databases fee applies for creating backups.
                         You can delete old backups through the API. Refer to <xref
                             linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
                         /> for details.</para>
