@@ -968,12 +968,12 @@
       <representation mediaType="application/xml">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Get Monitoring Status requests:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-request.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-status-request.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-request.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-status-request.json"/>
         </doc>
       </representation>
     </request>
@@ -981,12 +981,12 @@
       <representation mediaType="application/xml" element="dbaas:DiagnosticsDetails">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Get Monitoring Status responses:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-response.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-status-response.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-response.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-status-response.json"/>
         </doc>
       </representation>
     </response>
@@ -1006,12 +1006,12 @@
       <representation mediaType="application/xml" element="dbaas:Install">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Install or Update Monitoring Agent requests:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-install-request.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json" element="dbaas:Install">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-install-request.json"/>
         </doc>
       </representation>
     </request>
@@ -1019,12 +1019,12 @@
       <representation mediaType="application/xml">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Install or Update Monitoring Agent responses:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-install-response.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-install-response.json"/>
         </doc>
       </representation>
     </response>
@@ -1044,12 +1044,12 @@
       <representation mediaType="application/xml" element="dbaas:Remove">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Remove Monitoring Agent requests:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-remove-request.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json" element="dbaas:Remove">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-remove-request.json"/>
         </doc>
       </representation>
     </request>
@@ -1057,12 +1057,12 @@
       <representation mediaType="application/xml">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Remove Monitoring Agent responses:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-remove-response.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-remove-response.json"/>
         </doc>
       </representation>
     </response>
@@ -1082,12 +1082,12 @@
       <representation mediaType="application/xml" element="dbaas:Start">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Start Monitoring Agent requests:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-start-request.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json" element="dbaas:Start">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-start-request.json"/>
         </doc>
       </representation>
     </request>
@@ -1095,12 +1095,12 @@
       <representation mediaType="application/xml">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Start Monitoring Agent responses:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-start-response.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-start-response.json"/>
         </doc>
       </representation>
     </response>
@@ -1120,12 +1120,12 @@
       <representation mediaType="application/xml" element="dbaas:Restart">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restart Monitoring Agent requests:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-restart-request.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json" element="dbaas:Restart">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-restart-request.json"/>
         </doc>
       </representation>
     </request>
@@ -1133,12 +1133,12 @@
       <representation mediaType="application/xml">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restart Monitoring Agent responses:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-restart-response.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-restart-response.json"/>
         </doc>
       </representation>
     </response>
@@ -1158,12 +1158,12 @@
       <representation mediaType="application/xml" element="dbaas:Stop">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Stop Monitoring Agent requests:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-stop-request.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json" element="dbaas:Stop">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-stop-request.json"/>
         </doc>
       </representation>
     </request>
@@ -1171,12 +1171,12 @@
       <representation mediaType="application/xml">
         <doc>
           <para xmlns="http://docbook.org/ns/docbook">The following examples show the Stop Monitoring Agent responses:</para>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.xml"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-stop-response.xml"/>
         </doc>
       </representation>
       <representation mediaType="application/json">
         <doc>
-          <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-stop-response.json"/>
         </doc>
       </representation>
     </response>

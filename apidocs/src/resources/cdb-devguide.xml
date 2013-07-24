@@ -1814,15 +1814,15 @@
                     in the background while an instance, database, or
                     user is being built or an instance is executing an
                     action. When an asynchronous fault occurs, the
-                    system places the instance, database, or user in
-                    an ERROR state and embeds the fault in the
-                    offending instance, database, or user. When an
-                    asynchronous fault occurs, the fault contains an
-                    HTTP error response code, a human readable
-                    message, and optional details about the error. The
-                    following Database API calls are asynchronous and
-                    may produce asynchronous faults:<itemizedlist
-                        spacing="compact">
+                    system places the instance, database, user, or
+                    backup in an ERROR state and embeds the fault in
+                    the offending instance, database, user, or backup.
+                    When an asynchronous fault occurs, the fault
+                    contains an HTTP error response code, a human
+                    readable message, and optional details about the
+                    error. The following Database API calls are
+                    asynchronous and may produce asynchronous
+                        faults:<itemizedlist spacing="compact">
                         <listitem>
                             <para>Create Instance</para>
                         </listitem>

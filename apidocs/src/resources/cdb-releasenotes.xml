@@ -61,7 +61,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-07-23</pubdate>
+	<pubdate>2013-07-24</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,7 +75,7 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2013-07-23</date>
+				<date>2013-07-24</date>
 				<revdescription>
 					<para>Updated for v1.0.26 Infrastructure
 						Maintenance.</para>
@@ -298,9 +298,14 @@
 		<?rax revhistory?>
 	</chapter>
 	<chapter xml:id="cdbv1.0.26_Infrastructure_Maint">
-		<title>v1.0.26 Infrastructure Maintenance, July 23, 2013</title>
+		<title>v1.0.26 Infrastructure Maintenance, July 24, 2013</title>
 		<para>This is not a code release, but rather infrastructure
 			maintenance for the v1.0.26 release.</para>
+		<note>
+			<para>This maintenance does not apply to the ORD
+				datacenter, which will be performed at a later
+				date.</para>
+		</note>
 		<itemizedlist spacing="compact">
 			<title>This maintenance includes:</title>
 			<listitem>
