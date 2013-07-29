@@ -61,7 +61,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-07-24</pubdate>
+	<pubdate>2013-07-29</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -74,6 +74,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2013-07-29</date>
+				<revdescription>
+					<para>Updated for v1.0.27.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-07-24</date>
 				<revdescription>
@@ -296,6 +302,101 @@
 			previous versions. The most recent changes are described
 			in the table below:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="cdbv1.0.29">
+		<title>v1.0.27, July 29, 2013</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="writeronly">
+				<para>Added support for backups. For details refer to <link
+					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Added infrastructure support for RBAC.</para>
+			</listitem>
+			<listitem>
+				<para>Added new capability to monitor Cloud Databases instances.
+					For details refer to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html</link>.</para>
+				<para security="internal">For details about the Monitoring Mgmt
+					API refer to <link
+						xlink:href="http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html</link>.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+					xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/commit/fdbe9239bfd906409a5f7f7ba36a1c7b9bbd04f8"
+					>fdbe9239bfd906409a5f7f7ba36a1c7b9bbd04f8: </link>Moved Rackspace DNS client
+					for Cloud Databases to internal Cloud Databases
+					repository.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Bug Fixes</title>
+			<listitem security="internal">
+				<para><link security="internal"
+					xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:622814"
+						>D-12355: </link>Fixed revert resize method to
+					ensure correct MySQL configuration is used when
+					revert occurs.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+					xlink:href="https://bugs.launchpad.net/trove/+bug/1181261"
+						>1181261: </link>Updated return codes for
+					error handling consistency.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para> Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Support for Cloud Databases is available for US, UK, and
+					SYD customers 24x7x365 via phone, chat, or you may
+					also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Please visit our <link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.26_Infrastructure_Maint">
 		<title>v1.0.26 Infrastructure Maintenance, July 24, 2013</title>
