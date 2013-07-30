@@ -61,7 +61,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-07-29</pubdate>
+	<pubdate>2013-07-30</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -74,6 +74,13 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2013-07-30</date>
+				<revdescription>
+					<para>Added note about monitoring for
+						v1.0.27.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-07-29</date>
 				<revdescription>
@@ -333,6 +340,18 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml"
 						>http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html</link>.</para>
+				<note>
+					<para>The monitoring capability only applies to
+						instances that were created after the v1.0.27
+						release on July 29, 2013. It does not apply to
+						instances that were created before this
+						release. At a later date Cloud Databases will
+						remediate instances that were created prior to
+						the v1.0.27 release on July 29, 2013 to
+						support monitoring and will communicate this
+						in the Release Notes when it is
+						supported.</para>
+				</note>
 			</listitem>
 			<listitem security="internal">
 				<para><link security="internal"

@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-07-29</pubdate>
+        <pubdate>2013-08-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,48 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-08-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information for Cloud Files
+                                regarding pricing and SLA for storing
+                                backups. See <xref
+                                   linkend="Pricing_SLA-d1e1362"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated information for database
+                                instance status. See <xref
+                                   linkend="database_instance_status"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added note about which instances are
+                                not supported for monitoring. Refer to
+                                   <xref
+                                   linkend="Monitoring_Cloud_Databases-d1e4673"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for restore. See
+                                   <xref
+                                   linkend="POST_createInstance__version___accountId__instances_"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <xref linkend="backups"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added Backup API calls to <xref
+                                   linkend="synchro_vs_async_faults"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-07-29</date>
                 <revdescription>
@@ -443,12 +485,6 @@
             maintain and/or update MySQL. Interactions with Cloud
             Databases occur programmatically via the Cloud Databases
             API as described in this developer guide.</para>
-        <note>
-            <para>Rackspace recommends that Cloud Databases users back
-                up their data using <emphasis role="bold"
-                    >mysqldump</emphasis> until backups are supported
-                in Cloud Databases.</para>
-        </note>
         <para>The following figure shows an
             overview of Cloud Databases Infrastructure: <informalfigure>
                 <mediaobject>
@@ -1799,10 +1835,10 @@
                         <listitem>
                             <para>List Databases</para>
                         </listitem>
-                        <listitem security="writeronly">
+                        <listitem>
                             <para>List Backups</para>
                         </listitem>
-                        <listitem security="writeronly">
+                        <listitem>
                             <para>List Backups by Instance</para>
                         </listitem>
                         <listitem>
@@ -1825,18 +1861,15 @@
                     in the background while an instance, database, or
                     user is being built or an instance is executing an
                     action. When an asynchronous fault occurs, the
-                    system places the instance, database, or user
-                        <phrase security="writeronly">, or
-                        backup</phrase>in an ERROR state and embeds
-                    the fault in the offending instance, database, or
-                    user <phrase security="writeronly">, or
-                        backup</phrase>. When an asynchronous fault
-                    occurs, the fault contains an HTTP error response
-                    code, a human readable message, and optional
-                    details about the error. The following Database
-                    API calls are asynchronous and may produce
-                    asynchronous faults:<itemizedlist
-                        spacing="compact">
+                    system places the instance, database, user, or
+                    backup in an ERROR state and embeds the fault in
+                    the offending instance, database, user, or backup.
+                    When an asynchronous fault occurs, the fault
+                    contains an HTTP error response code, a human
+                    readable message, and optional details about the
+                    error. The following Database API calls are
+                    asynchronous and may produce asynchronous
+                        faults:<itemizedlist spacing="compact">
                         <listitem>
                             <para>Create Instance</para>
                         </listitem>
@@ -1855,10 +1888,10 @@
                         <listitem>
                             <para>Delete User</para>
                         </listitem>
-                        <listitem security="writeronly">
+                        <listitem>
                             <para>Create Backup</para>
                         </listitem>
-                        <listitem security="writeronly">
+                        <listitem>
                             <para>Delete Backup</para>
                         </listitem>
                         <listitem>
@@ -1895,7 +1928,7 @@
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
                 </listitem>
-                <listitem security="writeronly">
+                <listitem>
                     <para>BACKUP &ndash; The database instance is
                         currently running a backup process.</para>
                 </listitem>
@@ -2030,6 +2063,11 @@
                 users to get more information about their database
                 instances via the monitoring checks that are
                 available.</para>
+            
+            <note><para>The monitoring capability only applies to instances that were created after the v1.0.27 release on July 29, 2013. 
+                It does not apply to instances that were created before this release. 
+                At a later date Cloud Databases will remediate instances that were created prior to the v1.0.27 release 
+                on July 29, 2013 to support monitoring and will communicate this in the Release Notes when it is supported.</para></note>
             <para>There is a 1:1 mapping of Cloud Databases to
                 monitoring entities. The monitoring entity has a field
                 called <code>agent_id</code> that is the same as the
@@ -2336,6 +2374,58 @@
             </wadl:resources>
         </section>
 
+        <section xml:id="backups">
+            <title>Backups</title>
+            <para>This section describes backups of database instances.</para>
+            <para>The following table lists the possible statuses
+                returned by the Backup API:</para>
+            <table rules="all">
+                <caption>Backup Statuses</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Status</td>
+                        <td colspan="3">Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">NEW</td>
+                        <td colspan="3"><para>A new backup task was created.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">RUNNING</td>
+                        <td colspan="3"><para>The backup task is currently running.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">COMPLETED</td>
+                        <td colspan="3"><para>The backup task was successfully completed.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">FAILED</td>
+                        <td colspan="3"><para>The backup task failed to complete successfully.</para></td>
+                    </tr>
+                </tbody>
+            </table> 
+            <para>The Backup API supports the following operations:</para>
+            
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../../xsd/dbaas.wadl#backups">
+                    <wadl:method href="createBackup"/>
+                    <wadl:method href="getBackups"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#backupId">
+                    <wadl:method href="getBackupById"/>
+                    <wadl:method href="deleteBackup"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#backupsB">
+                    <wadl:method href="getBackupsByInstance"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#instances">
+                    <wadl:method href="restoreBackup"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
             
         
     </chapter>
