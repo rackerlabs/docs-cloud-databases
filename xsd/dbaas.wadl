@@ -279,7 +279,7 @@
                         Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                     <td colspan="1">No</td>
                 </tr>
-                <tr>
+                <tr security="writeronly">
                     <td colspan="1" rowspan="1">Restore</td>
                     <td colspan="1">restorePoint</td>
                     <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
@@ -319,17 +319,8 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.json"/>
                 </doc>
             </representation>
-            <representation mediaType="application/xml"  element="dbaas:DatabaseInstance">
-                <doc title="Create Database Instance Restore Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc title="Create Database Instance Restore Request: JSON">
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
-                </doc>
-            </representation>
+            
+            
         </request>
         <response status="200">
             <representation mediaType="application/xml" element="dbaas:DatabaseInstance" >
@@ -348,19 +339,8 @@
                         link provides a permanent link to a resource that is appropriate for long term storage.</para>
                 </doc>
             </representation>
-            <representation mediaType="application/xml"
-                element="dbaas:DatabaseInstance" >
-                <doc title="Create Database Instance Restore Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json"
-                element="dbaas:DatabaseInstance" >
-                <doc title="Create Database Instance Restore Response: JSON">
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
-                </doc>
-            </representation>
+            
+            
         </response>
     &commonFaults;
     &getFaults;

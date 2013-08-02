@@ -59,7 +59,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-07-29</pubdate>
+        <pubdate>2013-08-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -74,6 +74,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-08-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new BACKUP status for database
+                                instances. Refer to <xref
+                                   linkend="database_instance_status"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-07-29</date>
                 <revdescription>
@@ -233,10 +246,6 @@
                 </mediaobject>
             </informalfigure>
         </para>
-        <remark>Writer: need to get architecture diagram for DBaaS.
-            Daniel emailed 11/17 that he would work on this during the
-            Private Beta and have it done for the Public
-            Beta.</remark>
         <para security="writeronly">We welcome feedback, comments, and bug reports at <link
                 xlink:href="http://feedback.rackspacecloud.com"
                 >http://feedback.rackspacecloud.com</link>.</para>
@@ -1201,7 +1210,7 @@
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
                 </listitem>
-                <listitem security="writeronly">
+                <listitem>
                     <para>BACKUP &ndash; The database instance is
                         currently running a backup process.</para>
                 </listitem>

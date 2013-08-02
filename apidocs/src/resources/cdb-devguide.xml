@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-08-01</pubdate>
+        <pubdate>2013-08-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,8 +77,8 @@
         </abstract>
         
         <revhistory>
-            <revision>
-                <date>2013-08-01</date>
+            <revision security="writeronly">
+                <date>2013-08-22</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -95,15 +95,8 @@
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para>Added note about which instances are
-                                not supported for monitoring. Refer to
-                                   <xref
-                                   linkend="Monitoring_Cloud_Databases-d1e4673"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added information for restore. See
-                                   <xref
+                            <para>Added information and examples for
+                                restore. See <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
                                 />.</para>
                         </listitem>
@@ -114,6 +107,20 @@
                         <listitem>
                             <para>Added Backup API calls to <xref
                                    linkend="synchro_vs_async_faults"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-08-02</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note about which instances are
+                                not supported for monitoring. Refer to
+                                   <xref
+                                   linkend="Monitoring_Cloud_Databases-d1e4673"
                                 />.</para>
                         </listitem>
                     </itemizedlist>
@@ -496,8 +503,6 @@
                 </mediaobject>
             </informalfigure>
         </para>
-        <remark>Writer: need to get architecture diagram for DBaaS.
-            Emailed Daniel 5/1/12.</remark>
         <para security="writeronly">We welcome feedback, comments, and bug reports at <link
                 xlink:href="http://feedback.rackspacecloud.com"
                 >http://feedback.rackspacecloud.com</link>.</para>
@@ -1835,10 +1840,10 @@
                         <listitem>
                             <para>List Databases</para>
                         </listitem>
-                        <listitem>
+                        <listitem security="writeronly">
                             <para>List Backups</para>
                         </listitem>
-                        <listitem>
+                        <listitem security="writeronly">
                             <para>List Backups by Instance</para>
                         </listitem>
                         <listitem>
@@ -1861,15 +1866,18 @@
                     in the background while an instance, database, or
                     user is being built or an instance is executing an
                     action. When an asynchronous fault occurs, the
-                    system places the instance, database, user, or
-                    backup in an ERROR state and embeds the fault in
-                    the offending instance, database, user, or backup.
-                    When an asynchronous fault occurs, the fault
-                    contains an HTTP error response code, a human
-                    readable message, and optional details about the
-                    error. The following Database API calls are
-                    asynchronous and may produce asynchronous
-                        faults:<itemizedlist spacing="compact">
+                    system places the instance, database, or
+                        user<phrase security="writeronly">, or
+                        backup</phrase> in an ERROR state and embeds
+                    the fault in the offending instance, database, or
+                        user<phrase security="writeronly">, or
+                        backup</phrase>. When an asynchronous fault
+                    occurs, the fault contains an HTTP error response
+                    code, a human readable message, and optional
+                    details about the error. The following Database
+                    API calls are asynchronous and may produce
+                    asynchronous faults:<itemizedlist
+                        spacing="compact">
                         <listitem>
                             <para>Create Instance</para>
                         </listitem>
@@ -1888,10 +1896,10 @@
                         <listitem>
                             <para>Delete User</para>
                         </listitem>
-                        <listitem>
+                        <listitem security="writeronly">
                             <para>Create Backup</para>
                         </listitem>
-                        <listitem>
+                        <listitem security="writeronly">
                             <para>Delete Backup</para>
                         </listitem>
                         <listitem>
@@ -1928,7 +1936,7 @@
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
                 </listitem>
-                <listitem>
+                <listitem security="writeronly">
                     <para>BACKUP &ndash; The database instance is
                         currently running a backup process.</para>
                 </listitem>
@@ -2374,7 +2382,7 @@
             </wadl:resources>
         </section>
 
-        <section xml:id="backups">
+        <section xml:id="backups" security="writeronly">
             <title>Backups</title>
             <para>This section describes backups of database instances.</para>
             <para>The following table lists the possible statuses
