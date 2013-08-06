@@ -1,0 +1,6 @@
+HTTP/1.1 202 Accepted
+Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 0
+Date: Tue, 06 Aug 2013 16:24:59 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)

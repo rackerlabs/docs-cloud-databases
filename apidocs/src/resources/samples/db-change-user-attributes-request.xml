@@ -1,0 +1,9 @@
+PUT /v1.0/1234/instances/f791bfed-877c-40ac-9685-14a142807651/users/dbuser1 HTTP/1.1
+User-Agent: python-troveclient
+Host: ord.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/xml
+Content-Type: application/xml
+
+<user xmlns="http://docs.openstack.org/database/api/v1.0" password="new_password" name="new_username"/>
+

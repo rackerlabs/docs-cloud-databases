@@ -1,0 +1,13 @@
+PUT /v1.0/1234/instances/8ed28d4b-9b70-46cc-97cd-2e4bf4b17b73/users/dbuser1 HTTP/1.1
+User-Agent: python-troveclient
+Host: ord.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/json
+Content-Type: application/json
+
+{
+    "user": {
+        "name": "new_username", 
+        "password": "new_password"
+    }
+}
