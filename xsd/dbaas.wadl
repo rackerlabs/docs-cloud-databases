@@ -70,6 +70,7 @@
                                              Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP)</doc></param>
                                 <method href="#deleteUser" />
                                 <method href="#listUser" />
+                                <method href="#modifyUser" />
                                 <resource id="database" path="databases">
                                     <method href="#getUserAccess" />
                                     <method href="#grantUserAccess" />
@@ -1875,6 +1876,83 @@
                 </doc>
             </representation>
         </response>
+        &getFaults;
+    </method>
+    
+    <method name="PUT" id="modifyUser">
+        <wadl:doc xml:lang="EN" title="Modify User Attributes"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Modifies one or more of the following for the specified user: name, password, and host from which the user is allowed to connect to the database. </para>
+            <para>This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. 
+                User in this case is user or user@host, whichever is appropriate.</para>
+        
+            <para>Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for information about the characters that are valid for the user name and password.</para>
+            <para>The following table lists attributes for Modify User Attributes. Note that <emphasis>one or more</emphasis> of the attributes must be specified. 
+                Refer to the request examples for the required xml/json format:</para>
+            
+            <table rules="all" width="400">
+                <caption>Attributes for Modify User Attributes</caption>
+                <col width="30%"/>
+                <col width="70%"/>
+                <thead>
+                    <tr>
+                        <td>Name</td>
+                        <td>Description</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>Name of the user for the
+                            database.</td>
+                    </tr>
+                    <tr>
+                        <td>password</td>
+                        <td>User password for database
+                            access.</td>
+                    </tr>
+                    <tr>
+                        <td>host</td>
+                        <td>Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.
+                            Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".
+                        </td>
+                    </tr> 
+                </tbody>
+            </table>
+       
+        
+        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml" element="dbaas:User">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Modify User Attributes requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-request.json"/>
+                </doc>
+            </representation>
+            
+            
+        </request>
+        <response status="200" >
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Modify User Attributes responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-response.json"/>
+                </doc>
+            </representation>
+            
+            
+        </response>
+        &commonFaults;
         &getFaults;
     </method>
 
