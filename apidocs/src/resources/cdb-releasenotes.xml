@@ -61,7 +61,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-08-14</pubdate>
+	<pubdate>2013-08-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -74,6 +74,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2013-08-15</date>
+				<revdescription>
+					<para>Updated for v1.0.29.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-08-14</date>
 				<revdescription>
@@ -323,6 +329,106 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
+	<chapter xml:id="cdbv1.0.29">
+		<title>v1.0.29, August 15, 2013</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="writeronly">
+				<para>Added support for backups. For details refer to
+						<link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Added Modify User Attributes call. For details
+					refer to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_modifyUser__version___accountId__instances__instanceId__users__name__.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_modifyUser__version___accountId__instances__instanceId__users__name__.html</link>.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Renamed files and packages from Reddwarf to
+					Trove to match new public code updates.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Bug Fixes</title>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:728928"
+						>D-14378: </link>Fixed defect where getting
+					monitoring status using XML request returns '500
+					Internal Server Error'.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect%3A732454"
+						>D-14439: </link>Updated monitoring labels and
+					fields for consistency in user interface.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:699027"
+						>D-13716: </link>Fixed error handling in
+					monitoring status call: clouddb-mgmt-cli
+					monitoring status --id doesn't catch invalid
+					instance IDs properly and attempts to cast an RPC
+					call.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:723711"
+						>D-14254: </link> Fixed error case to prevent
+					user from installing a monitoring agent on a Cloud
+					Databases instance when another monitoring agent
+					already exists.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para> Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Support for Cloud Databases is available for
+					US, UK, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Please visit our <link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="infrastructure_maint_081413">
 		<title>Infrastructure Maintenance ORD Only, August 14, 2013</title>
 		<para>This is not a code release, but rather infrastructure
@@ -437,106 +543,6 @@
 				<para> Support for Cloud Databases is available for US
 					and UK customers 24x7x365 via phone, chat, or you
 					may also <link
-						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml">File
-						a Ticket</link>.</para>
-			</listitem>
-			<listitem>
-				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
-						>Product Feedback Forum</link> and let us know
-					what you think about Cloud Databases! </para>
-			</listitem>
-		</itemizedlist>
-	</chapter>
-	<chapter xml:id="cdbv1.0.29" security="writeronly">
-		<title>v1.0.29, August 13, 2013</title>
-		<itemizedlist spacing="compact">
-			<title>What's New</title>
-			<listitem security="writeronly">
-				<para>Added support for backups. For details refer to
-						<link
-						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link>.</para>
-			</listitem>
-			<listitem>
-				<para>Added Modify User Attributes call. For details refer to
-						<link
-							xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_modifyUser__version___accountId__instances__instanceId__users__name__.html"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-							>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_modifyUser__version___accountId__instances__instanceId__users__name__.html</link>.</para>
-			</listitem>
-			<listitem security="internal">
-				<para>Renamed files and packages from Reddwarf to Trove to match
-					new public code updates.</para>
-			</listitem>
-		</itemizedlist>
-		<itemizedlist spacing="compact">
-			<title>Bug Fixes</title>
-			<listitem security="internal">
-				<para><link security="internal"
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:728928"
-						>D-14378: </link>Fixed defect where getting
-					monitoring status using XML request returns '500
-					Internal Server Error'.</para>
-			</listitem>
-			<listitem>
-				<para><link security="internal"
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect%3A732454"
-						>D-14439: </link>Updated monitoring labels and
-					fields for consistency in user interface.</para>
-			</listitem>
-			<listitem security="internal">
-				<para><link security="internal"
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:699027"
-						>D-13716: </link>Fixed error handling in
-					monitoring status call: clouddb-mgmt-cli
-					monitoring status --id doesn't catch invalid
-					instance IDs properly and attempts to cast an RPC
-					call.</para>
-			</listitem>
-			<listitem security="internal">
-				<para><link security="internal"
-						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:723711"
-						>D-14254: </link> Fixed error case to prevent
-					user from installing a monitoring agent on a Cloud
-					Databases instance when another monitoring agent
-					already exists.</para>
-			</listitem>
-		</itemizedlist>
-		<itemizedlist spacing="compact">
-			<title>Resources</title>
-			<listitem>
-				<para> Get started using the Cloud Databases API to
-					create databases in the <emphasis role="italic"
-						>Getting Started Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/api/"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/api/</link>.</para>
-			</listitem>
-			<listitem>
-				<para> Get reference information and examples in
-						the <emphasis role="italic">Cloud Databases
-						Developer Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/api/"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/api/</link>.</para>
-			</listitem>
-			<listitem>
-				<para> Support for Cloud Databases is available for
-					US, UK, and SYD customers 24x7x365 via phone,
-					chat, or you may also <link
 						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
 						xmlns:svg="http://www.w3.org/2000/svg"
 						xmlns:m="http://www.w3.org/1998/Math/MathML"

@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-08-13</pubdate>
+        <pubdate>2013-08-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,12 +78,12 @@
         
         <revhistory>
             <revision>
-                <date>2013-08-13</date>
+                <date>2013-08-15</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added new call Modify User
-                                Attributes. Refer to <xref
+                            <para>Added new Modify User Attributes
+                                call. Refer to <xref
                                    linkend="PUT_modifyUser__version___accountId__instances__instanceId__users__name__"
                                 /> for details.</para>
                         </listitem>
