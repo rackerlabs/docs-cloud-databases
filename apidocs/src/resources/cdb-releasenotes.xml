@@ -74,6 +74,13 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="writeronly">
+				<date>2013-09-03</date>
+				<revdescription>
+					<para>Updated for Cloud Monitoring
+						Maintenance.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2013-08-15</date>
 				<revdescription>
@@ -328,6 +335,81 @@
 			previous versions. The most recent changes are described
 			in the table below:</para>
 		<?rax revhistory?>
+	</chapter>
+	<chapter xml:id="Monitoring_Maintenance" security="writeronly">
+		<title>Monitoring Maintenance, September 3, 2013</title>
+		<para>This is not a code release, but rather maintenance to
+			support monitoring for Cloud Databases instances.</para>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="writeronly">
+				<para>Added support for backups. For details refer to
+						<link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Added support for monitoring
+						<emphasis>all</emphasis> Cloud Databases
+					instances, not just those that were created after
+					the v1.0.27 release on July 29, 2013. For details
+					refer to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html</link>.</para>
+				<para security="internal">For details about the
+					Monitoring Mgmt API refer to <link
+						xlink:href="http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html</link>.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para> Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Support for Cloud Databases is available for
+					US, UK, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Please visit our <link
+						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.29">
 		<title>v1.0.29, August 15, 2013</title>

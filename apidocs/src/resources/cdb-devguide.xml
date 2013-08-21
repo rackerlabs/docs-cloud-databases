@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-08-27</pubdate>
+        <pubdate>2013-08-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,7 +77,7 @@
         </abstract>
         
         <revhistory>
-            <revision>
+            <revision security="writeronly">
                 <date>2013-08-27</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
@@ -85,6 +85,22 @@
                             <para>Added <xref
                                    linkend="role_based_access_control"
                                 />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision security="writeronly">
+                <date>2013-09-03</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated <xref
+                                   linkend="Monitoring_Cloud_Databases-d1e4673"
+                                /> to document that monitoring support
+                                for Cloud Databases now applies to all
+                                instances, not just those that were
+                                created after the v1.0.27 release on
+                                July 29, 2013.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -2098,12 +2114,11 @@
             <para>Monitoring is available for Cloud Databases to allow
                 users to get more information about their database
                 instances via the monitoring checks that are
-                available.</para>
-            
-            <note><para>The monitoring capability only applies to instances that were created after the v1.0.27 release on July 29, 2013. 
-                It does not apply to instances that were created before this release. 
-                At a later date Cloud Databases will remediate instances that were created prior to the v1.0.27 release 
-                on July 29, 2013 to support monitoring and will communicate this in the Release Notes when it is supported.</para></note>
+                available. The monitoring capability applies only to
+                those instances that were created
+                    <emphasis>after</emphasis> the monitoring Cloud
+                Databases feature was released in v1.0.27 on July 29,
+                2013.</para>
             <para>There is a 1:1 mapping of Cloud Databases to
                 monitoring entities. The monitoring entity has a field
                 called <code>agent_id</code> that is the same as the
@@ -2283,7 +2298,7 @@
             
             
         </section>
-        <section xml:id="role_based_access_control">
+        <section xml:id="role_based_access_control" security="writeronly">
             <title>Role Based Access Control (RBAC)</title>
             <para>Role Based Access Control (RBAC) restricts access to
                 the capabilities of Rackspace Cloud services,
