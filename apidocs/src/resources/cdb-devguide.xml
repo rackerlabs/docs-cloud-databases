@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-08-15</pubdate>
+        <pubdate>2013-09-26</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,7 +78,7 @@
         
         <revhistory>
             <revision security="writeronly">
-                <date>2013-08-27</date>
+                <date>2013-09-11</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -101,6 +101,75 @@
                                 instances, not just those that were
                                 created after the v1.0.27 release on
                                 July 29, 2013.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2013-09-26</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem security="writeronly">
+                            <para>Updated pagination page limit to 100
+                                for List Databases for a Specified
+                                Instance. Refer to <xref
+                                   linkend="pagination"/> for
+                                details.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated <xref
+                                   linkend="Monitoring_Cloud_Databases-d1e4673"
+                                /> to document that monitoring support
+                                for Cloud Databases now applies to all
+                                instances, not just those that were
+                                created after the v1.0.27 release on
+                                July 29, 2013.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="role_based_access_control"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added Northern Virginia (IAD)
+                                endpoint. See <xref
+                                   linkend="Service_Access_Endpoints-d1e753"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for
+                                backups:</para>
+                            <itemizedlist spacing="compact">
+                                <listitem>
+                                   <para>Added information for Cloud
+                                   Files regarding pricing and SLA for
+                                   storing backups. See <xref
+                                   linkend="Pricing_SLA-d1e1362"
+                                   />.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Updated information for
+                                   database instance status. See <xref
+                                   linkend="database_instance_status"
+                                   />.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Added information and
+                                   examples for restore. See <xref
+                                   linkend="POST_createInstance__version___accountId__instances_"
+                                   />.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Added <xref linkend="backups"
+                                   />.</para>
+                                </listitem>
+                                <listitem>
+                                   <para>Added Backup API calls to
+                                   <xref
+                                   linkend="synchro_vs_async_faults"
+                                   />.</para>
+                                </listitem>
+                            </itemizedlist>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -534,8 +603,7 @@
             Databases occur programmatically via the Cloud Databases
             API as described in this developer guide.</para>
         <note> <para>Rackspace recommends that Cloud Databases users back up their
-                data using <emphasis role="bold">mysqldump</emphasis>
-                until backups are supported in Cloud Databases.</para> </note>
+                data using backups in Cloud Databases.</para> </note>
         <para>The following figure shows an
             overview of Cloud Databases Infrastructure: <informalfigure>
                 <mediaobject>
@@ -647,7 +715,7 @@
                 Databases is available at <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_databases"
                     >http://www.rackspace.com/cloud/legal/sla/#cloud_databases</link>.</para>
-            <para security="writeronly">If you elect to use the Backups API in Cloud
+            <para>If you elect to use the Backups API in Cloud
                 Databases, your backups are stored using Cloud Files
                 and your use through the API will be billed as per the
                 pricing schedule at <link
@@ -655,7 +723,7 @@
                     >http://www.rackspace.com/cloud/public/files/pricing/</link>.
                 See <xref linkend="backups"/> for details about the
                 Backup API. </para>
-            <para security="writeronly">The Service Level Agreement (SLA) for Cloud Files is
+            <para>The Service Level Agreement (SLA) for Cloud Files is
                 available at <link
                     xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_files"
                     >http://www.rackspace.com/cloud/legal/sla/#cloud_files</link>.</para>
@@ -1110,6 +1178,12 @@
                             <td colspan="2">Dallas/Ft. Worth (DFW)</td>
                             <td colspan="5"
                                 ><code>https://dfw.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
+                        </tr>
+                        <tr align="left">
+                            <td colspan="2">Northern Virginia
+                                (IAD)</td>
+                            <td colspan="5"
+                                ><code>https://iad.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                         </tr>
                         <tr align="left" >
                             <td colspan="2">London (LON)</td>
@@ -1578,29 +1652,43 @@
         </section>
         <section xml:id="pagination">
             <title>Pagination</title>
-            <para>To reduce load on the service, list operations
-                return a maximum of 20 items at a time. This is
-                referred to as <emphasis>pagination</emphasis>. Cloud
-                Databases has separate paging limits for instances,
-                databases, and users, which are currently all set to
-                20. If a request supplies no limit or one that exceeds
-                the configured default limit, the default is used
-                instead.</para>
             <para> Pagination provides the ability to limit the size
-                of the returned data as well as retrieve a specified
-                subset of a large data set. Pagination has two key
-                concepts: limit and marker. <emphasis>Limit</emphasis>
-                is the restriction on the maximum number of items for
-                that type that can be returned.
-                    <emphasis>Marker</emphasis> is the ID of the last
-                item in the previous list returned. The ID is the UUID
-                in the case of instances, the name in the case of
-                databases, and
-                    "<emphasis>name</emphasis>@<emphasis>host</emphasis>"
-                for users. For example, a query could request the next
-                10 instances after the instance "1234" as follows:
-                    <code>?limit=10&amp;marker=1234</code>. Items are
-                displayed sorted by ID. </para>
+                of the returned data in the response body as well as
+                retrieve a specified subset of a large data set.
+                Pagination has two key concepts:
+                    <emphasis>limit</emphasis> and
+                    <emphasis>marker</emphasis>. </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Limit is the restriction on the maximum
+                            number of items for that type that can be
+                            returned. </para>
+                    </listitem>
+                    <listitem>
+                        <para>Marker is the ID of the last item in the
+                            previous list returned. </para>
+                        <para>The ID is the UUID in the case of
+                            instances, the name in the case of
+                            databases, and
+                                "<emphasis>name</emphasis>@<emphasis>host</emphasis>"
+                            for users. For example, a query could
+                            request the next 10 instances after the
+                            instance "1234" as follows:
+                                <code>?limit=10&amp;marker=1234</code>.
+                            Items are displayed sorted by ID. </para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>If the content returned by a call is paginated, the
+                response includes a structured link much like an
+                instance item's links, with the basic structure
+                    <code>{"href": "&lt;url>", "rel": "next"}</code>.
+                Any response that is truncated by pagination will have
+                a <emphasis>next</emphasis> link, which points to the
+                next item in the collection. If there are no more
+                items, no <emphasis>next</emphasis> link is
+                returned.</para>
             <para>Pagination applies only to the calls listed in the
                 following table: </para>
             <informaltable rules="all">
@@ -1634,15 +1722,12 @@
                     </tr>
                 </tbody>
             </informaltable>
-            <para>If the content returned by a call is paginated, the
-                response includes a structured link much like an
-                instance item's links, with the basic structure
-                    <code>{"href": "&lt;url>", "rel": "next"}</code>.
-                Any response that is truncated by pagination will have
-                a <emphasis>next</emphasis> link, which points to the
-                next item in the collection. If there are no more
-                items, no <emphasis>next</emphasis> link is
-                returned.</para>
+            <para>Cloud Databases has separate paging limits for
+                instances (20), databases (20), and users (20), with
+                the default limit for each set to the paging limit. If
+                a request supplies no limit or one that exceeds the
+                configured default limit, the default is used
+                instead.</para>
             <para>See the examples of paged List Instances calls that
                 follow.</para>
             <example>
@@ -1664,7 +1749,7 @@
                 that follow each show 2 instances and return a
                     <emphasis>marker</emphasis> set to the UUID of the
                 last item in the returned list
-                    (<code>?marker=4137d6a4-03b7-4b66-b0ef-8c7c35c470d3</code>).
+                    (<code>?marker=9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9</code>).
                 Also a link is provided to retrieve the next 2 results
                     (<code>limit=2</code>) in the link element
                 identified by the attribute <code>rel="next"</code>
@@ -1884,10 +1969,10 @@
                         <listitem>
                             <para>List Databases</para>
                         </listitem>
-                        <listitem security="writeronly">
+                        <listitem>
                             <para>List Backups</para>
                         </listitem>
-                        <listitem security="writeronly">
+                        <listitem>
                             <para>List Backups by Instance</para>
                         </listitem>
                         <listitem>
@@ -1980,7 +2065,7 @@
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
                 </listitem>
-                <listitem security="writeronly">
+                <listitem>
                     <para>BACKUP &ndash; The database instance is
                         currently running a backup process.</para>
                 </listitem>
@@ -2114,9 +2199,15 @@
             <para>Monitoring is available for Cloud Databases to allow
                 users to get more information about their database
                 instances via the monitoring checks that are
-                available. The monitoring capability now applies to
-                all instances, not just those that were created after
-                the v1.0.27 release on July 29, 2013.</para>
+                available. The monitoring capability applies only to
+                those instances that were created <emphasis
+                    role="italic">after</emphasis> the monitoring
+                Cloud Databases feature was released in v1.0.27 on
+                July 29, 2013.<phrase>The
+                    monitoring capability now applies to all
+                    instances, not just those that were created after
+                    the v1.0.27 release on July 29,
+                2013.</phrase></para>
             <para>There is a 1:1 mapping of Cloud Databases to
                 monitoring entities. The monitoring entity has a field
                 called <code>agent_id</code> that is the same as the
@@ -2333,7 +2424,7 @@
                         <listitem>
                             <para>
                                 <link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addRole_v2.0_OS-KSADM_roles_.html"
+                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__.html"
                                    >Assign roles to account
                                    users</link></para>
                         </listitem>
@@ -2501,7 +2592,7 @@
                     operations are permitted to invoke which calls,
                     please review <link
                         xlink:href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-role-based-access-control-rbac"
-                        > the Knowledge Center article</link>.</para>
+                        >the Knowledge Center article</link>.</para>
             </section>
             
         </section>
@@ -2633,9 +2724,10 @@
             </wadl:resources>
         </section>
 
-        <section xml:id="backups" security="writeronly">
+        <section xml:id="backups">
             <title>Backups</title>
-            <para>This section describes backups of database instances.</para>
+            <para>This section describes the operations for backups of
+                database instances.</para>
             <para>The following table lists the possible statuses
                 returned by the Backup API:</para>
             <table rules="all">

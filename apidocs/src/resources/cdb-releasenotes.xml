@@ -61,7 +61,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2013-08-26</pubdate>
+	<pubdate>2013-09-26</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -82,7 +82,7 @@
 				</revdescription>
 			</revision>
 			<revision>
-				<date>2013-08-26</date>
+				<date>2013-09-26</date>
 				<revdescription>
 					<para>Updated for v1.0.30.</para>
 				</revdescription>
@@ -418,10 +418,25 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.30">
-		<title>v1.0.30, August 26, 2013</title>
-		<itemizedlist spacing="compact">
+		<title>v1.0.30, September 26, 2013</title>
+		<itemizedlist spacing="compact" security="internal">
 			<title>What's New</title>
-			<listitem>
+			<listitem security="writeronly">
+				<para>Updated pagination page limit to 100 for List Databases for
+					a Specified Instance. Refer to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/pagination.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/pagination.html</link>
+					for details.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Backups for existing instances are now enabled.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Increased RPC timeout for nova-releated
+					functions to allow for heavier SAN load. Root
+					cause will be addressed in SAN upgrade.</para>
+			</listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:733025"
 					>B-53801: </link>Add backup volume size to database.</para>
@@ -442,6 +457,45 @@
 				<para><link security="internal"
 					xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:744588"
 					>B-54434: </link>Cinder client - translate "extend" method to "resize" to handle change in Trove.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/story.mvc/Summary?oidToken=Story:686312"
+						>B-51179: </link>Create our own Rabbit module
+					to talk to Sneaky Pete.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Enable AuthN on AtomHopper.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Bug Fixes</title>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:840865"
+						>D-15261: </link>Address resource leak issue
+					with RPC code - Sneaky RPC not closing
+					channels.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:804062"
+						>D-15008: </link>Improve performance on
+					backups.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:839038"
+						>D-15239: </link>Address performance issue
+					with restore (revert to original code to address
+					regression).</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+					xlink:href="https://www15.v1host.com/RACKSPCE/defect.mvc/Summary?oidToken=Defect:809866"
+						>D-15110: </link>Addressed JSON validation
+					restriction issue to comply with Trove/CDB API 1.0
+					version.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
@@ -716,15 +770,6 @@
 		<title>v1.0.28, August 1, 2013</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
-			<listitem>
-				<para>Added support for backups. For details refer to
-						<link
-						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link>.</para>
-			</listitem>
 			<listitem>
 				<para>Added note about which instances are not
 					supported for monitoring. For details refer to

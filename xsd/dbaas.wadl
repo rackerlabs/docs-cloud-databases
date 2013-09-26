@@ -320,7 +320,17 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.json"/>
                 </doc>
             </representation>
-            
+            <representation mediaType="application/xml"  element="dbaas:DatabaseInstance">
+                <doc title="Create Database Instance Restore Request: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore requests:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="Create Database Instance Restore Request: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
+                </doc>
+            </representation>
             
         </request>
         <response status="200">
@@ -340,7 +350,19 @@
                         link provides a permanent link to a resource that is appropriate for long term storage.</para>
                 </doc>
             </representation>
-            
+            <representation mediaType="application/xml"
+                element="dbaas:DatabaseInstance" >
+                <doc title="Create Database Instance Restore Response: XML">
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore responses:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc title="Create Database Instance Restore Response: JSON">
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
+                </doc>
+            </representation>
             
         </response>
     &commonFaults;
