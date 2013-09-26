@@ -419,7 +419,7 @@
 	</chapter>
 	<chapter xml:id="cdbv1.0.30">
 		<title>v1.0.30, September 26, 2013</title>
-		<itemizedlist spacing="compact" security="internal">
+		<itemizedlist spacing="compact" >
 			<title>What's New</title>
 			<listitem security="writeronly">
 				<para>Updated pagination page limit to 100 for List Databases for
@@ -427,6 +427,13 @@
 						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/pagination.html"
 						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/pagination.html</link>
 					for details.</para>
+			</listitem>
+			<listitem>
+				<para>Backups for instances are now supported. Refer
+					to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
+					details.</para>
 			</listitem>
 			<listitem security="internal">
 				<para>Backups for existing instances are now enabled.</para>
