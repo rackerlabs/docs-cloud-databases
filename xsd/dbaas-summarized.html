@@ -1,0 +1,438 @@
+<html xmlns:rax="http://docs.rackspace.com/api">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+   </head>
+   <body>
+      <h1>Wadl: dbaas.wadl</h1>
+      <p><b>WADL Location: </b>file:/Users/mike.asthalter/Documents/DBaaS/reddwarf_lite-integration/xsd/dbaas.wadl
+      </p>
+      <ul>
+         <li><a href="#versions_getVersions">List Versions ()</a></li>
+         <li><a href="#version_getVersionInfo">List Version Details ({version})</a></li>
+         <li><a href="#instances_createInstance">Create Database Instance ({version}/{accountId}/instances)</a></li>
+         <li><a href="#instances_getInstance">List All Database Instances ({version}/{accountId}/instances)</a></li>
+         <li><a href="#instances_restoreBackup">Restore Backup ({version}/{accountId}/instances)</a></li>
+         <li><a href="#instanceId_getInstanceById">List Database Instance Status and Details ({version}/{accountId}/instances/{instanceId})</a></li>
+         <li><a href="#instanceId_deleteInstance">Delete Database Instance ({version}/{accountId}/instances/{instanceId})</a></li>
+         <li><a href="#instanceAction_resizeInstance">Resize the Instance ({version}/{accountId}/instances/{instanceId}/action)</a></li>
+         <li><a href="#instanceAction_resizeVolume">Resize the Instance Volume ({version}/{accountId}/instances/{instanceId}/action)</a></li>
+         <li><a href="#instanceAction_restartInstance">Restart Instance ({version}/{accountId}/instances/{instanceId}/action)</a></li>
+         <li><a href="#databases_createDatabase">Create Database ({version}/{accountId}/instances/{instanceId}/databases)</a></li>
+         <li><a href="#databases_getDatabases">List Databases for Instance ({version}/{accountId}/instances/{instanceId}/databases)</a></li>
+         <li><a href="#databaseName_deleteDatabase">Delete Database ({version}/{accountId}/instances/{instanceId}/databases/{databaseName})</a></li>
+         <li><a href="#users_createUser">Create User ({version}/{accountId}/instances/{instanceId}/users)</a></li>
+         <li><a href="#users_getUsers">List Users in Database Instance ({version}/{accountId}/instances/{instanceId}/users)</a></li>
+         <li><a href="#users_changePass">Change User(s) Password ({version}/{accountId}/instances/{instanceId}/users)</a></li>
+         <li><a href="#userId_deleteUser">Delete User ({version}/{accountId}/instances/{instanceId}/users/{name})</a></li>
+         <li><a href="#userId_listUser">List User ({version}/{accountId}/instances/{instanceId}/users/{name})</a></li>
+         <li><a href="#database_getUserAccess">List User Access ({version}/{accountId}/instances/{instanceId}/users/{name}/databases)</a></li>
+         <li><a href="#database_grantUserAccess">Grant User Access ({version}/{accountId}/instances/{instanceId}/users/{name}/databases)</a></li>
+         <li><a href="#dbName_revokeUserAccess">Revoke User Access ({version}/{accountId}/instances/{instanceId}/users/{name}/databases/{databaseName})</a></li>
+         <li><a href="#root_createRoot">Enable Root User ({version}/{accountId}/instances/{instanceId}/root)</a></li>
+         <li><a href="#root_isRootEnabled">List Root-Enabled Status ({version}/{accountId}/instances/{instanceId}/root)</a></li>
+         <li><a href="#backupsB_getBackupsByInstance">List Backups for Instance ({version}/{accountId}/instances/{instanceId}/backups)</a></li>
+         <li><a href="#flavors_getFlavors">List Flavors ({version}/{accountId}/flavors)</a></li>
+         <li><a href="#flavorId_getFlavorById">List Flavor By ID ({version}/{accountId}/flavors/{flavorId})</a></li>
+         <li><a href="#backups_createBackup">Create Backup ({version}/{accountId}/backups)</a></li>
+         <li><a href="#backups_getBackups">List Backups ({version}/{accountId}/backups)</a></li>
+         <li><a href="#backupId_getBackupById">List Backup By ID ({version}/{accountId}/backups/{backupId})</a></li>
+         <li><a href="#backupId_deleteBackup">Delete Backup ({version}/{accountId}/backups/{backupId})</a></li>
+      </ul>
+      <h2>List Versions</h2>
+      <anchor id="versions_getVersions"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path:  --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#versions"&gt;
+               &lt;method href="getVersions"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Versions: Lists information about all versions of the API. This operation lists information about all versions of the API. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Version Details</h2>
+      <anchor id="version_getVersionInfo"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#version"&gt;
+               &lt;method href="getVersionInfo"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Version Details: Returns detailed information about the specified version of the API. This operation returns detailed information about the specified version... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Create Database Instance</h2>
+      <anchor id="instances_createInstance"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instances"&gt;
+               &lt;method href="createInstance"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Create Database Instance: Creates a new database instance. This operation asynchronously provisions a new database instance. This call requires the user to specify a ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List All Database Instances</h2>
+      <anchor id="instances_getInstance"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instances"&gt;
+               &lt;method href="getInstance"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List All Database Instances: Lists the status and information for all database instances. This operation lists the status and information for all database instances. Ref... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Restore Backup</h2>
+      <anchor id="instances_restoreBackup"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instances"&gt;
+               &lt;method href="restoreBackup"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Restore Backup: Creates a new database instance from a backup. This operation restores a backup onto a new database instance. The following table lists the ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Database Instance Status and Details</h2>
+      <anchor id="instanceId_getInstanceById"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instanceId"&gt;
+               &lt;method href="getInstanceById"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Database Instance Status and Details: Lists status and details for a specified database instance. This operation lists the status and details of the specified database instance. ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Delete Database Instance</h2>
+      <anchor id="instanceId_deleteInstance"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instanceId"&gt;
+               &lt;method href="deleteInstance"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Delete Database Instance: Deletes the specified database instance. This operation deletes the specified database instance, including any associated data. Refer to for... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Resize the Instance</h2>
+      <anchor id="instanceAction_resizeInstance"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/action --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instanceAction"&gt;
+               &lt;method href="resizeInstance"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Resize the Instance: Resizes the memory of the instance. This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Resize the Instance Volume</h2>
+      <anchor id="instanceAction_resizeVolume"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/action --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instanceAction"&gt;
+               &lt;method href="resizeVolume"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Resize the Instance Volume: Resizes the volume attached to the Instance. This operation supports resizing the attached volume for an instance. It supports only increasi... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Restart Instance</h2>
+      <anchor id="instanceAction_restartInstance"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/action --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#instanceAction"&gt;
+               &lt;method href="restartInstance"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Restart Instance: Restarts the database service on the instance. The restart operation will restart only the MySQL Instance. Restarting MySQL will erase any d... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Create Database</h2>
+      <anchor id="databases_createDatabase"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/databases --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#databases"&gt;
+               &lt;method href="createDatabase"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Create Database: Creates a new database within the specified instance. This operation creates a new database within the specified instance. The name of the d... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Databases for Instance</h2>
+      <anchor id="databases_getDatabases"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/databases --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#databases"&gt;
+               &lt;method href="getDatabases"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Databases for Instance: Lists databases for the specified instance. This operation lists the databases for the specified instance. This operation returns only the u... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Delete Database</h2>
+      <anchor id="databaseName_deleteDatabase"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/databases/{databaseName} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#databaseName"&gt;
+               &lt;method href="deleteDatabase"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Delete Database: Deletes the specified database. This operation deletes the requested database within the specified database instance. Note that all data ass... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Create User</h2>
+      <anchor id="users_createUser"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#users"&gt;
+               &lt;method href="createUser"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Create User: Creates a user for the specified database instance. This operation asynchronously provisions a new user for the specified database instance ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Users in Database Instance</h2>
+      <anchor id="users_getUsers"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#users"&gt;
+               &lt;method href="getUsers"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Users in Database Instance: Lists the users in the specified database instance. This operation lists the users in the specified database instance, along with the associ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Change User(s) Password</h2>
+      <anchor id="users_changePass"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#users"&gt;
+               &lt;method href="changePass"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Change User(s) Password: Changes the MySQL password of one or more users. This operation changes the MySQL password of one or more users. For information about choos... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Delete User</h2>
+      <anchor id="userId_deleteUser"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users/{name} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#userId"&gt;
+               &lt;method href="deleteUser"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Delete User: Deletes the user identified by {name} for the specified database instance. This operation deletes the specified user for the specified datab... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List User</h2>
+      <anchor id="userId_listUser"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users/{name} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#userId"&gt;
+               &lt;method href="listUser"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List User: Lists the specified user's name and a list of databases that the user can access. This operation lists the specified user's name and a list ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List User Access</h2>
+      <anchor id="database_getUserAccess"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users/{name}/databases --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#database"&gt;
+               &lt;method href="getUserAccess"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List User Access: Shows a list of all databases a user has access to. This operation shows a list of all databases a user has access to. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Grant User Access</h2>
+      <anchor id="database_grantUserAccess"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users/{name}/databases --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#database"&gt;
+               &lt;method href="grantUserAccess"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Grant User Access: Grants access for the specified user to one or more databases for the specified instance. This operation grants access for the specified use... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Revoke User Access</h2>
+      <anchor id="dbName_revokeUserAccess"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/users/{name}/databases/{databaseName} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#dbName"&gt;
+               &lt;method href="revokeUserAccess"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Revoke User Access: Removes access to the specified database for the specified user. This operation removes access to the specified database for the specified u... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Enable Root User</h2>
+      <anchor id="root_createRoot"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/root --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#root"&gt;
+               &lt;method href="createRoot"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Enable Root User: Enables the root user for the specified database instance and returns the root password. This operation enables login from any host for the ... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Root-Enabled Status</h2>
+      <anchor id="root_isRootEnabled"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/root --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#root"&gt;
+               &lt;method href="isRootEnabled"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Root-Enabled Status: Returns true if root user is enabled for the specified database instance or false otherwise. This operation checks an active specified datab... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Backups for Instance</h2>
+      <anchor id="backupsB_getBackupsByInstance"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/instances/{instanceId}/backups --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#backupsB"&gt;
+               &lt;method href="getBackupsByInstance"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Backups for Instance: Lists all backups for a specified instance. This operation lists all backups for a specified instance. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Flavors</h2>
+      <anchor id="flavors_getFlavors"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/flavors --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#flavors"&gt;
+               &lt;method href="getFlavors"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Flavors: Lists information for all available flavors. This operation lists information for all available flavors. This resource is identical to the f... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Flavor By ID</h2>
+      <anchor id="flavorId_getFlavorById"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/flavors/{flavorId} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#flavorId"&gt;
+               &lt;method href="getFlavorById"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Flavor By ID: Lists all flavor information about the specified flavor ID. This operation lists all information for the specified flavor ID with details of... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Create Backup</h2>
+      <anchor id="backups_createBackup"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/backups --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#backups"&gt;
+               &lt;method href="createBackup"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Create Backup: Creates a new backup for a database instance. This operation asynchronously creates a new backup for the specified database instance. This c... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Backups</h2>
+      <anchor id="backups_getBackups"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/backups --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#backups"&gt;
+               &lt;method href="getBackups"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Backups: Lists all backups for all database instances. This operation returns a list of all backups for all database instances. The following table l... --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>List Backup By ID</h2>
+      <anchor id="backupId_getBackupById"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/backups/{backupId} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#backupId"&gt;
+               &lt;method href="getBackupById"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- List Backup By ID: Lists details about a specified backup. This operation lists the details for a specified backup. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre><h2>Delete Backup</h2>
+      <anchor id="backupId_deleteBackup"></anchor><pre class="brush: xml; highlight: [3, 4]">
+            &lt;resources xmlns="http://wadl.dev.java.net/2009/02"&gt;
+            &lt;!-- Path: {version}/{accountId}/backups/{backupId} --&gt;
+             &lt;resource href="@@PATH_TO@@/dbaas.wadl#backupId"&gt;
+               &lt;method href="deleteBackup"&gt;
+                 &lt;wadl:doc xmlns:wadl="http://wadl.dev.java.net/2009/02" xmlns="http://docbook.org/ns/docbook"&gt;
+                    &lt;!-- DocBook Markup is legal here --&gt;
+                    &lt;!-- Delete Backup: Deletes the specified backup. This operation deletes the specified backup. --&gt;
+                 &lt;/wadl:doc&gt;
+               &lt;/method&gt;
+             &lt;/resource&gt;
+           &lt;/resources&gt;
+        </pre></body>
+   <link href="http://alexgorbatchev.com/pub/sh/current/styles/shCore.css" rel="stylesheet" type="text/css">
+   <link href="http://alexgorbatchev.com/pub/sh/current/styles/shThemeDefault.css" rel="stylesheet" type="text/css"><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shCore.js" type="text/javascript"> </script><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shAutoloader.js" type="text/javascript"> </script><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushXml.js" type="text/javascript"> </script><script src="http://alexgorbatchev.com/pub/sh/current/scripts/shBrushCss.js" type="text/javascript"> </script><script type="text/javascript">
+               SyntaxHighlighter.config.space = ' ';
+               SyntaxHighlighter.defaults['smart-tabs'] = false;
+               SyntaxHighlighter.defaults['auto-links'] = false;
+               SyntaxHighlighter.all()
+  </script></html>

@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-09-26</pubdate>
+        <pubdate>2013-10-24</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,30 +77,21 @@
         </abstract>
         
         <revhistory>
-            <revision security="writeronly">
-                <date>2013-09-11</date>
+            <revision>
+                <date>2013-10-24</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added <xref
-                                   linkend="role_based_access_control"
-                                />.</para>
+                            <para>Updated rate limits. Refer to <xref
+                                   linkend="Rate_Limits-d1e1222"/> for
+                                details.</para>
                         </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision security="writeronly">
-                <date>2013-09-03</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated <xref
-                                   linkend="Monitoring_Cloud_Databases-d1e4673"
-                                /> to document that monitoring support
-                                for Cloud Databases now applies to all
-                                instances, not just those that were
-                                created after the v1.0.27 release on
-                                July 29, 2013.</para>
+                            <para>Updated pagination page limit to 100
+                                for List Databases for a Specified
+                                Instance. Refer to <xref
+                                   linkend="pagination"/> for
+                                details.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -109,13 +100,6 @@
                 <date>2013-09-26</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
-                        <listitem security="writeronly">
-                            <para>Updated pagination page limit to 100
-                                for List Databases for a Specified
-                                Instance. Refer to <xref
-                                   linkend="pagination"/> for
-                                details.</para>
-                        </listitem>
                         <listitem>
                             <para>Updated <xref
                                    linkend="Monitoring_Cloud_Databases-d1e4673"
@@ -677,8 +661,8 @@
                     >http://docs.rackspace.com/</link>. </para>
             <para>For more details about Rackspace Cloud Databases,
                 refer to <link
-                    xlink:href="http://www.rackspace.com/cloud/cloud_hosting_products/databases/"
-                    >http://www.rackspace.com/cloud/cloud_hosting_products/databases/</link>.
+                    xlink:href="http://www.rackspace.com/cloud/databases/"
+                    >http://www.rackspace.com/cloud/databases/</link>.
                 This site also offers links to Rackspace's official
                 support channels, including knowledge center articles,
                 forums, phone, chat, and email. </para>
@@ -709,24 +693,24 @@
             <para>Cloud Databases is part of the Rackspace Cloud and
                 your use through the API will be billed as per the
                 pricing schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/public/databases/pricing"
-                    >http://www.rackspace.com/cloud/public/databases/pricing</link>.</para>
+                    xlink:href="http://www.rackspace.com/cloud/databases/pricing/"
+                    >http://www.rackspace.com/cloud/databases/pricing/</link>.</para>
             <para>The Service Level Agreement (SLA) for Cloud
                 Databases is available at <link
-                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_databases"
-                    >http://www.rackspace.com/cloud/legal/sla/#cloud_databases</link>.</para>
+                    xlink:href="http://www.rackspace.com/information/legal/cloud/sla#cloud_databases"
+                    >http://www.rackspace.com/information/legal/cloud/sla#cloud_databases</link>.</para>
             <para>If you elect to use the Backups API in Cloud
                 Databases, your backups are stored using Cloud Files
                 and your use through the API will be billed as per the
                 pricing schedule at <link
-                    xlink:href="http://www.rackspace.com/cloud/public/files/pricing/"
-                    >http://www.rackspace.com/cloud/public/files/pricing/</link>.
+                    xlink:href="http://www.rackspace.com/cloud/files/pricing/"
+                    >http://www.rackspace.com/cloud/files/pricing/</link>.
                 See <xref linkend="backups"/> for details about the
                 Backup API. </para>
             <para>The Service Level Agreement (SLA) for Cloud Files is
                 available at <link
-                    xlink:href="http://www.rackspace.com/cloud/legal/sla/#cloud_files"
-                    >http://www.rackspace.com/cloud/legal/sla/#cloud_files</link>.</para>
+                    xlink:href="http://www.rackspace.com/information/legal/cloud/sla#cloud_files"
+                    >http://www.rackspace.com/information/legal/cloud/sla#cloud_files</link>.</para>
         </section>
     </chapter>
     
@@ -1482,67 +1466,196 @@
             </para>
             <section xml:id="Rate_Limits-d1e1222">
                 <title>Rate Limits</title>
-                <para> Rate limits are specified in terms of both a
-                    human-readable wild-card URI and a
-                    machine-processable regular expression. The
-                    regular expression boundary matcher '^' takes
-                    effect after the root URI path. For example, the
-                    regular expression ^/v1.0/instances would match
-                    the bolded portion of the following URI:
-                        https://ord.databases.api.rackspacecloud.com<emphasis
-                        role="bold">/v1.0/instances</emphasis>. </para>
                 <para>The following table specifies the default rate
-                    limits for all API operations for all &GET;,
-                    &POST;, &PUT;, and &DELETE; calls for databases
-                    and database instances: </para>
+                    limits for all Rackspace Cloud Databases API
+                    operations: </para>
                 <table rules="all">
                     <caption>Default Rate Limits</caption>
+                    <col width="30%"/>
+                    <col width="50%"/>
+                    <col width="20%"/>
+                    
+                    
+                    
                     <thead>
                         <tr align="center">
-                            <td colspan="1">Verb</td>
-                            <td colspan="2">URI</td>
-                            <td colspan="2">RegEx</td>
-                            <td colspan="1">Default</td>
+                            <td>API Operation</td>
+                            <td>API Action</td>
+                            <td>Rate Limit</td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td colspan="1">&GET; changes-since</td>
-                            <td colspan="2">*/instances/*</td>
-                            <td colspan="2">^/vd+.d+/instances.*</td>
-                            <td colspan="1">3/minute</td>
+                            <td>List Versions</td>
+                            <td>GET /</td>
+                            <td>100/minute</td>
                         </tr>
                         <tr>
-                            <td colspan="1">&POST;</td>
-                            <td colspan="2">*/instances/*</td>
-                            <td colspan="2">^/vd+.d+/instances.*</td>
-                            <td colspan="1">10/minute</td>
+                            <td>List Version Details</td>
+                            <td>GET /{version}</td>
+                            <td>100/minute</td>
                         </tr>
                         <tr>
-                            <td colspan="1">&POST; instances</td>
-                            <td colspan="2">*/instances/*</td>
-                            <td colspan="2">^/vd+.d+/instances.*</td>
-                            <td colspan="1">50/day</td>
+                            <td>Create Database Instance</td>
+                            <td>POST /instances</td>
+                            <td>20/minute</td>
                         </tr>
                         <tr>
-                            <td colspan="1">&PUT;</td>
-                            <td colspan="2">*/instances/*</td>
-                            <td colspan="2">^/vd+.d+/instances.*</td>
-                            <td colspan="1">10/minute</td>
+                            <td>List All Database Instances</td>
+                            <td>GET /instances</td>
+                            <td>100/minute</td>
                         </tr>
                         <tr>
-                            <td colspan="1">&DELETE;</td>
-                            <td colspan="2">*/instances/*</td>
-                            <td colspan="2">^/vd+.d+/instances.*</td>
-                            <td colspan="1">100/minute</td>
+                            <td>List Database Instance Status and
+                                Details</td>
+                            <td>GET /instances/{instanceId}</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Delete Database Instance</td>
+                            <td> DELETE /instances/{instanceId} </td>
+                            <td>20/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Enable Root User</td>
+                            <td>POST /instances/{instanceId}/root</td>
+                            <td>20/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Root-Enabled Status</td>
+                            <td>GET /instances/{instanceId}/root</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Restart Instance</td>
+                            <td> POST /instances/{instanceId}/action </td>
+                            <td>5/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Resize the Instance</td>
+                            <td> POST /instances/{instanceId}/action </td>
+                            <td>5/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Resize the Instance Volume</td>
+                            <td>POST
+                                /instances/{instanceId}/action</td>
+                            <td>5/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Create Database</td>
+                            <td>POST
+                                /instances/{instanceId}/databases</td>
+                            <td>20/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Databases for an Instance</td>
+                            <td>GET
+                                /instances/{instanceId}/databases</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Delete Database</td>
+                            <td>DELETE
+                                /instances/{instanceId}/databases/{databaseName}</td>
+                            <td>20/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Create User</td>
+                            <td>POST
+                                /instances/{instanceId}/users</td>
+                            <td>50/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Users in Database Instance</td>
+                            <td>GET /instances/{instanceId}/users</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Change User Password</td>
+                            <td>PUT /instances/{instanceId}/users</td>
+                            <td>50/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Modify User Attributes</td>
+                            <td>PUT
+                                /instances/{instance_Id}/users/{userid}</td>
+                            <td>50/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List User</td>
+                            <td>GET
+                                /instances/{instanceId}/users/{name}</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Delete User</td>
+                            <td>DELETE
+                                /instances/{instanceId}/users/{name}</td>
+                            <td>50/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List User Access</td>
+                            <td>GET
+                                /instances/{instanceId}/users/{name}/databases</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Grant User Access</td>
+                            <td>PUT
+                                /instances/{instanceId}/users/{name}/databases</td>
+                            <td>50/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Revoke User Access</td>
+                            <td>DELETE
+                                /instances/{instanceId}/users/{name}/databases/{databaseName}</td>
+                            <td>50/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Flavors</td>
+                            <td>GET /flavors</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Flavors by ID</td>
+                            <td>GET /flavors/{flavorId}</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Create Backup</td>
+                            <td>POST /backups</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Backups</td>
+                            <td>GET /backups</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Backup by ID</td>
+                            <td>GET /backups/{backupId}</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Delete Backup</td>
+                            <td>DELETE /backups/{backupId}</td>
+                            <td>20/minute</td>
+                        </tr>
+                        <tr>
+                            <td>List Backups for Instance</td>
+                            <td>GET
+                                /instances/{instanceId}/backups</td>
+                            <td>100/minute</td>
+                        </tr>
+                        <tr>
+                            <td>Restore Backup (same as create
+                                instance)</td>
+                            <td>POST /instances</td>
+                            <td>20/minute</td>
                         </tr>
                     </tbody>
                 </table>
-               <para> Rate limits are applied in order relative to the
-                    verb, going from least to most specific. For
-                    example, although the threshold for &POST; to
-                    /v1.0/* is 10 per minute, one cannot &POST; to
-                    /v1.0/* more than 50 times within a single day. </para>
                 <para> If you exceed the thresholds established for
                     your account, a <errorcode>413 (Rate
                         Control)</errorcode> HTTP response will be
@@ -1552,8 +1665,6 @@
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
                 <title>Absolute Limits</title>
-                <remark>Reviewer: Need to update this entire section.
-                    Please give me your updates.</remark>
                 <para>Refer to the following table for the absolute
                     limits that are set.</para>
                 <table rules="all">
@@ -1723,7 +1834,7 @@
                 </tbody>
             </informaltable>
             <para>Cloud Databases has separate paging limits for
-                instances (20), databases (20), and users (20), with
+                instances (20), databases (100), and users (20), with
                 the default limit for each set to the paging limit. If
                 a request supplies no limit or one that exceeds the
                 configured default limit, the default is used
