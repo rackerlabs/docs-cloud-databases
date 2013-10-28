@@ -48,13 +48,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-10-24</pubdate>
+        <pubdate>2013-10-28</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2013-10-28</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added Hong Kong (HKG) endpoint. See
+                                   <xref
+                                   linkend="Service_Access_Endpoints-d1e753"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-10-24</date>
                 <revdescription>
@@ -972,6 +985,12 @@ export OS_PROJECT_ID=&lt;tenant_id>
                             command. For example:
                             <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove --debug list</programlisting></para>
                     </note>
+                    <para>If you can run the trove commands
+                        successfully, skip the sections that follow
+                        and go directly to <xref
+                            linkend="List_Flavors"/> to continue with
+                        this guide. Otherwise, continue to the
+                        Troubleshooting below.</para>
                 </step>
                 <step>
                     <title>Troubleshooting</title>
@@ -1030,6 +1049,11 @@ export OS_PROJECT_ID=&lt;tenant_id>
                                 retry the command.</para>
                         </listitem>
                     </itemizedlist>
+                    <para>Once you can run the trove commands
+                        successfully, skip the sections that follow
+                        and go directly to <xref
+                            linkend="List_Flavors"/> to continue with
+                        this guide.</para>
                 </step>
             </procedure>
         </section>
@@ -1548,6 +1572,11 @@ export OS_PROJECT_ID=&lt;tenant_id>
                             <td colspan="5">
                                 <code>https://syd.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/
                             </td>
+                        </tr>
+                        <tr align="left">
+                            <td colspan="2">Hong Kong (HKG)</td>
+                            <td colspan="5">
+                                <code>https://hkg.databases.api.rackspacecloud.com/v1.0/</code><parameter>1234</parameter>/ </td>
                         </tr>
                     </tbody>
                 </table>
