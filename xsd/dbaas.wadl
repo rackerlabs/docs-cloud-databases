@@ -210,6 +210,9 @@
             <listitem>
                 <para>The default binding for the MySQL instance is port 3306.</para>
             </listitem>
+            <listitem>
+                <para>When used with the <code>restorePoint</code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</para>
+            </listitem>
         </itemizedlist></note>
         <para>The following table lists the required and optional attributes for Create Instance:</para>
         <table rules="all">
@@ -280,14 +283,14 @@
                         Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                     <td colspan="1">No</td>
                 </tr>
-                <tr security="writeronly">
+                <tr>
                     <td colspan="1" rowspan="1">Restore</td>
                     <td colspan="1">restorePoint</td>
                     <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
                         <note><title>Notes</title><itemizedlist spacing="compact">
                             <listitem>
-                                <para>You need to create a new database instance, 
-                                    by specifying the restorePoint attribute described in the table above, before performing a restore operation.</para>
+                                <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by 
+                                    the <code>restorePoint</code> attribute.</para>
                             </listitem>
                             <listitem>
                                 <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases.</para>

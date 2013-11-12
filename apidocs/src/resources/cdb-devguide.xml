@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-10-28</pubdate>
+        <pubdate>2013-11-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,20 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-11-12</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for the
+                                   <code>restorepoint</code> attribute
+                                in <xref
+                                   linkend="POST_createInstance__version___accountId__instances_"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-10-28</date>
                 <revdescription>
