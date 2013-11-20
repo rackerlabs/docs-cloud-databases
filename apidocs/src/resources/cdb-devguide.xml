@@ -63,7 +63,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-11-12</pubdate>
+        <pubdate>2013-11-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,33 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2013-11-21</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated figure for <xref
+                                   linkend="overview"/>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated warning information about
+                                users with periods in their names in
+                                   <xref
+                                   linkend="user_access_restrict_by_host-dle387"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated description for <xref
+                                   linkend="Monitoring_Cloud_Databases-d1e4673"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated response examples for <xref
+                                   linkend="backups"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-11-12</date>
                 <revdescription>
@@ -194,41 +221,6 @@
                                 call. Refer to <xref
                                    linkend="PUT_modifyUser__version___accountId__instances__instanceId__users__name__"
                                 /> for details.</para>
-                        </listitem>
-                    </itemizedlist>
-                </revdescription>
-            </revision>
-            <revision security="writeronly">
-                <date>2013-08-22</date>
-                <revdescription>
-                    <itemizedlist spacing="compact">
-                        <listitem>
-                            <para>Added information for Cloud Files
-                                regarding pricing and SLA for storing
-                                backups. See <xref
-                                   linkend="Pricing_SLA-d1e1362"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Updated information for database
-                                instance status. See <xref
-                                   linkend="database_instance_status"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added information and examples for
-                                restore. See <xref
-                                   linkend="POST_createInstance__version___accountId__instances_"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added <xref linkend="backups"
-                                />.</para>
-                        </listitem>
-                        <listitem>
-                            <para>Added Backup API calls to <xref
-                                   linkend="synchro_vs_async_faults"
-                                />.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -620,7 +612,7 @@
                 <mediaobject>
                     <imageobject>
                         <imagedata
-                            fileref="images/Cloud_DB_Infographic-1.svg"
+                            fileref="images/cloud-databases-howitworks-graphic.svg"
                             contentwidth="6in"/>
                     </imageobject>
                 </mediaobject>
@@ -2323,17 +2315,17 @@
                     must be specified explicitly, as in
                     user@name@%.</para>
                 <warning>
-                    <para>Due to a limitation of the routing
-                        middleware, databases and users with periods
-                        (.) in their name can be parsed incorrectly in
-                        GET, DELETE, and PUT calls, where such a name
-                        is the last section of the request URL. In
-                        these cases, the periods can be escaped by
-                        url-encoding them as "%2E", so "some.database"
-                        would become "some%2Edatabase". Note that
-                        CREATE calls are not affected as these names
-                        are in JSON or XML data, and not part of the
-                        request's URL.</para>
+                    <para>Databases and users with periods (.) in
+                        their name can be parsed incorrectly in GET,
+                        DELETE, and PUT calls, where such a name is
+                        the last section of the request URL. In these
+                        cases, the periods must be escaped by
+                        replacing them with "%2E" before URL encoding
+                        occurs, so "some.database" must be replaced
+                        with "some%2Edatabase". Note that CREATE calls
+                        are not affected as these names are in JSON or
+                        XML data, and not part of the request's
+                        URL.</para>
                 </warning>
             </section>
         </section>
@@ -2342,15 +2334,9 @@
             <para>Monitoring is available for Cloud Databases to allow
                 users to get more information about their database
                 instances via the monitoring checks that are
-                available. The monitoring capability applies only to
-                those instances that were created <emphasis
-                    role="italic">after</emphasis> the monitoring
-                Cloud Databases feature was released in v1.0.27 on
-                July 29, 2013.<phrase>The
-                    monitoring capability now applies to all
-                    instances, not just those that were created after
-                    the v1.0.27 release on July 29,
-                2013.</phrase></para>
+                available. The monitoring capability now applies to
+                all instances, not just those that were created after
+                the v1.0.27 release on July 29, 2013.</para>
             <para>There is a 1:1 mapping of Cloud Databases to
                 monitoring entities. The monitoring entity has a field
                 called <code>agent_id</code> that is the same as the

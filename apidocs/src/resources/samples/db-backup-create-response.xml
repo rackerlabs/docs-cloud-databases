@@ -1,19 +1,19 @@
 HTTP/1.1 202 Accepted
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 529
-Date: Thu, 27 Jun 2013 19:47:56 GMT
+Content-Length: 565
+Date: Mon, 18 Nov 2013 19:15:12 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <backup xmlns="http://docs.openstack.org/database/api/v1.0">
     <instance_id>
-        3f19e2e5-2135-4fd0-bd7b-4f3da4c6bb36
+        b148a315-eb10-417a-9786-82b797aa58ac
     </instance_id>
     <status>
         NEW
     </status>
     <updated>
-        2013-06-27 19:47:55.970583
+        2013-11-18 19:15:12.831443
     </updated>
     <locationRef>
         None
@@ -22,10 +22,13 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         snapshot
     </name>
     <created>
-        2013-06-27 19:47:55.970467
+        2013-11-18 19:15:12.831327
     </created>
+    <size>
+        None
+    </size>
     <id>
-        d2717413-cd66-495e-9ff1-d4eea261ffe4
+        36a44428-948f-4e8c-a85b-a0743f24b781
     </id>
     <description>
         My Backup

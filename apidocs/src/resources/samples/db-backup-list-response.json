@@ -1,31 +1,33 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 597
-Date: Thu, 27 Jun 2013 19:47:56 GMT
+Content-Length: 625
+Date: Mon, 18 Nov 2013 19:15:14 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "backups": [
         {
-            "created": "2013-06-27T19:47:55", 
+            "created": "2013-11-18T19:15:12", 
             "description": "My Backup", 
-            "id": "8c40f9c2-6fe8-4b6b-a823-8a6b1d181f09", 
-            "instance_id": "f07ac506-1a99-4a2a-9a32-869b453019ef", 
+            "id": "a69c5ed4-8d9f-4b58-8166-756b0b34cb36", 
+            "instance_id": "ca8b2db3-e67d-4616-9ec0-797848e6f6b2", 
             "locationRef": "http://localhost/path/to/backup", 
             "name": "snapshot", 
+            "size": 0.75, 
             "status": "COMPLETED", 
-            "updated": "2013-06-27T19:47:56"
+            "updated": "2013-11-18T19:15:14"
         }, 
         {
-            "created": "2013-06-27T19:47:55", 
+            "created": "2013-11-18T19:15:12", 
             "description": "My Backup", 
-            "id": "d2717413-cd66-495e-9ff1-d4eea261ffe4", 
-            "instance_id": "3f19e2e5-2135-4fd0-bd7b-4f3da4c6bb36", 
+            "id": "36a44428-948f-4e8c-a85b-a0743f24b781", 
+            "instance_id": "b148a315-eb10-417a-9786-82b797aa58ac", 
             "locationRef": "http://localhost/path/to/backup", 
             "name": "snapshot", 
+            "size": 0.75, 
             "status": "COMPLETED", 
-            "updated": "2013-06-27T19:47:56"
+            "updated": "2013-11-18T19:15:14"
         }
     ]
 }

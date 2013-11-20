@@ -679,7 +679,7 @@
                 </tbody>
             </table>
 
-            <table rules="all" width="40%">
+            <table rules="all" width="40%" security="writeronly">
                 <?dbfo keep-together="always"?>
                 <caption>Characters That <emphasis>Cannot</emphasis> Be Used in a Database Name</caption>
                 <col width="100%"/>
@@ -941,12 +941,19 @@
                         <td>'@', '?', '#', and spaces are allowed, but <emphasis>not</emphasis> at the beginning and end of the database name, user name, and password</td>
                     </tr>
                     <tr>
+                        <td>'.' is allowed, but must be escaped by replacing it with "%2E" before URL encoding occurs if it occurs in GET, DELETE, 
+                            and PUT calls, where such a name is the last section of the request URL. Please refer to the Warning in <xref
+                                linkend="user_access_restrict_by_host-dle387"
+                            /> for details and an example.
+                        </td>
+                    </tr>
+                    <tr>
                         <td>"_" is allowed anywhere in the database name, user name, and password</td>
                     </tr>
                 </tbody>
             </table>
 
-            <table rules="all" width="40%">
+            <table rules="all" width="40%" security="writeronly">
                 <caption>Characters That <emphasis>Cannot</emphasis> Be Used in a Database Name, User Name, and Password</caption>
                 <col width="100%"/>
                 <thead>
@@ -1220,7 +1227,7 @@
                 <doc title="List User for Restricted Host Request: XML">
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User for Restricted Host requests.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        In these examples, user@host has been url-encoded by the client, so the parameter dbuser1@% is url-encoded to dbuser1%40%25 (in this case, since % is used for the host, the user can connect from any host):</para>
+                        In these examples, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded to dbuser1%40%25 (in this case, since % is used for the host, the user can connect from any host):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-request.xml"/>
                 </doc>
             </representation>
@@ -1286,7 +1293,7 @@
                 <doc title="List User Access for Restricted Host Request: XML">
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access for Restricted Host requests.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        In these examples, user@host has been url-encoded by the client, so the parameter dbuser2@10.0.0.1 is url-encoded to dbuser2%4010%2e0%2e0%2e1:</para>
+                        In these examples, user@host has been url-encoded by the client, so the parameter dbuser2@10.0.0.1 is url-encoded to dbuser2%4010%252E0%252E0%252E1:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-request.xml"/>
                 </doc>
             </representation>
@@ -1315,7 +1322,7 @@
                 <doc title="List User Access for Restricted Host Response: XML">
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access for Restricted Host responses.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        user@host was actually set to dbuser2@10.0.0.1 in the request example, which was then url-encoded to dbuser2%4010%2e0%2e0%2e1:</para>
+                        user@host was actually set to dbuser2@10.0.0.1 in the request example, which was then url-encoded to dbuser2%4010%252E0%252E0%252E1:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-response.xml"/>
                 </doc>
             </representation>
