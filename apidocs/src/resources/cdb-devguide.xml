@@ -2329,8 +2329,8 @@
                         GET, DELETE, and PUT calls, where such a name
                         is the last section of the request URL. In
                         these cases, the periods can be escaped by
-                        url-encoding them as "%2E", so "some.database"
-                        would become "some%2Edatabase". Note that
+                        url-encoding them as "%252E", so "some.database"
+                        would become "some%252Edatabase". Note that
                         CREATE calls are not affected as these names
                         are in JSON or XML data, and not part of the
                         request's URL.</para>
