@@ -2315,17 +2315,19 @@
                     must be specified explicitly, as in
                     user@name@%.</para>
                 <warning>
-                    <para>Databases and users with periods (.) in
-                        their name can be parsed incorrectly in GET,
-                        DELETE, and PUT calls, where such a name is
-                        the last section of the request URL. In these
-                        cases, the periods must be escaped by
-                        replacing them with "%2E" before URL encoding
-                        occurs, so "some.database" must be replaced
-                        with "some%2Edatabase". Note that CREATE calls
-                        are not affected as these names are in JSON or
-                        XML data, and not part of the request's
-                        URL.</para>
+
+                    <para>Due to a limitation of the routing
+                        middleware, databases and users with periods
+                        (.) in their name can be parsed incorrectly in
+                        GET, DELETE, and PUT calls, where such a name
+                        is the last section of the request URL. In
+                        these cases, the periods can be escaped by
+                        url-encoding them as "%252E", so "some.database"
+                        would become "some%252Edatabase". Note that
+                        CREATE calls are not affected as these names
+                        are in JSON or XML data, and not part of the
+                        request's URL.</para>
+
                 </warning>
             </section>
         </section>
