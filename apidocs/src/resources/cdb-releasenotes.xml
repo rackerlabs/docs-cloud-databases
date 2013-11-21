@@ -452,8 +452,8 @@
 					<link security="internal"
 						xlink:href="https://jira.rax.io/browse/CLDMYSQL-289"
 						>CLDMYSQL-289: </link>Fixed issues to improve
-					scalability of functionality and performance for
-					backups.</para>
+					scalability of backups functionality and
+					performance.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">

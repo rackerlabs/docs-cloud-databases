@@ -62,10 +62,11 @@
                                 <param name="name" style="template"
                                     type="xsd:string" >
                                     <doc>The name for the specified user. 
-                                        Refer to                             
-                                        <link xmlns="http://docbook.org/ns/docbook"
+                                        Refer to 
+                                        <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/>
+                                        <link security="writeronly" xmlns="http://docbook.org/ns/docbook"
                                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
-                                                >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html</link>
+                                            >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html</link>
                                              for details about restricting the name to a particular host. 
                                              Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP)</doc></param>
                                 <method href="#deleteUser" />
@@ -1227,7 +1228,7 @@
                 <doc title="List User for Restricted Host Request: XML">
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User for Restricted Host requests.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        In these examples, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded to dbuser1%40%25 (in this case, since % is used for the host, the user can connect from any host):</para>
+                        In these examples, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-request.xml"/>
                 </doc>
             </representation>
@@ -1255,7 +1256,7 @@
                 <doc title="List User Access for Restricted Host Response: XML">
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User for Restricted Host responses.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        In these examples, user@host has been url-encoded by the client, so the parameter dbuser1@% is url-encoded to dbuser1%40%25 (in this case, since % is used for the host, the user can connect from any host):</para>
+                        In these examples, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-response.xml"/>
                 </doc>
             </representation>
@@ -1294,7 +1295,8 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access for Restricted Host requests.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
 
-                        In these examples, user@host has been url-encoded by the client, so the parameter dbuser2@10.0.0.1 is url-encoded to dbuser2%4010%252E0%252E0%252E1:</para>
+In these examples, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
+(refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
 
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-request.xml"/>
                 </doc>
@@ -1325,7 +1327,8 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access for Restricted Host responses.</para>
                     <para xmlns="http://docbook.org/ns/docbook">These examples show the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
 
-                        user@host was actually set to dbuser2@10.0.0.1 in the request example, which was then url-encoded to dbuser2%4010%252E0%252E0%252E1:</para>
+In these examples, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
+(refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
 
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-response.xml"/>
                 </doc>
