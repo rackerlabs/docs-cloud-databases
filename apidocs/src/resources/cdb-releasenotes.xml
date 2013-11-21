@@ -437,7 +437,7 @@
 	</chapter>
 	<chapter xml:id="cdbv1.0.33">
 		<title>v1.0.33, November 21, 2013</title>
-		<itemizedlist spacing="compact">
+		<itemizedlist spacing="compact" security="internal">
 			<title>What's New</title>
 			<listitem>
 				<para>Updated Repose for Cloud Databases Authentication.</para>
@@ -448,12 +448,17 @@
 			<listitem>
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/CLDMYSQL-279"
-						>CLDMYSQL-279,</link>
-					<link security="internal"
+						>CLDMYSQL-279: </link> Fixed issue where
+					storing a large number of database tables would
+					cause a backup to fail. </para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/CLDMYSQL-289"
-						>CLDMYSQL-289: </link>Fixed issues to improve
-					scalability of backups functionality and
-					performance.</para>
+						>CLDMYSQL-289: </link> Fixed issue to update
+					the correct backups location, which was causing
+					artifacts to be left behind after a failed backup
+					is deleted. </para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
@@ -513,10 +518,10 @@
 			<title>Bug Fixes</title>
 			<listitem>
 				<para><link security="internal"
-					xlink:href="https://jira.rax.io/browse/CLDMYSQL-293"
-						>CLDMYSQL-293: </link>Updated Trove API validation
-					to prevent guest from granting privileges to a
-					database that does not exist.</para>
+						xlink:href="https://jira.rax.io/browse/CLDMYSQL-293"
+						>CLDMYSQL-293: </link>Updated API calls for
+					Users to prevent granting privileges to a database
+					that does not exist.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
