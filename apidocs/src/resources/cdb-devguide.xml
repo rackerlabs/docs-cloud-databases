@@ -59,11 +59,12 @@
             <year>2011</year>
             <year>2012</year>
             <year>2013</year>
+            <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2013-11-21</pubdate>
+        <pubdate>2014-01-08</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +78,17 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-01-08</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated the table of backup statuses
+                                in <xref linkend="backups"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2013-11-21</date>
                 <revdescription>
@@ -2880,7 +2892,7 @@
                         <td colspan="3"><para>A new backup task was created.</para></td>
                     </tr>
                     <tr>
-                        <td colspan="1">RUNNING</td>
+                        <td colspan="1">BUILDING</td>
                         <td colspan="3"><para>The backup task is currently running.</para></td>
                     </tr>
                     <tr>
@@ -2890,6 +2902,10 @@
                     <tr>
                         <td colspan="1">FAILED</td>
                         <td colspan="3"><para>The backup task failed to complete successfully.</para></td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">DELETE_FAILED</td>
+                        <td colspan="3"><para>The backup task failed to delete Cloud Files objects.</para></td>
                     </tr>
                 </tbody>
             </table> 
