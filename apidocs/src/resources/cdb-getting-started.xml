@@ -49,13 +49,25 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-01-30</pubdate>
+        <pubdate>2014-02-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-02-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note regarding deprecation of
+                                XML data serialization format in <xref
+                                   linkend="DB_Overview"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-01-30</date>
                 <revdescription>
@@ -342,6 +354,12 @@
                         this guide include request bodies in both XML
                         and JSON formats. See <xref linkend="curl"
                         />.</para>
+                    <important>
+                        <para>As of release 1.0.35, the XML data
+                            serialization format in the Cloud
+                            Databases API is deprecated and will be
+                            removed from the API in 60 days. </para>
+                    </important>
                 </listitem>
             </itemizedlist>If you like, you can use cURL in one
             example and switch to the trove client in the next
@@ -607,6 +625,12 @@
                 xml:id="curl_summary_xml">
                 
                 <title>XML Requests and Responses</title>
+                <important>
+                    <para>As of release 1.0.35, the XML data
+                        serialization format in the Cloud Databases
+                        API is deprecated and will be removed from the
+                        API in 60 days. </para>
+                </important>
                 <para>The following example shows a cURL command that specifies an
                     XML request body and returns an XML response. The command
                     creates a server:</para>
@@ -1322,6 +1346,12 @@ export OS_PROJECT_ID=&lt;tenant_id>
                         inside the xml or json message within the
                         command.</para>
                 </note>
+                <important>
+                    <para>As of release 1.0.35, the XML data
+                        serialization format in the Cloud Databases
+                        API is deprecated and will be removed from the
+                        API in 60 days. </para>
+                </important>
                 <para>Consider the following cURL Authenticate
                     Request: XML example that is described in detail
                     in <xref linkend="Generating_Auth_Token"/>:</para>

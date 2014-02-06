@@ -1083,7 +1083,7 @@
             
             <representation mediaType="application/xml">
                 <doc title="List Users in Database Instance Paged Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance requests:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance requests to return a limit of two users at a time (<code>users?limit=2</code>):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-request.xml"/>
                 </doc>
             </representation>
@@ -1113,7 +1113,7 @@
             <representation mediaType="application/xml"
                 element="dbaas:Users" >
                 <doc title="List Users in Database Instance Paged Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance responses:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance responses.</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.xml"/>
                 </doc>
             </representation>
@@ -1121,7 +1121,8 @@
                 element="dbaas:Users" >
                 <doc title="List Users in Database Instance Paged Response: JSON">
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.json"/>
-                </doc>
+                    <para xmlns="http://docbook.org/ns/docbook">Note that the response contains the link (<code>href</code>) to the next set of users in the list (<code>users?marker=dbuser2%4010.0.0.1&amp;limit=2</code>), so using that link for the request will return the next two users in the list after <code>dbuser2%4010.0.0.1</code>.</para>
+                </doc>   
             </representation>
             
         </response>

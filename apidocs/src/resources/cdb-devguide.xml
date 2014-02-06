@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-01-08</pubdate>
+        <pubdate>2014-02-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,18 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-02-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note regarding deprecation of
+                                XML data serialization format in <xref
+                                   linkend="overview"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-01-08</date>
                 <revdescription>
@@ -619,6 +631,11 @@
             maintain and/or update MySQL. Interactions with Cloud
             Databases occur programmatically via the Cloud Databases
             API as described in this developer guide.</para>
+        <important>
+            <para>As of release 1.0.35, the XML data serialization
+                format in the Cloud Databases API is deprecated and
+                will be removed from the API in 60 days. </para>
+        </important>
         <note> <para>Rackspace recommends that Cloud Databases users back up their
                 data using backups in Cloud Databases.</para> </note>
         <para>The following figure shows an
@@ -1285,6 +1302,12 @@
                 specified using both an <code>Accept</code> header and
                 a query extension, the query extension takes
                 precedence.</para>
+            <important>
+                <para>As of release 1.0.35, the XML data serialization
+                    format in the Cloud Databases API is deprecated
+                    and will be removed from the API in 60 days.
+                </para>
+            </important>
             <para security="writeronly">Some operations support an Atom representation that
                 can be used to efficiently determine when the state of
                 services has changed. </para>
@@ -2750,6 +2773,11 @@
         xmlns="http://docbook.org/ns/docbook"
         role="api-reference">
         <title>API Operations</title>
+        <important>
+            <para>As of release 1.0.35, the XML data serialization
+                format in the Cloud Databases API is deprecated and
+                will be removed from the API in 60 days. </para>
+        </important>
         <note>
             <para>Do not use trailing slashes (/) at the end of calls
                 to API operations, since this may cause the call to
