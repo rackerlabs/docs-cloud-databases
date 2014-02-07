@@ -62,7 +62,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2014-02-06</pubdate>
+	<pubdate>2014-02-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,7 +76,7 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2014-02-06</date>
+				<date>2014-02-11</date>
 				<revdescription>
 					<para>Updated for v1.0.35.</para>
 				</revdescription>
@@ -448,7 +448,7 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.35">
-		<title>v1.0.35, February 6, 2014</title>
+		<title>v1.0.35, February 11, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem>
