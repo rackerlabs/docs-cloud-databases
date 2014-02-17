@@ -1,0 +1,7 @@
+{ 
+  "configuration" : {
+     "values" : { 
+         "join_buffer_size": 1048576
+       }
+   } 
+}

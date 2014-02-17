@@ -37,6 +37,7 @@
                         <param name="instanceId" style="template"
                             type="xsd:string" >
                             <doc>The instance ID for the specified database instance.</doc></param>
+                        <method href="#updateInstance" />
                         <method href="#getInstanceById" />
                         <method href="#deleteInstance" />
                         <resource id="instanceAction" path="action">
@@ -84,6 +85,9 @@
                                 </resource>  
                             </resource>
                         </resource>
+                        <resource id="configuration" path="configuration">
+                            <method href="#getDefaultConfig" />
+                        </resource>
                         <resource id="root" path="root">
                             <method href="#createRoot" />
                             <method href="#isRootEnabled" />
@@ -110,10 +114,45 @@
                             <doc>The backup ID for the specified backup.</doc></param>
                         <method href="#getBackupById" />
                         <method href="#deleteBackup" />
-                    </resource>
-                    
-          
+                    </resource>          
                 </resource>
+                
+                <resource id="configurations" path="configurations">
+                    <method href="#getConfigurations" />
+                    <method href="#createConfiguration" />
+                    <resource id="configId" path="{configId}">
+                        <param name="configId" style="template" type="xsd:string" >
+                            <doc>The configuration ID for the specified configuration group.</doc></param>
+                        <method href="#getConfigurationById" />
+                        <method href="#updateSomeConfigParmsById" />
+                        <method href="#replaceAllConfigParmsById" />
+                        <method href="#deleteConfigGroup" /> 
+                        <resource id="instances2" path="instances">
+                            <method href="#getInstancesForConfiguration" />
+                        </resource>
+                    </resource>          
+                </resource>
+                
+                <resource id="datastores" path="datastores">
+                    <resource id="datastoreId" path="{datastoreId}">
+                        <param name="datastoreId" style="template" type="xsd:string" >
+                            <doc>The ID for the specified datastore.</doc></param>
+                        <resource id="versions2" path="versions">
+                            <resource id="versionId" path="{versionId}">
+                              <param name="versionId" style="template" type="xsd:string" >
+                                <doc>The version for the specified datastore.</doc></param>
+                               <resource id="parameters" path="parameters">
+                                  <method href="#getConfigurationKeys" />
+                                   <resource id="keyId" path="{keyId}">
+                                       <param name="keyId" style="template" type="xsd:string" >
+                                           <doc>The key that may be configured for the specified datastore and version.</doc></param>
+                                       <method href="#getConfigurationKeyDetails" />
+                                   </resource>
+                               </resource>
+                            </resource>
+                        </resource>
+                   </resource>
+                 </resource>
                 
             </resource>
         </resource>
@@ -246,6 +285,11 @@
                     <td colspan="3">Name of the instance to create. The length of the name is limited to 255 characters and any characters are permitted.</td>
                     <td colspan="1">No</td>
                 </tr>
+                <tr security="writeronly">
+                    <td colspan="1">configuration</td>
+                    <td colspan="3">Identifier of the configuration group to associate with the instance.</td>
+                    <td colspan="1">No</td>
+                </tr>
                 <tr>
                     <td colspan="1" rowspan="3">Database</td>
                     <td colspan="1">name</td>
@@ -336,6 +380,13 @@
                 </doc>
             </representation>
             
+           <!-- <representation mediaType="application/json" element="dbaas:DatabaseInstance">
+                <doc title="Create Database Instance Configuration Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Configuration request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-request.json"/>
+                </doc>
+            </representation> -->
+            
         </request>
         <response status="200">
             <representation mediaType="application/xml" element="dbaas:DatabaseInstance" >
@@ -367,6 +418,15 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
+            
+            <!-- <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc title="Create Database Instance Config Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Config response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-response.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
+                </doc>
+            </representation> -->
             
         </response>
     &commonFaults;
@@ -449,11 +509,30 @@
     &getFaults;
     </method>
 
+    <method name="PUT" id="updateInstance">
+        <wadl:doc xml:lang="EN" title="Update Database Instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Associates a specified database instance with a configuration group.</para>
+            <para>This operation associates a specified database instance with a configuration group.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Database Instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-update-instance-request.json"/>
+                </doc>
+            </representation>          
+        </request>
+        <response status="200"/>
+        
+        &commonFaults;
+        &getFaults;
+    </method>
 
     <method name="GET" id="getInstanceById">
         <wadl:doc xml:lang="EN" title="List Database Instance Status and Details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
-            <para>This operation lists the status and details of the specified database instance.</para>
+            <para>This operation lists the status and details of the specified database instance. </para>
+            <para>The operation also lists the configuration group id/name if the running instance has been associated with a configuration group.</para>
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
@@ -471,9 +550,17 @@
                 </representation>
                 <representation mediaType="application/json">
                     <doc>
-                        <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.xml"/>
+                        <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                     </doc>
-                </representation>          
+                </representation>
+            
+          <!--  <representation mediaType="application/json" element="dbaas:DatabaseInstance">
+                <doc title="List Database Instance Status and Details with Configuration Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details with Configuration request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
+                </doc>
+            </representation> -->
+            
         </request>
         <response status="200">
             <representation mediaType="application/xml"
@@ -489,6 +576,14 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-response.json"/>
                 </doc>
             </representation>
+            <!-- <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc title="List Database Instance Status and Details with Configuration Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details with Configuration response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-config-response.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned since the instance is associated with that configuration.</para>
+                </doc>
+            </representation> -->
         </response>
     &commonFaults;
     &getFaults;
@@ -1419,6 +1514,34 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         &commonFaults;
         &getFaults;
     </method>
+    
+    <!-- Get Default Config -->
+    <method name="GET" id="getDefaultConfig">
+        <wadl:doc xml:lang="EN" title="Get Default Configuration"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the default MySQL configuration settings from the template that were applied to the specified instance.</para>
+            <para>This operation Lists the default MySQL configuration settings from the template that were applied to the specified instance.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Default Configuration request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-get-instance-default-config-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            
+            <representation mediaType="application/json"
+                element="dbaas:DefaultConfig">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Default Configuration response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-get-instance-default-config-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
 
     <!-- Root -->
     <method name="POST" id="createRoot">
@@ -1991,6 +2114,220 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             </representation>
             
             
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getConfigurations">
+        <wadl:doc xml:lang="EN" title="List Configurations" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all defined configuration groups for the tenant.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configurations request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configurations-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configurations response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configurations-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="POST" id="createConfiguration">
+        <wadl:doc xml:lang="EN" title="Create Configuration" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new configuration group based on the parameters supplied in the request body.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Configuration request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-configuration-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Configuration response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-configuration-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getConfigurationById">
+        <wadl:doc xml:lang="EN" title="List Configuration Details" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists details for the specified configuration group.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Details request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-details-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Details response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-details-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="PATCH" id="updateSomeConfigParmsById">
+        <wadl:doc xml:lang="EN" title="Update Some Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Updates some of the configuration parameters associated with the specified configuration group.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json"
+                element="dbaas:Configuration">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Some Configuration Parameters request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-update-some-config-parms-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200"/>          
+        
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="PUT" id="replaceAllConfigParmsById">
+        <wadl:doc xml:lang="EN" title="Replace All Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Replaces all of the configuration parameters associated with the specified configuration group.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json"
+                element="dbaas:Configuration">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace All Configuration Parameters request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-replace-all-config-parms-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace All Configuration Parameters response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-replace-all-config-parms-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;          
+        
+    </method>
+    
+    <method name="DELETE" id="deleteConfigGroup">
+        <wadl:doc xml:lang="EN" title="Delete Configuration Group" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes the specified configuration group. No message body is expected in the request.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Configuration Group request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-config-group-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200"/>      
+        &commonFaults;
+        &getFaults;          
+        
+    </method>
+
+    <method name="GET" id="getInstancesForConfiguration">
+        <wadl:doc xml:lang="EN" title="List Instances for Configuration" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists instances that are associated with the specified configuration group.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instances for Configuration request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-instances-for-configuration-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instances for Configuration response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-instances-for-configuration-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getConfigurationKeys">
+        <wadl:doc xml:lang="EN" title="List Configuration Keys" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists configuration keys that may be configured on the system.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-keys-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-keys-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getConfigurationKeyDetails">
+        <wadl:doc xml:lang="EN" title="List Configuration Key Details" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the details of a specified configuration key that may be configured on the system.</para>        
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-key-details-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-key-details-response.json"/>
+                </doc>
+            </representation>
         </response>
         &commonFaults;
         &getFaults;

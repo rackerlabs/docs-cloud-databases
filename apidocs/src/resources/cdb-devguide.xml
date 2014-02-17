@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-02-11</pubdate>
+        <pubdate>2014-02-17</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,7 +79,7 @@
         
         <revhistory>
             <revision>
-                <date>2014-02-11</date>
+                <date>2014-02-17</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -2767,6 +2767,59 @@
             </section>
             
         </section>
+        <section xml:id="MySQL_Config_Mgmt-d1e3826">
+            <title>MySQL Configuration Management</title>
+            <para>The MySQL configuration management capability allows
+                users of Cloud Databases to override the default MySQL
+                configuration settings provided by the Cloud Databases
+                service. This is implemented by leveraging MySQL’s
+                includedir directive, which is already pre-defined to
+                point to <filename>/etc/mysql/conf.d</filename>. The
+                configuration files stored (or symlinked) into this
+                directory are interpreted by MySQL at startup and the
+                values defined there supersede any value defined in
+                the <filename>my.cnf</filename> file or MySQL’s
+                default directives.</para>
+            <para>To implement this management capability, a database
+                instance may optionally be associated with a
+                configuration when the instance is created or through
+                associating a configuration with the instance after it
+                has been created.</para>
+            <para>A configuration is a collection of key/value pairs,
+                where the valid key/values are defined in the MySQL
+                manual at <link
+                    xlink:href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html"
+                    >http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html</link>.
+                Some directives are capable of being applied
+                dynamically, while other directives require a server
+                restart to take effect. </para>
+            <para>When a configuration is modified either by way of
+                adding a new key/value pair or modifying an existing
+                key/value pair, the service updates the
+                    <filename>overrides.cnf</filename> file for every
+                instance that is associated with the configuration and
+                attempts to dynamically update running MySQL instances
+                if the value is allowed to be modified
+                dynamically.</para>
+            <remark>Reviewer: we need to decide what if any of the
+                following text should be added into this
+                section.</remark>
+            <para security="writeronly">The MySQL configuration management feature will
+                integrate with the quotas capability defined in the
+                following blueprint that has been approved at <link
+                    xlink:href="https://blueprints.launchpad.net/trove/+spec/quotas"
+                    >https://blueprints.launchpad.net/trove/+spec/quotas</link>.
+                There should be two quotas established: (1) maximum
+                number of configuration groups per tenant, and (2)
+                maximum number of values per configuration group. </para>
+            <para>Rackspace configures the
+                validation rules for key/value pairs that can be
+                assigned to a configuration group. These rules can be
+                retrieved by the user from the API through the
+                configuration-parameters resource as described in the
+                API documentation below. These validation rules are
+                defined in the configuration-validation.conf file. </para>
+        </section>
     </chapter>
     
     <chapter xml:id="API_Operations-d1e2264" 
@@ -2811,9 +2864,15 @@
                 </wadl:resource>
 
                 <wadl:resource href="../../../xsd/dbaas.wadl#instanceId">
+                  <!--  <wadl:method href="updateInstance"/>  -->
                     <wadl:method href="getInstanceById"/>
                     <wadl:method href="deleteInstance"/>  
                 </wadl:resource>
+                
+                <!-- <wadl:resource href="../../../xsd/dbaas.wadl#configuration" security="writeronly">
+                    <wadl:method href="getDefaultConfig"/>
+                </wadl:resource> -->
+                
                 <wadl:resource href="../../../xsd/dbaas.wadl#root">
                     <wadl:method href="createRoot"/>
                     <wadl:method href="isRootEnabled"/>
@@ -2956,6 +3015,65 @@
                     <wadl:method href="restoreBackup"/>
                 </wadl:resource>
             </wadl:resources>
+        </section>
+        
+        <section xml:id="configurations" security="writeronly">
+            <title>Configurations</title>
+            <para>This section describes the operations that are
+                supported for configurations.</para>
+            <para>You can find additional configuration-related
+                information in the descriptions for the following API operations:<itemizedlist>
+                    <listitem>
+                        <para><xref
+                                linkend="POST_createInstance__version___accountId__instances_"
+                            /></para>
+                    </listitem>
+                    <listitem>
+                        <para>List Database Instance Status and
+                            Details</para>
+                    </listitem>
+                    <listitem>
+                        <para>Get Default Configuration</para>
+                    </listitem>
+                    <listitem>
+                        <para>Update Database Instance</para>
+                    </listitem>
+                </itemizedlist><remark>Reviewer: need to add links to
+                    bulleted list above.</remark></para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../../xsd/dbaas.wadl#configurations">
+                    <wadl:method href="getConfigurations"/>
+                    <wadl:method href="createConfiguration"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#configId">
+                    <wadl:method href="getConfigurationById"/>
+                    <wadl:method href="updateSomeConfigParmsById"/>
+                    <wadl:method href="replaceAllConfigParmsById"/>
+                    <wadl:method href="deleteConfigGroup"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#instances2">
+                    <wadl:method href="getInstancesForConfiguration"/>
+                </wadl:resource>
+            </wadl:resources>
+            
+            <section xml:id="configuration_keys">
+                <title>Configuration Keys</title>
+                <para>This section describes the operations that are
+                    supported for configuration keys.</para>
+                <wadl:resources
+                    xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                    <wadl:resource
+                        href="../../../xsd/dbaas.wadl#parameters">
+                        <wadl:method href="getConfigurationKeys"/>
+                    </wadl:resource>
+                    <wadl:resource
+                        href="../../../xsd/dbaas.wadl#keyId">
+                        <wadl:method href="getConfigurationKeyDetails"
+                        />
+                    </wadl:resource>
+                </wadl:resources>
+            </section>
         </section>
             
         

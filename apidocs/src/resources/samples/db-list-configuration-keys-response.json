@@ -1,0 +1,12 @@
+{
+  "parameters":[
+     {
+        "name":"autocommit",
+        "description":"Enable or disable MySQLs autocommit feature",
+        "default":"true",
+        "configurable":"true",
+        "dynamic":"true",
+        "type":"boolean"
+     }
+  ]
+}
