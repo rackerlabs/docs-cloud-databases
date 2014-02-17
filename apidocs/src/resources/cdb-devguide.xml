@@ -2864,14 +2864,14 @@
                 </wadl:resource>
 
                 <wadl:resource href="../../../xsd/dbaas.wadl#instanceId">
-                  <!--  <wadl:method href="updateInstance"/>  -->
+                    <wadl:method href="updateInstance"/> 
                     <wadl:method href="getInstanceById"/>
                     <wadl:method href="deleteInstance"/>  
                 </wadl:resource>
                 
-                <!-- <wadl:resource href="../../../xsd/dbaas.wadl#configuration" security="writeronly">
+                <wadl:resource href="../../../xsd/dbaas.wadl#configuration">
                     <wadl:method href="getDefaultConfig"/>
-                </wadl:resource> -->
+                </wadl:resource>
                 
                 <wadl:resource href="../../../xsd/dbaas.wadl#root">
                     <wadl:method href="createRoot"/>
@@ -3017,7 +3017,7 @@
             </wadl:resources>
         </section>
         
-        <section xml:id="configurations" security="writeronly">
+        <section xml:id="configurations">
             <title>Configurations</title>
             <para>This section describes the operations that are
                 supported for configurations.</para>
@@ -3030,7 +3030,9 @@
                     </listitem>
                     <listitem>
                         <para>List Database Instance Status and
-                            Details</para>
+                            Details <xref
+                                linkend="POST_createInstance__version___accountId__instances_"
+                            /></para>
                     </listitem>
                     <listitem>
                         <para>Get Default Configuration</para>
