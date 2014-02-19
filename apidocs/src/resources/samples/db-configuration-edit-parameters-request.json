@@ -1,0 +1,14 @@
+PATCH /v1.0/1234/configurations/f5aaf933-86b2-440e-a9dc-36c24665b3b4 HTTP/1.1
+User-Agent: python-troveclient
+Host: ord.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/json
+Content-Type: application/json
+
+{
+    "configuration": {
+        "values": {
+            "connect_timeout": 300
+        }
+    }
+}

@@ -2772,9 +2772,10 @@
             <para>The MySQL configuration management capability allows
                 users of Cloud Databases to override the default MySQL
                 configuration settings provided by the Cloud Databases
-                service. This is implemented by leveraging MySQL’s
-                includedir directive, which is already pre-defined to
-                point to <filename>/etc/mysql/conf.d</filename>. The
+                service. </para>
+            <para security="writeronly">This is implemented by leveraging MySQL’s includedir
+                directive, which is already pre-defined to point to
+                    <filename>/etc/mysql/conf.d</filename>. The
                 configuration files stored (or symlinked) into this
                 directory are interpreted by MySQL at startup and the
                 values defined there supersede any value defined in
@@ -2812,13 +2813,81 @@
                 There should be two quotas established: (1) maximum
                 number of configuration groups per tenant, and (2)
                 maximum number of values per configuration group. </para>
-            <para>Rackspace configures the
-                validation rules for key/value pairs that can be
-                assigned to a configuration group. These rules can be
-                retrieved by the user from the API through the
-                configuration-parameters resource as described in the
-                API documentation below. These validation rules are
-                defined in the configuration-validation.conf file. </para>
+            <para>Rackspace configures the validation rules for
+                key/value pairs that can be assigned to a
+                configuration group. These rules can be retrieved by
+                the user from the API through the configuration
+                parameters resource as described in <xref
+                    linkend="configuration_parameters"/>. These
+                validation rules are defined in the
+                configuration-validation.conf file. </para>
+        </section>
+        <section xml:id="Datastore_Types-d1e9263">
+            <title>Datastore Types</title>
+            <para>Datastore types management will allow users of Cloud
+                Databases to select database type and version from the
+                list provided by Rackspace. Rackspace will control
+                datastore types, adding new types as they become
+                available, and deactivating old versions. </para>
+            <para>To take advantage of this capability, users can
+                specify datastore type and optional version at
+                instance creation. <emphasis>Datastore Type</emphasis>
+                is a family of database engines, like mysql, mongodb,
+                and cassandra. <emphasis>Datastore Version</emphasis>
+                defines engine version of the selected datastore type
+                and contains a list of system packages which provides
+                this datastore.</para>
+            <remark>Reviewer: do we need to keep the "and contains a
+                list of system packages which provides this datastore"
+                in the previous sentence or can this be
+                deleted?</remark>
+            <para>Each datastore type has several versions of engine.
+                Type can have a default version for type. Versions can
+                be marked as <emphasis>active</emphasis> or
+                    <emphasis>inactive</emphasis>. Active versions are
+                available for users and can be used for creating
+                database instances. Usesr do not see inactive versions
+                and cannot create new instances with an inactive
+                version. However inactive versions can still be used
+                in already running instances.</para>
+            <para>For each datastore type, Rackspace can specify an OS
+                image on which instances will work. For each version
+                of each type Rackspace can specify a different image,
+                which will have more precedence than image for type.
+                This provides a flexible selection of image, type of
+                db, and version.</para>
+            <para>For each datastore version, the list of system
+                packages provides installation of the database with
+                the specified version on the specified image. Possible
+                to specify only one package here, but in some cases
+                need to specify several packages with exactly
+                version.</para>
+            <remark>Reviewer: do we need to maintain the second
+                sentence in the previous paragraph? If so I suggest
+                rewriting it as follows: "It is possible to specify
+                only one package in the list, but in some cases
+                several packages with exact version need to be
+                specified."</remark>
+            <para>For mysql you can specify server, client, shared,
+                and shared-compat packages. It matters if you have
+                more then one version available in your repositories.
+                For example, if you specify only
+                    <code>mysql-server-5.5</code> package, and you
+                have mariadb and percona repositories enabled, you can
+                get mysql-server-5.5, mariadb-shared-5.5, and
+                percona-client-55 installed on your image.</para>
+            <para>It is possible to use plain vanilla images
+                preinstalled with prepared GA and package
+                repositories.</para>
+            <remark>Reviewer: I do not understand the previous
+                sentence. Can you please clarify?</remark>
+            <para>To get Cloud Databases to avoid package
+                installation, all packages specified in the list for
+                the chosen version should be installed on the
+                image.</para>
+            <para>For information about the API operations available
+                for types, refer to <xref
+                    linkend="configuration_parameters"/> XXX.</para>
         </section>
     </chapter>
     
@@ -3021,27 +3090,30 @@
             <title>Configurations</title>
             <para>This section describes the operations that are
                 supported for configurations.</para>
-            <para>You can find additional configuration-related
-                information in the descriptions for the following API operations:<itemizedlist>
+            <para>You can also find additional configuration-related
+                information in the descriptions for the following API operations:
+                <itemizedlist spacing="compact">
                     <listitem>
                         <para><xref
                                 linkend="POST_createInstance__version___accountId__instances_"
                             /></para>
                     </listitem>
                     <listitem>
-                        <para>List Database Instance Status and
-                            Details <xref
-                                linkend="POST_createInstance__version___accountId__instances_"
+                        <para><xref
+                                linkend="GET_getInstanceById__version___accountId__instances__instanceId__Database_Instances"
                             /></para>
                     </listitem>
                     <listitem>
-                        <para>Get Default Configuration</para>
+                        <para><xref
+                                linkend="GET_getDefaultConfig__version___accountId__instances__instanceId__configuration_Database_Instances"
+                            /></para>
                     </listitem>
                     <listitem>
-                        <para>Update Database Instance</para>
+                        <para><xref
+                                linkend="PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances"
+                            /></para>
                     </listitem>
-                </itemizedlist><remark>Reviewer: need to add links to
-                    bulleted list above.</remark></para>
+                </itemizedlist></para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/dbaas.wadl#configurations">
@@ -3059,23 +3131,53 @@
                 </wadl:resource>
             </wadl:resources>
             
-            <section xml:id="configuration_keys">
-                <title>Configuration Keys</title>
+            <section xml:id="configuration_parameters">
+                <title>Configuration Parameters</title>
                 <para>This section describes the operations that are
-                    supported for configuration keys.</para>
+                    supported for configuration parameters.</para>
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource
                         href="../../../xsd/dbaas.wadl#parameters">
-                        <wadl:method href="getConfigurationKeys"/>
+                        <wadl:method href="getConfigurationParameters"/>
                     </wadl:resource>
                     <wadl:resource
-                        href="../../../xsd/dbaas.wadl#keyId">
-                        <wadl:method href="getConfigurationKeyDetails"
+                        href="../../../xsd/dbaas.wadl#parameterId">
+                        <wadl:method href="getConfigurationParameterDetails"
+                        />
+                    </wadl:resource>
+                    <wadl:resource
+                        href="../../../xsd/dbaas.wadl#parameters2">
+                        <wadl:method href="getConfigurationParametersWithoutDatastoreVersion"
+                        />
+                    </wadl:resource>
+                    <wadl:resource
+                        href="../../../xsd/dbaas.wadl#parameter2Id">
+                        <wadl:method href="getConfigurationParameterDetailsWithoutDatastoreVersion"
                         />
                     </wadl:resource>
                 </wadl:resources>
             </section>
+        </section>
+        <section xml:id="datastore_types_and_versions">
+            <title>Datastore Types and Versions</title>
+            <para>This section describes the operations that are
+                supported for datastore types and versions.</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../../xsd/dbaas.wadl#datastores">
+                    <wadl:method href="getDatastoreTypes"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#datastoreId">
+                    <wadl:method href="getDatastoreTypesById"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#versions2">
+                    <wadl:method href="getDatastoreVersionsById"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#versionId">
+                    <wadl:method href="getDatastoreVersionByVersionId"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>
             
         

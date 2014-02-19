@@ -134,19 +134,40 @@
                 </resource>
                 
                 <resource id="datastores" path="datastores">
+                    <method href="#getDatastoreTypes" />
+                    <resource id="versions3" path="versions">
+                        <resource id="version3Id" path="{versionId}">
+                            <param name="versionId" style="template" type="xsd:string" >
+                                <doc>The version for the specified datastore.</doc></param>
+                            <resource id="parameters2" path="parameters">
+                                <method href="#getConfigurationParametersWithoutDatastoreVersion" />
+                                <resource id="parameter2Id" path="{parameterId}">
+                                    <param name="parameterId" style="template" type="xsd:string" >
+                                        <doc>The parameter that may be configured for the specified datastore and version.</doc></param>
+                                    <method href="#getConfigurationParameterDetailsWithoutDatastoreVersion" />
+                                </resource>
+                            </resource>
+                        </resource>
+                    </resource>
+                    
+                    
+                    
                     <resource id="datastoreId" path="{datastoreId}">
                         <param name="datastoreId" style="template" type="xsd:string" >
                             <doc>The ID for the specified datastore.</doc></param>
+                        <method href="#getDatastoreTypesById" />
                         <resource id="versions2" path="versions">
+                            <method href="#getDatastoreVersionsById" />
                             <resource id="versionId" path="{versionId}">
                               <param name="versionId" style="template" type="xsd:string" >
                                 <doc>The version for the specified datastore.</doc></param>
+                                <method href="#getDatastoreVersionByVersionId" />
                                <resource id="parameters" path="parameters">
-                                  <method href="#getConfigurationKeys" />
-                                   <resource id="keyId" path="{keyId}">
-                                       <param name="keyId" style="template" type="xsd:string" >
-                                           <doc>The key that may be configured for the specified datastore and version.</doc></param>
-                                       <method href="#getConfigurationKeyDetails" />
+                                  <method href="#getConfigurationParameters" />
+                                   <resource id="parameterId" path="{parameterId}">
+                                       <param name="parameterId" style="template" type="xsd:string" >
+                                           <doc>The parameter that may be configured for the specified datastore and version.</doc></param>
+                                       <method href="#getConfigurationParameterDetails" />
                                    </resource>
                                </resource>
                             </resource>
@@ -267,7 +288,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="1" rowspan="3">Instance</td>
+                    <td colspan="1" rowspan="4">Instance</td>
                     <td colspan="1">flavorRef</td>
                     <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
                         This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
@@ -285,7 +306,7 @@
                     <td colspan="3">Name of the instance to create. The length of the name is limited to 255 characters and any characters are permitted.</td>
                     <td colspan="1">No</td>
                 </tr>
-                <tr security="writeronly">
+                <tr>
                     <td colspan="1">configuration</td>
                     <td colspan="3">Identifier of the configuration group to associate with the instance.</td>
                     <td colspan="1">No</td>
@@ -422,7 +443,7 @@
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create Database Instance Config Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Config response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
                 </doc>
@@ -513,16 +534,24 @@
         <wadl:doc xml:lang="EN" title="Update Database Instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Associates a specified database instance with a configuration group.</para>
             <para>This operation associates a specified database instance with a configuration group.</para>
+            <para><remark>Reviewer: should the description note that this can be used for attaching or detaching configurations from an instance?</remark></para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Database Instance request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-update-instance-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-detach-from-instance-request.json"/>
                 </doc>
             </representation>          
         </request>
-        <response status="200"/>
+        <response status="200">
+            <representation mediaType="application/json"
+               element="dbaas:DatabaseInstance" >
+              <doc>
+                  <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-detach-from-instance-response.json"/>
+              </doc>
+            </representation>
+        </response>
         
         &commonFaults;
         &getFaults;
@@ -531,8 +560,8 @@
     <method name="GET" id="getInstanceById">
         <wadl:doc xml:lang="EN" title="List Database Instance Status and Details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
-            <para>This operation lists the status and details of the specified database instance. </para>
-            <para>The operation also lists the configuration group id/name if the running instance has been associated with a configuration group.</para>
+            <para>This operation lists the status and details of the specified database instance. The operation also lists 
+                the configuration group id/name if the running instance has been associated with a configuration group.</para>
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
@@ -2127,7 +2156,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configurations request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configurations-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2135,7 +2164,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configurations response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configurations-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -2151,7 +2180,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Configuration request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-configuration-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-create-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2160,7 +2189,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 element="dbaas:Configuration" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Configuration response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-configuration-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-create-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -2176,7 +2205,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Details request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-details-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-details-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2185,7 +2214,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 element="dbaas:Configuration" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Details response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-details-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-details-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -2202,11 +2231,19 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 element="dbaas:Configuration">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Some Configuration Parameters request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-update-some-config-parms-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-edit-parameters-request.json"/>
                 </doc>
             </representation>
         </request>
-        <response status="200"/>          
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Some Configuration Parameters response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-edit-parameters-response.json"/>
+                </doc>
+            </representation>
+        </response>          
         
         &commonFaults;
         &getFaults;
@@ -2221,7 +2258,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 element="dbaas:Configuration">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace All Configuration Parameters request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-replace-all-config-parms-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-update-parameters-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2230,7 +2267,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 element="dbaas:Configuration" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace All Configuration Parameters response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-replace-all-config-parms-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-update-parameters-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -2247,11 +2284,19 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Configuration Group request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-config-group-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-delete-request.json"/>
                 </doc>
             </representation>
         </request>
-        <response status="200"/>      
+        <response status="200">
+                <representation mediaType="application/json"
+                    element="dbaas:Configuration" >
+                    <doc>
+                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Configuration Group response:</para>
+                        <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-delete-response.json"/>
+                    </doc>
+                </representation>         
+        </response>      
         &commonFaults;
         &getFaults;          
         
@@ -2265,7 +2310,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instances for Configuration request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-instances-for-configuration-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-instances-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2274,7 +2319,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 element="dbaas:Configuration" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instances for Configuration response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-instances-for-configuration-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-instances-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -2282,15 +2327,15 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         &getFaults;
     </method>
     
-    <method name="GET" id="getConfigurationKeys">
-        <wadl:doc xml:lang="EN" title="List Configuration Keys" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists configuration keys that may be configured on the system.</para>        
+    <method name="GET" id="getConfigurationParameters">
+        <wadl:doc xml:lang="EN" title="List Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists configuration parameters that may be configured on the system.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-keys-request.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-for-datastore-version-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2298,8 +2343,8 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-keys-response.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-for-datastore-version-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -2307,15 +2352,15 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         &getFaults;
     </method>
     
-    <method name="GET" id="getConfigurationKeyDetails">
-        <wadl:doc xml:lang="EN" title="List Configuration Key Details" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the details of a specified configuration key that may be configured on the system.</para>        
+    <method name="GET" id="getConfigurationParameterDetails">
+        <wadl:doc xml:lang="EN" title="List Configuration Parameter Details" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the details of a specified configuration parameter that may be configured on the system.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-key-details-request.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-for-datastore-version-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2323,8 +2368,208 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Keys response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-configuration-key-details-response.json"/>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-for-datastore-version-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getConfigurationParameterDetailsWithoutDatastoreVersion">
+        <wadl:doc xml:lang="EN" title="List Configuration Parameter Details Without Datastore Version" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the details of a specified configuration parameter that may be configured on the system without specifying a datastore version.</para> 
+            <para><remark>Reviewer: shouldn't this be titled "...without specifying a datastore" instead, since the version is specified?</remark></para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore Version request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-without-datastore-version-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore Version response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-without-datastore-version-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getConfigurationParametersWithoutDatastoreVersion">
+        <wadl:doc xml:lang="EN" title="List Configuration Parameters Without Datastore Version" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the configuration parameters that may be configured on the system without specifying a datastore version.</para> 
+            <para><remark>Reviewer: shouldn't this be titled "...without specifying a datastore" instead, since the version is specified?</remark></para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore Version request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-without-datastore-version-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore Version response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-without-datastore-version-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getDatastoreTypes">
+        <wadl:doc xml:lang="EN" title="List All Datastore Types"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all datastore types.</para>
+            <para>This operation lists all datastore types.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types requests:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types responses:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getDatastoreTypesById">
+        <wadl:doc xml:lang="EN" title="List All Datastore Types For Datastore"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all datastore types for the specified datastore.</para>
+            <para>This operation lists all datastore types for the specified datastore.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types For Datastore requests:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types For Datastore responses:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getDatastoreVersionsById">
+        <wadl:doc xml:lang="EN" title="List All Datastore Versions For Datastore"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all datastore versions for the specified datastore.</para>
+            <para>This operation lists all datastore versions for the specified datastore.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Versions For Datastore requests:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Versions For Datastore responses:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getDatastoreVersionByVersionId">
+        <wadl:doc xml:lang="EN" title="List Datastore Version For Specified Version"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the datastore version for the specified version.</para>
+            <para>This operation lists all datastore version for the specified version.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/xml">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Datastore Version For Version requests:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-request.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/xml" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Datastore Version For Version responses:</para>
+                    
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.xml"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" >
+                <doc>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.json"/>
                 </doc>
             </representation>
         </response>

@@ -1,20 +1,21 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 316
-Date: Mon, 18 Nov 2013 19:15:14 GMT
+Content-Length: 335
+Date: Thu, 13 Feb 2014 21:47:16 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "backup": {
-        "created": "2013-11-18T19:15:12", 
+        "created": "2014-02-13T21:47:16", 
         "description": "My Backup", 
-        "id": "a69c5ed4-8d9f-4b58-8166-756b0b34cb36", 
-        "instance_id": "ca8b2db3-e67d-4616-9ec0-797848e6f6b2", 
+        "id": "61f12fef-edb1-4561-8122-e7c00ef26a82", 
+        "instance_id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
         "locationRef": "http://localhost/path/to/backup", 
         "name": "snapshot", 
-        "size": 0.75, 
+        "parent_id": null, 
+        "size": null, 
         "status": "COMPLETED", 
-        "updated": "2013-11-18T19:15:14"
+        "updated": "2014-02-13T21:47:16"
     }
 }

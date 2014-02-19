@@ -1,5 +1,5 @@
-GET /v1.0/1234/instances/3f19e2e5-2135-4fd0-bd7b-4f3da4c6bb36/backups HTTP/1.1
-User-Agent: python-reddwarfclient
+GET /v1.0/1234/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6/backups HTTP/1.1
+User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
 X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
 Accept: application/xml

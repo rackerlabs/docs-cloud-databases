@@ -1,0 +1,17 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 208
+Date: Thu, 13 Feb 2014 21:47:15 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "configurations": [
+        {
+            "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb", 
+            "description": "example description", 
+            "id": "f5aaf933-86b2-440e-a9dc-36c24665b3b4", 
+            "name": "example-configuration-name"
+        }
+    ]
+}

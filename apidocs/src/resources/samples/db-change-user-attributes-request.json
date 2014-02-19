@@ -1,4 +1,4 @@
-PUT /v1.0/1234/instances/8ed28d4b-9b70-46cc-97cd-2e4bf4b17b73/users/dbuser1 HTTP/1.1
+PUT /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users/dbuser1 HTTP/1.1
 User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
 X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7

@@ -1,0 +1,23 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 523
+Date: Thu, 13 Feb 2014 21:47:14 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+<version xmlns="http://docs.openstack.org/database/api/v1.0">
+    <datastore>
+        a00000a0-00a0-0a00-00a0-000a000000aa
+    </datastore>
+    <id>
+        b00000b0-00b0-0b00-00b0-000b000000bb
+    </id>
+    <links>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb" rel="self"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb" rel="bookmark"/>
+    </links>
+    <name>
+        mysql-5.5
+    </name>
+</version>
+

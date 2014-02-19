@@ -1,5 +1,5 @@
-GET /v1.0/1234/mgmt/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9 HTTP/1.1
-User-Agent: python-reddwarfclient
+GET /v1.0/1234/mgmt/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6 HTTP/1.1
+User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
 X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
 Accept: application/xml

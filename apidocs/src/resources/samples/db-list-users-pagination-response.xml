@@ -1,22 +1,24 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 497
-Date: Wed, 08 May 2013 22:43:34 GMT
+Content-Length: 550
+Date: Thu, 13 Feb 2014 21:47:14 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 <users xmlns="http://docs.openstack.org/database/api/v1.0">
     <user host="%" name="dbuser1">
-        <databases/>
+        <databases>
+            <database name="databaseA"/>
+        </databases>
     </user>
-    <user host="10.0.0.1" name="dbuser2">
+    <user host="%" name="dbuser2">
         <databases>
             <database name="databaseB"/>
             <database name="databaseC"/>
         </databases>
     </user>
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9/users?marker=dbuser2%4010.0.0.1&amp;limit=2" rel="next"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6/users?marker=dbuser2%2540%2525&amp;limit=2" rel="next"/>
     </links>
 </users>
 

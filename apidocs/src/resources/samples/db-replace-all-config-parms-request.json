@@ -1,7 +1,0 @@
-{ 
-  "configuration" : {
-     "values" : { 
-         "key_buffer_size" : 102400
-       }
-   } 
-}

@@ -1,24 +1,24 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 456
-Date: Wed, 08 May 2013 22:43:36 GMT
+Content-Length: 501
+Date: Thu, 13 Feb 2014 21:47:18 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "host": {
         "instances": [
             {
-                "id": "9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
-                "name": "xml_rack_instance", 
-                "server_id": "58604f57-8c51-45f7-abfb-2e24ae5770db", 
+                "id": "dcf2c32b-241d-4c39-af70-1001dfe946d6", 
+                "name": "dcf2c32b-241d-4c39-af70-1001dfe946d6-lay", 
+                "server_id": "dc0f43fd-f76f-4e4b-b676-4bf82539ecb9", 
                 "status": "ACTIVE", 
                 "tenant_id": "3000"
             }, 
             {
-                "id": "dcc5c518-73c7-4471-83e1-15fae67a98eb", 
-                "name": "json_rack_instance", 
-                "server_id": "0170913e-0a0e-4802-99a6-477ebca7aec5", 
+                "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+                "name": "d4603f69-ec7e-4e9b-803f-600b9205576f-lay", 
+                "server_id": "0a0bb560-362f-407a-90b6-3437f8b6e34f", 
                 "status": "ACTIVE", 
                 "tenant_id": "3000"
             }

@@ -1,13 +1,16 @@
 HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 1172
-Date: Wed, 08 May 2013 22:43:35 GMT
+Content-Length: 1237
+Date: Thu, 13 Feb 2014 21:47:16 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "instances": [
         {
+            "datastore": {
+                "type": "mysql"
+            }, 
             "flavor": {
                 "id": "1", 
                 "links": [
@@ -21,14 +24,14 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     }
                 ]
             }, 
-            "id": "07c06142-f29d-4392-a6f4-b153df8fda4a", 
+            "id": "4bf79039-dc7f-49c3-a285-03e1ad1e6cbf", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/07c06142-f29d-4392-a6f4-b153df8fda4a", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4bf79039-dc7f-49c3-a285-03e1ad1e6cbf", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/07c06142-f29d-4392-a6f4-b153df8fda4a", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/4bf79039-dc7f-49c3-a285-03e1ad1e6cbf", 
                     "rel": "bookmark"
                 }
             ], 
@@ -39,6 +42,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             }
         }, 
         {
+            "datastore": {
+                "type": "mysql"
+            }, 
             "flavor": {
                 "id": "1", 
                 "links": [
@@ -52,18 +58,18 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     }
                 ]
             }, 
-            "id": "9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
+            "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
             "links": [
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f", 
                     "rel": "self"
                 }, 
                 {
-                    "href": "https://ord.databases.api.rackspacecloud.com/instances/9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9", 
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/d4603f69-ec7e-4e9b-803f-600b9205576f", 
                     "rel": "bookmark"
                 }
             ], 
-            "name": "xml_rack_instance", 
+            "name": "json_rack_instance", 
             "status": "ACTIVE", 
             "volume": {
                 "size": 2
@@ -72,7 +78,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
     ], 
     "links": [
         {
-            "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances?marker=9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9&limit=2", 
+            "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances?marker=d4603f69-ec7e-4e9b-803f-600b9205576f&limit=2", 
             "rel": "next"
         }
     ]

@@ -1,0 +1,54 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 957
+Date: Thu, 13 Feb 2014 21:47:14 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "datastores": [
+        {
+            "id": "10000000-0000-0000-0000-000000000001", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/10000000-0000-0000-0000-000000000001", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/datastores/10000000-0000-0000-0000-000000000001", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "Legacy MySQL"
+        }, 
+        {
+            "default_version": "b00000b0-00b0-0b00-00b0-000b000000bb", 
+            "id": "a00000a0-00a0-0a00-00a0-000a000000aa", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/datastores/a00000a0-00a0-0a00-00a0-000a000000aa", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "mysql"
+        }, 
+        {
+            "id": "e00000e0-00e0-0e00-00e0-000e000000ee", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/e00000e0-00e0-0e00-00e0-000e000000ee", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/datastores/e00000e0-00e0-0e00-00e0-000e000000ee", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "Test_Datastore_1"
+        }
+    ]
+}

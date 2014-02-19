@@ -1,9 +1,9 @@
 POST /v1.0/1234/backups HTTP/1.1
-User-Agent: python-reddwarfclient
+User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
 X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
 Accept: application/xml
 Content-Type: application/xml
 
-<backup xmlns="http://docs.openstack.org/database/api/v1.0" instance="3f19e2e5-2135-4fd0-bd7b-4f3da4c6bb36" name="snapshot" description="My Backup"/>
+<backup xmlns="http://docs.openstack.org/database/api/v1.0" instance="dcf2c32b-241d-4c39-af70-1001dfe946d6" name="snapshot" description="My Backup"/>
 

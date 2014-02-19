@@ -1,14 +1,14 @@
 HTTP/1.1 200 OK
 Content-Type: application/xml
 Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 718
-Date: Thu, 27 Jun 2013 19:47:56 GMT
+Content-Length: 911
+Date: Thu, 13 Feb 2014 21:47:17 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
-<instance created="2013-06-27 19:47:56.766831" id="d1470cdc-9319-4430-a0e4-20cd8b1e65af" name="xml_restore" status="BUILD" updated="2013-06-27 19:47:56.766968" xmlns="http://docs.openstack.org/database/api/v1.0">
+<instance created="2014-02-13 21:47:17.085511" hostname="e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com" id="f3b2292e-5f9d-4c74-af86-ad0a3669814d" name="xml_restore" status="BUILD" updated="2014-02-13 21:47:17.099892" xmlns="http://docs.openstack.org/database/api/v1.0">
     <links>
-        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d1470cdc-9319-4430-a0e4-20cd8b1e65af" rel="self"/>
-        <link href="https://ord.databases.api.rackspacecloud.com/instances/d1470cdc-9319-4430-a0e4-20cd8b1e65af" rel="bookmark"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/f3b2292e-5f9d-4c74-af86-ad0a3669814d" rel="self"/>
+        <link href="https://ord.databases.api.rackspacecloud.com/instances/f3b2292e-5f9d-4c74-af86-ad0a3669814d" rel="bookmark"/>
     </links>
     <volume size="2"/>
     <flavor id="1">
@@ -17,5 +17,13 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
         </links>
     </flavor>
+    <datastore>
+        <version>
+            mysql-5.5
+        </version>
+        <type>
+            mysql
+        </type>
+    </datastore>
 </instance>
 
