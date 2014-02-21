@@ -317,7 +317,7 @@
     <!-- Instance Actions -->
   <method name="POST" id="rebootInstance">
     <wadl:doc xml:lang="EN" title="Reboot the Instance"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Perform a reboot of the instance.</para>
+      <para role="shortdesc">Performs a reboot of the instance.</para>
       <para>This operation will reboot the underlying OS along with the mysql instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
@@ -446,7 +446,7 @@
 
   <method name="POST" id="updateHostInstances">
     <wadl:doc xml:lang="EN" title="Update All Instances on Host"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Update all instances on a specified host.</para>
+      <para role="shortdesc">Updates all instances on a specified host.</para>
       <para>This operation will call on all guest agents in a specified host to install new versions of itself.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
@@ -616,7 +616,7 @@
   <method name="GET" id="getdiagnosticdetails">
       <wadl:doc xml:lang="EN" title="Get Diagnostics Info" xmlns="http://docbook.org/ns/docbook">
           <para role="shortdesc">
-              Get the instance agent and other instance diagnostics info.
+              Gets the instance agent and other instance diagnostics info.
           </para>
           <para>This operation provides the following info for the guest agent managing the specified instance.</para>
           <table rules="all">
@@ -692,7 +692,7 @@
   <method name="GET" id="getHwInfo">
       <wadl:doc xml:lang="EN" title="Get Hardware Info" xmlns="http://docbook.org/ns/docbook">
           <para role="shortdesc">
-              Get the instance hardware info from the guest agent.
+              Gets the instance hardware info from the guest agent.
           </para>
           <para>This operation provides the following info from the guest agent managing the specified instance.</para>
           <table rules="all">
@@ -912,7 +912,7 @@
   <method name="GET" id="getMonitoringStatus">
     <wadl:doc xml:lang="EN" title="Get Monitoring Status" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
-        Retrieve the status of the Monitoring Agent on the specified instance.
+        Retrieves the status of the Monitoring Agent on the specified instance.
       </para>
       <para>This operation retrieves the status of the Monitoring Agent on the customer's instance.</para>
       <para>The following table lists the possible monitoring statuses:</para>
@@ -997,7 +997,7 @@
   <!-- Monitoring Agent Actions -->
   <method name="POST" id="agentInstall">
     <wadl:doc xml:lang="EN" title="Install or Update Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Install or update the Monitoring Agent on the specified instance.</para>
+      <para role="shortdesc">Installs or updates the Monitoring Agent on the specified instance.</para>
       <para>This operation installs or updates the Monitoring Agent on the specified instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
@@ -1035,7 +1035,7 @@
   
   <method name="POST" id="agentRemove">
     <wadl:doc xml:lang="EN" title="Remove Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Remove and uninstall the Monitoring Agent on the specified instance.</para>
+      <para role="shortdesc">Removes and uninstalls the Monitoring Agent on the specified instance.</para>
       <para>This operation removes and uninstalls the Monitoring Agent on the specified instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
@@ -1073,7 +1073,7 @@
   
   <method name="POST" id="agentStart">
     <wadl:doc xml:lang="EN" title="Start Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Start the Monitoring Agent on the specified instance.</para>
+      <para role="shortdesc">Starts the Monitoring Agent on the specified instance.</para>
       <para>This operation starts the Monitoring Agent on the specified instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
@@ -1111,7 +1111,7 @@
   
   <method name="POST" id="agentRestart">
     <wadl:doc xml:lang="EN" title="Restart Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Restart the Monitoring Agent on the specified instance.</para>
+      <para role="shortdesc">Restarts the Monitoring Agent on the specified instance.</para>
       <para>This operation restarts the Monitoring Agent on the specified instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
@@ -1149,7 +1149,7 @@
   
   <method name="POST" id="agentStop">
     <wadl:doc xml:lang="EN" title="Stop Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
-      <para role="shortdesc">Stop the Monitoring Agent on the specified instance.</para>
+      <para role="shortdesc">Stops the Monitoring Agent on the specified instance.</para>
       <para>This operation stops the Monitoring Agent on the specified instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>

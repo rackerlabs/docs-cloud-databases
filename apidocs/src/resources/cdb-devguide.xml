@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-02-17</pubdate>
+        <pubdate>2014-02-20</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,30 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-02-20</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new <xref
+                                   linkend="MySQL_Config_Mgmt-d1e3826"
+                                /> and <xref linkend="configurations"
+                                /> for API operations.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added new <xref
+                                   linkend="Datastore_Types_and_Versions-d1e9263"
+                                /> and <xref
+                                   linkend="datastore_types_and_versions"
+                                /> for API operations.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated all request and response
+                                examples.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-02-17</date>
                 <revdescription>
@@ -1311,9 +1335,6 @@
             <para security="writeronly">Some operations support an Atom representation that
                 can be used to efficiently determine when the state of
                 services has changed. </para>
-            <remark>Reviewer:  the previous sentence will be hidden
-                for the Private Beta, since it does not appear that
-                Atom will be supported yet. Correct?</remark>
             <table rules="all">
                 <caption>Response Formats</caption>
                 <?dbfo keep-together="always"?>
@@ -2822,8 +2843,8 @@
                 validation rules are defined in the
                 configuration-validation.conf file. </para>
         </section>
-        <section xml:id="Datastore_Types-d1e9263">
-            <title>Datastore Types</title>
+        <section xml:id="Datastore_Types_and_Versions-d1e9263">
+            <title>Datastore Types and Versions</title>
             <para>Datastore types management will allow users of Cloud
                 Databases to select database type and version from the
                 list provided by Rackspace. Rackspace will control
@@ -2886,8 +2907,8 @@
                 the chosen version should be installed on the
                 image.</para>
             <para>For information about the API operations available
-                for types, refer to <xref
-                    linkend="configuration_parameters"/> XXX.</para>
+                for types and versions, refer to <xref
+                    linkend="datastore_types_and_versions"/>.</para>
         </section>
     </chapter>
     
