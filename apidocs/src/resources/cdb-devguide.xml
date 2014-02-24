@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-02-20</pubdate>
+        <pubdate>2014-02-24</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,7 +79,7 @@
         
         <revhistory>
             <revision>
-                <date>2014-02-20</date>
+                <date>2014-02-24</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -2794,14 +2794,16 @@
                 users of Cloud Databases to override the default MySQL
                 configuration settings provided by the Cloud Databases
                 service. </para>
-            <para security="writeronly">This is implemented by leveraging MySQL’s includedir
-                directive, which is already pre-defined to point to
-                    <filename>/etc/mysql/conf.d</filename>. The
-                configuration files stored (or symlinked) into this
-                directory are interpreted by MySQL at startup and the
-                values defined there supersede any value defined in
-                the <filename>my.cnf</filename> file or MySQL’s
-                default directives.</para>
+            <remark>Reviewer: we need to decide what if any of the
+                following text should be added into this
+                section:</remark>
+            <remark>This is implemented by leveraging MySQL’s
+                includedir directive, which is already pre-defined to
+                point to /etc/mysql/conf.d. The configuration files
+                stored (or symlinked) into this directory are
+                interpreted by MySQL at startup and the values defined
+                there supersede any value defined in the my.cnf  file
+                or MySQL’s default directives.</remark>
             <para>To implement this management capability, a database
                 instance may optionally be associated with a
                 configuration when the instance is created or through
@@ -2825,23 +2827,24 @@
                 dynamically.</para>
             <remark>Reviewer: we need to decide what if any of the
                 following text should be added into this
-                section.</remark>
-            <para security="writeronly">The MySQL configuration management feature will
+                section:</remark>
+            <remark>The MySQL configuration management feature will
                 integrate with the quotas capability defined in the
                 following blueprint that has been approved at <link
                     xlink:href="https://blueprints.launchpad.net/trove/+spec/quotas"
                     >https://blueprints.launchpad.net/trove/+spec/quotas</link>.
                 There should be two quotas established: (1) maximum
                 number of configuration groups per tenant, and (2)
-                maximum number of values per configuration group. </para>
+                maximum number of values per configuration group. </remark>
             <para>Rackspace configures the validation rules for
                 key/value pairs that can be assigned to a
-                configuration group. These rules can be retrieved by
-                the user from the API through the configuration
-                parameters resource as described in <xref
-                    linkend="configuration_parameters"/>. These
-                validation rules are defined in the
-                configuration-validation.conf file. </para>
+                    <glossterm>configuration group</glossterm>. These
+                rules can be retrieved by the user from the API
+                through the configuration parameters resource as
+                described in <xref linkend="configuration_parameters"
+                />. These validation rules are defined in the
+                    <filename>configuration-validation.conf</filename>
+                file. </para>
         </section>
         <section xml:id="Datastore_Types_and_Versions-d1e9263">
             <title>Datastore Types and Versions</title>
@@ -3169,12 +3172,12 @@
                     </wadl:resource>
                     <wadl:resource
                         href="../../../xsd/dbaas.wadl#parameters2">
-                        <wadl:method href="getConfigurationParametersWithoutDatastoreVersion"
+                        <wadl:method href="getConfigurationParametersWithoutDatastore"
                         />
                     </wadl:resource>
                     <wadl:resource
                         href="../../../xsd/dbaas.wadl#parameter2Id">
-                        <wadl:method href="getConfigurationParameterDetailsWithoutDatastoreVersion"
+                        <wadl:method href="getConfigurationParameterDetailsWithoutDatastore"
                         />
                     </wadl:resource>
                 </wadl:resources>
@@ -3209,6 +3212,15 @@
             <glossterm>backup</glossterm>
             <glossdef>
                 <para>A copy of computer data for a database instance that can be used to restore the original instance if necessary.</para>
+            </glossdef>
+        </glossentry>
+        
+        <glossentry xml:id="Configuration-Group-d1e012">
+            <glossterm>configuration group</glossterm>
+            <glossdef>
+                <para>A configuration group is a collection of custom parameter names and values that are specified by the user from the parameter 
+                    list allowed per datastore version. The configuration group can be applied to an instance at creation or applied to a running 
+                    instance to modify the behavior of the running datastore on the instance. </para>
             </glossdef>
         </glossentry>
         

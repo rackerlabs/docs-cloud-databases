@@ -140,11 +140,11 @@
                             <param name="versionId" style="template" type="xsd:string" >
                                 <doc>The version for the specified datastore.</doc></param>
                             <resource id="parameters2" path="parameters">
-                                <method href="#getConfigurationParametersWithoutDatastoreVersion" />
+                                <method href="#getConfigurationParametersWithoutDatastore" />
                                 <resource id="parameter2Id" path="{parameterId}">
                                     <param name="parameterId" style="template" type="xsd:string" >
                                         <doc>The parameter that may be configured for the specified datastore and version.</doc></param>
-                                    <method href="#getConfigurationParameterDetailsWithoutDatastoreVersion" />
+                                    <method href="#getConfigurationParameterDetailsWithoutDatastore" />
                                 </resource>
                             </resource>
                         </resource>
@@ -308,7 +308,7 @@
                 </tr>
                 <tr>
                     <td colspan="1">configuration</td>
-                    <td colspan="3">Identifier of the configuration group to associate with the instance.</td>
+                    <td colspan="3">Identifier of the <glossterm>configuration group</glossterm> to associate with the instance.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
@@ -532,7 +532,7 @@
 
     <method name="PUT" id="updateInstance">
         <wadl:doc xml:lang="EN" title="Update Database Instance"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Associates a specified database instance with a configuration group.</para>
+            <para role="shortdesc">Associates a specified database instance with a <glossterm>configuration group</glossterm>.</para>
             <para>This operation associates a specified database instance with a configuration group.</para>
             <para><remark>Reviewer: should the description note that this can be used for attaching or detaching configurations from an instance?</remark></para>
         </wadl:doc>
@@ -561,7 +561,7 @@
         <wadl:doc xml:lang="EN" title="List Database Instance Status and Details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
             <para>This operation lists the status and details of the specified database instance. The operation also lists 
-                the configuration group id/name if the running instance has been associated with a configuration group.</para>
+                the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</para>
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
@@ -2150,7 +2150,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="GET" id="getConfigurations">
         <wadl:doc xml:lang="EN" title="List Configurations" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists all defined configuration groups for the tenant.</para>        
+            <para role="shortdesc">Lists all defined <glossterm>configuration group</glossterm>s for the tenant.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2174,7 +2174,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="POST" id="createConfiguration">
         <wadl:doc xml:lang="EN" title="Create Configuration" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Creates a new configuration group based on the parameters supplied in the request body.</para>        
+            <para role="shortdesc">Creates a new <glossterm>configuration group</glossterm> based on the parameters supplied in the request body.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2199,7 +2199,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="GET" id="getConfigurationById">
         <wadl:doc xml:lang="EN" title="List Configuration Details" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists details for the specified configuration group.</para>        
+            <para role="shortdesc">Lists details for the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2224,7 +2224,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="PATCH" id="updateSomeConfigParmsById">
         <wadl:doc xml:lang="EN" title="Update Some Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Updates some of the configuration parameters associated with the specified configuration group.</para>        
+            <para role="shortdesc">Updates some of the configuration parameters associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -2251,7 +2251,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="PUT" id="replaceAllConfigParmsById">
         <wadl:doc xml:lang="EN" title="Replace All Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Replaces all of the configuration parameters associated with the specified configuration group.</para>        
+            <para role="shortdesc">Replaces all of the configuration parameters associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -2278,7 +2278,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="DELETE" id="deleteConfigGroup">
         <wadl:doc xml:lang="EN" title="Delete Configuration Group" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Deletes the specified configuration group. No message body is expected in the request.</para>        
+            <para role="shortdesc">Deletes the specified <glossterm>configuration group</glossterm>. No message body is expected in the request.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2304,7 +2304,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
 
     <method name="GET" id="getInstancesForConfiguration">
         <wadl:doc xml:lang="EN" title="List Instances for Configuration" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists instances that are associated with the specified configuration group.</para>        
+            <para role="shortdesc">Lists instances that are associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2377,15 +2377,14 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         &getFaults;
     </method>
     
-    <method name="GET" id="getConfigurationParameterDetailsWithoutDatastoreVersion">
-        <wadl:doc xml:lang="EN" title="List Configuration Parameter Details Without Datastore Version" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the details of a specified configuration parameter that may be configured on the system without specifying a datastore version.</para> 
-            <para><remark>Reviewer: shouldn't this be titled "...without specifying a datastore" instead, since the version is specified?</remark></para>
+    <method name="GET" id="getConfigurationParameterDetailsWithoutDatastore">
+        <wadl:doc xml:lang="EN" title="List Configuration Parameter Details Without Datastore" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the details of a specified configuration parameter that may be configured on the system without specifying a datastore.</para> 
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore Version request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-without-datastore-version-request.json"/>
                 </doc>
             </representation>
@@ -2394,7 +2393,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore Version response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-without-datastore-version-response.json"/>
                 </doc>
             </representation>
@@ -2403,15 +2402,14 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         &getFaults;
     </method>
     
-    <method name="GET" id="getConfigurationParametersWithoutDatastoreVersion">
-        <wadl:doc xml:lang="EN" title="List Configuration Parameters Without Datastore Version" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the configuration parameters that may be configured on the system without specifying a datastore version.</para> 
-            <para><remark>Reviewer: shouldn't this be titled "...without specifying a datastore" instead, since the version is specified?</remark></para>
+    <method name="GET" id="getConfigurationParametersWithoutDatastore">
+        <wadl:doc xml:lang="EN" title="List Configuration Parameters Without Datastore" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the configuration parameters that may be configured on the system without specifying a datastore.</para> 
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore Version request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-without-datastore-version-request.json"/>
                 </doc>
             </representation>
@@ -2420,7 +2418,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore Version response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-without-datastore-version-response.json"/>
                 </doc>
             </representation>
