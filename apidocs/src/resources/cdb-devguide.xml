@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-02-24</pubdate>
+        <pubdate>2014-02-17</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,8 +78,8 @@
         </abstract>
         
         <revhistory>
-            <revision>
-                <date>2014-02-24</date>
+            <revision security="writeronly">
+                <date>2014-02-27</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -2788,43 +2788,48 @@
             </section>
             
         </section>
-        <section xml:id="MySQL_Config_Mgmt-d1e3826">
+        <section xml:id="MySQL_Config_Mgmt-d1e3826" security="writeronly">
             <title>MySQL Configuration Management</title>
             <para>The MySQL configuration management capability allows
                 users of Cloud Databases to override the default MySQL
                 configuration settings provided by the Cloud Databases
                 service. </para>
-            <remark>Reviewer: we need to decide what if any of the
-                following text should be added into this
-                section:</remark>
-            <remark>This is implemented by leveraging MySQL’s
-                includedir directive, which is already pre-defined to
-                point to /etc/mysql/conf.d. The configuration files
-                stored (or symlinked) into this directory are
-                interpreted by MySQL at startup and the values defined
-                there supersede any value defined in the my.cnf  file
-                or MySQL’s default directives.</remark>
-            <para>To implement this management capability, a database
-                instance may optionally be associated with a
-                configuration when the instance is created or through
-                associating a configuration with the instance after it
-                has been created.</para>
-            <para>A configuration is a collection of key/value pairs,
-                where the valid key/values are defined in the MySQL
-                manual at <link
+            <para>A <emphasis>configuration</emphasis> is a collection
+                of key/value pairs, where the valid key/values are
+                defined in the MySQL manual at <link
                     xlink:href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html"
                     >http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html</link>.
                 Some directives are capable of being applied
                 dynamically, while other directives require a server
                 restart to take effect. </para>
-            <para>When a configuration is modified either by way of
-                adding a new key/value pair or modifying an existing
-                key/value pair, the service updates the
-                    <filename>overrides.cnf</filename> file for every
-                instance that is associated with the configuration and
-                attempts to dynamically update running MySQL instances
-                if the value is allowed to be modified
-                dynamically.</para>
+            <para>A default <glossterm>configuration</glossterm> is
+                applied to an instance if you create an instance
+                without associating the instance with a configuration
+                group. The default configuration is based upon the
+                database engine and the instance flavor. If you want
+                your database instance to run with custom defined
+                configuration settings, you need to assign a custom
+                defined <glossterm>configuration group</glossterm> to
+                the instance. A configuration group can be applied to
+                multiple instances.</para>
+            <para>You can create a new configuration group, modify
+                parameters of an existing configuration, and also
+                modify the database instance to use a different
+                configuration group. When a configuration group is
+                modified either by way of adding a new key/value pair
+                or modifying an existing key/value pair, the service
+                updates the <filename>overrides.cnf</filename> file
+                for every instance that is associated with the
+                configuration.</para>
+            <para>The service attempts to dynamically update all
+                associated database instances if the parameters
+                changed in the configuration group are all dynamic.
+                But if any of the parameters changed in the
+                configuration group require a restart, then any
+                instance that has the configuration group assigned to
+                it will require a restart to apply the configuration
+                group or any changes made to the configuration
+                group.</para>
             <remark>Reviewer: we need to decide what if any of the
                 following text should be added into this
                 section:</remark>
@@ -2836,6 +2841,8 @@
                 There should be two quotas established: (1) maximum
                 number of configuration groups per tenant, and (2)
                 maximum number of values per configuration group. </remark>
+            <remark>Reviewer: we need to decide what info we want to
+                add regarding quotas.</remark>
             <para>Rackspace configures the validation rules for
                 key/value pairs that can be assigned to a
                     <glossterm>configuration group</glossterm>. These
@@ -2845,8 +2852,10 @@
                 />. These validation rules are defined in the
                     <filename>configuration-validation.conf</filename>
                 file. </para>
+            <para>Refer to <xref linkend="configurations"/> for the
+                API operations for configurations.</para>
         </section>
-        <section xml:id="Datastore_Types_and_Versions-d1e9263">
+        <section xml:id="Datastore_Types_and_Versions-d1e9263" security="writeronly">
             <title>Datastore Types and Versions</title>
             <para>Datastore types management will allow users of Cloud
                 Databases to select database type and version from the
@@ -2858,41 +2867,34 @@
                 instance creation. <emphasis>Datastore Type</emphasis>
                 is a family of database engines, like mysql, mongodb,
                 and cassandra. <emphasis>Datastore Version</emphasis>
-                defines engine version of the selected datastore type
-                and contains a list of system packages which provides
-                this datastore.</para>
-            <remark>Reviewer: do we need to keep the "and contains a
-                list of system packages which provides this datastore"
-                in the previous sentence or can this be
-                deleted?</remark>
-            <para>Each datastore type has several versions of engine.
+                defines the engine version of the selected datastore
+                type.</para>
+            <para>Refer to <xref
+                    linkend="datastore_types_and_versions"/> for the
+                API operations for datastore types and
+                versions.</para>
+            <para security="writeronly">Each datastore type has several versions of engine.
                 Type can have a default version for type. Versions can
                 be marked as <emphasis>active</emphasis> or
                     <emphasis>inactive</emphasis>. Active versions are
                 available for users and can be used for creating
-                database instances. Usesr do not see inactive versions
+                database instances. Users do not see inactive versions
                 and cannot create new instances with an inactive
                 version. However inactive versions can still be used
                 in already running instances.</para>
-            <para>For each datastore type, Rackspace can specify an OS
+            <para security="writeronly">For each datastore type, Rackspace can specify an OS
                 image on which instances will work. For each version
                 of each type Rackspace can specify a different image,
                 which will have more precedence than image for type.
                 This provides a flexible selection of image, type of
                 db, and version.</para>
-            <para>For each datastore version, the list of system
+            <para security="writeronly">For each datastore version, the list of system
                 packages provides installation of the database with
                 the specified version on the specified image. Possible
                 to specify only one package here, but in some cases
                 need to specify several packages with exactly
                 version.</para>
-            <remark>Reviewer: do we need to maintain the second
-                sentence in the previous paragraph? If so I suggest
-                rewriting it as follows: "It is possible to specify
-                only one package in the list, but in some cases
-                several packages with exact version need to be
-                specified."</remark>
-            <para>For mysql you can specify server, client, shared,
+            <para security="writeronly">For mysql you can specify server, client, shared,
                 and shared-compat packages. It matters if you have
                 more then one version available in your repositories.
                 For example, if you specify only
@@ -2900,16 +2902,14 @@
                 have mariadb and percona repositories enabled, you can
                 get mysql-server-5.5, mariadb-shared-5.5, and
                 percona-client-55 installed on your image.</para>
-            <para>It is possible to use plain vanilla images
+            <para security="writeronly">It is possible to use plain vanilla images
                 preinstalled with prepared GA and package
                 repositories.</para>
-            <remark>Reviewer: I do not understand the previous
-                sentence. Can you please clarify?</remark>
-            <para>To get Cloud Databases to avoid package
+            <para security="writeronly">To get Cloud Databases to avoid package
                 installation, all packages specified in the list for
                 the chosen version should be installed on the
                 image.</para>
-            <para>For information about the API operations available
+            <para security="writeronly">For information about the API operations available
                 for types and versions, refer to <xref
                     linkend="datastore_types_and_versions"/>.</para>
         </section>
@@ -3110,10 +3110,11 @@
             </wadl:resources>
         </section>
         
-        <section xml:id="configurations">
+        <section xml:id="configurations" security="writeronly">
             <title>Configurations</title>
             <para>This section describes the operations that are
-                supported for configurations.</para>
+                supported for
+                <glossterm>configuration</glossterm>s.</para>
             <para>You can also find additional configuration-related
                 information in the descriptions for the following API operations:
                 <itemizedlist spacing="compact">
@@ -3183,7 +3184,7 @@
                 </wadl:resources>
             </section>
         </section>
-        <section xml:id="datastore_types_and_versions">
+        <section xml:id="datastore_types_and_versions" security="writeronly">
             <title>Datastore Types and Versions</title>
             <para>This section describes the operations that are
                 supported for datastore types and versions.</para>
@@ -3214,8 +3215,21 @@
                 <para>A copy of computer data for a database instance that can be used to restore the original instance if necessary.</para>
             </glossdef>
         </glossentry>
+        <glossentry xml:id="Configuration-d1e326" security="writeronly">
+            <glossterm>configuration</glossterm>
+            <glossdef>
+                <para>A configuration is a collection of key/value
+                    pairs, where the valid key/values are defined in
+                    the MySQL manual at <link
+                        xlink:href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html"
+                        >http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html</link>.
+                    Some directives are capable of being applied
+                    dynamically, while other directives require a
+                    server restart to take effect.</para>
+            </glossdef>
+        </glossentry>
         
-        <glossentry xml:id="Configuration-Group-d1e012">
+        <glossentry xml:id="Configuration-Group-d1e012" security="writeronly">
             <glossterm>configuration group</glossterm>
             <glossdef>
                 <para>A configuration group is a collection of custom parameter names and values that are specified by the user from the parameter 

@@ -288,7 +288,7 @@
             </thead>
             <tbody>
                 <tr>
-                    <td colspan="1" rowspan="4">Instance</td>
+                    <td colspan="1" rowspan="3">Instance</td>
                     <td colspan="1">flavorRef</td>
                     <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
                         This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
@@ -306,7 +306,7 @@
                     <td colspan="3">Name of the instance to create. The length of the name is limited to 255 characters and any characters are permitted.</td>
                     <td colspan="1">No</td>
                 </tr>
-                <tr>
+                <tr security="writeronly">
                     <td colspan="1">configuration</td>
                     <td colspan="3">Identifier of the <glossterm>configuration group</glossterm> to associate with the instance.</td>
                     <td colspan="1">No</td>
@@ -394,19 +394,19 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore requests:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
                 </doc>
-            </representation>
+            </representation> 
             <representation mediaType="application/json">
                 <doc title="Create Database Instance Restore Request: JSON">
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/json" element="dbaas:DatabaseInstance">
+            <!--   <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create Database Instance Configuration Request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-request.json"/>
                 </doc>
-            </representation>
+            </representation>   -->
             
         </request>
         <response status="200">
@@ -440,14 +440,14 @@
                 </doc>
             </representation>
             
-            <representation mediaType="application/json"
+            <!--   <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create Database Instance Config Response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
                 </doc>
-            </representation> 
+            </representation>   -->
             
         </response>
     &commonFaults;
