@@ -59,7 +59,7 @@
 	      <!-- this document that will be published as cdb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ --> 
 	      <enableDisqus>1</enableDisqus>
 	      <googleAnalyticsId>UA-23102455-4</googleAnalyticsId>
-	      <security>reviewer</security>
+	      
 	      <includes>cdb-devguide.xml</includes>
 	      <canonicalUrlBase>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content</canonicalUrlBase>
 	      <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
