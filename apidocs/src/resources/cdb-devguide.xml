@@ -2957,14 +2957,14 @@
                 </wadl:resource>
 
                 <wadl:resource href="../../../xsd/dbaas.wadl#instanceId">
-                    <wadl:method href="updateInstance"/> 
+                    <!-- <wadl:method href="updateInstance"/> -->
                     <wadl:method href="getInstanceById"/>
                     <wadl:method href="deleteInstance"/>  
                 </wadl:resource>
                 
-                <wadl:resource href="../../../xsd/dbaas.wadl#configuration">
+                <!--   <wadl:resource href="../../../xsd/dbaas.wadl#configuration">
                     <wadl:method href="getDefaultConfig"/>
-                </wadl:resource>
+                </wadl:resource>  -->
                 
                 <wadl:resource href="../../../xsd/dbaas.wadl#root">
                     <wadl:method href="createRoot"/>

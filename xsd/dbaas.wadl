@@ -560,8 +560,9 @@
     <method name="GET" id="getInstanceById">
         <wadl:doc xml:lang="EN" title="List Database Instance Status and Details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
-            <para>This operation lists the status and details of the specified database instance. The operation also lists 
-                the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</para>
+            <para>This operation lists the status and details of the specified database instance. <phrase security="writeronly">The operation also lists 
+                the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase></para>
+            
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
@@ -583,12 +584,12 @@
                     </doc>
                 </representation>
             
-                <representation mediaType="application/json" element="dbaas:DatabaseInstance">
+             <!--   <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                    <doc title="List Database Instance Status and Details with Configuration Request: JSON">
                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details with Configuration request:</para>
                        <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                    </doc>
-                </representation>  
+                </representation>  -->
             
         </request>
         <response status="200">
@@ -605,14 +606,14 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-response.json"/>
                 </doc>
             </representation>
-            <representation mediaType="application/json"
+       <!--     <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="List Database Instance Status and Details with Configuration Response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details with Configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-config-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned since the instance is associated with that configuration.</para>
                 </doc>
-            </representation> 
+            </representation>  -->
         </response>
     &commonFaults;
     &getFaults;
