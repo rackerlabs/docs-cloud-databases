@@ -8,10 +8,6 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 {
     "instance": {
         "created": "2014-02-13T21:47:16", 
-        "datastore": {
-            "type": "mysql", 
-            "version": "mysql-5.5"
-        }, 
         "flavor": {
             "id": "1", 
             "links": [
