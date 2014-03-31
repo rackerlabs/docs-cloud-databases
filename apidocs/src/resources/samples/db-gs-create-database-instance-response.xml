@@ -18,5 +18,13 @@ Date: Thu, 05 Apr 2012 16:17:29 GMT
             <link href="http://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
         </links>
     </flavor>
+    <datastore>
+        <version>
+            mysql-5.5
+        </version>
+        <type>
+            mysql
+        </type>
+    </datastore>
 </instance>
 

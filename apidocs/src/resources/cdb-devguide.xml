@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-02-17</pubdate>
+        <pubdate>2014-03-31</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,8 +78,8 @@
         </abstract>
         
         <revhistory>
-            <revision security="writeronly">
-                <date>2014-02-27</date>
+            <revision>
+                <date>2014-03-31</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -94,6 +94,14 @@
                                 /> and <xref
                                    linkend="datastore_types_and_versions"
                                 /> for API operations.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added attributes to Create Database
+                                Instance for configuration and
+                                datastore version/type plus examples.
+                                See <xref
+                                   linkend="POST_createInstance__version___accountId__instances_"
+                                />.</para>
                         </listitem>
                         <listitem>
                             <para>Updated all request and response
@@ -160,7 +168,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated information for the
-                                   <code>restorepoint</code> attribute
+                                <code>restorepoint</code> attribute
                                 in <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
                                 />.</para>
@@ -793,6 +801,25 @@
         <?dbhtml stop-chunking?>
         <para> To use the Cloud Databases API effectively, you should
             understand several key concepts: </para>
+        <section xml:id="Configuration-Group-Concept-d1e278">
+            <title>Configuration Group</title>
+            <para>A configuration group is a collection of key/value
+                pairs, where the valid key/values are defined per
+                datastore. Some directives are capable of being
+                applied dynamically, while other directives require a
+                server restart to take effect. The configuration group
+                can be applied to an instance at creation or applied
+                to an existing instance to modify the behavior of the
+                running datastore on the instance. A configuration
+                group consists of a collection of configuration
+                parameters. </para>
+        </section>
+        <section xml:id="Configuration-Parameter-Concept-d1e735">
+            <title>Configuration Parameter</title>
+            <para>A configuration parameter is a key/value pair that
+                represents settings that can be applied to a database
+                instance. </para>
+        </section>
         <section xml:id="DatabaseInstance-d1e588">
             <title>Database Instance</title>
             <para>A database instance is an isolated MySQL instance in
@@ -2788,13 +2815,13 @@
             </section>
             
         </section>
-        <section xml:id="MySQL_Config_Mgmt-d1e3826" security="writeronly">
+        <section xml:id="MySQL_Config_Mgmt-d1e3826">
             <title>MySQL Configuration Management</title>
             <para>The MySQL configuration management capability allows
                 users of Cloud Databases to override the default MySQL
                 configuration settings provided by the Cloud Databases
                 service. </para>
-            <para>A <emphasis>configuration</emphasis> is a collection
+            <para>A <emphasis>configuration group</emphasis> is a collection
                 of key/value pairs, where the valid key/values are
                 defined in the MySQL manual at <link
                     xlink:href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html"
@@ -2802,7 +2829,7 @@
                 Some directives are capable of being applied
                 dynamically, while other directives require a server
                 restart to take effect. </para>
-            <para>A default <glossterm>configuration</glossterm> is
+            <para>A default <glossterm>configuration group</glossterm> is
                 applied to an instance if you create an instance
                 without associating the instance with a configuration
                 group. The default configuration is based upon the
@@ -2855,7 +2882,7 @@
             <para>Refer to <xref linkend="configurations"/> for the
                 API operations for configurations.</para>
         </section>
-        <section xml:id="Datastore_Types_and_Versions-d1e9263" security="writeronly">
+        <section xml:id="Datastore_Types_and_Versions-d1e9263">
             <title>Datastore Types and Versions</title>
             <para>Datastore types management will allow users of Cloud
                 Databases to select database type and version from the
@@ -2957,14 +2984,14 @@
                 </wadl:resource>
 
                 <wadl:resource href="../../../xsd/dbaas.wadl#instanceId">
-                    <!-- <wadl:method href="updateInstance"/> -->
+                    <wadl:method href="updateInstance"/>
                     <wadl:method href="getInstanceById"/>
                     <wadl:method href="deleteInstance"/>  
                 </wadl:resource>
                 
-                <!--   <wadl:resource href="../../../xsd/dbaas.wadl#configuration">
+                <wadl:resource href="../../../xsd/dbaas.wadl#configuration">
                     <wadl:method href="getDefaultConfig"/>
-                </wadl:resource>  -->
+                </wadl:resource>
                 
                 <wadl:resource href="../../../xsd/dbaas.wadl#root">
                     <wadl:method href="createRoot"/>
@@ -3110,7 +3137,7 @@
             </wadl:resources>
         </section>
         
-        <section xml:id="configurations" security="writeronly">
+        <section xml:id="configurations">
             <title>Configurations</title>
             <para>This section describes the operations that are
                 supported for
@@ -3184,7 +3211,7 @@
                 </wadl:resources>
             </section>
         </section>
-        <section xml:id="datastore_types_and_versions" security="writeronly">
+        <section xml:id="datastore_types_and_versions">
             <title>Datastore Types and Versions</title>
             <para>This section describes the operations that are
                 supported for datastore types and versions.</para>
@@ -3215,26 +3242,29 @@
                 <para>A copy of computer data for a database instance that can be used to restore the original instance if necessary.</para>
             </glossdef>
         </glossentry>
-        <glossentry xml:id="Configuration-d1e326" security="writeronly">
-            <glossterm>configuration</glossterm>
-            <glossdef>
-                <para>A configuration is a collection of key/value
-                    pairs, where the valid key/values are defined in
-                    the MySQL manual at <link
-                        xlink:href="http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html"
-                        >http://dev.mysql.com/doc/refman/5.1/en/server-system-variables.html</link>.
-                    Some directives are capable of being applied
-                    dynamically, while other directives require a
-                    server restart to take effect.</para>
-            </glossdef>
-        </glossentry>
         
-        <glossentry xml:id="Configuration-Group-d1e012" security="writeronly">
+        <glossentry xml:id="Configuration-Group-d1e012">
             <glossterm>configuration group</glossterm>
             <glossdef>
-                <para>A configuration group is a collection of custom parameter names and values that are specified by the user from the parameter 
-                    list allowed per datastore version. The configuration group can be applied to an instance at creation or applied to a running 
-                    instance to modify the behavior of the running datastore on the instance. </para>
+                <para>A configuration group is a collection of
+                    key/value pairs, where the valid key/values are
+                    defined per datastore. Some directives are capable
+                    of being applied dynamically, while other
+                    directives require a server restart to take
+                    effect. The configuration group can be applied to
+                    an instance at creation or applied to an existing
+                    instance to modify the behavior of the running
+                    datastore on the instance. A configuration group
+                    consists of a collection of configuration
+                    parameters. </para>
+            </glossdef>
+        </glossentry>
+        <glossentry xml:id="Configuration-Parameter-d1e326">
+            <glossterm>configuration parameter</glossterm>
+            <glossdef>
+                <para>A configuration parameter is a key/value pair
+                    that represents settings that can be applied to a
+                    database instance. </para>
             </glossdef>
         </glossentry>
         

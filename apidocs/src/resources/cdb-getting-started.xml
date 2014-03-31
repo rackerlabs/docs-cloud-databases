@@ -49,13 +49,29 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-02-17</pubdate>
+        <pubdate>2014-03-31</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-03-31</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added trove client commands for
+                                configurations in <xref
+                                   linkend="trove_configurations"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples as needed.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-02-17</date>
                 <revdescription>
@@ -2904,6 +2920,29 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                                    The Zone hint to give to nova.
                                 </para>
                             </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--datastore</option>
+                                   <parameter>&lt;datastore></parameter>.
+                                   The datastore type to create.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--datastore_version</option>
+                                   <parameter>&lt;datastore_version></parameter>.
+                                   The version for the datastore type
+                                   to create. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--configuration</option>
+                                   <parameter>&lt;configuration></parameter>.
+                                   The collection of custom parameter
+                                   names and values as allowed by the
+                                   datastore version to be applied to
+                                   the instance at creation. </para>
+                            </listitem>
                         </itemizedlist>
                                 </listitem>
                         </varlistentry>
@@ -3491,6 +3530,366 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                         <para> Where
                                 <parameter>security_group_rule</parameter>
                             is the security group rule to delete. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="trove_configurations">
+            <title>Configurations</title>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Create new
+                            configuration</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-create &lt;name> &lt;values> [--datastore &lt;datastore&gt;] [--datastore_version &lt;datatstore_version&gt;] [--description
+      &lt;description&gt;]  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>name</parameter>. The
+                                   name of the configuration. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>values</parameter>. The
+                                   values for the configuration.  The
+                                   key value pairs &lt;values&gt;
+                                   should be in JSON format with no
+                                   spaces. Each key value pair should
+                                   be separated by a comma.</para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--datastore</option>
+                                   <parameter>datastore</parameter>.
+                                   The datastore for the
+                                   configuration. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--datastore_version</option>
+                                   <parameter>datastore_version</parameter>.
+                                   The version for the datastore. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--description</option>
+                                   <parameter>description</parameter>.
+                                   The description for the
+                                   configuration. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Create instance with
+                            configuration group</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove create &lt;name&gt; &lt;flavor&gt; [--size &lt;size&gt;] [--databases &lt;databases&gt;[&lt;databases> ...]] [--users &lt;users> [&lt;users> ...]] [--backup &lt;backup>] [--availability_zone &lt;availability_zone>] [--configuration_group &lt;config_id&gt;]  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>name</parameter>. The
+                                   name of the instance. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>flavor</parameter>. The
+                                   ID of the flavor. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--size</option>
+                                   <parameter>size</parameter>. The
+                                   size of the instance disk in GB. </para>
+                                <note>
+                                   <para> This is a required argument
+                                   for MySQL.</para>
+                                </note>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--databases</option>
+                                   <parameter> &lt;databases>
+                                   [&lt;databases> ...]</parameter>.
+                                   An optional list of databases..
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--users</option>
+                                   <parameter> &lt;users> [&lt;users>
+                                   ...]</parameter>. An optional list
+                                   of users in the form
+                                   user:password.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--backup</option>
+                                   <parameter>
+                                   &lt;backup></parameter>. A backup
+                                   UUID. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--availability_zone</option>
+                                   <parameter>&lt;availability_zone></parameter>.
+                                   The Zone hint to give to nova.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--configuration_group</option>
+                                   <parameter>&lt;config_id></parameter>.
+                                   The ID of the configuration group.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Apply configuration
+                            group to instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-attach &lt;configuration_id&gt; &lt;instance_id&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>configuration_id</parameter>.
+                                   The ID of the configuration group. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>instance_id</parameter>.
+                                   The ID for the existing instance. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Detach configuration
+                            group from instance and replace with
+                            default configuration</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-detach &lt;instance_id&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>instance_id</parameter>.
+                                   The ID for the existing instance.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Update some parameters
+                            of a configuration group</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-patch &lt;configuration_group&gt; &lt;values&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>configuration_group</parameter>.
+                                   The name of the configuration
+                                   group. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>values</parameter>. The
+                                   values for the configuration group.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Replace all parameters
+                            of a configuration group</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-update &lt;configuration_group&gt; &lt;values&gt; [--name&lt;name&gt;] [--description&lt;description&gt;]  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>configuration_group</parameter>.
+                                   The name of the configuration
+                                   group. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>values</parameter>. The
+                                   values for the configuration group.
+                                   The key value pairs &lt;values&gt;
+                                   should be in JSON format with no
+                                   spaces. Each key value pair should
+                                   be separated by a comma. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--name</option>
+                                   <parameter>&lt;name></parameter>.
+                                   The name of the parameter. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--description</option>
+                                   <parameter>
+                                   &lt;description></parameter>. The
+                                   description of the parameter.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">View all configuration
+                            groups</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-list</programlisting>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">View all instances
+                            associated with the specified
+                            configuration group</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-instances &lt;config_id&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>config_id</parameter>.
+                                   The ID for the configuration group.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold"> View details of
+                            default configuration settings for a
+                            specific instance </emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-default &lt;instance_id&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>instance_id</parameter>.
+                                   The ID for the instance. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold"> View details of
+                            configuration group</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-show &lt;config_id&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>config_id</parameter>.
+                                   The ID for the configuration group.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold"> View configuration
+                            parameters that can be configured for a
+                            datastore </emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-parameter-list &lt;datastore_id&gt;</programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>datastore_id</parameter>.
+                                   The ID for the datastore. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold"> View details of a
+                            specific Configuration Parameter that can
+                            be configured for a datastore
+                        </emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-parameter-show &lt;datastore_version&gt; &lt;parameter&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>datastore_version</parameter>.
+                                   The version of the datastore.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>parameter</parameter>.
+                                   The parameter for the datastore.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Delete configuration
+                            group</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-delete &lt;config-id&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>config-id</parameter>.
+                                   The ID of the configuration.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
                     </listitem>
                 </varlistentry>
             </variablelist>

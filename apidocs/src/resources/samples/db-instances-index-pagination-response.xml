@@ -18,6 +18,11 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
             </links>
         </flavor>
+        <datastore>
+            <type>
+                mysql
+            </type>
+        </datastore>
     </instance>
     <instance id="d4603f69-ec7e-4e9b-803f-600b9205576f" name="json_rack_instance" status="ACTIVE">
         <links>
@@ -31,6 +36,11 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
             </links>
         </flavor>
+        <datastore>
+            <type>
+                mysql
+            </type>
+        </datastore>
     </instance>
     <links>
         <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances?marker=d4603f69-ec7e-4e9b-803f-600b9205576f&amp;limit=2" rel="next"/>

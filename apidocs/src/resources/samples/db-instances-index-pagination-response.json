@@ -8,6 +8,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 {
     "instances": [
         {
+            "datastore": {
+                "type": "mysql"
+            }, 
             "flavor": {
                 "id": "1", 
                 "links": [
@@ -39,6 +42,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             }
         }, 
         {
+            "datastore": {
+                "type": "mysql"
+            }, 
             "flavor": {
                 "id": "1", 
                 "links": [

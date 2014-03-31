@@ -45,7 +45,9 @@
 	      <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
 	    </configuration>
 	  </execution>
-	  <execution>
+		<!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
+		<!-- this document that will be published as cdb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ -->
+		<execution>
 	    <id>cdb-devguide</id>
 	    <goals>
 	      <goal>generate-webhelp</goal>
@@ -55,16 +57,14 @@
 	      <sourceDirectory>src/resources</sourceDirectory>
 	      <highlightSource>false</highlightSource>
 	      <trimWadlUriCount>2</trimWadlUriCount>
-	      <!-- this is the public-facing client developer guide formerly known as PublicAPISpec.xml -->
-	      <!-- this document that will be published as cdb-devguide-latest.pdf at http://docs.rackspacecloud.com/api/ --> 
-	      <enableDisqus>1</enableDisqus>
+		  <enableDisqus>1</enableDisqus>
 	      <googleAnalyticsId>UA-23102455-4</googleAnalyticsId>
 	      
 	      <includes>cdb-devguide.xml</includes>
 	      <canonicalUrlBase>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content</canonicalUrlBase>
 	      <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
 	    </configuration>
-	  </execution>
+	  </execution>  
 	  <execution>
 	    <id>cdb-getting-started</id>
 	    <goals>

@@ -5,6 +5,9 @@
        "volume": {
            "size": 2
        },
-       "configuration": "12345678-1111-2222-3333-444444444444" 
+       "datastore": {
+           "version": "5.1", 
+           "type": "MySQL"
+       } 
    }
 }
