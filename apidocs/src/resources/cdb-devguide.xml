@@ -2840,8 +2840,8 @@
                 the instance. A configuration group can be applied to
                 multiple instances.</para>
             <para>You can create a new configuration group, modify
-                parameters of an existing configuration, and also
-                modify the database instance to use a different
+                parameters of an existing configuration group, and
+                also modify the database instance to use a different
                 configuration group. When a configuration group is
                 modified either by way of adding a new key/value pair
                 or modifying an existing key/value pair, the service
@@ -2874,7 +2874,7 @@
                 key/value pairs that can be assigned to a
                     <glossterm>configuration group</glossterm>. These
                 rules can be retrieved by the user from the API
-                through the configuration parameters resource as
+                through the <glossterm>configuration parameter</glossterm>s resource as
                 described in <xref linkend="configuration_parameters"
                 />. These validation rules are defined in the
                     <filename>configuration-validation.conf</filename>
@@ -3140,8 +3140,7 @@
         <section xml:id="configurations">
             <title>Configurations</title>
             <para>This section describes the operations that are
-                supported for
-                <glossterm>configuration</glossterm>s.</para>
+                supported for configurations.</para>
             <para>You can also find additional configuration-related
                 information in the descriptions for the following API operations:
                 <itemizedlist spacing="compact">
@@ -3186,7 +3185,7 @@
             <section xml:id="configuration_parameters">
                 <title>Configuration Parameters</title>
                 <para>This section describes the operations that are
-                    supported for configuration parameters.</para>
+                    supported for <glossterm>configuration parameter</glossterm>s.</para>
                 <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
                     <wadl:resource

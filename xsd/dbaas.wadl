@@ -2245,7 +2245,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="PATCH" id="updateSomeConfigParmsById">
         <wadl:doc xml:lang="EN" title="Update Some Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Updates some of the configuration parameters associated with the specified <glossterm>configuration group</glossterm>.</para>        
+            <para role="shortdesc">Updates some of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -2272,7 +2272,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="PUT" id="replaceAllConfigParmsById">
         <wadl:doc xml:lang="EN" title="Replace All Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Replaces all of the configuration parameters associated with the specified <glossterm>configuration group</glossterm>.</para>        
+            <para role="shortdesc">Replaces all of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -2350,7 +2350,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="GET" id="getConfigurationParameters">
         <wadl:doc xml:lang="EN" title="List Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists configuration parameters that may be configured on the system.</para>        
+            <para role="shortdesc">Lists <glossterm>configuration parameter</glossterm>s that may be configured on the system.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2375,7 +2375,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="GET" id="getConfigurationParameterDetails">
         <wadl:doc xml:lang="EN" title="List Configuration Parameter Details" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the details of a specified configuration parameter that may be configured on the system.</para>        
+            <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2400,7 +2400,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="GET" id="getConfigurationParameterDetailsWithoutDatastore">
         <wadl:doc xml:lang="EN" title="List Configuration Parameter Details Without Datastore" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the details of a specified configuration parameter that may be configured on the system without specifying a datastore.</para> 
+            <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system without specifying a datastore.</para> 
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2425,7 +2425,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
     
     <method name="GET" id="getConfigurationParametersWithoutDatastore">
         <wadl:doc xml:lang="EN" title="List Configuration Parameters Without Datastore" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the configuration parameters that may be configured on the system without specifying a datastore.</para> 
+            <para role="shortdesc">Lists the <glossterm>configuration parameter</glossterm>s that may be configured on the system without specifying a datastore.</para> 
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
