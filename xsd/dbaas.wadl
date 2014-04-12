@@ -189,28 +189,17 @@
             <para>This operation returns detailed information about the specified version of the API.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Version Details requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-version-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Version Details request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-version-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/xml" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Version Details responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-version-response.xml"/>
-                </doc>
-            </representation>
-
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Version Details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-version-response.json"/>
                 </doc>
             </representation>
@@ -227,27 +216,17 @@
             <para>This operation lists information about all versions of the API.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Versions requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-versions-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Versions request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-versions-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml" >
-                 <doc>
-                     <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Versions responses:</para>
-                     <xsdxt:code href="../apidocs/src/resources/samples/db-versions-response.xml"/>
-                 </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Versions response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-versions-response.json"/>
                 </doc>
             </representation>
@@ -319,7 +298,7 @@
                 <tr>
                     <td colspan="1" rowspan="3">Database</td>
                     <td colspan="1">name</td>
-                    <td colspan="3">Specifies <glossterm>database</glossterm> names for creating databases on instance creation. Refer to <xref linkend="POST_createDatabase__version___accountId__instances__instanceId__databases_"/> for the required xml/json format.</td>
+                    <td colspan="3">Specifies <glossterm>database</glossterm> names for creating databases on instance creation. Refer to <xref linkend="POST_createDatabase__version___accountId__instances__instanceId__databases_"/> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
@@ -335,17 +314,17 @@
                 <tr>
                     <td colspan="1" rowspan="4">User</td>
                     <td colspan="1">name</td>
-                    <td colspan="3">Specifies user name for the database on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required xml/json format.</td>
+                    <td colspan="3">Specifies user name for the database on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
                     <td colspan="1">password</td>
-                    <td colspan="3">Specifies password for those users on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required xml/json format.</td>
+                    <td colspan="3">Specifies password for those users on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
                     <td colspan="1">(database) name</td>
-                    <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required xml/json format.</td>
+                    <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
@@ -370,7 +349,7 @@
                                 <para>You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up.</para>
                             </listitem>
                             <listitem>
-                                <para>Refer to the Create Database Instance Restore Request and Response examples for the required xml/json format and details.</para>
+                                <para>Refer to the Create Database Instance Restore Request and Response examples for the required json format and details.</para>
                             </listitem>
                         </itemizedlist></note></td>
                     <td colspan="1">No</td>
@@ -382,26 +361,15 @@
         
     </wadl:doc>
         <request>
-            <representation mediaType="application/xml"
-                element="dbaas:DatabaseInstance">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.json"/>
                 </doc>
-            </representation>
-            <representation mediaType="application/xml"  element="dbaas:DatabaseInstance">
-                <doc title="Create Database Instance Restore Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
-                </doc>
             </representation> 
-            <representation mediaType="application/json">
+            <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create Database Instance Restore Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Restore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
@@ -422,14 +390,9 @@
             
         </request>
         <response status="200">
-            <representation mediaType="application/xml" element="dbaas:DatabaseInstance" >
+            <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-response.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json" >
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">For convenience, notice in the response examples above that resources contain links to themselves. This allows a client to easily obtain
                         resource URIs rather than to construct them. There are two kinds of link relations
@@ -438,16 +401,10 @@
                         link provides a permanent link to a resource that is appropriate for long term storage.</para>
                 </doc>
             </representation>
-            <representation mediaType="application/xml"
-                element="dbaas:DatabaseInstance" >
-                <doc title="Create Database Instance Restore Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database Instance Restore responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create Database Instance Restore Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Restore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
@@ -482,14 +439,9 @@
             <note><para>This operation is not allowed when the instance status is <code>BUILD</code>.</para></note>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Database Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-instance-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-instance-request.json"/>
                 </doc>
             </representation>
@@ -497,14 +449,9 @@
         <response status="202" />
     &commonFaults;
         <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" element="dbaas:unprocessableEntity">
+            <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Database Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-instance-response.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-instance-response.json"/>
                 </doc>
             </representation>
@@ -519,29 +466,17 @@
             <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Database Instances Detail requests:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Database Instances request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml" >
-                <doc>
-                   <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Database Instances responses:</para>
-                   
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Database Instances response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-response.json"/>
                 </doc>
             </representation>
@@ -568,6 +503,7 @@
             <representation mediaType="application/json"
                element="dbaas:DatabaseInstance" >
               <doc>
+                  <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Database Instance response:</para>
                   <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-detach-from-instance-response.json"/>
               </doc>
             </representation>
@@ -592,14 +528,9 @@
             <para>The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.</para>
         </wadl:doc>
         <request>
-                <representation mediaType="application/xml">
-                    <doc>
-                        <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Database Instance Status and Details requests:</para>
-                        <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.xml"/>
-                    </doc>
-                </representation>
                 <representation mediaType="application/json">
                     <doc>
+                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details request:</para>
                         <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                     </doc>
                 </representation>
@@ -613,16 +544,10 @@
             
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:DatabaseInstance" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Database Instance Status and Details responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-response.json"/>
                 </doc>
             </representation>
@@ -648,27 +573,17 @@
             <para>This operation returns a 202 Accepted response.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" element="dbaas:Restart">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restart Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-restart-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" element="dbaas:Restart">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-restart-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restart Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-restart-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-restart-response.json"/>
                 </doc>
             </representation>
@@ -684,29 +599,18 @@
             <para>This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts MySQL in the process.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml"
-                            element="dbaas:Resize">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Resize Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-instance-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                             element="dbaas:Resize">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-instance-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Resize Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-instance-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-instance-response.json"/>
                 </doc>
             </representation>
@@ -725,29 +629,18 @@
             <para>This operation returns a 202 Accepted response.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml"
-                            element="dbaas:Resize">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Resize Instance Volume requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-volume-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                             element="dbaas:Resize">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance Volume request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-volume-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Resize Instance Volume responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-volume-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance Volume response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-volume-response.json"/>
                 </doc>
             </representation>
@@ -777,7 +670,7 @@
                 <tbody>
                     <tr>
                         <td colspan="1">name</td>
-                        <td colspan="3">Specifies the database name for creating the database. Refer to the request examples for the required xml/json format.</td>
+                        <td colspan="3">Specifies the database name for creating the database. Refer to the request examples for the required json format.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -876,29 +769,18 @@
             </table>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml"
-                element="dbaas:Database" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database requests:<?rax-fo keep-with-next?></para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Database" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database request:<?rax-fo keep-with-next?></para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Database responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-response.json"/>
                 </doc>
             </representation> 
@@ -916,55 +798,33 @@
                 information_schema, lost+found) can only be viewed by a database administrator.</para></note>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Databases for Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Databases for Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-request.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml">
-                <doc title="List Databases for Instance Paged Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Databases for Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc title="List Databases for Instance Paged Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Databases for Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:Databases" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Databases for Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Databases" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Databases for Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-response.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml"
-                element="dbaas:Databases" >
-                <doc title="List Databases for Instance Paged Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Databases for Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Databases" >
                 <doc title="List Databases for Instance Paged Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Databases for Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-response.json"/>
                 </doc>
             </representation>
@@ -979,27 +839,17 @@
             <para>This operation deletes the requested database within the specified database instance. Note that all data associated with the database is also deleted.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Database requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-databases-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-databases-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Database responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-databases-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-databases-response.json"/>
                 </doc>
             </representation>
@@ -1016,7 +866,7 @@
             <remark>Writer: please add the following note back into the doc once the List User Details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the "List User Details" section of this document).</remark>
             <para>If the corresponding request cannot be fulfilled due to insufficient or invalid data, an HTTP 400 "Bad Request" error response is returned with information regarding the nature of the failure. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.</para>
 
-            <para>The following table lists the required and optional attributes for Create User. Refer to the request examples for the required xml/json format:</para>
+            <para>The following table lists the required and optional attributes for Create User. Refer to the request examples for the required json format:</para>
             
             <table rules="all" width="500">
                 <caption>Required and Optional Attributes for Create User</caption>
@@ -1160,28 +1010,17 @@
             </table>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml"
-                element="dbaas:Users" >
+            <representation mediaType="application/json" element="dbaas:Users">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create User requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-users-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json" >
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create User request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-users-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create User responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-users-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create User response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-users-response.json"/>
                 </doc>
             </representation>
@@ -1214,57 +1053,34 @@
             </itemizedlist>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Users in Database Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Users in Database Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-request.json"/>
                 </doc>
             </representation>
-            
-            <representation mediaType="application/xml">
-                <doc title="List Users in Database Instance Paged Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance requests to return a limit of two users at a time (<code>users?limit=2</code>):</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-request.xml"/>
-                </doc>
-            </representation>
+         
             <representation mediaType="application/json">
                 <doc title="List Users in Database Instance Paged Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Users in Database Instance requests to return a limit of two users at a time (<code>users?limit=2</code>):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:Users" >
-                <doc title="List Users in Database Instance Response: XML">
-                    <?hard-pagebreak?>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Users in Database Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc title="List Users in Database Instance Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Users in Database Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for a description of the <code>host</code> field.</para>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml"
-                element="dbaas:Users" >
-                <doc title="List Users in Database Instance Paged Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the <emphasis>paginated</emphasis> List Users in Database Instance responses.</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc title="List Users in Database Instance Paged Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Users in Database Instance response.</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Note that the response contains the link (<code>href</code>) to the next set of users in the list (<code>users?marker=dbuser2%4010.0.0.1&amp;limit=2</code>), so using that link for the request will return the next two users in the list after <code>dbuser2%4010.0.0.1</code>.</para>
                 </doc>   
@@ -1283,30 +1099,18 @@
                 <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for details.</para></note>         
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" element="dbaas:Users">
+            <representation mediaType="application/json" element="dbaas:Users">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Change User(s) Password requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Change User(s) Password request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202">
-            <representation mediaType="application/xml"
-                element="dbaas:Users" >
-                <doc>
-                    <?hard-pagebreak?>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Change User(s) Password responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Change User(s) Password response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-response.json"/>
                 </doc>
             </representation>
@@ -1323,27 +1127,17 @@
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete User requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-users-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete User request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-users-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete User responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-users-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete User response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-users-response.json"/>
                 </doc>
             </representation>
@@ -1358,56 +1152,36 @@
             <para>This operation lists the specified user's name and a list of databases that the user can access.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-request.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml">
-                <doc title="List User for Restricted Host Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User for Restricted Host requests.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        In these examples, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc title="List User Access for Restricted Host Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example showd the List User for Restricted Host request.</para>
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
+                        In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-request.json"/>
                 </doc>
             </representation>
             
         </request>
         <response status="200" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User responses:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-response.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml">
-                <doc title="List User Access for Restricted Host Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User for Restricted Host responses.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        In these examples, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc title="List User Access for Restricted Host Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User for Restricted Host response.</para>
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
+                        In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-response.json"/>
                 </doc>
             </representation>
@@ -1424,63 +1198,40 @@
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-request.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml">
-                <doc title="List User Access for Restricted Host Request: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access for Restricted Host requests.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">These examples show using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-
-In these examples, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
-(refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
-
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc title="List User Access for Restricted Host Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access for Restricted Host request.</para>
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
+                        
+                        In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
+                        (refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-request.json"/>
                 </doc>
             </representation>
             
         </request>
         <response status="200" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
-                    
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-response.json"/>
                 </doc>
             </representation>
             
-            <representation mediaType="application/xml">
-                <doc title="List User Access for Restricted Host Response: XML">
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List User Access for Restricted Host responses.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">These examples show the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-
-In these examples, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
-(refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
-
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc title="List User Access for Restricted Host Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access for Restricted Host response.</para>
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
+                        
+                        In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
+                        (refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-response.json"/>
                 </doc>
             </representation>
@@ -1500,27 +1251,17 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" element="dbaas:Database">
+            <representation mediaType="application/json" element="dbaas:Database">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Grant User Access requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant User Access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Grant User Access responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant User Access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-response.json"/>
                 </doc>
             </representation>
@@ -1536,27 +1277,17 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Revoke User Access requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke User Access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="202" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Revoke User Access responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke User Access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-response.json"/>
                 </doc>
             </representation>
@@ -1605,30 +1336,19 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 turning off binlogs, removing users that we use to access your instance, and so forth.</para></note>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Enable Root User requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-enable-root-user-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Enable Root User request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-enable-root-user-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:User">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Enable Root User responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-enable-root-user-response.xml"/>
-                </doc>
-            </representation>
 
             <representation mediaType="application/json"
                 element="dbaas:User">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Enable Root User response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-enable-root-user-response.json"/>
                 </doc>
             </representation>
@@ -1643,29 +1363,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This operation checks an active specified database instance to see if root access is enabled. It returns True if root user is enabled for the specified database instance or False otherwise.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Check Root User Access requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-check-root-user-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Check Root User Access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-check-root-user-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:RootEnabled" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Check Root User Access responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-check-root-user-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:RootEnabled" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example show the Check Root User Access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-check-root-user-response.json"/>
                 </doc>
             </representation>
@@ -1682,30 +1391,19 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Flavors requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavors request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:Flavors" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Flavors responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Flavors" >
                 <doc>
                     <?hard-pagebreak?>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavors response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.json"/>
                 </doc>
             </representation>
@@ -1726,29 +1424,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <remark>Reviewer / Writer: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.</remark>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Flavor By ID requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-id-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavor By ID request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-id-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:Flavor" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Flavor By ID responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-id-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Flavor" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavor By ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-id-response.json"/>
                 </doc>
             </representation>
@@ -1840,29 +1527,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
                 </itemizedlist></note>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" element="dbaas:Backup">
+            <representation mediaType="application/json" element="dbaas:Backup">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Backup requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
+            <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Create Backup responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json"
-                element="dbaas:Flavor" >
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.json"/>
                 </doc>
             </representation>
@@ -1878,29 +1554,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>The following table lists the required and optional attributes for List Backups:</para>         
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:Backup" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-response.json"/>
                 </doc>
             </representation>
@@ -1916,29 +1581,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backup By ID requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backup By ID request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:Backup" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backup By ID responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backup By ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-response.json"/>
                 </doc>
             </representation>
@@ -1953,29 +1607,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This operation lists all backups for a specified instance.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups for Instance requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups for Instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:RootEnabled" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Backups for Instance responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups for Instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-response.json"/>
                 </doc>
             </representation>
@@ -2023,29 +1666,18 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" element="dbaas:DatabaseInstance">
+            <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restore Backup requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restore Backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml"
-                element="dbaas:DatabaseInstance" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Restore Backup responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restore Backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
@@ -2062,14 +1694,9 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Backup requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-request.json"/>
                 </doc>
             </representation>
@@ -2077,14 +1704,10 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         <response status="202" />
         &commonFaults;
         <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
-            <representation mediaType="application/xml" element="dbaas:unprocessableEntity">
+            
+            <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Delete Backup responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-response.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-response.json"/>
                 </doc>
             </representation>
@@ -2100,7 +1723,7 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         
             <para>Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for information about the characters that are valid for the user name and password.</para>
             <para>The following table lists attributes for Modify User Attributes. Note that <emphasis>one or more</emphasis> of the attributes must be specified. 
-                Refer to the request examples for the required xml/json format:</para>
+                Refer to the request examples for the required json format:</para>
             
             <table rules="all" width="400">
                 <caption>Attributes for Modify User Attributes</caption>
@@ -2136,14 +1759,9 @@ In these examples, user@host has been URL encoded by the client, so the paramete
         
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml" element="dbaas:User">
+            <representation mediaType="application/json" element="dbaas:User">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Modify User Attributes requests:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-request.xml"/>
-                </doc>
-            </representation>
-            <representation mediaType="application/json">
-                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify User Attributes request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-request.json"/>
                 </doc>
             </representation>
@@ -2151,14 +1769,9 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             
         </request>
         <response status="200" >
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the Modify User Attributes responses:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify User Attributes response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-response.json"/>
                 </doc>
             </representation>
@@ -2454,29 +2067,17 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This operation lists all datastore types.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types requests:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types responses:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-response.json"/>
                 </doc>
             </representation>
@@ -2491,29 +2092,17 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This operation lists all datastore types for the specified datastore.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types For Datastore requests:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types For Datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Types For Datastore responses:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types For Datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-response.json"/>
                 </doc>
             </representation>
@@ -2528,29 +2117,17 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This operation lists all datastore versions for the specified datastore.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Versions For Datastore requests:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Versions For Datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List All Datastore Versions For Datastore responses:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Versions For Datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-response.json"/>
                 </doc>
             </representation>
@@ -2565,29 +2142,17 @@ In these examples, user@host has been URL encoded by the client, so the paramete
             <para>This operation lists all datastore version for the specified version.</para>
         </wadl:doc>
         <request>
-            <representation mediaType="application/xml">
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Datastore Version For Version requests:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-request.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json">
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version For Version request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-request.json"/>
                 </doc>
             </representation>
         </request>
         <response status="200">
-            <representation mediaType="application/xml" >
-                <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following examples show the List Datastore Version For Version responses:</para>
-                    
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.xml"/>
-                </doc>
-            </representation>
             <representation mediaType="application/json" >
                 <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version For Version response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.json"/>
                 </doc>
             </representation>
