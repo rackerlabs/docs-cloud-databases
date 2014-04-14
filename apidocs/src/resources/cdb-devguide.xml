@@ -87,6 +87,13 @@
                                 format as announced on February, 17,
                                 2014.</para>
                         </listitem>
+                        <listitem>
+                            <para>Added note to <xref
+                                   linkend="Monitoring_Cloud_Databases-d1e4673"
+                                /> about checking their junk/spam
+                                folders in case users have filtering
+                                on their email messages. </para>
+                        </listitem>
                     </itemizedlist>
                 </revdescription>
             </revision>
@@ -2520,6 +2527,12 @@
                         <para>Users <emphasis>are</emphasis> allowed to
                             add notifications and alarms to the existing
                             checks.</para>
+                    </listitem>
+                    <listitem>
+                        <para>For email notifications, users should
+                            check their junk/spam folder in case they
+                            have filtering on their email
+                            messages.</para>
                     </listitem>
                     <listitem>
                         <para>Refer to the following information on the

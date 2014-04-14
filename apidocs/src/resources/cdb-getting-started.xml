@@ -49,13 +49,25 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-03-31</pubdate>
+        <pubdate>2014-04-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-04-15</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Removed XML data serialization
+                                format as announced on February, 17,
+                                2014.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-03-31</date>
                 <revdescription>
@@ -367,15 +379,8 @@
                         commands, choose this method. With cURL, you
                         send HTTP requests with embedded API calls
                         from the command line. The cURL examples in
-                        this guide include request bodies in both XML
-                        and JSON formats. See <xref linkend="curl"
-                        />.</para>
-                    <important>
-                        <para>As of release 1.0.35, the XML data
-                            serialization format in the Cloud
-                            Databases API is deprecated and will be
-                            removed from the API in 60 days. </para>
-                    </important>
+                        this guide include request bodies in JSON
+                        format. See <xref linkend="curl"/>.</para>
                 </listitem>
             </itemizedlist>If you like, you can use cURL in one
             example and switch to the trove client in the next
@@ -384,10 +389,9 @@
             required to run the cURL examples. See <xref
                 linkend="Export_CURL_ENV_VARS"/>. </para>
         
-        <para>To use the API, it helps to be familiar with
-            HTTP 1.1,  RESTful web services, the
-            Rackspace Cloud Servers service, and JSON or XML data
-            serialization formats.</para>
+        <para>To use the API, it helps to be familiar with HTTP 1.1,
+            RESTful web services, the Rackspace Cloud Servers service,
+            and JSON data serialization format.</para>
         
         
        
@@ -471,8 +475,8 @@
                 Linux distributions, Mac OS X, and Windows. For information
                 about cURL, see <link xlink:href="http://curl.haxx.se/"
                     >http://curl.haxx.se/</link>. </para>
-            <para>To use XML requests and responses, see
-                <xref linkend="curl_summary_xml"/>.</para>
+            <para security="writeronly">To use JSON requests and responses, see <xref
+                    linkend="curl_summary_json"/>.</para>
             
             <para>To run the cURL request examples shown in this guide, copy
                 each example from the HTML version of this guide directly to
@@ -492,12 +496,13 @@
        -d '{"server": {"name": "my_server_with_network", "imageRef": "d42f821e-c2d1-4796-9f07-af5ed7912d0e", "flavorRef": "2", "max_count": 1, "min_count": 1, "networks": [{"uuid": "538a112a-34d1-47ff-bf1e-c40639e886e2"}, {"uuid": "00000000-0000-0000-0000-000000000000"}, {"uuid": "11111111-1111-1111-1111-111111111111"}]}}' \
       | python -m json.tool</programlisting></example>
             <note>
-                <para>The carriage returns in the cURL request examples are
-                    escaped with a backslash (<literal>\</literal>) character.
-                    The escape character allows continuation of the command
-                    across multiple lines. However, do not include the escape
-                    character in the JSON or XML request body within the cURL
-                    command.</para>
+                <para>The carriage returns in the cURL request
+                    examples are escaped with a backslash
+                        (<literal>\</literal>) character. The escape
+                    character allows continuation of the command
+                    across multiple lines. However, do not include the
+                    escape character in the JSON request body within
+                    the cURL command.</para>
             </note>
             
             <para>The cURL examples in this guide use the following
@@ -517,9 +522,10 @@
                             <option>-d</option>
                         </td>
                         <td>
-                            <para>Sends the specified data in a &POST; request
-                                to the HTTP server. Use this option to send a
-                                JSON or XML request body to the server.</para>
+                            <para>Sends the specified data in a &POST;
+                                request to the HTTP server. Use this
+                                option to send a JSON request body to
+                                the server.</para>
                         </td>
                     </tr>
                     <tr>
@@ -542,9 +548,8 @@
                                         header is:</para>
                                     <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
                                     <para>Where
-                                        <parameter>format</parameter> is
-                                        either <literal>json</literal> or
-                                        <literal>xml</literal>.</para>
+                                   <parameter>format</parameter> is
+                                   <literal>json</literal>.</para>
                                 </listitem>
                                 <listitem>
                                     <para><literal>X-Auth-Project-Id</literal>.
@@ -561,10 +566,9 @@
                                         is:</para>
                                     <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
                                     <para>Where
-                                        <parameter>format</parameter> is
-                                        either <literal>json</literal> or
-                                        <literal>xml</literal>. Default is
-                                        <literal>json</literal>.</para>
+                                   <parameter>format</parameter> is
+                                   <literal>json</literal>. Default is
+                                   <literal>json</literal>.</para>
                                 </listitem>
                                 <listitem>
                                     <para><literal>X-Auth-Token</literal>.
@@ -638,9 +642,9 @@
             <section xmlns="http://docbook.org/ns/docbook"
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
-                xml:id="curl_summary_xml">
+                xml:id="curl_summary_json" security="writeronly">
                 
-                <title>XML Requests and Responses</title>
+                <title>JSON Requests and Responses</title>
                 <important>
                     <para>As of release 1.0.35, the XML data
                         serialization format in the Cloud Databases
@@ -1217,9 +1221,8 @@ export OS_PROJECT_ID=&lt;tenant_id>
                             <td>
                                 <para>Sends the specified data in a
                                    &POST; request to the HTTP server.
-                                   Use this option to send a JSON or
-                                   XML request body to the
-                                   server.</para>
+                                   Use this option to send a JSON
+                                   request body to the server.</para>
                             </td>
                         </tr>
                         <tr>
@@ -1245,8 +1248,7 @@ export OS_PROJECT_ID=&lt;tenant_id>
                                    <screen><computeroutput>Content-Type: application/<parameter>format</parameter></computeroutput></screen>
                                    <para>Where
                                    <parameter>format</parameter> is
-                                   either <literal>json</literal> or
-                                   <literal>xml</literal>.</para>
+                                   <literal>json</literal>.</para>
                                    </listitem>
                                    <listitem>
                                    <para><literal>X-Auth-Project-Id</literal>.
@@ -1264,8 +1266,7 @@ export OS_PROJECT_ID=&lt;tenant_id>
                                    <screen><computeroutput>Accept: application/<parameter>format</parameter></computeroutput></screen>
                                    <para>Where
                                    <parameter>format</parameter> is
-                                   either <literal>json</literal> or
-                                   <literal>xml</literal>. Default is
+                                   <literal>json</literal>. Default is
                                    <literal>json</literal>.</para>
                                    </listitem>
                                    <listitem>
@@ -1359,62 +1360,60 @@ export OS_PROJECT_ID=&lt;tenant_id>
                         escaped with a backslash ('\') in order to
                         avoid prematurely terminating the command.
                         However you should not escape carriage returns
-                        inside the xml or json message within the
+                        inside the JSON message within the
                         command.</para>
                 </note>
-                <important>
-                    <para>As of release 1.0.35, the XML data
-                        serialization format in the Cloud Databases
-                        API is deprecated and will be removed from the
-                        API in 60 days. </para>
-                </important>
                 <para>Consider the following cURL Authenticate
-                    Request: XML example that is described in detail
+                    Request: JSON example that is described in detail
                     in <xref linkend="Generating_Auth_Token"/>:</para>
                 <example>
-                    <title>cURL Authenticate Request: XML</title>
+                    <title>cURL Authenticate Request: JSON</title>
                     <?dbfo keep-together="always"?>
-                    <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
- &lt;auth&gt;   
-    &lt;apiKeyCredentials     
-        xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
-        username="<emphasis role="bold">your_username</emphasis>"     
-        apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
- &lt;/auth&gt;<option>'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
+                    <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
+'{
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {  
+          "username": "<emphasis role="bold">your_username</emphasis>",  
+          "apiKey": "<emphasis role="bold">your_api_key</emphasis>"}
+    }  
+}' \
+<option>-H 'Content-Type: application/json'</option> \
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python -m json.tool</screen>
                 </example>
                 <para>You can see that the lines that are part of the
                     cURL command syntax have all been escaped with a
                     backslash ('\') to indicate that the command
                     continues on the next line:</para>
-                <screen language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+                <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
   
    
-(... lines within the xml portion of the message are not shown in this example)
+(... lines within the JSON portion of the message are not shown in this example)
 (... the example only shows lines that are part of cURL syntax)     
      
     
    
- &lt;/auth&gt;<option>'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri></screen>
+<option>-H 'Content-Type: application/json'</option> \
+<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python -m json.tool</screen>
                 <para>However the lines <emphasis>within</emphasis>
-                    the xml portion of the message are
+                    the json portion of the message are
                         <emphasis>not</emphasis> escaped with a
                     backslash ('\') in order to avoid issues with the
-                    xml processing:</para>
-                <screen language="bash">'&lt;?xml version="1.0" encoding="UTF-8"?>  
- &lt;auth&gt;   
-    &lt;apiKeyCredentials     
-        xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"     
-        username="<emphasis role="bold">your_username</emphasis>"     
-        apiKey="<emphasis role="bold">your_api_key</emphasis>"/&gt;   
- &lt;/auth&gt;<option>'</option> \
-</screen>
+                    json processing:</para>
+                <screen language="bash">'{
+    "auth":
+    {
+       "RAX-KSKEY:apiKeyCredentials":
+       {  
+          "username": "<emphasis role="bold">your_username</emphasis>",  
+          "apiKey": "<emphasis role="bold">your_api_key</emphasis>"}
+    }  
+}' \</screen>
                 <note>
-                    <para>The final line of the xml message is escaped
-                        since the backslash lies
-                            <emphasis>outside</emphasis> the xml
+                    <para>The final line of the json message is
+                        escaped since the backslash lies
+                            <emphasis>outside</emphasis> the json
                         message and continues the cURL command to the
                         next line.</para>
                 </note>
@@ -1556,24 +1555,9 @@ export OS_PROJECT_ID=&lt;tenant_id>
                 use
                     <code>https://identity.api.rackspacecloud.com/v2.0/tokens</code>,
                 as shown in the following Authenticate Request
-                examples. Note that the <code>v2.0</code> component in
+                example. Note that the <code>v2.0</code> component in
                 the URL indicates that you are using version 2.0 of
                 the Cloud Auth API.</para>
-            <example>
-                <title>cURL Authenticate Request: XML</title>
-                <?dbfo keep-together="always"?>
-                <screen language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" encoding="UTF-8"?>  
-&lt;auth>
-   &lt;apiKeyCredentials
-      xmlns="http://docs.rackspace.com/identity/api/ext/RAX-KSKEY/v1.0"
-         username="<emphasis role="bold">your_username</emphasis>" 
-         apiKey="<emphasis role="bold">your_api_key</emphasis>"/>
-&lt;/auth>' \
-<option>-H 'Content-Type: application/xml'</option> \
-<option>-H 'Accept: application/xml'</option> \
-<uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | ppxml</screen>
-            </example>
             <example>
                 <title>cURL Authenticate Request: JSON</title>
                 <?dbfo keep-together="always"?>
@@ -1596,10 +1580,6 @@ export OS_PROJECT_ID=&lt;tenant_id>
                     instead.</para>
             </note>
             <example>
-                <title>Authenticate Response: XML</title>
-                <programlisting language="xml"><xi:include href="../../src/resources/samples/db-auth-20.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-            </example>
-            <example>
                 <title>Authenticate Response: JSON</title>
                 <programlisting language="json"><xi:include href="../../src/resources/samples/db-auth-20.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
             </example>
@@ -1618,8 +1598,8 @@ export OS_PROJECT_ID=&lt;tenant_id>
                     </listitem>
                     <listitem>
                         <para>The information shown in the
-                            Authenticate Response examples above is
-                            for US-based accounts. If you authenticate
+                            Authenticate Response example above is for
+                            US-based accounts. If you authenticate
                             against the UK-endpoint for auth, you will
                             see the service catalog information for
                             UK-based accounts.</para>
@@ -1769,7 +1749,7 @@ export OS_PROJECT_ID=&lt;tenant_id>
                 example:
                     (<code>https://ord.databases.api.rackspacecloud.com/v1.0/$account/</code>),
                 as you can see in the cURL List Flavors Details
-                Request examples in <xref linkend="List_Flavors"
+                Request example in <xref linkend="List_Flavors"
                 />.</para>
         </section>
         <section xml:id="Export_CURL_ENV_VARS">
@@ -1875,16 +1855,8 @@ Flavor List for IAD, DFW, ORD, SYD
                                 (<code>/flavors</code>) call.</para>
                         <para>This operation does not require a
                             request body.</para>
-                        <para>Execute the desired cURL request for
-                            List Flavors:</para>
-                        <example>
-                            <title>cURL List Flavors Request:
-                                XML</title>
-                            <programlisting language="bash"><command>curl -s</command> \
-<option>-H "X-Auth-Token: $token"</option> \
-<option>-H "Accept: application/xml"</option> \
-<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/flavors</uri></programlisting>
-                        </example>
+                        <para>Execute the cURL request for List
+                            Flavors:</para>
                         <example>
                             <title>cURL List Flavors Request:
                                 JSON</title>
@@ -1895,12 +1867,8 @@ Flavor List for IAD, DFW, ORD, SYD
                         </example>
                     </step>
                     <step>
-                        <para>The following examples show the
-                            responses for List Flavors:</para>
-                        <example>
-                            <title>List Flavors Response: XML</title>
-                            <programlisting language="xml"><xi:include href="../../src/resources/samples/db-flavors-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                        </example>
+                        <para>The following example shows the response
+                            for List Flavors:</para>
                         <example>
                             <title>List Flavors Response: JSON</title>
                             <programlisting language="json"><xi:include href="../../src/resources/samples/db-flavors-response.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
@@ -2011,7 +1979,7 @@ Flavor List for IAD, DFW, ORD, SYD
                     </step>
                     <step>
                         <para>You will need to specify the instance id
-                            returned (in the response examples above:
+                            returned (in the response example above:
                                 <code>id="5013a2c2-8fd1-49d3-9126-3f0991e0a27b"</code>)
                             on subsequent API calls that require it,
                             for example List Databases for
@@ -2064,35 +2032,8 @@ Flavor List for IAD, DFW, ORD, SYD
                         </para>
                     </step>
                     <step>
-                        <para>Execute the desired cURL request for
-                            Create Instance:</para>
-                        <example>
-                            <title>cURL Create Instance Request:
-                                XML</title>
-                            <programlisting language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" ?> 
-&lt;instance xmlns="http://docs.openstack.org/database/api/v1.0" 
-    name="myrackinstance" 
-    flavorRef= 
-      "https://ord.databases.api.rackspacecloud.com/v1.0/$account/flavors/1"> 
-    &lt;databases> 
-        &lt;database name="sampledb" character_set="utf8" 
-         collate="utf8_general_ci" /> 
-    &lt;/databases>
-    &lt;users>
-        &lt;user name="simplestUser" password="password">
-            &lt;databases>
-                &lt;database name="sampledb"/>
-            &lt;/databases>
-        &lt;/user>
-    &lt;/users> 
-    &lt;volume size="2" /> 
-&lt;/instance>' \
-<option>-H "X-Auth-Token: $token"</option> \
-<option>-H "Content-Type: application/xml"</option> \
-<option>-H "Accept: application/xml"</option> \
-<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances</uri></programlisting>
-                        </example>
+                        <para>Execute the cURL request for Create
+                            Instance:</para>
                         <example>
                             <title>cURL Create Instance Request:
                                 JSON</title>
@@ -2136,13 +2077,8 @@ Flavor List for IAD, DFW, ORD, SYD
                             URI shown above is "1". </para>
                     </step>
                     <step>
-                        <para>The following examples show the Create
-                            Instance responses:</para>
-                        <example>
-                            <title>Create Instance Response:
-                                XML</title>
-                            <programlisting language="xml"><xi:include href="../../src/resources/samples/db-gs-create-database-instance-response.xml" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
-                        </example>
+                        <para>The following example shows the Create
+                            Instance response:</para>
                         <example>
                             <title>Create Instance Response:
                                 JSON</title>
@@ -2238,18 +2174,9 @@ Flavor List for IAD, DFW, ORD, SYD
                         specified ID using cURL:</title>
                     <step>
                         <para>List Databases for Instance by executing
-                            one of the requests below.</para>
+                            the request below.</para>
                         <para>This operation does not require a
                             request body.</para>
-                        <example>
-                            <title>cURL List Databases for Instance
-                                Request: XML</title>
-                            <programlisting language="bash"><command>curl</command> <option>-s</option> \
-<option>-H "X-Auth-Token: $token"</option> \
-<option>-H "Content-Type: application/xml"</option> \
-<option>-H "Accept: application/xml"</option> \
-<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/databases</uri></programlisting>
-                        </example>
                         <example>
                             <?dbfo keep-together="always"?>
                             <title>cURL List Databases for Instance
@@ -2260,9 +2187,8 @@ Flavor List for IAD, DFW, ORD, SYD
 <uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/databases</uri> | python -m json.tool</programlisting>
                         </example>
                         <para>Remember to replace the names in the
-                            examples above with their actual
-                            respective values:<itemizedlist
-                                spacing="compact">
+                            example above with their actual respective
+                                values:<itemizedlist spacing="compact">
                                 <listitem>
                                    <para><emphasis role="bold"
                                    >instance_id</emphasis> &mdash; as
@@ -2274,21 +2200,8 @@ Flavor List for IAD, DFW, ORD, SYD
                             </itemizedlist></para>
                     </step>
                     <step>
-                        <para>The following examples show the
-                            responses for Create User:</para>
-                        <example>
-                            <title>List Databases for Instance
-                                Response: XML</title>
-                            <programlisting language="xml">HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 109
-Date: Thu, 05 Apr 2012 18:20:18 GMT
-
-&lt;databases xmlns="http://docs.openstack.org/database/api/v1.0">
-    &lt;database name="sampledb"/>
-&lt;/databases>
-</programlisting>
-                        </example>
+                        <para>The following example shows the response
+                            for Create User:</para>
                         <example>
                             <title>List Databases for Instance
                                 Response: JSON</title>
@@ -2401,19 +2314,9 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                         cURL:</title>
                     <step>
                         <para>List users in a database instance by
-                            executing one of the requests
-                            below.</para>
+                            executing the request below.</para>
                         <para>This operation does not require a
                             request body.</para>
-                        <example>
-                            <title>cURL List Users in Database
-                                Instance Request: XML</title>
-                            <programlisting language="bash"><command>curl</command> <option>-s</option> \
-<option>-H "X-Auth-Token: $token"</option> \
-<option>-H "Content-Type: application/xml"</option> \
-<option>-H "Accept: application/xml"</option> \
-<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/users</uri></programlisting>
-                        </example>
                         <example>
                             <?dbfo keep-together="always"?>
                             <title>cURL List Users in Database
@@ -2424,9 +2327,8 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
 <uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/users</uri> | python -m json.tool</programlisting>
                         </example>
                         <para>Remember to replace the names in the
-                            examples above with their actual
-                            respective values:<itemizedlist
-                                spacing="compact">
+                            example above with their actual respective
+                                values:<itemizedlist spacing="compact">
                                 <listitem>
                                    <para><emphasis role="bold"
                                    >instance_id</emphasis> &mdash; as
@@ -2438,31 +2340,9 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                             </itemizedlist></para>
                     </step>
                     <step>
-                        <para>The following examples show the
-                            responses for List Users in Database
+                        <para>The following example shows the response
+                            for List Users in Database
                             Instance:</para>
-                        <example>
-                            <title>List Users in Database Instance
-                                Response: XML</title>
-                            <programlisting language="xml">HTTP/1.1 200 OK
-Content-Type: application/xml
-Content-Length: 109
-Date: Thu, 05 Apr 2012 18:20:18 GMT
-
-&lt;?xml version="1.0" ?>
-&lt;users xmlns="http://docs.openstack.org/database/api/v1.0">
-    &lt;user name="simplestUser">
-        &lt;databases>
-            &lt;database>
-                &lt;name>
-                    sampledb
-                &lt;/name>
-            &lt;/database>
-        &lt;/databases>
-    &lt;/user>
-&lt;/users>
-</programlisting>
-                        </example>
                         <example>
                             <title>List Users in Database Instance
                                 Response: JSON</title>
@@ -2692,22 +2572,9 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                         using cURL:</title>
                     <step>
                         <para>Create a backup for a database instance
-                            by executing one of the requests
-                            below.</para>
+                            by executing  the request below.</para>
                         <para>This operation does not require a
                             request body.</para>
-                        <example>
-                            <title>Backup Database Instance Request:
-                                XML</title>
-                            <programlisting language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
-'&lt;?xml version="1.0" ?> 
-&lt;backup xmlns="http://docs.openstack.org/database/api/v1.0" instance=
-"&lt;instance_id>" name="&lt;backup_name>" description="&lt;backup_description"/> \
-<option>-H "X-Auth-Token: $token"</option> \
-<option>-H "Content-Type: application/xml"</option> \
-<option>-H "Accept: application/xml"</option> \
-<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/backups</uri></programlisting>
-                        </example>
                         <example>
                             <title>Backup Database Instance Request:
                                 JSON</title>
@@ -2724,9 +2591,8 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
 <uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/backups</uri> | python -m json.tool</programlisting>
                         </example>
                         <para>Remember to replace the names in the
-                            examples above with their actual
-                            respective values:<itemizedlist
-                                spacing="compact">
+                            example above with their actual respective
+                                values:<itemizedlist spacing="compact">
                                 <listitem>
                                    <para><emphasis role="bold"
                                    >backup_description</emphasis>
@@ -2749,47 +2615,9 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                             </itemizedlist></para>
                     </step>
                     <step>
-                        <para>The following examples show the
-                            responses for List Users in Database
+                        <para>The following example shows the response
+                            for List Users in Database
                             Instance:</para>
-                        <example>
-                            <title>Backup Database Instance Response:
-                                XML</title>
-                            <programlisting language="xml">HTTP/1.1 202 Accepted
-Content-Type: application/xml
-Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 529
-Date: Thu, 27 Jun 2013 19:47:56 GMT
-Server: Jetty(8.0.y.z-SNAPSHOT)
- 
-&lt;backup xmlns="http://docs.openstack.org/database/api/v1.0">
-    &lt;instance_id>
-        3f19e2e5-2135-4fd0-bd7b-4f3da4c6bb36
-    &lt;/instance_id>
-    &lt;status>
-        NEW
-    &lt;/status>
-    &lt;updated>
-        2013-06-27 19:47:55.970583
-    &lt;/updated>
-    &lt;locationRef>
-        None
-    &lt;/locationRef>
-    &lt;name>
-        snapshot
-    &lt;/name>
-    &lt;created>
-        2013-06-27 19:47:55.970467
-    &lt;/created>
-    &lt;id>
-        d2717413-cd66-495e-9ff1-d4eea261ffe4
-    &lt;/id>
-    &lt;description>
-        My Backup
-    &lt;/description>
-&lt;/backup>
-</programlisting>
-                        </example>
                         <example>
                             <title>Backup Database Instance Response:
                                 JSON</title>
