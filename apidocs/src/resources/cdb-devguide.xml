@@ -90,9 +90,10 @@
                         <listitem>
                             <para>Added note to <xref
                                    linkend="Monitoring_Cloud_Databases-d1e4673"
-                                /> about checking their junk/spam
-                                folders in case users have filtering
-                                on their email messages. </para>
+                                /> about users checking their
+                                junk/spam folders in case they have
+                                filtering on their email messages.
+                            </para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
