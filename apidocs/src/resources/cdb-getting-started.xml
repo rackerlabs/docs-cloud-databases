@@ -49,21 +49,34 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-04-17</pubdate>
+        <pubdate>2014-04-29</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision security="writeronly">
+                <date>2014-04-29</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added X.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
-                <date>2014-04-17</date>
+                <date>2014-04-29</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Removed XML data serialization
                                 format as announced on February, 17,
                                 2014.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples as needed.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -1953,7 +1966,7 @@ Flavor List for IAD, DFW, ORD, SYD
                         client:</title>
                     <step>
                         <para>Issue the following command:</para>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove create --size 2 --databases mytrovedb --users mytroveuser:password --availability_zone ORD mytroveinstance 1</programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove create --size 2 --databases mytrovedb --users mytroveuser:password --datastore MySQL mytroveinstance 1</programlisting>
                         <para>For the instance, the command returns
                             the date created, flavor ID, hostname, id,
                             name, status, and volume size:</para>
@@ -1961,18 +1974,20 @@ Flavor List for IAD, DFW, ORD, SYD
                         <informalexample>
                             <?dbfo pgwide="1"?>
                             <screen><?db-font-size 90%?>
-+----------+---------------------------------------------------------------+
-| Property |                             Value                             |
-+----------+---------------------------------------------------------------+
-| created  |                      2013-10-14T20:24:49                      |
-|  flavor  |                               1                               |
-| hostname | 35a6ed26c722c21e24095ae45f1412f1d1072038.rackspaceclouddb.com |
-|    id    |              5013a2c2-8fd1-49d3-9126-3f0991e0a27b             |
-|   name   |                        mytroveinstance                        |
-|  status  |                             BUILD                             |
-| updated  |                      2013-10-14T20:24:50                      |
-|  volume  |                               2                               |
-+----------+---------------------------------------------------------------+
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|      Property     |                                                                                                          Value                                                                                                          |
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|      created      |                                                                                                   2014-04-29T13:33:51                                                                                                   |
+|     datastore     |                                                                                         {u'version': u'5.1', u'type': u'MySQL'}                                                                                         |
+| datastore_version |                                                                                                           5.1                                                                                                           |
+|       flavor      | {u'id': u'1', u'links': [{u'href': u'https://dfw.databases.api.rackspacecloud.com/v1.0/647683/flavors/1', u'rel': u'self'}, {u'href': u'https://dfw.databases.api.rackspacecloud.com/flavors/1', u'rel': u'bookmark'}]} |
+|      hostname     |                                                                              9175290275ef3292efb02be33dd38ed44443e311.rackspaceclouddb.com                                                                              |
+|         id        |                                                                                           18d48a36-0682-4cd7-a419-864105d6079a                                                                                          |
+|        name       |                                                                                                     mytroveinstance                                                                                                     |
+|       status      |                                                                                                          BUILD                                                                                                          |
+|      updated      |                                                                                                   2014-04-29T13:33:51                                                                                                   |
+|       volume      |                                                                                                       {u'size': 2}                                                                                                      |
++-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 </screen>
                         </informalexample>
                         
@@ -1980,7 +1995,7 @@ Flavor List for IAD, DFW, ORD, SYD
                     <step>
                         <para>You will need to specify the instance id
                             returned (in the response example above:
-                                <code>id="5013a2c2-8fd1-49d3-9126-3f0991e0a27b"</code>)
+                                <code>id="18d48a36-0682-4cd7-a419-864105d6079a"</code>)
                             on subsequent API calls that require it,
                             for example List Databases for
                             Instance.</para>
@@ -2155,7 +2170,7 @@ Flavor List for IAD, DFW, ORD, SYD
                     <step>
                         <para>You will need to specify the instance id
                             returned (in the response examples above:
-                                <code>id="5013a2c2-8fd1-49d3-9126-3f0991e0a27b"</code>)
+                                <code>id="18d48a36-0682-4cd7-a419-864105d6079a"</code>)
                             on subsequent API calls that require it,
                             for example List Databases for
                             Instance.</para>
@@ -2258,18 +2273,19 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                         <para>Issue the following command:</para>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove user-list &lt;instance_id></programlisting>
                         <para>For the instance, the command returns
-                            the user name:</para>
+                            the user name and the databases that the
+                            user can access:</para>
                         <informalexample>
                             <screen><computeroutput><?db-font-size 44%?>
 +-------------+------+-----------+
 |     name    | host | databases |
 +-------------+------+-----------+
-| mytroveuser |  %   |     []    |
+| mytroveuser |  %   | mytrovedb |
 +-------------+------+-----------+
 
 </computeroutput></screen>
                         </informalexample>
-                        <note>
+                        <note security="writeronly">
                             <para>Note that an empty list ([]) is
                                 displayed in the databases column.
                                 This is because with the trove client,
@@ -2283,7 +2299,7 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                                 step, as follows. </para>
                         </note>
                     </step>
-                    <step>
+                    <step security="writeronly">
                         <para>To grant the user access to a database
                             using the trove client, issue the
                             following command:</para>
@@ -2532,7 +2548,7 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                                 <code>mytroveinstance</code> and give
                             it an identifying name. You can also
                             provide an optional description for the
-                            backup (make sure to surround the
+                            backup. Make sure to surround the
                             description with double quotation marks
                             (""). Use the identifying information for
                             the instance_id, as provided in <xref
@@ -2549,17 +2565,17 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
 +-------------+--------------------------------------+
 |   Property  |                Value                 |
 +-------------+--------------------------------------+
-|   created   |         2013-10-18T20:00:20          |
+|   created   |         2014-04-29T13:53:08          |
 | description |         sample trove backup          |
-|      id     | 48b208b2-670d-45fb-a887-a038098da7e8 |
-| instance_id | 5013a2c2-8fd1-49d3-9126-3f0991e0a27b |
+|      id     | dcb64318-ddca-452e-a896-02cecc5c0aa1 |
+| instance_id | 18d48a36-0682-4cd7-a419-864105d6079a |
 | locationRef |                 None                 |
 |     name    |            mytrovebackup             |
+|  parent_id  |                 None                 |
 |     size    |                 None                 |
 |    status   |                 NEW                  |
-|   updated   |         2013-10-18T20:00:20          |
+|   updated   |         2014-04-29T13:53:08          |
 +-------------+--------------------------------------+
-
 </computeroutput></screen>
                         </informalexample>
                     </step>
@@ -2611,6 +2627,192 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                                    <para><emphasis role="bold"
                                    >backup_name</emphasis> &mdash;
                                    name of the backup</para>
+                                </listitem>
+                            </itemizedlist></para>
+                    </step>
+                    <step>
+                        <para>The following example shows the response
+                            for List Users in Database
+                            Instance:</para>
+                        <example>
+                            <title>Backup Database Instance Response:
+                                JSON</title>
+                            <programlisting language="json">HTTP/1.1 202 Accepted
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 267
+Date: Thu, 27 Jun 2013 19:47:55 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+ 
+{
+    "backup": {
+        "created": "2013-06-27T19:47:55", 
+        "description": "My Backup", 
+        "id": "8c40f9c2-6fe8-4b6b-a823-8a6b1d181f09", 
+        "instance_id": "f07ac506-1a99-4a2a-9a32-869b453019ef", 
+        "locationRef": null, 
+        "name": "snapshot", 
+        "status": "NEW", 
+        "updated": "2013-06-27T19:47:55"
+    }
+}</programlisting>
+                        </example>
+                        <para>You can see that the backups were
+                            successfully created.</para>
+                    </step>
+                </procedure>
+                <para>This concludes the <citetitle>Getting
+                        Started</citetitle>. Thank you for using
+                    Rackspace Cloud products.</para>
+            </section>
+        </section>
+        <section xml:id="Managing_TZ_for_Database_Instances" security="writeronly">
+            <title>Step 14. Managing the Time Zone for Database
+                Instances Using MySQL Configuration</title>
+            <para> The server time zone for a set of current and
+                future database instances can be set using the
+                configuration groups feature of Cloud Databases.
+                Suppose you want to set the default time zone for a
+                set of your database instances to the CST time
+                zone.</para>
+            <para>The server time zone is set in MySQL in the
+                    <code>default_time_zone</code> parameter, and the
+                default value is ‘SYSTEM’. To set the
+                    <code>default_time_zone</code> to a different
+                value, you can use offsets of the time zone from <link
+                    xlink:href="http://http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
+                    >UTC (Coordinated Universal Time)</link>. The
+                value for the CST (Central Standard Time) time zone
+                would be "-6:00", which we will use in our example. If
+                you lived in the AEST time zone on the other hand, the
+                offset would be "+10:00".</para>
+            <para> You can set <code>default_time_zone</code> in a
+                configuration group that can be applied to your
+                database instance. You can create a new configuration
+                group just for the time zone management, or add the
+                time zone parameter to an existing configuration
+                group. </para>
+            <note>
+                <para> You cannot apply named time zones such as
+                    'Europe/Helsinki' or 'US/Eastern'. </para>
+            </note>
+            <para>Choose one of the following methods:<itemizedlist>
+                    <listitem>
+                        <para><xref
+                                linkend="Managing_TZ_for_Database_Instances_Trove"
+                            /></para>
+                    </listitem>
+                    <listitem>
+                        <para><xref
+                                linkend="Managing_TZ_for_Database_Instances_CURL"
+                            /></para>
+                    </listitem>
+                </itemizedlist></para>
+            <section xml:id="Managing_TZ_for_Database_Instances_Trove">
+                <title>Managing the Time Zone with the trove
+                    Client</title>
+                <procedure>
+                    <title>To create a new configuration group to add
+                        custom time zone information to your database
+                        instance with the trove client:</title>
+                    <step>
+                        <para>Create a configuration group named
+                                <code>TimeConfig</code> that sets the
+                            time zone to CST.</para>
+                        <para>Issue the following command:</para>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-create TimeConfig '{"default_time_zone":"-6:00"}' --datastore MySQL</programlisting>
+                        <para>The command returns the id and name for
+                            the configuration group among the other
+                            information:</para>
+                        <informalexample>
+                            <screen><computeroutput><?db-font-size 44%?>
++----------------------+--------------------------------------+
+|       Property       |                Value                 |
++----------------------+--------------------------------------+
+| datastore_version_id | 20000000-0000-0000-0000-000000000002 |
+|     description      |                 None                 |
+|          id          | 572d4fad-6771-4760-a1fd-32038530837a |
+|         name         |              TimeConfig              |
+|        values        |    {"default_time_zone": "-6:00"}    |
++----------------------+--------------------------------------+
+</computeroutput></screen>
+                        </informalexample>
+                    </step>
+                    <step>
+                        <para>Apply the new configuration group to
+                            your existing database instance (created
+                            in <xref linkend="Create_DB_Instance"
+                            />).</para>
+                        <para>Issue the following command:</para>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-attach TimeConfig &lt;instance_id>  </programlisting>
+                        <para>Remember to replace the
+                                <code>instance_id</code> in the
+                            example above with its actual respective
+                                value:<itemizedlist spacing="compact">
+                                <listitem>
+                                   <para><emphasis role="bold"
+                                   >instance_id</emphasis> &mdash; as
+                                   returned in your create instance
+                                   response (see the examples in <xref
+                                   linkend="Create_DB_Instance"
+                                   />)</para>
+                                </listitem>
+                            </itemizedlist></para>
+                        <para>The command returns the id and name for
+                            the configuration group among the other
+                            information:</para>
+                        <informalexample>
+                            <screen><computeroutput><?db-font-size 44%?>
++----------------------+--------------------------------------+
+|       Property       |                Value                 |
++----------------------+--------------------------------------+
+| datastore_version_id | 20000000-0000-0000-0000-000000000002 |
+|     description      |                 None                 |
+|          id          | 572d4fad-6771-4760-a1fd-32038530837a |
+|         name         |              TimeConfig              |
+|        values        |    {"default_time_zone": "-6:00"}    |
++----------------------+--------------------------------------+
+</computeroutput></screen>
+                        </informalexample>
+                    </step>
+                </procedure>
+            </section>
+            <section xml:id="Managing_TZ_for_Database_Instances_CURL">
+                <title>Backup Database Instance with cURL</title>
+                <procedure>
+                    <title>To create a backup for a database instance
+                        using cURL:</title>
+                    <step>
+                        <para>Create a backup for a database instance
+                            by executing the request below.</para>
+                        <para>This operation does not require a
+                            request body.</para>
+                        <example>
+                            <title>Backup Database Instance Request:
+                                JSON</title>
+                            <programlisting language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
+'{
+   "backup": {
+      "description": "&lt;backup_description>",
+      "instance": "&lt;instance_id>",
+      "name": "&lt;backup_name>"
+   }
+}' \
+<option>-H "X-Auth-Token: $token"</option> \
+<option>-H "Content-Type: application/json"</option> \
+<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/backups</uri> | python -m json.tool</programlisting>
+                        </example>
+                        <para>Remember to replace the instance_id in
+                            the example above with its actual
+                            respective value:<itemizedlist
+                                spacing="compact">
+                                <listitem>
+                                   <para><emphasis role="bold"
+                                   >instance_id</emphasis> &mdash; as
+                                   returned in your create instance
+                                   response (see the examples in <xref
+                                   linkend="Create_DB_Instance"
+                                   />)</para>
                                 </listitem>
                             </itemizedlist></para>
                     </step>
