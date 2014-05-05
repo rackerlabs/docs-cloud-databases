@@ -2087,14 +2087,14 @@
     </method>
     
     <method name="GET" id="getDatastoreTypesById">
-        <wadl:doc xml:lang="EN" title="List All Datastore Types For Datastore"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists all datastore types for the specified datastore.</para>
-            <para>This operation lists all datastore types for the specified datastore.</para>
+        <wadl:doc xml:lang="EN" title="List Datastore Type"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists datastore type.</para>
+            <para>This operation lists datastore type for the specified datastore.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types For Datastore request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Type request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-request.json"/>
                 </doc>
             </representation>
@@ -2102,7 +2102,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types For Datastore response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Type response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-response.json"/>
                 </doc>
             </representation>
@@ -2112,7 +2112,7 @@
     </method>
     
     <method name="GET" id="getDatastoreVersionsById">
-        <wadl:doc xml:lang="EN" title="List All Datastore Versions For Datastore"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List Datastore Versions For Datastore"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all datastore versions for the specified datastore.</para>
             <para>This operation lists all datastore versions for the specified datastore.</para>
         </wadl:doc>
@@ -2137,14 +2137,14 @@
     </method>
     
     <method name="GET" id="getDatastoreVersionByVersionId">
-        <wadl:doc xml:lang="EN" title="List Datastore Version For Specified Version"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the datastore version for the specified version.</para>
-            <para>This operation lists all datastore version for the specified version.</para>
+        <wadl:doc xml:lang="EN" title="List Datastore Version"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists datastore version.</para>
+            <para>This operation lists the datastore version for the specified version.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version For Version request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-request.json"/>
                 </doc>
             </representation>
@@ -2152,7 +2152,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version For Version response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.json"/>
                 </doc>
             </representation>

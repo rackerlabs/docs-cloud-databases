@@ -49,19 +49,21 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-04-29</pubdate>
+        <pubdate>2014-05-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
-            <revision security="writeronly">
-                <date>2014-04-29</date>
+            <revision>
+                <date>2014-05-02</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added X.</para>
+                            <para>Added <xref
+                                   linkend="Managing_TZ_for_Database_Instances"
+                                />.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -2666,26 +2668,26 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     Rackspace Cloud products.</para>
             </section>
         </section>
-        <section xml:id="Managing_TZ_for_Database_Instances" security="writeronly">
+        <section xml:id="Managing_TZ_for_Database_Instances">
             <title>Step 14. Managing the Time Zone for Database
-                Instances Using MySQL Configuration</title>
-            <para> The server time zone for a set of current and
-                future database instances can be set using the
-                configuration groups feature of Cloud Databases.
-                Suppose you want to set the default time zone for a
-                set of your database instances to the CST time
-                zone.</para>
+                Instances Using a Configuration Group</title>
+            <para>The server time zone for a set of current and future
+                database instances can be set using the configuration
+                groups feature of Cloud Databases. Suppose you want to
+                set the default time zone for a set of database
+                instances to the CST time zone.</para>
             <para>The server time zone is set in MySQL in the
                     <code>default_time_zone</code> parameter, and the
                 default value is ‘SYSTEM’. To set the
                     <code>default_time_zone</code> to a different
                 value, you can use offsets of the time zone from <link
-                    xlink:href="http://http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
+                    xlink:href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
                     >UTC (Coordinated Universal Time)</link>. The
                 value for the CST (Central Standard Time) time zone
                 would be "-6:00", which we will use in our example. If
-                you lived in the AEST time zone on the other hand, the
-                offset would be "+10:00".</para>
+                you lived in the AEST (Australian Eastern Standard
+                Time) time zone on the other hand, the offset would be
+                "+10:00".</para>
             <para> You can set <code>default_time_zone</code> in a
                 configuration group that can be applied to your
                 database instance. You can create a new configuration
@@ -2718,7 +2720,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     <step>
                         <para>Create a configuration group named
                                 <code>TimeConfig</code> that sets the
-                            time zone to CST.</para>
+                            time zone to CST (Central Standard
+                            Time).</para>
                         <para>Issue the following command:</para>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-create TimeConfig '{"default_time_zone":"-6:00"}' --datastore MySQL</programlisting>
                         <para>The command returns the id and name for
@@ -2731,7 +2734,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 +----------------------+--------------------------------------+
 | datastore_version_id | 20000000-0000-0000-0000-000000000002 |
 |     description      |                 None                 |
-|          id          | 572d4fad-6771-4760-a1fd-32038530837a |
+|          id          | 00f6070d-27f1-4af2-8388-4cae33899c0c |
 |         name         |              TimeConfig              |
 |        values        |    {"default_time_zone": "-6:00"}    |
 +----------------------+--------------------------------------+
@@ -2744,11 +2747,17 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                             in <xref linkend="Create_DB_Instance"
                             />).</para>
                         <para>Issue the following command:</para>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-attach TimeConfig &lt;instance_id>  </programlisting>
-                        <para>Remember to replace the
-                                <code>instance_id</code> in the
-                            example above with its actual respective
-                                value:<itemizedlist spacing="compact">
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-attach &lt;config_id> &lt;instance_id>  </programlisting>
+                        <para>Remember to replace the variables in the
+                            example above with their actual respective
+                                values:<itemizedlist spacing="compact">
+                                <listitem>
+                                   <para><emphasis role="bold"
+                                   >config_id</emphasis> &mdash; as
+                                   returned in your create
+                                   configuration response (see Step 1
+                                   above).</para>
+                                </listitem>
                                 <listitem>
                                    <para><emphasis role="bold"
                                    >instance_id</emphasis> &mdash; as
@@ -2758,54 +2767,140 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                                    />)</para>
                                 </listitem>
                             </itemizedlist></para>
-                        <para>The command returns the id and name for
-                            the configuration group among the other
-                            information:</para>
+                        <para>This command does not return any
+                            output.</para>
+                    </step>
+                </procedure>
+                <note>
+                    <para> The Cloud Databases instance will need to
+                        be restarted before the time zone setting
+                        takes effect. </para>
+                </note>
+                <procedure>
+                    <title>To add custom time zone information to an
+                        existing configuration group with the trove
+                        client:</title>
+                    <step>
+                        <para>Set the <code>default_time_zone</code>
+                            parameter on an existing configuration
+                            group by running the
+                                <command>configuration-patch</command>
+                            command with the trove client. </para>
+                        <para>The following command would add the IST
+                            (India Standard Time, +6:00) time zone to
+                            a configuration group with id
+                            &lt;config_id>: </para>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-patch &lt;config_id> '{"default_time_zone":"+6:00"}'</programlisting>
+                        <para>This command does not return any
+                            output.</para>
+                    </step>
+                </procedure>
+                <procedure>
+                    <title>To check the server time zone:</title>
+                    <step>
+                        <para> You can check the current time zone
+                            setting for an instance by <link
+                                xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/connecting-to-your-cloud-database"
+                                >logging in to the mysql
+                                console</link> and querying the value
+                            of <code>global.time_zone</code>: </para>
+                        <programlisting language="bash" role="gutter: false">SELECT @@global.time_zone;  </programlisting>
+                        <para>The returned value will show the
+                            instance's current time zone setting, for
+                            example:</para>
                         <informalexample>
                             <screen><computeroutput><?db-font-size 44%?>
-+----------------------+--------------------------------------+
-|       Property       |                Value                 |
-+----------------------+--------------------------------------+
-| datastore_version_id | 20000000-0000-0000-0000-000000000002 |
-|     description      |                 None                 |
-|          id          | 572d4fad-6771-4760-a1fd-32038530837a |
-|         name         |              TimeConfig              |
-|        values        |    {"default_time_zone": "-6:00"}    |
-+----------------------+--------------------------------------+
+  +--------------------+ | @@global.time_zone | +--------------------+ | +06:00             |
+      +--------------------+  
 </computeroutput></screen>
                         </informalexample>
+                        <para>If the time zone does not reflect what
+                            you set in the configuration group
+                            attached to the instance, the instance may
+                            need to be restarted in order for the
+                            change to take effect. </para>
                     </step>
                 </procedure>
             </section>
             <section xml:id="Managing_TZ_for_Database_Instances_CURL">
-                <title>Backup Database Instance with cURL</title>
+                <title>Managing the Time Zone with cURL</title>
                 <procedure>
-                    <title>To create a backup for a database instance
-                        using cURL:</title>
+                    <title>To create a new configuration group to add
+                        custom time zone information to your database
+                        instance with cURL:</title>
                     <step>
-                        <para>Create a backup for a database instance
-                            by executing the request below.</para>
-                        <para>This operation does not require a
-                            request body.</para>
+                        <para>Create a configuration group named
+                                <code>TimeConfig</code> that sets the
+                            time zone to CST by executing the request
+                            below:</para>
                         <example>
-                            <title>Backup Database Instance Request:
+                            <title>Create Configuration Group Request:
                                 JSON</title>
                             <programlisting language="bash"><command>curl</command> <option>-s</option> <option>-d</option> \
 '{
-   "backup": {
-      "description": "&lt;backup_description>",
-      "instance": "&lt;instance_id>",
-      "name": "&lt;backup_name>"
-   }
+  "configuration": {
+    "datastore": {
+      "type": "10000000-0000-0000-0000-000000000001",
+      "version": "20000000-0000-0000-0000-000000000002"
+    },
+    "description": "Test config",
+    "name": "test-configuration",
+    "values": {
+      "default_time_zone": "-6:00"
+    }
+  }
 }' \
 <option>-H "X-Auth-Token: $token"</option> \
 <option>-H "Content-Type: application/json"</option> \
-<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/backups</uri> | python -m json.tool</programlisting>
+<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/configurations </uri> | python -m json.tool</programlisting>
                         </example>
-                        <para>Remember to replace the instance_id in
-                            the example above with its actual
-                            respective value:<itemizedlist
+                        <para>The following example shows the response
+                            for Create Configuration Group
+                            Request:</para>
+                        <example>
+                            <title>Create Configuration Group
+                                Response: JSON</title>
+                            <programlisting language="json">
+{
+    "configuration": {
+        "datastore_version_id": "20000000-0000-0000-0000-000000000002", 
+        "description": "Test config", 
+        "id": "63c6e164-2324-4eaa-a3d8-d79528a26e7d", 
+        "name": "test-configuration", 
+        "values": {
+            "default_time_zone": "-6:00"
+        }
+    }
+}</programlisting>
+                        </example>
+                    </step>
+                    <step>
+                        <para>Apply the new configuration group to
+                            your existing database instance (created
+                            in <xref linkend="Create_DB_Instance"
+                            />).</para>
+                        <para>Issue the following command:</para>
+                        <programlisting language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+'{ 
+   "instance": {
+      "configuration": "&lt;config_id>" 
+   }
+}' \
+<option>-X PUT</option> \
+<option>-H "X-Auth-Token: $token"</option> \
+<option>-H "Content-Type: application/json"</option> \
+<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances/&lt;instance_id> </uri></programlisting>
+                        <para>Remember to replace the following
+                            variables in the example above with their
+                            actual respective values:<itemizedlist
                                 spacing="compact">
+                                <listitem>
+                                   <para><emphasis role="bold"
+                                   >config_id</emphasis> &mdash; as
+                                   returned in your Create
+                                   Configuration Group response in
+                                   Step 1 above.</para>
+                                </listitem>
                                 <listitem>
                                    <para><emphasis role="bold"
                                    >instance_id</emphasis> &mdash; as
@@ -2815,36 +2910,89 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                                    />)</para>
                                 </listitem>
                             </itemizedlist></para>
-                    </step>
-                    <step>
-                        <para>The following example shows the response
-                            for List Users in Database
-                            Instance:</para>
-                        <example>
-                            <title>Backup Database Instance Response:
-                                JSON</title>
-                            <programlisting language="json">HTTP/1.1 202 Accepted
+                        <para>The command does not return a response
+                            body:</para>
+                        <informalexample>
+                            <screen><computeroutput><?db-font-size 44%?>
+HTTP/1.1 202 Accepted
 Content-Type: application/json
-Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 267
-Date: Thu, 27 Jun 2013 19:47:55 GMT
-Server: Jetty(8.0.y.z-SNAPSHOT)
- 
-{
-    "backup": {
-        "created": "2013-06-27T19:47:55", 
-        "description": "My Backup", 
-        "id": "8c40f9c2-6fe8-4b6b-a823-8a6b1d181f09", 
-        "instance_id": "f07ac506-1a99-4a2a-9a32-869b453019ef", 
-        "locationRef": null, 
-        "name": "snapshot", 
-        "status": "NEW", 
-        "updated": "2013-06-27T19:47:55"
-    }
-}</programlisting>
-                        </example>
-                        <para>You can see that the backups were
-                            successfully created.</para>
+Via: 1.1 Repose (Repose/2.12)
+Content-Length: 0
+Date: Fri, 02 May 2014 15:18:56 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
+                        </informalexample>
+                    </step>
+                </procedure>
+                <note>
+                    <para> The Cloud Databases instance will need to
+                        be restarted before the time zone setting
+                        takes effect. </para>
+                </note>
+                <procedure>
+                    <title>To add custom time zone information to an
+                        existing configuration group with
+                        cURL:</title>
+                    <step>
+                        <para>Set the <code>default_time_zone</code>
+                            parameter on an existing configuration
+                            group by running the Update Some
+                            Configuration Parameters request with
+                            cURL. </para>
+                        <para>The following request would update the
+                                <code>default_time_zone</code> from
+                            CST (Central Standard Time, -6:00) to IST
+                            (India Standard Time, +6:00) time zone to
+                            a configuration group with id
+                            &lt;config_id>: </para>
+                        <programlisting language="bash"><command>curl</command> <option>-i</option> <option>-d</option> \
+'{
+    "configuration": {
+       "values": {
+           "default_time_zone": "+6:00"
+       }
+   }
+}' \
+<option>-X PATCH</option> \
+<option>-H "X-Auth-Token: $token"</option> \
+<option>-H "Content-Type: application/json"</option> \
+<uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/configurations/&lt;config_id> </uri></programlisting>
+                        <para>The command does not return a response
+                            body:</para>
+                        <informalexample>
+                            <screen><computeroutput><?db-font-size 44%?>
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.12)
+Content-Length: 0
+Date: Fri, 02 May 2014 15:44:43 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
+                        </informalexample>
+                    </step>
+                </procedure>
+                <procedure>
+                    <title>To check the server time zone:</title>
+                    <step>
+                        <para> You can check the current time zone
+                            setting for an instance by <link
+                                xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/connecting-to-your-cloud-database"
+                                >logging in to the mysql
+                                console</link> and querying the value
+                            of <code>global.time_zone</code>: </para>
+                        <programlisting language="bash" role="gutter: false">SELECT @@global.time_zone;  </programlisting>
+                        <para>The returned value will show the
+                            instance's current time zone setting, for
+                            example:</para>
+                        <informalexample>
+                            <screen><computeroutput><?db-font-size 44%?>
+  +--------------------+ | @@global.time_zone | +--------------------+ | +06:00             |
+      +--------------------+  
+</computeroutput></screen>
+                        </informalexample>
+                        <para>If the time zone does not reflect what
+                            you set in the configuration group
+                            attached to the instance, the instance may
+                            need to be restarted in order for the
+                            change to take effect. </para>
                     </step>
                 </procedure>
                 <para>This concludes the <citetitle>Getting
