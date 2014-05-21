@@ -49,13 +49,28 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-05-06</pubdate>
+        <pubdate>2014-05-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-05-21</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Corrected argument for trove CLI
+                                command
+                                   <code>configuration-parameter-list</code>
+                                (see <xref
+                                   linkend="trove_configurations"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-05-06</date>
                 <revdescription>
@@ -4015,13 +4030,13 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             parameters that can be configured for a
                             datastore </emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-parameter-list &lt;datastore_id&gt;</programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-parameter-list &lt;datastore_version&gt;</programlisting>
                         <itemizedlist>
                             <title>Positional Arguments</title>
                             <listitem>
                                 <para>
-                                   <parameter>datastore_id</parameter>.
-                                   The ID for the datastore. </para>
+                                   <parameter>datastore_version</parameter>.
+                                   The version of the datastore. </para>
                             </listitem>
                         </itemizedlist>
                     </listitem>

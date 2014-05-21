@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-05-05</pubdate>
+        <pubdate>2014-05-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-05-21</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Removed a comment that was not
+                                pertinent for users in <xref
+                                   linkend="MySQL_Config_Mgmt-d1e3826"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-05-05</date>
                 <revdescription>
@@ -2857,11 +2870,9 @@
                 key/value pairs that can be assigned to a
                     <glossterm>configuration group</glossterm>. These
                 rules can be retrieved by the user from the API
-                through the <glossterm>configuration parameter</glossterm>s resource as
-                described in <xref linkend="configuration_parameters"
-                />. These validation rules are defined in the
-                    <filename>configuration-validation.conf</filename>
-                file. </para>
+                through the <glossterm>configuration
+                    parameter</glossterm>s resource as described in
+                    <xref linkend="configuration_parameters"/>.</para>
             <para>Refer to <xref linkend="configurations"/> for the
                 API operations for configurations.</para>
         </section>
