@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-05-21</pubdate>
+        <pubdate>2014-06-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,18 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-06-11</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added the FAILED state in <xref
+                                   linkend="database_instance_status"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-05-21</date>
                 <revdescription>
@@ -2268,6 +2280,13 @@
                 <listitem>
                     <para>ACTIVE &ndash; The database instance is
                         online and available to take requests.</para>     
+                </listitem>
+                <listitem>
+                    <para>FAILED &ndash; The database instance was
+                        created, but failed to set up the datastore.
+                        If a database instance is in the FAILED state,
+                        you should delete it and create a new
+                        instance.</para>
                 </listitem>
                 <listitem>
                     <para>BACKUP &ndash; The database instance is
