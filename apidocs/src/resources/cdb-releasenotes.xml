@@ -62,7 +62,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2014-06-11</pubdate>
+	<pubdate>2014-06-16</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,7 +76,7 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2014-06-11</date>
+				<date>2014-06-16</date>
 				<revdescription>
 					<para>Updated for v1.0.38.</para>
 				</revdescription>
@@ -466,13 +466,17 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv1.0.38">
-		<title>v1.0.38, June 11, 2014</title>
+		<title>v1.0.38, June 16, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">
-				<para>my.cnf descriptions</para>
+				<para>Introduced new larger flavors 32GB and 64GB.
+					These flavors will be available in <emphasis>IAD
+						only</emphasis> for now, and will be updated
+					in other data centers in a follow-up
+					release.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact" security="writeronly">

@@ -1389,6 +1389,9 @@
             <para role="shortdesc">Lists information for all available <glossterm baseform="flavor">flavors</glossterm>.</para>
             <para>This operation lists information for all available flavors.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
+            
+            <para>Note that new larger flavors 32GB and 64GB have been introduced. These flavors will be available in <emphasis>IAD only</emphasis> for now, 
+                and will be updated in other data centers in a follow-up release.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
