@@ -472,11 +472,10 @@
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">
-				<para>Introduced new larger flavors 32GB and 64GB.
-					These flavors are available in <emphasis>IAD
-						only</emphasis> for now, and will be updated
-					in other data centers in a follow-up
-					release.</para>
+				<para>Introduced new infrastructure code to support new Cloud
+					Databases V2 architecture. Access to the new
+					architecture will not be available by default to
+					customers. </para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
