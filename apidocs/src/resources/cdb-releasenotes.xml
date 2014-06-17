@@ -62,7 +62,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2014-06-16</pubdate>
+	<pubdate>2014-06-17</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,8 +75,8 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
-			<revision>
-				<date>2014-06-16</date>
+			<revision security="internal">
+				<date>2014-06-17</date>
 				<revdescription>
 					<para>Updated for v1.0.38.</para>
 				</revdescription>
@@ -465,33 +465,18 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv1.0.38">
-		<title>v1.0.38, June 16, 2014</title>
+	<chapter xml:id="cdbv1.0.38" security="internal">
+		<title>v1.0.38, June 17, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
 				xmlns:html="http://www.w3.org/1999/xhtml">
 				<para>Introduced new larger flavors 32GB and 64GB.
-					These flavors will be available in <emphasis>IAD
+					These flavors are available in <emphasis>IAD
 						only</emphasis> for now, and will be updated
 					in other data centers in a follow-up
 					release.</para>
-			</listitem>
-		</itemizedlist>
-		<itemizedlist spacing="compact" security="writeronly">
-			<title>Bug Fixes</title>
-			<listitem security="internal">
-				<para><link security="internal"
-						xlink:href="https://jira.rax.io/browse/CDBPLTFM-247"
-						>CDBPLTFM-247: </link> Usage bug: Frequency of
-					usage events were not correctly set.</para>
-			</listitem>
-			<listitem security="internal">
-				<para><link security="internal"
-						xlink:href="https://jira.rax.io/browse/CDBPLTFM-248"
-						>CDBPLTFM-248: </link> Usage bug: Fixed
-					communication with Atom Hopper.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">

@@ -490,6 +490,9 @@
             <para role="shortdesc">Associates a specified database instance with a <glossterm>configuration group</glossterm>.</para>
             <para>This operation associates a specified database instance with a configuration group.</para>
             <para><remark>Reviewer: should the description note that this can be used for attaching or detaching configurations from an instance?</remark></para>
+            
+            <note><para>If any of the parameters in the configuration require a restart, then you will need to reboot the Database instance after associating the configuration.
+                You can call the API operation List Configuration Parameters to find out which of the configuration parameters require a restart.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -1390,8 +1393,7 @@
             <para>This operation lists information for all available flavors.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
             
-            <para>Note that new larger flavors 32GB and 64GB have been introduced. These flavors will be available in <emphasis>IAD only</emphasis> for now, 
-                and will be updated in other data centers in a follow-up release.</para>
+            <para>Note that new larger flavors 32GB and 64GB have been introduced.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">

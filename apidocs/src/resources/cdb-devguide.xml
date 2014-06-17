@@ -88,6 +88,14 @@
                                 />.</para>
                         </listitem>
                         <listitem>
+                            <para>Added information about associating
+                                a configuration with parameters that
+                                require rebooting the database
+                                instance. Refer to <xref
+                                   linkend="PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances"
+                                />.</para>
+                        </listitem>
+                        <listitem>
                             <para>Introduced new larger flavors 32GB
                                 and 64GB. Refer to <xref
                                    linkend="GET_getFlavors__version___accountId__flavors_flavors"
