@@ -5,50 +5,132 @@ Content-Length: 957
 Date: Thu, 13 Feb 2014 21:47:14 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 
+
+
 {
-    "datastores": [
+  "datastores": [
+    {
+      "default_version": "20000000-0000-0000-0000-000000000002",
+      "versions": [
         {
-            "id": "10000000-0000-0000-0000-000000000001", 
-            "links": [
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/10000000-0000-0000-0000-000000000001", 
-                    "rel": "self"
-                }, 
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/datastores/10000000-0000-0000-0000-000000000001", 
-                    "rel": "bookmark"
-                }
-            ], 
-            "name": "Legacy MySQL"
-        }, 
+          "id": "20000000-0000-0000-0000-000000000002",
+          "links": [
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/20000000-0000-0000-0000-000000000002",
+              "rel": "self"
+            },
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/20000000-0000-0000-0000-000000000002",
+              "rel": "bookmark"
+            }
+          ],
+          "name": "5.1"
+        },
         {
-            "default_version": "b00000b0-00b0-0b00-00b0-000b000000bb", 
-            "id": "a00000a0-00a0-0a00-00a0-000a000000aa", 
-            "links": [
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa", 
-                    "rel": "self"
-                }, 
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/datastores/a00000a0-00a0-0a00-00a0-000a000000aa", 
-                    "rel": "bookmark"
-                }
-            ], 
-            "name": "mysql"
-        }, 
+          "id": "27495a76-5061-4316-813d-35d22ad4dfd3",
+          "links": [
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/27495a76-5061-4316-813d-35d22ad4dfd3",
+              "rel": "self"
+            },
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/27495a76-5061-4316-813d-35d22ad4dfd3",
+              "rel": "bookmark"
+            }
+          ],
+          "name": "5.5"
+        },
         {
-            "id": "e00000e0-00e0-0e00-00e0-000e000000ee", 
-            "links": [
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/e00000e0-00e0-0e00-00e0-000e000000ee", 
-                    "rel": "self"
-                }, 
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/datastores/e00000e0-00e0-0e00-00e0-000e000000ee", 
-                    "rel": "bookmark"
-                }
-            ], 
-            "name": "Test_Datastore_1"
+          "id": "7104c15f-ace0-479b-97ad-b368de32cb68",
+          "links": [
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/7104c15f-ace0-479b-97ad-b368de32cb68",
+              "rel": "self"
+            },
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/7104c15f-ace0-479b-97ad-b368de32cb68",
+              "rel": "bookmark"
+            }
+          ],
+          "name": "5.6"
         }
-    ]
+      ],
+      "id": "10000000-0000-0000-0000-000000000001",
+      "links": [
+        {
+          "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/10000000-0000-0000-0000-000000000001",
+          "rel": "self"
+        },
+        {
+          "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/10000000-0000-0000-0000-000000000001",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "MySQL"
+    },
+    {
+      "default_version": "e8b1ee46-58c9-459e-bb02-50ddc8844be7",
+      "versions": [
+        {
+          "id": "e8b1ee46-58c9-459e-bb02-50ddc8844be7",
+          "links": [
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/e8b1ee46-58c9-459e-bb02-50ddc8844be7",
+              "rel": "self"
+            },
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/e8b1ee46-58c9-459e-bb02-50ddc8844be7",
+              "rel": "bookmark"
+            }
+          ],
+          "name": "5.6"
+        }
+      ],
+      "id": "17e9bb89-0dce-476d-b785-0c8485f932c0",
+      "links": [
+        {
+          "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/17e9bb89-0dce-476d-b785-0c8485f932c0",
+          "rel": "self"
+        },
+        {
+          "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/17e9bb89-0dce-476d-b785-0c8485f932c0",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "Percona"
+    },
+    {
+      "default_version": "53e8fe38-c18d-47d8-9d9e-2ba09a57ae6c",
+      "versions": [
+        {
+          "id": "53e8fe38-c18d-47d8-9d9e-2ba09a57ae6c",
+          "links": [
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/53e8fe38-c18d-47d8-9d9e-2ba09a57ae6c",
+              "rel": "self"
+            },
+            {
+              "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/53e8fe38-c18d-47d8-9d9e-2ba09a57ae6c",
+              "rel": "bookmark"
+            }
+          ],
+          "name": "10.0"
+        }
+      ],
+      "id": "a87786d5-879d-4680-a98c-684122bd7cce",
+      "links": [
+        {
+          "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/a87786d5-879d-4680-a98c-684122bd7cce",
+          "rel": "self"
+        },
+        {
+          "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/a87786d5-879d-4680-a98c-684122bd7cce",
+          "rel": "bookmark"
+        }
+      ],
+      "name": "MariaDB"
+    }
+  ]
 }
+
+

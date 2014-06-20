@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-06-16</pubdate>
+        <pubdate>2014-06-19</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,7 +79,7 @@
         
         <revhistory>
             <revision>
-                <date>2014-06-16</date>
+                <date>2014-06-19</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -97,9 +97,34 @@
                         </listitem>
                         <listitem>
                             <para>Introduced new larger flavors 32GB
-                                and 64GB. Refer to <xref
+                                and 64GB in IAD. Refer to <xref
                                    linkend="GET_getFlavors__version___accountId__flavors_flavors"
                                 /> for details.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated response for List All
+                                Datastore Types operation. Refer to
+                                   <xref
+                                   linkend="GET_getDatastoreTypes__version___accountId__datastores_datastore_types_and_versions"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated information for List Backups
+                                operation. Refer to <xref
+                                   linkend="GET_getBackups__version___accountId__backups_backups"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated response for List Backups
+                                for Instance operation. Refer to <xref
+                                   linkend="GET_getBackupsByInstance__version___accountId__instances__instanceId__backups_backups"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated response for List Backup by
+                                ID operation. Refer to <xref
+                                   linkend="GET_getBackupById__version___accountId__backups__backupId__backups"
+                                />.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>

@@ -1393,7 +1393,7 @@
             <para>This operation lists information for all available flavors.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
             
-            <para>Note that new larger flavors 32GB and 64GB have been introduced.</para>
+            <para>The new larger flavors 32GB and 64GB have been introduced in IAD.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -1556,13 +1556,24 @@
         <wadl:doc xml:lang="EN" title="List Backups" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all backups for all database instances.</para>
             <para>This operation returns a list of all backups for all database instances.</para>
-            <para>The following table lists the required and optional attributes for List Backups:</para>         
+            <para>You can filter by datastore type using the <emphasis>datastore</emphasis> query parameter.</para>         
         </wadl:doc>
         <request>
+            <param style="query" type="string" name="datastore"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>The type of the datastore by which to filter.</para></wadl:doc>
+            </param>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-request.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List Backups Query Request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups Query request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-query-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -1572,6 +1583,13 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc title="List Backups Query Response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups Query response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-query-response.json"/>
                 </doc>
             </representation>
         </response>

@@ -7,15 +7,20 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "backup": {
-        "created": "2014-02-13T21:47:16", 
-        "description": "My Backup", 
-        "id": "61f12fef-edb1-4561-8122-e7c00ef26a82", 
-        "instance_id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
-        "locationRef": "http://localhost/path/to/backup", 
-        "name": "snapshot", 
-        "parent_id": null, 
-        "size": null, 
-        "status": "COMPLETED", 
-        "updated": "2014-02-13T21:47:16"
+        "status": "FAILED",
+        "updated": "2014-06-19T15:56:58",
+        "description": "Backup from Restored Instance",
+        "datastore": {
+            "version": "5.1",
+            "type": "MySQL",
+            "version_id": "20000000-0000-0000-0000-000000000002"
+        },
+        "id": "e2d3dfca-430f-4cd2-bec0-884cd7426f13",
+        "size": 0.141026,
+        "name": "restored_backup",
+        "created": "2014-06-19T15:55:54",
+        "instance_id": "34d6c8bf-539e-47d1-8a06-2b7590521309",
+        "parent_id": null,
+        "locationRef": "https://snet-storage.stg.swift.racklabs.com/v1/StagingUS_a3d836a8-35c8-4814-98e8-f5b171f213ea/z_CLOUDDB_BACKUPS/e2d3dfca-430f-4cd2-bec0-884cd7426f13"
     }
 }
