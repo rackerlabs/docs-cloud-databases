@@ -7,7 +7,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "backup": {
-        "status": "FAILED",
+        "status": "COMPLETED",
         "updated": "2014-06-19T15:56:58",
         "description": "Backup from Restored Instance",
         "datastore": {
@@ -21,6 +21,6 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         "created": "2014-06-19T15:55:54",
         "instance_id": "34d6c8bf-539e-47d1-8a06-2b7590521309",
         "parent_id": null,
-        "locationRef": "https://snet-storage.stg.swift.racklabs.com/v1/StagingUS_a3d836a8-35c8-4814-98e8-f5b171f213ea/z_CLOUDDB_BACKUPS/e2d3dfca-430f-4cd2-bec0-884cd7426f13"
+        "locationRef": "http://localhost/path/to/backup"
     }
 }
