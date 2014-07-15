@@ -84,21 +84,21 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated response information for
-                                List Backups operation. Refer to <xref
+                                List Backups operation.<!--   Refer to <xref
                                    linkend="GET_getBackups__version___accountId__backups_backups"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List Backups
-                                for Instance operation. Refer to <xref
+                                for Instance operation.<!--   Refer to <xref
                                    linkend="GET_getBackupsByInstance__version___accountId__instances__instanceId__backups_backups"
-                                />.</para>
+                                />.--></para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List Backup by
-                                ID operation. Refer to <xref
+                                ID operation.<!--   Refer to <xref
                                    linkend="GET_getBackupById__version___accountId__backups__backupId__backups"
-                                />.</para>
+                                />.--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -116,40 +116,40 @@
                             <para>Added information about associating
                                 a configuration with parameters that
                                 require rebooting the database
-                                instance. Refer to <xref
+                                instance. Refer to Update Database Instance<!--   <xref
                                    linkend="PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Introduced new larger flavors 32GB
-                                and 64GB in IAD. Refer to <xref
+                                and 64GB in IAD. Refer to List Flavors<!--  <xref
                                    linkend="GET_getFlavors__version___accountId__flavors_flavors"
-                                /> for details.</para>
+                                />--> for details.</para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List All
-                                Datastore Types operation. Refer to
+                                Datastore Types operation.<!--   Refer to
                                    <xref
                                    linkend="GET_getDatastoreTypes__version___accountId__datastores_datastore_types_and_versions"
-                                />.</para>
+                                />.--></para>
                         </listitem>
                         <listitem>
                             <para>Updated information for List Backups
-                                operation. Refer to <xref
+                                operation.<!--   Refer to <xref
                                    linkend="GET_getBackups__version___accountId__backups_backups"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List Backups
-                                for Instance operation. Refer to <xref
+                                for Instance operation.<!--   Refer to <xref
                                    linkend="GET_getBackupsByInstance__version___accountId__instances__instanceId__backups_backups"
-                                />.</para>
+                                />.--></para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List Backup by
-                                ID operation. Refer to <xref
+                                ID operation.<!--   Refer to <xref
                                    linkend="GET_getBackupById__version___accountId__backups__backupId__backups"
-                                />.</para>
+                                />.--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -180,11 +180,11 @@
                         </listitem>
                         <listitem>
                             <para>Updated information for the
-                                following API Operations: <xref
+                                following API Operations: List Datastore Type and List Datastore Versions For Datastore<!--  <xref
                                    linkend="GET_getDatastoreTypesById__version___accountId__datastores__datastoreId__datastore_types_and_versions"
                                 /> and <xref
                                    linkend="GET_getDatastoreVersionByVersionId__version___accountId__datastores__datastoreId__versions__versionId__datastore_types_and_versions"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -230,9 +230,9 @@
                             <para>Added attributes to Create Database
                                 Instance for configuration and
                                 datastore version/type plus examples.
-                                See <xref
+                                <!--  See <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
-                                />.</para>
+                                />.--></para>
                         </listitem>
                         <listitem>
                             <para>Updated all request and response
@@ -277,9 +277,9 @@
                                 users with periods in their names in
                                    <xref
                                    linkend="user_access_restrict_by_host-dle387"
-                                /> and <xref
+                                /><!--   and <xref
                                    linkend="GET_getUserAccess__version___accountId__instances__instanceId__users__name__databases_"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Updated description for <xref
@@ -300,9 +300,9 @@
                         <listitem>
                             <para>Updated information for the
                                 <code>restorepoint</code> attribute
-                                in <xref
+                                in Create Instance<!--   <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -382,9 +382,9 @@
                                 </listitem>
                                 <listitem>
                                    <para>Added information and
-                                   examples for restore. See <xref
+                                   examples for restore. See Create Instance<!--   <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
-                                   />.</para>
+                                   />-->.</para>
                                 </listitem>
                                 <listitem>
                                    <para>Added <xref linkend="backups"
@@ -407,9 +407,9 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new Modify User Attributes
-                                call. Refer to <xref
+                                call.<!--   Refer to <xref
                                    linkend="PUT_modifyUser__version___accountId__instances__instanceId__users__name__"
-                                /> for details.</para>
+                                /> for details.--></para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -451,10 +451,10 @@
                                 />.</para>
                         </listitem>
                         <listitem security="writeronly">
-                            <para>Added information for restore. See
-                                   <xref
+                            <para>Added information for restore. See Create Instance
+                                  <!--   <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem security="writeronly">
                             <para>Added <xref linkend="backups"
@@ -512,9 +512,9 @@
                                 volume size per instance from 50 to
                                 150GB in <xref
                                    linkend="Absolute_Limits-d1e1397"/>
-                                and <xref
+                                and Create Instance<!--  <xref
                                    linkend="POST_createInstance__version___accountId__instances_"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -553,11 +553,11 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated response examples for new
-                                8GB and 16GB flavors in <xref
+                                8GB and 16GB flavors in List Flavors and List Flavors By ID<!--  <xref
                                    linkend="GET_getFlavors__version___accountId__flavors_"
                                 /> and <xref
                                    linkend="GET_getFlavorById__version___accountId__flavors__flavorId__"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -568,27 +568,27 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added paginated examples for List
-                                Database for Instance API calls in
+                                Database for Instance API calls<!--   in
                                    <xref
                                    linkend="GET_getDatabases__version___accountId__instances__instanceId__databases_"
-                                /> and List Users in Database Instance
-                                API calls in <xref
+                                />--> and List Users in Database Instance
+                                API calls<!--   in <xref
                                    linkend="GET_getUsers__version___accountId__instances__instanceId__users_"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Fixed JSON request example for Grant
-                                User Access API call in <xref
+                                User Access API call<!--   in <xref
                                    linkend="PUT_grantUserAccess__version___accountId__instances__instanceId__users__name__databases_"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                         <listitem>
                             <para>Updated response examples for
-                                Flavors API calls in <xref
+                                Flavors API calls in List Flavors and List Flavors By ID<!--  <xref
                                    linkend="GET_getFlavors__version___accountId__flavors_"
                                 /> and <xref
                                    linkend="GET_getFlavorById__version___accountId__flavors__flavorId__"
-                                />.</para>
+                                />-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -603,32 +603,32 @@
                                    />:<itemizedlist spacing="compact">
                                    <listitem>
                                    <para>Change User(s) Password
-                                   (refer to <xref
+                                   <!--  (refer to <xref
                                    linkend="PUT_changePass__version___accountId__instances__instanceId__users_"
-                                   />).</para>
+                                   />)-->.</para>
                                    </listitem>
                                    <listitem>
-                                   <para>List User (refer to <xref
+                                   <para>List User<!--   (refer to <xref
                                    linkend="GET_listUser__version___accountId__instances__instanceId__users__name__"
-                                   />).</para>
+                                   />)-->.</para>
                                    </listitem>
                                    <listitem>
-                                   <para>List User Access (refer to
+                                   <para>List User Access<!--   (refer to
                                    <xref
                                    linkend="GET_getUserAccess__version___accountId__instances__instanceId__users__name__databases_"
-                                   />).</para>
+                                   />)-->.</para>
                                    </listitem>
                                    <listitem>
-                                   <para>Grant User Access (refer to
+                                   <para>Grant User Access<!--   (refer to
                                    <xref
                                    linkend="PUT_grantUserAccess__version___accountId__instances__instanceId__users__name__databases_"
-                                   />).</para>
+                                   />)-->.</para>
                                    </listitem>
                                    <listitem>
-                                   <para>Revoke User Access (refer to
+                                   <para>Revoke User Access<!--   (refer to
                                    <xref
                                    linkend="DELETE_revokeUserAccess__version___accountId__instances__instanceId__users__name__databases__databaseName__"
-                                   />).</para>
+                                   />)-->.</para>
                                    </listitem>
                                 </itemizedlist></para>
                         </listitem>
@@ -650,9 +650,9 @@
                         </listitem>
                         <listitem>
                             <para>Corrected note for deleting database
-                                instances (refer to <xref
+                                instances<!--   (refer to <xref
                                    linkend="DELETE_deleteInstance__version___accountId__instances__instanceId__"
-                                /> ).</para>
+                                /> )-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -680,9 +680,9 @@
                             <para>Updated note about the
                                    <code>used</code> attribute for
                                 volumes also not being returned when
-                                the status is ERROR (refer to <xref
+                                the status is ERROR in List Database Instance Status and Details<!--   (refer to <xref
                                    linkend="GET_getInstanceById__version___accountId__instances__instanceId__"
-                                /> ).</para>
+                                /> )-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -750,11 +750,11 @@
                         </listitem>
                         <listitem>
                             <para>List reserved names that cannot be
-                                used for creating databases (see <xref
+                                used for creating databases<!--   (see <xref
                                    linkend="POST_createDatabase__version___accountId__instances__instanceId__databases_"
                                 />) and users (see <xref
                                    linkend="POST_createUser__version___accountId__instances__instanceId__users_"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -2403,9 +2403,9 @@
                 the public network by performing the following steps:<orderedlist>
                     <listitem>
                         <para>Using the Cloud Databases API, create a
-                            database instance. For details see <xref
+                            database instance. For details see Create Instance<!--  <xref
                                 linkend="POST_createInstance__version___accountId__instances_"
-                            />.</para>
+                            />-->.</para>
                     </listitem>
                     <listitem>
                         <para>Using the Cloud Load Balancers API,
@@ -2456,13 +2456,13 @@
                         <code>host</code> field.</para>
                 <para>The <code>host</code> field may optionally be
                     provided for each user in the body of Create
-                    Instance (<xref
+                    Instance<!--   (<xref
                         linkend="POST_createInstance__version___accountId__instances_"
-                    />), Create User (<xref
+                    />)-->, Create User<!--   (<xref
                         linkend="POST_createUser__version___accountId__instances__instanceId__users_"
-                    />), and Change User Password (<xref
+                    />)-->, and Change User Password<!--   (<xref
                         linkend="PUT_changePass__version___accountId__instances__instanceId__users_"
-                    />) calls. In the case of the List User, List User
+                    />)--> calls. In the case of the List User, List User
                     Access, Grant User Access, and Revoke User Access
                     calls, the username is part of the request URL
                     instead of a JSON message body. In these cases,
@@ -2485,9 +2485,9 @@
                         not affected as these names are in JSON data,
                         and not part of the request's URL. For request
                         examples with escaped periods in user names,
-                        refer to <xref
+                        refer to List User Access<!--  <xref
                             linkend="GET_getUserAccess__version___accountId__instances__instanceId__users__name__databases_"
-                        />.</para>
+                        />-->.</para>
 
                 </warning>
             </section>
@@ -3217,24 +3217,24 @@
                 information in the descriptions for the following API operations:
                 <itemizedlist spacing="compact">
                     <listitem>
-                        <para><xref
+                        <para>Create Instance<!--  <xref
                                 linkend="POST_createInstance__version___accountId__instances_"
-                            /></para>
+                            />--></para>
                     </listitem>
                     <listitem>
-                        <para><xref
+                        <para>List Database Instance Status and Details<!--  <xref
                                 linkend="GET_getInstanceById__version___accountId__instances__instanceId__Database_Instances"
-                            /></para>
+                            />--></para>
                     </listitem>
                     <listitem>
-                        <para><xref
+                        <para>Get Default Configuration<!--  <xref
                                 linkend="GET_getDefaultConfig__version___accountId__instances__instanceId__configuration_Database_Instances"
-                            /></para>
+                            />--></para>
                     </listitem>
                     <listitem>
-                        <para><xref
+                        <para>Update Database Instance<!--  <xref
                                 linkend="PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances"
-                            /></para>
+                            />--></para>
                     </listitem>
                 </itemizedlist></para>
             <wadl:resources

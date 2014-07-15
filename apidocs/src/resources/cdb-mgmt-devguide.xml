@@ -134,9 +134,10 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new API call to migrate
-                                instance (see <xref
-                                   linkend="POST_migrateInstance_mgmt_instances__instanceId__action_"
-                                />).</para>
+                                instance   
+                                <!-- (see <xref
+                                   linkend="POST_migrateInstance_mgmt_instances__instanceId__action_Management_Instances_Actions"
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -147,9 +148,10 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new API call to reset instance
-                                task status (see <xref
+                                task status
+                                <!-- (see <xref
                                    linkend="POST_resetInstanceTaskStatus_mgmt_instances__instanceId__action_"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -173,9 +175,9 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new API call List All Active
-                                Accounts (see <xref
+                                Accounts<!--   (see <xref
                                    linkend="GET_getaccounts_mgmt_accounts_"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -186,19 +188,19 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new API calls Get Hardware
-                                Info (see <xref
+                                Info<!-- (see <xref
                                    linkend="GET_getHwInfo_mgmt_instances__instanceId__hwinfo_"
-                                />) and Update All Instances on Host
+                                />)--> and Update All Instances on Host<!--  
                                 (see <xref
                                    linkend="POST_updateHostInstances_mgmt_hosts__hostId__instances_action_"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                         <listitem>
                             <para>Added tenant_id field to sample
                                 responses for List All Instances for a
-                                Host API call (see <xref
+                                Host API call<!-- (see <xref
                                    linkend="GET_gethostbyid_mgmt_hosts__hostId__"
-                                />).</para>
+                                />)-->.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
