@@ -248,7 +248,7 @@
                 <para>You can create a database instance with one or more databases, and users associated to those databases.</para>
             </listitem>
             <listitem>
-                <para>The default binding for the MySQL instance is port 3306.</para>
+                <para>The default binding for the database instance is port 3306.</para>
             </listitem>
             <listitem>
                 <para>When used with the <code>restorePoint</code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</para>
@@ -525,7 +525,7 @@
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
-                non-empty transaction logs for mysql optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
+                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
             <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
             <para>The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.</para>
@@ -571,8 +571,8 @@
     <method name="POST" id="restartInstance">
         <wadl:doc xml:lang="EN" title="Restart Instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Restarts the database service on the instance.</para>
-            <para>The restart operation will restart only the MySQL Instance. Restarting MySQL will erase any dynamic configuration settings that you have made within MySQL.</para>
-            <note><para>The MySQL service will be unavailable until the instance restarts.</para></note>
+            <para>The restart operation will restart only the database service on the instance. Restarting the database service will erase any dynamic configuration settings that you have made within the database service.</para>
+            <note><para>The database service will be unavailable until the instance restarts.</para></note>
             <para>This operation returns a 202 Accepted response.</para>
         </wadl:doc>
         <request>
@@ -599,7 +599,7 @@
     <method name="POST" id="resizeInstance">
         <wadl:doc xml:lang="EN" title="Resize the Instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Resizes the memory of the instance.</para>
-            <para>This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts MySQL in the process.</para>
+            <para>This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts the database service in the process.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -689,7 +689,8 @@
                 </tbody>
             </table>
 
-            <para>See the MySQL documentation for information about supported character sets and collations at <link
+            <para>See the database service documentation for information about supported character sets and collations. Refer to <xref
+                linkend="Datastore_Types_and_Versions-d1e9263"/> for references to the documentation for each database service. For example, for MySQL information see <link
                 xlink:href="http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html"
                 >http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html</link>.</para>
             
@@ -1040,7 +1041,7 @@
             <note><para>This operation does not return the system users (database administrators that administer the health of the database). 
                 Also, this operation returns the "root" user only if "root" user has been enabled.</para></note>
 
-            <para>The following notes apply to MySQL users:</para>
+            <para>The following notes apply to database users:</para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para>User names can be up to 16 characters long.</para>
@@ -1096,8 +1097,8 @@
 
     <method name="PUT" id="changePass">
         <wadl:doc xml:lang="EN" title="Change User(s) Password"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Changes the MySQL password of one or more users.</para>
-            <para>This operation changes the MySQL password of one or more users. </para>
+            <para role="shortdesc">Changes the database password of one or more users.</para>
+            <para>This operation changes the database password of one or more users. </para>
             <note><para>For information about choosing a valid password, please refer to 
                 <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for details.</para></note>         
         </wadl:doc>
@@ -1302,8 +1303,8 @@
     <!-- Get Default Config -->
     <method name="GET" id="getDefaultConfig">
         <wadl:doc xml:lang="EN" title="Get Default Configuration"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the default MySQL configuration settings from the template that were applied to the specified instance.</para>
-            <para>This operation Lists the default MySQL configuration settings from the template that were applied to the specified instance.</para>
+            <para role="shortdesc">Lists the default configuration settings from the template that were applied to the specified instance.</para>
+            <para>This operation lists the default configuration settings from the template that were applied to the specified instance.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -1335,7 +1336,7 @@
             <note><para>Changes you make as a root user may cause detrimental effects to the database instance and unpredictable behavior for API operations. 
                 When you enable the root user, you accept the possibility that we will not be able to support your database instance. 
                 While enabling root does not prevent us from a “best effort” approach to helping you if something goes wrong with your instance, 
-                we cannot ensure that we will be able to assist you if you change core MySQL settings. These changes can be (but are not limited to) 
+                we cannot ensure that we will be able to assist you if you change core database settings. These changes can be (but are not limited to) 
                 turning off binlogs, removing users that we use to access your instance, and so forth.</para></note>
         </wadl:doc>
         <request>

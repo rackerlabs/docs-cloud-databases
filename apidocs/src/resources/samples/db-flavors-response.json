@@ -96,6 +96,36 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             ], 
             "name": "16GB Instance", 
             "ram": 16384
+        },
+        {
+            "id": 7, 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/647683/flavors/7", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/7", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "32GB Instance", 
+            "ram": 32768
+        }, 
+        {
+            "id": 8, 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/647683/flavors/8", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/8", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "64GB Instance", 
+            "ram": 65536
         }
     ]
 }

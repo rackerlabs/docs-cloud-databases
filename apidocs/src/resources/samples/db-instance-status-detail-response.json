@@ -10,7 +10,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         "created": "2014-02-13T21:47:13", 
         "datastore": {
             "type": "mysql", 
-            "version": "mysql-5.5"
+            "version": "5.1"
         }, 
         "flavor": {
             "id": "1", 

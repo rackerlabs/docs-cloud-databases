@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-06-24</pubdate>
+        <pubdate>2014-07-18</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,18 @@
         
         <revhistory>
             <revision>
+                <date>2014-07-18</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Multiple database engines are now
+                                supported: MySQL 5.6, Percona 5.6, and
+                                MariaDB 10.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-06-24</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
@@ -86,7 +98,7 @@
                             <para>Updated response information for
                                 List Backups operation.<!--   Refer to <xref
                                    linkend="GET_getBackups__version___accountId__backups_backups"
-                                />-->.</para>
+                                />.--></para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List Backups
@@ -137,7 +149,7 @@
                             <para>Updated information for List Backups
                                 operation.<!--   Refer to <xref
                                    linkend="GET_getBackups__version___accountId__backups_backups"
-                                />-->.</para>
+                                />.--></para>
                         </listitem>
                         <listitem>
                             <para>Updated response for List Backups
@@ -161,7 +173,7 @@
                         <listitem>
                             <para>Removed a comment that was not
                                 pertinent for users in <xref
-                                   linkend="MySQL_Config_Mgmt-d1e3826"
+                                   linkend="Config_Mgmt-d1e3826"
                                 />.</para>
                         </listitem>
                     </itemizedlist>
@@ -215,9 +227,9 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new <xref
-                                   linkend="MySQL_Config_Mgmt-d1e3826"
-                                /> and <xref linkend="configurations"
-                                /> for API operations.</para>
+                                   linkend="Config_Mgmt-d1e3826"/> and
+                                   <xref linkend="configurations"/>
+                                for API operations.</para>
                         </listitem>
                         <listitem>
                             <para>Added new <xref
@@ -602,8 +614,7 @@
                                    linkend="user_management"
                                    />:<itemizedlist spacing="compact">
                                    <listitem>
-                                   <para>Change User(s) Password
-                                   <!--  (refer to <xref
+                                   <para>Change User(s) Password<!--  (refer to <xref
                                    linkend="PUT_changePass__version___accountId__instances__instanceId__users_"
                                    />)-->.</para>
                                    </listitem>
@@ -787,13 +798,13 @@
     </info>
     <chapter xml:id="overview">
         <title>Overview</title>
-        <para>Rackspace Cloud Databases is an OpenStack-based MySQL
-            relational database service that allows Rackspace
-            customers to easily provision database instances of
+        <para>Rackspace Cloud Databases is a fully managed database
+            service based on Openstack. Using Cloud Databases,
+            customers can easily provision database instances of
             varying virtual resource sizes without the need to
-            maintain and/or update MySQL. Interactions with Cloud
-            Databases occur programmatically via the Cloud Databases
-            API as described in this developer guide.</para>
+            maintain and/or update the database engine. Interactions
+            with Cloud Databases occur programmatically via the Cloud
+            Databases API as described in this developer guide.</para>
         <note> <para>Rackspace recommends that Cloud Databases users back up their
                 data using backups in Cloud Databases.</para> </note>
         <para>The following figure shows an
@@ -947,41 +958,45 @@
         </section>
         <section xml:id="DatabaseInstance-d1e588">
             <title>Database Instance</title>
-            <para>A database instance is an isolated MySQL instance in
-                a single tenant environment on a shared physical host
-                machine.</para>
-            <remark security="writeronly">Writer: once we support
-                MSSQL, we need to describe here what is used for MSSQL
-                in place of database instance.</remark>
+            <para>A database instance is an isolated database
+                environment with compute and storage resources in a
+                single tenant environment on a shared physical host
+                machine. You can run a database instance with your
+                choice of one of the following database engines:
+                MySQL, Percona, or MariaDB. </para>
+            <remark security="writeronly">Writer: need to keep this
+                list of database engines updated.</remark>
         </section>
         <section xml:id="Database">
             <title>Database</title>
-            <para>A MySQL database within a database instance.</para>
-            <remark security="writeronly">Writer: once we support
-                MSSQL, we need to modify the wording here, such as:
-                The actual database, whether it is in MySQL or
-                MSSQL.</remark>
+            <para>The database is the database engine running on your
+                instance. Currently the supported database engines and
+                their versions are: MySQL 5.6, Percona 5.6, and
+                MariaDB 10. </para>
+            <remark security="writeronly">Writer: need to keep this
+                list of database engines updated.</remark>
         </section>
         <section xml:id="Flavor">
             <title>Flavor</title>
             <para>A flavor is an available hardware configuration for
-                a database instance. Each flavor has a unique
-                combination of memory capacity and priority for CPU
-                time.</para>
+                a database instance. Each flavor is optimized for
+                performance and has a unique combination of memory
+                capacity, priority for CPU time, and network
+                bandwidth.</para>
         </section>
         <section xml:id="Volume">
             <title>Volume</title>
             <para>A volume is user-specified storage that contains the
-                MySQL data directory. Volumes are automatically
-                provisioned on shared Internet Small Computer System
-                Interface (iSCSI) storage area networks (SAN) that
-                provide for increased performance, scalability,
-                availability and manageability. Applications with high
-                I/O demands are performance optimized and data is
-                protected through both local and network RAID-10.
-                Additionally, network RAID provides synchronous
-                replication of volumes with automatic failover and
-                load balancing across available storage
+                database engine data directory. Volumes are
+                automatically provisioned on shared Internet Small
+                Computer System Interface (iSCSI) storage area
+                networks (SAN) that provide for increased performance,
+                scalability, availability and manageability.
+                Applications with high I/O demands are performance
+                optimized and data is protected through both local and
+                network RAID-10. Additionally, network RAID provides
+                synchronous replication of volumes with automatic
+                failover and load balancing across available storage
                 clusters.</para>
         </section>
     </chapter>
@@ -1904,11 +1919,11 @@
             <para> The Database Service uses an ISO-8601 compliant
                 date format for the display and consumption of
                 date/time values. </para>
-            <para>The system timezone is in UTC. MySQL converts TIMESTAMP values from
-                    the current time zone to UTC for storage, and back
-                    from UTC to the current time zone for retrieval.
-                    This does not occur for other types, such as DATETIME.
-            </para>
+            <para>The system timezone is in UTC. The Database Service
+                converts TIMESTAMP values from the current time zone
+                to UTC for storage, and back from UTC to the current
+                time zone for retrieval. This does not occur for other
+                types, such as DATETIME. </para>
                 <example>
                     <title>DB Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
@@ -2373,13 +2388,14 @@
                 <listitem>
                     <para>SHUTDOWN &ndash; The database instance is
                         terminating services. Also, SHUTDOWN is
-                        returned if for any reason the MySQL instance
-                        is shut down but not the actual server. </para>
+                        returned if for any reason the database
+                        instance is shut down but not the actual
+                        server. </para>
                     <para>
                         <note>
-                            <para>If MySQL has crashed (causing the
-                                SHUTDOWN status), please call support
-                                for assistance.</para>
+                            <para>If the database engine has crashed
+                                (causing the SHUTDOWN status), please
+                                call support for assistance.</para>
                         </note>
                     </para>
                 </listitem>
@@ -2440,11 +2456,11 @@
                 <para>The <code>host</code> parameter must be a string
                     consisting of either a numeric IPv4 address such
                     as "192.168.1.12", or the string "%". The string
-                    "%" serves as a wildcard to MySQL, and means "from
-                    anywhere". Users created without mention of the
-                        <code>host</code> parameter are given the
-                    default value of "%", which allows them to connect
-                    to the database from any host.</para>
+                    "%" serves as a wildcard to the database, and
+                    means "from anywhere". Users created without
+                    mention of the <code>host</code> parameter are
+                    given the default value of "%", which allows them
+                    to connect to the database from any host.</para>
                 <para>It is important to note that two database users
                     with the same name but different hosts are treated
                     as completely distinct from each other, especially
@@ -2528,9 +2544,9 @@
                     <para>Network</para>
                 </listitem>
                 <listitem>
-                    <para>MySQL</para>
+                    <para>Database</para>
                     <para>The following data points are supported on
-                        the MySQL checks:</para>
+                        the Database checks:</para>
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>core.aborted_clients</para>
@@ -2894,12 +2910,12 @@
             </section>
             
         </section>
-        <section xml:id="MySQL_Config_Mgmt-d1e3826">
-            <title>MySQL Configuration Management</title>
-            <para>The MySQL configuration management capability allows
-                users of Cloud Databases to override the default MySQL
-                configuration settings provided by the Cloud Databases
-                service. </para>
+        <section xml:id="Config_Mgmt-d1e3826">
+            <title>Configuration Management</title>
+            <para>The configuration management capability allows users
+                of Cloud Databases to override the default database
+                engine configuration settings provided by the Cloud
+                Databases service. </para>
             <para>A <emphasis>configuration group</emphasis> is a collection
                 of key/value pairs, where the valid key/values are
                 defined in the MySQL manual at <link
@@ -2963,20 +2979,32 @@
             <title>Datastore Types and Versions</title>
             <para>Datastore types management will allow users of Cloud
                 Databases to select database type and version from the
-                list provided by Rackspace. Rackspace will control
-                datastore types, adding new types as they become
-                available, and deactivating old versions. </para>
+                list of available choices provided by Rackspace.
+                Rackspace will control datastore types and versions,
+                adding new types and versions as they become
+                available, and deactivating old versions at
+                end-of-life. </para>
             <para>To take advantage of this capability, users can
                 specify datastore type and optional version at
                 instance creation. <emphasis>Datastore Type</emphasis>
                 is a family of database engines, like mysql, mongodb,
                 and cassandra. <emphasis>Datastore Version</emphasis>
                 defines the engine version of the selected datastore
-                type.</para>
+                type. If users do not specify the datastore type and
+                version at instance creation, the default database is
+                MySQL 5.6.</para>
             <para>Refer to <xref
                     linkend="datastore_types_and_versions"/> for the
                 API operations for datastore types and
                 versions.</para>
+            <para>For an example of using the <code>type</code> and
+                    <code>version</code> information in the Create
+                Database Instance API request, see the "Create
+                Database Instance <emphasis>Datastore</emphasis>
+                Request: JSON" example for the Create Database
+                Instance API operation.</para>
+            <para>See the sections that follow for information about
+                the datastores that are currently supported.</para>
             <para security="writeronly">Each datastore type has several versions of engine.
                 Type can have a default version for type. Versions can
                 be marked as <emphasis>active</emphasis> or
@@ -3016,6 +3044,59 @@
             <para security="writeronly">For information about the API operations available
                 for types and versions, refer to <xref
                     linkend="datastore_types_and_versions"/>.</para>
+            <section xml:id="Datstores-MySQL-56-d1e4875">
+                <title>MySQL 5.6</title>
+                <para>MySQL is a high performance, open source
+                    database developed by Oracle.  The latest MySQL
+                    release offers great improvements  in InnoDB
+                    scalability, transparency, and replication.</para>
+                <para>For more information on MySQL, see <link
+                        xlink:href="http://dev.mysql.com/"
+                        >http://dev.mysql.com/</link>.</para>
+                <para>For MySQL, the <code>type</code> is "MySQL" and
+                    the <code>version</code> is "5.6". </para>
+                <para>MySQL 5.6 is the default database for Cloud
+                    Databases.</para>
+            </section>
+            <section xml:id="Datstores-MySQL-51-d1e4875">
+                <title>MySQL 5.1</title>
+                <para>Rackspace currently support MySQL 5.1. The
+                    latest version of MySQL (5.6) has many
+                    improvements over MySQL 5.1 and we will eventually
+                    deactivate MySQL 5.1 at end-of-life.</para>
+                <para>For more information on MySQL, see <link
+                        xlink:href="http://dev.mysql.com/"
+                        >http://dev.mysql.com/</link>.</para>
+                <para>For MySQL, the <code>type</code> is "MySQL" and
+                    the <code>version</code> is "5.1". </para>
+            </section>
+            <section xml:id="Datastores-Percona-56-d1e7625">
+                <title>Percona 5.6</title>
+                <para>Percona Server is a high performance, open
+                    source, drop-in replacement for MySQL. It offers
+                    all the improvements found in MySQL 5.6 Community
+                    Edition plus scalability, availability, backup,
+                    and security features found only in MySQL 5.6
+                    Enterprise Edition.</para>
+                <para>For more information on Percona, see <link
+                    xlink:href="http://www.percona.com/software/percona-server"
+                    >http://http://www.percona.com/software/percona-server</link>.</para>
+                <para>For Percona, the <code>type</code> is "Percona"
+                    and the <code>version</code> is "5.6".</para>
+            </section>
+            <section xml:id="Datastores-MariaDB-10-d1e7625">
+                <title>MariaDB 10</title>
+                <para>MariaDB is a high-performance RDBMS. MariaDB is
+                    application-compatible with MySQL, but adds many
+                    new capabilities and enhancements to address the
+                    most challenging web and enterprise application
+                    use cases.</para>
+                <para>For more information on MariaDB, see <link
+                    xlink:href="https://mariadb.org/en/about/"
+                    >http://http://https://mariadb.org/en/about/</link>.</para>
+                <para>For MariaDB, the <code>type</code> is "MariaDB"
+                    and the <code>version</code> is "10".</para>
+            </section>
         </section>
     </chapter>
     
@@ -3342,14 +3423,21 @@
         <glossentry xml:id="Database-d1e017">
             <glossterm>database</glossterm>
             <glossdef>
-                <para>A MySQL database within a database instance.</para>
+                <para>The database is the database engine running on
+                    your instance. Currently the supported database
+                    engines and their versions are: MySQL 5.6, Percona
+                    5.6, and MariaDB 10. </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Database-Instance-d1e016">
             <glossterm>database instance</glossterm>
             <glossdef>
-                <para>A database instance is an isolated MySQL instance in a single tenant environment on a
-                    shared physical host machine. Also referred to as instance.</para>
+                <para>A database instance is an isolated database
+                    environment with compute and storage resources in
+                    a single tenant environment on a shared physical
+                    host machine. You can run a database instance with
+                    your choice of one of the following database
+                    engines: MySQL, Percona, or MariaDB. </para>
             </glossdef>
         </glossentry>
         <glossentry xml:id="Flavor-d1e018">
@@ -3361,12 +3449,19 @@
         <glossentry xml:id="Volume-d1e019">
             <glossterm>volume</glossterm>
             <glossdef>
-                <para>A volume is user-specified storage that contains the MySQL data directory. 
-                    Volumes are automatically provisioned on shared Internet Small Computer System Interface (iSCSI) 
-                    storage area networks (SAN) that provide for increased performance, scalability, availability 
-                    and manageability. Applications with high I/O demands are performance optimized and data is 
-                    protected through both local and network RAID-10. Additionally, network RAID provides synchronous 
-                    replication of volumes with automatic failover and load balancing across available storage clusters.</para>
+                <para>A volume is user-specified storage that contains
+                    the database engine data directory. Volumes are
+                    automatically provisioned on shared Internet Small
+                    Computer System Interface (iSCSI) storage area
+                    networks (SAN) that provide for increased
+                    performance, scalability, availability and
+                    manageability. Applications with high I/O demands
+                    are performance optimized and data is protected
+                    through both local and network RAID-10.
+                    Additionally, network RAID provides synchronous
+                    replication of volumes with automatic failover and
+                    load balancing across available storage
+                    clusters.</para>
             </glossdef>
         </glossentry>
     </glossary>

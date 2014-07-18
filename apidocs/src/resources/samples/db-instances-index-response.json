@@ -9,7 +9,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
     "instances": [
         {
             "datastore": {
-                "type": "mysql"
+                "type": "mysql",
+                "version": "5.1"
             }, 
             "flavor": {
                 "id": "1", 

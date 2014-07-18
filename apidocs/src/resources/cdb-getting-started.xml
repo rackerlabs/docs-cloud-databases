@@ -49,13 +49,39 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-06-19</pubdate>
+        <pubdate>2014-07-18</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-07-18</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Multiple database engines are now
+                                supported: MySQL 5.6, Percona 5.6, and
+                                MariaDB 10.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-06-19</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for locating
+                                your account number (tenant ID) in the
+                                Cloud Control Panel (see <xref
+                                   linkend="Generating_Auth_Token"
+                                />).</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-19</date>
                 <revdescription>
@@ -396,7 +422,8 @@
             Rackspace Cloud Databases API and the Cloud
             Servers<trademark/> section of the Rackspace Cloud Control
             Panel to create and access your database instances via
-            Rackspace Cloud Servers.</para>
+            Rackspace Cloud Servers. The examples presented in this
+            guide create a MySQL database instance.</para>
         
         <para>The simple exercises in this guide help you get started
             with the API by showing you how to access the API through
@@ -1876,6 +1903,8 @@ Flavor List for IAD, DFW, ORD, SYD
 | 4  |  4GB Instance  |  4096 |
 | 5  |  8GB Instance  |  8192 |
 | 6  | 16GB Instance  | 16384 |
+| 7  | 32GB Instance  | 32768 |
+| 8  | 64GB Instance  | 65536 |
 +----+----------------+-------+</computeroutput></screen>
                         </informalexample>
                     </step>
@@ -1947,17 +1976,27 @@ Flavor List for IAD, DFW, ORD, SYD
         <section xml:id="Create_DB_Instance">
             <title>Step 7. Create a Database Instance with a Database
                 and a User</title>
-            <para>A database instance is an isolated MySQL instance in
-                a single tenant environment on a shared physical host
-                machine. In the example below, you create a database
-                instance with a database and a user. The example
-                instance uses the 512MB Instance flavor and a volume
-                size of 2 gigabytes (GB). </para>
+            <para>A database instance is an isolated database
+                environment with compute and storage resources in a
+                single tenant environment on a shared physical host
+                machine. You can run a database instance with your
+                choice of one of the following database engines:
+                MySQL, Percona, or MariaDB. In the example below, you
+                create a MySQL database instance with a database and a
+                user, using the default MySQL 5.6 for the database.
+                The example instance uses the 512MB Instance flavor
+                and a volume size of 2 gigabytes (GB). </para>
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_databases.html"
                     >Create Database</link> in the <citetitle>Cloud
                     Databases Developer Guide</citetitle> for the
                 restrictions for choosing the database name.</para>
+            <para>Refer to <link
+                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Datastore_Types_and_Versions-d1e9263.html"
+                    >Datastore Types and Versions</link> in the
+                    <citetitle>Cloud Databases Developer
+                    Guide</citetitle> for information about the other
+                available database types.</para>
             <para>Choose one of the following methods:<itemizedlist>
                     <listitem>
                         <para><xref linkend="Create_Instance_Trove"
@@ -1971,7 +2010,7 @@ Flavor List for IAD, DFW, ORD, SYD
             <section xml:id="Create_Instance_Trove">
                 <title>Create a Database Instance with the trove
                     Client</title>
-                <para>This example creates a database instance
+                <para>This example creates a MySQL database instance
                         <code>mytroveinstance</code>, with the
                     following: <itemizedlist>
                         <listitem>
@@ -1991,6 +2030,17 @@ Flavor List for IAD, DFW, ORD, SYD
                         </listitem>
                     </itemizedlist>
                 </para>
+                <note>
+                    <para>If you want to create a different database
+                        and version, use the <code>--datastore</code>
+                        and <code>--datastore_version</code>
+                        parameters to specify your choice. For
+                        example, to specify a Percona 5.6 database
+                        instead, you would use:</para>
+                    <para>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove create --size 2 --databases mytrovedb --users mytroveuser:password --datastore Percona --datastore_version 5.6 mytroveinstance 1</programlisting>
+                    </para>
+                </note>
                 <procedure>
                     <title>To create a database instance with a
                         database and a user using the trove
@@ -2009,8 +2059,8 @@ Flavor List for IAD, DFW, ORD, SYD
 |      Property     |                                                                                                          Value                                                                                                          |
 +-------------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |      created      |                                                                                                   2014-04-29T13:33:51                                                                                                   |
-|     datastore     |                                                                                         {u'version': u'5.1', u'type': u'MySQL'}                                                                                         |
-| datastore_version |                                                                                                           5.1                                                                                                           |
+|     datastore     |                                                                                         {u'version': u'5.6', u'type': u'MySQL'}                                                                                         |
+| datastore_version |                                                                                                           5.6                                                                                                           |
 |       flavor      | {u'id': u'1', u'links': [{u'href': u'https://dfw.databases.api.rackspacecloud.com/v1.0/647683/flavors/1', u'rel': u'self'}, {u'href': u'https://dfw.databases.api.rackspacecloud.com/flavors/1', u'rel': u'bookmark'}]} |
 |      hostname     |                                                                              9175290275ef3292efb02be33dd38ed44443e311.rackspaceclouddb.com                                                                              |
 |         id        |                                                                                           18d48a36-0682-4cd7-a419-864105d6079a                                                                                          |
@@ -2076,6 +2126,26 @@ Flavor List for IAD, DFW, ORD, SYD
                                 </listitem>
                             </itemizedlist>
                         </para>
+                        <note>
+                            <para>If you want to create a different
+                                database and version, use the
+                                   <code>datastore</code>
+                                <code>version</code> and
+                                   <code>type</code> parameters to
+                                specify your choice. For example, to
+                                specify a Percona 5.6 database
+                                instead, you would add the following
+                                information to the example below after
+                                the "flavorRef" section (as an
+                                example):</para>
+                            <para>
+                                <programlisting language="bash" role="gutter: false">
+"datastore": {
+     "version": "5.6",
+     "type": "Percona"
+},  </programlisting>
+                            </para>
+                        </note>
                     </step>
                     <step>
                         <para>Execute the cURL request for Create
@@ -2406,6 +2476,7 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                     "name": "sampledb"
                 }
             ],
+            "host": "%",
             "name": "simplestUser"  
         }
     ]

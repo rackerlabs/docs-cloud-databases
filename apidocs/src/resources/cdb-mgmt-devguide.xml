@@ -60,7 +60,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-04-29</pubdate>
+        <pubdate>2014-07-18</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,6 +75,18 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-07-18</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Multiple database engines are now
+                                supported: MySQL 5.6, Percona 5.6, and
+                                MariaDB 10.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-04-29</date>
                 <revdescription>
@@ -246,15 +258,15 @@
     </info>
     <chapter xml:id="overview">
         <title>Overview</title>
-        <para>Rackspace Cloud Databases is an OpenStack-based MySQL
-            relational database service that allows Rackspace
-            customers to easily provision database instances of
+        <para>Rackspace Cloud Databases is a fully managed database
+            service based on Openstack. Using Cloud Databases,
+            customers can easily provision database instances of
             varying virtual resource sizes without the need to
-            maintain and/or update MySQL. Interactions with Cloud
-            Databases occur programmatically via the Cloud Databases
-            API as described in this <citetitle>Cloud Databases
-                Developer Guide for Service
-            Management</citetitle>.</para>
+            maintain and/or update the database engine. Interactions
+            with Cloud Databases occur programmatically via the Cloud
+            Databases API as described in this <citetitle>Cloud
+                Databases Developer Guide for Service
+                Management</citetitle>.</para>
         <para>The API operations described in this manual relate to
             support of Cloud Databases service activities on behalf of
             a specific customer. The scope of these operations is
@@ -386,16 +398,22 @@
             do an initial write-up of this chapter.</remark>
         <section xml:id="DatabaseInstance-d1e588">
             <title>Database Instance</title>
-            <para>A database instance is an isolated MySQL instance in
-                a single tenant environment on a shared physical host
-                machine.</para>
+            <para>A database instance is an isolated database
+                environment with compute and storage resources in a
+                single tenant environment on a shared physical host
+                machine. You can run a database instance with your
+                choice of one of the following database engines:
+                MySQL, Percona, or MariaDB. </para>
             <remark security="writeronly">Writer: once we support
                 MSSQL, we need to describe here what is used for MSSQL
                 in place of database instance.</remark>
         </section>
         <section xml:id="Database">
             <title>Database</title>
-            <para>A MySQL database within a database instance.</para>
+            <para>The database is the database engine running on your
+                instance. Currently the supported database engines and
+                their versions are: MySQL 5.6, Percona 5.6, and
+                MariaDB 10. </para>
             <remark security="writeronly">Writer: once we support
                 MSSQL, we need to modify the wording here, such as:
                 The actual database, whether it is in MySQL or
@@ -411,16 +429,16 @@
         <section xml:id="Volume">
             <title>Volume</title>
             <para>A volume is user-specified storage that contains the
-                MySQL data directory. Volumes are automatically
-                provisioned on dedicated Internet Small Computer
-                System Interface (iSCSI) storage area networks (SAN)
-                that provide for increased performance, scalability,
-                availability and manageability. Applications with high
-                I/O demands are performance optimized and data is
-                protected through both local and network RAID-10.
-                Additionally, network RAID provides synchronous
-                replication of volumes with automatic failover and
-                load balancing across available storage
+                database engine data directory. Volumes are
+                automatically provisioned on shared Internet Small
+                Computer System Interface (iSCSI) storage area
+                networks (SAN) that provide for increased performance,
+                scalability, availability and manageability.
+                Applications with high I/O demands are performance
+                optimized and data is protected through both local and
+                network RAID-10. Additionally, network RAID provides
+                synchronous replication of volumes with automatic
+                failover and load balancing across available storage
                 clusters.</para>
         </section>
     </chapter>
@@ -770,11 +788,11 @@
             <para> The Database Service uses an ISO-8601 compliant
                 date format for the display and consumption of
                 date/time values. </para>
-            <para>The system timezone is in UTC. MySQL converts
-                TIMESTAMP values from the current time zone to UTC for
-                storage, and back from UTC to the current time zone
-                for retrieval. This does not occur for other types,
-                such as DATETIME. </para>
+            <para>The system timezone is in UTC. The Database Service
+                converts TIMESTAMP values from the current time zone
+                to UTC for storage, and back from UTC to the current
+                time zone for retrieval. This does not occur for other
+                types, such as DATETIME. </para>
                 <example>
                     <title>DB Service Date/Time Format</title>
                     <programlisting>yyyy-MM-dd'T'HH:mm:ss.SSSZ</programlisting>
@@ -1193,16 +1211,17 @@
                 <listitem>
                     <para>SHUTDOWN &ndash; The database instance is
                         terminating services. Also, SHUTDOWN is
-                        returned if for any reason the MySQL instance
-                        is shut down but not the actual server. </para>
+                        returned if for any reason the database
+                        instance is shut down but not the actual
+                        server. </para>
                     <para>
                         <note>
-                            <para>If MySQL has crashed (causing the
-                                SHUTDOWN status), you can try
-                                rebooting the database instance to see
-                                if that corrects the problem. If the
-                                instance still does not recover, you
-                                can escalate the issue to
+                            <para>If the database engine has crashed
+                                (causing the SHUTDOWN status), you can
+                                try rebooting the database instance to
+                                see if that corrects the problem. If
+                                the instance still does not recover,
+                                you can escalate the issue to
                                 NebOps.</para>
                         </note>
                     </para>
