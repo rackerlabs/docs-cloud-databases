@@ -27,20 +27,6 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
           "name": "5.1"
         },
         {
-          "id": "27495a76-5061-4316-813d-35d22ad4dfd3",
-          "links": [
-            {
-              "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/27495a76-5061-4316-813d-35d22ad4dfd3",
-              "rel": "self"
-            },
-            {
-              "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/27495a76-5061-4316-813d-35d22ad4dfd3",
-              "rel": "bookmark"
-            }
-          ],
-          "name": "5.5"
-        },
-        {
           "id": "7104c15f-ace0-479b-97ad-b368de32cb68",
           "links": [
             {
