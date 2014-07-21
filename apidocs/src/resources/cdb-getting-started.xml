@@ -49,7 +49,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-07-18</pubdate>
+        <pubdate>2014-07-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -57,13 +57,25 @@
         </legalnotice>
         <revhistory>
             <revision>
+                <date>2014-07-21</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added MySQL 5.1 to the Document
+                                Change History entry for July 18,
+                                2014.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
                 <date>2014-07-18</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Multiple database engines are now
-                                supported: MySQL 5.6, Percona 5.6, and
-                                MariaDB 10.</para>
+                                supported: MySQL 5.6, MySQL 5.1,
+                                Percona 5.6, and MariaDB 10.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
