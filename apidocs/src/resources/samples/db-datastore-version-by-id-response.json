@@ -7,18 +7,19 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 
 {
     "version": {
-        "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa", 
-        "id": "b00000b0-00b0-0b00-00b0-000b000000bb", 
+        "datastore": "10000000-0000-0000-0000-000000000001",
+        "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
         "links": [
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb", 
+                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0
+                -000b000000bb",
                 "rel": "self"
-            }, 
+            },
             {
-                "href": "https://ord.databases.api.rackspacecloud.com/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb", 
+                "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
                 "rel": "bookmark"
             }
-        ], 
-        "name": "mysql-5.5"
+        ],
+        "name": "5.1"
     }
 }
