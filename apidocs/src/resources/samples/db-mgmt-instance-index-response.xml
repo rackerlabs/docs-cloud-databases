@@ -49,7 +49,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         </server>
         <datastore>
             <version>
-                mysql-5.5
+                5.6
             </version>
             <type>
                 mysql
@@ -99,7 +99,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
         </server>
         <datastore>
             <version>
-                mysql-5.5
+                5.6
             </version>
             <type>
                 mysql
