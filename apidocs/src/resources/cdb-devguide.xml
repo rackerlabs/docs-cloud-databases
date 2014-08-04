@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-07-31</pubdate>
+        <pubdate>2014-08-04</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,18 +79,44 @@
         
         <revhistory>
             <revision>
-                <date>2014-07-31</date>
+                <date>2014-08-04</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated response example for <olink targetdoc="cdb-devguide" 
-                                  targetptr="GET_getConfigurationParameters__version___accountId__datastores__datastoreId__versions__versionId__parameters_configuration_parameters"/>.
-                            </para>
+                            <para>Updated response example for <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="GET_getConfigurationParameters__version___accountId__datastores__datastoreId__versions__versionId__parameters_configuration_parameters"
+                                />. </para>
                         </listitem>
                         <listitem>
                             <para>Updated response example for <olink
                                    targetdoc="cdb-devguide"
                                    targetptr="GET_getDefaultConfig__version___accountId__instances__instanceId__configuration_Database_Instances"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples for <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="GET_getConfigurations__version___accountId__configurations_configurations"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples for <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="POST_createConfiguration__version___accountId__configurations_configurations"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples for <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="GET_getConfigurationById__version___accountId__configurations__configId__configurations"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated information about choosing
+                                which regionalized endpoint to use in
+                                   <xref
+                                   linkend="Service_Access_Endpoints-d1e753"
                                 />.</para>
                         </listitem>
                     </itemizedlist>
@@ -1431,8 +1457,8 @@
                         endpoint to use, read about special
                         considerations for choosing a data center at
                             <link
-                            xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw"
-                            >http://ord.admin.kc.rakr.net/knowledge_center/article/what-is-ord-and-dfw</link>.</para>
+                                xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
+                                >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.</para>
                 </tip></para>
             <?rax-fo keep-with-next?>
             <para>
