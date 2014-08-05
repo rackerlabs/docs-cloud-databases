@@ -8,19 +8,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 {
     "account": {
         "id": "3000", 
-        "instances": [
-            {
-                "host": "hostname_1", 
-                "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
-                "name": "json_rack_instance", 
-                "status": "ACTIVE"
-            }, 
-            {
-                "host": "hostname_1", 
-                "id": "dcf2c32b-241d-4c39-af70-1001dfe946d6", 
-                "name": "xml_rack_instance", 
-                "status": "ACTIVE"
-            }
+        "instance_ids": [
+            "d4603f69-ec7e-4e9b-803f-600b9205576f",
+            "dcf2c32b-241d-4c39-af70-1001dfe946d6"
         ]
     }
 }
