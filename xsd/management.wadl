@@ -98,7 +98,7 @@
 
   <!--Methods-->
   <method name="GET" id="getaccounts">
-    <wadl:doc xml:lang="EN" title="List All Active Accounts" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List all active accounts" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists all of the accounts owning at least one instance that is not deleted.
       </para>
@@ -107,7 +107,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Active Accounts request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all active accounts request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-list-accounts-request.json"/>
         </doc>
       </representation>
@@ -115,7 +115,7 @@
       <response status="200">
       <representation mediaType="application/json" element="dbaas:Hosts">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Active Accounts response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all active accounts response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-list-accounts-response.json"/>
         </doc>
       </representation>
@@ -125,7 +125,7 @@
   </method>
 
   <method name="GET" id="gethosts">
-    <wadl:doc xml:lang="EN" title="List All Compute Hosts" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List all compute hosts" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists all of the compute hosts.
       </para>
@@ -136,7 +136,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Compute Hosts request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all compute hosts request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-list-hosts-request.json"/>
         </doc>
       </representation>
@@ -144,7 +144,7 @@
       <response status="200">
       <representation mediaType="application/json" element="dbaas:Hosts">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Compute Hosts response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all compute hosts response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-list-hosts-response.json"/>
         </doc>
       </representation>
@@ -154,7 +154,7 @@
   </method>
 
   <method name="GET" id="gethostbyid">
-    <wadl:doc xml:lang="EN" title="List All Instances for a Host" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List all instances for a host" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists all of the instances for the specified host.
       </para>
@@ -183,7 +183,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Instances for a Host request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances for a host request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-host-detail-request.json"/>
         </doc>
       </representation>
@@ -191,7 +191,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:Host">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Instances for a Host response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances for a host response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-host-detail-response.json"/>
         </doc>
       </representation>
@@ -201,7 +201,7 @@
   </method>
 
   <method name="GET" id="getIndex">
-    <wadl:doc xml:lang="EN" title="List Management Index of Instances" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List management index of instances" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists all of the database instances, optionally filtered by deleted status.
       </para>
@@ -216,7 +216,7 @@
         </param>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Instances request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-index-request.json"/>
         </doc>
       </representation>
@@ -224,7 +224,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:ManagementIndexInstances">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Instances response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-index-response.json"/>
           <para xmlns="http://docbook.org/ns/docbook">By default, all instances (both deleted and not deleted) are displayed. 
             Use the <code>deleted</code> query parameter to list only the deleted or not deleted instances.</para>
@@ -236,7 +236,7 @@
   </method>
 
   <method name="GET" id="showinstances">
-    <wadl:doc xml:lang="EN" title="List Database Instance Status and Details" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List database instance status and details" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Returns detailed information for the specified Database Instance.
       </para>
@@ -247,7 +247,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-instance-details-request.json"/>
         </doc>
       </representation>
@@ -255,7 +255,7 @@
     <response status="200">
       <representation mediaType="application/json" element="ManagementInstances">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-instance-details-response.json"/>
         </doc>
       </representation>
@@ -266,7 +266,7 @@
 
     <!-- Instance Actions -->
   <method name="POST" id="rebootInstance">
-    <wadl:doc xml:lang="EN" title="Reboot the Instance"  xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Reboot the instance"  xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">Performs a reboot of the instance.</para>
       <para>This operation will reboot the underlying OS along with the mysql instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
@@ -274,7 +274,7 @@
     <request>
       <representation mediaType="application/json" element="dbaas:Reboot">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reboot Instance request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reboot instance request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-request.json"/>
         </doc>
       </representation>
@@ -282,7 +282,7 @@
     <response status="202">
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reboot Instance response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reboot instance response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-instance-reboot-response.json"/>
         </doc>
       </representation>
@@ -294,7 +294,7 @@
   
   <!-- Instance Actions -->
   <method name="POST" id="resetInstanceTaskStatus">
-    <wadl:doc xml:lang="EN" title="Reset Instance Task Status"  xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Reset instance task status"  xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">Resets the instance's task status to NONE.</para>
       <para>This operation resets the instance's task status to NONE.</para>
       <para>This operation returns a 202 Accepted response.</para>
@@ -302,7 +302,7 @@
     <request>
       <representation mediaType="application/json" element="dbaas:reset-task-status">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reset Instance Task Status request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reset instance task status request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-reset-instance-task-status-request.json"/>
         </doc>
       </representation>
@@ -310,7 +310,7 @@
     <response status="202">
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reset Instance Task Status response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Reset instance task status response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-reset-instance-task-status-response.json"/>
         </doc>
       </representation>
@@ -322,32 +322,32 @@
   
   <!-- Instance Actions -->
   <method name="POST" id="migrateInstance">
-    <wadl:doc xml:lang="EN" title="Migrate Instance"  xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Migrate instance"  xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">Migrates the instance to a different host.</para>
       <para>This operation migrates the instance to a different host. The migration can be forced to a specified host using the optional host parameter.
         If there is not enough space on the host to migrate to the new host then the migrate will fail and you will still see the instance on the 
-        original host. You can verify this by calling the Management API List Database Instance Status and Details call and inspecting the server information.</para>
+        original host. You can verify this by calling the Management API List database instance status and details call and inspecting the server information.</para>
       <para>This operation returns a 202 Accepted response.</para>
     </wadl:doc>
     <request>
       <representation mediaType="application/json" element="dbaas:migrate">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Migrate Instance request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Migrate instance request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-request.json"/>
         </doc>
       </representation>
       
       <representation mediaType="application/json" element="dbaas:migrate">
-        <doc title="Migrate Instance Forced Host Request: JSON">
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Migrate Instance request with the host parameter specified to force migration to a specific host:</para>
+        <doc title="Migrate instance forced host request: JSON">
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Migrate instance request with the host parameter specified to force migration to a specific host:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-force-request.json"/>
         </doc>
       </representation>
     </request>
     <response status="202">
       <representation mediaType="application/json">
-        <doc title="Migrate Instance Forced Host Response: JSON">
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Migrate Instance response for the host parameter specified to force migration to a specific host:</para>
+        <doc title="Migrate instance forced host response: JSON">
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Migrate instance response for the host parameter specified to force migration to a specific host:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-migrate-instance-force-response.json"/>
         </doc>
       </representation>
@@ -359,7 +359,7 @@
   
 
   <method name="POST" id="updateHostInstances">
-    <wadl:doc xml:lang="EN" title="Update All Instances on Host"  xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Update all instances on host"  xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">Updates all instances on a specified host.</para>
       <para>This operation will call on all guest agents in a specified host to install new versions of itself.</para>
       <para>This operation returns a 202 Accepted response.</para>
@@ -367,7 +367,7 @@
     <request>
       <representation mediaType="application/json" element="dbaas:Update">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update all Instances on Host request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update all instances on host request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-host-update-request.json"/>
         </doc>
       </representation>
@@ -375,7 +375,7 @@
     <response status="202">
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update all Instances on Host response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update all instances on host response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-host-update-response.json"/>
         </doc>
       </representation>
@@ -386,7 +386,7 @@
   </method>
 
   <method name="GET" id="indexstorage">
-    <wadl:doc xml:lang="EN" title="List Storage Device Details" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List storage device details" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Returns detailed information for the storage device.
       </para>
@@ -397,7 +397,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Storage Device Details request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List storage device details request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-storage-request.json"/>
         </doc>
       </representation>
@@ -405,7 +405,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:Devices">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Storage Device Details response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List storage device details response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-storage-response.json"/>
         </doc>
       </representation>
@@ -415,34 +415,24 @@
   </method>
   
   <method name="GET" id="getaccountbyid">
-    <wadl:doc xml:lang="EN" title="List Account Details" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List account details" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
-        Returns detailed information for the specified account.
+        Returns information for the specified account.
       </para>
-      <remark>Reviewer: This section needs examples.</remark>
       <para>This operation returns: </para>
       <itemizedlist spacing="compact">
         <listitem>
-          <para>account name</para>
+          <para>account id</para>
         </listitem>
         <listitem>
-          <para>id</para>
-        </listitem>
-        <listitem>
-          <para>list of hosts that have the id</para>
-        </listitem>
-        <listitem>
-          <para>instance name</para>
-        </listitem>
-        <listitem>
-          <para>status of each instance on the hosts</para>
+          <para>instance ids</para>
         </listitem>
       </itemizedlist>
     </wadl:doc>
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Account Details request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List account details request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-account-details-request.json"/>
         </doc>
       </representation>
@@ -450,7 +440,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:Account">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Account Details response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List account details response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-account-details-response.json"/>
         </doc>
       </representation>
@@ -460,7 +450,7 @@
   </method>
   
   <method name="GET" id="getrootdetails">
-    <wadl:doc xml:lang="EN" title="Get Root Details" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Get root details" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Gets the root flag details for the specified instance.
       </para>
@@ -470,7 +460,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Root Details request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get root details request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-root-details-request.json"/>
         </doc>
       </representation>
@@ -478,7 +468,7 @@
       <response status="200">
           <representation mediaType="application/json" element="dbaas:RootDetails">
             <doc>
-              <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Root Details response:</para>
+              <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get root details response:</para>
               <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-root-details-response.json"/>
             </doc>
           </representation>
@@ -488,13 +478,13 @@
   </method>
 
   <method name="GET" id="getdiagnosticdetails">
-      <wadl:doc xml:lang="EN" title="Get Diagnostics Info" xmlns="http://docbook.org/ns/docbook">
+      <wadl:doc xml:lang="EN" title="Get diagnostics info" xmlns="http://docbook.org/ns/docbook">
           <para role="shortdesc">
               Gets the instance agent and other instance diagnostics info.
           </para>
           <para>This operation provides the following info for the guest agent managing the specified instance.</para>
           <table rules="all">
-              <caption>Return Attributes for Get Diagnostics Info</caption>
+              <caption>Return attributes for Get diagnostics info</caption>
               <thead>
                   <tr>
                       <td colspan="1">Name</td>
@@ -536,7 +526,7 @@
       <request>
           <representation mediaType="application/json">
               <doc>
-                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Diagnostics Info request:</para>
+                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get diagnostics info request:</para>
                   <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-diagnostics-request.json"/>
               </doc>
           </representation>
@@ -544,7 +534,7 @@
       <response status="200">
         <representation mediaType="application/json" element="dbaas:DiagnosticsDetails">
               <doc>
-                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Diagnostics Info response:</para>
+                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get diagnostics info response:</para>
                   <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-diagnostics-response.json"/>
               </doc>
           </representation>
@@ -554,13 +544,13 @@
   </method>
 
   <method name="GET" id="getHwInfo">
-      <wadl:doc xml:lang="EN" title="Get Hardware Info" xmlns="http://docbook.org/ns/docbook">
+      <wadl:doc xml:lang="EN" title="Get hardware info" xmlns="http://docbook.org/ns/docbook">
           <para role="shortdesc">
               Gets the instance hardware info from the guest agent.
           </para>
           <para>This operation provides the following info from the guest agent managing the specified instance.</para>
           <table rules="all">
-              <caption>Return Attributes for Get Hardware Info</caption>
+              <caption>Return attributes for Get hardware info</caption>
               <thead>
                   <tr>
                       <td colspan="1">Name</td>
@@ -582,7 +572,7 @@
       <request>
           <representation mediaType="application/json">
               <doc>
-                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Hardware Info request:</para>
+                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get hardware info request:</para>
                   <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-request.json"/>
               </doc>
           </representation>
@@ -590,7 +580,7 @@
       <response status="200">
         <representation mediaType="application/json" element="dbaas:DiagnosticsDetails">
               <doc>
-                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Hardware Info response:</para>
+                <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get hardware info response:</para>
                   <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-hwinfo-response.json"/>
               </doc>
           </representation>
@@ -600,7 +590,7 @@
   </method>
   
   <method name="GET" id="getusageall">
-    <wadl:doc xml:lang="EN" title="List All Usage Records" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List all usage records" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists all of the usage records.
       </para>
@@ -629,7 +619,7 @@
       </param>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Usage Records request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all usage records request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-request.json"/>
         </doc>
       </representation>
@@ -637,7 +627,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:Usage">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Usage Records response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all usage records response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-all-response.json"/>
         </doc>
       </representation>
@@ -647,7 +637,7 @@
   </method>
   
   <method name="GET" id="getusagebyinstance">
-    <wadl:doc xml:lang="EN" title="List Instance Usage Records" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List instance usage records" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists the usage records for the specified instance.
       </para>
@@ -672,7 +662,7 @@
       </param>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the the List Instance Usage Records request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the the List instance usage records request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-instance-request.json"/>
         </doc>
       </representation>
@@ -680,7 +670,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:Usage">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instance Usage Records response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List instance usage records response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-instance-response.json"/>
         </doc>
       </representation>
@@ -691,7 +681,7 @@
   
   
   <method name="GET" id="getusagebytenant">
-    <wadl:doc xml:lang="EN" title="List Account Usage Records" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="List account usage records" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Lists the usage records for the specified account.
       </para>
@@ -716,7 +706,7 @@
       </param>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Account Usage Records request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List account usage records request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-account-request.json"/>
         </doc>
       </representation>
@@ -724,7 +714,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:Usage">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Account Usage Records response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List account usage records response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-usage-account-response.json"/>
         </doc>
       </representation>
@@ -734,14 +724,14 @@
   </method>
   
   <method name="GET" id="getMonitoringStatus">
-    <wadl:doc xml:lang="EN" title="Get Monitoring Status" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Get monitoring status" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
         Retrieves the status of the Monitoring Agent on the specified instance.
       </para>
       <para>This operation retrieves the status of the Monitoring Agent on the customer's instance.</para>
       <para>The following table lists the possible monitoring statuses:</para>
       <table rules="all">
-        <caption>Monitoring Statuses</caption>
+        <caption>Monitoring statuses</caption>
         <thead>
           <tr>
             <td colspan="1">Status String</td>
@@ -791,7 +781,7 @@
     <request>
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Monitoring Status request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get monitoring status request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-status-request.json"/>
         </doc>
       </representation>
@@ -799,7 +789,7 @@
     <response status="200">
       <representation mediaType="application/json" element="dbaas:DiagnosticsDetails">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Monitoring Status response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get monitoring status response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-status-response.json"/>
         </doc>
       </representation>
@@ -810,7 +800,7 @@
   
   <!-- Monitoring Agent Actions -->
   <method name="POST" id="agentInstall">
-    <wadl:doc xml:lang="EN" title="Install or Update Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Install or update Monitoring Agent"  xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">Installs or updates the Monitoring Agent on the specified instance.</para>
       <para>This operation installs or updates the Monitoring Agent on the specified instance.</para>
       <para>This operation returns a 202 Accepted response.</para>
@@ -818,7 +808,7 @@
     <request>
       <representation mediaType="application/json" element="dbaas:Install">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Install or Update Monitoring Agent request:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Install or update Monitoring Agent request:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-install-request.json"/>
         </doc>
       </representation>
@@ -826,7 +816,7 @@
     <response status="202">
       <representation mediaType="application/json">
         <doc>
-          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Install or Update Monitoring Agent response:</para>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Install or update Monitoring Agent response:</para>
           <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-instance-monitoring-install-response.json"/>
         </doc>
       </representation>

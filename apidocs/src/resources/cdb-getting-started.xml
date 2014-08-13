@@ -49,13 +49,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-08-04</pubdate>
+        <pubdate>2014-08-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-08-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated link to <link
+                                   xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
+                                   >Product Feedback
+                                Forum</link>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-08-04</date>
                 <revdescription>
@@ -526,7 +539,7 @@
                     xlink:href="http://www.rackspace.com/knowledge_center/article/getting-started-with-rackspace-monitoring-cli"
                     >http://www.rackspace.com/knowledge_center/article/getting-started-with-rackspace-monitoring-cli</link>. </para>
             <para>Please visit our <link
-                xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+                xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
                 >Product Feedback Forum</link> and let us know what
                 you think about Cloud Databases!</para>
         </section>

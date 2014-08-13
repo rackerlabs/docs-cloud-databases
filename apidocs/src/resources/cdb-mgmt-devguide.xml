@@ -60,7 +60,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-07-21</pubdate>
+        <pubdate>2014-08-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,6 +75,27 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-08-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated response example for List
+                                account details API operation. Note
+                                that this operation now returns no
+                                additional information besides the
+                                account ID and its instance
+                                IDs.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated link to <link
+                                   xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
+                                   >Product Feedback
+                                Forum</link>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-07-21</date>
                 <revdescription>
@@ -310,7 +331,7 @@
             bug reports can be directed to your support team via
             ticket, chat, email, or phone.</remark>
         <section xml:id="Intended_Audience-d1e122">
-            <title>Intended Audience</title>
+            <title>Intended audience</title>
             <para>Two APIs provide access to Rackspace Cloud
                 Databases: </para>
             <itemizedlist spacing="compact">
@@ -354,14 +375,14 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="Document_Change_History-d1e166">
-            <title>Document Change History</title>
+            <title>Document change history</title>
             <para>This version of the Developer Guide replaces and
                 obsoletes all previous versions. The most recent
                 changes are described in the table below:</para>
             <?rax revhistory?>
         </section>
         <section xml:id="Additional_Resources-d1e532">
-            <title>Additional Resources</title>
+            <title>Additional resources</title>
             <para>Descriptive information about Cloud Databases is
                 also published in its Web Application Description
                 Language (WADL) and XML Schema Definition (XSD). You
@@ -393,7 +414,7 @@
                 support channels, including knowledge center articles,
                 forums, phone, chat, and email. </para>
             <para>Please visit our <link
-                    xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+                    xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
                     >Product Feedback Forum</link> to find out what
                 customers think about Cloud Databases.</para>
             <para>You can also follow Rackspace updates and
@@ -415,7 +436,7 @@
         <remark>Reviewer: Daniel  Morris is asking Daniel Salinas to
             do an initial write-up of this chapter.</remark>
         <section xml:id="DatabaseInstance-d1e588">
-            <title>Database Instance</title>
+            <title>Database instance</title>
             <para>A database instance is an isolated database
                 environment with compute and storage resources in a
                 single tenant environment on a shared physical host
@@ -461,7 +482,7 @@
         </section>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
-        <title>General API Information</title>
+        <title>General API information</title>
         <para> The Cloud Databases Management API is implemented using
             a ReSTful web service interface. Most functions of the
             customer-facing Cloud Databases API may be accessed on
@@ -485,7 +506,7 @@
             </note>
         </section>
         <section xml:id="Service_Access_Endpoints-d1e753">
-            <title>Service Access</title>
+            <title>Service access</title>
             <para>The Database Service is a regionalized service. The
                 user of the service is therefore responsible for
                 appropriate replication, caching, and overall
@@ -507,7 +528,7 @@
                 that the account number is 322781.</para>
         </section>
         <section xml:id="Request_Response_Types-d1e503">
-            <title>Request/Response Types</title>
+            <title>Request/Response types</title>
             <para> The Cloud Databases API supports the JSON data
                 serialization format. The request format is specified
                 using the <code>Content-Type</code> header and is
@@ -518,7 +539,7 @@
                 the request URI. If no response format is specified,
                 JSON is the default.</para>
             <table rules="all">
-                <caption>Response Format</caption>
+                <caption>Response format</caption>
                 <?dbfo keep-together="always"?>
                 <thead>
                     <tr align="center">
@@ -700,7 +721,7 @@
                 of time passes. Absolute limits are fixed.
             </para>
             <section xml:id="Rate_Limits-d1e1222">
-                <title>Rate Limits</title>
+                <title>Rate limits</title>
                 <para> Rate limits are specified in terms of both a
                     human-readable wild-card URI and a
                     machine-processable regular expression. The
@@ -715,7 +736,7 @@
                     &POST;, &PUT;, and &DELETE; calls for databases
                     and database instances: </para>
                 <table rules="all">
-                    <caption>Default Rate Limits</caption>
+                    <caption>Default rate limits</caption>
                     <thead>
                         <tr align="center">
                             <td colspan="1">Verb</td>
@@ -770,13 +791,13 @@
                     again. </para>
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
-                <title>Absolute Limits</title>
+                <title>Absolute limits</title>
                 <remark>Reviewer: Need to update this entire section.
                     Please give me your updates.</remark>
                 <para>Refer to the following table for the absolute
                     limits that are set.</para>
                 <table rules="all">
-                    <caption>Absolute Limits</caption>
+                    <caption>Absolute limits</caption>
                     <thead>
                         <tr>
                             <td colspan="1">Name</td>
@@ -803,7 +824,7 @@
             </section>
         </section>
         <section xml:id="datetimeformat">
-            <title>Date/Time Format</title>
+            <title>Date/Time format</title>
             <para> The Database Service uses an ISO-8601 compliant
                 date format for the display and consumption of
                 date/time values. </para>
@@ -821,7 +842,8 @@
                     <programlisting>2011-05-19T08:07:08-05:00</programlisting>
                 </example>
             <table rules="all">
-                <caption>Explanation of Date/Time Format Codes</caption>
+                <caption>Explanation of date/time format
+                    codes</caption>
                 <thead>
                     <tr>
                         <td>Code</td>
@@ -1162,7 +1184,7 @@
                 shows errors when the server has erred or cannot
                 perform the requested operation:</para>
             <example>
-                <title>Example instanceFault Response: JSON</title>
+                <title>Example instanceFault response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
 <xi:include href="samples/db-faults-instanceFault.json" parse="text"/>
@@ -1181,7 +1203,7 @@
                     <code>badRequest</code> example shows errors when
                 the volume size is invalid:</para>
             <example>
-                <title>Example badRequest Fault on Volume Size Errors:
+                <title>Example badRequest fault on volume size errors:
                     JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
@@ -1191,7 +1213,7 @@
             <para> The next example shows an <code>itemNotFound</code>
                 error:</para>
             <example>
-                <title>Example itemNotFound Fault: JSON</title>
+                <title>Example itemNotFound fault: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
 <xi:include href="samples/db-faults-itemNotFound.json" parse="text"/>
@@ -1199,7 +1221,7 @@
             </example>
         </section>
         <section xml:id="database_instance_status">
-            <title>Database Instance Status</title>
+            <title>Database instance status</title>
             <para><?rax-fo keep-with-next?>When making an API call to create, list, or delete
                 database instance(s), the following database instance
                 status values are possible:</para>
@@ -1257,10 +1279,10 @@
     <chapter xml:id="API_Operations-d1e2264" 
         xmlns="http://docbook.org/ns/docbook"
         role="api-reference">
-        <title>API Operations</title>
+        <title>API operations</title>
         
         <section xml:id="Database_Instance_Management">
-            <title>Database Instance Management</title>
+            <title>Database instance management</title>
             <para>This section describes the operations that are supported for managing database instances.</para>        
             <wadl:resources 
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -1285,7 +1307,7 @@
         </section>
 
         <section xml:id="Host_Information">
-            <title>Host Information</title>
+            <title>Host information</title>
             <para>This section describes the operations that are supported for getting host information.</para>
             <wadl:resources
                     xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -1302,7 +1324,7 @@
         </section>
 
         <section xml:id="Management_Instances_Actions">
-            <title>Management Instance Actions</title>
+            <title>Management instance actions</title>
             <para>This section describes the actions that are supported for database instances.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/management.wadl#instanceAction" >
@@ -1316,7 +1338,7 @@
         <?hard-pagebreak?>
 
         <section xml:id="Storage_Management">
-            <title>Storage Management</title>
+            <title>Storage management</title>
             <para>This section describes the operations that are supported for getting information about storage devices.</para>
             <wadl:resources 
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -1327,7 +1349,7 @@
         </section>   
         
         <section xml:id="Account_Information">
-            <title>Account Information</title>
+            <title>Account information</title>
             <para>This section describes the operations that are
                 supported for accounts.</para>
             <wadl:resources
@@ -1342,7 +1364,7 @@
             </wadl:resources>
         </section>
         <section xml:id="Usage_Information">
-            <title>Usage Information</title>
+            <title>Usage information</title>
             <para>This section describes the operations that are
                 supported for usage.</para>
             <wadl:resources
@@ -1362,7 +1384,7 @@
             </wadl:resources>
         </section>
         <section xml:id="Monitoring">
-            <title>Monitoring Information</title>
+            <title>Monitoring information</title>
             <para>This section describes the operations that are
                 supported for monitoring.</para>
             <wadl:resources
@@ -1373,7 +1395,7 @@
                 </wadl:resource>            
             </wadl:resources>
             <section xml:id="Monitoring_Actions">
-                <title>Monitoring Actions</title>
+                <title>Monitoring actions</title>
                 <para>This section describes the actions that are
                     supported for monitoring.</para>
                 <para>Additional information about monitoring can be

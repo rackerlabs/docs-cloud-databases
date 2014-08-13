@@ -62,7 +62,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2014-07-18</pubdate>
+	<pubdate>2014-08-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,6 +75,17 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2014-08-13</date>
+				<revdescription>
+					<para>Updated for v2.0.1. Updated link to <link
+							xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
+							xmlns:svg="http://www.w3.org/2000/svg"
+							xmlns:m="http://www.w3.org/1998/Math/MathML"
+							xmlns:html="http://www.w3.org/1999/xhtml"
+							>Product Feedback Forum</link>.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2014-07-18</date>
 				<revdescription>
@@ -477,7 +488,65 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.0.1" security="internal">
+		<title>v2.0.1, August 13, 2014</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/CDBPLTFM-403"
+						>CDBPLTFM-403: </link> List account details
+					Management API call now only returns instance ids
+					for instance info.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/CDBPLTFM-382"
+						>CDBPLTFM-382: </link> Volume support per
+					datastore.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para> Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Support for Cloud Databases is available for
+					US, UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para> Please visit our <link
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -527,7 +596,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -577,7 +646,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -652,7 +721,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -705,7 +774,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -774,7 +843,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -888,7 +957,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -956,7 +1025,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1013,7 +1082,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1063,7 +1132,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1129,7 +1198,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1192,7 +1261,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1253,7 +1322,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1374,7 +1443,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1474,7 +1543,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1602,7 +1671,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1667,7 +1736,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1774,7 +1843,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1902,7 +1971,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -1985,7 +2054,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2050,7 +2119,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2121,7 +2190,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2169,7 +2238,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2244,7 +2313,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2303,7 +2372,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2384,7 +2453,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2447,7 +2516,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2504,7 +2573,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2583,7 +2652,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2688,7 +2757,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2754,7 +2823,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2806,7 +2875,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2886,7 +2955,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -2967,7 +3036,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3027,7 +3096,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3119,7 +3188,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3204,7 +3273,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3286,7 +3355,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3354,7 +3423,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3418,7 +3487,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3482,7 +3551,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3594,7 +3663,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3743,7 +3812,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3797,7 +3866,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>
@@ -3954,7 +4023,7 @@
 			</listitem>
 			<listitem>
 				<para> Please visit our <link
-						xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+						xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
 			</listitem>

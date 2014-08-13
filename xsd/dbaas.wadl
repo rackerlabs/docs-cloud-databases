@@ -182,7 +182,7 @@
     <!--Token Methods... -->
     <!-- Version -->
     <method name="GET" id="getVersionInfo">
-        <wadl:doc xml:lang="EN" title="List Version Details" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List version details" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">
                 Returns detailed information about the specified version of the API.
             </para>  
@@ -191,7 +191,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Version Details request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List version details request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-version-request.json"/>
                 </doc>
             </representation>
@@ -199,7 +199,7 @@
         <response status="202">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Version Details response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List version details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-version-response.json"/>
                 </doc>
             </representation>
@@ -209,7 +209,7 @@
     </method>
 
     <method name="GET" id="getVersions">
-        <wadl:doc xml:lang="EN" title="List Versions" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List versions" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">
                 Lists information about all versions of the API.
             </para>
@@ -218,7 +218,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Versions request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List versions request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-versions-request.json"/>
                 </doc>
             </representation>
@@ -226,7 +226,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Versions response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List versions response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-versions-response.json"/>
                 </doc>
             </representation>
@@ -237,7 +237,7 @@
 
     <!-- Instance -->
     <method name="POST" id="createInstance">
-    <wadl:doc xml:lang="EN" title="Create Database Instance"  xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Create database instance"  xmlns="http://docbook.org/ns/docbook">
         <para role="shortdesc">Creates a new <glossterm>database instance</glossterm>.</para>
         <para>This operation asynchronously provisions a new database instance. This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. The service then provisions the instance with the requested flavor and sets up a volume of the specified size, which is the storage for the database instance.</para>
         <note><title>Notes</title><itemizedlist>
@@ -254,9 +254,9 @@
                 <para>When used with the <code>restorePoint</code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</para>
             </listitem>
         </itemizedlist></note>
-        <para>The following table lists the required and optional attributes for Create Instance:</para>
+        <para>The following table lists the required and optional attributes for Create instance:</para>
         <table rules="all">
-            <caption>Required and Optional Attributes for Create Instance</caption>
+            <caption>Required and optional attributes for Create instance</caption>
             <thead>
                 <tr>
                     <td colspan="1">Applies To </td>
@@ -277,7 +277,7 @@
                 </tr>
                 <tr>
                     <td colspan="1">(volume) size</td>
-                    <td colspan="3">Specifies the volume size in gigabytes (GB). The value specified must be between 1 and 150.</td>
+                    <td colspan="3">Specifies the volume size in gigabytes (GB). The value specified must be between 1 and 300.</td>
                     <td colspan="1">Yes</td>
                 </tr>
                 <tr>
@@ -363,27 +363,27 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.json"/>
                 </doc>
             </representation> 
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
-                <doc title="Create Database Instance Restore Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Restore request:</para>
+                <doc title="Create database instance restore request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance restore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
-                <doc title="Create Database Instance Configuration Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Configuration request:</para>
+                <doc title="Create database instance configuration request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-request.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
-                <doc title="Create Database Instance Datastore Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Datastore request:</para>
+                <doc title="Create database instance datastore request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-request.json"/>
                 </doc>
             </representation> 
@@ -392,7 +392,7 @@
         <response status="200">
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">For convenience, notice in the response examples above that resources contain links to themselves. This allows a client to easily obtain
                         resource URIs rather than to construct them. There are two kinds of link relations
@@ -403,16 +403,16 @@
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
-                <doc title="Create Database Instance Restore Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Restore response:</para>
+                <doc title="Create database instance restore response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance restore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
-                <doc title="Create Database Instance Config Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Configuration response:</para>
+                <doc title="Create database instance config response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
                 </doc>
@@ -420,8 +420,8 @@
             
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
-                <doc title="Create Database Instance Datastore Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database Instance Datastore response:</para>
+                <doc title="Create database instance datastore response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-response.json"/>
                 </doc>
             </representation> 
@@ -432,7 +432,7 @@
     </method>
 
     <method name="DELETE" id="deleteInstance">
-        <wadl:doc xml:lang="EN" title="Delete Database Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Delete database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified database instance.</para>
             <para>This operation deletes the specified database instance, including any associated data.</para>
             <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
@@ -441,7 +441,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete database instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-instance-request.json"/>
                 </doc>
             </representation>
@@ -451,7 +451,7 @@
         <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
             <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database Instance response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete database instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-instance-response.json"/>
                 </doc>
             </representation>
@@ -460,7 +460,7 @@
     </method>
 
     <method name="GET" id="getInstance">
-        <wadl:doc xml:lang="EN" title="List All Database Instances"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List all database instances"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the status and information for all database instances.</para>
             <para>This operation lists the status and information for all database instances.</para>
             <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
@@ -468,7 +468,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Database Instances request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all database instances request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-request.json"/>
                 </doc>
             </representation>
@@ -476,7 +476,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Database Instances response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all database instances response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-response.json"/>
                 </doc>
             </representation>
@@ -486,7 +486,7 @@
     </method>
 
     <method name="PUT" id="updateInstance">
-        <wadl:doc xml:lang="EN" title="Update Database Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Update database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Associates a specified database instance with a <glossterm>configuration group</glossterm>.</para>
             <para>This operation associates a specified database instance with a configuration group.</para>
             <para><remark>Reviewer: should the description note that this can be used for attaching or detaching configurations from an instance?</remark></para>
@@ -497,7 +497,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Database Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update database instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-detach-from-instance-request.json"/>
                 </doc>
             </representation>          
@@ -506,7 +506,7 @@
             <representation mediaType="application/json"
                element="dbaas:DatabaseInstance" >
               <doc>
-                  <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Database Instance response:</para>
+                  <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update database instance response:</para>
                   <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-detach-from-instance-response.json"/>
               </doc>
             </representation>
@@ -517,7 +517,7 @@
     </method>
 
     <method name="GET" id="getInstanceById">
-        <wadl:doc xml:lang="EN" title="List Database Instance Status and Details"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List database instance status and details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
             <para>This operation lists the status and details of the specified database instance. <phrase>The operation also lists 
                 the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase></para>
@@ -533,14 +533,14 @@
         <request>
                 <representation mediaType="application/json">
                     <doc>
-                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details request:</para>
+                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details request:</para>
                         <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                     </doc>
                 </representation>
             
                 <representation mediaType="application/json" element="dbaas:DatabaseInstance">
-                   <doc title="List Database Instance Status and Details with Configuration Request: JSON">
-                       <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details with Configuration request:</para>
+                   <doc title="List database instance status and details with configuration request: JSON">
+                       <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details with configuration request:</para>
                        <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                    </doc>
                 </representation>
@@ -550,14 +550,14 @@
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-response.json"/>
                 </doc>
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
-                <doc title="List Database Instance Status and Details with Configuration Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Database Instance Status and Details with Configuration response:</para>
+                <doc title="List database instance status and details with configuration response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details with configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-config-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned since the instance is associated with that configuration.</para>
                 </doc>
@@ -569,7 +569,7 @@
 
     <!-- Instance Actions -->
     <method name="POST" id="restartInstance">
-        <wadl:doc xml:lang="EN" title="Restart Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Restart instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Restarts the database service on the instance.</para>
             <para>The restart operation will restart only the database service on the instance. Restarting the database service will erase any dynamic configuration settings that you have made within the database service.</para>
             <note><para>The database service will be unavailable until the instance restarts.</para></note>
@@ -578,7 +578,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:Restart">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-restart-request.json"/>
                 </doc>
             </representation>
@@ -586,7 +586,7 @@
         <response status="202">
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart Instance response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-restart-response.json"/>
                 </doc>
             </representation>
@@ -597,7 +597,7 @@
     </method>
 
     <method name="POST" id="resizeInstance">
-        <wadl:doc xml:lang="EN" title="Resize the Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Resize the instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Resizes the memory of the instance.</para>
             <para>This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts the database service in the process.</para>
         </wadl:doc>
@@ -605,7 +605,7 @@
             <representation mediaType="application/json"
                             element="dbaas:Resize">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-instance-request.json"/>
                 </doc>
             </representation>
@@ -613,7 +613,7 @@
         <response status="202">
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-instance-response.json"/>
                 </doc>
             </representation>
@@ -624,7 +624,7 @@
     </method>
 
     <method name="POST" id="resizeVolume">
-        <wadl:doc xml:lang="EN" title="Resize the Instance Volume"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Resize the instance volume"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Resizes the <glossterm>volume</glossterm> attached to the Instance.</para>
             <para>This operation supports resizing the attached volume for an instance. It supports only increasing the volume size and does not support decreasing the size.
                 The volume size is in gigabytes (GB) and must be an integer.</para>
@@ -635,7 +635,7 @@
             <representation mediaType="application/json"
                             element="dbaas:Resize">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance Volume request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize instance volume request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-volume-request.json"/>
                 </doc>
             </representation>
@@ -643,7 +643,7 @@
         <response status="202">
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize Instance Volume response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize instance volume response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-resize-volume-response.json"/>
                 </doc>
             </representation>
@@ -655,14 +655,14 @@
 
     <!-- Database -->
     <method name="POST" id="createDatabase">
-        <wadl:doc xml:lang="EN" title="Create Database"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Create database"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new <glossterm>database</glossterm> within the specified instance.</para>
             <para>This operation creates a new database within the specified instance.</para>
             <para>The <code>name</code> of the database is a required attribute.</para>
             <para>The following additional attributes can be specified for each database: <code>collate</code> and <code>character_set</code>.</para>
 
             <table rules="all">
-                <caption>Required and Optional Attributes for Create Database</caption>
+                <caption>Required and optional attributes for Create database</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name </td>
@@ -699,7 +699,7 @@
             <para>Refer to the following tables for information about characters that are valid/invalid for creating database names.</para>
 
             <table rules="all" width="40%">
-                <caption>Valid Characters That Can Be Used in a Database Name</caption>
+                <caption>Valid characters that can be used in a database name</caption>
                 <col width="100%"/>
                 <thead>
                     <tr>
@@ -724,7 +724,7 @@
 
             <table rules="all" width="40%" security="writeronly">
                 <?dbfo keep-together="always"?>
-                <caption>Characters That <emphasis>Cannot</emphasis> Be Used in a Database Name</caption>
+                <caption>Characters that <emphasis>cannot</emphasis> be used in a database name</caption>
                 <col width="100%"/>
                 <thead>
                     <tr>
@@ -757,7 +757,7 @@
             </table>
 
             <table rules="all">
-                <caption>Length Restrictions for Database Name</caption>
+                <caption>Length restrictions for database name</caption>
                 <thead>
                     <tr>
                         <td>Restriction</td>
@@ -776,7 +776,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Database" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database request:<?rax-fo keep-with-next?></para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database request:<?rax-fo keep-with-next?></para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-request.json"/>
                 </doc>
             </representation>
@@ -784,7 +784,7 @@
         <response status="202" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Database response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-response.json"/>
                 </doc>
             </representation> 
@@ -795,7 +795,7 @@
 
 
     <method name="GET" id="getDatabases">
-        <wadl:doc xml:lang="EN" title="List Databases for Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List databases for instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists databases for the specified instance.</para>
             <para>This operation lists the databases for the specified instance.</para>
             <note><para>This operation returns only the user-defined databases, not the system databases. The system databases (mysql, 
@@ -804,14 +804,14 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Databases for Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List databases for instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-request.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json">
-                <doc title="List Databases for Instance Paged Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Databases for Instance request:</para>
+                <doc title="List databases for instance paged request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List databases for instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-request.json"/>
                 </doc>
             </representation>
@@ -820,15 +820,15 @@
             <representation mediaType="application/json"
                 element="dbaas:Databases" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Databases for Instance response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List databases for instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-response.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json"
                 element="dbaas:Databases" >
-                <doc title="List Databases for Instance Paged Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Databases for Instance response:</para>
+                <doc title="List databases for instance paged response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List databases for instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-pagination-response.json"/>
                 </doc>
             </representation>
@@ -838,14 +838,14 @@
     </method>
 
     <method name="DELETE" id="deleteDatabase">
-        <wadl:doc xml:lang="EN" title="Delete Database"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Delete database"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified database.</para>
             <para>This operation deletes the requested database within the specified database instance. Note that all data associated with the database is also deleted.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete database request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-databases-request.json"/>
                 </doc>
             </representation>
@@ -853,7 +853,7 @@
         <response status="202" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Database response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete database response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-databases-response.json"/>
                 </doc>
             </representation>
@@ -864,7 +864,7 @@
 
     <!-- User -->
     <method name="POST" id="createUser">
-        <wadl:doc xml:lang="EN" title="Create User"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Create user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a user for the specified database instance.</para>
             <para>This operation asynchronously provisions a new user for the specified database instance based on the configuration defined in the request object. Once the request is validated and progress has started on the provisioning process, a 202 Accepted response object is returned.</para>
             <remark>Writer: please add the following note back into the doc once the List User Details call is added back into the API: Using the identifier, the caller can check on the progress of the operation by performing a GET on users/name (for more details on this operation see the "List User Details" section of this document).</remark>
@@ -873,7 +873,7 @@
             <para>The following table lists the required and optional attributes for Create User. Refer to the request examples for the required json format:</para>
             
             <table rules="all" width="500">
-                <caption>Required and Optional Attributes for Create User</caption>
+                <caption>Required and optional attributes for Create user</caption>
                 
                 <thead>
                     <tr>
@@ -923,7 +923,7 @@
             <para>Refer to the following tables for information about characters that are valid/invalid for creating database names, user names, and passwords.</para>
 
             <table rules="all" width="40%">
-                <caption>Valid Characters That Can Be Used in a Database Name, User Name, and Password</caption>
+                <caption>Valid characters that can be used in a database name, user name, and password</caption>
                 <col width="100%"/>
                 <thead>
                     <tr>
@@ -954,7 +954,7 @@
             </table>
 
             <table rules="all" width="40%" security="writeronly">
-                <caption>Characters That <emphasis>Cannot</emphasis> Be Used in a Database Name, User Name, and Password</caption>
+                <caption>Characters that <emphasis>cannot</emphasis> be used in a database name, user name, and password</caption>
                 <col width="100%"/>
                 <thead>
                     <tr>
@@ -990,7 +990,7 @@
             </table>
 
             <table rules="all">
-                <caption>Length Restrictions for Database Name, User Name, and Password</caption>
+                <caption>Length restrictions for database name, user name, and password</caption>
                 <thead>
                     <tr>
                         <td>Restriction</td>
@@ -1016,7 +1016,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:Users">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create User request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create user request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-users-request.json"/>
                 </doc>
             </representation>
@@ -1024,7 +1024,7 @@
         <response status="202" >
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create User response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create user response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-users-response.json"/>
                 </doc>
             </representation>
@@ -1035,7 +1035,7 @@
 
 
     <method name="GET" id="getUsers">
-        <wadl:doc xml:lang="EN" title="List Users in Database Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List users in database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the users in the specified database instance.</para>
             <para>This operation lists the users in the specified database instance, along with the associated databases for that user. </para>
             <note><para>This operation does not return the system users (database administrators that administer the health of the database). 
@@ -1059,14 +1059,14 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Users in Database Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List users in database instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-request.json"/>
                 </doc>
             </representation>
          
             <representation mediaType="application/json">
-                <doc title="List Users in Database Instance Paged Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Users in Database Instance requests to return a limit of two users at a time (<code>users?limit=2</code>):</para>
+                <doc title="List users in database instance paged request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List users in database instance requests to return a limit of two users at a time (<code>users?limit=2</code>):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-request.json"/>
                 </doc>
             </representation>
@@ -1074,8 +1074,8 @@
         <response status="200">
             <representation mediaType="application/json"
                 element="dbaas:Users" >
-                <doc title="List Users in Database Instance Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Users in Database Instance response:</para>
+                <doc title="List users in database instance response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List users in database instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for a description of the <code>host</code> field.</para>
                 </doc>
@@ -1083,8 +1083,8 @@
             
             <representation mediaType="application/json"
                 element="dbaas:Users" >
-                <doc title="List Users in Database Instance Paged Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List Users in Database Instance response.</para>
+                <doc title="List users in database instance paged response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List users in database instance response.</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Note that the response contains the link (<code>href</code>) to the next set of users in the list (<code>users?marker=dbuser2%4010.0.0.1&amp;limit=2</code>), so using that link for the request will return the next two users in the list after <code>dbuser2%4010.0.0.1</code>.</para>
                 </doc>   
@@ -1096,7 +1096,7 @@
     </method>
 
     <method name="PUT" id="changePass">
-        <wadl:doc xml:lang="EN" title="Change User(s) Password"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Change user(s) password"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Changes the database password of one or more users.</para>
             <para>This operation changes the database password of one or more users. </para>
             <note><para>For information about choosing a valid password, please refer to 
@@ -1105,7 +1105,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:Users">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Change User(s) Password request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Change user(s) password request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-request.json"/>
                 </doc>
             </representation>
@@ -1114,7 +1114,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Change User(s) Password response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Change user(s) password response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-users-password-response.json"/>
                 </doc>
             </representation>
@@ -1125,7 +1125,7 @@
 
 
     <method name="DELETE" id="deleteUser">
-        <wadl:doc xml:lang="EN" title="Delete User"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Delete user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the user identified by {name} for the specified database instance.</para>
             <para>This operation deletes the specified user for the specified database instance.</para>
             
@@ -1133,7 +1133,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete User request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete user request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-users-request.json"/>
                 </doc>
             </representation>
@@ -1141,7 +1141,7 @@
         <response status="202" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete User response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete user response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-users-response.json"/>
                 </doc>
             </representation>
@@ -1151,21 +1151,21 @@
     </method>
     
     <method name="GET" id="listUser">
-        <wadl:doc xml:lang="EN" title="List User"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the specified user's name and a list of databases that the user can access.</para>
             <para>This operation lists the specified user's name and a list of databases that the user can access.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-request.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json">
-                <doc title="List User Access for Restricted Host Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example showd the List User for Restricted Host request.</para>
+                <doc title="List user access for restricted host request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user for restricted host request.</para>
                     <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-request.json"/>
@@ -1176,14 +1176,14 @@
         <response status="200" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User responses:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user responses:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-response.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json">
-                <doc title="List User Access for Restricted Host Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User for Restricted Host response.</para>
+                <doc title="List user access for restricted host response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user for restricted host response.</para>
                     <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-response.json"/>
@@ -1196,7 +1196,7 @@
     </method>
     
     <method name="GET" id="getUserAccess">
-        <wadl:doc xml:lang="EN" title="List User Access"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Shows a list of all databases a user has access to.</para>
             <para>This operation shows a list of all databases a user has access to.</para>
             
@@ -1204,14 +1204,14 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-request.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json">
-                <doc title="List User Access for Restricted Host Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access for Restricted Host request.</para>
+                <doc title="List user access for restricted host request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access for restricted host request.</para>
                     <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
                         
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
@@ -1224,14 +1224,14 @@
         <response status="200" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-response.json"/>
                 </doc>
             </representation>
             
             <representation mediaType="application/json">
-                <doc title="List User Access for Restricted Host Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List User Access for Restricted Host response.</para>
+                <doc title="List user access for restricted host response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access for restricted host response.</para>
                     <para xmlns="http://docbook.org/ns/docbook">This example shows the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
                         
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
@@ -1247,7 +1247,7 @@
     </method>
     
     <method name="PUT" id="grantUserAccess">
-        <wadl:doc xml:lang="EN" title="Grant User Access"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Grant user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Grants access for the specified user to one or more databases for the specified instance.</para>
             <para>This operation grants access for the specified user to one or more databases for the specified instance. 
                 The user is granted ALL privileges on the database. Refer to the information at the beginning of <xref linkend="user_management"/> 
@@ -1257,7 +1257,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:Database">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant User Access request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant user access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-request.json"/>
                 </doc>
             </representation>
@@ -1265,7 +1265,7 @@
         <response status="202" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant User Access response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant user access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-grant-user-access-response.json"/>
                 </doc>
             </representation>
@@ -1275,7 +1275,7 @@
     </method>
     
     <method name="DELETE" id="revokeUserAccess">
-        <wadl:doc xml:lang="EN" title="Revoke User Access"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Revoke user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Removes access to the specified database for the specified user.</para>
             <para>This operation removes access to the specified database for the specified user.</para>
             
@@ -1283,7 +1283,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke User Access request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke user access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-request.json"/>
                 </doc>
             </representation>
@@ -1291,7 +1291,7 @@
         <response status="202" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke User Access response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke user access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-revoke-user-access-response.json"/>
                 </doc>
             </representation>
@@ -1302,14 +1302,14 @@
     
     <!-- Get Default Config -->
     <method name="GET" id="getDefaultConfig">
-        <wadl:doc xml:lang="EN" title="Get Default Configuration"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Get default configuration"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the default configuration settings from the template that were applied to the specified instance.</para>
             <para>This operation lists the default configuration settings from the template that were applied to the specified instance.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Default Configuration request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get default configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-instance-default-config-request.json"/>
                 </doc>
             </representation>
@@ -1319,7 +1319,7 @@
             <representation mediaType="application/json"
                 element="dbaas:DefaultConfig">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get Default Configuration response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Get default configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-instance-default-config-response.json"/>
                 </doc>
             </representation>
@@ -1330,7 +1330,7 @@
 
     <!-- Root -->
     <method name="POST" id="createRoot">
-        <wadl:doc xml:lang="EN" title="Enable Root User"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Enable root user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Enables the root user for the specified database instance and returns the root password.</para>
             <para>This operation enables login from any host for the root user and provides the user with a generated root password.</para>
             <note><para>Changes you make as a root user may cause detrimental effects to the database instance and unpredictable behavior for API operations. 
@@ -1342,7 +1342,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Enable Root User request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Enable root user request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-enable-root-user-request.json"/>
                 </doc>
             </representation>
@@ -1352,7 +1352,7 @@
             <representation mediaType="application/json"
                 element="dbaas:User">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Enable Root User response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Enable root user response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-enable-root-user-response.json"/>
                 </doc>
             </representation>
@@ -1362,14 +1362,14 @@
     </method>
 
     <method name="GET" id="isRootEnabled">
-        <wadl:doc xml:lang="EN" title="List Root-Enabled Status"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List root-enabled status"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Returns true if root user is enabled for the specified database instance or false otherwise.</para>
             <para>This operation checks an active specified database instance to see if root access is enabled. It returns True if root user is enabled for the specified database instance or False otherwise.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Check Root User Access request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Check root user access request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-check-root-user-request.json"/>
                 </doc>
             </representation>
@@ -1378,7 +1378,7 @@
             <representation mediaType="application/json"
                 element="dbaas:RootEnabled" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example show the Check Root User Access response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example show the Check root user access response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-check-root-user-response.json"/>
                 </doc>
             </representation>
@@ -1389,7 +1389,7 @@
 
     <!-- Flavor -->
     <method name="GET" id="getFlavors">
-        <wadl:doc xml:lang="EN" title="List Flavors" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List flavors" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists information for all available <glossterm baseform="flavor">flavors</glossterm>.</para>
             <para>This operation lists information for all available flavors.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
@@ -1399,7 +1399,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavors request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List flavors request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-request.json"/>
                 </doc>
             </representation>
@@ -1409,7 +1409,7 @@
                 element="dbaas:Flavors" >
                 <doc>
                     <?hard-pagebreak?>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavors response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List flavors response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.json"/>
                 </doc>
             </representation>
@@ -1421,7 +1421,7 @@
     
 
     <method name="GET" id="getFlavorById">
-        <wadl:doc xml:lang="EN" title="List Flavor By ID" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List flavor by ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all flavor information about the specified flavor ID.</para>
             <para>This operation lists all information for the specified flavor ID with details of the RAM.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
@@ -1432,7 +1432,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavor By ID request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List flavor by ID request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-id-request.json"/>
                 </doc>
             </representation>
@@ -1441,7 +1441,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Flavor" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Flavor By ID response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List flavor by ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-id-response.json"/>
                 </doc>
             </representation>
@@ -1451,14 +1451,14 @@
     </method>
     
     <method name="POST" id="createBackup">
-        <wadl:doc xml:lang="EN" title="Create Backup" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Create backup" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new <glossterm>backup</glossterm> for a database instance.</para>
             <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified database instance. 
                 This call requires the user to specify an instance ID to backup and a name for the backup. </para>
             <para>The following table lists the required and optional attributes for Create Backup:</para>
             
            <table rules="all">
-               <caption>Required and Optional Attributes for Create Backup</caption>
+               <caption>Required and optional attributes for Create backup</caption>
                <thead>
                    <tr>
                        <td colspan="1">Name</td>
@@ -1486,7 +1486,7 @@
            </table> 
             
             <table rules="all">
-                <caption>Length Restrictions for Backup <code>name</code> Parameter</caption>
+                <caption>Length restrictions for backup <code>name</code> parameter</caption>
                 <thead>
                     <tr>
                         <td colspan="3">Restriction</td>
@@ -1535,7 +1535,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:Backup">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Backup request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.json"/>
                 </doc>
             </representation>
@@ -1544,7 +1544,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Backup response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.json"/>
                 </doc>
             </representation>
@@ -1554,7 +1554,7 @@
     </method>
     
     <method name="GET" id="getBackups">
-        <wadl:doc xml:lang="EN" title="List Backups" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List backups" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all backups for all database instances.</para>
             <para>This operation returns a list of all backups for all database instances.</para>
             <para>You can filter by datastore type using the <emphasis>datastore</emphasis> query parameter.</para>         
@@ -1567,13 +1567,13 @@
             </param>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-request.json"/>
                 </doc>
             </representation>
             <representation mediaType="application/json">
-                <doc title="List Backups Query Request: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups Query request:</para>
+                <doc title="List backups query request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups query request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-query-request.json"/>
                 </doc>
             </representation>
@@ -1582,14 +1582,14 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-response.json"/>
                 </doc>
             </representation>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
-                <doc title="List Backups Query Response: JSON">
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups Query response:</para>
+                <doc title="List backups query response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups query response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-query-response.json"/>
                 </doc>
             </representation>
@@ -1599,7 +1599,7 @@
     </method>
     
     <method name="GET" id="getBackupById">
-        <wadl:doc xml:lang="EN" title="List Backup By ID" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List backup by ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists details about a specified backup.</para>
             <para>This operation lists the details for a specified backup.</para>
             
@@ -1607,7 +1607,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backup By ID request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backup by ID request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-request.json"/>
                 </doc>
             </representation>
@@ -1616,7 +1616,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backup By ID response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backup by ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-response.json"/>
                 </doc>
             </representation>
@@ -1626,14 +1626,14 @@
     </method>
 
     <method name="GET" id="getBackupsByInstance">
-        <wadl:doc xml:lang="EN" title="List Backups for Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List backups for instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all backups for a specified instance.</para>
             <para>This operation lists all backups for a specified instance.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups for Instance request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups for instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-request.json"/>
                 </doc>
             </representation>
@@ -1642,7 +1642,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Backups for Instance response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups for instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backups-by-instance-response.json"/>
                 </doc>
             </representation>
@@ -1652,14 +1652,14 @@
     </method>
     
     <method name="POST" id="restoreBackup">
-        <wadl:doc xml:lang="EN" title="Restore Backup" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Restore backup" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new database instance from a <glossterm>backup</glossterm>.</para>
             <para>This operation restores a backup onto a new database instance.</para>
             
             <para>The following table lists the required and optional attributes for RestorePoint:</para>
             
             <table rules="all">
-                <caption>Required and Optional Attributes for RestorePoint</caption>
+                <caption>Required and optional attributes for RestorePoint</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name</td>
@@ -1692,7 +1692,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restore Backup request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restore backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
@@ -1701,7 +1701,7 @@
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restore Backup response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restore backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
@@ -1712,7 +1712,7 @@
     
 
     <method name="DELETE" id="deleteBackup">
-        <wadl:doc xml:lang="EN" title="Delete Backup"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Delete backup"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified backup.</para>
             <para>This operation deletes the specified backup.</para>
             
@@ -1720,7 +1720,7 @@
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Backup request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-request.json"/>
                 </doc>
             </representation>
@@ -1731,7 +1731,7 @@
             
             <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Backup response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-delete-response.json"/>
                 </doc>
             </representation>
@@ -1740,7 +1740,7 @@
     </method>
     
     <method name="PUT" id="modifyUser">
-        <wadl:doc xml:lang="EN" title="Modify User Attributes"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Modify user attributes"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Modifies one or more of the following for the specified user: name, password, and host from which the user is allowed to connect to the database. </para>
             <para>This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. 
                 User in this case is user or user@host, whichever is appropriate.</para>
@@ -1750,7 +1750,7 @@
                 Refer to the request examples for the required json format:</para>
             
             <table rules="all" width="400">
-                <caption>Attributes for Modify User Attributes</caption>
+                <caption>Attributes for Modify user attributes</caption>
                 <col width="30%"/>
                 <col width="70%"/>
                 <thead>
@@ -1785,7 +1785,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:User">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify User Attributes request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify user attributes request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-request.json"/>
                 </doc>
             </representation>
@@ -1795,7 +1795,7 @@
         <response status="200" >
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify User Attributes response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify user attributes response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-response.json"/>
                 </doc>
             </representation>
@@ -1807,13 +1807,13 @@
     </method>
     
     <method name="GET" id="getConfigurations">
-        <wadl:doc xml:lang="EN" title="List Configurations" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List configurations" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all defined <glossterm>configuration group</glossterm>s for the tenant.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configurations request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configurations request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-request.json"/>
                 </doc>
             </representation>
@@ -1821,7 +1821,7 @@
         <response status="200">
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configurations response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configurations response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-response.json"/>
                 </doc>
             </representation>
@@ -1831,14 +1831,16 @@
     </method>
     
     <method name="POST" id="createConfiguration">
-        <wadl:doc xml:lang="EN" title="Create Configuration" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Create configuration" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new <glossterm>configuration group</glossterm> based on the parameters supplied in the request body.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Configuration request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-create-request.json"/>
+                    <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must 
+                        be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.</para></note>
                 </doc>
             </representation>
         </request>
@@ -1846,7 +1848,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create Configuration response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-create-response.json"/>
                 </doc>
             </representation>
@@ -1856,13 +1858,13 @@
     </method>
     
     <method name="GET" id="getConfigurationById">
-        <wadl:doc xml:lang="EN" title="List Configuration Details" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List configuration details" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists details for the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Details request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration details request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-details-request.json"/>
                 </doc>
             </representation>
@@ -1871,7 +1873,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Details response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-details-response.json"/>
                 </doc>
             </representation>
@@ -1881,14 +1883,14 @@
     </method>
     
     <method name="PATCH" id="updateSomeConfigParmsById">
-        <wadl:doc xml:lang="EN" title="Update Some Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Update some configuration parameters" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Updates some of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
                 element="dbaas:Configuration">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Some Configuration Parameters request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update some configuration parameters request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-edit-parameters-request.json"/>
                 </doc>
             </representation>
@@ -1897,7 +1899,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update Some Configuration Parameters response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update some configuration parameters response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-edit-parameters-response.json"/>
                 </doc>
             </representation>
@@ -1908,15 +1910,17 @@
     </method>
     
     <method name="PUT" id="replaceAllConfigParmsById">
-        <wadl:doc xml:lang="EN" title="Replace All Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Replace all configuration parameters" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Replaces all of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
                 element="dbaas:Configuration">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace All Configuration Parameters request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace all configuration parameters request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-update-parameters-request.json"/>
+                    <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must 
+                        be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.</para></note>
                 </doc>
             </representation>
         </request>
@@ -1924,7 +1928,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace All Configuration Parameters response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace all configuration parameters response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-update-parameters-response.json"/>
                 </doc>
             </representation>
@@ -1935,13 +1939,13 @@
     </method>
     
     <method name="DELETE" id="deleteConfigGroup">
-        <wadl:doc xml:lang="EN" title="Delete Configuration Group" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Delete configuration group" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified <glossterm>configuration group</glossterm>. No message body is expected in the request.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Configuration Group request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete configuration group request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-delete-request.json"/>
                 </doc>
             </representation>
@@ -1950,7 +1954,7 @@
                 <representation mediaType="application/json"
                     element="dbaas:Configuration" >
                     <doc>
-                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete Configuration Group response:</para>
+                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete configuration group response:</para>
                         <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-delete-response.json"/>
                     </doc>
                 </representation>         
@@ -1961,13 +1965,13 @@
     </method>
 
     <method name="GET" id="getInstancesForConfiguration">
-        <wadl:doc xml:lang="EN" title="List Instances for Configuration" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List instances for configuration" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists instances that are associated with the specified <glossterm>configuration group</glossterm>.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instances for Configuration request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List instances for configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-instances-request.json"/>
                 </doc>
             </representation>
@@ -1976,7 +1980,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Instances for Configuration response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List instances for configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-list-instances-response.json"/>
                 </doc>
             </representation>
@@ -1986,13 +1990,13 @@
     </method>
     
     <method name="GET" id="getConfigurationParameters">
-        <wadl:doc xml:lang="EN" title="List Configuration Parameters" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List configuration parameters" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists <glossterm>configuration parameter</glossterm>s that may be configured on the system.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameters request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-for-datastore-version-request.json"/>
                 </doc>
             </representation>
@@ -2001,7 +2005,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameters response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-for-datastore-version-response.json"/>
                 </doc>
             </representation>
@@ -2011,13 +2015,13 @@
     </method>
     
     <method name="GET" id="getConfigurationParameterDetails">
-        <wadl:doc xml:lang="EN" title="List Configuration Parameter Details" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List configuration parameter details" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system.</para>        
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameter details request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-for-datastore-version-request.json"/>
                 </doc>
             </representation>
@@ -2026,7 +2030,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameter details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-for-datastore-version-response.json"/>
                 </doc>
             </representation>
@@ -2036,13 +2040,13 @@
     </method>
     
     <method name="GET" id="getConfigurationParameterDetailsWithoutDatastore">
-        <wadl:doc xml:lang="EN" title="List Configuration Parameter Details Without Datastore" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List configuration parameter details without datastore" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system without specifying a datastore.</para> 
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameter details without datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-without-datastore-version-request.json"/>
                 </doc>
             </representation>
@@ -2051,7 +2055,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameter Details Without Datastore response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameter details without datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameter-without-datastore-version-response.json"/>
                 </doc>
             </representation>
@@ -2061,13 +2065,13 @@
     </method>
     
     <method name="GET" id="getConfigurationParametersWithoutDatastore">
-        <wadl:doc xml:lang="EN" title="List Configuration Parameters Without Datastore" xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List configuration parameters without datastore" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the <glossterm>configuration parameter</glossterm>s that may be configured on the system without specifying a datastore.</para> 
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameters without datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-without-datastore-version-request.json"/>
                 </doc>
             </representation>
@@ -2076,7 +2080,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Configuration Parameters Without Datastore response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configuration parameters without datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-parameters-without-datastore-version-response.json"/>
                 </doc>
             </representation>
@@ -2086,14 +2090,14 @@
     </method>
     
     <method name="GET" id="getDatastoreTypes">
-        <wadl:doc xml:lang="EN" title="List All Datastore Types"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List all datastore types"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all datastore types.</para>
             <para>This operation lists all datastore types.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all datastore types request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-request.json"/>
                 </doc>
             </representation>
@@ -2101,7 +2105,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Types response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all datastore types response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastores-list-response.json"/>
                 </doc>
             </representation>
@@ -2111,14 +2115,14 @@
     </method>
     
     <method name="GET" id="getDatastoreTypesById">
-        <wadl:doc xml:lang="EN" title="List Datastore Type"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List datastore type"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists datastore type.</para>
             <para>This operation lists datastore type for the specified datastore.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Type request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore type request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-request.json"/>
                 </doc>
             </representation>
@@ -2126,7 +2130,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Type response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore type response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-by-id-response.json"/>
                 </doc>
             </representation>
@@ -2136,14 +2140,14 @@
     </method>
     
     <method name="GET" id="getDatastoreVersionsById">
-        <wadl:doc xml:lang="EN" title="List Datastore Versions For Datastore"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List datastore versions for datastore"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all datastore versions for the specified datastore.</para>
             <para>This operation lists all datastore versions for the specified datastore.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Versions For Datastore request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all datastore versions for datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-request.json"/>
                 </doc>
             </representation>
@@ -2151,7 +2155,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List All Datastore Versions For Datastore response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all datastore versions for datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-versions-list-response.json"/>
                 </doc>
             </representation>
@@ -2161,14 +2165,14 @@
     </method>
     
     <method name="GET" id="getDatastoreVersionByVersionId">
-        <wadl:doc xml:lang="EN" title="List Datastore Version"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List datastore version"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists datastore version.</para>
             <para>This operation lists the datastore version for the specified version.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore version request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-request.json"/>
                 </doc>
             </representation>
@@ -2176,7 +2180,7 @@
         <response status="200">
             <representation mediaType="application/json" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List Datastore Version response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore version response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.json"/>
                 </doc>
             </representation>

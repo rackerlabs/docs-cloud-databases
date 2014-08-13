@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-08-04</pubdate>
+        <pubdate>2014-08-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,36 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-08-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added note with validation
+                                information for request parameters for
+                                   <olink targetdoc="cdb-devguide"
+                                   targetptr="POST_createConfiguration__version___accountId__configurations_configurations"
+                                /> and <olink targetdoc="cdb-devguide"
+                                   targetptr="PUT_replaceAllConfigParmsById__version___accountId__configurations__configId__configurations"
+                                />. </para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated link to <link
+                                   xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
+                                   >Product Feedback
+                                Forum</link>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated maximum volume size per
+                                instance. Refer to <xref
+                                   linkend="Absolute_Limits-d1e1397"/>
+                                or <olink targetdoc="cdb-devguide"
+                                   targetptr="POST_createInstance__version___accountId__instances_Database_Instances"
+                                /> for details.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-08-04</date>
                 <revdescription>
@@ -896,7 +926,7 @@
             ticket, chat, email, or phone.</remark>
         <?hard-pagebreak?>
         <section xml:id="Intended_Audience-d1e122">
-            <title>Intended Audience</title>
+            <title>Intended audience</title>
             <para> This Guide is intended to assist software
                 developers who want to develop applications using the
                 Cloud Databases API. It assumes the reader has a
@@ -919,14 +949,14 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="Document_Change_History-d1e166">
-            <title>Document Change History</title>
+            <title>Document change history</title>
             <para>This version of the Developer Guide replaces and
                 obsoletes all previous versions. The most recent
                 changes are described in the table below:</para>
             <?rax revhistory?>
         </section>
         <section xml:id="Additional_Resources-d1e532">
-            <title>Additional Resources</title>
+            <title>Additional resources</title>
             <para>Descriptive information about Cloud Databases is
                 also published in its Web Application Description
                 Language (WADL) and XML Schema Definition (XSD). You
@@ -962,7 +992,7 @@
                     >http://docs.rackspace.com/</link> for information
                 about getting started using the API.</para>
             <para>Please visit our <link
-                    xlink:href="http://feedback.rackspacecloud.com/forums/71021-product-feedback/category/42449-cloud-databases"
+                xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
                     >Product Feedback Forum</link> and let us know
                 what you think about Cloud Databases!</para>
             <para>You can also follow Rackspace updates and
@@ -976,7 +1006,7 @@
         </section>
         <?hard-pagebreak?>
         <section xml:id="Pricing_SLA-d1e1362">
-            <title>Pricing and Service Level</title>
+            <title>Pricing and service level</title>
             <para>Cloud Databases is part of the Rackspace Cloud and
                 your use through the API will be billed as per the
                 pricing schedule at <link
@@ -1007,7 +1037,7 @@
         <para> To use the Cloud Databases API effectively, you should
             understand several key concepts: </para>
         <section xml:id="Configuration-Group-Concept-d1e278">
-            <title>Configuration Group</title>
+            <title>Configuration group</title>
             <para>A configuration group is a collection of key/value
                 pairs, where the valid key/values are defined per
                 datastore. Some directives are capable of being
@@ -1020,13 +1050,13 @@
                 parameters. </para>
         </section>
         <section xml:id="Configuration-Parameter-Concept-d1e735">
-            <title>Configuration Parameter</title>
+            <title>Configuration parameter</title>
             <para>A configuration parameter is a key/value pair that
                 represents settings that can be applied to a database
                 instance. </para>
         </section>
         <section xml:id="DatabaseInstance-d1e588">
-            <title>Database Instance</title>
+            <title>Database instance</title>
             <para>A database instance is an isolated database
                 environment with compute and storage resources in a
                 single tenant environment on a shared physical host
@@ -1070,7 +1100,7 @@
         </section>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
-        <title>General API Information</title>
+        <title>General API information</title>
         <para> The Cloud Databases API is implemented using a ReSTful
             web service interface. Like other products in the
             Rackspace Cloud suite, the Database Service shares a
@@ -1089,7 +1119,7 @@
                 Rackspace Cloud Authentication Service and supplying a
                 valid username and API access key. </para>
             <section xml:id="Geographic_Endpoints">
-                <title>Geographic Endpoints</title>
+                <title>Geographic endpoints</title>
                 <para> The Rackspace Cloud Authentication Service
                     serves as the entry point to all Rackspace Cloud
                     APIs and is itself a ReSTful web service. </para>
@@ -1127,7 +1157,7 @@
                 </itemizedlist>
             </section>
             <section xml:id="Retrieving_Auth_Token">
-                <title>Retrieving the Authentication Token</title>
+                <title>Retrieving the authentication token</title>
                 <informaltable rules="all">
                     <tbody>
                         <tr>
@@ -1175,7 +1205,7 @@
                     </programlistingco>
                 </example>
                 <example>
-                    <title>Auth Request for US Endpoint: JSON</title>
+                    <title>Auth request for US endpoint: JSON</title>
                     <programlistingco>
                         <areaspec>
                             <area xml:id="credentials.xml.user"
@@ -1235,7 +1265,7 @@
               
                 
                 <example xml:id="auth-response-example-json">
-                    <title>Auth Response for US Endpoint: JSON</title>
+                    <title>Auth response for US endpoint: JSON</title>
                     
                     <programlistingco>
                         <areaspec>
@@ -1445,7 +1475,7 @@
             </section>
         </section>
         <section xml:id="Service_Access_Endpoints-d1e753">
-            <title>Service Access/Endpoints</title>
+            <title>Service access/endpoints</title>
             <para>The Database Service is a regionalized service. The
                 user of the service is therefore responsible for
                 appropriate replication, caching, and overall
@@ -1463,7 +1493,7 @@
             <?rax-fo keep-with-next?>
             <para>
                 <table rules="all">
-                    <caption>Regionalized Service Endpoints</caption>
+                    <caption>Regionalized service endpoints</caption>
                     <thead>
                         <tr align="center">
                             <td colspan="2">Region</td>
@@ -1521,11 +1551,11 @@
                 number is 1100111.</para>
         </section>
         <section xml:id="DB_service_versions">
-            <title>Cloud Databases Service Versions</title>
+            <title>Cloud Databases service versions</title>
             <para> The Cloud Databases version defines the contract
                 and build information for the API. </para>
             <section xml:id="Contract_Version-d1e825">
-                <title>Contract Version</title>
+                <title>Contract version</title>
                 <para> The contract version denotes the data model and
                     behavior that the API supports. The requested
                     contract version is included in all request URLs.
@@ -1546,7 +1576,7 @@
                 
             </section>
             <section xml:id="API_Version_Headers-d1e855">
-                <title>API Version</title>
+                <title>API version</title>
                 <para>The API List Versions call is available to show
                     the current API version as well as information
                     about all versions of the API. Refer to <xref
@@ -1554,7 +1584,7 @@
             </section>
         </section>
         <section xml:id="Request_Response_Types-d1e903">
-            <title>Request/Response Types</title>
+            <title>Request/Response types</title>
             <para> The Cloud Databases API supports the JSON data
                 serialization formats. The request format is specified
                 using the <code>Content-Type</code> header and is
@@ -1571,7 +1601,7 @@
                 can be used to efficiently determine when the state of
                 services has changed. </para>
             <table rules="all">
-                <caption>Response Formats</caption>
+                <caption>Response formats</caption>
                 <?dbfo keep-together="always"?>
                 <thead>
                     <tr align="center">
@@ -1760,12 +1790,12 @@
                 of time passes. Absolute limits are fixed.
             </para>
             <section xml:id="Rate_Limits-d1e1222">
-                <title>Rate Limits</title>
+                <title>Rate limits</title>
                 <para>The following table specifies the default rate
                     limits for all Rackspace Cloud Databases API
                     operations: </para>
                 <table rules="all">
-                    <caption>Default Rate Limits</caption>
+                    <caption>Default rate limits</caption>
                     <col width="30%"/>
                     <col width="50%"/>
                     <col width="20%"/>
@@ -1959,11 +1989,11 @@
                     again. </para>
             </section>
             <section xml:id="Absolute_Limits-d1e1397">
-                <title>Absolute Limits</title>
+                <title>Absolute limits</title>
                 <para>Refer to the following table for the absolute
                     limits that are set.</para>
                 <table rules="all">
-                    <caption>Absolute Limits</caption>
+                    <caption>Absolute limits</caption>
                     <thead>
                         <tr>
                             <td colspan="1">Name</td>
@@ -1983,14 +2013,14 @@
                             <td colspan="3">Maximum volume size per
                                 instance in gigabytes (GB) for your
                                 account</td>
-                            <td colspan="1">150</td>
+                            <td colspan="1">300</td>
                         </tr>
                     </tbody>
                 </table>
             </section>
         </section>
         <section xml:id="datetimeformat">
-            <title>Date/Time Format</title>
+            <title>Date/Time format</title>
             <para> The Database Service uses an ISO-8601 compliant
                 date format for the display and consumption of
                 date/time values. </para>
@@ -2008,7 +2038,8 @@
                     <programlisting>2011-05-19T08:07:08-05:00</programlisting>
                 </example>
             <table rules="all">
-                <caption>Explanation of Date/Time Format Codes</caption>
+                <caption>Explanation of date/time format
+                    codes</caption>
                 <thead>
                     <tr>
                         <td>Code</td>
@@ -2137,7 +2168,7 @@
             <para>See the example of paged List Instances calls that
                 follow.</para>
             <example>
-                <title>List Instances Paged Request: JSON</title>
+                <title>List instances paged request: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
 <xi:include href="samples/db-instances-index-pagination-request.json" parse="text"/>
@@ -2154,7 +2185,7 @@
                 identified by the attribute
                 <code>"rel":"next"</code>:</para>
             <example>
-                <title>List Instances Paged Response: JSON</title>
+                <title>List instances paged response: JSON</title>
                 
                 <programlisting language="json">
 <xi:include href="samples/db-instances-index-pagination-response.json" parse="text"/>
@@ -2283,7 +2314,7 @@
                 shows errors when the server has erred or cannot
                 perform the requested operation:</para>
             <example>
-                <title>Example Fault Response: JSON</title>
+                <title>Example fault response: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
 <xi:include href="samples/db-faults-instanceFault.json" parse="text"/>
@@ -2302,7 +2333,7 @@
                     <code>badRequest</code> example shows errors when
                 the volume size is invalid:</para>
             <example>
-                <title>Example badRequest Fault on Volume Size Errors:
+                <title>Example badRequest fault on volume size errors:
                     JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
@@ -2312,15 +2343,15 @@
             <para> The next example shows <code>itemNotFound</code>
                 errors:</para>
             <example>
-                <title>Example itemNotFound Fault: JSON</title>
+                <title>Example itemNotFound fault: JSON</title>
                 <?dbfo keep-together="always"?>
                 <programlisting language="json">
 <xi:include href="samples/db-faults-itemNotFound.json" parse="text"/>
                     </programlisting>
             </example>
             <section xml:id="synchro_vs_async_faults">
-                <title>Synchronous Versus Asynchronous
-                    Faults<?sbr?></title>
+                <title>Synchronous versus asynchronous
+                    faults<?sbr?></title>
                 <para><emphasis>Synchronous</emphasis> faults occur at
                     request time. When a synchronous fault occurs, the
                     fault contains an HTTP error response code, a
@@ -2419,7 +2450,7 @@
             </section>
         </section>
         <section xml:id="database_instance_status">
-            <title>Database Instance Status</title>
+            <title>Database instance status</title>
             <para><?rax-fo keep-with-next?>When making an API call to create, list, or delete
                 database instance(s), the following database instance
                 status values are possible:</para>
@@ -2482,7 +2513,7 @@
             </itemizedlist>
         </section>
         <section xml:id="Accessibility">
-            <title>Database Instance Accessibility</title>
+            <title>Database instance accessibility</title>
             <para>Database instances are directly accessible only on
                 the internal ServiceNet network and using a Cloud
                 resource within the same regional datacenter. For
@@ -2517,7 +2548,7 @@
             <para>This section describes security features for Cloud
                 Databases.</para>
             <section xml:id="user_access_restrict_by_host-dle387">
-                <title>User Access Restriction by Host</title>
+                <title>User access restriction by host</title>
                 <para>Cloud Databases supports the specification of a
                         <code>host</code> parameter when creating and
                     modifying users. This parameter adds the
@@ -2793,7 +2824,7 @@
                 product-specific (for example Cloud Databases), to
                 account users. </para>
             <section xml:id="assigning_roles_to_account_users">
-                <title>Assigning Roles to Account Users</title>
+                <title>Assigning roles to account users</title>
                 <para>The account owner (identity:user-admin) can
                     create account users on the account and then
                     assign roles to those users. The roles grant the
@@ -2831,15 +2862,15 @@
                 </note>
             </section>
             <section xml:id="roles_for_cloud_dbs">
-                <title>Roles Available for Cloud Databases</title>
+                <title>Roles available for Cloud Databases</title>
                 <para>Three roles (observer, creator, and admin) can
                     be used to access the Cloud Databases API
                     specifically. The following table describes these
                     roles and their permissions. </para>
                 <table rules="all" width="70%"
                     xml:id="cloud_dbs_roles_capabilities">
-                    <caption>Cloud Databases Product Roles and
-                        Capabilities</caption>
+                    <caption>Cloud Databases product roles and
+                        capabilities</caption>
                     <col width="30%"/>
                     <col width="70%"/>
                     <?dbfo keep-together="always"?>
@@ -2878,8 +2909,8 @@
                     describes these roles and their
                     permissions.</para>
                 <table rules="all" width="70%">
-                    <caption>Multiproduct (Global Roles) and
-                        Permissions</caption>
+                    <caption>Multiproduct (global roles) and
+                        permissions</caption>
                     <col width="30%"/>
                     <col width="70%"/>
                     <?dbfo keep-together="always"?>
@@ -2912,7 +2943,8 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
                 xml:id="RBAC_Role_Conflict_3">
-                <title>Resolving Conflicts Between RBAC Multiproduct vs. Custom (Product-specific) Roles</title>
+                <title>Resolving Conflicts between RBAC multiproduct
+                    vs. custom (product-specific) roles</title>
                 <para> The account owner can set roles for
                     multiproduct and Cloud Databases scope, and it is
                     important to understand how any potential
@@ -2929,9 +2961,12 @@
                     <informaltable rules="all">		
                         <thead>
                             <tr align="center">
-                                <td>Permission Configuration</td>
-                                <td>View of Permission in the Control Panel </td>
-                                <td>Can the User Perform Product Admin Functions in the Control Panel?</td>
+                                <td>Permission configuration</td>
+                                <td>View of permission in the Control
+                                   Panel </td>
+                                <td>Can the user perform product admin
+                                   functions in the Control
+                                   Panel?</td>
                             </tr>
                         </thead>
                         <tbody>
@@ -2974,8 +3009,8 @@
                 xmlns:xi="http://www.w3.org/2001/XInclude"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="5.0"
                 xml:id="RBAC_API_XREF_3">
-                <title>RBAC Permissions Cross-reference to Cloud
-                    Databases API Operations</title>
+                <title>RBAC permissions cross-reference to Cloud
+                    Databases API operations</title>
                 <para> API operations for Cloud Databases may or may
                     not be available to all roles. To see which
                     operations are permitted to invoke which calls,
@@ -2986,7 +3021,7 @@
             
         </section>
         <section xml:id="Config_Mgmt-d1e3826">
-            <title>Configuration Management</title>
+            <title>Configuration management</title>
             <para>The configuration management capability allows users
                 of Cloud Databases to override the default database
                 engine configuration settings provided by the Cloud
@@ -3051,7 +3086,7 @@
                 API operations for configurations.</para>
         </section>
         <section xml:id="Datastore_Types_and_Versions-d1e9263">
-            <title>Datastore Types and Versions</title>
+            <title>Datastore types and versions</title>
             <para>Datastore types management will allow users of Cloud
                 Databases to select database type and version from the
                 list of available choices provided by Rackspace.
@@ -3178,7 +3213,7 @@
     <chapter xml:id="API_Operations-d1e2264" 
         xmlns="http://docbook.org/ns/docbook"
         role="api-reference">
-        <title>API Operations</title>
+        <title>API operations</title>
         <note>
             <para>Do not use trailing slashes (/) at the end of calls
                 to API operations, since this may cause the call to
@@ -3188,7 +3223,7 @@
         </note>
         <?hard-pagebreak?>
         <section xml:id="API_Versions">
-            <title>API Versions</title>
+            <title>API versions</title>
             <para>This section describes the versions that are
                 supported for the Cloud Databases API.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -3203,7 +3238,7 @@
         </section>
         
         <section xml:id="Database_Instances">
-            <title>Database Instances</title>
+            <title>Database instances</title>
             <para>This section describes the operations that are supported for database instances.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/dbaas.wadl#instances" >
@@ -3229,7 +3264,7 @@
         </section>
 
         <section xml:id="Database_Instances_Actions">
-            <title>Database Instance Actions</title>
+            <title>Database instance actions</title>
             <para>This section describes the actions that are supported for database instances.</para>
             <wadl:resources xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/dbaas.wadl#instanceAction" >
@@ -3314,7 +3349,7 @@
             <para>The following table lists the possible statuses
                 returned by the Backup API:</para>
             <table rules="all">
-                <caption>Backup Statuses</caption>
+                <caption>Backup statuses</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Status</td>
@@ -3411,7 +3446,7 @@
             </wadl:resources>
             
             <section xml:id="configuration_parameters">
-                <title>Configuration Parameters</title>
+                <title>Configuration parameters</title>
                 <para>This section describes the operations that are
                     supported for <glossterm>configuration parameter</glossterm>s.</para>
                 <wadl:resources
@@ -3439,7 +3474,7 @@
             </section>
         </section>
         <section xml:id="datastore_types_and_versions">
-            <title>Datastore Types and Versions</title>
+            <title>Datastore types and versions</title>
             <para>This section describes the operations that are
                 supported for datastore types and versions.</para>
             <wadl:resources
