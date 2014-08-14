@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-08-13</pubdate>
+        <pubdate>2014-08-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,21 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-08-14</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information that the default
+                                datastore type and version is MySQL
+                                5.1 for the datacenters SYD and HKG
+                                only. For all other datacenters, the
+                                default datastore type and version is
+                                MySQL 5.6.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-08-13</date>
                 <revdescription>
@@ -3103,6 +3118,12 @@
                 type. If users do not specify the datastore type and
                 version at instance creation, the default database is
                 MySQL 5.6.</para>
+            <note>
+                <para>For the SYD and HKG datacenters only, the
+                    default database is MySQL 5.1 if users do not
+                    specify the datastore type and version at instance
+                    creation.</para>
+            </note>
             <para>Refer to <xref
                     linkend="datastore_types_and_versions"/> for the
                 API operations for datastore types and
@@ -3167,6 +3188,12 @@
                     the <code>version</code> is "5.6". </para>
                 <para>MySQL 5.6 is the default database for Cloud
                     Databases.</para>
+                <note>
+                    <para>For the SYD and HKG datacenters only, the
+                        default database is MySQL 5.1 if users do not
+                        specify the datastore type and version at
+                        instance creation.</para>
+                </note>
             </section>
             <section xml:id="Datstores-MySQL-51-d1e4875">
                 <title>MySQL 5.1</title>
