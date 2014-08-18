@@ -64,7 +64,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-08-14</pubdate>
+        <pubdate>2014-08-18</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,18 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-08-18</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added missing operations to API
+                                operations summary table for <xref
+                                   linkend="user_management"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-08-14</date>
                 <revdescription>
@@ -3342,14 +3354,14 @@
                     <wadl:method href="modifyUser"/>
                     <wadl:method href="listUser"/>
                     <wadl:method href="deleteUser"/>
-                    <wadl:resource href="../../../xsd/dbaas.wadl#database">
-                       <wadl:method href="getUserAccess"/>
-                       <wadl:method href="grantUserAccess"/>
-                        <wadl:resource href="../../../xsd/dbaas.wadl#dbName">
-                            <wadl:method href="revokeUserAccess"/>
-                        </wadl:resource>
-                    </wadl:resource>
-                </wadl:resource>   
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#database">
+                    <wadl:method href="getUserAccess"/>
+                    <wadl:method href="grantUserAccess"/>
+                </wadl:resource>                        
+                <wadl:resource href="../../../xsd/dbaas.wadl#dbName">
+                    <wadl:method href="revokeUserAccess"/>
+                </wadl:resource> 
             </wadl:resources>
         </section>
            
