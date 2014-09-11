@@ -61,10 +61,10 @@
             <year>2013</year>
             <year>2014</year>
             <holder>Rackspace US, Inc.</holder>
-        </copyright>
+        </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-08-18</pubdate>
+        <pubdate>2014-09-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-09-11</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed links for creating account
+                                users in <xref
+                                   linkend="assigning_roles_to_account_users"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-08-18</date>
                 <revdescription>
@@ -2865,19 +2878,19 @@
                     about how to perform the following tasks:<itemizedlist>
                         <listitem>
                             <para><link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_.html"
-                                   >Create account users</link></para>
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser__v2.0_users_User_Calls.html"
+                                   >Add account users</link></para>
                         </listitem>
                         <listitem>
                             <para>
                                 <link
-                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__.html"
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
                                    >Assign roles to account
                                    users</link></para>
                         </listitem>
                         <listitem>
                             <para><link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__.html"
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__OS-KSADM_roles__roleid__Role_Calls.html"
                                    >Delete roles from account
                                    users</link></para>
                         </listitem>
@@ -3209,7 +3222,7 @@
             </section>
             <section xml:id="Datstores-MySQL-51-d1e4875">
                 <title>MySQL 5.1</title>
-                <para>Rackspace currently support MySQL 5.1. The
+                <para>Rackspace currently supports MySQL 5.1. The
                     latest version of MySQL (5.6) has many
                     improvements over MySQL 5.1 and we will eventually
                     deactivate MySQL 5.1 at end-of-life.</para>
