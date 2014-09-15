@@ -64,7 +64,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-09-11</pubdate>
+        <pubdate>2014-09-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-09-15</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated availability information for
+                                32GB and 64GB flavors. Refer to <olink targetdoc="cdb-devguide"
+                                    targetptr="GET_getFlavors__version___accountId__flavors_flavors"/> 
+                                for details.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-09-11</date>
                 <revdescription>
@@ -1525,7 +1538,7 @@
                 for Cloud Databases summarized in the table below. <tip>
                     <para>To help you decide which regionalized
                         endpoint to use, read about special
-                        considerations for choosing a data center at
+                        considerations for choosing a datacenter at
                             <link
                                 xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
                                 >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.</para>

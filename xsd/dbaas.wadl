@@ -1394,7 +1394,7 @@
             <para>This operation lists information for all available flavors.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
             
-            <para>The new larger flavors 32GB and 64GB have been introduced in IAD.</para>
+            <para>The larger 32GB and 64GB flavors are available in all US and UK datacenters.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
