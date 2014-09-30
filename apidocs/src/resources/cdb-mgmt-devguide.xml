@@ -60,7 +60,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-08-13</pubdate>
+        <pubdate>2014-09-30</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,6 +75,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-09-30</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated link to <link
+                                   xlink:href="http://feedback.rackspacecloud.com"
+                                   >Product Feedback
+                                Forum</link>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-08-13</date>
                 <revdescription>
@@ -414,7 +427,7 @@
                 support channels, including knowledge center articles,
                 forums, phone, chat, and email. </para>
             <para>Please visit our <link
-                    xlink:href="https://rackspace.uservoice.com/forums/71021-product-feedback/category/81962-cloud-databases"
+                    xlink:href="http://feedback.rackspacecloud.com"
                     >Product Feedback Forum</link> to find out what
                 customers think about Cloud Databases.</para>
             <para>You can also follow Rackspace updates and
