@@ -84,7 +84,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated link to <link
-                                   xlink:href="http://feedback.rackspacecloud.com"
+                                   xlink:href="http://feedback.rackspace.com"
                                    >Product Feedback
                                 Forum</link>.</para>
                         </listitem>
@@ -1057,9 +1057,9 @@
                     >http://docs.rackspace.com/</link> for information
                 about getting started using the API.</para>
             <para>Please visit our <link
-                xlink:href="http://feedback.rackspacecloud.com"
-                >Product Feedback Forum</link> and let us know
-                what you think about Cloud Databases!</para>
+                    xlink:href="http://feedback.rackspace.com">Product
+                    Feedback Forum</link> and let us know what you
+                think about Cloud Databases!</para>
             <para>You can also follow Rackspace updates and
                 announcements via twitter at: <link
                     xlink:href="http://www.twitter.com/rackspace"

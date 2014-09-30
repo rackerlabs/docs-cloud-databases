@@ -62,7 +62,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated link to <link
-                                   xlink:href="http://feedback.rackspacecloud.com"
+                                   xlink:href="http://feedback.rackspace.com"
                                    >Product Feedback
                                 Forum</link>.</para>
                         </listitem>
@@ -90,7 +90,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Updated link to <link
-                                xlink:href="http://feedback.rackspacecloud.com"
+                                xlink:href="http://feedback.rackspace.com"
                                 >Product Feedback Forum</link>.</para>
                         </listitem>
                     </itemizedlist>
@@ -566,7 +566,7 @@
                     xlink:href="http://www.rackspace.com/knowledge_center/article/getting-started-with-rackspace-monitoring-cli"
                     >http://www.rackspace.com/knowledge_center/article/getting-started-with-rackspace-monitoring-cli</link>. </para>
             <para>Please visit our <link
-                xlink:href="http://feedback.rackspacecloud.com"
+                xlink:href="http://feedback.rackspace.com"
                 >Product Feedback Forum</link> and let us know what
                 you think about Cloud Databases!</para>
         </section>
