@@ -49,13 +49,43 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-09-30</pubdate>
+        <pubdate>2014-10-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-10-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information for using named
+                                time zones in configurations. See
+                                   <xref
+                                   linkend="Managing_TZ_for_Database_Instances"
+                                /> for details.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <xref
+                                   linkend="Using_SSL_for_Database_Instances"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated syntax order for
+                                python-troveclient CLI commands
+                                   <code>backup-create</code> and
+                                   <code>configuration-attach</code>.
+                                See <xref
+                                   linkend="trove_summary_backups"/>
+                                and <xref
+                                   linkend="trove_configurations"/>
+                                respectively for details.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-09-30</date>
                 <revdescription>
@@ -2877,20 +2907,33 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                     xlink:href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
                     >UTC (Coordinated Universal Time)</link>. The
                 value for the CST (Central Standard Time) time zone
-                would be "-6:00", which we will use in our example. If
-                you lived in the AEST (Australian Eastern Standard
-                Time) time zone on the other hand, the offset would be
-                "+10:00".</para>
+                would be "-6:00", which we will use in our example:<itemizedlist>
+                    <listitem>
+                        <para><code>{"default_time_zone":"-6:00”}</code></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>If you lived in the AEST (Australian Eastern
+                Standard Time) time zone on the other hand, the offset
+                would be "+10:00".</para>
+            <para>You can also use named time zones such as
+                "Europe/London" or "US/Eastern" to set the
+                    <code>default_time_zone</code>, for example:<itemizedlist>
+                    <listitem>
+                        <para><code>{"default_time_zone”:"Europe/London”}</code></para>
+                    </listitem>
+                    <listitem>
+                        <para><code>{"default_time_zone”:"US/Eastern”}</code></para>
+                    </listitem>
+                </itemizedlist>For more information about named time
+                zones, see the MySQL documentation at <link
+                    xlink:href="http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html"
+                    >http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html</link>.</para>
             <para> You can set <code>default_time_zone</code> in a
                 configuration group that can be applied to your
                 database instance. You can create a new configuration
                 group just for the time zone management, or add the
                 time zone parameter to an existing configuration
                 group. </para>
-            <note>
-                <para> You cannot apply named time zones such as
-                    'Europe/Helsinki' or 'US/Eastern'. </para>
-            </note>
             <para>Choose one of the following methods:<itemizedlist>
                     <listitem>
                         <para><xref
@@ -3188,10 +3231,53 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             change to take effect. </para>
                     </step>
                 </procedure>
-                <para>This concludes the <citetitle>Getting
-                        Started</citetitle>. Thank you for using
-                    Rackspace Cloud products.</para>
             </section>
+        </section>
+        <section xml:id="Using_SSL_for_Database_Instances">
+            <title>Step 11. Using SSL with Your Cloud Database
+                Instances</title>
+            <para>SSL (Secure Sockets Layer) is a security protocol
+                that uses encryption technology to ensure that your
+                sensitive information sent over the internet is
+                protected. </para>
+            <para>There are often users on your site divulging
+                personal information such as credit card numbers,
+                social security number, user name, and passwords. By
+                having an SSL certificate enabled, your customers can
+                trust you that their data is protected and will be
+                encrypted in transit.</para>
+            <para>Cloud Databases installs a certificate on the
+                database instance at the time of provisioning. To
+                encrypt connections using SSL, download the
+                certificate from <link
+                    xlink:href="http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem"
+                    >http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem</link>.</para>
+            <para>For using SSL with the default MySQL command line,
+                pass SSL certificate to the client at
+                startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
+            <para>The official MySQL docs for using SSL are located at
+                    <link
+                        xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
+                        >http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html</link>.</para>
+            <para>You can also set up restrictions on a user to
+                require SSL for communicating with the database. MySQL
+                supports GRANT statement modifier “REQUIRE SSL”. For
+                example, to restrict ‘database_user’ to read, write,
+                delete on prod_database only using secure SSL
+                connection, login to MySQL as root and then issue the
+                following command:<programlisting>GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO 'database_user'@'%' REQUIRE SSL;</programlisting><note>
+                    <para>If the user already exists, you must revoke
+                        all existing privileges for the user and then
+                        use the preceding grant statement to give
+                        appropriate privileges to the user.</para>
+                </note><warning>
+                    <para>Using SSL encryption is a resource intensive
+                        operation and may have some impact on latency
+                        of your database connection.</para>
+                </warning></para>
+            <para>This concludes the <citetitle>Getting
+                    Started</citetitle>. Thank you for using Rackspace
+                Cloud products.</para>
         </section></chapter>
     
     <appendix xmlns="http://docbook.org/ns/docbook"
@@ -3755,7 +3841,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     <term><emphasis role="bold">Create
                             backup</emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;name&gt; &lt;instance&gt; [--description &lt;description>]</programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;instance&gt; &lt;name&gt; [--description &lt;description>]</programlisting>
                         <itemizedlist>
                             <title>Positional Arguments</title>
                             <listitem>
@@ -3776,6 +3862,19 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                                    <option>--description</option>
                                    <parameter>description</parameter>.
                                    A description for the backup.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <note>
+                                   <para>The syntax order for
+                                   <code>backup-create</code> was
+                                   changed to that shown above in
+                                   python-troveclient version 1.0.6
+                                   and later. Earlier versions require
+                                   you to pass in the backup name as
+                                   the first argument.</para>
+                                   </note>
                                 </para>
                             </listitem>
                         </itemizedlist>
@@ -4034,7 +4133,16 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     <term><emphasis role="bold">Apply configuration
                             group to instance</emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-attach &lt;configuration_id&gt; &lt;instance_id&gt;  </programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-attach &lt;instance_id&gt; &lt;configuration_id&gt;</programlisting>
+                        <note>
+                            <para>The syntax order for
+                                   <code>configuration-attach</code>
+                                was changed to that shown above in
+                                python-troveclient version 1.0.6 and
+                                later. Earlier versions require you to
+                                pass in the configuration group ID as
+                                the first argument.</para>
+                        </note>
                         <itemizedlist>
                             <title>Positional Arguments</title>
                             <listitem>
