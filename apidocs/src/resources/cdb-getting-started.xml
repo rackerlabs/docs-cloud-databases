@@ -2898,24 +2898,21 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                 database instances can be set using the configuration
                 groups feature of Cloud Databases. Suppose you want to
                 set the default time zone for a set of database
-                instances to the CST time zone.</para>
+                instances.</para>
             <para>The server time zone is set in MySQL in the
                     <code>default_time_zone</code> parameter, and the
-                default value is ‘SYSTEM’. To set the
-                    <code>default_time_zone</code> to a different
-                value, you can use offsets of the time zone from <link
-                    xlink:href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
-                    >UTC (Coordinated Universal Time)</link>. The
-                value for the CST (Central Standard Time) time zone
-                would be "-6:00", which we will use in our example:<itemizedlist>
+                default value is ‘SYSTEM’. You can set the time zone
+                in MySQL using either:<itemizedlist>
                     <listitem>
-                        <para><code>{"default_time_zone":"-6:00”}</code></para>
+                        <para>named time zones</para>
+                    </listitem>
+                    <listitem>
+                        <para>UTC (Coordinated Universal Time)
+                            offsets</para>
                     </listitem>
                 </itemizedlist></para>
-            <para>If you lived in the AEST (Australian Eastern
-                Standard Time) time zone on the other hand, the offset
-                would be "+10:00".</para>
-            <para>You can also use named time zones such as
+            <para>To set the time zone using named time zones, use the
+                appropriate name for your zone, such as
                 "Europe/London" or "US/Eastern" to set the
                     <code>default_time_zone</code>, for example:<itemizedlist>
                     <listitem>
@@ -2925,9 +2922,21 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                         <para><code>{"default_time_zone”:"US/Eastern”}</code></para>
                     </listitem>
                 </itemizedlist>For more information about named time
-                zones, see the MySQL documentation at <link
-                    xlink:href="http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html"
-                    >http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html</link>.</para>
+                zones, see the MySQL documentation at
+                http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html.</para>
+            <para>To set the <code>default_time_zone</code> using
+                offsets of the time zone from <link
+                    xlink:href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
+                    >UTC (Coordinated Universal Time)</link>, use the
+                appropriate offset value for your zone. For example
+                the CST (Central Standard Time) time zone would be "-6:00":<itemizedlist>
+                    <listitem>
+                        <para><code>{"default_time_zone":"-6:00”}</code></para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>If you lived in the AEST (Australian Eastern
+                Standard Time) time zone on the other hand, the offset
+                would be "+10:00".</para>
             <para> You can set <code>default_time_zone</code> in a
                 configuration group that can be applied to your
                 database instance. You can create a new configuration

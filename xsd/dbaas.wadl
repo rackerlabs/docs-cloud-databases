@@ -1842,6 +1842,32 @@
                     <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must 
                         be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.</para></note>
                 </doc>
+                <param name="datastore" style="plain" required="false" type="object" path="$.datastore">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The datastore for the configuration. If omitted, it defaults to MySQL 5.6.</para></wadl:doc>
+                </param>
+                <param name="type" style="plain" required="false" type="string" path="$.datastore.type">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The type of the datastore for the configuration. If omitted, it defaults to MySQL.</para></wadl:doc>
+                </param>
+                <param name="version" style="plain" required="false" type="string" path="$.datastore.version">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The version of the datastore for the configuration. If omitted, it defaults to MySQL 5.6.</para></wadl:doc>
+                </param>
+                <param name="description" style="plain" required="false" type="string" path="$.description">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The description for the configuration.</para></wadl:doc>
+                </param>
+                <param name="name" style="plain" required="true" type="string" path="$.name">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The name for the configuration.</para></wadl:doc>
+                </param>
+                <param name="values" style="plain" required="true" type="object" path="$.values">
+                    <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                        xml:lang="EN"><para>The values for the configuration. The key value pairs "values" should be in JSON format with no spaces. 
+                            The key and the value are strings and must be enclosed in double quotation marks. For example: "default_time_zone": "-6:00". 
+                            Each key value pair should be separated by a comma.</para></wadl:doc>
+                </param>
             </representation>
         </request>
         <response status="200">
