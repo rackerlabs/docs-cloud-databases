@@ -253,6 +253,11 @@
             <listitem>
                 <para>When used with the <code>restorePoint</code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</para>
             </listitem>
+            <listitem>
+                <para>For information about using SSL with your database instance, refer to <link
+                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/Using_SSL_for_Database_Instances.html"
+                    >http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/Using_SSL_for_Database_Instances.html</link>.</para>
+            </listitem>
         </itemizedlist></note>
         <para>The following table lists the required and optional attributes for Create instance:</para>
         <table rules="all">

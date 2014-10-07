@@ -1845,9 +1845,9 @@ export OS_PROJECT_ID=&lt;tenant_id>
             <tip>
                 <para>To help you decide which regionalized endpoint
                     to use, read about special considerations for
-                    choosing a data center at <link
-                        xlink:href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions"
-                        >http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</link>.</para>
+                    choosing a region at <link
+                        xlink:href="http://www.rackspace.com/knowledge_center/article/about-regions"
+                        >http://www.rackspace.com/knowledge_center/article/about-regions</link>.</para>
             </tip>
             <para>
                 <table rules="all">
@@ -2922,8 +2922,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                         <para><code>{"default_time_zone”:"US/Eastern”}</code></para>
                     </listitem>
                 </itemizedlist>For more information about named time
-                zones, see the MySQL documentation at
-                http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html.</para>
+                zones, see the MySQL documentation at <link
+                    xlink:href="http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html"
+                    >http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html</link>.</para>
             <para>To set the <code>default_time_zone</code> using
                 offsets of the time zone from <link
                     xlink:href="http://en.wikipedia.org/wiki/Coordinated_Universal_Time"
@@ -2985,6 +2986,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 +----------------------+--------------------------------------+
 </computeroutput></screen>
                         </informalexample>
+                        <para>As an alternative, you could use a named
+                            time zone instead of the UTC
+                            offset.</para>
                     </step>
                     <step>
                         <para>Apply the new configuration group to
@@ -3098,6 +3102,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <option>-H "X-Auth-Token: $token"</option> \
 <option>-H "Content-Type: application/json"</option> \
 <uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/configurations </uri> | python -m json.tool</programlisting>
+                            <para>As an alternative, you could use a
+                                named time zone instead of the UTC
+                                offset.</para>
                         </example>
                         <para>The following example shows the response
                             for Create Configuration Group
@@ -3256,34 +3263,49 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                 trust you that their data is protected and will be
                 encrypted in transit.</para>
             <para>Cloud Databases installs a certificate on the
-                database instance at the time of provisioning. To
-                encrypt connections using SSL, download the
-                certificate from <link
-                    xlink:href="http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem"
-                    >http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem</link>.</para>
-            <para>For using SSL with the default MySQL command line,
-                pass SSL certificate to the client at
-                startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
-            <para>The official MySQL docs for using SSL are located at
-                    <link
-                        xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
-                        >http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html</link>.</para>
-            <para>You can also set up restrictions on a user to
-                require SSL for communicating with the database. MySQL
-                supports GRANT statement modifier “REQUIRE SSL”. For
-                example, to restrict ‘database_user’ to read, write,
-                delete on prod_database only using secure SSL
-                connection, login to MySQL as root and then issue the
-                following command:<programlisting>GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO 'database_user'@'%' REQUIRE SSL;</programlisting><note>
-                    <para>If the user already exists, you must revoke
-                        all existing privileges for the user and then
-                        use the preceding grant statement to give
-                        appropriate privileges to the user.</para>
-                </note><warning>
+                database instance at the time of provisioning.</para>
+            <para>To use SSL perform the following steps:</para>
+            <itemizedlist>
+                <listitem>
+                    <para>For encrypting connections using SSL,
+                        download the certificate from <link
+                            xlink:href="http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem"
+                            >http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem</link>.</para>
+                </listitem>
+                <listitem>
+                    <para>To use SSL with the default MySQL command
+                        line, pass the SSL certificate to the client
+                        at
+                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
+                    <para>The official MySQL docs for using SSL are
+                        located at <link
+                            xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
+                            >http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html</link>.</para>
+                </listitem>
+                <listitem>
+                    <para>(Optional) To set up restrictions on a user
+                        to require SSL for communicating with the
+                        database, MySQL supports GRANT statement
+                        modifier “REQUIRE SSL”. For example, to
+                        restrict ‘database_user’ to read, write,
+                        delete on prod_database only using secure SSL
+                        connection, login to MySQL as root and then
+                        issue the following command:<programlisting>GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO 'database_user'@'%' REQUIRE SSL;</programlisting><note>
+                            <para>If the user already exists, you must
+                                revoke all existing privileges for the
+                                user and then use the preceding grant
+                                statement to give appropriate
+                                privileges to the user.</para>
+                        </note></para>
+                </listitem>
+            </itemizedlist>
+            <para>
+                <warning>
                     <para>Using SSL encryption is a resource intensive
                         operation and may have some impact on latency
                         of your database connection.</para>
-                </warning></para>
+                </warning>
+            </para>
             <para>This concludes the <citetitle>Getting
                     Started</citetitle>. Thank you for using Rackspace
                 Cloud products.</para>

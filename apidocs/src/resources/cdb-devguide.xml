@@ -87,6 +87,22 @@
                                    linkend="assigning_roles_to_account_users"
                                 />.</para>
                         </listitem>
+                        <listitem>
+                            <para>Added request body parameters for
+                                Create Configuration API operation.
+                                Refer to <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="POST_createConfiguration__version___accountId__configurations_configurations"
+                                /> for details.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added link to information for
+                                enabling SSL when creating an
+                                instance. Refer to <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="POST_createInstance__version___accountId__instances_Database_Instances"
+                                />.</para>
+                        </listitem>
                     </itemizedlist>
                 </revdescription>
             </revision>
@@ -3250,10 +3266,11 @@
                 <para>MySQL 5.6 is the default database for Cloud
                     Databases.</para>
                 <note>
-                    <para>For the SYD and HKG datacenters only, the
-                        default database is MySQL 5.1 if users do not
-                        specify the datastore type and version at
-                        instance creation.</para>
+                    <para>For the SYD and HKG regions only, the only
+                        available database is MySQL 5.1. If users do
+                        not specify the datastore type and version at
+                        instance creation in these regions, the
+                        default is MySQL 5.1.</para>
                 </note>
             </section>
             <section xml:id="Datstores-MySQL-51-d1e4875">

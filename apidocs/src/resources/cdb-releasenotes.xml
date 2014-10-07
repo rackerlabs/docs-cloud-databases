@@ -516,7 +516,10 @@
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem>
-				<para>Added support for enabling SSL on instance creation.</para>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/CLDMYSQL-409"
+						>CLDMYSQL-409: </link>Added support for
+					enabling SSL on instance creation.</para>
 			</listitem>
 			<listitem>
 				<para><link security="internal"
