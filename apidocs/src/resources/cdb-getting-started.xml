@@ -49,13 +49,27 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-10-08</pubdate>
+        <pubdate>2014-10-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-10-09</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Moved section on "Using SSL with
+                                Your Cloud Database Instances" to the
+                                   <citetitle>Rackspace Cloud
+                                   Databases Developer
+                                   Guide</citetitle>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-08</date>
                 <revdescription>
@@ -68,9 +82,8 @@
                                 /> for details.</para>
                         </listitem>
                         <listitem>
-                            <para>Added <xref
-                                   linkend="Using_SSL_for_Database_Instances"
-                                />.</para>
+                            <para>Added section on "Using SSL with
+                                Your Cloud Database Instances".</para>
                         </listitem>
                         <listitem>
                             <para>Updated syntax order for
@@ -3245,70 +3258,12 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             attached to the instance, the instance may
                             need to be restarted in order for the
                             change to take effect. </para>
+                        <para>This concludes the <citetitle>Getting
+                                Started</citetitle>. Thank you for
+                            using Rackspace Cloud products.</para>
                     </step>
                 </procedure>
             </section>
-        </section>
-        <section xml:id="Using_SSL_for_Database_Instances">
-            <title>Step 11. Using SSL with Your Cloud Database
-                Instances</title>
-            <para>SSL (Secure Sockets Layer) is a security protocol
-                that uses encryption technology to ensure that your
-                sensitive information sent over the internet is
-                protected. </para>
-            <para>There are often users on your site divulging
-                personal information such as credit card numbers,
-                social security number, user name, and passwords. By
-                having an SSL certificate enabled, your customers can
-                trust you that their data is protected and will be
-                encrypted in transit.</para>
-            <para>Cloud Databases installs a certificate on the
-                database instance at the time of provisioning.</para>
-            <para>To use SSL perform the following steps:</para>
-            <itemizedlist>
-                <listitem>
-                    <para>For encrypting connections using SSL,
-                        download the certificate from <link
-                            xlink:href="http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem"
-                            >http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem</link>.</para>
-                </listitem>
-                <listitem>
-                    <para>To use SSL with the default MySQL command
-                        line, pass the SSL certificate to the client
-                        at
-                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
-                    <para>The official MySQL docs for using SSL are
-                        located at <link
-                            xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
-                            >http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html</link>.</para>
-                </listitem>
-                <listitem>
-                    <para>(Optional) To set up restrictions on a user
-                        to require SSL for communicating with the
-                        database, MySQL supports GRANT statement
-                        modifier “REQUIRE SSL”. For example, to
-                        restrict ‘database_user’ to read, write,
-                        delete on prod_database only using secure SSL
-                        connection, login to MySQL as root and then
-                        issue the following command:<programlisting>GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO 'database_user'@'%' REQUIRE SSL;</programlisting><note>
-                            <para>If the user already exists, you must
-                                revoke all existing privileges for the
-                                user and then use the preceding grant
-                                statement to give appropriate
-                                privileges to the user.</para>
-                        </note></para>
-                </listitem>
-            </itemizedlist>
-            <para>
-                <warning>
-                    <para>Using SSL encryption is a resource intensive
-                        operation and may have some impact on latency
-                        of your database connection.</para>
-                </warning>
-            </para>
-            <para>This concludes the <citetitle>Getting
-                    Started</citetitle>. Thank you for using Rackspace
-                Cloud products.</para>
         </section></chapter>
     
     <appendix xmlns="http://docbook.org/ns/docbook"
