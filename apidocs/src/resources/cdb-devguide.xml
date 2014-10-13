@@ -2943,14 +2943,14 @@
                 <listitem>
                     <para>For encrypting connections using SSL,
                         download the certificate from <link
-                            xlink:href="https://bb50bb4e979906cbf9a6-660b5e7faf97a2e5c261005ea00c2a6f.ssl.cf2.rackcdn.com/ca-cert"
-                            >https://bb50bb4e979906cbf9a6-660b5e7faf97a2e5c261005ea00c2a6f.ssl.cf2.rackcdn.com/ca-cert</link>.</para>
+                            xlink:href="https://4485dec4efbcafb9bf02-e7978b385858a2fd8319e6ac7f42f132.ssl.cf2.rackcdn.com/ca-cert.pem"
+                            >https://4485dec4efbcafb9bf02-e7978b385858a2fd8319e6ac7f42f132.ssl.cf2.rackcdn.com/ca-cert.pem</link>.</para>
                 </listitem>
                 <listitem>
                     <para>To use SSL with the default MySQL command
                         line, pass the SSL certificate to the client
                         at
-                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert</programlisting></para>
+                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
                     <para>The official MySQL docs for using SSL are
                         located at <link
                             xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
