@@ -64,7 +64,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-10-09</pubdate>
+        <pubdate>2014-10-13</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,22 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-10-13</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="Using_SSL_for_Database_Instances"
+                                   >“Using SSL with Your Cloud
+                                   Database Instances”</olink> to
+                                correct the link for downloading the
+                                certificate.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-09</date>
                 <revdescription>
@@ -2927,14 +2943,14 @@
                 <listitem>
                     <para>For encrypting connections using SSL,
                         download the certificate from <link
-                            xlink:href="http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem"
-                            >http://d7364fcdf158e681da72-660b5e7faf97a2e5c261005ea00c2a6f.r71.cf2.rackcdn.com/ca-cert.pem</link>.</para>
+                            xlink:href="https://bb50bb4e979906cbf9a6-660b5e7faf97a2e5c261005ea00c2a6f.ssl.cf2.rackcdn.com/ca-cert"
+                            >https://bb50bb4e979906cbf9a6-660b5e7faf97a2e5c261005ea00c2a6f.ssl.cf2.rackcdn.com/ca-cert</link>.</para>
                 </listitem>
                 <listitem>
                     <para>To use SSL with the default MySQL command
                         line, pass the SSL certificate to the client
                         at
-                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
+                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert</programlisting></para>
                     <para>The official MySQL docs for using SSL are
                         located at <link
                             xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
