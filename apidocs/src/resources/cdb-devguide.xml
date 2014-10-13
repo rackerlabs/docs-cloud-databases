@@ -2969,7 +2969,7 @@
                                 revoke all existing privileges for the
                                 user and then use the preceding grant
                                 statement to give appropriate
-                                privileges to the user.</para>
+                                privileges to the user. Then remember to FLUSH PRIVILEGES to make the privilege changes take effect.</para>
                         </note></para>
                 </listitem>
             </itemizedlist>
