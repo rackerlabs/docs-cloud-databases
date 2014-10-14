@@ -2950,7 +2950,7 @@
                     <para>To use SSL with the default MySQL command
                         line, pass the SSL certificate to the client
                         at
-                        startup:<programlisting>MySQL —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
+                        startup:<programlisting>mysql —ssl-ca=/path/to/ca-cert.pem</programlisting></para>
                     <para>The official MySQL docs for using SSL are
                         located at <link
                             xlink:href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html"
