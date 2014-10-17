@@ -64,7 +64,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-10-13</pubdate>
+        <pubdate>2014-10-17</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,24 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-10-17</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="Using_SSL_for_Database_Instances"
+                                   >“Using SSL with Your Cloud
+                                   Database Instances”</olink> to
+                                correct the link for downloading the
+                                certificate and add a requirement to
+                                restart database instances created
+                                before October 20, 2014.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-13</date>
                 <revdescription>
@@ -2938,13 +2956,22 @@
                 protected. </para>
             <para>Cloud Databases installs a certificate on the
                 database instance at the time of provisioning.</para>
-            <para>To use SSL perform the following steps:</para>
+            <note>
+                <para>
+                    All
+                    database instances created before 
+                    October 20, 2014 
+                    should be restarted before
+                    accepting SSL connections.
+                </para>  
+            </note>
+            <para>To use SSL, perform the following steps:</para>
             <itemizedlist>
                 <listitem>
                     <para>For encrypting connections using SSL,
                         download the certificate from <link
-                            xlink:href="https://4485dec4efbcafb9bf02-e7978b385858a2fd8319e6ac7f42f132.ssl.cf2.rackcdn.com/ca-cert.pem"
-                            >https://4485dec4efbcafb9bf02-e7978b385858a2fd8319e6ac7f42f132.ssl.cf2.rackcdn.com/ca-cert.pem</link>.</para>
+                            xlink:href="http://ssl.rackspaceclouddb.com/ca-cert.pem"
+                            >http://ssl.rackspaceclouddb.com/ca-cert.pem</link>.</para>
                 </listitem>
                 <listitem>
                     <para>To use SSL with the default MySQL command
@@ -2969,7 +2996,9 @@
                                 revoke all existing privileges for the
                                 user and then use the preceding grant
                                 statement to give appropriate
-                                privileges to the user. Then remember to FLUSH PRIVILEGES to make the privilege changes take effect.</para>
+                                privileges to the user. Then remember
+                                to FLUSH PRIVILEGES to make the
+                                privilege changes take effect. </para>
                         </note></para>
                 </listitem>
             </itemizedlist>
