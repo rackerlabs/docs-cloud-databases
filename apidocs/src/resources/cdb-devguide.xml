@@ -212,10 +212,10 @@
                         <listitem>
                             <para>Added information that the default
                                 datastore type and version is MySQL
-                                5.1 for the datacenters SYD and HKG
-                                only. For all other datacenters, the
-                                default datastore type and version is
-                                MySQL 5.6.</para>
+                                5.1 for the regions SYD and HKG only.
+                                For all other regions, the default
+                                datastore type and version is MySQL
+                                5.6.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
