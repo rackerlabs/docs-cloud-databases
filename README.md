@@ -1,141 +1,33 @@
-## Integration dev scripts, tests and docs for Reddwarf.
+docs-cloud-databases
+====================
 
-***
+Rackspace Cloud Databases API documentation
 
-### Steps to setup this environment:
+This github repository contains the source files for the Rackspace Cloud Databases API documentation. 
 
-Install a fresh Ubuntu 11.10 (Oneiric Ocelot) image ( _We suggest to create a virtual machine_ )
+Contributions are welcome! To suggest changes to the documentation, submit an Issue (https://github.com/rackerlabs/docs-cloud-databases/issues) or Pull Request (https://github.com/rackerlabs/docs-cloud-databases/pulls).
 
-#### Login to the machine as root
+Source files are for the following documents:
 
-#### Make sure we have git installed:
+    o Cloud Databases Getting Started Guide
+    o Cloud Databases Developer Guide
+    o Cloud Databases Release Notes
 
-    $ apt-get update
-    $ apt-get install git-core -y
+You should create your own branch to make changes to the this project and send a Pull Request to have your changes
+reviewed and merged into the master branch as appropriate.
 
-#### Add a user that is not root if you do not already have one:
+You can use any editor to work with these source files. The files that are most likely to be of interest are:
 
-    $ adduser ubuntu
-    $ visudo
+    o apidocs/src/resources/cdb-getting-started.xml 
+    o apidocs/src/resources/cdb-devguide.xml
+    o xsd/dbaas.wadl
 
-  add this line to the file below the root user
+You might also be interested in making changes to the example files referenced in the WADL file. They are here:
 
-    ubuntu  ALL=(ALL:ALL) ALL
+    o /apidocs/src/resources/samples
 
-    **OR use this if you dont want to type your password to sudo a command**
+Also, the status codes referenced by the WADL files are here:
 
-    ubuntu  ALL=(ALL:NOPASSWD) ALL
-
-  if /dev/pts/0 does not have read/write for your user
-
-    $ chmod 660 /dev/pts/0
-
-  *Note that this number can change and if you can not connect to the screen session then the /dev/pts/# needs modding like above.*
-
-#### Login with ubuntu:
-
-    $ su ubuntu
-    $ cd ~
-
-#### Clone this repo:
-
-    $ git clone https://github.com/hub-cap/reddwarf_lite-integration.git
-
-#### Go into the scripts directory:
-
-    $ cd reddwarf_lite-integration/scripts/
-
-#### Running redstack is the core script:
-*Run this to get the command list with a short description of each*
-
-    $ ./redstack
-
-#### Install all the dependencies
-
-    $ ./redstack install
-
-***
-
-#### Connecting to the screen session
-
-    $ screen -x stack
-
-*If that command fails with the error*
-
-    Cannot open your terminal '/dev/pts/1'
-
-*If that command fails with the error chmod the corresponding /dev/pts/#*
-
-    $ chmod 660 /dev/pts/1
-
-#### Detach from the screen session
-Allows the services to continue running in the background
-
-    ctrl+a then d
-
-***
-
-#### Kick start the build/initialize/build-image commands
-*Add mysql as a parameter to set build and add the mysql guest image*
-
-    $ ./redstack kick-start mysql
-
-#### Start up the reddwarf services in a screen session
-
-    $ ./redstack start
-
- or, to run outside of a screen:
-
-    $ ./redstack run
-
-***
-
-*Optional commands if you did not run kick-start*
-
-#### Build the packages
-
-    $ ./redstack build
-
-#### Initialize the database and setup everything
-
-    $ ./redstack initalize
-
-#### Build the image and add it to glance
-
-    $ ./redstack build-image mysql
-
-***
-
-#### Running the reddwarf client (It's so easy!)
-*This sets of the authorization endpoint and gets a token for you*
-
-    $ ./redstack rd-client
-
-#### Running the nova client (It's so easy!)
-*This sets of the authorization endpoint and gets a token for you*
-
-    $ ./redstack nova-client
-
-***
-
-### Reset your environment
-
-#### Stop all the services running in the screens and refresh the envirnoment:
-
-    $ killall -9 screen
-
-    $ RECLONE=yes ./redstack install
-    $ ./redstack kick-start mysql
-    $ ./redstack start
-
- or
-
-    $ RECLONE=yes ./redstack install
-    $ ./redstack build
-    $ ./redstack initialize
-    $ ./redstack build-image mysql
-    $ ./redstack start
-
-
+    o xsd/common.ent
 
 
