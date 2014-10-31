@@ -64,7 +64,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-10-17</pubdate>
+        <pubdate>2014-11-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,6 +78,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2014-11-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Removed the note from <olink targetdoc="cdb-devguide"
+                                    targetptr="POST_createRoot__version___accountId__instances__instanceId__root_Database_Instances"
+                                /> that detailed a limitation about receiving help if you made
+                                changes as a root user. That limitation has been removed.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-17</date>
                 <revdescription>
@@ -101,13 +114,10 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Updated <olink
-                                   targetdoc="cdb-devguide"
-                                   targetptr="Using_SSL_for_Database_Instances"
-                                   >“Using SSL with Your Cloud
-                                   Database Instances”</olink> to
-                                correct the link for downloading the
-                                certificate.</para>
+                            <para>Removed Updated <olink targetdoc="cdb-devguide"
+                                    targetptr="Using_SSL_for_Database_Instances">“Using SSL with
+                                    Your Cloud Database Instances”</olink> to correct the link for
+                                downloading the certificate.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>

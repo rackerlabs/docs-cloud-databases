@@ -1340,11 +1340,6 @@
         <wadl:doc xml:lang="EN" title="Enable root user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Enables the root user for the specified database instance and returns the root password.</para>
             <para>This operation enables login from any host for the root user and provides the user with a generated root password.</para>
-            <note><para>Changes you make as a root user may cause detrimental effects to the database instance and unpredictable behavior for API operations. 
-                When you enable the root user, you accept the possibility that we will not be able to support your database instance. 
-                While enabling root does not prevent us from a “best effort” approach to helping you if something goes wrong with your instance, 
-                we cannot ensure that we will be able to assist you if you change core database settings. These changes can be (but are not limited to) 
-                turning off binlogs, removing users that we use to access your instance, and so forth.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
