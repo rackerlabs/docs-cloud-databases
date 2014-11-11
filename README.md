@@ -43,8 +43,8 @@ You can use any text editor to work with these source files. If you want to use 
 
 The files that are most likely to be of interest to you are as follows:
 
-* [src/resources/cdb-getting-started.xml](src/resources/cdb-getting-started.xml)
-* [src/resources/cdb-devguide.xml](src/resources/cdb-devguide.xml)
+* [src/resources/cdb-getting-started.xml](apidocs/src/resources/cdb-getting-started.xml)
+* [src/resources/cdb-devguide.xml](apidocs/src/resources/cdb-devguide.xml)
 * [xsd/dbaas.wadl](xsd/dbaas.wadl)
 
 If you want to make changes to the example files referenced in the WADL file, you can find the example files at  [src/resources/samples](src/resources/samples).
