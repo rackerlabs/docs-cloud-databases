@@ -49,13 +49,45 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-10-09</pubdate>
+        <pubdate>2014-11-16</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-11-16</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added trove commands for replication
+                                in <xref
+                                   linkend="trove_summary_replication"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
+            <revision>
+                <date>2014-10-09</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Fixed cURL option  for example in
+                                   <xref
+                                   linkend="List_Users_In_Instance_CURL"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Fixed order of arguments for example
+                                in <xref
+                                   linkend="Backup_Instance_Trove"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-10-09</date>
                 <revdescription>
@@ -2574,7 +2606,7 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                             <?dbfo keep-together="always"?>
                             <title>cURL List Users in Database
                                 Instance Request: JSON</title>
-                            <programlisting language="bash"><command>curl</command> <option>-i</option> \
+                            <programlisting language="bash"><command>curl</command> <option>-s</option> \
 <option>-H "X-Auth-Token: $token"</option> \
 <option>-H "Content-Type: application/json"</option> \
 <uri>https://ord.databases.api.rackspacecloud.com/v1.0/</uri>$account<uri>/instances/</uri><emphasis role="bold">instance_id</emphasis><uri>/users</uri> | python -m json.tool</programlisting>
@@ -2794,7 +2826,7 @@ Date: Thu, 05 Apr 2012 18:13:53 GMT
                             the response for creating your database
                             instance.</para>
                         <para>Issue the following command:</para>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;name> &lt;instance_id> --description &lt;description></programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;instance_id> &lt;name> --description &lt;description></programlisting>
                         <para>The command returns the name and id for
                             the backup among the other
                             information:</para>
@@ -3906,6 +3938,97 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-delete &lt;backup&gt;</programlisting>
                         <para> Where <parameter>backup</parameter> is
                             the ID of the backup. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="trove_summary_replication">
+            <title>Replication</title>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Create
+                            replica</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove create &lt;name&gt; &lt;flavor&gt; [--size &lt;size>] --replica_of &lt;instance_id_to_replicate></programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>name</parameter>. The
+                                   name of the replica. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>flavor</parameter>. The
+                                   flavor of the replica. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--size</option>
+                                   <parameter>size</parameter>. The
+                                   size of the replica disk in
+                                   GB.</para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Required Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--replica_of</option>
+                                   <parameter>instance_id_to_replicate</parameter>.
+                                   The ID of the instance to
+                                   replicate.</para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Detach
+                            replica</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove detach-replica &lt;replica_instance_id&gt;  </programlisting>
+                        <para> Where
+                                <parameter>replica_instance_id</parameter>
+                            is the ID of the instance replica to
+                            detach. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List all replicas or
+                            replica sources</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove list</programlisting>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List replica
+                            source</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove show &lt;replica_source_id&gt;</programlisting>
+                        <para> Where
+                                <parameter>replica_source_id</parameter>
+                            is the ID of the replica source. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List
+                            replica</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove show &lt;replica_instance_id&gt;</programlisting>
+                        <para> Where
+                                <parameter>replica_instance_id</parameter>
+                            is the ID of the replica instance. </para>
                     </listitem>
                 </varlistentry>
             </variablelist>

@@ -1,0 +1,18 @@
+POST /v1.0/1234/instances HTTP/1.1
+User-Agent: python-troveclient
+Host: ord.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/json
+Content-Type: application/json
+
+
+{
+  "instance": {
+    "volume": {
+      "size": 1
+    },
+    "flavorRef": "9",
+    "name": "t2s1_ALT_GUEST",
+    "replica_of": "6bdca2fc-418e-40bd-a595-62abda61862d"
+  }
+}
