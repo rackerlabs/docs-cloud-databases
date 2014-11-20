@@ -83,8 +83,21 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para>Added <xref linkend="replication"
+                            <para>Added paging limit for backups in
+                                   <xref linkend="pagination"
                                 />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added overview of replication (<xref
+                                   linkend="Replication-Overview-dle5733"
+                                />) and its API operations (<xref
+                                   linkend="replication"/>).</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added monitoring information for
+                                replication (<xref
+                                   linkend="Monitoring_Read_Replication-d1e3694"
+                                />).</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -1260,6 +1273,12 @@
                 failover and load balancing across available storage
                 clusters.</para>
         </section>
+        <section xml:id="Replica">
+            <title>Replica</title>
+            <para>A replica is an exact copy of a database instance
+                that is kept synchronized with its database instance
+                source. </para>
+        </section>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
         <title>General API information</title>
@@ -2321,11 +2340,11 @@
                 </tbody>
             </informaltable>
             <para>Cloud Databases has separate paging limits for
-                instances (20), databases (100), and users (20), with
-                the default limit for each set to the paging limit. If
-                a request supplies no limit or one that exceeds the
-                configured default limit, the default is used
-                instead.</para>
+                instances (20), databases (100), users (20), and
+                backups (20), with the default limit for each set to
+                the paging limit. If a request supplies no limit or
+                one that exceeds the configured default limit, the
+                default is used instead.</para>
             <para>See the example of paged List Instances calls that
                 follow.</para>
             <example>
@@ -2922,7 +2941,6 @@
                         </itemizedlist>
                     </listitem>
                 </itemizedlist></para>
-            <?hard-pagebreak?>
             <note>
                 <title>Notes:</title>
                 <itemizedlist spacing="compact">
@@ -2965,6 +2983,101 @@
                     </listitem>
                 </itemizedlist>  
             </note>
+            <section xml:id="Monitoring_Read_Replication-d1e3694">
+                <title>Monitoring Read Replication</title>
+                <para>After setting up replication, you should
+                    periodically monitor your replicas to ensure that
+                    they are in a healthy state. See the table below
+                    for the mysql variables that you should monitor. </para>
+                <para> All the variables mentioned in the table below
+                    for monitoring replication are present in the
+                    monitoring agent running on your database
+                    instance. You can monitor these variables using
+                        <link xlink:href="intelligence.rackspace.com"
+                        >intelligence.rackspace.com</link> and also
+                    set up alarms to be notified of the state of your
+                    replica. You can also monitor these variables by
+                    executing the ‘SHOW GLOBAL STATUS’ and ‘SHOW SLAVE
+                    STATUS’ commands.</para>
+                <para>
+                    <table rules="all">
+                        <caption>Variables for Monitoring Read
+                            Replication</caption>
+                        <thead>
+                            <tr align="center">
+                                <td colspan="1">Variable</td>
+                                <td colspan="5">Description</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr align="left">
+                                <td colspan="1">Slave_running</td>
+                                <td colspan="5">This is a global
+                                   status variable and its value can
+                                   be ‘ON’ or ‘OFF’. If the value is
+                                   ‘ON’ that means the replica is
+                                   connected to the source DB instance
+                                   and both SQL thread and IO thread
+                                   are running. If the value is ‘OFF’,
+                                   you look at Last_SQL_Errno and
+                                   Last_SQL_Error for more error
+                                   information.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">Slave_IO_Running</td>
+                                <td colspan="5">This variable is a
+                                   part of the Show Slave status and
+                                   its value can be ‘Yes’, ‘No’, or
+                                   ‘Connecting’. If the value is ‘No’,
+                                   that means the replica I/O thread
+                                   is not running and you can look at
+                                   Last_IO_Errno and Last_IO_Error for
+                                   more error information.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">Slave_SQL_Running </td>
+                                <td colspan="5">This variable is a
+                                   part of the Show Slave status and
+                                   its value can be ‘Yes’ or ‘No’. It
+                                   tells whether the replica’s SQL
+                                   thread has started and is working
+                                   well. If the value is ‘No’, you can
+                                   look at Last_SQL_Errno and
+                                   Last_SQL_Error for more error
+                                   information.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">Last_IO_Errno</td>
+                                <td colspan="5">Indicates the error
+                                   number of the most recent thread
+                                   that caused the I/O thread to
+                                   stop.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1">Last_IO_Error</td>
+                                <td colspan="5">Indicates the error
+                                   message of the most recent thread
+                                   that caused the I/O thread to
+                                   stop.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1"> Last_SQL_Errno</td>
+                                <td colspan="5">Indicates the error
+                                   number of the most recent thread
+                                   that caused the MySQL thread to
+                                   stop.</td>
+                            </tr>
+                            <tr align="left">
+                                <td colspan="1"> Last_SQL_Error </td>
+                                <td colspan="5">Indicates the error
+                                   message of the most recent thread
+                                   that caused the MySQL thread to
+                                   stop.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </para>
+            </section>
             
             
         </section>
@@ -3445,6 +3558,112 @@
                     and the <code>version</code> is "10".</para>
             </section>
         </section>
+        <section xml:id="Replication-Overview-dle5733">
+            <title>Replication</title>
+            <para>Replication allows users of Cloud Databases to
+                create a read replica of a database instance that can
+                be used for scaling out read-heavy workloads or for
+                ensuring availability of your database in case of
+                instance failure. When you create a read replica, you
+                should specify an existing database instance as the
+                source of the replica. </para>
+            <para>Rackspace Cloud Databases uses MySQL asynchronous
+                replication.</para>
+            <para>
+                <note>
+                    <para>There will be a lag between the source
+                        database instance and the replica. All the
+                        updates will be applied to the replica after
+                        they occur on the master. </para>
+                </note>
+            </para>
+            <para>There are several use cases where you may want to
+                use replication:<itemizedlist>
+                    <listitem>
+                        <para><emphasis role="bold"
+                            >Scaling</emphasis></para>
+                        <para>You can create replicas of your DB
+                            instance and distribute read traffic for
+                            your applications on the replicas. All the
+                            writes and updates will be applied to the
+                            source instance, whereas reads can take
+                            place on any one of the replica instances.
+                            This can help improve the overall
+                            performance of an application as writes
+                            would only be dedicated to the source
+                            instance and reads will be spread across
+                            replicas. </para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold">Increased
+                                Availability</emphasis></para>
+                        <para>In case of instance failure, the replica
+                            can act as the new source database
+                            instance and ensure that an application
+                            has minimal downtime.</para>
+                        <note>
+                            <para>In this case you will have to change
+                                the application endpoint to the new
+                                source database instance.</para>
+                        </note>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold"
+                                >Analytics</emphasis></para>
+                        <para>A large number of applications using
+                            MySQL databases are used for performing
+                            analysis. Replication helps in maintaining
+                            multiple copies of the data, and analysis
+                            of information can be done on the replica
+                            without affecting the performance of
+                            writes/updates on the source database
+                            instance.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold"
+                                >Security</emphasis></para>
+                        <para>Replication can be used to back up data
+                            from a slave. The slave can be paused from
+                            the replication process, and you can make
+                            a copy of live data without affecting any
+                            operations on the source database
+                            instance.</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>For information about monitoring read replication,
+                refer to <xref
+                    linkend="Monitoring_Read_Replication-d1e3694"
+                />.</para>
+            <note>
+                <title>Notes</title>
+                <itemizedlist>
+                    <listitem>
+                        <para>The maximum number of replicas allowed
+                            per source database instance is
+                            two.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Replication can be only set up on
+                            instance flavors 1GB and above.</para>
+                    </listitem>
+                    <listitem>
+                        <para>Replication is currently only supported
+                            for MySQL 5.6. Both source database
+                            instance and replica should be running
+                            MySQL 5.6.</para>
+                    </listitem>
+                    <listitem>
+                        <para>The source DB instance and replica
+                            should be in the same region.</para>
+                    </listitem>
+                    <listitem>
+                        <para>It is recommended to have the same disk
+                            and RAM size on your replica as you have
+                            for your source database instance.</para>
+                    </listitem>
+                </itemizedlist>
+            </note>
+        </section>
     </chapter>
     
     <chapter xml:id="API_Operations-d1e2264" 
@@ -3640,89 +3859,6 @@
             <title>Replication</title>
             <para>This section describes the operations for
                 replication of database instances.</para>
-            <para>Replication allows users of Cloud Databases to
-                create a read replica of a database instance that can
-                be used for scaling out read-heavy workloads or for
-                ensuring availability of your database in case of
-                instance failure. When you create a read replica, you
-                specify an existing database instance as the source of
-                the replica. Rackspace Cloud Databases uses MySQL
-                asynchronous replication. Note that there will be a
-                lag between the source database instance and the
-                replica. All the updates will be applied to the
-                replica after they occur on the master. </para>
-            <para>There are several use cases when you may want to use replication:<itemizedlist>
-                    <listitem>
-                        <para>Scale</para>
-                        <para>Scale beyond a single database for
-                            read-heavy workloads. You can create
-                            replicas of your DB instance and
-                            distribute read traffic for your
-                            applications on the replicas. All the
-                            writes and updates will be applied to the
-                            master, whereas reads can take place on
-                            any one of the slave replicas. This can
-                            help improve the overall performance of an
-                            application as writes would only be
-                            dedicated to the source instance and reads
-                            will be spread across replicas. </para>
-                    </listitem>
-                    <listitem>
-                        <para>Availability</para>
-                        <para>In case of instance failure, the replica
-                            can act as the new source database
-                            instance and ensure that an application
-                            has minimal downtime.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Analytics</para>
-                        <para>A large number of applications using
-                            MySQL databases are used for running
-                            analysis. Replication helps in maintaining
-                            multiple copies of the data, and analysis
-                            of information can be done on the replica
-                            without affecting the performance of
-                            writes/updates on the source database
-                            instance.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Security</para>
-                        <para>Replication can be used to back up data
-                            from a slave. The slave can be paused from
-                            the replication process, and you can make
-                            a copy of live data without affecting any
-                            operations on the source database
-                            instance.</para>
-                    </listitem>
-                </itemizedlist></para>
-            <note><title>Notes</title>
-                <itemizedlist>
-                    <listitem>
-                        <para>The maximum number of replicas allowed
-                            per source database instance is
-                            two.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Replication can be only set up on
-                            instance flavors 1GB and above.</para>
-                    </listitem>
-                    <listitem>
-                        <para>Replication is currently only supported
-                            for MySQL 5.6. Both source database
-                            instance and replica should be running
-                            MySQL 5.6.</para>
-                    </listitem>
-                    <listitem>
-                        <para>The source DB instance and replica
-                            should be in the same region.</para>
-                    </listitem>
-                    <listitem>
-                        <para>It is recommended to have the same disk
-                            and RAM size on your replica as you have
-                            for your source database instance.</para>
-                    </listitem>
-                </itemizedlist>
-            </note>
             <para>The Replication API supports the following
                 operations:</para>
             <wadl:resources
@@ -3736,17 +3872,6 @@
                     <wadl:method href="getReplica"/>
                     <wadl:method href="detachReplica"/>
                 </wadl:resource>
-           <!--      <wadl:resource href="../../../xsd/dbaas.wadl#backupId">
-                    <wadl:method href="getBackupById"/>
-                    <wadl:method href="deleteBackup"/>
-                </wadl:resource>
-                <wadl:resource href="../../../xsd/dbaas.wadl#backupsB">
-                    <wadl:method href="getBackupsByInstance"/>
-                </wadl:resource>
-                <wadl:resource
-                    href="../../../xsd/dbaas.wadl#instances">
-                    <wadl:method href="restoreBackup"/>
-                </wadl:resource> --> 
             </wadl:resources>
         </section>
         
@@ -3922,6 +4047,14 @@
                     replication of volumes with automatic failover and
                     load balancing across available storage
                     clusters.</para>
+            </glossdef>
+        </glossentry>
+        <glossentry>
+            <glossterm>replica</glossterm>
+            <glossdef>
+                <para>A replica is an exact copy of a database
+                    instance that is kept synchronized with its
+                    database instance source.</para>
             </glossdef>
         </glossentry>
     </glossary>

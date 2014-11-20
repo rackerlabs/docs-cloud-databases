@@ -2230,7 +2230,7 @@
             <para>This operation asynchronously provisions a replica for the specified source database instance. 
                 This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. 
                 It also requires specifying the source database instance using the <code>replica_of</code> attribute.
-                The service then provisions the replica with the requested flavor and sets up a volume of the specified size, which is the storage for the replicated instance.</para>
+                The service then provisions the replica with the requested flavor and sets up a volume of the specified size.</para>
             <note security="writeronly"><title>Notes</title><itemizedlist>
                 <listitem>
                     <para>You can create only one database instance per <command>POST</command> request.</para>
@@ -2505,9 +2505,9 @@
     </method>
     
       <method name="GET" id="getReplicasOrReplicaSources">
-        <wadl:doc xml:lang="EN" title="List all replicas or replica sources"  xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the status and information for all replicas or replica sources.</para>
-            <para>This operation lists the status and information for all replicas or replica sources.</para>
+        <wadl:doc xml:lang="EN" title="List all replicas and replica source database instances"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the status and information for all replicas and replica sources.</para>
+            <para>This operation lists the status and information for all replicas and replica sources.</para>
             <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>

@@ -61,6 +61,13 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
+                            <para>Updated optional arguments for trove
+                                   <code>backup-create</code> command
+                                in <xref
+                                   linkend="trove_summary_backups"
+                                />.</para>
+                        </listitem>
+                        <listitem>
                             <para>Added trove commands for replication
                                 in <xref
                                    linkend="trove_summary_replication"
@@ -3859,7 +3866,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     <term><emphasis role="bold">Create
                             backup</emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;instance&gt; &lt;name&gt; [--description &lt;description>]</programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;instance&gt; &lt;name&gt; [--description &lt;description>] [--parent &lt;parent>]</programlisting>
                         <itemizedlist>
                             <title>Positional Arguments</title>
                             <listitem>
@@ -3884,21 +3891,26 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             </listitem>
                             <listitem>
                                 <para>
-                                   <note>
-                                   <para>The syntax order for
-                                   <code>backup-create</code> was
-                                   changed to that shown above in
-                                   python-troveclient version 1.0.6
-                                   and later. Earlier versions require
-                                   you to pass in the backup name as
-                                   the first argument.</para>
-                                   </note>
+                                   <option>--parent</option>
+                                   <parameter>parent</parameter>. ID
+                                   of the parent backup from which to
+                                   perform an incremental backup.
                                 </para>
                             </listitem>
                         </itemizedlist>
                     </listitem>
                 </varlistentry>
             </variablelist>
+            <para>
+                <note>
+                    <para>The syntax order for
+                            <code>backup-create</code> was changed to
+                        that shown above in python-troveclient version
+                        1.0.6 and later. Earlier versions require you
+                        to pass in the backup name as the first
+                        argument.</para>
+                </note>
+            </para>
             <variablelist wordsize="10%">
                 <varlistentry>
                     <term><emphasis role="bold">List
