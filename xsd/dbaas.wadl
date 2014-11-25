@@ -2470,7 +2470,7 @@
     </method>
     
     <method name="GET" id="getReplica">
-        <wadl:doc xml:lang="EN" title="List replica"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List replica details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified replica.</para>
             <para>This operation lists the status and details of the specified replica. <phrase>The operation also lists 
                 the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase></para>
@@ -2486,7 +2486,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replica request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replica details request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replica-request.json"/>
                 </doc>
             </representation>      
@@ -2495,7 +2495,7 @@
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replica response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replica details response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replica-response.json"/>
                 </doc>
             </representation>
