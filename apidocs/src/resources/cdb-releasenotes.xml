@@ -523,13 +523,14 @@
 			<title>What's New</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
-				xmlns:html="http://www.w3.org/1999/xhtml">
+				xmlns:html="http://www.w3.org/1999/xhtml" security="writeronly">
 				<para>Updated public python reference guest agent on all database
-					instances on v2 infrastructure.</para>
+					instances on v2 infrastructure (except for MySQL
+					5.1).</para>
 			</listitem>
 			<listitem>
-				<para>Added internal replication support for
-					testing.</para>
+				<para>Added support for replication for MySQL
+					5.6.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
