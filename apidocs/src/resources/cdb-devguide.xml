@@ -64,7 +64,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-11-17</pubdate>
+        <pubdate>2014-12-08</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,7 +79,7 @@
         
         <revhistory>
             <revision>
-                <date>2014-11-17</date>
+                <date>2014-12-08</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -2977,7 +2977,7 @@
                             <listitem>
                                 <para><link
                                     xlink:href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/appendix-check-types.html"
-                                    >http://http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/appendix-check-types.html</link></para>
+                                    >http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/appendix-check-types.html</link></para>
                             </listitem>
                         </itemizedlist>
                     </listitem>
@@ -3540,7 +3540,7 @@
                     Enterprise Edition.</para>
                 <para>For more information on Percona, see <link
                     xlink:href="http://www.percona.com/software/percona-server"
-                    >http://http://www.percona.com/software/percona-server</link>.</para>
+                    >http://www.percona.com/software/percona-server</link>.</para>
                 <para>For Percona, the <code>type</code> is "Percona"
                     and the <code>version</code> is "5.6".</para>
             </section>
@@ -3553,7 +3553,7 @@
                     use cases.</para>
                 <para>For more information on MariaDB, see <link
                     xlink:href="https://mariadb.org/en/about/"
-                    >http://http://https://mariadb.org/en/about/</link>.</para>
+                    >https://mariadb.org/en/about/</link>.</para>
                 <para>For MariaDB, the <code>type</code> is "MariaDB"
                     and the <code>version</code> is "10".</para>
             </section>
@@ -3564,9 +3564,12 @@
                 create a read replica of a database instance that can
                 be used for scaling out read-heavy workloads or for
                 ensuring availability of your database in case of
-                instance failure. When you create a read replica, you
-                should specify an existing database instance as the
-                source of the replica. </para>
+                instance failure. As the term implies, you can send
+                only your <emphasis>read</emphasis> requests to your
+                replica. All the write requests can be sent only to
+                the source database instance. When you create a read
+                replica, you should specify an existing database
+                instance as the source of the replica. </para>
             <para>Rackspace Cloud Databases uses MySQL asynchronous
                 replication.</para>
             <para>
@@ -3577,66 +3580,10 @@
                         they occur on the master. </para>
                 </note>
             </para>
-            <para>There are several use cases where you may want to
-                use replication:<itemizedlist>
-                    <listitem>
-                        <para><emphasis role="bold"
-                            >Scaling</emphasis></para>
-                        <para>You can create replicas of your DB
-                            instance and distribute read traffic for
-                            your applications on the replicas. All the
-                            writes and updates will be applied to the
-                            source instance, whereas reads can take
-                            place on any one of the replica instances.
-                            This can help improve the overall
-                            performance of an application as writes
-                            would only be dedicated to the source
-                            instance and reads will be spread across
-                            replicas. </para>
-                    </listitem>
-                    <listitem>
-                        <para><emphasis role="bold">Increased
-                                Availability</emphasis></para>
-                        <para>In case of instance failure, the replica
-                            can act as the new source database
-                            instance and ensure that an application
-                            has minimal downtime.</para>
-                        <note>
-                            <para>In this case you will have to change
-                                the application endpoint to the new
-                                source database instance.</para>
-                        </note>
-                    </listitem>
-                    <listitem>
-                        <para><emphasis role="bold"
-                                >Analytics</emphasis></para>
-                        <para>A large number of applications using
-                            MySQL databases are used for performing
-                            analysis. Replication helps in maintaining
-                            multiple copies of the data, and analysis
-                            of information can be done on the replica
-                            without affecting the performance of
-                            writes/updates on the source database
-                            instance.</para>
-                    </listitem>
-                    <listitem>
-                        <para><emphasis role="bold"
-                                >Security</emphasis></para>
-                        <para>Replication can be used to back up data
-                            from a slave. The slave can be paused from
-                            the replication process, and you can make
-                            a copy of live data without affecting any
-                            operations on the source database
-                            instance.</para>
-                    </listitem>
-                </itemizedlist></para>
-            <para>For information about monitoring read replication,
-                refer to <xref
-                    linkend="Monitoring_Read_Replication-d1e3694"
-                />.</para>
-            <note>
-                <title>Notes</title>
+            <para>
                 <itemizedlist>
+                    <title>Limitations</title>
+                    
                     <listitem>
                         <para>The maximum number of replicas allowed
                             per source database instance is
@@ -3662,7 +3609,112 @@
                             for your source database instance.</para>
                     </listitem>
                 </itemizedlist>
-            </note>
+                    
+                        <warning>
+                            <para>Adding a replica will restart the
+                                MySQL service on the source database
+                                instance. However the state of the
+                                instance might not reflect that and
+                                still be <code>ACTIVE</code>. Wait for
+                                a couple of seconds for the process to
+                                be complete. The best way to verify
+                                whether the process is complete is to
+                                check the slave metrics as described
+                                in <xref
+                                   linkend="Monitoring_Read_Replication-d1e3694"
+                                />.</para>
+                        </warning>
+                    
+                    
+                        <warning>
+                            <para>Detaching a replica will restart the
+                                MySQL service on the instance
+                                detached. However the state of the
+                                instance might not reflect that and
+                                still be <code>ACTIVE</code>. Wait for
+                                a couple of seconds for the process to
+                                be complete. The best way to verify
+                                whether the process is complete is to
+                                check the slave metrics as described
+                                in <xref
+                                   linkend="Monitoring_Read_Replication-d1e3694"
+                                />.</para>
+                        </warning>
+                    
+                    
+                        <warning>
+                            <para>Do not change the password or delete
+                                the replication user on the
+                                master/replica as it could break
+                                replication. A replication user is
+                                usually named using a
+                                   <code>slave_</code> prefix.</para>
+                        </warning>
+                    
+                
+            </para>
+            <para>There are several use cases where you may want to
+                use replication:<itemizedlist>
+                    <listitem>
+                        <para><emphasis role="bold"
+                            >Scaling</emphasis></para>
+                        <para>You can create replicas of your DB
+                            instance and distribute read traffic for
+                            your applications on the replicas. All the
+                            writes and updates will be applied to the
+                            source instance, whereas reads can take
+                            place on any one of the replica instances.
+                            This can help improve the overall
+                            performance of an application as writes
+                            would only be dedicated to the source
+                            instance and reads will be spread across
+                            replicas. </para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold">Increased
+                                Availability</emphasis></para>
+                        <para>In case of instance failure, the replica
+                            can act as the new source database
+                            instance and ensure that an application
+                            has minimal downtime.</para>
+                    
+                    
+                        <para>To make the replica the new source
+                        database instance for your application, you
+                        will have to detach the replica (hyperlink)
+                        from the source instance and change the
+                        application endpoint to this new source
+                        database instance.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold"
+                                >Analytics</emphasis></para>
+                        <para>A large number of applications using
+                            MySQL databases are used for performing
+                            analysis. Replication helps in maintaining
+                            multiple copies of the data, and analysis
+                            of information can be done on the replica
+                            without affecting the performance of
+                            writes/updates on the source database
+                            instance.</para>
+                    </listitem>
+                    <listitem>
+                        <para><emphasis role="bold">Improved
+                                Reliability</emphasis></para>
+                        <para>Replication can be used to back up data
+                            from a replica. The replica can be paused
+                            from the replication process, and you can
+                            make a copy of live data without affecting
+                            any operations on the source database
+                            instance.</para>
+                    </listitem>
+                </itemizedlist></para>
+            <para>For information about monitoring read replication,
+                refer to <xref
+                    linkend="Monitoring_Read_Replication-d1e3694"
+                />.</para>
+            <para>Refer to <xref linkend="replication"/> for the API
+                operations for replication.</para>
         </section>
     </chapter>
     

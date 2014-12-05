@@ -2231,6 +2231,18 @@
                 This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. 
                 It also requires specifying the source database instance using the <code>replica_of</code> attribute.
                 The service then provisions the replica with the requested flavor and sets up a volume of the specified size.</para>
+            <note><para>The replica will be created with the default configuration. 
+                If you wish to apply the same configuration as the source database instance or another configuration, 
+                you will need to apply that configuration to the replica. 
+                Refer to <xref linkend="PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances"/> for details.</para></note>
+            <warning>
+                <para>Adding a replica will restart the MySQL service on the source database instance. 
+                    However the state of the instance might not reflect that and still be ACTIVE. 
+                    Wait for a couple of seconds for the process to be complete. 
+                    The best way to verify whether the process is complete is to check the slave metrics as described in <olink
+                        targetdoc="cdb-devguide"
+                        targetptr="Monitoring_Read_Replication-d1e3694"
+                        >“Monitoring Read Replication”</olink>.</para></warning>
             <note security="writeronly"><title>Notes</title><itemizedlist>
                 <listitem>
                     <para>You can create only one database instance per <command>POST</command> request.</para>
@@ -2536,6 +2548,21 @@
             <para>This operation detaches the specified replica instance from its replication source instance. 
                 This call requires the user to specify id of the replica instance to detach.
             </para>
+            <warning>
+                <para>Detaching a replica will restart the
+                    MySQL service on the instance
+                    detached. However the state of the
+                    instance might not reflect that and
+                    still be <code>ACTIVE</code>. Wait for
+                    a couple of seconds for the process to
+                    be complete. The best way to verify
+                    whether the process is complete is to
+                    check the slave metrics as described
+                    in <olink
+                        targetdoc="cdb-devguide"
+                        targetptr="Monitoring_Read_Replication-d1e3694"
+                        >“Monitoring Read Replication”</olink>.</para>
+            </warning>
             
        <para>The following table lists the required attributes for Detach replica:</para>
             <table rules="all">

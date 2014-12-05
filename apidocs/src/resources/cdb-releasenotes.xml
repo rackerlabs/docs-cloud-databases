@@ -62,7 +62,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2014-11-17</pubdate>
+	<pubdate>2014-11-19</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,7 +76,7 @@
         </abstract>
     	<revhistory>
 			<revision security="internal">
-				<date>2014-11-17</date>
+				<date>2014-11-19</date>
 				<revdescription>
 					<para>Updated for v2.0.6.</para>
 				</revdescription>
@@ -518,7 +518,7 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv2.0.6" security="internal">
-		<title>v2.0.6, November 17, 2014</title>
+		<title>v2.0.6, November 19, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
@@ -527,13 +527,17 @@
 				<para>Updated public python reference guest agent on all database
 					instances on v2 infrastructure.</para>
 			</listitem>
+			<listitem>
+				<para>Added internal replication support for
+					testing.</para>
+			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
 			<title>Resources</title>
 			<listitem>
-				<para> Get started using the Cloud Databases API to
-					create databases in the <emphasis role="italic"
-						>Getting Started Guide</emphasis> at: <link
+				<para>Get started using the Cloud Databases API to create
+					databases in the <emphasis role="italic">Getting
+						Started Guide</emphasis> at: <link
 						xlink:href="http://docs.rackspace.com/api/"
 						xmlns:svg="http://www.w3.org/2000/svg"
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -541,9 +545,9 @@
 						>http://docs.rackspace.com/api/</link>.</para>
 			</listitem>
 			<listitem>
-				<para> Get reference information and examples in
-						the <emphasis role="italic">Cloud Databases
-						Developer Guide</emphasis> at: <link
+				<para>Get reference information and examples in the <emphasis
+						role="italic">Cloud Databases Developer
+						Guide</emphasis> at: <link
 						xlink:href="http://docs.rackspace.com/api/"
 						xmlns:svg="http://www.w3.org/2000/svg"
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -551,9 +555,9 @@
 						>http://docs.rackspace.com/api/</link>.</para>
 			</listitem>
 			<listitem>
-				<para> Support for Cloud Databases is available for
-					US, UK, HKG, and SYD customers 24x7x365 via phone,
-					chat, or you may also <link
+				<para>Support for Cloud Databases is available for US, UK, HKG,
+					and SYD customers 24x7x365 via phone, chat, or you
+					may also <link
 						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
 						xmlns:svg="http://www.w3.org/2000/svg"
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
@@ -561,7 +565,7 @@
 						a Ticket</link>.</para>
 			</listitem>
 			<listitem>
-				<para> Please visit our <link
+				<para>Please visit our <link
 						xlink:href="http://feedback.rackspace.com"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
