@@ -75,6 +75,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="writeronly">
+				<date>2014-12-08</date>
+				<revdescription>
+					<para>Updated for v2.0.7.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2014-11-19</date>
 				<revdescription>
@@ -517,13 +523,70 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
+	<chapter xml:id="cdbv2.0.7" security="writeronly">
+		<title>v2.0.6, December 8, 2014</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem xmlns:svg="http://www.w3.org/2000/svg"
+				xmlns:m="http://www.w3.org/1998/Math/MathML"
+				xmlns:html="http://www.w3.org/1999/xhtml"
+				security="internal">
+				<para>Updated public python reference guest agent on
+					all database instances on v2 infrastructure
+					(except for MySQL 5.1).</para>
+			</listitem>
+			<listitem>
+				<para>Added support for replication for MySQL 5.6,
+					MariaDB 10, Percona 5.6.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
 	<chapter xml:id="cdbv2.0.6" security="internal">
 		<title>v2.0.6, November 19, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem xmlns:svg="http://www.w3.org/2000/svg"
 				xmlns:m="http://www.w3.org/1998/Math/MathML"
-				xmlns:html="http://www.w3.org/1999/xhtml" security="writeronly">
+				xmlns:html="http://www.w3.org/1999/xhtml">
 				<para>Updated public python reference guest agent on all database
 					instances on v2 infrastructure (except for MySQL
 					5.1).</para>
