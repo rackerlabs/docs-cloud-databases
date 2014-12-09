@@ -62,7 +62,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2014-11-19</pubdate>
+	<pubdate>2014-12-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,8 +75,8 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
-			<revision security="writeronly">
-				<date>2014-12-08</date>
+			<revision>
+				<date>2014-12-09</date>
 				<revdescription>
 					<para>Updated for v2.0.7.</para>
 				</revdescription>
@@ -523,21 +523,13 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.0.7" security="writeronly">
-		<title>v2.0.6, December 8, 2014</title>
+	<chapter xml:id="cdbv2.0.7">
+		<title>v2.0.7, December 9, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
-			<listitem xmlns:svg="http://www.w3.org/2000/svg"
-				xmlns:m="http://www.w3.org/1998/Math/MathML"
-				xmlns:html="http://www.w3.org/1999/xhtml"
-				security="internal">
-				<para>Updated public python reference guest agent on
-					all database instances on v2 infrastructure
-					(except for MySQL 5.1).</para>
-			</listitem>
 			<listitem>
-				<para>Added support for replication for MySQL 5.6,
-					MariaDB 10, Percona 5.6.</para>
+				<para>Added support for replication for MySQL 5.6, Percona 5.6,
+					and MariaDB 10.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">

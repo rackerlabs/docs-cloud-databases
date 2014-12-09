@@ -64,7 +64,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-12-08</pubdate>
+        <pubdate>2014-12-09</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,7 +79,7 @@
         
         <revhistory>
             <revision>
-                <date>2014-12-08</date>
+                <date>2014-12-09</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -3569,9 +3569,13 @@
                 replica. All the write requests can be sent only to
                 the source database instance. When you create a read
                 replica, you should specify an existing database
-                instance as the source of the replica. </para>
-            <para>Rackspace Cloud Databases uses MySQL asynchronous
-                replication.</para>
+                instance as the source of the replica. Rackspace Cloud
+                Databases uses asynchronous replication.</para>
+            <para>Replication is supported for MySQL 5.6, Percona 5.6,
+                and MariaDB 10. For instances running MySQL 5.1,
+                please upgrade to MySQL 5.6 (see <link
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/upgrade-a-cloud-databases-instance-from-mysql-51-to-mysql-56"
+                    >http://www.rackspace.com/knowledge_center/article/upgrade-a-cloud-databases-instance-from-mysql-51-to-mysql-56</link>).</para>
             <para>
                 <note>
                     <para>There will be a lag between the source
@@ -3594,10 +3598,9 @@
                             instance flavors 1GB and above.</para>
                     </listitem>
                     <listitem>
-                        <para>Replication is currently only supported
-                            for MySQL 5.6. Both source database
-                            instance and replica should be running
-                            MySQL 5.6.</para>
+                        <para>Both source database instance and
+                            replica should be running the same
+                            database and version.</para>
                     </listitem>
                     <listitem>
                         <para>The source DB instance and replica
