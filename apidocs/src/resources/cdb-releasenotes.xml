@@ -532,6 +532,16 @@
 					and MariaDB 10.</para>
 			</listitem>
 		</itemizedlist>
+		<itemizedlist spacing="compact" security="internal">
+			<title>Bug Fixes</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSDEV-194"
+						>DSDEV-194: </link>Fixed configuration
+					parameters max and min values in JSON response to
+					be ints instead of strings.</para>
+			</listitem>
+		</itemizedlist>
 		<itemizedlist spacing="compact">
 			<title>Resources</title>
 			<listitem>
