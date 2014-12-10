@@ -78,7 +78,7 @@
 			<revision>
 				<date>2014-12-09</date>
 				<revdescription>
-					<para>Updated for v2.0.7.</para>
+					<para>Updated for v2.0.8.</para>
 				</revdescription>
 			</revision>
 			<revision security="internal">
@@ -523,8 +523,8 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.0.7">
-		<title>v2.0.7, December 9, 2014</title>
+	<chapter xml:id="cdbv2.0.8">
+		<title>v2.0.8, December 9, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem>

@@ -1490,6 +1490,11 @@
                        <td colspan="3"><para>Specifies a long description of the backup.</para></td>
                        <td colspan="1">No</td>
                    </tr>
+                   <tr>
+                       <td colspan="1">parent_id</td>
+                       <td colspan="3"><para>Specifies the backupId from which to create an incremental backup.</para></td>
+                       <td colspan="1">No</td>
+                   </tr>
                </tbody>
            </table> 
             
@@ -1538,6 +1543,12 @@
                             linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
                         /> for details.</para>
                     </listitem>
+                    <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
+                    </listitem>
+                    <listitem><para>You can create an incremental backup from another incremental backup. 
+                        There is no limit to how many nested backups you can create, however the chances of 
+                        a restore failure increase with the number of nested backups you create.</para>
+                    </listitem>
                 </itemizedlist></note>
         </wadl:doc>
         <request>
@@ -1547,6 +1558,13 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.json"/>
                 </doc>
             </representation>
+            <representation mediaType="application/json" element="dbaas:Backup">
+                <doc title="Create incremental backup request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create incremental backup request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-request-json-http.txt"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-request.json"/>
+                </doc>
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/json"
@@ -1554,6 +1572,13 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" element="dbaas:Backup">
+                <doc title="Create incremental backup response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create incremental backup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-response-json-http.txt"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -1694,6 +1719,10 @@
                     <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases. 
                         You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up. </para>
                 </listitem>
+                <listitem>
+                    <para>You can restore from an incremental backup the same as from a full backup. The system automatically restores all parents first, 
+                        and then applies the incremental backup.</para>
+                </listitem>
             </itemizedlist></note>
             
         </wadl:doc>
@@ -1722,7 +1751,7 @@
     <method name="DELETE" id="deleteBackup">
         <wadl:doc xml:lang="EN" title="Delete backup"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified backup.</para>
-            <para>This operation deletes the specified backup.</para>
+            <para>This operation deletes the specified backup. When a backup is deleted, all incremental backups created from it will also be deleted.</para>
             
         </wadl:doc>
         <request>
