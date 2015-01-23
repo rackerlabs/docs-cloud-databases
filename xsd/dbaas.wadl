@@ -139,6 +139,23 @@
                     </resource>          
                 </resource>
                 
+                <resource id="datastore" path="datastore">
+                    <resource id="versions5" path="version">
+                        <resource id="version5Id" path="{versionId}">
+                            <param name="versionId" style="template" type="xsd:string" >
+                                <doc>The version for the specified datastore.</doc></param>
+                            <resource id="configuration1" path="configuration">
+                                <resource id="flavorId2" path="{flavorId}">
+                                    <param name="flavorId" style="template" type="xsd:string" >
+                                        <doc>The flavor ID for the specified flavor.</doc></param>
+                                    <method href="#getVerboseDefaultConfigurationParameters" />
+                                </resource>
+                            </resource>    
+                        </resource>
+                    </resource>
+                </resource>
+                
+                
                 <resource id="datastores" path="datastores">
                     <method href="#getDatastoreTypes" />
                     <resource id="versions3" path="versions">
@@ -155,7 +172,6 @@
                             </resource>
                         </resource>
                     </resource>
-                    
                     
                     
                     <resource id="datastoreId" path="{datastoreId}">
@@ -179,8 +195,22 @@
                             </resource>
                         </resource>
                    </resource>
+                    
+                    <resource id="datastoreType" path="{datastoreType}">
+                        <param name="datastoreType" style="template" type="xsd:string" >
+                            <doc>The datastore type, for example mysql.</doc></param>
+                        <resource id="versions4" path="versions">
+                            <resource id="versionId4" path="{versionId}">
+                                <param name="versionId" style="template" type="xsd:string" >
+                                    <doc>The version for the specified datastore.</doc></param>
+                                <resource id="flavors2" path="flavors">
+                                    <method href="#getFlavorsByDatastoreVersion" />
+                                </resource>
+                            </resource>
+                        </resource>
+                    </resource> 
+                    
                  </resource>
-                
             </resource>
         </resource>
     </resources>
@@ -2152,6 +2182,31 @@
         &getFaults;
     </method>
     
+    <method name="GET" id="getVerboseDefaultConfigurationParameters">
+        <wadl:doc xml:lang="EN" title="List verbose default configuration parameters" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists the default <glossterm>configuration parameter</glossterm>s for a datastore version flavor.</para> 
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List verbose default configuration parameters request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-verbose-default-configuration-parameters-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Configuration" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List verbose default configuration parameters response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-verbose-default-configuration-parameters-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
     <method name="GET" id="getDatastoreTypes">
         <wadl:doc xml:lang="EN" title="List all datastore types"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all datastore types.</para>
@@ -2245,6 +2300,31 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore version response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-datastore-version-by-id-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getFlavorsByDatastoreVersion">
+        <wadl:doc xml:lang="EN" title="List flavors for datastore version"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists flavors for a datastore version.</para>
+            <para>This operation lists the flavors for a datastore version.</para>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Lists flavors for datastore version request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-by-datastore-version-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Lists flavors for datastore version response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-flavors-response.json"/>
                 </doc>
             </representation>
         </response>

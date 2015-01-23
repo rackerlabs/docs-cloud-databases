@@ -45,17 +45,39 @@
             <year>2012</year>
             <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-12-09</pubdate>
+        <pubdate>2015-01-22</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-01-22</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para linkend="Backup-d1e013">Added new
+                                trove command List flavors for
+                                datastore version in <xref
+                                   linkend="trove_summary_flavors"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para linkend="Backup-d1e013">Added new
+                                trove command View verbose default
+                                configuration parameters in <xref
+                                   linkend="trove_configurations"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-12-09</date>
                 <revdescription>
@@ -4478,6 +4500,29 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
             </variablelist>
             <variablelist wordsize="10%">
                 <varlistentry>
+                    <term><emphasis role="bold">View verbose default
+                            configuration parameters</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove configuration-default-dsversion-flavor &lt;datastore_version&gt; &lt;flavor&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>datastore_version</parameter>.
+                                   The version of the datastore.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>flavor</parameter>. The
+                                   flavor for the datastore. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
                     <term><emphasis role="bold">Delete configuration
                             group</emphasis></term>
                     <listitem>
@@ -4517,6 +4562,21 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                                 </listitem>
                         </varlistentry>
                 </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List flavors for
+                            datastore version</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove flavor-list –datastore_type &lt;datastore_type&gt; --datastore_version_id &lt;datastore_version_id&gt;  </programlisting>
+                        <para>Where
+                                <parameter>datastore_type</parameter>
+                            is the datastore type and
+                                <parameter>datastore_version_id</parameter>
+                            is the version ID of the specified
+                            datastore type. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
         </section>
         <section xml:id="trove_summary_miscellaneous">
                 <title>Miscellaneous</title>
