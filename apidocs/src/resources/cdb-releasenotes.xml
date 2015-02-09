@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-01-06</pubdate>
+	<pubdate>2015-01-29</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2015-01-29</date>
+				<revdescription>
+					<para>Updated for v2.0.11.</para>
+				</revdescription>
+			</revision>
     		<revision security="internal">
 				<date>2015-01-06</date>
 				<revdescription>
@@ -545,6 +551,80 @@
 					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
 					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
 					details.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.0.11">
+		<title>v2.0.11, January 29, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSDEV-26"
+						>DSDEV-26: </link>API call to list the
+					default configuration parameters for a datastore
+					version and flavor. Refer to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getVerboseDefaultConfigurationParameters__version___accountId__datastore_version__versionId__configuration__flavorId__configuration_parameters.html"
+						>API Devguide</link> for details.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSDEV-23"
+						>DSDEV-23: </link>API call to list flavors for
+					a datastore type and version. Refer to <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavorsByDatastoreVersion__version___accountId__datastores__datastoreType__versions__versionId__flavors_flavors.html"
+						>API Devguide</link> 
+					for details.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSDEV-215"
+						>DSDEV-215: </link>Configuration parameters
+					are not the same across regions.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link xlink:href="https://jira.rax.io/browse/DSDEV-207"
+						>DSDEV-207: </link>Ensure Master and Replicas
+					land on different hosts.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">

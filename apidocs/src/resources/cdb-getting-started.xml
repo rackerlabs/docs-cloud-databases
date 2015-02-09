@@ -50,7 +50,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-01-22</pubdate>
+        <pubdate>2015-01-29</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -58,7 +58,7 @@
         </legalnotice>
         <revhistory>
             <revision>
-                <date>2014-01-22</date>
+                <date>2014-01-29</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -73,6 +73,14 @@
                                 trove command View verbose default
                                 configuration parameters in <xref
                                    linkend="trove_configurations"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para linkend="Backup-d1e013">Removed
+                                London endpoint, since we now have one
+                                global endpoint for the Rackspace
+                                Authentication Service. See <xref
+                                   linkend="Generating_Auth_Token"
                                 />.</para>
                         </listitem>
                     </itemizedlist>
@@ -1196,7 +1204,7 @@ export OS_PROJECT_ID=&lt;tenant_id>
 </computeroutput></screen>
                         </example><example>
                             <title>UK Data Center Example</title>
-                            <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://lon.identity.api.rackspacecloud.com/v2.0/
+                            <screen><computeroutput><?db-font-size 65%?>export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
 export OS_REGION_NAME=LON
 export OS_USERNAME=&lt;username>
 export OS_TENANT_ID=&lt;tenant_id>
@@ -1773,18 +1781,14 @@ export OS_PROJECT_ID=&lt;tenant_id>
                             the first item in the menu.</para>
                     </listitem>
                 </itemizedlist></para>
-            <para> You can use either of the following endpoints to
-                access the Authentication Service, regardless of US or
-                UK identities: </para>
+            <para> Use the following endpoint to access the
+                Authentication Service, regardless of US or UK
+                identities: </para>
             <itemizedlist spacing="compact">
                 <listitem>
                     <para><link xlink:href="&ENDPOINT-US-20;"
                             >&ENDPOINT-US-20;</link>
                     </para>
-                </listitem>
-                <listitem>
-                    <para><link xlink:href="&ENDPOINT-UK-20;"
-                            >&ENDPOINT-UK-20;</link></para>
                 </listitem>
             </itemizedlist>
             <para> Your account may be based in either the US or the
@@ -1829,11 +1833,6 @@ export OS_PROJECT_ID=&lt;tenant_id>
 <option>-H 'Content-Type: application/json'</option> \
 <uri>'https://identity.api.rackspacecloud.com/v2.0/tokens'</uri> | python -m json.tool</screen>
             </example>
-            <note>
-                <para>For UK-based accounts, you may decide to use
-                        <code>'https://lon.identity.api.rackspacecloud.com/v2.0/tokens'</code>
-                    instead.</para>
-            </note>
             <example>
                 <title>Authenticate Response: JSON</title>
                 <programlisting language="json"><xi:include href="../../src/resources/samples/db-auth-20.json" parse="text"><xi:fallback>Missing code sample! <?rax fail?></xi:fallback></xi:include></programlisting>
