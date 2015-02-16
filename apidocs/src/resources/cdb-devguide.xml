@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-01-29</pubdate>
+        <pubdate>2015-02-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,25 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-02-12</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated  JSON response example in
+                                   <olink targetdoc="cdb-devguide"
+                                       targetptr="GET_getReplicasOrReplicaSources__version___accountId__instances_replication"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated JSON request example in
+                                   <olink targetdoc="cdb-devguide"
+                                       targetptr="PATCH_detachReplica__version___accountId__instances__instanceId__replication"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-01-29</date>
                 <revdescription>

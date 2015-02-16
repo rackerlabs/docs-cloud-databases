@@ -7,7 +7,6 @@ Content-Type: application/json
 
 {
   "instance": {
-     "replica_of": "",
-     "slave_of: ""
+     "replica_of": ""
   }
 }
