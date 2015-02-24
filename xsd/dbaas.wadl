@@ -315,7 +315,7 @@
                     <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
                         This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
                          <note><para>Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.</para></note>
-                        <para>Refer to <xref linkend="GET_getFlavors__version___accountId__flavors_"/> for details.</para></td>
+                        <para>Refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="GET_getFlavors__version___accountId__flavors_"/> for details.</para></td>
                     <td colspan="1">Yes</td>
                 </tr>
                 <tr>
