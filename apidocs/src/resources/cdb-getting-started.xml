@@ -62,21 +62,21 @@
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
-                            <para linkend="Backup-d1e013">Added new
+                            <para>Added new
                                 trove command List flavors for
                                 datastore version in <xref
                                    linkend="trove_summary_flavors"
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para linkend="Backup-d1e013">Added new
+                            <para>Added new
                                 trove command View verbose default
                                 configuration parameters in <xref
                                    linkend="trove_configurations"
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para linkend="Backup-d1e013">Removed
+                            <para>Removed
                                 London endpoint, since we now have one
                                 global endpoint for the Rackspace
                                 Authentication Service. See <xref
@@ -1853,10 +1853,9 @@ export OS_PROJECT_ID=&lt;tenant_id>
                     <listitem>
                         <para>The information shown in the
                             Authenticate Response example above is for
-                            US-based accounts. If you authenticate
-                            against the UK-endpoint for auth, you will
-                            see the service catalog information for
-                            UK-based accounts.</para>
+                            US-based accounts. If you have a UK-based
+                            account, you will see the service catalog
+                            information for UK-based accounts.</para>
                     </listitem>
                     <listitem>
                         <para>The <code>id</code> attribute in the
