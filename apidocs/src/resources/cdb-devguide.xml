@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-02-12</pubdate>
+        <pubdate>2015-03-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,27 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-03-11</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new API operation List
+                                replicas for source instance in <olink
+                                   targetdoc="cdb-devguide"
+                                   targetptr="GET_getReplicasBySourceInstance__version___accountId__instances__instanceId__replicas_replication"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Removed warning for changing the
+                                password or deleting the replication
+                                user on the master / replica in <xref
+                                   linkend="Replication-Overview-dle5733"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-02-12</date>
                 <revdescription>
@@ -3739,16 +3760,6 @@
                                 />.</para>
                         </warning>
                     
-                    
-                        <warning>
-                            <para>Do not change the password or delete
-                                the replication user on the
-                                master/replica as it could break
-                                replication. A replication user is
-                                usually named using a
-                                   <code>slave_</code> prefix.</para>
-                        </warning>
-                    
                 
             </para>
             <para>There are several use cases where you may want to
@@ -4025,6 +4036,9 @@
                      <wadl:method href="getReplicaSource"/>
                     <wadl:method href="getReplica"/>
                     <wadl:method href="detachReplica"/>
+                    <wadl:resource href="../../../xsd/dbaas.wadl#replicas">
+                        <wadl:method href="getReplicasBySourceInstance"/>
+                    </wadl:resource>
                 </wadl:resource>
             </wadl:resources>
         </section>

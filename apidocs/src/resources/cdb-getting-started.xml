@@ -50,13 +50,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-01-29</pubdate>
+        <pubdate>2015-03-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-03-11</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new trove command List
+                                replicas for source instance in <xref
+                                   linkend="trove_summary_replication"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-01-29</date>
                 <revdescription>
@@ -4049,6 +4062,18 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                         <para> Where
                                 <parameter>replica_instance_id</parameter>
                             is the ID of the replica instance. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List replicas for
+                            source instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove replica-list &lt;instance_id&gt;</programlisting>
+                        <para> Where
+                                <parameter>instance_id</parameter> is
+                            the ID of the source instance. </para>
                     </listitem>
                 </varlistentry>
             </variablelist>

@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-02-12</pubdate>
+	<pubdate>2015-03-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2015-03-11</date>
+				<revdescription>
+					<para>Updated for v2.0.13.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2015-02-12</date>
 				<revdescription>
@@ -548,7 +554,7 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.0.11" security="writeronly">
+	<chapter xml:id="cdbv2.0.11b" security="writeronly">
 		<title>v2.0.10, December 18, 2014</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
@@ -557,6 +563,109 @@
 					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
 					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
 					details.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.0.13">
+		<title>v2.0.13, March 11, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-144"
+						>DSMYSQL-144: </link>Add new API operation for
+					List replicas for source instance. Refer to the
+						<link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getReplicasBySourceInstance__version___accountId__instances__instanceId__replicas_replication.html"
+						>API Devguide</link> for details.</para>
+			</listitem>
+			<listitem>
+				<para>Release bug fixes for backups to
+					ensure successful completion of the backup
+					process.</para>
+			</listitem>
+			<listitem>
+				<para>Add logic to prevent users from changing the password of the
+					replica user and causing any inadvertent
+					change.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-105"
+						>DSMYSQL-105: </link>Fix trove init scripts
+					from running process multiple times.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Monitoring squeeze fix.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-18"
+						>DSMYSQL-18: </link>Semi sync
+					replication.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-32"
+						>DSMYSQL-32: </link>Hide Replication
+					Users.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-31"
+						>DSMYSQL-31: </link>Create flavors and map
+					OpenVZ settings.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-137"
+						>DSMYSQL-137: </link>Catch all exceptions from
+					the backup runner.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-141"
+						>DSMYSQL-141: </link>Moving segment name
+					handling to SwiftStorage.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
