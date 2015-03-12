@@ -93,7 +93,7 @@
                         <listitem>
                             <para>Removed warning for changing the
                                 password or deleting the replication
-                                user on the master / replica in <xref
+                                user on the master/replica in <xref
                                    linkend="Replication-Overview-dle5733"
                                 />.</para>
                         </listitem>
