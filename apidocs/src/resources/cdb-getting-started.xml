@@ -614,13 +614,6 @@
       <raxm:priority>10</raxm:priority>
     </raxm:metadata> 
     </info>
-    <chapter xml:id="DB_Doc_Change_History">
-        <title>Document Change History</title>
-        <para>This version of the Getting Started replaces and
-            obsoletes all previous versions. The most recent changes
-            are described in the table below:</para>
-        <?rax revhistory?>
-    </chapter>
     <chapter xml:id="DB_Overview">
         <title>Overview</title>
         <para>Follow the steps described in this guide to use the
@@ -3337,6 +3330,13 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                 </procedure>
             </section>
         </section></chapter>
+    <chapter xml:id="DB_Doc_Change_History">
+        <title>Document Change History</title>
+        <para>This version of the Getting Started replaces and
+            obsoletes all previous versions. The most recent changes
+            are described in the table below:</para>
+        <?rax revhistory?>
+    </chapter>
     
     <appendix xmlns="http://docbook.org/ns/docbook"
         xmlns:xi="http://www.w3.org/2001/XInclude"
