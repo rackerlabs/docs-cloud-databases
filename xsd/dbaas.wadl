@@ -73,12 +73,11 @@
                                     type="xsd:string" >
                                     <doc>The name for the specified user. 
                                         Refer to 
-                                        <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/>
-                                        <link security="writeronly" xmlns="http://docbook.org/ns/docbook"
+                                        <link xmlns="http://docbook.org/ns/docbook"
                                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
-                                            >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html</link>
+                                            >User access restriction by host</link>
                                              for details about restricting the name to a particular host. 
-                                             Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP)</doc></param>
+                                             Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP).</doc></param>
                                 <method href="#deleteUser" />
                                 <method href="#listUser" />
                                 <method href="#modifyUser" />
@@ -293,11 +292,9 @@
                 <para>When used with the <code>restorePoint</code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</para>
             </listitem>
             <listitem>
-                <para>For information about using SSL with your database instance, refer to <olink
-                    targetdoc="cdb-devguide"
-                    targetptr="Using_SSL_for_Database_Instances"
-                    >“Using SSL with Your Cloud
-                    Database Instances”</olink>.</para>
+                <para>For information about using SSL with your database instance, refer to <link
+                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Using_SSL_for_Database_Instances.html"
+                    >Using SSL with Your Cloud Database Instances</link>.</para>
             </listitem>
         </itemizedlist></note>
         <para>The following table lists the required and optional attributes for Create instance:</para>
@@ -318,7 +315,9 @@
                     <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
                         This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
                          <note><para>Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.</para></note>
-                        <para>Refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="GET_getFlavors__version___accountId__flavors_"/> for details.</para></td>
+                        <para>Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html"
+                            >List flavors</link> for details.</para></td>
                     <td colspan="1">Yes</td>
                 </tr>
                 <tr>
@@ -344,7 +343,9 @@
                 <tr>
                     <td colspan="1" rowspan="3">Database</td>
                     <td colspan="1">name</td>
-                    <td colspan="3">Specifies <glossterm>database</glossterm> names for creating databases on instance creation. Refer to <xref linkend="POST_createDatabase__version___accountId__instances__instanceId__databases_"/> for the required json format.</td>
+                    <td colspan="3">Specifies <glossterm>database</glossterm> names for creating databases on instance creation. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_databases.html"
+                        >Create database</link> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
@@ -360,23 +361,31 @@
                 <tr>
                     <td colspan="1" rowspan="4">User</td>
                     <td colspan="1">name</td>
-                    <td colspan="3">Specifies user name for the database on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
+                    <td colspan="3">Specifies user name for the database on instance creation. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                        >Create user</link> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
                     <td colspan="1">password</td>
-                    <td colspan="3">Specifies password for those users on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
+                    <td colspan="3">Specifies password for those users on instance creation. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                        >Create user</link> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
                     <td colspan="1">(database) name</td>
-                    <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
+                    <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                        >Create user</link> for the required json format.</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
                     <td colspan="1">host</td>
                     <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
-                        Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
+                        Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                            >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                     <td colspan="1">No</td>
                 </tr>
                 <tr>
@@ -403,7 +412,9 @@
             </tbody>
         </table>
         
-        <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+        <para>Refer to <link
+            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+            >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
         
     </wadl:doc>
         <request>
@@ -481,7 +492,9 @@
         <wadl:doc xml:lang="EN" title="Delete database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified database instance.</para>
             <para>This operation deletes the specified database instance, including any associated data.</para>
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
             <note><para>This operation is not allowed when the instance status is <code>BUILD</code>.</para></note>
         </wadl:doc>
         <request>
@@ -509,7 +522,9 @@
         <wadl:doc xml:lang="EN" title="List all database instances"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the status and information for all database instances.</para>
             <para>This operation lists the status and information for all database instances.</para>
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -573,7 +588,9 @@
                 greater than 0. This is expected and due to the automatic creation of
                 non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
             <para>The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.</para>
         </wadl:doc>
         <request>
@@ -735,8 +752,9 @@
                 </tbody>
             </table>
 
-            <para>See the database service documentation for information about supported character sets and collations. Refer to <xref
-                linkend="Datastore_Types_and_Versions-d1e9263"/> for references to the documentation for each database service. For example, for MySQL information see <link
+            <para>See the database service documentation for information about supported character sets and collations. Refer to <link 
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Datastore_Types_and_Versions-d1e9263.html"
+                >Datastore types and versions</link> for references to the documentation for each database service. For example, for MySQL information see <link
                 xlink:href="http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html"
                 >http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html</link>.</para>
             
@@ -951,7 +969,9 @@
                     <tr>
                         <td colspan="1">host</td>
                         <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
-                            Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
+                            Refer to <link 
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                                >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                         <td colspan="1">No</td>
                     </tr>
                 </tbody>
@@ -988,9 +1008,9 @@
                     </tr>
                     <tr>
                         <td>'.' is allowed, but must be escaped by replacing it with "%2E" before URL encoding occurs if it occurs in GET, DELETE, 
-                            and PUT calls, where such a name is the last section of the request URL. Please refer to the Warning in <xref
-                                linkend="user_access_restrict_by_host-dle387"
-                            /> for details and an example.
+                            and PUT calls, where such a name is the last section of the request URL. Please refer to the Warning in <link 
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                                >User access restriction by host</link> for details and an example.
                         </td>
                     </tr>
                     <tr>
@@ -1123,7 +1143,9 @@
                 <doc title="List users in database instance response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List users in database instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
-                    <para xmlns="http://docbook.org/ns/docbook">Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for a description of the <code>host</code> field.</para>
+                    <para xmlns="http://docbook.org/ns/docbook">Refer to <link 
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                        >User access restriction by host</link> for a description of the <code>host</code> field.</para>
                 </doc>
             </representation>
             
@@ -1146,7 +1168,9 @@
             <para role="shortdesc">Changes the database password of one or more users.</para>
             <para>This operation changes the database password of one or more users. </para>
             <note><para>For information about choosing a valid password, please refer to 
-                <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for details.</para></note>         
+                <link
+                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                    >Create user</link> for details.</para></note>         
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:Users">
@@ -1261,7 +1285,9 @@
                     <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
                         
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
-                        (refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
+                        (refer to <link 
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                            >User access restriction by host</link> for details):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-request.json"/>
                 </doc>
             </representation>
@@ -1281,7 +1307,9 @@
                     <para xmlns="http://docbook.org/ns/docbook">This example shows the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
                         
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
-                        (refer to <xref xmlns="http://docbook.org/ns/docbook" linkend="user_access_restrict_by_host-dle387"/> for details):</para>
+                        (refer to <link 
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                            >User access restriction by host</link> for details):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-response.json"/>
                 </doc>
             </representation>
@@ -1296,7 +1324,9 @@
         <wadl:doc xml:lang="EN" title="Grant user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Grants access for the specified user to one or more databases for the specified instance.</para>
             <para>This operation grants access for the specified user to one or more databases for the specified instance. 
-                The user is granted ALL privileges on the database. Refer to the information at the beginning of <xref linkend="user_management"/> 
+                The user is granted ALL privileges on the database. Refer to the information at the beginning of <link
+                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_management.html"
+                    >Users</link> 
                 for more details on access.</para>
             
         </wadl:doc>
@@ -1555,9 +1585,9 @@
                     </listitem>
                     <listitem><para>Users can only run one backup at a time. Duplicate requests will receive a 422 error.</para>
                     </listitem>
-                    <listitem><para>Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to <xref
-                        linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
-                    /> for details.</para>
+                    <listitem><para>Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                        >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem><para>During backup the files will be streamed to your Cloud Files account. 
                         The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it. 
@@ -1566,15 +1596,15 @@
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
                             >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
                         No additional Cloud Databases fee applies for creating backups.
-                        You can delete old backups through the API. Refer to <xref
-                            linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
-                        /> for details.</para>
+                        You can delete old backups through the API. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
                         there may be some files that were placed in the container. 
-                        You should use the API to delete the backup to remove any leftover files. Refer to <xref
-                            linkend="DELETE_deleteBackup__version___accountId__backups__backupId__"
-                        /> for details.</para>
+                        You should use the API to delete the backup to remove any leftover files. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem security="writeronly"><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
                     </listitem>
@@ -1744,8 +1774,9 @@
             
             <note><title>Notes</title><itemizedlist>
                 <listitem>
-                    <para>Refer to <xref
-                        linkend="POST_createInstance__version___accountId__instances_"/> 
+                    <para>Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html"
+                        >Create instance</link> 
                         for details on other options available during the creation of a new instance.</para>
                 </listitem>
                 <listitem>
@@ -1815,7 +1846,9 @@
             <para>This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. 
                 User in this case is user or user@host, whichever is appropriate.</para>
         
-            <para>Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for information about the characters that are valid for the user name and password.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                >Create user</link> for information about the characters that are valid for the user name and password.</para>
             <para>The following table lists attributes for Modify User Attributes. Note that <emphasis>one or more</emphasis> of the attributes must be specified. 
                 Refer to the request examples for the required json format:</para>
             
@@ -1843,7 +1876,9 @@
                     <tr>
                         <td>host</td>
                         <td>Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.
-                            Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".
+                            Refer to <link 
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                                >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".
                         </td>
                     </tr> 
                 </tbody>
@@ -2346,15 +2381,16 @@
             <note><para>The replica will be created with the default configuration. 
                 If you wish to apply the same configuration as the source database instance or another configuration, 
                 you will need to apply that configuration to the replica. 
-                Refer to <xref linkend="PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances"/> for details.</para></note>
+                Refer to <link
+                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances.html"
+                    >Update database instance</link> for details.</para></note>
             <warning>
                 <para>Adding a replica will restart the MySQL service on the source database instance. 
                     However the state of the instance might not reflect that and still be ACTIVE. 
                     Wait for a couple of seconds for the process to be complete. 
-                    The best way to verify whether the process is complete is to check the slave metrics as described in <olink
-                        targetdoc="cdb-devguide"
-                        targetptr="Monitoring_Read_Replication-d1e3694"
-                        >“Monitoring Read Replication”</olink>.</para></warning>
+                    The best way to verify whether the process is complete is to check the slave metrics as described in <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Read_Replication-d1e3694.html"
+                        >Monitoring read replication</link>.</para></warning>
             <note security="writeronly"><title>Notes</title><itemizedlist>
                 <listitem>
                     <para>You can create only one database instance per <command>POST</command> request.</para>
@@ -2369,11 +2405,9 @@
                     <para>When used with the <code>restorePoint</code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</para>
                 </listitem>
                 <listitem>
-                    <para>For information about using SSL with your database instance, refer to <olink
-                        targetdoc="cdb-devguide"
-                        targetptr="Using_SSL_for_Database_Instances"
-                        >“Using SSL with Your Cloud
-                        Database Instances”</olink>.</para>
+                    <para>For information about using SSL with your database instance, refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Using_SSL_for_Database_Instances.html"
+                        >Using SSL with Your Cloud Database Instances</link>.</para>
                 </listitem>
             </itemizedlist></note>
             <para>The following table lists the required and optional attributes for Create replica:</para>
@@ -2394,7 +2428,9 @@
                         <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
                             This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
                             <note><para>Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.</para></note>
-                            <para>Refer to <xref linkend="GET_getFlavors__version___accountId__flavors_"/> for details.</para></td>
+                            <para>Refer to <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html"
+                                >List flavors</link> for details.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
                     <tr>
@@ -2425,7 +2461,9 @@
                     <tr>
                         <td colspan="1" rowspan="3">Database</td>
                         <td colspan="1">name</td>
-                        <td colspan="3">Specifies <glossterm>database</glossterm> names for creating databases on instance creation. Refer to <xref linkend="POST_createDatabase__version___accountId__instances__instanceId__databases_"/> for the required json format.</td>
+                        <td colspan="3">Specifies <glossterm>database</glossterm> names for creating databases on instance creation. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html"
+                            >Create instance</link> for the required json format.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -2441,23 +2479,31 @@
                     <tr>
                         <td colspan="1" rowspan="4">User</td>
                         <td colspan="1">name</td>
-                        <td colspan="3">Specifies user name for the database on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
+                        <td colspan="3">Specifies user name for the database on instance creation. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                            >Create user</link> for the required json format.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">password</td>
-                        <td colspan="3">Specifies password for those users on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
+                        <td colspan="3">Specifies password for those users on instance creation. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                            >Create user</link> for the required json format.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">(database) name</td>
-                        <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <xref linkend="POST_createUser__version___accountId__instances__instanceId__users_"/> for the required json format.</td>
+                        <td colspan="3">Specifies names of databases that those users can access on instance creation. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
+                            >Create user</link> for the required json format.</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">host</td>
                         <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
-                            Refer to <xref linkend="user_access_restrict_by_host-dle387"/> for details. If <code>host</code> is not specified, it defaults to "%".</td>
+                            Refer to <link 
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
+                                >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                         <td colspan="1">No</td>
                     </tr>
                     <tr>
@@ -2484,7 +2530,9 @@
                 </tbody>
             </table>
             
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
             
         </wadl:doc>
         <request>
@@ -2569,7 +2617,9 @@
                 greater than 0. This is expected and due to the automatic creation of
                 non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
             <para>The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.</para>
         </wadl:doc>
         <request>
@@ -2604,7 +2654,9 @@
                 greater than 0. This is expected and due to the automatic creation of
                 non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
             <para>The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.</para>
         </wadl:doc>
         <request>
@@ -2658,7 +2710,9 @@
         <wadl:doc xml:lang="EN" title="List all replicas and replica source database instances"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the status and information for all replicas and replica sources.</para>
             <para>This operation lists the status and information for all replicas and replica sources.</para>
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2696,10 +2750,9 @@
                     be complete. The best way to verify
                     whether the process is complete is to
                     check the slave metrics as described
-                    in <olink
-                        targetdoc="cdb-devguide"
-                        targetptr="Monitoring_Read_Replication-d1e3694"
-                        >“Monitoring Read Replication”</olink>.</para>
+                    in <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Read_Replication-d1e3694.html"
+                        >Monitoring read replication</link>.</para>
             </warning>
             
        <para>The following table lists the required attributes for Detach replica:</para>
@@ -2723,7 +2776,9 @@
                 </tbody>
             </table>
             
-            <para>Refer to <xref linkend="database_instance_status"/> for a list of possible database instance statuses that may be returned.</para>               
+            <para>Refer to <link
+                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>               
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">

@@ -4036,10 +4036,11 @@
                      <wadl:method href="getReplicaSource"/>
                     <wadl:method href="getReplica"/>
                     <wadl:method href="detachReplica"/>
-                    <wadl:resource href="../../../xsd/dbaas.wadl#replicas">
-                        <wadl:method href="getReplicasBySourceInstance"/>
-                    </wadl:resource>
                 </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#replicas">
+                    <wadl:method href="getReplicasBySourceInstance"/>
+                </wadl:resource>
+                
             </wadl:resources>
         </section>
         
