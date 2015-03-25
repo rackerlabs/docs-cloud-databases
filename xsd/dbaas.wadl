@@ -527,6 +527,11 @@
                 >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>
+            <param style="query" type="string" name="include_replicas"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>When <code>include_replicas</code> is set to <code>false</code>, the replica instances are filtered out of the response.</para></wadl:doc>
+            </param>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all database instances request:</para>
@@ -2715,10 +2720,21 @@
                 >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>
+            <param style="query" type="string" name="include_replicas"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN"><para>When <code>include_replicas</code> is set to <code>false</code>, the replica instances are filtered out of the response.</para></wadl:doc>
+            </param>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all replicas or replica sources request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all replicas and replica sources request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replicas-or-sources-request.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List all instances/replica sources and filter out replicas: JSON request">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances/replica sources and filter out replicas request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-replicas-or-sources-filter-replicas-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -2727,6 +2743,12 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all replicas or replica sources response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replicas-or-sources-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" >
+                <doc title="List all instances/replica sources and filter out replicas: JSON response">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances/replica sources and filter out replicas response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-replicas-or-sources-filter-replicas-response.json"/>
                 </doc>
             </representation>
         </response>

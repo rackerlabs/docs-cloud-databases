@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-03-11</pubdate>
+	<pubdate>2015-03-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2015-03-25</date>
+				<revdescription>
+					<para>Updated for v2.14.0.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2015-03-11</date>
 				<revdescription>
@@ -563,6 +569,94 @@
 					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
 					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
 					details.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.14.0">
+		<title>v2.14.0, March 25, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem>
+				<para>With this release, the release numbering scheme has been
+					changed to be easier to accomodate hotfixes using
+					the last number. For example, v2.14.1 could be
+					used as the release number for a hotfix for
+					v2.14.0.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-143"
+						>DSMYSQL-143: </link>Add query parameter
+						<code>include_replicas</code> for filtering
+					out replicas from List all database instances and
+					List all replicas and replica source database
+					instances API operations. For examples, see <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getReplicasOrReplicaSources__version___accountId__instances_replication.html"
+						>List all instances/replica sources and filter
+						out replicas</link>.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-178"
+						>DSMYSQL-178: </link>Fix
+					get_replication_snapshot API operation to set the
+					location.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Remove service catalog from repose header to fix
+					header too long error.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Add logrotate for the haproxy log files and move
+					the configs as templates.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Enable debugging for DNS client.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-156"
+						>DSMYSQL-156: </link>HA MySQL - Configure
+					nodes and add new state.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
