@@ -11,5 +11,7 @@ tests/integration/Reddwarf_Integration_Tests.egg-info/*
 apidocs/target
 xsd/management-summarized.html
 xsd/normalized/
+.DS_Store
+
 
 
