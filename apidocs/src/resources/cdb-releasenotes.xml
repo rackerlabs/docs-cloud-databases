@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-03-25</pubdate>
+	<pubdate>2015-04-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,7 +77,7 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2015-03-25</date>
+				<date>2015-04-06</date>
 				<revdescription>
 					<para>Updated for v2.14.0.</para>
 				</revdescription>
@@ -612,7 +612,7 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv2.14.0">
-		<title>v2.14.0, March 25, 2015</title>
+		<title>v2.14.0, April 6, 2015</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem>
@@ -634,12 +634,47 @@
 						>List all instances/replica sources and filter
 						out replicas</link>.</para>
 			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-157"
+						>DSMYSQL-157: </link>Fixed the following
+					backup issues:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para>Refresh authentication token when it expires in the middle
+							of the backup process.</para>
+					</listitem>
+					<listitem>
+						<para>Prevent restoring uncompleted
+							backups.</para>
+					</listitem>
+					<listitem>
+						<para>Report the correct status of backup
+							failed, succeeded, and so forth.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
 			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-178"
 						>DSMYSQL-178: </link>Fix
 					get_replication_snapshot API operation to set the
 					location.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-2"
+						>DSMYSQL-2 </link>, <link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-103"
+						>DSMYSQL-103: </link>trove - mha for mysql and
+					ssh changes for cdbproxy.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-167"
+						>DSMYSQL-167: </link>cdbproxy-agent - change
+					mha for mysql to run as a daemon that
+					automatically restarts (tag 1.0.16).</para>
 			</listitem>
 			<listitem security="internal">
 				<para>Remove service catalog from repose header to fix
