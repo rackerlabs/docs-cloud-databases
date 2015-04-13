@@ -685,7 +685,7 @@
 					the configs as templates.</para>
 			</listitem>
 			<listitem security="internal">
-				<para>Enable debugging for DNS client.</para>
+				<para>Enable debugging for the DNS client.</para>
 			</listitem>
 			<listitem security="internal">
 				<para><link security="internal"
