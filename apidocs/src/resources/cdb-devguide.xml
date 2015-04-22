@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-04-10</pubdate>
+        <pubdate>2015-04-22</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,33 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-04-22</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Removed warning about detaching a
+                                replica in <xref
+                                   linkend="Replication-Overview-dle5733"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added <code>DETACH_REPLICA</code>
+                                status to <xref
+                                   linkend="database_instance_status"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Changed warning to note and added
+                                information about
+                                   <code>DETACH_REPLICA</code> status
+                                for <olink targetdoc="cdb-devguide"
+                                   targetptr="PATCH_detachReplica__version___accountId__instances__instanceId__replication"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-04-10</date>
                 <revdescription>
@@ -1284,11 +1311,11 @@
                     Feedback Forum</link> and let us know what you
                 think about Cloud Databases!</para>
             <para>You can also follow Rackspace updates and
-                announcements via twitter at: <link
-                    xlink:href="http://www.twitter.com/rackspace"
-                    >http://www.twitter.com/rackspace</link>. </para>
+                announcements via twitter at <link
+                    xlink:href="https://twitter.com/rackspace"
+                    >https://twitter.com/rackspace</link>. </para>
             <para>This API uses standard HTTP 1.1 response codes as
-                documented at: <link
+                documented at <link
                     xlink:href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html"
                     >http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html</link>. </para>
         </section>
@@ -2806,6 +2833,11 @@
                         resized at the moment.</para>
                 </listitem>
                 <listitem>
+                    <para>DETACH_REPLICA &ndash; The database
+                        instance, which was a replica, is being
+                        detached from the source.</para>
+                </listitem>
+                <listitem>
                     <para>RESTART_REQUIRED &ndash;  A change has
                         occurred to the configuration of an instance
                         that requires the instance to be restarted at
@@ -3757,22 +3789,6 @@
                             <para>Adding a replica will restart the
                                 MySQL service on the source database
                                 instance. However the state of the
-                                instance might not reflect that and
-                                still be <code>ACTIVE</code>. Wait for
-                                a couple of seconds for the process to
-                                be complete. The best way to verify
-                                whether the process is complete is to
-                                check the slave metrics as described
-                                in <xref
-                                   linkend="Monitoring_Read_Replication-d1e3694"
-                                />.</para>
-                        </warning>
-                    
-                    
-                        <warning>
-                            <para>Detaching a replica will restart the
-                                MySQL service on the instance
-                                detached. However the state of the
                                 instance might not reflect that and
                                 still be <code>ACTIVE</code>. Wait for
                                 a couple of seconds for the process to

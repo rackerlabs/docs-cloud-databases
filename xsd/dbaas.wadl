@@ -2762,20 +2762,12 @@
             <para>This operation detaches the specified replica instance from its replication source instance. 
                 This call requires the user to specify id of the replica instance to detach.
             </para>
-            <warning>
-                <para>Detaching a replica will restart the
-                    MySQL service on the instance
-                    detached. However the state of the
-                    instance might not reflect that and
-                    still be <code>ACTIVE</code>. Wait for
-                    a couple of seconds for the process to
-                    be complete. The best way to verify
-                    whether the process is complete is to
-                    check the slave metrics as described
-                    in <link
-                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Read_Replication-d1e3694.html"
-                        >Monitoring read replication</link>.</para>
-            </warning>
+            <note>
+                <para>Detaching a replica will change the
+                    database instance status to DETACH_REPLICA. 
+                    The status will change back to ACTIVE once the replica is completely 
+                    detached from the source and is no longer a replica.</para>
+            </note>
             
        <para>The following table lists the required attributes for Detach replica:</para>
             <table rules="all">
