@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-04-22</pubdate>
+        <pubdate>2015-04-27</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -80,7 +80,7 @@
         
         <revhistory>
             <revision>
-                <date>2015-04-22</date>
+                <date>2015-04-27</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -3347,19 +3347,19 @@
                     about how to perform the following tasks:<itemizedlist>
                         <listitem>
                             <para><link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser__v2.0_users_User_Calls.html"
+                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html"
                                    >Add account users</link></para>
                         </listitem>
                         <listitem>
                             <para>
                                 <link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
+                                    xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html"
                                    >Assign roles to account
                                    users</link></para>
                         </listitem>
                         <listitem>
                             <para><link
-                                   xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html"
+                                xlink:href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles__roleid__Role_Calls.html"
                                    >Delete roles from account
                                    users</link></para>
                         </listitem>
