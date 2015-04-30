@@ -2383,12 +2383,20 @@
                 This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. 
                 It also requires specifying the source database instance using the <code>replica_of</code> attribute.
                 The service then provisions the replica with the requested flavor and sets up a volume of the specified size.</para>
-            <note><para>The replica will be created with the default configuration. 
-                If you wish to apply the same configuration as the source database instance or another configuration, 
-                you will need to apply that configuration to the replica. 
-                Refer to <link
-                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances.html"
-                    >Update database instance</link> for details.</para></note>
+            <note><title>Notes</title>
+              <itemizedlist>
+                <listitem><para>The replica will be created with the default configuration. 
+                    If you wish to apply the same configuration as the source database instance or another configuration, 
+                    you will need to apply that configuration to the replica. 
+                    Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances.html"
+                        >Update database instance</link> for details.</para></listitem>
+                <listitem>
+                    <para>Since the process of creating a replica makes a backup behind the scenes, the user calling the Create replica operation will need access to Cloud Files.</para>
+                </listitem> 
+              </itemizedlist>
+            </note>
+            
             <warning>
                 <para>Adding a replica will restart the MySQL service on the source database instance. 
                     However the state of the instance might not reflect that and still be ACTIVE. 
