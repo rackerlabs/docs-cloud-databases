@@ -91,7 +91,7 @@
                                    >Create replica</link>.</para>
                         </listitem>
                         <listitem>
-                            <para>Removed warning about detaching a
+                            <para>Removed warning about detaching
                                 replica in <xref
                                    linkend="Replication-Overview-dle5733"
                                 />.</para>
