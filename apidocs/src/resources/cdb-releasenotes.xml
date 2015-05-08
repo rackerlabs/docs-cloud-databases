@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-04-29</pubdate>
+	<pubdate>2015-05-11</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2015-05-11</date>
+				<revdescription>
+					<para>Updated for v2.16.0.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2015-04-29</date>
 				<revdescription>
@@ -575,6 +581,118 @@
 					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
 					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
 					details.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.16.0">
+		<title>v2.16.0, May 11, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-129"
+						>DSMYSQL-129: </link>Adds acls call for HA
+					MySQL.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-49"
+						>DSMYSQL-49: </link>Automatically fail
+					incomplete backups when deleting an
+					instance.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-263"
+						>DSMYSQL-263: </link>Fixed replica_of in the
+					slave.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-208"
+						>DSMYSQL-208: </link>Record ha-mysql failover
+					information in trove.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-210"
+						>DSMYSQL-210: </link>Add Mgmt call to show
+					failovers and shell cmd.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-116"
+						>DSMYSQL-116: </link>Create a valid context
+					from scratch for non-user initiated
+					requests.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-136"
+						>DSMYSQL-136: </link>Delete IP in the VM; fix
+					all the tests.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-176"
+						>DSMYSQL-176: </link>Configure for HA within
+					prepare state.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-253"
+						>DSMYSQL-253: </link>Only use active
+					images.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-225"
+						>DSMYSQL-225: </link>Puppetize scheduler
+					processes.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-215"
+						>DSMYSQL-215: </link>HAProxy failover.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
