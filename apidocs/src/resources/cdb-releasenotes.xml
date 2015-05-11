@@ -627,7 +627,7 @@
 		<title>v2.16.0, May 11, 2015</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-129"
 						>DSMYSQL-129: </link>Adds acls call for HA
@@ -646,7 +646,7 @@
 						>DSMYSQL-263: </link>Fixed replica_of in the
 					slave.</para>
 			</listitem>
-			<listitem>
+			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-208"
 						>DSMYSQL-208: </link>Record ha-mysql failover
@@ -732,7 +732,7 @@
 						xlink:href="http://feedback.rackspace.com"
 						>Product Feedback Forum</link> and let us know
 					what you think about Cloud Databases! </para>
-			</listitem>
+			</listitem>  
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv2.15.0">
