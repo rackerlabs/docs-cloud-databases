@@ -198,7 +198,7 @@
                         </resource>
                    </resource>
                     
-                    <resource id="datastoreType" path="{datastoreType}">
+                   <resource id="datastoreType" path="{datastoreType}">
                         <param name="datastoreType" style="template" type="xsd:string" >
                             <doc>The datastore type, for example mysql.</doc></param>
                         <resource id="versions4" path="versions">
@@ -211,8 +211,29 @@
                             </resource>
                         </resource>
                     </resource> 
-                    
                  </resource>
+                
+                <resource id="ha" path="ha">
+                    <method href="#createHa" />
+                    <method href="#getHa" />
+                    
+                    <resource id="haId" path="{haId}">
+                        <param name="haId" style="template" type="xsd:string" >
+                            <doc>The ID for the specified HA instance.</doc></param>
+                        <method href="#getInstanceByHaId" />
+                        <method href="#deleteInstanceByHaId" />
+                        <resource id="acls" path="acls">
+                            <method href="#addAclToHaInstance" />
+                            <method href="#listAclsForHaInstance" />
+                            <resource id="address" path="{address}">
+                                <param name="address" style="template" type="xsd:string" >
+                                    <doc>The CIDR notated IPV4 address.</doc></param>
+                                <method href="#deleteAclsFromHaInstance" />
+                            </resource>
+                        </resource>
+                    </resource>
+                </resource> 
+                
             </resource>
         </resource>
     </resources>
@@ -522,6 +543,7 @@
         <wadl:doc xml:lang="EN" title="List all database instances"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the status and information for all database instances.</para>
             <para>This operation lists the status and information for all database instances.</para>
+            <para>This operation lists the sources and replicas part for HA database instances.</para>
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
                 >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
@@ -532,10 +554,31 @@
                 <wadl:doc xmlns="http://docbook.org/ns/docbook"
                     xml:lang="EN"><para>When <code>include_replicas</code> is set to <code>false</code>, the replica instances are filtered out of the response.</para></wadl:doc>
             </param>
+            <param style="query" type="string" name="include_ha"
+                required="false">
+                <wadl:doc xmlns="http://docbook.org/ns/docbook"
+                    xml:lang="EN">
+                    <para>
+                        When <code>include_ha</code> is set to <code>false</code>, the HA instances are filtered out of the response.
+                    </para>
+                </wadl:doc>
+            </param>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all database instances request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-request.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List all sources and replicas part of an HA instance request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all sources and replicas part of an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instances-ha-mysql-request.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List all instances and filter out instances part of an HA setup request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances and filter out instances part of an HA setup request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instances-ha-mysql-filter-request.json"/>
                 </doc>
             </representation>
         </request>
@@ -544,6 +587,18 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all database instances response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instances-index-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List all sources and replicas part of an HA instance response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all sources and replicas part of an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instances-ha-mysql-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List all instances and filter out instances part of an HA setup response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all instances and filter out instances part of an HA setup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instances-ha-mysql-filter-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -586,7 +641,9 @@
         <wadl:doc xml:lang="EN" title="List database instance status and details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
             <para>This operation lists the status and details of the specified database instance. <phrase>The operation also lists 
-                the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase></para>
+                the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase>
+            For HA instances, lists details for the source instance part or the replica instance part, depending on the ID specified.
+            </para>
             
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
@@ -613,6 +670,20 @@
                    </doc>
                 </representation>
             
+            <representation mediaType="application/json">
+                <doc title="List details of a source instance in an HA setup request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details of a source instance in an HA setup request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-w-ha-sql-status-detail-request.json"/>
+                </doc>
+            </representation>
+            
+            <representation mediaType="application/json">
+                <doc title="List details of a replica instance in an HA setup request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details of a replica instance in an HA setup request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-w-replica-ha-sql-status-detail-request.json"/>
+                </doc>
+            </representation>
+            
         </request>
         <response status="200">
             <representation mediaType="application/json"
@@ -628,6 +699,18 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details with configuration response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-config-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned since the instance is associated with that configuration.</para>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List details of a source instance in an HA setup response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details of a source instance in an HA setup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-w-ha-sql-status-detail-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json">
+                <doc title="List details of a replica instance in an HA setup response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details of a replica instance in an HA setup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-w-replica-ha-sql-status-detail-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -1558,7 +1641,7 @@
                        <td colspan="3"><para>Specifies a long description of the backup.</para></td>
                        <td colspan="1">No</td>
                    </tr>
-                   <tr security="writeronly">
+                   <tr>
                        <td colspan="1">parent_id</td>
                        <td colspan="3"><para>Specifies the backupId from which to create an incremental backup.</para></td>
                        <td colspan="1">No</td>
@@ -1611,9 +1694,9 @@
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                             >Delete backup</link> for details.</para>
                     </listitem>
-                    <listitem security="writeronly"><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
+                    <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
                     </listitem>
-                    <listitem security="writeronly"><para>You can create an incremental backup from another incremental backup. 
+                    <listitem><para>You can create an incremental backup from another incremental backup. 
                         There is no limit to how many nested backups you can create, however the chances of 
                         a restore failure increase with the number of nested backups you create.</para>
                     </listitem>
@@ -1626,13 +1709,13 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-request.json"/>
                 </doc>
             </representation>
-            <!--   <representation mediaType="application/json" element="dbaas:Backup">
+            <representation mediaType="application/json" element="dbaas:Backup">
                 <doc title="Create incremental backup request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create incremental backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-request-json-http.txt"/>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-request.json"/>
                 </doc>
-            </representation>  -->
+            </representation>
         </request>
         <response status="200">
             <representation mediaType="application/json"
@@ -1642,13 +1725,13 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-response.json"/>
                 </doc>
             </representation>
-            <!--   <representation mediaType="application/json" element="dbaas:Backup">
+            <representation mediaType="application/json" element="dbaas:Backup">
                 <doc title="Create incremental backup response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create incremental backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-response-json-http.txt"/>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-response.json"/>
                 </doc>
-            </representation>  -->
+            </representation>
         </response>
         &commonFaults;
         &getFaults;
@@ -1788,7 +1871,7 @@
                     <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases. 
                         You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up. </para>
                 </listitem>
-                <listitem security="writeronly">
+                <listitem>
                     <para>You can restore from an incremental backup the same as from a full backup. The system automatically restores all parents first, 
                         and then applies the incremental backup.</para>
                 </listitem>
@@ -1820,7 +1903,7 @@
     <method name="DELETE" id="deleteBackup">
         <wadl:doc xml:lang="EN" title="Delete backup"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified backup.</para>
-            <para>This operation deletes the specified backup. <phrase security="writeronly">When a backup is deleted, all incremental backups created from it will also be deleted.</phrase></para>
+            <para>This operation deletes the specified backup. <phrase>When a backup is deleted, all incremental backups created from it will also be deleted.</phrase></para>
             
         </wadl:doc>
         <request>
@@ -2863,6 +2946,268 @@
                 </doc>
             </representation>  -->
             
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <!-- HA -->
+    <method name="POST" id="createHa">
+        <wadl:doc xml:lang="EN" title="Create HA database instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new HA instance.</para>
+            <para>This operation creates a new HA instance.</para>
+            <para>The <code>name</code> of the HA instance is a required attribute.</para>
+            <para>The following attributes are required for each HA instance:</para>
+            
+            <table rules="all">
+                <caption>Required attributes for Create HA instance</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">name</td>
+                        <td colspan="3">Specifies the name of the HA instance. 
+                            The length should be limited to 255 characters and any characters are permitted.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">(datastore)
+                            version/type
+                        </td>
+                        <td colspan="3">The version and type of the datastore.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">replica_source
+                            (name/flavorRef/volume)
+                        </td>
+                        <td colspan="3">The name, flavorRef, and volume of the replica source.
+                            For details of each of these parameters refer to the required and optional attributes for Create instance.
+                        </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">replicas
+                            (name/flavorRef/volume
+                            of replicas)
+                        </td>
+                        <td colspan="3">Name, flavorRef, and volume of the replicas.
+                            For details of each of these parameters refer to the required and optional attributes for Create instance.
+                            </td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json"
+                element="dbaas:ha_instance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create HA request:<?rax-fo keep-with-next?></para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-ha-sql-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="202" >
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create HA response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-create-ha-sql-response.json"/>
+                </doc>
+            </representation> 
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getHa">
+        <wadl:doc xml:lang="EN" title="List all HA database instances"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all the HA database instances.</para>
+            <para>This operation lists all the HA database instances..</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all HA database instances request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-ha-sql-instances-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all HA database instances response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-ha-sql-instances-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getInstanceByHaId">
+        <wadl:doc xml:lang="EN" title="List HA database instance details"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists details for a specified HA instance.</para>
+            <para>This operation lists the details of the specified HA instance.</para>
+            
+            </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List HA instance status and details request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-ha-sql-status-detail-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List HA instance status and details response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-ha-sql-status-detail-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="DELETE" id="deleteInstanceByHaId">
+        <wadl:doc xml:lang="EN" title="Delete HA database instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes an HA database instance.</para>
+            <para>This operation deletes the specified HA database instance.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete HA database instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-ha-sql-instance-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete HA database instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-ha-sql-instance-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="POST" id="addAclToHaInstance">
+        <wadl:doc xml:lang="EN" title="Add ACLs to an HA Instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Adds Access Control Lists (ACLs) to an HA instance.</para>
+            <para>This operation adds ACLs to an HA instance.</para>
+            <para>The following table lists the required and optional attributes for creating ACLs for an 
+                HA setup.</para>
+            
+            <table rules="all">
+                <caption>Required and optional attributes for Create database</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">Specifies the CIDR notated IPV4 address.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Add ACLs to an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-add-acls-to-ha-instance-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Add ACLs to an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-add-acls-to-ha-instance-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="listAclsForHaInstance">
+        <wadl:doc xml:lang="EN" title="Lists ACLs for an HA instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists ACLs for an HA instance.</para>
+            <para>This operation adds Lists ACLs for an HA instance.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List ACLs for an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstanceAcls" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List ACLs for an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="DELETE" id="deleteAclsFromHaInstance">
+        <wadl:doc xml:lang="EN" title="Deletes ACLs from an HA instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes ACLs from an HA instance.</para>
+            <para>This operation deletes ACLs from an HA instance.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete ACLs from an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstanceAcls" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete ACLs from an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-response.json"/>
+                </doc>
+            </representation>
         </response>
         &commonFaults;
         &getFaults;

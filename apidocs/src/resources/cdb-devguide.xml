@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-04-29</pubdate>
+        <pubdate>2015-06-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,22 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-06-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added information for incremental
+                                backups in <xref linkend="backups"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for HA instances
+                                in <xref linkend="ha"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-04-29</date>
                 <revdescription>
@@ -4093,6 +4109,30 @@
                     <wadl:method href="getReplicasBySourceInstance"/>
                 </wadl:resource>
                 
+            </wadl:resources>
+        </section>
+        <section xml:id="ha">
+            <title>HA</title>
+            <para>This section describes the operations for HA
+                database instances.</para>
+            <para>The HA API supports the following operations:</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../../xsd/dbaas.wadl#ha">
+                    <wadl:method href="createHa"/>
+                    <wadl:method href="getHa"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#haId">
+                    <wadl:method href="getInstanceByHaId"/>
+                    <wadl:method href="deleteInstanceByHaId"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#acls">
+                    <wadl:method href="addAclToHaInstance"/>
+                    <wadl:method href="listAclsForHaInstance"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#address">
+                    <wadl:method href="deleteAclsFromHaInstance"/>
+                </wadl:resource>
             </wadl:resources>
         </section>
         

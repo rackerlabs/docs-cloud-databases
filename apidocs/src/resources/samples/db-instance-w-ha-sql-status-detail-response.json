@@ -1,0 +1,65 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: ‘1243’
+Date: Fri, 08 May 2015 15:56:23 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{  
+   "instance":{  
+      "status":"ACTIVE",
+      "updated":"2015-05-08T13:03:43Z",
+      "name":"source",
+      "links":[  
+         {  
+            "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/82cba72c-26a3-4e61-a4f1-7c65647b1c9f",
+            "rel":"self"
+         },
+         {  
+            "href":"https://ord.databases.api.rackspacecloud.com/instances/82cba72c-26a3-4e61-a4f1-7c65647b1c9f",
+            "rel":"bookmark"
+         }
+      ],
+      "replicas":[  
+         {  
+            "id":"4eeeb7a6-0dee-4e66-b433-f6462d45c580",
+            "links":[  
+               {  
+                  "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4eeeb7a6-0dee-4e66-b433-f6462d45c580",
+                  "rel":"self"
+               },
+               {  
+                  "href":"https://ord.databases.api.rackspacecloud.com/instances/4eeeb7a6-0dee-4e66-b433-f6462d45c580",
+                  "rel":"bookmark"
+               }
+            ],
+            "name":"source_replica1"
+         }
+      ],
+      "hostname":"55036bc3d34c36a44911414d0e92bba071f0bfc8.ord.rackspaceclouddb.com",
+      "id":"82cba72c-26a3-4e61-a4f1-7c65647b1c9f",
+      "volume":{  
+         "used":0.18,
+         "size":1
+      },
+      "created":"2015-05-08T13:03:08Z",
+      "flavor":{  
+         "id":"2",
+         "links":[  
+            {  
+               "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/2",
+               "rel":"self"
+            },
+            {  
+               "href":"https://ord.databases.api.rackspacecloud.com/flavors/2",
+               "rel":"bookmark"
+            }
+         ]
+      },
+      "datastore":{  
+         "version":"5.6",
+         "type":"mysql"
+      },
+      "ha_id":"e7fdf90b-7140-4edb-b449-e093d55008fb"
+   }
+}

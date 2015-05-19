@@ -50,13 +50,27 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-03-11</pubdate>
+        <pubdate>2015-06-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-06-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new trove commands for HA in
+                                   <xref linkend="trove_summary_ha"/>
+                                and <xref
+                                   linkend="trove_summary_replication"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-03-11</date>
                 <revdescription>
@@ -3474,6 +3488,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                                 </listitem>
                         </varlistentry>
                 </variablelist>
+            
                 <variablelist wordsize="10%">
                         <varlistentry>
                                 <term><emphasis role="bold">Delete
@@ -4038,6 +4053,11 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             instances</emphasis></term>
                     <listitem>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove list</programlisting>
+                        <note>
+                            <para>This command also lists all
+                                instances that are part of an HA
+                                setup.</para>
+                        </note>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -4055,13 +4075,27 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
             </variablelist>
             <variablelist wordsize="10%">
                 <varlistentry>
+                    <term><emphasis role="bold">List source instance
+                            part of HA instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove show &lt;source_instance_id&gt;</programlisting>
+                        <para> Where
+                                <parameter>source_instance_id</parameter>
+                            is the ID of the source instance part of
+                            the HA instance. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
                     <term><emphasis role="bold">List replica
                             details</emphasis></term>
                     <listitem>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove show &lt;replica_instance_id&gt;</programlisting>
                         <para> Where
                                 <parameter>replica_instance_id</parameter>
-                            is the ID of the replica instance. </para>
+                            is the ID of the replica instance part of
+                            the HA instance. </para>
                     </listitem>
                 </varlistentry>
             </variablelist>
@@ -4079,6 +4113,19 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
             </variablelist>
             <variablelist wordsize="10%">
                 <varlistentry>
+                    <term><emphasis role="bold">List replica instance
+                            part of HA instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove show &lt;replica_instance_id&gt;</programlisting>
+                        <para> Where
+                                <parameter>replica_instance_id</parameter>
+                            is the ID of the replica instance part of
+                            the HA instance. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
                     <term><emphasis role="bold">Detach
                             replica</emphasis></term>
                     <listitem>
@@ -4087,6 +4134,159 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                                 <parameter>replica_instance_id</parameter>
                             is the ID of the instance replica to
                             detach. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+        </section>
+        <section xml:id="trove_summary_ha">
+            <title>HA</title>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Create HA
+                            instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-create --name &lt;name&gt; --source_name &lt;source_name&gt; --source_flavor_id &lt;source_flavor_id&gt; --source_size &lt;source_size&gt; --number_of_replicas &lt;number_of_replicas&gt; [--networks &lt;networks&gt;] [--acls &lt;acls>]</programlisting>
+                        <note>
+                            <para> Using this command, mysql-5.6 will
+                                be the default datastore type, and the
+                                replicas will have the same volume and
+                                flavor as the source. </para>
+                        </note>
+                        <itemizedlist>
+                            <title>Required Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--name</option>
+                                   <parameter> &lt;name></parameter>.
+                                   The name of the HA instance.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--source_name</option>
+                                   <parameter>
+                                   &lt;source_name></parameter>. The
+                                   name of the source instance.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--source_flavor_id</option>
+                                   <parameter>
+                                   &lt;source_flavor_id></parameter>.
+                                   The flavorRef of the source
+                                   instance. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--source_size</option>
+                                   <parameter>
+                                   &lt;source_size></parameter>. The
+                                   volume size of the source instance.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para><option>--number_of_replicas</option>
+                                   <parameter>
+                                   &lt;number_of_replicas></parameter>.
+                                   The number of replicas of the
+                                   source instance. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--networks</option>
+                                   <parameter>
+                                   &lt;networks></parameter>. The
+                                   specification for the network
+                                   (public/servicenet; private by
+                                   default; comma-separated list).
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--acls</option>
+                                   <parameter> &lt;scls></parameter>.
+                                   A list of ACLs (comma-separated
+                                   list) to access the HA instance.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List HA
+                            instances</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-list</programlisting>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Get HA instance
+                        details</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-show &lt;ha_instance&gt;</programlisting>
+                        <para> Where
+                            <parameter>ha_instance</parameter> is
+                            the ID of the HA instance. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Add ACLs to HA
+                        instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-add-acl &lt;ha_instance&gt; &lt;acl&gt;</programlisting>
+                        <para> Where
+                            <parameter>ha_instance</parameter> is
+                            the ID of the HA instance and
+                            <parameter>acl</parameter> is the CIDR
+                            to add. </para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List ACLs of an HA
+                        instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-list-acl &lt;ha_instance&gt;</programlisting>
+                        <para> Where
+                            <parameter>ha_instance</parameter> is
+                            the ID of the HA instance.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Delete ACLs from an HA
+                        instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-remove-acl &lt;ha_instance&gt; &lt;acl&gt;</programlisting>
+                        <para> Where
+                            <parameter>ha_instance</parameter> is
+                            the ID of the HA instance and
+                            <parameter>acl</parameter> is the CIDR
+                            to remove.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Delete HA
+                            instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-delete &lt;ha_id&gt;</programlisting>
+                        <para> Where <parameter>ha_id</parameter> is
+                            the ID of the HA instance.</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
