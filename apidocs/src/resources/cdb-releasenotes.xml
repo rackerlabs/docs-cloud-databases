@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-05-19</pubdate>
+	<pubdate>2015-05-27</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision>
+				<date>2015-05-27</date>
+				<revdescription>
+					<para>Updated for v2.18.0.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2015-05-19</date>
 				<revdescription>
@@ -587,6 +593,91 @@
 					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
 					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
 					details.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.18.0">
+		<title>v2.18.0, May 27, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-254"
+						>DSMYSQL-254: </link>Prevent actions on
+					replica instance users/databases.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-206"
+						>DSMYSQL-206: </link>Mgmt delete call for
+					/ha.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-247"
+					>DSMYSQL-247: </link>Fix ha-mysql show internal server error.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-275"
+					>DSMYSQL-275: </link>Moving event creation and rentention logic into taskmanager.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-266"
+					>DSMYSQL-266: </link>Check replica has same flavor and size as source (HA only).</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-269"
+					>DSMYSQL-269: </link>Backup FAILED state is not checked for when running an automated backup.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-20"
+					>DSMYSQL-20: </link>Add index on retention table for (sent and end_time).</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Restart instead of reloading haproxy on modify.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
