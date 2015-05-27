@@ -645,6 +645,11 @@
 						>DSMYSQL-254: </link>Prevent actions on
 					replica instance users/databases.</para>
 			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-282"
+					>DSMYSQL-282: </link>Actually delete backup files from Cloud Files.</para>
+			</listitem>
 			<listitem security="internal">
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-206"
@@ -677,7 +682,16 @@
 					>DSMYSQL-20: </link>Add index on retention table for (sent and end_time).</para>
 			</listitem>
 			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-278"
+						>DSMYSQL-278: </link>Logout of all iscsi
+					sessions.</para>
+			</listitem>
+			<listitem security="internal">
 				<para>Restart instead of reloading haproxy on modify.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Pass trove.conf and mgmt.conf to mgmt api.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
