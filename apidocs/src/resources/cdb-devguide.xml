@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-01</pubdate>
+        <pubdate>2015-06-03</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -80,7 +80,7 @@
         
         <revhistory>
             <revision>
-                <date>2015-06-01</date>
+                <date>2015-06-03</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -90,7 +90,9 @@
                         </listitem>
                         <listitem>
                             <para>Added information for HA instances
-                                in <xref linkend="ha"/>.</para>
+                                in <xref
+                                   linkend="High-Availability-dle2648"
+                                /> and <xref linkend="ha"/>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -3889,6 +3891,117 @@
             <para>Refer to <xref linkend="replication"/> for the API
                 operations for replication.</para>
         </section>
+        <section xml:id="High-Availability-dle2648">
+            <title>High Availability</title>
+            <para><?rax-fo keep-with-next?>High Availability (HA) for
+                Cloud Databases means that Cloud Database users can
+                run their critical production workloads without
+                worrying about databases becoming unavailable. When
+                using Cloud Databases HA instance group, users can
+                choose to add one or a maximum of two replicas to the
+                source database instance. Cloud Databases ensures that
+                in case the master becomes unavailable, an automatic
+                failover to the replicas is initiated within 10-30
+                seconds of downtime. Cloud Databases uses the <link
+                    xlink:href="https://code.google.com/p/mysql-master-ha/"
+                    >MySQL MHA</link> utility to automate master
+                failover. In case some of the slaves have not received
+                the latest relay log events, MHA automatically
+                identifies differential relay log events from the
+                latest slave, and applies differential events to the
+                other slaves. This ensures that all replicas can be
+                consistent. </para>
+            <para>In addition, users can also use replicas for scaling
+                their read-heavy workloads. You can send only your
+                    <emphasis>read</emphasis> requests to your
+                replica. All <emphasis>write</emphasis> requests can
+                be sent only to the source database instance. Cloud
+                Databases HA instance group uses semi-synchronous
+                replication.</para>
+            <para>HA groups are only supported for MySQL 5.6. Support
+                for MariaDB 10 and Percona 5.6 will be available
+                soon.</para>
+            <note><title>Notes</title>
+                <itemizedlist>
+                    <listitem>
+                        <para>Access Control Lists (ACLs) need to be
+                            added to the HA group before accessing the
+                            HA database instances. See <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
+                                >Add ACLs to an HA instance</link>.
+                        </para>
+                    </listitem>
+                    <listitem>
+                        <para>There will be a single access point,
+                            hostname, for accessing the source
+                            database instance and replicas in the HA
+                            group. There will be separate ports for
+                            reads and writes. All the writes will be
+                            against port 3306 and reads against port
+                            3307.</para>
+                    </listitem>
+                    <listitem>
+                        <para>There will be a lag between the source
+                            database instance and replicas. All of the
+                            updates will be applied to the replica
+                            after they occur on the master.</para>
+                    </listitem>
+                    
+                </itemizedlist>
+            </note>
+            <formalpara>
+                <title>Recommendation</title>
+                <para>It is recommended to have two replicas on an HA
+                    group. Having two replicas will ensure that in
+                    case failover occurs, your database will still
+                    have a High Availability setup.</para>
+            </formalpara>
+            <warning>
+                <para>Adding a replica will cause the source database
+                    instance to restart and your database will be
+                    unavailable for a brief period.</para>
+            </warning>
+            <formalpara>
+                <title>Limitations</title>
+                <para>
+                    <itemizedlist>
+                        <listitem>
+                            <para>The maximum number of replicas
+                                allowed per source database instance
+                                is two. We will increase the limit on
+                                the number of replicas later.</para>
+                        </listitem>
+                        <listitem>
+                            <para>HA group is only available for
+                                instance flavors 1GB and above.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Both source database instance and
+                                replicas should be in the same
+                                region.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Currently you cannot perform
+                                backups, resize, or apply
+                                configuration groups on HA
+                                group.</para>
+                        </listitem>
+                        <listitem>
+                            <para>In case failover occurs, there will
+                                be an automatic failover to the
+                                replica closest to the failed database
+                                instance. Cloud Databases will remove
+                                the failed database instance. You will
+                                have to manually create another
+                                replica to add to the HA group. In the
+                                future, Cloud Databases will automate
+                                creating another replica after the
+                                failover occurs.</para>
+                        </listitem>
+                    </itemizedlist>
+                </para>
+            </formalpara>
+        </section>
     </chapter>
     
     <chapter xml:id="API_Operations-d1e2264" 
@@ -4113,8 +4226,8 @@
         </section>
         <section xml:id="ha">
             <title>HA</title>
-            <para>This section describes the operations for HA
-                database instances.</para>
+            <para>This section describes the operations for High
+                Availability (HA) database instances.</para>
             <para>The HA API supports the following operations:</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">

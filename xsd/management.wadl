@@ -93,6 +93,17 @@
           <method href="#getaccountbyid"/>
         </resource>
       </resource>
+      <resource id="ha" path="ha">
+        <method href="#getha"/>
+        <resource id="ha_id" path="{ha_Id}">
+          <param name="ha_Id" style="template" type="xsd:string">
+            <doc>The HA cluster ID.</doc></param>
+          <method href="#deletehainstancebyid"/>
+          <resource id="failoverinfo" path="failoverinfo">
+            <method href="#getfailoverinfo"/>
+          </resource>  
+        </resource>
+      </resource>
     </resource>
   </resources>
 
@@ -936,6 +947,93 @@
     &commonFaults;
     &getFaults;
     &postPutFaults;
+  </method>
+  
+  
+  <!-- HA methods -->
+  
+  <method name="GET" id="getha">
+    <wadl:doc xml:lang="EN" title="List HA instances" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Lists all of the HA instances.
+      </para>
+      
+      <para>This operation returns information about the status and details for all of the HA instances.</para>
+    </wadl:doc>
+ <!--     <request>
+      <representation mediaType="application/json">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-instance-details-request.json"/>
+        </doc>
+      </representation>
+    </request>  -->
+    <response status="202">
+      <representation mediaType="application/json" element="ha_instances">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List HA instances response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-get-ha-instances-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <method name="DELETE" id="deletehainstancebyid">
+    <wadl:doc xml:lang="EN" title="Delete HA instance" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Deletes the specified HA cluster and instances.
+      </para>
+      
+      <para>This operation deletes the specified HA cluster and instances.</para>
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete HA instance request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-delete-ha-instance-request.json"/>
+        </doc>
+      </representation>
+    </request>  
+    <response status="202">
+      <representation mediaType="application/json" element="ha_instances">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete HA instance response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-delete-ha-instance-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <method name="GET" id="getfailoverinfo">
+    <wadl:doc xml:lang="EN" title="Show failover information" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Shows the failover information.
+      </para>
+      
+      <para>This operation shows the failover information.</para>
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Show failover information request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-show-failover-info-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/json" element="ha_instances">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Show failover information response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-show-failover-info-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
   </method>
   
   

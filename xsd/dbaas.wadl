@@ -227,7 +227,7 @@
                             <method href="#listAclsForHaInstance" />
                             <resource id="address" path="{address}">
                                 <param name="address" style="template" type="xsd:string" >
-                                    <doc>The CIDR notated IPV4 address.</doc></param>
+                                    <doc>The CIDR notated IPV4 address. The IPV4 address to use should be CIDR notated.</doc></param>
                                 <method href="#deleteAclsFromHaInstance" />
                             </resource>
                         </resource>
@@ -3096,7 +3096,7 @@
             </representation>
             
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -3110,7 +3110,7 @@
     </method>
     
     <method name="POST" id="addAclToHaInstance">
-        <wadl:doc xml:lang="EN" title="Add ACLs to an HA Instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Add ACLs to an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Adds Access Control Lists (ACLs) to an HA instance.</para>
             <para>This operation adds ACLs to an HA instance.</para>
             <para>The following table lists the required and optional attributes for creating ACLs for an 
@@ -3128,7 +3128,7 @@
                 <tbody>
                     <tr>
                         <td colspan="1">address</td>
-                        <td colspan="3">Specifies the CIDR notated IPV4 address.</td>
+                        <td colspan="3">Specifies the CIDR notated IPV4 address. The IPV4 address to use should be CIDR notated.</td>
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
@@ -3195,17 +3195,19 @@
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete ACLs from an HA instance request:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-request.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-acls-from-ha-instance-request.json"/>
+                    <note xmlns="http://docbook.org/ns/docbook"><para>Note that the string "%25252F" near the end of the IP address in the request
+                        refers to the special character for the forward slash ('/') that is used with the IP address in CIDR format ("1.2.3.4/32").</para></note>
                 </doc>
             </representation>
             
         </request>
-        <response status="200">
+        <response status="202">
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstanceAcls" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete ACLs from an HA instance response:</para>
-                    <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-response.json"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-delete-acls-from-ha-instance-response.json"/>
                 </doc>
             </representation>
         </response>

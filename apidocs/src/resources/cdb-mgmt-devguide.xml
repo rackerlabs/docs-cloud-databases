@@ -56,11 +56,12 @@
             <year>2012</year>
             <year>2013</year>
             <year>2014</year>
+            <year>2015</year>
             <holder>Rackspace US, Inc.</holder>
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2014-09-30</pubdate>
+        <pubdate>2015-06-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -75,6 +76,17 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-06-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added section <xref linkend="HA"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-09-30</date>
                 <revdescription>
@@ -1427,6 +1439,27 @@
                     </wadl:resource>            
                 </wadl:resources>
             </section>
+        </section>
+        <section xml:id="HA">
+            <title>High Availability information</title>
+            <para>This section describes the operations that are
+                supported for High Availability (HA).</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource
+                    href="../../../xsd/management.wadl#ha">
+                    <wadl:method href="getha"/>
+                </wadl:resource>
+                <wadl:resource
+                        href="../../../xsd/management.wadl#ha_id">
+                        <wadl:method href="deletehainstancebyid"/>
+
+                </wadl:resource>  
+                <wadl:resource
+                    href="../../../xsd/management.wadl#failoverinfo">
+                    <wadl:method href="getfailoverinfo"/>
+                </wadl:resource>
+            </wadl:resources>
         </section>  
            
     </chapter>
