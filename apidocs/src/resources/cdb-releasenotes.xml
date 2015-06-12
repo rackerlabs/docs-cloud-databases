@@ -652,9 +652,6 @@
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem>
-				<para>Why do we do a GET before a DELETE?</para>
-			</listitem>
-			<listitem>
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-300"
 						>DSMYSQL-300: </link>Added config value with
@@ -666,6 +663,9 @@
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-268"
 						>DSMYSQL-268: </link>Store HA configs for
 					local/stage separately.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Why do we do a GET before a DELETE?</para>
 			</listitem>
 			<listitem security="internal">
 				<para>Docs and snippets for schedule API.</para>
