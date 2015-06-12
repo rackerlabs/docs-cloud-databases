@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-03</pubdate>
+        <pubdate>2015-06-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -80,12 +80,18 @@
         
         <revhistory>
             <revision>
-                <date>2015-06-03</date>
+                <date>2015-06-12</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added information for incremental
                                 backups in <xref linkend="backups"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for automated
+                                backups in <xref
+                                   linkend="automated_backups"
                                 />.</para>
                         </listitem>
                         <listitem>
@@ -4141,7 +4147,7 @@
         </section>
 
         <section xml:id="backups">
-            <title>Backups</title>
+            <title>On Demand Backups</title>
             <para>This section describes the operations for backups of
                 database instances.</para>
             <note>
@@ -4198,6 +4204,28 @@
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#instances">
                     <wadl:method href="restoreBackup"/>
+                </wadl:resource>
+            </wadl:resources>
+        </section>
+        <section xml:id="automated_backups">
+            <title>Automated Backups</title>
+            <para>This section describes the operations for automated backups of
+                database instances.</para>
+            <note>
+                <para>Any user calling the automated backup operations for Cloud
+                    DB will need access to Cloud Files.</para>
+            </note>
+            <para>The Automated Backups API supports the following
+                operations:</para>
+            <wadl:resources
+                xmlns:wadl="http://wadl.dev.java.net/2009/02">
+                <wadl:resource href="../../../xsd/dbaas.wadl#automatedbackups">
+                    <wadl:method href="createAutoBackup"/>
+                    <wadl:method href="getAutomatedBackups"/>  
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#backup2Id">
+                    <wadl:method href="getAutomatedBackupById"/>
+                    <wadl:method href="deleteAutomatedBackupById"/>
                 </wadl:resource>
             </wadl:resources>
         </section>

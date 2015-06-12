@@ -104,6 +104,18 @@
           </resource>  
         </resource>
       </resource>
+      
+      <resource id="schedules" path="schedules">
+        <method href="#createschedule"/>
+        <method href="#getschedule"/>
+        <resource id="backupId" path="{backupId}">
+          <param name="backupId" style="template" type="xsd:string"> 
+            <doc>The backup ID for the specified backup.</doc></param>
+          <method href="#updateschedule"/>
+          <method href="#deleteschedule"/>
+        </resource>
+      </resource> 
+        
     </resource>
   </resources>
 
@@ -1036,5 +1048,200 @@
     &getFaults;
   </method>
   
+  <!-- Schedule methods -->
+  
+  <method name="POST" id="createschedule">
+    <wadl:doc xml:lang="EN" title="Create schedule for backups for the specified instance" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Creates a schedule for backups.
+      </para>
+      
+      <para>This operation creates a schedule for backups for the specified instance.</para>
+      
+      <table rules="all">
+        <caption>Required and optional attributes for Create schedule for backups</caption>
+        <thead>
+          <tr>
+            <td colspan="1">Name</td>
+            <td colspan="3">Description</td>
+            <td colspan="1">Required</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="1">action</td>
+            <td colspan="3"><para>The scheduled action: <code>backup</code>.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">day_of_week</td>
+            <td colspan="3"><para>The day of the week. Sunday is <code>0</code>.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">hour</td>
+            <td colspan="3"><para>The hour of the day. Midnight is 0.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">minute</td>
+            <td colspan="3"><para>The minute of the hour.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">instance</td>
+            <td colspan="3"><para>The database instanceId to backup.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+        </tbody>
+      </table> 
+      
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create schedule for backup request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-create-backup-schedule-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/json" element="db_schedules">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create schedule for backup response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-create-backup-schedule-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <method name="GET" id="getschedule">
+    <wadl:doc xml:lang="EN" title="List schedule for backups" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">Lists the schedule for backups.</para>
+      <para>This operation lists the schedule for backups.</para>
+      <para>You can filter by tenant ID using the <emphasis>tenant</emphasis> query parameter.</para>         
+    </wadl:doc>
+    <request>
+      <param style="query" type="string" name="tenant"
+        required="false">
+        <wadl:doc xmlns="http://docbook.org/ns/docbook"
+          xml:lang="EN"><para>The tenant ID of the tenant by which to filter.</para></wadl:doc>
+      </param>
+      <representation mediaType="application/json">
+        <doc title="List schedule for backups query request: JSON">
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List schedule for backups query request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-backup-schedule-list-query-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="200">
+      <representation mediaType="application/json"
+        element="dbaas:Backup" >
+        <doc title="List schedule for backups query response: JSON">
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the List schedule for backups query response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-backup-schedule-list-query-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <method name="PUT" id="updateschedule">
+    <wadl:doc xml:lang="EN" title="Update backup schedule for the specified backup" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Updates the backup schedule for the specified backup.
+      </para>
+      
+      <para>This operation updates the backup schedule for the specified backup.</para>
+      
+      <table rules="all">
+        <caption>Required and optional attributes for Update schedule for backups</caption>
+        <thead>
+          <tr>
+            <td colspan="1">Name</td>
+            <td colspan="3">Description</td>
+            <td colspan="1">Required</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td colspan="1">action</td>
+            <td colspan="3"><para>The scheduled action: <code>backup</code>.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">day_of_week</td>
+            <td colspan="3"><para>The day of the week. Sunday is <code>0</code>.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">hour</td>
+            <td colspan="3"><para>The hour of the day. Midnight is 0.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">minute</td>
+            <td colspan="3"><para>The minute of the hour.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+          <tr>
+            <td colspan="1">instance</td>
+            <td colspan="3"><para>The database instanceId to backup.</para></td>
+            <td colspan="1">Yes</td>
+          </tr>
+        </tbody>
+      </table> 
+      
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update schedule for backup request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-update-backup-schedule-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/json" element="db_schedule">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update schedule for backup response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-update-backup-schedule-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
+  
+  <method name="DELETE" id="deleteschedule">
+    <wadl:doc xml:lang="EN" title="Delete backup schedule for the specified backup" xmlns="http://docbook.org/ns/docbook">
+      <para role="shortdesc">
+        Deletes the backkup schedule for the specified backup.
+      </para>
+      
+      <para>This operation deletes the backup schedule for the specified backup.</para>
+    </wadl:doc>
+    <request>
+      <representation mediaType="application/json">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete schedule for backup request:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-delete-backup-schedule-request.json"/>
+        </doc>
+      </representation>
+    </request>
+    <response status="202">
+      <representation mediaType="application/json" element="db_schedule">
+        <doc>
+          <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete schedule for backup response:</para>
+          <xsdxt:code href="../apidocs/src/resources/samples/db-mgmt-delete-backup-schedule-response.json"/>
+        </doc>
+      </representation>
+    </response>
+    &commonFaults;
+    &getFaults;
+  </method>
   
 </application>

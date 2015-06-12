@@ -125,6 +125,18 @@
                     </resource>          
                 </resource>
                 
+                <resource id="automatedbackups" path="schedules">
+                    <method href="#createAutoBackup" />
+                    <method href="#getAutomatedBackups" />
+                    <resource id="backup2Id" path="{backupId}">
+                        <param name="backupId" style="template"
+                            type="xsd:string" >
+                            <doc>The backup ID for the specified backup.</doc></param>
+                        <method href="#getAutomatedBackupById" />
+                        <method href="#deleteAutomatedBackupById" />
+                    </resource>   
+                </resource>
+                
                 <resource id="configurations" path="configurations">
                     <method href="#getConfigurations" />
                     <method href="#createConfiguration" />
@@ -1609,6 +1621,8 @@
     &getFaults;
     </method>
     
+<!-- On Demand Backups -->
+    
     <method name="POST" id="createBackup">
         <wadl:doc xml:lang="EN" title="Create backup" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new <glossterm>backup</glossterm> for a database instance.</para>
@@ -1927,7 +1941,199 @@
         </response>
         &getFaults;
     </method>
+
+
+<!-- Automated Backups -->
+
+    <method name="POST" id="createAutoBackup">
+        <wadl:doc xml:lang="EN" title="Create automated backup" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new automated <glossterm>backup</glossterm> for a database instance.</para>
+            <para>This operation asynchronously creates a new automated <glossterm>backup</glossterm> for the specified database instance. 
+                This call requires the user to specify an instance ID to backup and the date/time when the backup should be made. </para>
+            <para>The following table lists the required and optional attributes for Create Backup:</para>
+            
+            <table rules="all">
+                <caption>Required and optional attributes for Create automated backup</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">action</td>
+                        <td colspan="3"><para>The scheduled action: <code>backup</code>.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">day_of_week</td>
+                        <td colspan="3"><para>The day of the week. Sunday is <code>0</code>.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">hour</td>
+                        <td colspan="3"><para>The hour of the day. Midnight is 0.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">minute</td>
+                        <td colspan="3"><para>The minute of the hour.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">instance</td>
+                        <td colspan="3"><para>The database instanceId to backup.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table> 
+            
+            
+            <note><title>Notes</title>
+                <itemizedlist>
+                    <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
+                        InnoDB Databases will continue to allow all operations.</para>
+                    </listitem>
+                    <listitem><para>While the instance is being backed up you will not be able to add/delete databases, add/delete users, or delete/stop/reboot the instance.</para>
+                    </listitem>
+                    <listitem><para>Users can only run one backup at a time. Duplicate requests will receive a 422 error.</para>
+                    </listitem>
+                    <listitem><para>Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                        >Delete backup</link> for details.</para>
+                    </listitem>
+                    <listitem><para>During backup the files will be streamed to your Cloud Files account. 
+                        The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it. 
+                        In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. 
+                        You will be charged the normal Cloud Files rate for storage of these files. For pricing details, refer to <link xmlns="http://docbook.org/ns/docbook"
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
+                            >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
+                        No additional Cloud Databases fee applies for creating backups.
+                        You can delete old backups through the API. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link> for details.</para>
+                    </listitem>
+                    <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
+                        there may be some files that were placed in the container. 
+                        You should use the API to delete the backup to remove any leftover files. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link> for details.</para>
+                    </listitem>
+                    <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
+                    </listitem>
+                    <listitem><para>You can create an incremental backup from another incremental backup. 
+                        There is no limit to how many nested backups you can create, however the chances of 
+                        a restore failure increase with the number of nested backups you create.</para>
+                    </listitem>
+                </itemizedlist></note>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json" element="dbaas:Schedule">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create automated backup request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-automated-request.json"/>
+                </doc>
+            </representation>  
+        </request>
+        <response status="202">
+            <representation mediaType="application/json"
+                element="dbaas:Schedule" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create automated backup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-automated-response.json"/>
+                </doc>
+            </representation>
+            
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
     
+    <method name="GET" id="getAutomatedBackups">
+        <wadl:doc xml:lang="EN" title="List automated backups" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all automated backups for all database instances.</para>
+            <para>This operation returns a list of all automated backups for all database instances.</para>
+                     
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backups request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-automated-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backups response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-automated-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="GET" id="getAutomatedBackupById">
+        <wadl:doc xml:lang="EN" title="List automated backup by ID" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists automated backups for a specified database instance.</para>
+            <para>This operation lists the automated backups for a specified database instance.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backup by instance ID request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-list-by-id-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backup by instance ID response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-list-by-id-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="DELETE" id="deleteAutomatedBackupById">
+        <wadl:doc xml:lang="EN" title="Delete automated backup by ID" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes automated backups for a specified database instance.</para>
+            <para>This operation deletes automated backups for a specified database instance.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete automated backup by instance ID request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-delete-by-id-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="202">
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete automated backup by instance ID response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-delete-by-id-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+<!-- Users -->
+ 
     <method name="PUT" id="modifyUser">
         <wadl:doc xml:lang="EN" title="Modify user attributes"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Modifies one or more of the following for the specified user: name, password, and host from which the user is allowed to connect to the database. </para>
