@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-12</pubdate>
+        <pubdate>2015-06-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -80,7 +80,7 @@
         
         <revhistory>
             <revision>
-                <date>2015-06-12</date>
+                <date>2015-06-15</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -89,14 +89,15 @@
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para>Added information for automated
+                            <para>Added information for scheduled
                                 backups in <xref
                                    linkend="automated_backups"
                                 />.</para>
                         </listitem>
                         <listitem>
-                            <para>Added information for HA instances
-                                in <xref
+                            <para>Added information for High
+                                Availability database instances in
+                                   <xref
                                    linkend="High-Availability-dle2648"
                                 /> and <xref linkend="ha"/>.</para>
                         </listitem>
@@ -1358,6 +1359,13 @@
                 pricing schedule at <link
                     xlink:href="http://www.rackspace.com/cloud/databases/pricing/"
                     >http://www.rackspace.com/cloud/databases/pricing/</link>.</para>
+            <note>
+                <para>Currently we are charging the same price for
+                    High Availability database instances as for single
+                    instances for a limited time. In the future, there
+                    will be an increase in the price of High
+                    Availability database instances.  </para>
+            </note>
             <para>The Service Level Agreement (SLA) for Cloud
                 Databases is available at <link
                     xlink:href="http://www.rackspace.com/information/legal/cloud/sla#cloud_databases"
@@ -1449,6 +1457,14 @@
             <para>A replica is an exact copy of a database instance
                 that is kept synchronized with its database instance
                 source. </para>
+        </section>
+        <section xml:id="High_Availability_Instance_Group-d1e284">
+            <title>High Availability Instance Group</title>
+            <para>A High Availability Instance Group includes a source
+                database instance and one or two replicas. In the
+                event that the primary source database instance
+                becomes unavailable, it triggers an automatic failover
+                to one of the replicas attached.  </para>
         </section>
     </chapter>
     <chapter xml:id="General_API_Information-d1e633">
@@ -3898,15 +3914,16 @@
                 operations for replication.</para>
         </section>
         <section xml:id="High-Availability-dle2648">
-            <title>High Availability</title>
-            <para><?rax-fo keep-with-next?>High Availability (HA) for
-                Cloud Databases means that Cloud Database users can
-                run their critical production workloads without
-                worrying about databases becoming unavailable. When
-                using Cloud Databases HA instance group, users can
-                choose to add one or a maximum of two replicas to the
-                source database instance. Cloud Databases ensures that
-                in case the master becomes unavailable, an automatic
+            <title>High Availability for Cloud Databases</title>
+            <para><?rax-fo keep-with-next?>High Availability for Cloud
+                Databases means that Cloud Database users can run
+                their critical production workloads without worrying
+                about their database becoming unavailable. When using
+                Cloud Databases High Availability instance group,
+                users can choose to add one or a maximum of two
+                replicas to the source database instance. When you use
+                a High Availability instance group, it ensures that in
+                case the master becomes unavailable, an automatic
                 failover to the replicas is initiated within 10-30
                 seconds of downtime. Cloud Databases uses the <link
                     xlink:href="https://code.google.com/p/mysql-master-ha/"
@@ -3922,29 +3939,39 @@
                     <emphasis>read</emphasis> requests to your
                 replica. All <emphasis>write</emphasis> requests can
                 be sent only to the source database instance. Cloud
-                Databases HA instance group uses semi-synchronous
-                replication.</para>
-            <para>HA groups are only supported for MySQL 5.6. Support
-                for MariaDB 10 and Percona 5.6 will be available
-                soon.</para>
+                Databases High Availability instance group uses
+                semi-synchronous replication.</para>
+            <para>High Availability instance groups are only supported
+                for MySQL 5.6. Support for MariaDB 10 and Percona 5.6
+                will be available soon.</para>
             <note><title>Notes</title>
                 <itemizedlist>
                     <listitem>
+                        <para>Currently we are charging the same price
+                            for High Availability database instances
+                            as for single instances for a limited
+                            time. In the future, there will be an
+                            increase in the price of High Availability
+                            database instances. </para>
+                    </listitem>
+                    <listitem>
                         <para>Access Control Lists (ACLs) need to be
-                            added to the HA group before accessing the
-                            HA database instances. See <link
+                            added to the High Availability instance
+                            group before accessing the High
+                            Availability database instances. See <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
-                                >Add ACLs to an HA instance</link>.
-                        </para>
+                                >Add ACLs to an HA instance</link>. </para>
                     </listitem>
                     <listitem>
                         <para>There will be a single access point,
                             hostname, for accessing the source
                             database instance and replicas in the HA
-                            group. There will be separate ports for
-                            reads and writes. All the writes will be
-                            against port 3306 and reads against port
-                            3307.</para>
+                            group.  By default all the reads and
+                            writes will be directed to port 3306.
+                            However you can direct read-only
+                            traffic to port 3307 and the reads will be
+                            done from each replica in a round robin
+                            fashion.</para>
                     </listitem>
                     <listitem>
                         <para>There will be a lag between the source
@@ -3993,16 +4020,17 @@
                                 group.</para>
                         </listitem>
                         <listitem>
-                            <para>In case failover occurs, there will
-                                be an automatic failover to the
-                                replica closest to the failed database
-                                instance. Cloud Databases will remove
-                                the failed database instance. You will
-                                have to manually create another
-                                replica to add to the HA group. In the
-                                future, Cloud Databases will automate
-                                creating another replica after the
-                                failover occurs.</para>
+                            <para>In case failover occurs, there will be
+                                an automatic failover to the replica
+                                closest to the failed database instance.
+                                Cloud Databases will remove the failed
+                                database instance. You will have to
+                                manually create another replica to add to
+                                the HA group. The API call for adding a
+                                new replica is coming soon. In the future,
+                                Cloud Databases will automate creating
+                                another replica after the failover occurs.
+                            </para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -4208,14 +4236,15 @@
             </wadl:resources>
         </section>
         <section xml:id="automated_backups">
-            <title>Automated Backups</title>
-            <para>This section describes the operations for automated backups of
-                database instances.</para>
+            <title>Scheduled Backups</title>
+            <para>This section describes the operations for scheduled
+                backups of database instances.</para>
             <note>
-                <para>Any user calling the automated backup operations for Cloud
-                    DB will need access to Cloud Files.</para>
+                <para>Any user calling the scheduled backup operations
+                    for Cloud DB will need access to Cloud
+                    Files.</para>
             </note>
-            <para>The Automated Backups API supports the following
+            <para>The Scheduled Backups API supports the following
                 operations:</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -4253,9 +4282,9 @@
             </wadl:resources>
         </section>
         <section xml:id="ha">
-            <title>HA</title>
+            <title>High Availability</title>
             <para>This section describes the operations for High
-                Availability (HA) database instances.</para>
+                Availability (HA) for Cloud Databases.</para>
             <para>The HA API supports the following operations:</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">

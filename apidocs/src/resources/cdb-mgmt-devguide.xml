@@ -61,7 +61,7 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-12</pubdate>
+        <pubdate>2015-06-15</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,7 +77,7 @@
         
         <revhistory>
             <revision>
-                <date>2015-06-12</date>
+                <date>2015-06-15</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -1467,9 +1467,9 @@
             </wadl:resources>
         </section>
         <section xml:id="AutomatedBackups">
-            <title>Automated backups information</title>
+            <title>Scheduled backups information</title>
             <para>This section describes the operations that are
-                supported for scheduling automated backups.</para>
+                supported for scheduling backups.</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/management.wadl#schedules">

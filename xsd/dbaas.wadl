@@ -1946,14 +1946,14 @@
 <!-- Automated Backups -->
 
     <method name="POST" id="createAutoBackup">
-        <wadl:doc xml:lang="EN" title="Create automated backup" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Creates a new automated <glossterm>backup</glossterm> for a database instance.</para>
-            <para>This operation asynchronously creates a new automated <glossterm>backup</glossterm> for the specified database instance. 
+        <wadl:doc xml:lang="EN" title="Create scheduled backup" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a schedule for running a <glossterm>backup</glossterm> periodically.</para>
+            <para>This operation asynchronously creates a new schedule for running a <glossterm>backup</glossterm> periodically. 
                 This call requires the user to specify an instance ID to backup and the date/time when the backup should be made. </para>
             <para>The following table lists the required and optional attributes for Create Backup:</para>
             
             <table rules="all">
-                <caption>Required and optional attributes for Create automated backup</caption>
+                <caption>Required and optional attributes for Create scheduled backup</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name</td>
@@ -2032,7 +2032,7 @@
         <request>
             <representation mediaType="application/json" element="dbaas:Schedule">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create automated backup request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create scheduled backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-automated-request.json"/>
                 </doc>
             </representation>  
@@ -2041,7 +2041,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Schedule" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create automated backup response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create scheduled backup response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-automated-response.json"/>
                 </doc>
             </representation>
@@ -2052,15 +2052,15 @@
     </method>
     
     <method name="GET" id="getAutomatedBackups">
-        <wadl:doc xml:lang="EN" title="List automated backups" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists all automated backups for all database instances.</para>
-            <para>This operation returns a list of all automated backups for all database instances.</para>
+        <wadl:doc xml:lang="EN" title="List scheduled backups" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists all scheduled backups for all database instances for an account.</para>
+            <para>This operation returns a list of all scheduled backups for all database instances for an account.</para>
                      
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backups request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List scheduled backups request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-automated-request.json"/>
                 </doc>
             </representation>
@@ -2069,7 +2069,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backups response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List scheduled backups response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-list-automated-response.json"/>
                 </doc>
             </representation>
@@ -2079,15 +2079,15 @@
     </method>
     
     <method name="GET" id="getAutomatedBackupById">
-        <wadl:doc xml:lang="EN" title="List automated backup by ID" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists automated backups for a specified database instance.</para>
-            <para>This operation lists the automated backups for a specified database instance.</para>
+        <wadl:doc xml:lang="EN" title="List schedule for running backup by backup ID" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists schedule for running backup for a specified backup.</para>
+            <para>This operation lists the schedule for running backups for a specified backup.</para>
             
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backup by instance ID request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List scheduled backup by backup ID request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-list-by-id-request.json"/>
                 </doc>
             </representation>
@@ -2096,7 +2096,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List automated backup by instance ID response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List scheduled backup by backup ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-list-by-id-response.json"/>
                 </doc>
             </representation>
@@ -2106,15 +2106,15 @@
     </method>
     
     <method name="DELETE" id="deleteAutomatedBackupById">
-        <wadl:doc xml:lang="EN" title="Delete automated backup by ID" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Deletes automated backups for a specified database instance.</para>
-            <para>This operation deletes automated backups for a specified database instance.</para>
+        <wadl:doc xml:lang="EN" title="Delete schedule for running backup by backup ID" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Deletes schedule for running backups for a specified backup ID.</para>
+            <para>This operation deletes the schedule for running backups for a specified backup ID.</para>
             
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete automated backup by instance ID request:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete schedule for backups by backup ID request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-delete-by-id-request.json"/>
                 </doc>
             </representation>
@@ -2123,7 +2123,7 @@
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
-                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete automated backup by instance ID response:</para>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete schedule for backups by backup ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-delete-by-id-response.json"/>
                 </doc>
             </representation>
