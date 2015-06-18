@@ -82,7 +82,7 @@ The following table specifies the default rate limits for all Rackspace Cloud Da
 | (same as create instance)       |                                                                      |            |
 +---------------------------------+----------------------------------------------------------------------+------------+
 
-If you exceed the thresholds established for your account, a 413 (rate Control) HTTP response will be returned with a `Retry-After` header to notify the client when it can attempt to try again.
+If you exceed the thresholds established for your account, a 413 (rate Control) HTTP response will be returned with a ``Retry-After`` header to notify the client when it can attempt to try again.
 
 .. _cdb-dg-generalapi-limits-absolute:
 
@@ -91,9 +91,12 @@ Absolute limits
 
 Refer to the following table for the absolute limits that are set.
 
-+-------------+---------------------------------------------------------------------+-------+
-|    Name     |                             Description                             | Limit |
-+=============+=====================================================================+=======+
-| Instances   | Maximum number of instances allowed for your account                |    25 |
-| Volume Size | Maximum volume size per instance in gigabytes (GB) for your account |   300 |
-+-------------+---------------------------------------------------------------------+-------+
++----------------+--------------------------------------------------------------------------+-------+
+|    Name        |                             Description                                  | Limit |
++================+==========================================================================+=======+
+| Instances      | Maximum number of instances allowed for your account                     |    25 |
++----------------+--------------------------------------------------------------------------+-------+
+| Volume Size    | Maximum volume size per instance in gigabytes (GB) for your account      |   300 |
++----------------+--------------------------------------------------------------------------+-------+
+
+

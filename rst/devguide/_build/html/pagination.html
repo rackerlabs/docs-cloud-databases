@@ -97,7 +97,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 that can be returned.</p>
 </li>
 <li><p class="first">Marker is the ID of the last item in the previous list returned.</p>
-<p>The ID is the UUID in the case of instances, the name in the case of databases, and &#8220;<em>name*&#64;*host</em>&#8221; for users. For example, a query could request the next 10 instances after the instance &#8220;1234&#8221; as follows:</p>
+<p>The ID is the UUID in the case of instances, the name in the case of databases, and &#8220;<em>name&#64;host</em>&#8221; for users. For example, a query could request the next 10 instances after the instance &#8220;1234&#8221; as follows:</p>
 <div class="highlight-python"><div class="highlight"><pre>?limit=10&amp;marker=1234
 </pre></div>
 </div>
@@ -144,7 +144,7 @@ Accept: application/json
 Content-Type: application/json
 </pre></div>
 </div>
-<p>Notice that the paged request example above sets the limit to 2 (<cite>?limit=2</cite>), so the responses that follow each show 2 instances and return a <em>marker</em> set to the UUID of the last item in the returned list (<cite>?marker=9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9</cite>). Also a link is provided to retrieve the next 2 results (<cite>limit=2</cite>) in the link element identified by the attribute <cite>&#8220;rel&#8221;:&#8221;next&#8221;</cite>:</p>
+<p>Notice that the paged request example above sets the limit to 2 (<code class="docutils literal"><span class="pre">?limit=2</span></code>), so the responses that follow each show 2 instances and return a <em>marker</em> set to the UUID of the last item in the returned list (<code class="docutils literal"><span class="pre">?marker=d4603f69-ec7e-4e9b-803f-600b9205576f</span></code>). Also a link is provided to retrieve the next 2 results (<code class="docutils literal"><span class="pre">limit=2</span></code>) in the link element identified by the attribute <code class="docutils literal"><span class="pre">&quot;rel&quot;:&quot;next&quot;</span></code>:</p>
 <p><strong>Example: List instances paged response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
 Content-Type: application/json

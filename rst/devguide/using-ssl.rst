@@ -29,10 +29,9 @@ To use SSL, perform the following steps:
 
        GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO 'database_user'@'%' REQUIRE SSL;
 
-      style="margin-left: 0.5in; margin-right: 0.5in;">
 
    ..  note::
         If the user already exists, you must revoke all existing privileges for the user and then use the preceding grant statement to give appropriate privileges to the user. Then remember to FLUSH PRIVILEGES to make the privilege changes take effect.
 
 .. warning::
-    Using SSL encryption is a resource intensive operation and may have some impact on latency of your database connection.
+    Using SSL encryption is a resource intensive operation and may have some impact on the latency of your database connection.

@@ -3364,9 +3364,9 @@
     </method>
     
     <method name="GET" id="listAclsForHaInstance">
-        <wadl:doc xml:lang="EN" title="Lists ACLs for an HA instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="List ACLs for an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists ACLs for an HA instance.</para>
-            <para>This operation adds Lists ACLs for an HA instance.</para>
+            <para>This operation lists ACLs for an HA instance.</para>
             
         </wadl:doc>
         <request>
@@ -3392,7 +3392,7 @@
     </method>
     
     <method name="DELETE" id="deleteAclsFromHaInstance">
-        <wadl:doc xml:lang="EN" title="Deletes ACLs from an HA instance"  xmlns="http://docbook.org/ns/docbook">
+        <wadl:doc xml:lang="EN" title="Delete ACLs from an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes ACLs from an HA instance.</para>
             <para>This operation deletes ACLs from an HA instance.</para>
             

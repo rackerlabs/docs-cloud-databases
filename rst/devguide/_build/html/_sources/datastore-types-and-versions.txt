@@ -6,12 +6,12 @@ Datastore types and versions
 
 Datastore types management will allow users of Cloud Databases to select database type and version from the list of available choices provided by Rackspace. Rackspace will control datastore types and versions, adding new types and versions as they become available, and deactivating old versions at end-of-life.
 
-To take advantage of this capability, users can specify datastore type and optional version at instance creation. *Datastore Type is a family of database engines, like mysql, mongodb, and cassandra. *Datastore Version* defines the engine version of the selected datastore type. If users do not specify the datastore type and version at instance creation, the default database is MySQL 5.6.
+To take advantage of this capability, users can specify datastore type and optional version at instance creation. *Datastore Type* is a family of database engines, like mysql, mongodb, and cassandra. *Datastore Version* defines the engine version of the selected datastore type. If users do not specify the datastore type and version at instance creation, the default database is MySQL 5.6.
 
 ..  note:: 
     For the SYD and HKG datacenters only, the default database is MySQL 5.1 if users do not specify the datastore type and version at instance creation.
 
-Refer to `Datastore types and versions`_ for the API operations for datastore types and versions.
+Refer to http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/datastore_types_and_versions.html for the API operations for datastore types and versions.
 
 For an example of using the `type` and `version` information in the Create Database Instance API request, see the "Create Database Instance *Datastore* Request: JSON" example for the Create Database Instance API operation.
 

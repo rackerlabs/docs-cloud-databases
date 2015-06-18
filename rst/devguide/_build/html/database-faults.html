@@ -107,65 +107,65 @@ Error Code</th>
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td><cite>badRequest</cite></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">badRequest</span></code></td>
 <td>400</td>
 <td>There was one or more errors in the user request.</td>
 </tr>
-<tr class="row-odd"><td><cite>unauthorized</cite></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">unauthorized</span></code></td>
 <td>401</td>
 <td>The supplied token is not authorized to access
 the resources, either it&#8217;s expired or invalid.</td>
 </tr>
-<tr class="row-even"><td><cite>forbidden</cite></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">forbidden</span></code></td>
 <td>403</td>
 <td>Access to the requested resource was denied.</td>
 </tr>
-<tr class="row-odd"><td><cite>itemNotFound</cite></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">itemNotFound</span></code></td>
 <td>404</td>
 <td>The back-end services did not find anything
 matching the Request-URI.</td>
 </tr>
-<tr class="row-even"><td><cite>badMethod</cite></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">badMethod</span></code></td>
 <td>405</td>
 <td>The request method is not allowed for this resource.</td>
 </tr>
-<tr class="row-odd"><td><cite>overLimit</cite></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">overLimit</span></code></td>
 <td>413</td>
 <td>Either the number of entities in the request
 is larger than allowed limits, or the user
 has exceeded allowable request rate limits.
-See the <cite>details</cite> element for more specifics.
+See the <code class="docutils literal"><span class="pre">details</span></code> element for more specifics.
 Contact support if you think you need
 higher request rate limits.</td>
 </tr>
-<tr class="row-even"><td><cite>badMediaType</cite></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">badMediaType</span></code></td>
 <td>415</td>
 <td>The requested content type is not supported by
 this service.</td>
 </tr>
-<tr class="row-odd"><td><cite>unprocessableEntity</cite></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">unprocessableEntity</span></code></td>
 <td>422</td>
 <td>The requested resource could not be processed
 on at the moment.</td>
 </tr>
-<tr class="row-even"><td><cite>instanceFault</cite></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">instanceFault</span></code></td>
 <td>500</td>
 <td>This is a generic server error and the message
 contains the reason for the error.
 This error could wrap several error messages
 and is a catch-all.</td>
 </tr>
-<tr class="row-odd"><td><cite>notImplemented</cite></td>
+<tr class="row-odd"><td><code class="docutils literal"><span class="pre">notImplemented</span></code></td>
 <td>501</td>
 <td>The requested method or resource is not implemented.</td>
 </tr>
-<tr class="row-even"><td><cite>serviceUnavailable</cite></td>
+<tr class="row-even"><td><code class="docutils literal"><span class="pre">serviceUnavailable</span></code></td>
 <td>503</td>
 <td>The Database Service is not available.</td>
 </tr>
 </tbody>
 </table>
-<p>The following <cite>instanceFault</cite> example shows errors when the server has erred or cannot perform the requested operation:</p>
+<p>The following <code class="docutils literal"><span class="pre">instanceFault</span></code> example shows errors when the server has erred or cannot perform the requested operation:</p>
 <p><strong>Example fault response: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 500 Internal Server Error
 Content-Length: 120
@@ -180,9 +180,9 @@ Date: Tue, 29 Nov 2011 00:33:48 GMT
 }
 </pre></div>
 </div>
-<p>The error code (<cite>code</cite>) is returned in the body of the response for convenience. The <cite>message</cite> element returns a human-readable message that is appropriate for display to the end user. The <cite>details</cite> element is optional and may contain information that is useful for tracking down an error, such as a stack trace. The <cite>details</cite> element may or may not be appropriate for display to an end user, depending on the role and experience of the end user.</p>
-<p>The fault&#8217;s root element (for example, <cite>instanceFault</cite>) may change depending on the type of error.</p>
-<p>The following <cite>badRequest</cite> example shows errors when the volume size is invalid:</p>
+<p>The error code (<code class="docutils literal"><span class="pre">code</span></code>) is returned in the body of the response for convenience. The <code class="docutils literal"><span class="pre">message</span></code> element returns a human-readable message that is appropriate for display to the end user. The <code class="docutils literal"><span class="pre">details</span></code> element is optional and may contain information that is useful for tracking down an error, such as a stack trace. The <code class="docutils literal"><span class="pre">details</span></code> element may or may not be appropriate for display to an end user, depending on the role and experience of the end user.</p>
+<p>The fault&#8217;s root element (for example, <code class="docutils literal"><span class="pre">instanceFault</span></code>) may change depending on the type of error.</p>
+<p>The following <code class="docutils literal"><span class="pre">badRequest</span></code> example shows errors when the volume size is invalid:</p>
 <p><strong>Example badRequest fault on volume size errors: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 400 None
 Content-Length: 120
@@ -197,7 +197,7 @@ Date: Tue, 29 Nov 2011 00:33:48 GMT
 }
 </pre></div>
 </div>
-<p>The next example shows <cite>itemNotFound</cite> errors:</p>
+<p>The next example shows <code class="docutils literal"><span class="pre">itemNotFound</span></code> errors:</p>
 <p><strong>Example itemNotFound fault: JSON</strong></p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 404 Not Found
 Content-Length: 78

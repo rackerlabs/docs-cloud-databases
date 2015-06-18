@@ -11,7 +11,7 @@ Pagination provides the ability to limit the size of the returned data in the re
 
 -  Marker is the ID of the last item in the previous list returned.
 
-   The ID is the UUID in the case of instances, the name in the case of databases, and "*name*@*host*" for users. For example, a query could request the next 10 instances after the instance "1234" as follows::
+   The ID is the UUID in the case of instances, the name in the case of databases, and "*name@host*" for users. For example, a query could request the next 10 instances after the instance "1234" as follows::
 
         ?limit=10&marker=1234
 
@@ -46,7 +46,7 @@ See the example of paged List Instances calls that follow.
     Accept: application/json
     Content-Type: application/json
 
-Notice that the paged request example above sets the limit to 2 (`?limit=2`), so the responses that follow each show 2 instances and return a *marker* set to the UUID of the last item in the returned list (`?marker=9cccb45e-e15d-4bcc-aedc-61a4bf3e4ad9`). Also a link is provided to retrieve the next 2 results (`limit=2`) in the link element identified by the attribute `"rel":"next"`:
+Notice that the paged request example above sets the limit to 2 (``?limit=2``), so the responses that follow each show 2 instances and return a *marker* set to the UUID of the last item in the returned list (``?marker=d4603f69-ec7e-4e9b-803f-600b9205576f``). Also a link is provided to retrieve the next 2 results (``limit=2``) in the link element identified by the attribute ``"rel":"next"``:
 
 **Example: List instances paged response: JSON**
 

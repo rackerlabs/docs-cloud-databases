@@ -89,15 +89,59 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
   <div class="documentwrapper">
       <div class="body" role="main">
 
-  <div class="section" id="configuration-management">
-<span id="cdb-dg-generalapi-configmgmt"></span><h1>Configuration management<a class="headerlink" href="#configuration-management" title="Permalink to this headline">¶</a></h1>
-<p>The configuration management capability allows users of Cloud Databases to override the default database engine configuration settings provided by the Cloud Databases service.</p>
-<p>A <em>configuration group</em> is a collection of key/value pairs, where the valid key/values are defined in the MySQL manual at <a class="reference external" href="http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html">http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html</a>. Some directives are capable of being applied dynamically, while other directives require a server restart to take effect.</p>
-<p>A default configuration group is applied to an instance if you create an instance without associating the instance with a configuration group. The default configuration is based upon the database engine and the instance flavor. If you want your database instance to run with custom defined configuration settings, you need to assign a custom defined configuration group to the instance. A configuration group can be applied to multiple instances.</p>
-<p>You can create a new configuration group, modify parameters of an existing configuration group, and also modify the database instance to use a different configuration group. When a configuration group is modified either by way of adding a new key/value pair or modifying an existing key/value pair, the service updates the <cite>overrides.cnf</cite> file for every instance that is associated with the configuration.</p>
-<p>The service attempts to dynamically update all associated database instances if the parameters changed in the configuration group are all dynamic. But if any of the parameters changed in the configuration group require a restart, then any instance that has the configuration group assigned to it will require a restart to apply the configuration group or any changes made to the configuration group.</p>
-<p>Rackspace configures the validation rules for key/value pairs that can be assigned to a configuration group. These rules can be retrieved by the user from the API through the configuration parameter&#8217;s resource as described in <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/configuration_parameters.html">http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/configuration_parameters.html</a>.</p>
-<p>Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/configurations.html">http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/configurations.html</a> for the API operations for configurations.</p>
+  <div class="section" id="high-availability">
+<span id="cdb-dg-generalapi-high-availability"></span><h1>High availability<a class="headerlink" href="#high-availability" title="Permalink to this headline">¶</a></h1>
+<p>High Availability for Cloud Databases means that Cloud Database users can run their critical
+production workloads without worrying about their database becoming unavailable.
+When using Cloud Databases High Availability instance group, users can choose to add one
+or a maximum of two replicas to the source database instance. When you use a High Availability
+instance group, it ensures that in case the master becomes unavailable, an automatic
+failover to the replicas is initiated within 10-30 seconds of downtime. Cloud Databases uses
+the <a class="reference external" href="https://code.google.com/p/mysql-master-ha/">MySQL MHA utility</a> to automate master failover. In case some of the slaves have not received
+the latest relay log events, MHA automatically identifies differential relay log events
+from the latest slave, and applies differential events to the other slaves. This ensures that all
+replicas can be consistent.</p>
+<p>In addition, users can also use replicas for scaling their read-heavy workloads. You can send
+only your read requests to your replica. All write requests can be sent only to the source
+database instance. Cloud Databases High Availability instance group uses semi-synchronous
+replication.</p>
+<p>High Availability instance groups are only supported for MySQL 5.6. Support for MariaDB
+10 and Percona 5.6 will be available soon.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<ul class="last simple">
+<li>Currently we are charging the same price for High Availability database instances
+as for single instances for a limited time. In the future, there will be
+an increase in the price of High Availability database instances.</li>
+<li>There will be a single access point, hostname, for accessing the source database instance
+and replicas in the HA group. By default all the reads and writes will be directed to port
+3306. However you can direct read-only traffic to port 3307 and the reads will be done from
+each replica in a round robin fashion.</li>
+<li>There will be a lag between the source database instance and replicas. All of the updates
+will be applied to the replica after they occur on the master.</li>
+<li>Access Control Lists (ACLs) need to be added to the High Availability instance
+group before accessing the High Availability database instances. See <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html">Add ACLs to an HA instance</a>.</li>
+</ul>
+</div>
+<p><strong>Recommendation</strong>. It is recommended to have two replicas on an HA group. Having two replicas will ensure that in case failover occurs, your database will still have a High Availability setup.</p>
+<p>Warning</p>
+<p>Adding a replica will cause the source database instance to restart and your database will be unavailable for a brief period.</p>
+<div class="section" id="limitations">
+<span id="cdb-dg-generalapi-high-availability-limitations"></span><h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>The maximum number of replicas allowed per source database instance is two. We will
+increase the limit on the number of replicas later.</li>
+<li>HA group is only available for instance flavors 1GB and above.</li>
+<li>Both source database instance and replicas should be in the same region.</li>
+<li>The source DB instance and replica should be in the same region.</li>
+<li>Currently you cannot perform backups, resize, or apply configuration groups on an HA group.</li>
+<li>In case failover occurs, there will be an automatic failover to the replica closest to the
+failed database instance. Cloud Databases will remove the failed database instance. You
+will have to manually create another replica to add to the HA group. The API call for
+adding a new replica is coming soon. In the future, Cloud Databases will automate creating
+another replica after the failover occurs.</li>
+</ul>
+</div>
 </div>
 
 
@@ -119,11 +163,11 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </ul>
 <ul>
   
-<a href="role-based-access-control.html"><<</a>
+<a href="replication.html"><<</a>
 
 |
 
-<a href="datastore-types-and-versions.html">>></a>
+<a href="glossary.html">>></a>
 
   <li><span class="sidebarheader">Contents</span></li>
 </ul>
@@ -148,9 +192,13 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <li class="toctree-l1"><a class="reference internal" href="monitoring-read-replication.html">Monitoring read replication</a></li>
 <li class="toctree-l1"><a class="reference internal" href="using-ssl.html">Using SSL for Cloud Database instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="role-based-access-control.html">Role Based Access Control</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="">Configuration management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration-management.html">Configuration management</a></li>
 <li class="toctree-l1"><a class="reference internal" href="datastore-types-and-versions.html">Datastore types and versions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="replication.html">Replication</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">High availability</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#limitations">Limitations</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="glossary.html">Glossary</a></li>

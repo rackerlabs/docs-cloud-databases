@@ -92,7 +92,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
   <div class="section" id="monitoring-cloud-databases">
 <span id="cdb-dg-generalapi-monitoring"></span><h1>Monitoring Cloud Databases<a class="headerlink" href="#monitoring-cloud-databases" title="Permalink to this headline">¶</a></h1>
 <p>Monitoring is available for Cloud Databases to allow users to get more information about their database instances via the monitoring checks that are available. The monitoring capability now applies to all instances, not just those that were created after the v1.0.27 release on July 29, 2013.</p>
-<p>There is a 1:1 mapping of Cloud Databases to monitoring entities. The monitoring entity has a field called <cite>agent_id</cite> that is the same as the Cloud Database <cite>instance id</cite>.</p>
+<p>There is a 1:1 mapping of Cloud Databases to monitoring entities. The monitoring entity has a field called <code class="docutils literal"><span class="pre">agent_id</span></code> that is the same as the Cloud Database <code class="docutils literal"><span class="pre">instance</span> <span class="pre">id</span></code>.</p>
 <p>A user can list the monitoring checks available on the monitoring entity by calling the monitoring API List Checks call as described at <a class="reference external" href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/service-checks.html#service-checks-list">http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/service-checks.html#service-checks-list</a>.</p>
 <p>The following monitoring checks are available to users:</p>
 <ul>
@@ -157,25 +157,12 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<blockquote>
-<div><ul class="simple">
+<ul class="simple">
 <li>Users are <em>not</em> allowed to modify the managed entity or checks.</li>
-<li>Users <em>are</em> allowed to add notifications and alarms to the existing</li>
+<li>Users <em>are</em> allowed to add notifications and alarms to the existing checks.</li>
+<li>For email notifications, users should check their junk/spam folder in case they have filtering on their email messages.</li>
+<li>Refer to the following information on the monitoring API for more details:</li>
 </ul>
-</div></blockquote>
-<p>checks.</p>
-<blockquote>
-<div><ul class="simple">
-<li>For email notifications, users should check their junk/spam folder in</li>
-</ul>
-</div></blockquote>
-<p>case they have filtering on their email messages.</p>
-<blockquote>
-<div><ul class="simple">
-<li>Refer to the following information on the monitoring API for more</li>
-</ul>
-</div></blockquote>
-<p>details:</p>
 <blockquote class="last">
 <div><ul class="simple">
 <li><a class="reference external" href="http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/overview.html">http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/overview.html</a></li>

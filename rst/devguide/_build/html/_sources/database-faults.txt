@@ -12,42 +12,42 @@ The following table lists possible fault types with their associated error codes
 |      Fault Type       | Associated |                     Description                      |
 |                       | Error Code |                                                      |
 +=======================+============+======================================================+
-| `badRequest`          | 400        | There was one or more errors in the user request.    |
+| ``badRequest``        | 400        | There was one or more errors in the user request.    |
 +-----------------------+------------+------------------------------------------------------+
-| `unauthorized`        | 401        | The supplied token is not authorized to access       |
+| ``unauthorized``      | 401        | The supplied token is not authorized to access       |
 |                       |            | the resources, either it's expired or invalid.       |
 +-----------------------+------------+------------------------------------------------------+
-| `forbidden`           | 403        | Access to the requested resource was denied.         |
+| ``forbidden``         | 403        | Access to the requested resource was denied.         |
 +-----------------------+------------+------------------------------------------------------+
-| `itemNotFound`        | 404        | The back-end services did not find anything          |
+| ``itemNotFound``      | 404        | The back-end services did not find anything          |
 |                       |            | matching the Request-URI.                            |
 +-----------------------+------------+------------------------------------------------------+
-| `badMethod`           | 405        | The request method is not allowed for this resource. |
+| ``badMethod``         | 405        | The request method is not allowed for this resource. |
 +-----------------------+------------+------------------------------------------------------+
-| `overLimit`           | 413        | Either the number of entities in the request         |
+| ``overLimit``         | 413        | Either the number of entities in the request         |
 |                       |            | is larger than allowed limits, or the user           |
 |                       |            | has exceeded allowable request rate limits.          |
-|                       |            | See the `details` element for more specifics.        |
+|                       |            | See the ``details`` element for more specifics.      |
 |                       |            | Contact support if you think you need                |
 |                       |            | higher request rate limits.                          |
 +-----------------------+------------+------------------------------------------------------+
-| `badMediaType`        | 415        | The requested content type is not supported by       |
+| ``badMediaType``      | 415        | The requested content type is not supported by       |
 |                       |            | this service.                                        |
 +-----------------------+------------+------------------------------------------------------+
-| `unprocessableEntity` | 422        | The requested resource could not be processed        |
+|``unprocessableEntity``| 422        | The requested resource could not be processed        |
 |                       |            | on at the moment.                                    |
 +-----------------------+------------+------------------------------------------------------+
-| `instanceFault`       | 500        | This is a generic server error and the message       |
+| ``instanceFault``     | 500        | This is a generic server error and the message       |
 |                       |            | contains the reason for the error.                   |
 |                       |            | This error could wrap several error messages         |
 |                       |            | and is a catch-all.                                  |
 +-----------------------+------------+------------------------------------------------------+
-| `notImplemented`      | 501        | The requested method or resource is not implemented. |
+| ``notImplemented``    | 501        | The requested method or resource is not implemented. |
 +-----------------------+------------+------------------------------------------------------+
-| `serviceUnavailable`  | 503        | The Database Service is not available.               |
+|``serviceUnavailable`` | 503        | The Database Service is not available.               |
 +-----------------------+------------+------------------------------------------------------+
 
-The following `instanceFault` example shows errors when the server has erred or cannot perform the requested operation:
+The following ``instanceFault`` example shows errors when the server has erred or cannot perform the requested operation:
 
 **Example fault response: JSON**
 
@@ -65,11 +65,11 @@ The following `instanceFault` example shows errors when the server has erred or 
         }
     }
 
-The error code (`code`) is returned in the body of the response for convenience. The `message` element returns a human-readable message that is appropriate for display to the end user. The `details` element is optional and may contain information that is useful for tracking down an error, such as a stack trace. The `details` element may or may not be appropriate for display to an end user, depending on the role and experience of the end user.
+The error code (``code``) is returned in the body of the response for convenience. The ``message`` element returns a human-readable message that is appropriate for display to the end user. The ``details`` element is optional and may contain information that is useful for tracking down an error, such as a stack trace. The ``details`` element may or may not be appropriate for display to an end user, depending on the role and experience of the end user.
 
-The fault's root element (for example, `instanceFault`) may change depending on the type of error.
+The fault's root element (for example, ``instanceFault``) may change depending on the type of error.
 
-The following `badRequest` example shows errors when the volume size is invalid:
+The following ``badRequest`` example shows errors when the volume size is invalid:
 
 **Example badRequest fault on volume size errors: JSON**
 
@@ -87,7 +87,7 @@ The following `badRequest` example shows errors when the volume size is invalid:
         }
     }
 
-The next example shows `itemNotFound` errors:
+The next example shows ``itemNotFound`` errors:
 
 **Example itemNotFound fault: JSON**
 

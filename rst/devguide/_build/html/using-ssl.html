@@ -108,9 +108,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p>The official MySQL docs for using SSL are located at <a class="reference external" href="http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html">http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html</a>.</p>
 </li>
 <li><p class="first">(Optional) To set up restrictions on a user to require SSL for communicating with the database, MySQL supports GRANT statement modifier “REQUIRE SSL”. For example, to restrict ‘database_user’ to read, write, delete on prod_database only using secure SSL connection, login to MySQL as root and then issue the following command:</p>
-<div class="code highlight-python"><div class="highlight"><pre> GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO &#39;database_user&#39;@&#39;%&#39; REQUIRE SSL;
-
-style=&quot;margin-left: 0.5in; margin-right: 0.5in;&quot;&gt;
+<div class="code highlight-python"><div class="highlight"><pre>GRANT SELECT, INSERT, UPDATE, DELETE ON prod_database.* TO &#39;database_user&#39;@&#39;%&#39; REQUIRE SSL;
 </pre></div>
 </div>
 <div class="admonition note">
@@ -121,7 +119,7 @@ style=&quot;margin-left: 0.5in; margin-right: 0.5in;&quot;&gt;
 </ul>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last">Using SSL encryption is a resource intensive operation and may have some impact on latency of your database connection.</p>
+<p class="last">Using SSL encryption is a resource intensive operation and may have some impact on the latency of your database connection.</p>
 </div>
 </div>
 

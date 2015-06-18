@@ -10,4 +10,4 @@ Note that using a public Cloud Load Balancer allows you to access your ServiceNe
 
 #. Using the Cloud Databases API, create a database instance. For details see Create Instance.
 
-#. Using the Cloud Load Balancers API, create a public load balancer and specify your database instance hostname as a node, or use the API to add your instance hostname as a node to an existing public load balancer. For details refer to the *Cloud Load Balancers Developer Guide* at http://docs.rackspace.com/api/.
+#. Using the Cloud Load Balancers API, create a public load balancer and specify your database instance hostname as a node, or use the API to add your instance hostname as a node to an existing public load balancer. For details refer to the *Cloud Load Balancers Developer Guide* at http://docs.rackspace.com.

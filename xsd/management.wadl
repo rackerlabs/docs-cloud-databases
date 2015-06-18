@@ -108,9 +108,9 @@
       <resource id="schedules" path="schedules">
         <method href="#createschedule"/>
         <method href="#getschedule"/>
-        <resource id="backupId" path="{backupId}">
-          <param name="backupId" style="template" type="xsd:string"> 
-            <doc>The backup ID for the specified backup.</doc></param>
+        <resource id="backupId" path="{scheduleId}">
+          <param name="scheduleId" style="template" type="xsd:string"> 
+            <doc>The schedule ID for the specified schedule.</doc></param>
           <method href="#updateschedule"/>
           <method href="#deleteschedule"/>
         </resource>
@@ -1150,12 +1150,12 @@
   </method>
   
   <method name="PUT" id="updateschedule">
-    <wadl:doc xml:lang="EN" title="Update backup schedule for the specified backup" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Update backup schedule for the specified schedule" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
-        Updates the backup schedule for the specified backup.
+        Updates the backup schedule for the specified schedule.
       </para>
       
-      <para>This operation updates the backup schedule for the specified backup.</para>
+      <para>This operation updates the backup schedule for the specified schedule.</para>
       
       <table rules="all">
         <caption>Required and optional attributes for Update schedule for backups</caption>
@@ -1217,12 +1217,12 @@
   </method>
   
   <method name="DELETE" id="deleteschedule">
-    <wadl:doc xml:lang="EN" title="Delete backup schedule for the specified backup" xmlns="http://docbook.org/ns/docbook">
+    <wadl:doc xml:lang="EN" title="Delete backup schedule for the specified schedule" xmlns="http://docbook.org/ns/docbook">
       <para role="shortdesc">
-        Deletes the backkup schedule for the specified backup.
+        Deletes the backkup schedule for the specified schedule.
       </para>
       
-      <para>This operation deletes the backup schedule for the specified backup.</para>
+      <para>This operation deletes the backup schedule for the specified schedule.</para>
     </wadl:doc>
     <request>
       <representation mediaType="application/json">

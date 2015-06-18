@@ -56,4 +56,4 @@ There are several use cases where you may want to use replication:
 
 For information about monitoring read replication, refer to :ref:`monitoring read replication <cdb-dg-generalapi-monitoringread>`.
 
-Refer to Replication for the API operations for replication.
+For the API operations for replication, refer to http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/replication.html.
