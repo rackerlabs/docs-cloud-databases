@@ -24,6 +24,7 @@ General API Information
 .. toctree::
     :maxdepth: 2
 
+    general-api-information
     authenticate
     contract-and-api-versions
     request-and-response-types

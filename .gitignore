@@ -11,6 +11,7 @@ tests/integration/Reddwarf_Integration_Tests.egg-info/*
 apidocs/target
 static/
 templates/
+rst/devguide/_build
 xsd/management-summarized.html
 xsd/normalized/
 .DS_Store

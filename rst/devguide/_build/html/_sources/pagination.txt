@@ -1,4 +1,4 @@
-.. cdb-dg-generalapi-pagination:
+.. _cdb-dg-generalapi-pagination:
 
 ==========
 Pagination
