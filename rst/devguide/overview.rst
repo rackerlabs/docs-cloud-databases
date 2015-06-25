@@ -35,6 +35,13 @@ Document change history
 
 This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:
 
+.. _cdb-dg-overview-dochistory-25062015:
+
+June 25, 2015
+--------------
+
+Updated HA platform support information in :ref:`High availability for Cloud Databases <cdb-dg-generalapi-high-availability>` .
+
 .. _cdb-dg-overview-dochistory-15062015:
 
 June 15, 2015

@@ -1,8 +1,8 @@
 .. _cdb-dg-generalapi-high-availability:
 
-=================
-High availability
-=================
+=====================================
+High availability for Cloud Databases
+=====================================
 
 High Availability for Cloud Databases means that Cloud Database users can run their critical
 production workloads without worrying about their database becoming unavailable.
@@ -22,8 +22,7 @@ only your read requests to your replica. All write requests can be sent only to 
 database instance. Cloud Databases High Availability instance group uses semi-synchronous
 replication.
 
-High Availability instance groups are only supported for MySQL 5.6. Support for MariaDB
-10 and Percona 5.6 will be available soon.
+High Availability instance groups are supported for MySQL 5.6, Percona 5.6, and MariaDB 10.
 
 ..  note::
     -  Currently we are charging the same price for High Availability database instances

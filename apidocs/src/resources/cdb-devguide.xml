@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-17</pubdate>
+        <pubdate>2015-06-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,19 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-06-25</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated HA platform support
+                                information in <xref
+                                   linkend="High-Availability-dle2648"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-06-17</date>
                 <revdescription>
@@ -3959,9 +3972,8 @@
                 be sent only to the source database instance. Cloud
                 Databases High Availability instance group uses
                 semi-synchronous replication.</para>
-            <para>High Availability instance groups are only supported
-                for MySQL 5.6. Support for MariaDB 10 and Percona 5.6
-                will be available soon.</para>
+            <para>High Availability instance groups are supported for
+                MySQL 5.6, Percona 5.6, and MariaDB 10.</para>
             <note><title>Notes</title>
                 <itemizedlist>
                     <listitem>

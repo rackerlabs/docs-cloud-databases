@@ -50,13 +50,27 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-15</pubdate>
+        <pubdate>2015-06-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-06-15</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated installation instructions
+                                for python-troveclient on Ubuntu in
+                                   <xref
+                                   linkend="Install_Trove_Client"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-15</date>
                 <revdescription>
@@ -1149,8 +1163,12 @@
                                    </listitem>
                                    <listitem>
                                    <para>Ubuntu
-                                   <programlisting language="bash" role="gutter: false"><prompt>$</prompt> apt get install python-pip </programlisting></para>
+                                   <programlisting language="bash" role="gutter: false"><prompt>$</prompt> apt-get install python-pip </programlisting></para>
+                                       <note><para>You may need to first run <code>apt-get update</code> to update
+                                   the package list if the python-pip
+                                   package is not found.</para></note>
                                    </listitem>
+                                   
                                    <listitem>
                                    <para>Debian
                                    <programlisting language="bash" role="gutter: false"><prompt>$</prompt> aptitude install python-pip </programlisting></para>
@@ -1178,11 +1196,12 @@
                         package</title>
                     <para>The <literal>python-troveclient</literal>
                         package contains the trove client. </para>
-                    <para>Run the following command for your operating
-                        system to install the
+                    <para>Run the following commands for your
+                        operating system to install the
                             <literal>python-troveclient</literal>
                         package:</para>
                     <para>For Ubuntu, Debian, or OS X: </para>
+                    <programlisting language="bash" role="gutter: false"><prompt>$</prompt> sudo apt-get install python2.7-dev</programlisting>
                     <programlisting language="bash" role="gutter: false"><prompt>$</prompt> sudo pip install python-troveclient</programlisting>
                     <para>For RHEL, CentOS, or Fedora: </para>
                     <programlisting language="bash" role="gutter: false"><prompt>$</prompt> sudo python-pip install python-troveclient</programlisting>
