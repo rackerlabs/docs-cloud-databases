@@ -50,13 +50,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-25</pubdate>
+        <pubdate>2015-07-01</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2014-07-01</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Removed information on security
+                                groups for python-troveclient until
+                                they are supported by Rackspace Cloud
+                                Databases.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2014-06-25</date>
                 <revdescription>
@@ -4311,7 +4324,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                 </varlistentry>
             </variablelist>
         </section>
-        <section xml:id="trove_summary_security_groups">
+        <section xml:id="trove_summary_security_groups" security="writeronly">
             <title>Security Groups</title>
             <note>
                 <para>Security groups are not yet supported for
