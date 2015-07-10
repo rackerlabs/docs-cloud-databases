@@ -115,6 +115,26 @@
 		
 		
 	  <!-- MA: added this to generate public release notes -->
+		
+		<execution>
+			<id>cdb-releasenotes</id>
+			<goals>
+				<goal>generate-webhelp</goal>
+			</goals>
+			<phase>generate-sources</phase>
+			<configuration>
+				<sourceDirectory>src/resources</sourceDirectory>
+				<highlightSource>false</highlightSource>
+				<includes>cdb-releasenotes.xml</includes>
+				<enableDisqus>1</enableDisqus>
+				<feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
+				<enableGoogleAnalytics>1</enableGoogleAnalytics>
+				<chapterAutolabel>0</chapterAutolabel>
+				<security>external</security>
+				<canonicalUrlBase>http://docs.rackspace.com/cdb/api/v1.0/cdb-releasenotes/content</canonicalUrlBase>
+			</configuration>
+		</execution>	
+		
 	  <execution>
 	    <id>cdb-releasenotes-internal</id>
 	    <goals>
@@ -133,24 +153,7 @@
 	      <canonicalUrlBase>http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-releasenotes/content</canonicalUrlBase>
 	    </configuration>
 	  </execution>
-	  <execution>
-	    <id>cdb-releasenotes</id>
-	    <goals>
-	      <goal>generate-webhelp</goal>
-	    </goals>
-	    <phase>generate-sources</phase>
-	    <configuration>
-	      <sourceDirectory>src/resources</sourceDirectory>
-	      <highlightSource>false</highlightSource>
-	      <includes>cdb-releasenotes.xml</includes>
-	      <enableDisqus>1</enableDisqus>
-	      <feedbackEmail>mike.asthalter@rackspace.com</feedbackEmail>
-	      <enableGoogleAnalytics>1</enableGoogleAnalytics>
-	      <chapterAutolabel>0</chapterAutolabel>
-	      <security>external</security>
-	      <canonicalUrlBase>http://docs.rackspace.com/cdb/api/v1.0/cdb-releasenotes/content</canonicalUrlBase>
-	    </configuration>
-	  </execution>
+	  
 	</executions>
 	<configuration>
 	  <socialIcons>1</socialIcons>
