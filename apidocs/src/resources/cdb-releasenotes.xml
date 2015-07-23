@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-07-08</pubdate>
+	<pubdate>2015-07-23</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,18 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2015-07-23</date>
+				<revdescription>
+					<para>Updated for v2.25.0.</para>
+				</revdescription>
+			</revision>
+    		<revision security="internal">
+				<date>2015-07-16</date>
+				<revdescription>
+					<para>Updated for v2.24.0.</para>
+				</revdescription>
+			</revision>
 			<revision>
 				<date>2015-07-08</date>
 				<revdescription>
@@ -623,6 +635,126 @@
 					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
 					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
 					details.</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter security="internal" xml:id="cdbv2.25.0">
+		<title>v2.25.0, July 23, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Restart MHA-Manager Service List.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Pin supernova to 1.0.8 for python-clouddbclient.</para>
+			</listitem>
+			<listitem>
+				<para>Pin oslo modules for Trove.</para>
+			</listitem>
+			<listitem>
+				<para>Add alerting base feature with mailing strategy.</para>
+			</listitem>
+			<listitem>
+				<para>When instance deleted set instance status to "Deleted".</para>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/api/"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml"
+						>http://docs.rackspace.com/api/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also <link
+						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
+						xmlns:svg="http://www.w3.org/2000/svg"
+						xmlns:m="http://www.w3.org/1998/Math/MathML"
+						xmlns:html="http://www.w3.org/1999/xhtml">File
+						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter security="internal" xml:id="cdbv2.24.0">
+		<title>v2.24.0, July 16, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Include missing methods for NoopTaskLog.</para>
+			</listitem>
+			<listitem security="internal">
+				<para>Tracking Enhancements.</para>
+			</listitem>
+			<listitem>
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-346"
+						>DSMYSQL-346, </link>
+					<link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-347"
+						>DSMYSQL-347: </link>Modifications/Fixes for
+					Usage.</para>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
