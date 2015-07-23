@@ -682,9 +682,6 @@
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem security="internal">
-				<para>Restart MHA-Manager Service List.</para>
-			</listitem>
-			<listitem security="internal">
 				<para>Pin supernova to 1.0.8 for python-clouddbclient.</para>
 			</listitem>
 			<listitem>
