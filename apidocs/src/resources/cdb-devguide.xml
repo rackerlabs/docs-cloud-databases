@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-06-25</pubdate>
+        <pubdate>2015-07-27</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,17 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-07-27</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added reference to HA limitations in
+                                   <xref linkend="ha"/>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-06-25</date>
                 <revdescription>
@@ -4334,6 +4345,8 @@
             <title>High Availability</title>
             <para>This section describes the operations for High
                 Availability (HA) for Cloud Databases.</para>
+            <para>Refer to the list of limitations for HA at <xref
+                    linkend="High-Availability-dle2648"/>.</para>
             <para>The HA API supports the following operations:</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
