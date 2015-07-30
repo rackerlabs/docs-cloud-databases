@@ -1910,6 +1910,25 @@
                     service catalog. Refer to the next section for
                     more information about service endpoints. </para>
             </section>
+            <section xml:id="How_Authentication_Works_with_DNS-d1e297">
+                <title>How authentication works with DNS</title>
+                <para> The contract version denotes the data model and
+                    behavior that the API supports. The requested
+                    contract version is included in all request URLs.
+                    Different contract versions of the API may be
+                    available at any given time and are not guaranteed
+                    to be compatible with one another. </para>
+                <example>
+                    <title>Example Request URL (contract version in
+                            <emphasis role="strong"
+                        >bold</emphasis>)</title>
+                    <programlisting>https://ord.databases.api.rackspacecloud.com/<emphasis role="strong">v1.0</emphasis>/1234</programlisting>
+                </example>
+                <note>
+                    <para>This document pertains to contract version
+                        1.0.</para>
+                </note>
+            </section>
         </section>
         <section xml:id="Service_Access_Endpoints-d1e753">
             <title>Service access/endpoints</title>
