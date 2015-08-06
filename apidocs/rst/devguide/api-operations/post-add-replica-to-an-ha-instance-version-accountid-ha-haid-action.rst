@@ -1,0 +1,152 @@
+
+.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
+
+=============================================================================
+Add Replica To An Ha Instance -  Rackspace Cloud Databases Developer Guide
+=============================================================================
+
+Add Replica To An Ha Instance
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html#request>`__
+`Response <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html#response>`__
+
+.. code::
+
+    POST /{version}/{accountId}/ha/{haId}/action
+
+Add a replica node to the HA group specified by {ha_id}.
+
+This operation adds a replica node to the HA group specified by {ha_id}.
+
+.. warning::
+   Adding a new replica node would restart the mha manager service (which monitors the source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. Refer to the Knowledge Center article for more details about these components: `High Availability for Cloud Databases <https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases>`__.
+   
+   
+
+The following table lists the required and optional attributes for creating a replica for an HA instance.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|202                       |Accepted                 |The request has been     |
+|                          |                         |accepted for processing. |
++--------------------------+-------------------------+-------------------------+
+|400                       |Bad Request              |The request is missing   |
+|                          |                         |one or more elements, or |
+|                          |                         |the values of some       |
+|                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|401                       |Unauthorized             |You are not authorized   |
+|                          |                         |to complete this         |
+|                          |                         |operation. This error    |
+|                          |                         |can occur if the request |
+|                          |                         |is submitted with an     |
+|                          |                         |invalid authentication   |
+|                          |                         |token.                   |
++--------------------------+-------------------------+-------------------------+
+|403                       |Forbidden                |You are denied access to |
+|                          |                         |the requested resource.  |
++--------------------------+-------------------------+-------------------------+
+|405                       |badMethod                |The specified method is  |
+|                          |                         |not allowed for the      |
+|                          |                         |given resource.          |
++--------------------------+-------------------------+-------------------------+
+|413                       |Over Limit               |The number of items      |
+|                          |                         |returned is above the    |
+|                          |                         |allowed limit.           |
++--------------------------+-------------------------+-------------------------+
+|422                       |unprocessableEntity      |The item cannot be       |
+|                          |                         |processed.               |
++--------------------------+-------------------------+-------------------------+
+|500                       |instanceFault            |The instance has         |
+|                          |                         |experienced a fault.     |
++--------------------------+-------------------------+-------------------------+
+|501                       |notImplemented           |The server does not      |
+|                          |                         |support the              |
+|                          |                         |functionality required   |
+|                          |                         |to fulfill the request.  |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The service is not       |
+|                          |                         |available.               |
++--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{accountId}               |xsd:string               |The account ID of the    |
+|                          |                         |owner of the specified   |
+|                          |                         |instance.                |
++--------------------------+-------------------------+-------------------------+
+|{haId}                    |xsd:string               |The ID for the specified |
+|                          |                         |HA instance.             |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+
+
+
+**Example Add Replica To An Ha Instance: JSON request**
+
+
+.. code::
+
+    POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/action HTTP/1.1
+    User-Agent: python-troveclient
+    Host: ord.databases.api.rackspacecloud.com
+    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
+    Accept: application/json
+    Content-Type: application/json
+     
+    {  
+       "add_replica":{  
+          "replica_details":{  
+             "volume":{  
+                "size":1
+             },
+             "flavorRef":"2",
+             "name":"new-replica2"
+          }
+       }
+    }
+    
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+**Example Add Replica To An Ha Instance: JSON response**
+
+
+.. code::
+
+    HTTP/1.1 202 Accepted
+    Content-Type: application/json
+    Via: 1.1 Repose (Repose/2.12)
+    Content-Length: 0
+    Date: Fri, 31 Jul 2015 16:53:03 GMT
+    Connection: close
+    Server: Jetty(8.0.y.z-SNAPSHOT)
+    
+

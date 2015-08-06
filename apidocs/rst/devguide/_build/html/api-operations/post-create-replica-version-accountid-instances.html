@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rackspace Developer Center</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800" rel="stylesheet" type='text/css'>
+
+  <!-- drc styles: -->
+  <link rel="stylesheet" href="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/main-ebdad849435665c9fe9a22d338a57bf6.css">
+
+  <!-- local styles: -->
+  <link rel="stylesheet" href="../_static/localsphinx.css">
+
+  <link href="/atom.xml" rel="alternate" title="Rackspace Developer Portal" type="application/atom+xml">
+ <!-- Start Visual Website Optimizer Asynchronous Code -->
+<script type='text/javascript'>
+var _vwo_code=(function(){
+var account_id=45237,
+settings_tolerance=2000,
+library_tolerance=2500,
+use_existing_jquery=false,
+// DO NOT EDIT BELOW THIS LINE
+f=false,d=document;return{use_existing_jquery:function(){return use_existing_jquery;},library_tolerance:function(){return library_tolerance;},finish:function(){if(!f){f=true;var a=d.getElementById('_vis_opt_path_hides');if(a)a.parentNode.removeChild(a);}},finished:function(){return f;},load:function(a){var b=d.createElement('script');b.src=a;b.type='text/javascript';b.innerText;b.onerror=function(){_vwo_code.finish();};d.getElementsByTagName('head')[0].appendChild(b);},init:function(){settings_timer=setTimeout('_vwo_code.finish()',settings_tolerance);this.load('//dev.visualwebsiteoptimizer.com/j.php?a='+account_id+'&u='+encodeURIComponent(d.URL)+'&r='+Math.random());var a=d.createElement('style'),b='body{opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important;}',h=d.getElementsByTagName('head')[0];a.setAttribute('id','_vis_opt_path_hides');a.setAttribute('type','text/css');if(a.styleSheet)a.styleSheet.cssText=b;else a.appendChild(d.createTextNode(b));h.appendChild(a);return settings_timer;}};}());_vwo_settings_timer=_vwo_code.init();
+</script>
+<!-- End Visual Website Optimizer Asynchronous Code -->
+</head>
+<div id="header" class="navbar navbar-fixed-top navbar-inverse navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-btn">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand new-landing-sprite rs-developer-logo" href="/"></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-btn">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="/sdks/">SDKs</a></li>
+                <li><a href="/databases/">Databases</a></li>
+                <li><a href="/docs/">API Docs</a></li>
+                <li><a href="/blog/">Blog</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Community <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://community.rackspace.com/developers/default">Developer Forum</a></li>
+                        <li><a href="/community/">Outreach &amp; Events</a></li>
+                        <li><a href="https://github.com/rackerlabs/developer.rackspace.com">This site on github</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Help <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <!--<li><a href="#">Developer-to-Developer Support</a></li>-->
+                        <li><a href="http://www.rackspace.com/knowledge_center/">Knowledge Center</a></li>
+                        <li><a href="http://status.rackspace.com">System Health Status</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="https://my.rackspace.com/portal/auth/login">MyRackspace Portal</a></li>
+                        <li><a href="https://mycloud.rackspace.com">Cloud Control Panel</a></li>
+                        <li><a href="https://manage.rackspacecloud.com/pages/Login.jsp">Cloud Sites Control Panel</a>
+                        </li>
+                        <li><a href="https://apps.rackspace.com">Rackspace Webmail Login</a></li>
+                        <li><a href="https://cp.rackspace.com">Email Admin Login</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/signup" class="btn btn-default" id="btn-get-started">Sign up for $50/month credit</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="title-header">
+  <div class="inner">
+    <span class="headline">Rackspace Developer Center</span>
+  </div>
+</div>
+<div class="container body-container">
+  <div class="row">
+    <div class="col-md-9 col-md-push-3 docs-content bodycontent">
+      <div class="document">
+  <div class="documentwrapper">
+      <div class="body" role="main">
+
+  <div class="section" id="create-replica-rackspace-cloud-databases-developer-guide">
+<h1>Create Replica -  Rackspace Cloud Databases Developer Guide<a class="headerlink" href="#create-replica-rackspace-cloud-databases-developer-guide" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="create-replica">
+<h2>Create Replica<a class="headerlink" href="#create-replica" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="post-create-replica-version-accountid-instances.html#request">Request</a>
+<a class="reference external" href="post-create-replica-version-accountid-instances.html#response">Response</a></p>
+<div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span>
+</pre></div>
+</div>
+<p>Creates a replica of the source instance, as specified by the value of the <code class="docutils literal"><span class="pre">replica_of</span></code> attribute.</p>
+<p>This operation asynchronously provisions a replica for the specified source database instance. This call requires the user to specify a flavor and a volume size. It also requires specifying the source database instance using the <code class="docutils literal"><span class="pre">replica_of</span></code> attribute. The service then provisions the replica with the requested flavor and sets up a volume of the specified size.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Notes</p>
+<ul class="last simple">
+<li>The replica will be created with the default configuration. If you wish to apply the same configuration as the source database instance or another configuration, you will need to apply that configuration to the replica. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances.html">Update database instance</a> for details.</li>
+<li>Since the process of creating a replica makes a backup behind the scenes, the user calling the Create replica operation will need access to Cloud Files.</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Adding a replica will restart the MySQL service on the source database instance. However the state of the instance might not reflect that and still be ACTIVE. Wait for a couple of seconds for the process to be complete. The best way to verify whether the process is complete is to check the slave metrics as described in <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Read_Replication-d1e3694.html">Monitoring read replication</a>.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Notes</p>
+<ul class="last simple">
+<li>You can create only one database instance per <code class="docutils literal"><span class="pre">POST</span></code> request.</li>
+<li>You can create a database instance with one or more databases, and users associated to those databases.</li>
+<li>The default binding for the database instance is port 3306.</li>
+<li>When used with the <code class="docutils literal"><span class="pre">restorePoint</span></code> attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.</li>
+<li>For information about using SSL with your database instance, refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Using_SSL_for_Database_Instances.html">Using SSL with Your Cloud Database Instances</a>.</li>
+</ul>
+</div>
+<p>The following table lists the required and optional attributes for Create replica:</p>
+<p>Required and optional attributes for Create replicaApplies To Name DescriptionRequiredInstanceflavorRefReference (href) to a flavor as specified in the response from the List Flavors API call. This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.</p>
+</div>
+<p>Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html">List flavors</a> for details.</p>
+<p>Yes(volume) sizeSpecifies the volume size in gigabytes (GB). The value specified must be between 1 and 300.YesnameName of the instance to create. The length of the name is limited to 255 characters and any characters are permitted.Noreplica_ofIdentifier of the source instance to replicate.YesconfigurationIdentifier of the configuration group to associate with the instance.No(datastore) version / typeName or uuid  of the datastore version and type to associate with the instance. If the datastore is not specified, it defaults to mysql.NoDatabasenameSpecifies database names for creating databases on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html">Create instance</a> for the required json format.Nocharacter_setSet of symbols and encodings. The default character set is <code class="docutils literal"><span class="pre">utf8</span></code>.NocollateSet of rules for comparing characters in a character set. The default value for collate is <code class="docutils literal"><span class="pre">utf8_general_ci</span></code>.NoUsernameSpecifies user name for the database on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a> for the required json format.NopasswordSpecifies password for those users on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a> for the required json format.No(database) nameSpecifies names of databases that those users can access on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a> for the required json format.NohostSpecifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or &#8220;%&#8221; to allow connecting from any host.                             Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html">User access restriction by host</a> for details. If <code class="docutils literal"><span class="pre">host</span></code> is not specified, it defaults to &#8220;%&#8221;.NoRestorerestorePointSpecifies the backup id from which to restore the database instance.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Notes</p>
+<ul class="last simple">
+<li>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by the <code class="docutils literal"><span class="pre">restorePoint</span></code> attribute.</li>
+<li>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases.</li>
+<li>You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up.</li>
+<li>Refer to the Create Database Instance Restore Request and Response examples for the required json format and details.</li>
+</ul>
+</div>
+<p>NoRefer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html">Database instance status</a> for a list of possible database instance statuses that may be returned.</p>
+<p>This table shows the possible response codes for this operation:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Response Code</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>200</td>
+<td>Success</td>
+<td>Request succeeded.</td>
+</tr>
+<tr class="row-odd"><td>400</td>
+<td>Bad Request</td>
+<td>The request is missing
+one or more elements, or
+the values of some
+elements are invalid.</td>
+</tr>
+<tr class="row-even"><td>401</td>
+<td>Unauthorized</td>
+<td>You are not authorized
+to complete this
+operation. This error
+can occur if the request
+is submitted with an
+invalid authentication
+token.</td>
+</tr>
+<tr class="row-odd"><td>403</td>
+<td>Forbidden</td>
+<td>You are denied access to
+the requested resource.</td>
+</tr>
+<tr class="row-even"><td>405</td>
+<td>badMethod</td>
+<td>The specified method is
+not allowed for the
+given resource.</td>
+</tr>
+<tr class="row-odd"><td>413</td>
+<td>Over Limit</td>
+<td>The number of items
+returned is above the
+allowed limit.</td>
+</tr>
+<tr class="row-even"><td>422</td>
+<td>unprocessableEntity</td>
+<td>The item cannot be
+processed.</td>
+</tr>
+<tr class="row-odd"><td>500</td>
+<td>instanceFault</td>
+<td>The instance has
+experienced a fault.</td>
+</tr>
+<tr class="row-even"><td>501</td>
+<td>notImplemented</td>
+<td>The server does not
+support the
+functionality required
+to fulfill the request.</td>
+</tr>
+<tr class="row-odd"><td>503</td>
+<td>Service Unavailable</td>
+<td>The service is not
+available.</td>
+</tr>
+<tr class="row-even"><td>404</td>
+<td>Not Found</td>
+<td>The requested item was
+not found.</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="request">
+<h3>Request<a class="headerlink" href="#request" title="Permalink to this headline">¶</a></h3>
+<p>This table shows the URI parameters for the request:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>{accountId}</td>
+<td>xsd:string</td>
+<td>The account ID of the
+owner of the specified
+instance.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example Create Replica: JSON request</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>POST /v1.0/1234/instances HTTP/1.1
+User-Agent: python-troveclient
+Host: ord.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/json
+Content-Type: application/json
+
+
+{
+  &quot;instance&quot;: {
+    &quot;volume&quot;: {
+      &quot;size&quot;: 1
+    },
+    &quot;flavorRef&quot;: &quot;9&quot;,
+    &quot;name&quot;: &quot;t2s1_ALT_GUEST&quot;,
+    &quot;replica_of&quot;: &quot;6bdca2fc-418e-40bd-a595-62abda61862d&quot;
+  }
+}
+</pre></div>
+</div>
+</div>
+<div class="section" id="response">
+<h3>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example Create Replica: JSON response</strong></p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 697
+Date: Thu, 13 Feb 2014 21:47:17 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+  &quot;instance&quot;: {
+    &quot;status&quot;: &quot;BUILD&quot;,
+    &quot;updated&quot;: &quot;2014-10-14T18:42:15&quot;,
+    &quot;name&quot;: &quot;t2s1_ALT_GUEST&quot;,
+    &quot;links&quot;: [
+      {
+        &quot;href&quot;: &quot;https://ord.databases.api.rackspacecloud.com/v1.0/5919009/instances/8367c312-7c40-4a66-aab1-5767478914fc&quot;,
+        &quot;rel&quot;: &quot;self&quot;
+      },
+      {
+        &quot;href&quot;: &quot;https://ord.databases.api.rackspacecloud.com/instances/8367c312-7c40-4a66-aab1-5767478914fc&quot;,
+        &quot;rel&quot;: &quot;bookmark&quot;
+      }
+    ],
+    &quot;created&quot;: &quot;2014-10-14T18:42:15&quot;,
+    &quot;id&quot;: &quot;8367c312-7c40-4a66-aab1-5767478914fc&quot;,
+    &quot;volume&quot;: {
+      &quot;size&quot;: 1
+    },
+    &quot;flavor&quot;: {
+      &quot;id&quot;: &quot;9&quot;,
+      &quot;links&quot;: [
+        {
+          &quot;href&quot;: &quot;https://ord.databases.api.rackspacecloud.com/v1.0/5919009/flavors/9&quot;,
+          &quot;rel&quot;: &quot;self&quot;
+        },
+        {
+          &quot;href&quot;: &quot;https://ord.databases.api.rackspacecloud.com/flavors/9&quot;,
+          &quot;rel&quot;: &quot;bookmark&quot;
+        }
+      ]
+    },
+    &quot;datastore&quot;: {
+      &quot;version&quot;: &quot;5.6&quot;,
+      &quot;type&quot;: &quot;mysql&quot;
+    },
+    &quot;replica_of&quot;: {
+      &quot;id&quot;: &quot;6bdca2fc-418e-40bd-a595-62abda61862d&quot;,
+      &quot;links&quot;: [
+        {
+          &quot;href&quot;: &quot;https://ord.databases.api.rackspacecloud.com/v1.0/5919009/instances/6bdca2fc-418e-40bd-a595-62abda61862d&quot;,
+          &quot;rel&quot;: &quot;self&quot;
+        },
+        {
+          &quot;href&quot;: &quot;https://ord.databases.api.rackspacecloud.com/instances/6bdca2fc-418e-40bd-a595-62abda61862d&quot;,
+          &quot;rel&quot;: &quot;bookmark&quot;
+        }
+      ]
+    }
+  }
+}
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+
+  <div class="toctree-wrapper compound">
+<ul class="simple">
+</ul>
+</div>
+
+
+      </div>
+<div class="clearer"></div>
+</div>
+    </div>
+    <div class="col-md-3 col-md-pull-9 sidebar">
+<ul>
+  <li><a href="/" class="back">&laquo; Developer Home</a></li>
+</ul>
+<ul>
+  
+<a href="post-create-ha-database-instance-version-accountid-ha.html"><<</a>
+
+|
+
+<a href="post-create-scheduled-backup-version-accountid-schedules.html">>></a>
+
+  <li><span class="sidebarheader">Contents</span></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../overview.html">Overview</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../concepts.html">Concepts</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../general-api-information.html">General API information</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authenticate.html">Authenticate through the Rackspace Cloud Identity Service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contract-and-api-versions.html">Contract version &amp; API version</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../request-and-response-types.html">Request &amp; response types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../limits.html">Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../date-and-time-format.html">Date and time format</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../pagination.html">Pagination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database-faults.html">Faults</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database-instance-status.html">Database instance status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../database-instance-accessibility.html">Database instance accessibility</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../security.html">Security</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring-cloud-databases.html">Monitoring Cloud Databases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../monitoring-read-replication.html">Monitoring read replication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../using-ssl.html">Using SSL for Cloud Database instances</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../role-based-access-control.html">Role Based Access Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration-management.html">Configuration management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datastore-types-and-versions.html">Datastore types and versions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../replication.html">Replication</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../high-availability.html">High availability for Cloud Databases</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-acls-from-an-ha-instance-version-accountid-ha-haid-acls-address.html">Delete Acls From An Ha Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-backup-version-accountid-backups-backupid.html">Delete Backup -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-configuration-group-version-accountid-configurations-configid.html">Delete Configuration Group -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-database-instance-version-accountid-instances-instanceid.html">Delete Database Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-database-version-accountid-instances-instanceid-databases-databasename.html">Delete Database -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-ha-database-instance-version-accountid-ha-haid.html">Delete Ha Database Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.html">Delete Schedule For Running Backup By Schedule Id -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-delete-user-version-accountid-instances-instanceid-users-name.html">Delete User -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename.html">Revoke User Access -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-get-default-configuration-version-accountid-instances-instanceid-configuration.html">Get Default Configuration -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-acls-for-an-ha-instance-version-accountid-ha-haid-acls.html">List Acls For An Ha Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-all-database-instances-version-accountid-instances.html">List All Database Instances -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-all-datastore-types-version-accountid-datastores.html">List All Datastore Types -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-all-ha-database-instances-version-accountid-ha.html">List All Ha Database Instances -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances.html">List All Replicas And Replica Source Database Instances -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backup-by-id-version-accountid-backups-backupid.html">List Backup By Id -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backups-for-instance-version-accountid-instances-instanceid-backups.html">List Backups For Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backups-version-accountid-backups.html">List Backups -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-configuration-details-version-accountid-configurations-configid.html">List Configuration Details -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameter-details-version-accountid-datastores-datastoreid-versions-versionid-parameters-parameterid.html">List Configuration Parameter Details -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid.html">List Configuration Parameter Details Without Datastore -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameters-version-accountid-datastores-datastoreid-versions-versionid-parameters.html">List Configuration Parameters -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameters-without-datastore-version-accountid-datastores-versions-versionid-parameters.html">List Configuration Parameters Without Datastore -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-configurations-version-accountid-configurations.html">List Configurations -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-database-instance-status-and-details-version-accountid-instances-instanceid.html">List Database Instance Status And Details -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-databases-for-instance-version-accountid-instances-instanceid-databases.html">List Databases For Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-datastore-type-version-accountid-datastores-datastoreid.html">List Datastore Type -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-datastore-version-version-accountid-datastores-datastoreid-versions-versionid.html">List Datastore Version -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-datastore-versions-for-datastore-version-accountid-datastores-datastoreid-versions.html">List Datastore Versions For Datastore -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-flavor-by-id-version-accountid-flavors-flavorid.html">List Flavor By Id -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-flavors-for-datastore-version-version-accountid-datastores-datastoretype-versions-versionid-flavors.html">List Flavors For Datastore Version -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-flavors-version-accountid-flavors.html">List Flavors -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-ha-database-instance-details-version-accountid-ha-haid.html">List Ha Database Instance Details -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-instances-for-configuration-version-accountid-configurations-configid-instances.html">List Instances For Configuration -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-replica-details-version-accountid-instances-instanceid.html">List Replica Details -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-replica-source-version-accountid-instances-instanceid.html">List Replica Source -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-replicas-for-source-instance-version-accountid-instances-instanceid-replicas.html">List Replicas For Source Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-root-enabled-status-version-accountid-instances-instanceid-root.html">List Root-Enabled Status -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.html">List Schedule For Running Backup By Schedule Id -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-scheduled-backups-version-accountid-schedules.html">List Scheduled Backups -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-user-access-version-accountid-instances-instanceid-users-name-databases.html">List User Access -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-user-version-accountid-instances-instanceid-users-name.html">List User -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-users-in-database-instance-version-accountid-instances-instanceid-users.html">List Users In Database Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-verbose-default-configuration-parameters-version-accountid-datastore-version-versionid-configuration-flavorid.html">List Verbose Default Configuration Parameters -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-version-details-version.html">List Version Details -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-versions.html">List Versions -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch-detach-replica-version-accountid-instances-instanceid.html">Detach Replica -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="patch-update-some-configuration-parameters-version-accountid-configurations-configid.html">Update Some Configuration Parameters -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls.html">Add Acls To An Ha Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html">Add Replica To An Ha Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-backup-version-accountid-backups.html">Create Backup -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-configuration-version-accountid-configurations.html">Create Configuration -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-database-instance-version-accountid-instances.html">Create Database Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-database-version-accountid-instances-instanceid-databases.html">Create Database -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-ha-database-instance-version-accountid-ha.html">Create Ha Database Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="">Create Replica -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-scheduled-backup-version-accountid-schedules.html">Create Scheduled Backup -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-user-version-accountid-instances-instanceid-users.html">Create User -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-enable-root-user-version-accountid-instances-instanceid-root.html">Enable Root User -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-version-accountid-instances-instanceid-action.html">Resize The Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-volume-version-accountid-instances-instanceid-action.html">Resize The Instance Volume -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-restart-instance-version-accountid-instances-instanceid-action.html">Restart Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-restore-backup-version-accountid-instances.html">Restore Backup -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="put-change-user(s)-password-version-accountid-instances-instanceid-users.html">Change User(S) Password -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="put-grant-user-access-version-accountid-instances-instanceid-users-name-databases.html">Grant User Access -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="put-modify-user-attributes-version-accountid-instances-instanceid-users-name.html">Modify User Attributes -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="put-replace-all-configuration-parameters-version-accountid-configurations-configid.html">Replace All Configuration Parameters -  Rackspace Cloud Databases Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="put-update-database-instance-version-accountid-instances-instanceid.html">Update Database Instance -  Rackspace Cloud Databases Developer Guide</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../glossary.html">Glossary</a></li>
+</ul>
+
+
+      <div class="callout">
+  <span class="sidebarheader">Need Help?</span>
+
+  <p>
+    E-mail <a href="mailto:sdk-support@rackspace.com">sdk-support@rackspace.com</a>,<br>
+    tweet <a href="https://twitter.com/rackspace">@rackspace</a>,
+    chat with us in #rackspace on Freenode,
+    or post in <a href="https://community.rackspace.com/developers/default">our developer forum</a>.
+  </p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Found a bug? Caught a typo?</span>
+  <p>File a <a href="https://github.com/rackerlabs/developer.rackspace.com/issues/new">bug report</a> or submit a <a target="blank" href="https://github.com/rackerlabs/developer.rackspace.com">pull request</a> on our developer site Github repo.</p>
+</div>
+
+<div class="callout">
+  <span class="sidebarheader">Want To Stay Up To Date?</span>
+  <p>Subscribe to our developer blog <a href="/atom.xml">RSS</a> feed.</p>
+</div>
+    </div>
+  </div>
+</div>
+<div class="basement">
+    <div class="container">
+        <img src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/rackerpowered-logo-79838459d447e1e48dd93c76549bdf74.png" alt="Racker Powered">
+        <ul>
+            <li>©2015 Rackspace, US Inc.</li>
+            <li><a href="http://www.rackspace.com/about/">About Rackspace</a></li>
+            <li><a href="http://ir.rackspace.com/">Investors</a></li>
+            <li><a href="http://www.rackertalent.com">Careers</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/privacystatement">Privacy Statement</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/websiteterms">Website Terms</a></li>
+            <li><a href="http://www.rackspace.com/information/legal/copyrights_trademarks">Trademarks</a></li>
+        </ul>
+    </div>
+</div>
+<script src="https://c2a32ff18d23c8f567f0-e44b0df73868b5d567b1e58e01681d15.ssl.cf5.rackcdn.com/app-b899e84f641d7962050ed3d62a3d53a7.js"></script>
+
+  <!-- analytics -->
+<script type="text/javascript">
+   var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-35639070-1']);
+    _gaq.push(['_setDomainName', 'rackspace.com']);
+    _gaq.push(['_trackPageview']);
+
+   (function () {
+       var ga = document.createElement('script');
+       ga.type = 'text/javascript';
+       ga.async = true;
+       ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+   })();
+ </script>
+
+ <!-- Tealium -->
+ <script type="text/javascript" src="https://tags.tiqcdn.com/utag/rackspace/developer/prod/utag.js"></script>
+
+ <!-- Google Code for Rackspace Blog Page Visitors (Global Tag) -->
+<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->
+<script type="text/javascript">
+    /* <![CDATA[ */
+    var google_conversion_id = 1040066332;
+    var google_conversion_label = "wFI2CI7LnQQQnM747wM";
+    var google_custom_params = window.google_tag_params;
+    var google_remarketing_only = true;
+    /* ]]> */
+</script>
+<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+</script>
+<noscript>
+    <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/1040066332/?value=0&amp;label=wFI2CI7LnQQQnM747wM&amp;guid=ON&amp;script=0"/>
+    </div>
+</noscript>
+</body>
+</html>

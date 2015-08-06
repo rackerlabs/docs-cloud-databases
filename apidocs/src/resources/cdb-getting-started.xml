@@ -50,13 +50,26 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-07-01</pubdate>
+        <pubdate>2015-08-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2015-08-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new operation Add replica to
+                                HA instance in <xref
+                                   linkend="trove_summary_ha"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-07-01</date>
                 <revdescription>
@@ -4177,13 +4190,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     <term><emphasis role="bold">Create HA
                             instance</emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-create --name &lt;name&gt; --source_name &lt;source_name&gt; --source_flavor_id &lt;source_flavor_id&gt; --source_size &lt;source_size&gt; --number_of_replicas &lt;number_of_replicas&gt; [--networks &lt;networks&gt;] [--acls &lt;acls>]</programlisting>
-                        <note>
-                            <para> Using this command, mysql-5.6 will
-                                be the default datastore type, and the
-                                replicas will have the same volume and
-                                flavor as the source. </para>
-                        </note>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt>trove ha-mysql-create --name &lt;name&gt; --source_name &lt;source_name&gt; --source_flavor_id &lt;source_flavor_id&gt; --source_size &lt;source_size&gt; --number_of_replicas &lt;number_of_replicas&gt; [--networks &lt;networks&gt;] [--acls &lt;acls>]</programlisting>
                         <itemizedlist>
                             <title>Required Arguments</title>
                             <listitem>
@@ -4240,10 +4247,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             <listitem>
                                 <para>
                                    <option>--acls</option>
-                                   <parameter> &lt;scls></parameter>.
+                                   <parameter> &lt;acls></parameter>.
                                    A list of ACLs (comma-separated
-                                   list) to access the HA instance.
-                                </para>
+                                   list) to access the HA instance. </para>
                             </listitem>
                         </itemizedlist>
                     </listitem>
@@ -4319,6 +4325,56 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-delete &lt;ha_id&gt;</programlisting>
                         <para> Where <parameter>ha_id</parameter> is
                             the ID of the HA instance.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Add Replica to HA
+                            instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-add-replica &lt;ha_instance> [--replica_name &lt;replica_name&gt;] [--replica_flavor_id &lt;replica_flavor_id&gt;] [--replica_size &lt;replica_size&gt;] </programlisting>
+                        <note>
+                            <para> Using this command, mysql-5.6 will
+                                be the default datastore type, and the
+                                replicas will have the same volume and
+                                flavor as the source. </para>
+                        </note>
+                        <itemizedlist>
+                            <title>Required Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>ha_instance</option>. The
+                                   ID of the HA instance. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--replica_name</option>
+                                   <parameter>
+                                   &lt;replica_name></parameter>. The
+                                   name of the replica instance.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--replica_flavor_id</option>
+                                   <parameter>
+                                   &lt;replica_flavor_id></parameter>.
+                                   The flavor of the replica instance.
+                                </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--replica_size</option>
+                                   <parameter>
+                                   &lt;replica_size></parameter>.  The
+                                   size of the replica instance disk
+                                   volume in GB. </para>
+                            </listitem>
+                        </itemizedlist>
                     </listitem>
                 </varlistentry>
             </variablelist>

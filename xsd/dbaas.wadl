@@ -234,6 +234,9 @@
                             <doc>The ID for the specified HA instance.</doc></param>
                         <method href="#getInstanceByHaId" />
                         <method href="#deleteInstanceByHaId" />
+                        <resource id="action" path="action">
+                            <method href="#addReplicaToHaInstance" />
+                        </resource>
                         <resource id="acls" path="acls">
                             <method href="#addAclToHaInstance" />
                             <method href="#listAclsForHaInstance" />
@@ -268,6 +271,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List version details response:</para>
@@ -295,6 +299,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List versions response:</para>
@@ -480,6 +485,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance response:</para>
@@ -538,9 +544,8 @@
                 </doc>
             </representation>
         </request>
-        <response status="202" />
-    &commonFaults;
-        <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
+        <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete database instance response:</para>
@@ -548,7 +553,8 @@
                 </doc>
             </representation>
         </response>
-    &getFaults;
+        &commonFaults;
+        &getFaults;
     </method>
 
     <method name="GET" id="getInstance">
@@ -595,6 +601,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all database instances response:</para>
@@ -636,6 +643,7 @@
             </representation>          
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                element="dbaas:DatabaseInstance" >
               <doc>
@@ -698,6 +706,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -747,6 +756,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Restart instance response:</para>
@@ -774,6 +784,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize instance response:</para>
@@ -804,6 +815,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Resize instance volume response:</para>
@@ -946,6 +958,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database response:</para>
@@ -981,6 +994,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Databases" >
                 <doc>
@@ -1015,6 +1029,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete database response:</para>
@@ -1188,6 +1203,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create user response:</para>
@@ -1238,6 +1254,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc title="List users in database instance response: JSON">
@@ -1281,6 +1298,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc>
@@ -1309,6 +1327,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete user response:</para>
@@ -1344,6 +1363,7 @@
             
         </request>
         <response status="200" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user responses:</para>
@@ -1394,6 +1414,7 @@
             
         </request>
         <response status="200" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access response:</para>
@@ -1439,6 +1460,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Grant user access response:</para>
@@ -1465,6 +1487,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Revoke user access response:</para>
@@ -1491,6 +1514,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             
             <representation mediaType="application/json"
                 element="dbaas:DefaultConfig">
@@ -1519,6 +1543,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
 
             <representation mediaType="application/json"
                 element="dbaas:User">
@@ -1546,6 +1571,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:RootEnabled" >
                 <doc>
@@ -1576,6 +1602,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Flavors" >
                 <doc>
@@ -1609,6 +1636,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Flavor" >
                 <doc>
@@ -1732,6 +1760,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -1777,6 +1806,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -1811,6 +1841,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -1837,6 +1868,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -1901,6 +1933,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -1928,10 +1961,8 @@
                 </doc>
             </representation>
         </request>
-        <response status="202" />
-        &commonFaults;
-        <response status="422" xmlns="http://wadl.dev.java.net/2009/02">
-            
+        <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>       
             <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete backup response:</para>
@@ -1939,6 +1970,7 @@
                 </doc>
             </representation>
         </response>
+        &commonFaults;
         &getFaults;
     </method>
 
@@ -2038,6 +2070,7 @@
             </representation>  
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Schedule" >
                 <doc>
@@ -2066,6 +2099,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -2093,6 +2127,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -2120,6 +2155,7 @@
             </representation>
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Backup" >
                 <doc>
@@ -2192,6 +2228,7 @@
             
         </request>
         <response status="200" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Modify user attributes response:</para>
@@ -2218,6 +2255,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List configurations response:</para>
@@ -2270,6 +2308,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2295,6 +2334,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2321,6 +2361,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2350,6 +2391,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2376,6 +2418,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
                 <representation mediaType="application/json"
                     element="dbaas:Configuration" >
                     <doc>
@@ -2402,6 +2445,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2427,6 +2471,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2452,6 +2497,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2477,6 +2523,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2502,6 +2549,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2527,6 +2575,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:Configuration" >
                 <doc>
@@ -2553,6 +2602,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all datastore types response:</para>
@@ -2578,6 +2628,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore type response:</para>
@@ -2603,6 +2654,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all datastore versions for datastore response:</para>
@@ -2628,6 +2680,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List datastore version response:</para>
@@ -2653,6 +2706,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Lists flavors for datastore version response:</para>
@@ -2867,6 +2921,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create replica response:</para>
@@ -2933,6 +2988,7 @@
             </representation>      
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -2970,6 +3026,7 @@
             </representation>      
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -2996,6 +3053,7 @@
             </representation>      
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -3036,6 +3094,7 @@
             </representation>
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List all replicas or replica sources response:</para>
@@ -3121,6 +3180,7 @@
             
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Detach replica response:</para>
@@ -3166,7 +3226,7 @@
             <para>The following attributes are required for each HA instance:</para>
             
             <table rules="all">
-                <caption>Required attributes for Create HA instance</caption>
+                <caption>Required and optional attributes for Create HA instance</caption>
                 <thead>
                     <tr>
                         <td colspan="1">Name </td>
@@ -3207,6 +3267,37 @@
                             </td>
                         <td colspan="1">Yes</td>
                     </tr>
+                    <tr>
+                        <td colspan="1">networks
+                        </td>
+                        <td colspan="3"><para>Comma-separated list of networks to be associated with the HA group. For example:
+                            <code>{“networks”:[“public”,“servicenet”]}</code></para>
+                            <note><title>Notes</title>
+                                <itemizedlist spacing="compact">
+                                <listitem><para>By default (if not specified), it will be servicenet.</para></listitem>
+                                <listitem><para>If a public network would be required in addition to the servicenet, 
+                                    it would have to be specified in the option: <code>"networks":  ["public”]</code>. 
+                                    Note that this will add a public network in addition to a servicenet/private network.</para></listitem>
+                                <listitem><para>Both the networks as options: <code>"networks": ["public", "servicenet"]</code>, can 
+                                    also be specified.</para></listitem>
+                                
+                                </itemizedlist>
+                            </note>
+                        </td>
+                        <td colspan="1">No</td>  
+                    </tr>
+                    <tr>
+                        <td colspan="1">acls
+                        </td>
+                        <td colspan="3">IP based ACL in the CIDR format. For example: 1.2.3.4/32. This is required to allow the 
+                            HA group access to the specified IP. By default, the HA group access is blocked. Additionally, if it 
+                            is not specified while creating the HA group, it can be added later. Refer to <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
+                                >Add ACLs to an HA instance</link>section 4.10.5 for details.
+                        </td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    
                 </tbody>
             </table>
         </wadl:doc>
@@ -3220,6 +3311,7 @@
             </representation>
         </request>
         <response status="202" >
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create HA response:</para>
@@ -3247,6 +3339,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -3275,6 +3368,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -3303,11 +3397,68 @@
             
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete HA database instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-ha-sql-instance-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="POST" id="addReplicaToHaInstance">
+        <wadl:doc xml:lang="EN" title="Add Replica to an HA instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Add a replica node to the HA group specified by {ha_id}.</para>
+            <para>This operation adds a replica node to the HA group specified by {ha_id}.</para>
+            <warning><para>Adding a new replica node would restart the mha manager service (which monitors the 
+                source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. 
+                Refer to the Knowledge Center article for more details about these components: 
+                <link
+                    xlink:href="https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
+                    >High Availability for Cloud Databases</link>.
+            </para></warning>
+            <para>The following table lists the required and optional attributes for creating a replica for an 
+                HA instance.</para>
+            
+            <!--      <table rules="all">
+                <caption>Required and optional attributes for Create database</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">Specifies the CIDR notated IPV4 address. The IPV4 address to use should be CIDR notated.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>   -->
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Add replica to an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-add-replica-to-ha-instance-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Add replica to an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-add-replica-to-ha-instance-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -3351,6 +3502,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc>
@@ -3379,6 +3531,7 @@
             
         </request>
         <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstanceAcls" >
                 <doc>
@@ -3409,6 +3562,7 @@
             
         </request>
         <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstanceAcls" >
                 <doc>

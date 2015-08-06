@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-07-28</pubdate>
+        <pubdate>2015-08-06</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,23 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-08-06</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for HA in <xref
+                                   linkend="High-Availability-dle2648"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added new operation Add replica to
+                                HA instance in <xref linkend="ha"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-07-28</date>
                 <revdescription>
@@ -4039,6 +4056,13 @@
                             updates will be applied to the replica
                             after they occur on the master.</para>
                     </listitem>
+                    <listitem>
+                        <para>The only allowed operations on instances
+                            that are part of the HA group are Create
+                            users, Create databases (on source only),
+                            and Create backups. All other operations
+                            are blocked on these instances. </para>
+                    </listitem>
                     
                 </itemizedlist>
             </note>
@@ -4049,11 +4073,6 @@
                     case failover occurs, your database will still
                     have a High Availability setup.</para>
             </formalpara>
-            <warning>
-                <para>Adding a replica will cause the source database
-                    instance to restart and your database will be
-                    unavailable for a brief period.</para>
-            </warning>
             <formalpara>
                 <title>Limitations</title>
                 <para>
@@ -4076,21 +4095,25 @@
                         <listitem>
                             <para>Currently you cannot perform
                                 backups, resize, or apply
-                                configuration groups on HA
-                                group.</para>
+                                configuration groups on HA group.
+                                These capabilities will be supported
+                                soon.</para>
                         </listitem>
                         <listitem>
-                            <para>In case failover occurs, there will be
-                                an automatic failover to the replica
-                                closest to the failed database instance.
-                                Cloud Databases will remove the failed
-                                database instance. You will have to
-                                manually create another replica to add to
-                                the HA group. The API call for adding a
-                                new replica is coming soon. In the future,
-                                Cloud Databases will automate creating
-                                another replica after the failover occurs.
-                            </para>
+                            <para>In case a failover occurs, there
+                                will be an automatic failover to the
+                                replica closest to the failed database
+                                instance. Cloud Databases will remove
+                                the failed database instance. A new
+                                replica would have to manually be
+                                added to the HA group via the API call
+                                to Add replica to HA group (refer to
+                                   <link
+                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
+                                   >Add Replica to an HA instance</link>). Coming soon is a
+                                functionality where a replica will be
+                                automatically added to the HA group after
+                                the failover. </para>
                         </listitem>
                     </itemizedlist>
                 </para>
@@ -4383,6 +4406,9 @@
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#address">
                     <wadl:method href="deleteAclsFromHaInstance"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#action">
+                    <wadl:method href="addReplicaToHaInstance"/>
                 </wadl:resource>
             </wadl:resources>
         </section>

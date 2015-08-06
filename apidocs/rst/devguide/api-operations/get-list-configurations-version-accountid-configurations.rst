@@ -1,0 +1,141 @@
+
+.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
+
+=============================================================================
+List Configurations -  Rackspace Cloud Databases Developer Guide
+=============================================================================
+
+List Configurations
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`Request <get-list-configurations-version-accountid-configurations.html#request>`__
+`Response <get-list-configurations-version-accountid-configurations.html#response>`__
+
+.. code::
+
+    GET /{version}/{accountId}/configurations
+
+Lists all defined configuration group s for the tenant.
+
+
+
+This table shows the possible response codes for this operation:
+
+
++--------------------------+-------------------------+-------------------------+
+|Response Code             |Name                     |Description              |
++==========================+=========================+=========================+
+|200                       |Success                  |Request succeeded.       |
++--------------------------+-------------------------+-------------------------+
+|400                       |Bad Request              |The request is missing   |
+|                          |                         |one or more elements, or |
+|                          |                         |the values of some       |
+|                          |                         |elements are invalid.    |
++--------------------------+-------------------------+-------------------------+
+|401                       |Unauthorized             |You are not authorized   |
+|                          |                         |to complete this         |
+|                          |                         |operation. This error    |
+|                          |                         |can occur if the request |
+|                          |                         |is submitted with an     |
+|                          |                         |invalid authentication   |
+|                          |                         |token.                   |
++--------------------------+-------------------------+-------------------------+
+|403                       |Forbidden                |You are denied access to |
+|                          |                         |the requested resource.  |
++--------------------------+-------------------------+-------------------------+
+|405                       |badMethod                |The specified method is  |
+|                          |                         |not allowed for the      |
+|                          |                         |given resource.          |
++--------------------------+-------------------------+-------------------------+
+|413                       |Over Limit               |The number of items      |
+|                          |                         |returned is above the    |
+|                          |                         |allowed limit.           |
++--------------------------+-------------------------+-------------------------+
+|422                       |unprocessableEntity      |The item cannot be       |
+|                          |                         |processed.               |
++--------------------------+-------------------------+-------------------------+
+|500                       |instanceFault            |The instance has         |
+|                          |                         |experienced a fault.     |
++--------------------------+-------------------------+-------------------------+
+|501                       |notImplemented           |The server does not      |
+|                          |                         |support the              |
+|                          |                         |functionality required   |
+|                          |                         |to fulfill the request.  |
++--------------------------+-------------------------+-------------------------+
+|503                       |Service Unavailable      |The service is not       |
+|                          |                         |available.               |
++--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
+
+
+Request
+^^^^^^^^^^^^^^^^^
+
+This table shows the URI parameters for the request:
+
++--------------------------+-------------------------+-------------------------+
+|Name                      |Type                     |Description              |
++==========================+=========================+=========================+
+|{accountId}               |xsd:string               |The account ID of the    |
+|                          |                         |owner of the specified   |
+|                          |                         |instance.                |
++--------------------------+-------------------------+-------------------------+
+
+
+
+
+
+
+
+
+**Example List Configurations: JSON request**
+
+
+.. code::
+
+    GET /v1.0/1234/configurations HTTP/1.1
+    Host: ord.databases.api.rackspacecloud.com
+    User-Agent: python-troveclient
+    Accept: application/json
+    X-Auth-Token: 26640a608aa9482b888a1664376b8113
+    
+    
+    
+
+
+Response
+^^^^^^^^^^^^^^^^^^
+
+
+
+
+
+**Example List Configurations: JSON response**
+
+
+.. code::
+
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Via: 1.1 Repose (Repose/2.12)
+    Content-Length: 336
+    Date: Thu, 31 Jul 2014 19:00:54 GMT
+    Server: Jetty(8.0.y.z-SNAPSHOT)
+    
+    {
+        "configurations": [
+            {
+                "created": "2014-07-31T18:56:09",
+                "datastore_name": "mysql",
+                "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
+                "datastore_version_name": "5.6",
+                "description": "example description",
+                "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
+                "name": "example-configuration-name",
+                "updated": "2014-07-31T18:56:09"
+            }
+        ]
+    }
+
