@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-08-06</pubdate>
+	<pubdate>2015-08-07</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,7 +77,7 @@
         </abstract>
     	<revhistory>
 			<revision>
-				<date>2015-08-06</date>
+				<date>2015-08-07</date>
 				<revdescription>
 					<para>Updated for v2.27.0.</para>
 				</revdescription>
@@ -690,15 +690,9 @@
 		</itemizedlist>
 	</chapter>
 	<chapter xml:id="cdbv2.27.0">
-		<title>v2.27.0, August 6, 2015</title>
+		<title>v2.27.0, August 7, 2015</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
-			<listitem>
-				<para><link security="internal"
-						xlink:href="https://jira.rax.io/browse/DSMYSQL-213"
-						>DSMYSQL-213: </link>Removed replica from
-					HA-MySQL setup.</para>
-			</listitem>
 			<listitem>
 				<para><link security="internal"
 						xlink:href="https://jira.rax.io/browse/DSMYSQL-130"
@@ -708,6 +702,12 @@
 						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addReplicaToHaInstance__version___accountId__ha__haId__action_ha.html"
 						>Add replica to HA Instance
 					Group</link>.</para>
+			</listitem>
+			<listitem security="internal">
+				<para><link security="internal"
+						xlink:href="https://jira.rax.io/browse/DSMYSQL-213"
+						>DSMYSQL-213: </link>Removed replica from
+					HA-MySQL setup.</para>
 			</listitem>
 			<listitem security="internal">
 				<para><link security="internal"
