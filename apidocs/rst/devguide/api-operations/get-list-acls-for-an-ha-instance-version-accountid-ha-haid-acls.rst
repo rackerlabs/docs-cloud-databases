@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Acls For An Ha Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Acls For An Ha Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-acls-for-an-ha-instance-version-accountid-ha-haid-acls.html#request>`__
-`Response <get-list-acls-for-an-ha-instance-version-accountid-ha-haid-acls.html#response>`__
+List ACLs for an HA instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,18 +66,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{haId}                    |xsd:string               |The ID for the specified |
+|{haId}                    |String                   |The ID for the specified |
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
@@ -92,10 +88,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Acls For An Ha Instance: JSON request**
+
+**Example List ACLs for an HA instance: JSON request**
 
 
 .. code::
@@ -110,13 +108,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Acls For An Ha Instance: JSON response**
+
+
+**Example List ACLs for an HA instance: JSON response**
 
 
 .. code::
@@ -131,4 +131,5 @@ Response
     
     {"acls": [{"type": "ALLOW", "address": "1.2.3.4/32"}]}
     
+
 

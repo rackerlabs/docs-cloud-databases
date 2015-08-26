@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete Backup -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Delete Backup
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-backup-version-accountid-backups-backupid.html#request>`__
-`Response <delete-delete-backup-version-accountid-backups-backupid.html#response>`__
+Delete backup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -74,18 +67,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{backupId}                |xsd:string               |The backup ID for the    |
+|{backupId}                |String                   |The backup ID for the    |
 |                          |                         |specified backup.        |
 +--------------------------+-------------------------+-------------------------+
 
@@ -93,10 +89,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Delete Backup: JSON request**
+
+**Example Delete backup: JSON request**
 
 
 .. code::
@@ -113,13 +111,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Delete Backup: JSON response**
+
+
+**Example Delete backup: JSON response**
 
 
 .. code::
@@ -131,4 +131,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:17 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Some Configuration Parameters -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Update Some Configuration Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <patch-update-some-configuration-parameters-version-accountid-configurations-configid.html#request>`__
-`Response <patch-update-some-configuration-parameters-version-accountid-configurations-configid.html#response>`__
+Update some configuration parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,18 +64,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{configId}                |xsd:string               |The configuration ID for |
+|{configId}                |String                   |The configuration ID for |
 |                          |                         |the specified            |
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
@@ -91,10 +87,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Update Some Configuration Parameters: JSON request**
+
+**Example Update some configuration parameters: JSON request**
 
 
 .. code::
@@ -117,13 +115,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Update Some Configuration Parameters: JSON response**
+
+
+**Example Update some configuration parameters: JSON response**
 
 
 .. code::
@@ -135,4 +135,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:15 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Detach Replica -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Detach Replica
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <patch-detach-replica-version-accountid-instances-instanceid.html#request>`__
-`Response <patch-detach-replica-version-accountid-instances-instanceid.html#response>`__
+Detach replica
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -83,18 +76,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -103,10 +99,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Detach Replica: JSON request**
+
+**Example Detach replica: JSON request**
 
 
 .. code::
@@ -127,13 +125,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Detach Replica: JSON response**
+
+
+**Example Detach replica: JSON response**
 
 
 .. code::
@@ -146,4 +146,5 @@ Response
     Date: Tue, 21 Oct 2014 21:47:15 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Ha Database Instance Details -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Ha Database Instance Details
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-ha-database-instance-details-version-accountid-ha-haid.html#request>`__
-`Response <get-list-ha-database-instance-details-version-accountid-ha-haid.html#response>`__
+List HA database instance details
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,18 +66,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{haId}                    |xsd:string               |The ID for the specified |
+|{haId}                    |String                   |The ID for the specified |
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
@@ -92,10 +88,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Ha Database Instance Details: JSON request**
+
+**Example List HA database instance details: JSON request**
 
 
 .. code::
@@ -110,13 +108,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Ha Database Instance Details: JSON response**
+
+
+**Example List HA database instance details: JSON response**
 
 
 .. code::
@@ -237,4 +237,5 @@ Response
        }
     }
     
+
 

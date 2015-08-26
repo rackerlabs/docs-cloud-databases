@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Scheduled Backup -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Create Scheduled Backup
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-scheduled-backup-version-accountid-schedules.html#request>`__
-`Response <post-create-scheduled-backup-version-accountid-schedules.html#response>`__
+Create scheduled backup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -101,14 +94,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -117,10 +113,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Create Scheduled Backup: JSON request**
+
+**Example Create scheduled backup: JSON request**
 
 
 .. code::
@@ -145,13 +143,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Create Scheduled Backup: JSON response**
+
+
+**Example Create scheduled backup: JSON response**
 
 
 .. code::
@@ -178,4 +178,5 @@ Response
         }
     }
     
+
 

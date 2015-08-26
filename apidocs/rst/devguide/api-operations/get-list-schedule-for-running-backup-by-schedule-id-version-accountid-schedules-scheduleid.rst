@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Schedule For Running Backup By Schedule Id -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Schedule For Running Backup By Schedule Id
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.html#request>`__
-`Response <get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.html#response>`__
+List schedule for running backup by schedule ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,18 +66,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{scheduleId}              |xsd:string               |The schedule ID for the  |
+|{scheduleId}              |String                   |The schedule ID for the  |
 |                          |                         |specified schedule.      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -92,10 +88,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Schedule For Running Backup By Schedule Id: JSON request**
+
+**Example List schedule for running backup by schedule ID: JSON request**
 
 
 .. code::
@@ -110,13 +108,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Schedule For Running Backup By Schedule Id: JSON response**
+
+
+**Example List schedule for running backup by schedule ID: JSON response**
 
 
 .. code::
@@ -143,4 +143,5 @@ Response
         }
     }
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List User Access -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List User Access
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-user-access-version-accountid-instances-instanceid-users-name-databases.html#request>`__
-`Response <get-list-user-access-version-accountid-instances-instanceid-users-name-databases.html#response>`__
+List user access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,20 +66,23 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +---------------+--------------+-----------------------------------------------+
 |Name           |Type          |Description                                    |
 +===============+==============+===============================================+
-|{accountId}    |xsd:string    |The account ID of the owner of the specified   |
+|{accountId}    |String        |The account ID of the owner of the specified   |
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
-|{instanceId}   |xsd:string    |The instance ID for the specified database     |
+|{instanceId}   |String        |The instance ID for the specified database     |
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
-|{name}         |xsd:string    |The name for the specified user. Refer to      |
+|{name}         |String        |The name for the specified user. Refer to      |
 |               |              |`User access restriction by host               |
 |               |              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
 |               |              |devguide/content/user_access_restrict_by_host- |
@@ -101,10 +97,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List User Access: JSON request**
+
+**Example List user access: JSON request**
 
 
 .. code::
@@ -137,13 +135,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List User Access: JSON response**
+
+
+**Example List user access: JSON response**
 
 
 .. code::
@@ -188,4 +188,5 @@ Response
         ]
     }
     
+
 

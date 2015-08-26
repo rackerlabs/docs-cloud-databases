@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Database -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Create Database
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-database-version-accountid-instances-instanceid-databases.html#request>`__
-`Response <post-create-database-version-accountid-instances-instanceid-databases.html#response>`__
+Create database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -87,18 +80,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -107,10 +103,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Create Database: JSON request**
+
+**Example Create database: JSON request**
 
 
 .. code::
@@ -141,13 +139,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Create Database: JSON response**
+
+
+**Example Create database: JSON response**
 
 
 .. code::
@@ -159,4 +159,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:14 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

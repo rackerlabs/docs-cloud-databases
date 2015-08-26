@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Scheduled Backups -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Scheduled Backups
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-scheduled-backups-version-accountid-schedules.html#request>`__
-`Response <get-list-scheduled-backups-version-accountid-schedules.html#response>`__
+List scheduled backups
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,14 +66,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -89,10 +85,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Scheduled Backups: JSON request**
+
+**Example List scheduled backups: JSON request**
 
 
 .. code::
@@ -107,13 +105,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Scheduled Backups: JSON response**
+
+
+**Example List scheduled backups: JSON response**
 
 
 .. code::
@@ -142,4 +142,5 @@ Response
         ]
     }
     
+
 

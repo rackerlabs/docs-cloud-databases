@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Configuration Details -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Configuration Details
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-configuration-details-version-accountid-configurations-configid.html#request>`__
-`Response <get-list-configuration-details-version-accountid-configurations-configid.html#response>`__
+List configuration details
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,18 +64,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{configId}                |xsd:string               |The configuration ID for |
+|{configId}                |String                   |The configuration ID for |
 |                          |                         |the specified            |
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
@@ -91,10 +87,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Configuration Details: JSON request**
+
+**Example List configuration details: JSON request**
 
 
 .. code::
@@ -108,13 +106,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Configuration Details: JSON response**
+
+
+**Example List configuration details: JSON response**
 
 
 .. code::
@@ -143,4 +143,5 @@ Response
             }
         }
     }
+
 

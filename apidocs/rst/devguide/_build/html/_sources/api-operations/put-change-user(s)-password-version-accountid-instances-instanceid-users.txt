@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Change User(S) Password -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Change User(S) Password
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-change-user(s)-password-version-accountid-instances-instanceid-users.html#request>`__
-`Response <put-change-user(s)-password-version-accountid-instances-instanceid-users.html#response>`__
+Change user(s) password
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -79,18 +72,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -99,10 +95,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Change User(S) Password: JSON request**
+
+**Example Change user(s) password: JSON request**
 
 
 .. code::
@@ -130,13 +128,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Change User(S) Password: JSON response**
+
+
+**Example Change user(s) password: JSON response**
 
 
 .. code::
@@ -147,4 +147,5 @@ Response
     Date: Wed, 21 Mar 2012 17:46:46 GMT
     
     
+
 

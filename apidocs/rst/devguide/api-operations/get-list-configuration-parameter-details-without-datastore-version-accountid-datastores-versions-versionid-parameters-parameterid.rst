@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Configuration Parameter Details Without Datastore -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Configuration Parameter Details Without Datastore
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid.html#request>`__
-`Response <get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid.html#response>`__
+List configuration parameter details without datastore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,21 +64,24 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{versionId}               |xsd:string               |The version for the      |
+|{versionId}               |String                   |The version for the      |
 |                          |                         |specified datastore.     |
 +--------------------------+-------------------------+-------------------------+
-|{parameterId}             |xsd:string               |The parameter that may   |
+|{parameterId}             |String                   |The parameter that may   |
 |                          |                         |be configured for the    |
 |                          |                         |specified datastore and  |
 |                          |                         |version.                 |
@@ -95,10 +91,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Configuration Parameter Details Without Datastore: JSON request**
+
+**Example List configuration parameter details without datastore: JSON request**
 
 
 .. code::
@@ -115,13 +113,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Configuration Parameter Details Without Datastore: JSON response**
+
+
+**Example List configuration parameter details without datastore: JSON response**
 
 
 .. code::
@@ -141,4 +141,5 @@ Response
         "type": "integer"
     }
     
+
 

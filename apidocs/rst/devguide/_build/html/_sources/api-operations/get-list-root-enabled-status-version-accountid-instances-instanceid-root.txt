@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Root-Enabled Status -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Root-Enabled Status
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-root-enabled-status-version-accountid-instances-instanceid-root.html#request>`__
-`Response <get-list-root-enabled-status-version-accountid-instances-instanceid-root.html#response>`__
+List root-enabled status
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,18 +66,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -93,10 +89,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Root-Enabled Status: JSON request**
+
+**Example List root-enabled status: JSON request**
 
 
 .. code::
@@ -113,13 +111,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Root-Enabled Status: JSON response**
+
+
+**Example List root-enabled status: JSON response**
 
 
 .. code::
@@ -135,4 +135,5 @@ Response
         "rootEnabled": true
     }
     
+
 

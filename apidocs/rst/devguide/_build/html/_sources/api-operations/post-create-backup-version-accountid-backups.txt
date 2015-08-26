@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Backup -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Create Backup
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-backup-version-accountid-backups.html#request>`__
-`Response <post-create-backup-version-accountid-backups.html#response>`__
+Create backup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -100,14 +93,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -116,10 +112,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Create Backup: JSON request**
+
+**Example Create backup: JSON request**
 
 
 .. code::
@@ -157,13 +155,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Create Backup: JSON response**
+
+
+**Example Create backup: JSON response**
 
 
 .. code::
@@ -203,4 +203,5 @@ Response
     Date: Mon, 18 Mar 2013 19:09:17 GMT
     
     
+
 

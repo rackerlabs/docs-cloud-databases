@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete Database -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Delete Database
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-database-version-accountid-instances-instanceid-databases-databasename.html#request>`__
-`Response <delete-delete-database-version-accountid-instances-instanceid-databases-databasename.html#response>`__
+Delete database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -74,22 +67,25 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{databaseName}            |xsd:string               |The name for the         |
+|{databaseName}            |String                   |The name for the         |
 |                          |                         |specified database.      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -97,10 +93,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Delete Database: JSON request**
+
+**Example Delete database: JSON request**
 
 
 .. code::
@@ -117,13 +115,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Delete Database: JSON response**
+
+
+**Example Delete database: JSON response**
 
 
 .. code::
@@ -135,4 +135,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:14 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

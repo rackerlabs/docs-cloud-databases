@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Flavor By Id -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Flavor By Id
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-flavor-by-id-version-accountid-flavors-flavorid.html#request>`__
-`Response <get-list-flavor-by-id-version-accountid-flavors-flavorid.html#response>`__
+List flavor by ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -26,7 +19,7 @@ This resource is identical to the flavors found in the OpenStack Nova API, but w
    
    
 
-Reviewer / Writer: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.
+
 
 This table shows the possible response codes for this operation:
 
@@ -80,18 +73,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{flavorId}                |xsd:string               |The flavor ID for the    |
+|{flavorId}                |String                   |The flavor ID for the    |
 |                          |                         |specified flavor.        |
 +--------------------------+-------------------------+-------------------------+
 
@@ -99,10 +95,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Flavor By Id: JSON request**
+
+**Example List flavor by ID: JSON request**
 
 
 .. code::
@@ -119,13 +117,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Flavor By Id: JSON response**
+
+
+**Example List flavor by ID: JSON response**
 
 
 .. code::
@@ -155,4 +155,5 @@ Response
         }
     }
     
+
 

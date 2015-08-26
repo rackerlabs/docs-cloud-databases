@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List All Database Instances -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List All Database Instances
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-all-database-instances-version-accountid-instances.html#request>`__
-`Response <get-list-all-database-instances-version-accountid-instances.html#response>`__
+List all database instances
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -77,14 +70,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -96,14 +92,14 @@ This table shows the query parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|include_replicas          |string *(Required)*      |When                     |
+|include_replicas          |String *(Optional)*      |When                     |
 |                          |                         |``include_replicas`` is  |
 |                          |                         |set to ``false``, the    |
 |                          |                         |replica instances are    |
 |                          |                         |filtered out of the      |
 |                          |                         |response.                |
 +--------------------------+-------------------------+-------------------------+
-|include_ha                |string *(Required)*      |When ``include_ha`` is   |
+|include_ha                |String *(Optional)*      |When ``include_ha`` is   |
 |                          |                         |set to ``false``, the HA |
 |                          |                         |instances are filtered   |
 |                          |                         |out of the response.     |
@@ -112,10 +108,12 @@ This table shows the query parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List All Database Instances: JSON request**
+
+**Example List all database instances: JSON request**
 
 
 .. code::
@@ -160,13 +158,15 @@ This table shows the query parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List All Database Instances: JSON response**
+
+
+**Example List all database instances: JSON response**
 
 
 .. code::
@@ -511,4 +511,5 @@ Response
        ]
     }
     
+
 

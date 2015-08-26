@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Revoke User Access -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Revoke User Access
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename.html#request>`__
-`Response <delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename.html#response>`__
+Revoke user access
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -74,20 +67,23 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +---------------+--------------+-----------------------------------------------+
 |Name           |Type          |Description                                    |
 +===============+==============+===============================================+
-|{accountId}    |xsd:string    |The account ID of the owner of the specified   |
+|{accountId}    |String        |The account ID of the owner of the specified   |
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
-|{instanceId}   |xsd:string    |The instance ID for the specified database     |
+|{instanceId}   |String        |The instance ID for the specified database     |
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
-|{name}         |xsd:string    |The name for the specified user. Refer to      |
+|{name}         |String        |The name for the specified user. Refer to      |
 |               |              |`User access restriction by host               |
 |               |              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
 |               |              |devguide/content/user_access_restrict_by_host- |
@@ -97,17 +93,19 @@ This table shows the URI parameters for the request:
 |               |              |the user to connecting from a particular host  |
 |               |              |IP).                                           |
 +---------------+--------------+-----------------------------------------------+
-|{databaseName} |xsd:string    |The name for the specified database.           |
+|{databaseName} |String        |The name for the specified database.           |
 +---------------+--------------+-----------------------------------------------+
 
 
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Revoke User Access: JSON request**
+
+**Example Revoke user access: JSON request**
 
 
 .. code::
@@ -124,13 +122,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Revoke User Access: JSON response**
+
+
+**Example Revoke user access: JSON response**
 
 
 .. code::
@@ -142,4 +142,5 @@ Response
     Date: Wed, 08 May 2013 22:43:35 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

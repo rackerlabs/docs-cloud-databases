@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Add Replica To An Ha Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Add Replica To An Ha Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html#request>`__
-`Response <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html#response>`__
+Add Replica to an HA instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -81,18 +74,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{haId}                    |xsd:string               |The ID for the specified |
+|{haId}                    |String                   |The ID for the specified |
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
@@ -100,10 +96,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Add Replica To An Ha Instance: JSON request**
+
+**Example Add Replica to an HA instance: JSON request**
 
 
 .. code::
@@ -130,13 +128,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Add Replica To An Ha Instance: JSON response**
+
+
+**Example Add Replica to an HA instance: JSON response**
 
 
 .. code::
@@ -149,4 +149,5 @@ Response
     Connection: close
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List All Ha Database Instances -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List All Ha Database Instances
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-all-ha-database-instances-version-accountid-ha.html#request>`__
-`Response <get-list-all-ha-database-instances-version-accountid-ha.html#response>`__
+List all HA database instances
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,14 +66,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -89,10 +85,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List All Ha Database Instances: JSON request**
+
+**Example List all HA database instances: JSON request**
 
 
 .. code::
@@ -107,13 +105,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List All Ha Database Instances: JSON response**
+
+
+**Example List all HA database instances: JSON response**
 
 
 .. code::
@@ -148,4 +148,5 @@ Response
        ]
     }
     
+
 

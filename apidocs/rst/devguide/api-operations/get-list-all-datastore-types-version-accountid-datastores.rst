@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List All Datastore Types -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List All Datastore Types
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-all-datastore-types-version-accountid-datastores.html#request>`__
-`Response <get-list-all-datastore-types-version-accountid-datastores.html#response>`__
+List all datastore types
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,14 +66,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -89,10 +85,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List All Datastore Types: JSON request**
+
+**Example List all datastore types: JSON request**
 
 
 .. code::
@@ -109,13 +107,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List All Datastore Types: JSON response**
+
+
+**Example List all datastore types: JSON response**
 
 
 .. code::
@@ -254,4 +254,5 @@ Response
             }
         ]
     }
+
 

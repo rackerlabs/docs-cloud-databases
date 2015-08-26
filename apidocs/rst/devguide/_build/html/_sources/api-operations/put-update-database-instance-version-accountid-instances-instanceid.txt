@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Update Database Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Update Database Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <put-update-database-instance-version-accountid-instances-instanceid.html#request>`__
-`Response <put-update-database-instance-version-accountid-instances-instanceid.html#response>`__
+Update database instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -19,7 +12,7 @@ Associates a specified database instance with a configuration group.
 
 This operation associates a specified database instance with a configuration group.
 
-Reviewer: should the description note that this can be used for attaching or detaching configurations from an instance?
+
 
 .. note::
    If any of the parameters in the configuration require a restart, then you will need to reboot the Database instance after associating the configuration. You can call the API operation List Configuration Parameters to find out which of the configuration parameters require a restart.
@@ -80,18 +73,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -100,10 +96,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Update Database Instance: JSON request**
+
+**Example Update database instance: JSON request**
 
 
 .. code::
@@ -124,13 +122,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Update Database Instance: JSON response**
+
+
+**Example Update database instance: JSON response**
 
 
 .. code::
@@ -142,4 +142,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:15 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

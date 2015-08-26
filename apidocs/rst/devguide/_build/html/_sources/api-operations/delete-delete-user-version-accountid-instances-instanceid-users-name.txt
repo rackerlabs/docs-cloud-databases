@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete User -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Delete User
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-user-version-accountid-instances-instanceid-users-name.html#request>`__
-`Response <delete-delete-user-version-accountid-instances-instanceid-users-name.html#response>`__
+Delete user
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -74,20 +67,23 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +---------------+--------------+-----------------------------------------------+
 |Name           |Type          |Description                                    |
 +===============+==============+===============================================+
-|{accountId}    |xsd:string    |The account ID of the owner of the specified   |
+|{accountId}    |String        |The account ID of the owner of the specified   |
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
-|{instanceId}   |xsd:string    |The instance ID for the specified database     |
+|{instanceId}   |String        |The instance ID for the specified database     |
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
-|{name}         |xsd:string    |The name for the specified user. Refer to      |
+|{name}         |String        |The name for the specified user. Refer to      |
 |               |              |`User access restriction by host               |
 |               |              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
 |               |              |devguide/content/user_access_restrict_by_host- |
@@ -102,10 +98,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Delete User: JSON request**
+
+**Example Delete user: JSON request**
 
 
 .. code::
@@ -122,13 +120,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Delete User: JSON response**
+
+
+**Example Delete user: JSON response**
 
 
 .. code::
@@ -140,4 +140,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:14 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

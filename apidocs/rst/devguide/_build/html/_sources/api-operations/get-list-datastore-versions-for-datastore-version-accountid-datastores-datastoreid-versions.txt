@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Datastore Versions For Datastore -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Datastore Versions For Datastore
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-datastore-versions-for-datastore-version-accountid-datastores-datastoreid-versions.html#request>`__
-`Response <get-list-datastore-versions-for-datastore-version-accountid-datastores-datastoreid-versions.html#response>`__
+List datastore versions for datastore
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,18 +66,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{datastoreId}             |xsd:string               |The ID for the specified |
+|{datastoreId}             |String                   |The ID for the specified |
 |                          |                         |datastore.               |
 +--------------------------+-------------------------+-------------------------+
 
@@ -92,10 +88,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Datastore Versions For Datastore: JSON request**
+
+**Example List datastore versions for datastore: JSON request**
 
 
 .. code::
@@ -112,13 +110,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Datastore Versions For Datastore: JSON response**
+
+
+**Example List datastore versions for datastore: JSON response**
 
 
 .. code::
@@ -164,4 +164,5 @@ Response
             }
         ]
     }
+
 

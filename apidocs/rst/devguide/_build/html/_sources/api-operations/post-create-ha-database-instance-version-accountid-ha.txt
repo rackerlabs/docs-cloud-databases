@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Ha Database Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Create Ha Database Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-ha-database-instance-version-accountid-ha.html#request>`__
-`Response <post-create-ha-database-instance-version-accountid-ha.html#response>`__
+Create HA database instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -90,14 +83,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -106,10 +102,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Create Ha Database Instance: JSON request**
+
+**Example Create HA database instance: JSON request**
 
 
 .. code::
@@ -151,13 +149,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Create Ha Database Instance: JSON response**
+
+
+**Example Create HA database instance: JSON response**
 
 
 .. code::
@@ -193,4 +193,5 @@ Response
        }
     }
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Backup By Id -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Backup By Id
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-backup-by-id-version-accountid-backups-backupid.html#request>`__
-`Response <get-list-backup-by-id-version-accountid-backups-backupid.html#response>`__
+List backup by ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,18 +66,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{backupId}                |xsd:string               |The backup ID for the    |
+|{backupId}                |String                   |The backup ID for the    |
 |                          |                         |specified backup.        |
 +--------------------------+-------------------------+-------------------------+
 
@@ -92,10 +88,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Backup By Id: JSON request**
+
+**Example List backup by ID: JSON request**
 
 
 .. code::
@@ -112,13 +110,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Backup By Id: JSON response**
+
+
+**Example List backup by ID: JSON response**
 
 
 .. code::
@@ -150,4 +150,5 @@ Response
         }
     }
     
+
 

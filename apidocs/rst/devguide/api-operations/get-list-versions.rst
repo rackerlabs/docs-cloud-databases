@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Versions -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Versions
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-versions.html#request>`__
-`Response <get-list-versions.html#response>`__
+List versions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,7 +66,7 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
@@ -82,8 +75,12 @@ Request
 
 
 
+This operation does not accept a request body.
 
-**Example List Versions: JSON request**
+
+
+
+**Example List versions: JSON request**
 
 
 .. code::
@@ -100,13 +97,15 @@ Request
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Versions: JSON response**
+
+
+**Example List versions: JSON response**
 
 
 .. code::
@@ -132,4 +131,5 @@ Response
         ]
     }
     
+
 

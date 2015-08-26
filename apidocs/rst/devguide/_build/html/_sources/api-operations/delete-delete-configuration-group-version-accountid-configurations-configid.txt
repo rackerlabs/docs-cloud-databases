@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete Configuration Group -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Delete Configuration Group
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-configuration-group-version-accountid-configurations-configid.html#request>`__
-`Response <delete-delete-configuration-group-version-accountid-configurations-configid.html#response>`__
+Delete configuration group
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,18 +64,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{configId}                |xsd:string               |The configuration ID for |
+|{configId}                |String                   |The configuration ID for |
 |                          |                         |the specified            |
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
@@ -91,10 +87,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Delete Configuration Group: JSON request**
+
+**Example Delete configuration group: JSON request**
 
 
 .. code::
@@ -111,13 +109,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Delete Configuration Group: JSON response**
+
+
+**Example Delete configuration group: JSON response**
 
 
 .. code::
@@ -129,4 +129,5 @@ Response
     Date: Thu, 13 Feb 2014 21:47:19 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
+
 

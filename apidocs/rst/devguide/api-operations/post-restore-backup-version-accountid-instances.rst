@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Restore Backup -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Restore Backup
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-restore-backup-version-accountid-instances.html#request>`__
-`Response <post-restore-backup-version-accountid-instances.html#response>`__
+Restore backup
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -87,14 +80,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -103,10 +99,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Restore Backup: JSON request**
+
+**Example Restore backup: JSON request**
 
 
 .. code::
@@ -134,13 +132,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Restore Backup: JSON response**
+
+
+**Example Restore backup: JSON response**
 
 
 .. code::
@@ -193,4 +193,5 @@ Response
         }
     }
     
+
 

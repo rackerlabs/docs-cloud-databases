@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Verbose Default Configuration Parameters -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Verbose Default Configuration Parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-verbose-default-configuration-parameters-version-accountid-datastore-version-versionid-configuration-flavorid.html#request>`__
-`Response <get-list-verbose-default-configuration-parameters-version-accountid-datastore-version-versionid-configuration-flavorid.html#response>`__
+List verbose default configuration parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,21 +64,24 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{versionId}               |xsd:string               |The version for the      |
+|{versionId}               |String                   |The version for the      |
 |                          |                         |specified datastore.     |
 +--------------------------+-------------------------+-------------------------+
-|{flavorId}                |xsd:string               |The flavor ID for the    |
+|{flavorId}                |String                   |The flavor ID for the    |
 |                          |                         |specified flavor.        |
 +--------------------------+-------------------------+-------------------------+
 
@@ -93,10 +89,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Verbose Default Configuration Parameters: JSON request**
+
+**Example List verbose default configuration parameters: JSON request**
 
 
 .. code::
@@ -111,13 +109,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Verbose Default Configuration Parameters: JSON response**
+
+
+**Example List verbose default configuration parameters: JSON response**
 
 
 .. code::
@@ -351,4 +351,5 @@ Response
     }
     
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Databases For Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Databases For Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-databases-for-instance-version-accountid-instances-instanceid-databases.html#request>`__
-`Response <get-list-databases-for-instance-version-accountid-instances-instanceid-databases.html#response>`__
+List databases for instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -78,18 +71,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -98,10 +94,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Databases For Instance: JSON request**
+
+**Example List databases for instance: JSON request**
 
 
 .. code::
@@ -134,13 +132,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Databases For Instance: JSON response**
+
+
+**Example List databases for instance: JSON response**
 
 
 .. code::
@@ -200,4 +200,5 @@ Response
         ]
     }
     
+
 

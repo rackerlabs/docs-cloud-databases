@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Instances For Configuration -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Instances For Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-instances-for-configuration-version-accountid-configurations-configid-instances.html#request>`__
-`Response <get-list-instances-for-configuration-version-accountid-configurations-configid-instances.html#response>`__
+List instances for configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,18 +64,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{configId}                |xsd:string               |The configuration ID for |
+|{configId}                |String                   |The configuration ID for |
 |                          |                         |the specified            |
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
@@ -91,10 +87,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Instances For Configuration: JSON request**
+
+**Example List instances for configuration: JSON request**
 
 
 .. code::
@@ -111,13 +109,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Instances For Configuration: JSON response**
+
+
+**Example List instances for configuration: JSON response**
 
 
 .. code::
@@ -138,4 +138,5 @@ Response
         ]
     }
     
+
 

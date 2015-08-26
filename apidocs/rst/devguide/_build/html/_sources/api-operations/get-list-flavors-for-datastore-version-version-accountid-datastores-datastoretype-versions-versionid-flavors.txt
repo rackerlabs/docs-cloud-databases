@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Flavors For Datastore Version -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Flavors For Datastore Version
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-flavors-for-datastore-version-version-accountid-datastores-datastoretype-versions-versionid-flavors.html#request>`__
-`Response <get-list-flavors-for-datastore-version-version-accountid-datastores-datastoretype-versions-versionid-flavors.html#response>`__
+List flavors for datastore version
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -73,21 +66,24 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{datastoreType}           |xsd:string               |The datastore type, for  |
+|{datastoreType}           |String                   |The datastore type, for  |
 |                          |                         |example mysql.           |
 +--------------------------+-------------------------+-------------------------+
-|{versionId}               |xsd:string               |The version for the      |
+|{versionId}               |String                   |The version for the      |
 |                          |                         |specified datastore.     |
 +--------------------------+-------------------------+-------------------------+
 
@@ -95,10 +91,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Flavors For Datastore Version: JSON request**
+
+**Example List flavors for datastore version: JSON request**
 
 
 .. code::
@@ -113,13 +111,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Flavors For Datastore Version: JSON response**
+
+
+**Example List flavors for datastore version: JSON response**
 
 
 .. code::
@@ -256,4 +256,5 @@ Response
         ]
     }
     
+
 

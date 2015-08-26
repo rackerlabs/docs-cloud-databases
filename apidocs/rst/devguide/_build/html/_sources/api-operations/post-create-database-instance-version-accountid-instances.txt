@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Database Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Create Database Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-database-instance-version-accountid-instances.html#request>`__
-`Response <post-create-database-instance-version-accountid-instances.html#response>`__
+Create database instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -111,14 +104,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -127,10 +123,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Create Database Instance: JSON request**
+
+**Example Create database instance: JSON request**
 
 
 .. code::
@@ -242,13 +240,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Create Database Instance: JSON response**
+
+
+**Example Create database instance: JSON response**
 
 
 .. code::
@@ -460,4 +460,5 @@ Response
            }
        }
     }
+
 

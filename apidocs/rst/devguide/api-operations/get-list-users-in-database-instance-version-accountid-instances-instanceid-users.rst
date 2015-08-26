@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Users In Database Instance -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Users In Database Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-users-in-database-instance-version-accountid-instances-instanceid-users.html#request>`__
-`Response <get-list-users-in-database-instance-version-accountid-instances-instanceid-users.html#response>`__
+List users in database instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -87,18 +80,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -107,10 +103,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Users In Database Instance: JSON request**
+
+**Example List users in database instance: JSON request**
 
 
 .. code::
@@ -143,7 +141,9 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
 
 
 
@@ -251,4 +251,5 @@ Response
         ]
     }
     
+
 

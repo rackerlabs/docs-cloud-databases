@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Replica Source -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Replica Source
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-replica-source-version-accountid-instances-instanceid.html#request>`__
-`Response <get-list-replica-source-version-accountid-instances-instanceid.html#response>`__
+List replica source
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -84,18 +77,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -104,10 +100,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Replica Source: JSON request**
+
+**Example List replica source: JSON request**
 
 
 .. code::
@@ -122,13 +120,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Replica Source: JSON response**
+
+
+**Example List replica source: JSON response**
 
 
 .. code::
@@ -200,4 +200,5 @@ Response
       }
     }
     
+
 

@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Create Configuration -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Create Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <post-create-configuration-version-accountid-configurations.html#request>`__
-`Response <post-create-configuration-version-accountid-configurations.html#response>`__
+Create configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -71,14 +64,17 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -92,30 +88,30 @@ This table shows the body parameters for the request:
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|datastore                 |object *(Required)*      |The datastore for the    |
+|datastore                 |Object *(Optional)*      |The datastore for the    |
 |                          |                         |configuration. If        |
 |                          |                         |omitted, it defaults to  |
 |                          |                         |MySQL 5.6.               |
 +--------------------------+-------------------------+-------------------------+
-|type                      |string *(Required)*      |The type of the          |
+|type                      |String *(Optional)*      |The type of the          |
 |                          |                         |datastore for the        |
 |                          |                         |configuration. If        |
 |                          |                         |omitted, it defaults to  |
 |                          |                         |MySQL.                   |
 +--------------------------+-------------------------+-------------------------+
-|version                   |string *(Required)*      |The version of the       |
+|version                   |String *(Optional)*      |The version of the       |
 |                          |                         |datastore for the        |
 |                          |                         |configuration. If        |
 |                          |                         |omitted, it defaults to  |
 |                          |                         |MySQL 5.6.               |
 +--------------------------+-------------------------+-------------------------+
-|description               |string *(Required)*      |The description for the  |
+|description               |String *(Optional)*      |The description for the  |
 |                          |                         |configuration.           |
 +--------------------------+-------------------------+-------------------------+
-|name                      |string *(Required)*      |The name for the         |
+|name                      |String *(Required)*      |The name for the         |
 |                          |                         |configuration.           |
 +--------------------------+-------------------------+-------------------------+
-|values                    |object *(Required)*      |The values for the       |
+|values                    |Object *(Required)*      |The values for the       |
 |                          |                         |configuration. The key   |
 |                          |                         |value pairs "values"     |
 |                          |                         |should be in JSON format |
@@ -135,7 +131,7 @@ This table shows the body parameters for the request:
 
 
 
-**Example Create Configuration: JSON request**
+**Example Create configuration: JSON request**
 
 
 .. code::
@@ -166,13 +162,15 @@ This table shows the body parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Create Configuration: JSON response**
+
+
+**Example Create configuration: JSON response**
 
 
 .. code::
@@ -202,4 +200,5 @@ Response
         }
     }
     
+
 

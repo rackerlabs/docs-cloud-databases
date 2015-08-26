@@ -25,6 +25,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             "name": "mysql", 
             "versions": [
                 {
+                    "ha_supported": false,
                     "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
                     "links": [
                         {
@@ -36,9 +37,11 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                             "rel": "bookmark"
                         }
                     ], 
-                    "name": "5.1"
+                    "name": "5.1",
+                    "replication_supported": false
                 }, 
                 {
+                    "ha_supported": true,
                     "id": "c00000b0-00c0-0c00-00c0-000b000000cc",
                     "links": [
                         {
@@ -50,7 +53,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                             "rel": "bookmark"
                         }
                     ], 
-                    "name": "5.6"
+                    "name": "5.6",
+                    "replication_supported": true
                 }
             ]
         }, 
@@ -70,6 +74,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             "name": "percona", 
             "versions": [
                 {
+                    "ha_supported": true,
                     "id": "e8b1ee46-58c9-459e-bb02-50ddc8844be7", 
                     "links": [
                         {
@@ -81,7 +86,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                             "rel": "bookmark"
                         }
                     ], 
-                    "name": "5.6"
+                    "name": "5.6",
+                    "replication_supported": true
                 }
             ]
         }, 
@@ -101,6 +107,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
             "name": "mariadb", 
             "versions": [
                 {
+                    "ha_supported": true,
                     "id": "53e8fe38-c18d-47d8-9d9e-2ba09a57ae6c", 
                     "links": [
                         {
@@ -112,7 +119,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
                             "rel": "bookmark"
                         }
                     ], 
-                    "name": "10.0"
+                    "name": "10.0",
+                    "replication_supported" true
                 }, 
                 {
                     "id": "bf414e62-0e66-4e0f-9b76-05d7408eb140", 

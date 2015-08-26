@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-Delete Schedule For Running Backup By Schedule Id -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-Delete Schedule For Running Backup By Schedule Id
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.html#request>`__
-`Response <delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.html#response>`__
+Delete schedule for running backup by schedule ID
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -74,18 +67,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{scheduleId}              |xsd:string               |The schedule ID for the  |
+|{scheduleId}              |String                   |The schedule ID for the  |
 |                          |                         |specified schedule.      |
 +--------------------------+-------------------------+-------------------------+
 
@@ -93,10 +89,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example Delete Schedule For Running Backup By Schedule Id: JSON request**
+
+**Example Delete schedule for running backup by schedule ID: JSON request**
 
 
 .. code::
@@ -111,13 +109,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example Delete Schedule For Running Backup By Schedule Id: JSON response**
+
+
+**Example Delete schedule for running backup by schedule ID: JSON response**
 
 
 .. code::
@@ -127,4 +127,5 @@ Response
     Content-Length: 0
     Date: Mon, 18 Mar 2013 19:09:17 GMT
     
+
 

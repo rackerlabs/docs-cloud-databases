@@ -1,15 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-=============================================================================
-List Database Instance Status And Details -  Rackspace Cloud Databases Developer Guide
-=============================================================================
-
-List Database Instance Status And Details
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-`Request <get-list-database-instance-status-and-details-version-accountid-instances-instanceid.html#request>`__
-`Response <get-list-database-instance-status-and-details-version-accountid-instances-instanceid.html#response>`__
+List database instance status and details
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -84,18 +77,21 @@ This table shows the possible response codes for this operation:
 
 
 Request
-^^^^^^^^^^^^^^^^^
+""""""""""""""""
+
+
+
 
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
 +==========================+=========================+=========================+
-|{accountId}               |xsd:string               |The account ID of the    |
+|{accountId}               |String                   |The account ID of the    |
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{instanceId}              |xsd:string               |The instance ID for the  |
+|{instanceId}              |String                   |The instance ID for the  |
 |                          |                         |specified database       |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
@@ -104,10 +100,12 @@ This table shows the URI parameters for the request:
 
 
 
+This operation does not accept a request body.
 
 
 
-**Example List Database Instance Status And Details: JSON request**
+
+**Example List database instance status and details: JSON request**
 
 
 .. code::
@@ -168,13 +166,15 @@ This table shows the URI parameters for the request:
 
 
 Response
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""
 
 
 
 
 
-**Example List Database Instance Status And Details: JSON response**
+
+
+**Example List database instance status and details: JSON response**
 
 
 .. code::
@@ -428,4 +428,5 @@ Response
        }
     }
     
+
 
