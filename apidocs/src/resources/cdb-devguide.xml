@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-08-27</pubdate>
+        <pubdate>2015-08-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -80,7 +80,7 @@
         
         <revhistory>
             <revision>
-                <date>2015-08-27</date>
+                <date>2015-08-25</date>
                 <revdescription>
                     <itemizedlist spacing="compact">
                         <listitem>
@@ -88,8 +88,9 @@
                                    <code>ha_supported</code> and
                                    <code>replication_supported</code>
                                 for API operation <link
-                                    xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getDatastoreTypes__version___accountId__datastores_datastore_types_and_versions.html"
-                                   >List all datastore types</link>.</para>
+                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getDatastoreTypes__version___accountId__datastores_datastore_types_and_versions.html"
+                                   >List all datastore
+                                types</link>.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
