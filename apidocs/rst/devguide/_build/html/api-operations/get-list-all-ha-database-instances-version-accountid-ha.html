@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="list-all-ha-database-instances">
-<h1>List all HA database instances<a class="headerlink" href="#list-all-ha-database-instances" title="Permalink to this headline">¶</a></h1>
+<span id="api-operations-get-list-all-ha-database-instances-version-accountid-ha"></span><h1>List all HA database instances<a class="headerlink" href="#list-all-ha-database-instances" title="Permalink to this headline">¶</a></h1>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">ha</span>
 </pre></div>
 </div>
@@ -136,44 +136,44 @@ token.</td>
 <td>You are denied access to
 the requested resource.</td>
 </tr>
-<tr class="row-even"><td>405</td>
+<tr class="row-even"><td>404</td>
+<td>Not Found</td>
+<td>The requested item was
+not found.</td>
+</tr>
+<tr class="row-odd"><td>405</td>
 <td>badMethod</td>
 <td>The specified method is
 not allowed for the
 given resource.</td>
 </tr>
-<tr class="row-odd"><td>413</td>
+<tr class="row-even"><td>413</td>
 <td>Over Limit</td>
 <td>The number of items
 returned is above the
 allowed limit.</td>
 </tr>
-<tr class="row-even"><td>422</td>
+<tr class="row-odd"><td>422</td>
 <td>unprocessableEntity</td>
 <td>The item cannot be
 processed.</td>
 </tr>
-<tr class="row-odd"><td>500</td>
+<tr class="row-even"><td>500</td>
 <td>instanceFault</td>
 <td>The instance has
 experienced a fault.</td>
 </tr>
-<tr class="row-even"><td>501</td>
+<tr class="row-odd"><td>501</td>
 <td>notImplemented</td>
 <td>The server does not
 support the
 functionality required
 to fulfill the request.</td>
 </tr>
-<tr class="row-odd"><td>503</td>
+<tr class="row-even"><td>503</td>
 <td>Service Unavailable</td>
 <td>The service is not
 available.</td>
-</tr>
-<tr class="row-even"><td>404</td>
-<td>Not Found</td>
-<td>The requested item was
-not found.</td>
 </tr>
 </tbody>
 </table>

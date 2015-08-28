@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _api-operations-get-list-backup-by-id-version-accountid-backups-backupid:
+
 List backup by ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -38,6 +40,9 @@ This table shows the possible response codes for this operation:
 |403                       |Forbidden                |You are denied access to |
 |                          |                         |the requested resource.  |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |405                       |badMethod                |The specified method is  |
 |                          |                         |not allowed for the      |
 |                          |                         |given resource.          |
@@ -59,9 +64,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -118,6 +120,9 @@ Response
 
 
 
+
+
+
 **Example List backup by ID: JSON response**
 
 
@@ -150,5 +155,4 @@ Response
         }
     }
     
-
 

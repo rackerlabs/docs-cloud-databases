@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _api-operations-put-grant-user-access-version-accountid-instances-instanceid-users-name-databases:
+
 Grant user access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -39,6 +41,9 @@ This table shows the possible response codes for this operation:
 |403                       |Forbidden                |You are denied access to |
 |                          |                         |the requested resource.  |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |405                       |badMethod                |The specified method is  |
 |                          |                         |not allowed for the      |
 |                          |                         |given resource.          |
@@ -60,9 +65,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -134,6 +136,9 @@ Response
 
 
 
+
+
+
 **Example Grant user access: JSON response**
 
 
@@ -146,5 +151,4 @@ Response
     Date: Wed, 08 May 2013 22:43:35 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
-
 

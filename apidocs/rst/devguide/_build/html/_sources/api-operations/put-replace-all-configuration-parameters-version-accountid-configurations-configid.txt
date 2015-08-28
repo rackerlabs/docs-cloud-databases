@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _api-operations-put-replace-all-configuration-parameters-version-accountid-configurations-configid:
+
 Replace all configuration parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -36,6 +38,9 @@ This table shows the possible response codes for this operation:
 |403                       |Forbidden                |You are denied access to |
 |                          |                         |the requested resource.  |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |405                       |badMethod                |The specified method is  |
 |                          |                         |not allowed for the      |
 |                          |                         |given resource.          |
@@ -57,9 +62,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -126,6 +128,9 @@ Response
 
 
 
+
+
+
 **Example Replace all configuration parameters: JSON response**
 
 
@@ -138,5 +143,4 @@ Response
     Date: Thu, 13 Feb 2014 21:47:15 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
     
-
 

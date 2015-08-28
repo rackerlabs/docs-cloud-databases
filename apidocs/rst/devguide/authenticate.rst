@@ -36,7 +36,7 @@ Rackspace Cloud Identity Service Endpoints
 .. important:: Multiple Rackspace Cloud Identity Service endpoints exist. You
    may use any endpoint, regardless of where your account was created.
 
-When you authenticate, use one of the following endpoints:
+When you authenticate, use one of the endpoints summarized in the table below.
 
 .. tip:: To help you decide which regionalized endpoint to use, read about
    special considerations for choosing a data center at
@@ -274,7 +274,7 @@ Locate the correct service name in the service catalog, as follows:
 
 .. tip:: To help you decide which regionalized endpoint to use, read about
    special considerations for choosing a data center at
-   http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions.
+   `special considerations <http://www.rackspace.com/knowledge_center/article/about-regions>`_.
 
    If you use the authentication token to access this service, you can
    view and perform Cloud Networks or next generation Cloud Servers API

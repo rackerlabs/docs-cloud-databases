@@ -76,7 +76,7 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
-			<revision>
+    		<revision security="internal">
 				<date>2015-08-27</date>
 				<revdescription>
 					<para>Updated for v2.29.0.</para>
@@ -701,7 +701,7 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.29.0">
+	<chapter xml:id="cdbv2.29.0" security="internal">
 		<title>v2.29.0, August 27, 2015</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>

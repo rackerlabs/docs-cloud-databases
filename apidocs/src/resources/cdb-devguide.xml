@@ -1943,8 +1943,8 @@
                     service catalog. Refer to the next section for
                     more information about service endpoints. </para>
             </section>
-            <section xml:id="How_Authentication_Works_with_DNS-d1e297">
-                <title>How authentication works with DNS</title>
+            <section xml:id="How_Authentication_Works_with_DB-d1e4635">
+                <title>How authentication works with DB</title>
                 <para> The contract version denotes the data model and
                     behavior that the API supports. The requested
                     contract version is included in all request URLs.

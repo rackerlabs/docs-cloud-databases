@@ -1,6 +1,8 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
+.. _api-operations-get-list-all-datastore-types-version-accountid-datastores:
+
 List all datastore types
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -38,6 +40,9 @@ This table shows the possible response codes for this operation:
 |403                       |Forbidden                |You are denied access to |
 |                          |                         |the requested resource.  |
 +--------------------------+-------------------------+-------------------------+
+|404                       |Not Found                |The requested item was   |
+|                          |                         |not found.               |
++--------------------------+-------------------------+-------------------------+
 |405                       |badMethod                |The specified method is  |
 |                          |                         |not allowed for the      |
 |                          |                         |given resource.          |
@@ -59,9 +64,6 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |503                       |Service Unavailable      |The service is not       |
 |                          |                         |available.               |
-+--------------------------+-------------------------+-------------------------+
-|404                       |Not Found                |The requested item was   |
-|                          |                         |not found.               |
 +--------------------------+-------------------------+-------------------------+
 
 
@@ -115,6 +117,9 @@ Response
 
 
 
+
+
+
 **Example List all datastore types: JSON response**
 
 
@@ -147,6 +152,7 @@ Response
                 "name": "mysql", 
                 "versions": [
                     {
+                        "ha_supported": false,
                         "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
                         "links": [
                             {
@@ -158,9 +164,11 @@ Response
                                 "rel": "bookmark"
                             }
                         ], 
-                        "name": "5.1"
+                        "name": "5.1",
+                        "replication_supported": false
                     }, 
                     {
+                        "ha_supported": true,
                         "id": "c00000b0-00c0-0c00-00c0-000b000000cc",
                         "links": [
                             {
@@ -172,7 +180,8 @@ Response
                                 "rel": "bookmark"
                             }
                         ], 
-                        "name": "5.6"
+                        "name": "5.6",
+                        "replication_supported": true
                     }
                 ]
             }, 
@@ -192,6 +201,7 @@ Response
                 "name": "percona", 
                 "versions": [
                     {
+                        "ha_supported": true,
                         "id": "e8b1ee46-58c9-459e-bb02-50ddc8844be7", 
                         "links": [
                             {
@@ -203,7 +213,8 @@ Response
                                 "rel": "bookmark"
                             }
                         ], 
-                        "name": "5.6"
+                        "name": "5.6",
+                        "replication_supported": true
                     }
                 ]
             }, 
@@ -223,6 +234,7 @@ Response
                 "name": "mariadb", 
                 "versions": [
                     {
+                        "ha_supported": true,
                         "id": "53e8fe38-c18d-47d8-9d9e-2ba09a57ae6c", 
                         "links": [
                             {
@@ -234,7 +246,8 @@ Response
                                 "rel": "bookmark"
                             }
                         ], 
-                        "name": "10.0"
+                        "name": "10.0",
+                        "replication_supported" true
                     }, 
                     {
                         "id": "bf414e62-0e66-4e0f-9b76-05d7408eb140", 
@@ -254,5 +267,4 @@ Response
             }
         ]
     }
-
 
