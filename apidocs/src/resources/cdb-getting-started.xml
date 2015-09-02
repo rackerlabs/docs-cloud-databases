@@ -50,13 +50,33 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-08-11</pubdate>
+        <pubdate>2015-09-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2015-09-02</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Added new operations Remove replica
+                                from HA instance and List backups of
+                                an HA instance in <xref
+                                   linkend="trove_summary_ha"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated Create backup to also
+                                support HA instances in <xref
+                                   linkend="trove_summary_backups"
+                                />.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-08-11</date>
                 <revdescription>
@@ -3959,7 +3979,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     <term><emphasis role="bold">Create
                             backup</emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;instance&gt; &lt;name&gt; [--description &lt;description>] [--parent &lt;parent>]</programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove backup-create &lt;name&gt;[--instance &lt;instance>] [--ha_instance &lt;ha_instance>] [--description &lt;description>] [--parent &lt;parent>]</programlisting>
                         <itemizedlist>
                             <title>Positional Arguments</title>
                             <listitem>
@@ -3967,28 +3987,42 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                                    <parameter>name</parameter>. The
                                    name of the backup. </para>
                             </listitem>
-                            <listitem>
-                                <para>
-                                   <parameter>instance</parameter>.
-                                   The ID of the instance. </para>
-                            </listitem>
                         </itemizedlist>
                         <itemizedlist>
                             <title>Optional Arguments</title>
+                            <note>
+                                <para>Either of the following need to
+                                   be specified for a standalone
+                                   instance backup and HA backup
+                                   respectively: <code>instance</code>
+                                   or <code>ha_instance</code>.</para>
+                            </note>
+                            <listitem>
+                                <para>
+                                   <option>--instance</option>
+                                   <parameter>&lt;instance></parameter>.
+                                   ID of the instance to
+                                   backup.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--ha_instance</option>
+                                   <parameter>&lt;ha_instance></parameter>.
+                                   ID of the HA instance to
+                                   backup.</para>
+                            </listitem>
                             <listitem>
                                 <para>
                                    <option>--description</option>
-                                   <parameter>description</parameter>.
-                                   A description for the backup.
-                                </para>
+                                   <parameter>&lt;description></parameter>.
+                                   A description for the backup. </para>
                             </listitem>
                             <listitem>
                                 <para>
                                    <option>--parent</option>
-                                   <parameter>parent</parameter>. ID
-                                   of the parent backup from which to
-                                   perform an incremental backup.
-                                </para>
+                                   <parameter>&lt;parent></parameter>.
+                                   ID of the parent backup from which
+                                   to perform an incremental backup. </para>
                             </listitem>
                         </itemizedlist>
                     </listitem>
@@ -4375,6 +4409,48 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                                    volume in GB. </para>
                             </listitem>
                         </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">List Backups for HA
+                            instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt>   trove ha-mysql-backup-list [--limit &lt;limit&gt;] &lt;ha_instance&gt;  </programlisting>
+                        <itemizedlist>
+                            <title>Required Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>ha_instance</option>. The
+                                   ID of the HA MySQL instance.
+                                </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--limit</option>
+                                   <parameter> &lt;limit></parameter>.
+                                   Return up to the specified limit of
+                                   the most recent backups. </para>
+                            </listitem>
+                        </itemizedlist>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Remove replica from an
+                            HA instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove   ha-mysql-remove-replica &lt;ha_instance&gt; &lt;instance&gt;</programlisting>
+                        <para> Where
+                                <parameter>ha_instance</parameter> is
+                            the ID of the HA MySQL instance and
+                                <parameter>instance</parameter> is the
+                            ID of the replica.</para>
                     </listitem>
                 </varlistentry>
             </variablelist>

@@ -116,6 +116,7 @@
                 </resource>
                 <resource id="backups" path="backups">
                     <method href="#createBackup" />
+                    <method href="#createBackupForHaInstance" />
                     <method href="#getBackups" />
                     <resource id="backupId" path="{backupId}">
                         <param name="backupId" style="template" type="xsd:string" >
@@ -236,6 +237,10 @@
                         <method href="#deleteInstanceByHaId" />
                         <resource id="action" path="action">
                             <method href="#addReplicaToHaInstance" />
+                            <method href="#deleteReplicaFromHaInstance" />
+                        </resource>
+                        <resource id="backup3" path="backups">
+                            <method href="#getBackupsForHaInstance" />
                         </resource>
                         <resource id="acls" path="acls">
                             <method href="#addAclToHaInstance" />
@@ -1780,6 +1785,147 @@
         &getFaults;
     </method>
     
+    <method name="POST" id="createBackupForHaInstance">
+        <wadl:doc xml:lang="EN" title="Create backup for an HA Instance" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Creates a new <glossterm>backup</glossterm> for the specified HA instance.</para>
+            <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified HA instance. 
+                This call requires the user to specify an HA ID to backup and a name for the backup. </para>
+            <para>The following table lists the required and optional attributes for Create Backup for an HA Instance:</para>
+            
+            <table rules="all">
+                <caption>Required and optional attributes for Create backup</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name</td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">name</td>
+                        <td colspan="3"><para>Specifies the short name of the backup.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">instance</td>
+                        <td colspan="3"><para>Specifies the database instanceId to backup.
+                            But since we would need to create a backup of the entire HA group, 
+                            the value of this field should be empty.</para></td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">description</td>
+                        <td colspan="3"><para>Specifies a long description of the backup.</para></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">parent_id</td>
+                        <td colspan="3"><para>Specifies the backupId from which to create an incremental backup.</para></td>
+                        <td colspan="1">No</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">source</td>
+                        <td colspan="3"><para>Specifies the source type (instance/ha) and source id (instanceID/haID).</para></td>
+                        <td colspan="1">Yes (to create HA group backups)</td>
+                    </tr>
+                </tbody>
+            </table> 
+            
+            <table rules="all">
+                <caption>Length restrictions for backup <code>name</code> parameter</caption>
+                <thead>
+                    <tr>
+                        <td colspan="3">Restriction</td>
+                        <td colspan="1">Value</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="3"><para>name maximum length</para></td>
+                        <td colspan="1">64</td>
+                    </tr>
+                </tbody>
+            </table> 
+            <note><title>Notes</title>
+                <itemizedlist>
+                    <listitem><para>To list, show details of a HA backup, refer to the following: <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackups__version___accountId__backups_backups.html"
+                        >List backups</link> and <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackupById__version___accountId__backups__backupId__backups.html"
+                            >List backups by ID</link>.</para>
+                    </listitem>
+                    <listitem><para>To list backups for a specified HA instance, refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackupsForHaInstance__version___accountId__ha__haId__backups_backups.html"
+                        >List backups of an HA instance</link>.</para>
+                    </listitem>
+                    <listitem><para>While creating a backup of a HA Instance, the backup of the latest replica instance (the one closest to the source) is taken.</para>
+                    </listitem>
+                    <listitem><para>The HA instance goes into a <code>BACKUP</code> state if it has a running backup.</para>
+                    </listitem>
+                    <listitem><para>Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to <link
+                        xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link> for details.</para>
+                    </listitem>
+                    <listitem><para>During backup the files will be streamed to your Cloud Files account. The process creates a container called 
+                        z_CLOUDDB_BACKUPS and places all the files in it. In order for the restore and deletion of backups to work properly, 
+                        you should not move, rename, or delete any of the files from this container. You will be charged the normal Cloud Files 
+                        rate for storage of these files. For pricing details, refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
+                            >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
+                        No additional Cloud Databases fee applies for creating backups. You can delete old backups through the API. 
+                        For details see <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link>.</para>
+                    </listitem>
+                    <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
+                        there may be some files that were placed in the container. 
+                        You should use the API to delete the backup to remove any leftover files. Refer to <link
+                            xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                            >Delete backup</link> for details.</para>
+                    </listitem>
+                    
+                    
+                    <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
+                    </listitem>
+                </itemizedlist></note>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json" element="dbaas:Backup">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create backup of an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-ha-request.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" element="dbaas:Backup">
+                <doc title="Create incremental backup request: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create incremental backup request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-ha-request-json-http.txt"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-ha-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create backup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-ha-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json" element="dbaas:Backup">
+                <doc title="Create incremental backup response: JSON">
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create incremental backup response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-ha-response-json-http.txt"/>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-incremental-ha-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
     <method name="GET" id="getBackups">
         <wadl:doc xml:lang="EN" title="List backups" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all backups for all database instances.</para>
@@ -1840,6 +1986,14 @@
                 </doc>
             </representation>
         </request>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Show details of an HA instance backup by ID request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-ha-get-request.json"/>
+                </doc>
+            </representation>
+        </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
             <representation mediaType="application/json"
@@ -1847,6 +2001,13 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backup by ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-get-response.json"/>
+                </doc>
+            </representation>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Show details of an HA instance backup by ID response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-backup-ha-get-response.json"/>
                 </doc>
             </representation>
         </response>
@@ -3289,11 +3450,13 @@
                     <tr>
                         <td colspan="1">acls
                         </td>
-                        <td colspan="3">IP based ACL in the CIDR format. For example: 1.2.3.4/32. This is required to allow the 
-                            HA group access to the specified IP. By default, the HA group access is blocked. Additionally, if it 
-                            is not specified while creating the HA group, it can be added later. Refer to <link
+                        <td colspan="3">Comma
+                            separated list of IP based ACLs in the CIDR format. This is required to allow the HA group access to the 
+                            specified IP. By default, the HA group access is blocked. For eg: "acls": 
+                            [{"address": "10.0.0.0/0"}, {"address":  “1.2.3.4/5”}].  Additionally, if it is not specified while 
+                            creating the HA group, it can be added later. Refer to <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
-                                >Add ACLs to an HA instance</link>section 4.10.5 for details.
+                                >Add ACLs to an HA instance</link> for details.
                         </td>
                         <td colspan="1">No</td>
                     </tr>
@@ -3381,6 +3544,35 @@
         &getFaults;
     </method>
     
+    <method name="GET" id="getBackupsForHaInstance">
+        <wadl:doc xml:lang="EN" title="List backups of an HA instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Lists backups for the HA instance specified by ha_id.</para>
+            <para>This operation lists the backups of the HA instance specified by ha_id.</para>
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups of an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-ha-backups-get-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the List backups of an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-instance-ha-backups-get-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
     <method name="DELETE" id="deleteInstanceByHaId">
         <wadl:doc xml:lang="EN" title="Delete HA database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes an HA database instance.</para>
@@ -3413,7 +3605,9 @@
     <method name="POST" id="addReplicaToHaInstance">
         <wadl:doc xml:lang="EN" title="Add Replica to an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Add a replica node to the HA group specified by {ha_id}.</para>
-            <para>This operation adds a replica node to the HA group specified by {ha_id}.</para>
+            <para>This operation adds a replica node to the HA group specified by {ha_id}.
+                The HA instance goes into the <code>ADDING_REPLICA</code> state as a result of this action. 
+                It switches back to <code>ACTIVE</code> once the operation is complete.</para>
             <warning><para>Adding a new replica node would restart the mha manager service (which monitors the 
                 source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. 
                 Refer to the Knowledge Center article for more details about these components: 
@@ -3459,6 +3653,68 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Add replica to an HA instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-add-replica-to-ha-instance-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="POST" id="deleteReplicaFromHaInstance">
+        <wadl:doc xml:lang="EN" title="Remove Replica from an HA instance"  xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Removes a replica node from the HA setup specified by {ha_id}.</para>
+            <para>This operation removes/detaches a replica node from the HA group. The HA instance goes into
+                the <code>REMOVING_REPLICA</code> state as a result of this action. It switches back to 
+                <code>ACTIVE</code> once the operation is complete. The instance that is detached also goes into a
+                <code>DETACH_REPLICA</code> state when it is being disabled as a replica and switches back to 
+                <code>ACTIVE</code> once detached.</para>
+            <warning><para>Removing a replica node would restart the MHA manager service (which monitors the 
+                source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. 
+                Refer to the Knowledge Center article for more details about these components: 
+                <link
+                    xlink:href="https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
+                    >High Availability for Cloud Databases</link>.
+            </para></warning>
+            <warning><para> Detaching a replica from the HA setup will cause a MySQL service restart on the detached 
+                instance.</para></warning>
+            <para>The following table lists the required and optional attributes for creating a replica for an 
+                HA instance.</para>
+            
+            <!--      <table rules="all">
+                <caption>Required and optional attributes for Create database</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">address</td>
+                        <td colspan="3">Specifies the CIDR notated IPV4 address. The IPV4 address to use should be CIDR notated.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                </tbody>
+            </table>   -->
+            
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Remove replica from an HA instance request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-remove-replica-from-ha-instance-request.json"/>
+                </doc>
+            </representation>
+            
+        </request>
+        <response status="202">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
+            <representation mediaType="application/json"
+                element="dbaas:DatabaseInstance" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Remove replica from an HA instance response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-remove-replica-from-ha-instance-response.json"/>
                 </doc>
             </representation>
         </response>

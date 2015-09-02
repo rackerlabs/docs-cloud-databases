@@ -27,6 +27,6 @@ When making an API call to create, list, or delete database instance(s), the fol
 -  SHUTDOWN – The database instance is terminating services. Also, SHUTDOWN is returned if for any reason the database instance is shut down but not the actual server.
 
     ..  note:: 
-        If the database engine has crashed (causing the SHUTDOWN status), please call support for assistance.
+	If the database engine has crashed (causing the SHUTDOWN status), please call support for assistance.
 
 -  ERROR – The last operation for the database instance failed due to an error.

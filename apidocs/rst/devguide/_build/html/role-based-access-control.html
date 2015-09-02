@@ -114,8 +114,8 @@ the account is created.</p>
 to perform the following tasks:</p>
 <ul class="simple">
 <li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/POST_addUser_v2.0_users_User_Calls.html">Create account users</a></li>
-<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html">Assign roles to account users</a></li>
-<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole_v2.0_users__userId__roles_OS-KSADM__roleId__Role_Calls.html">Delete roles from account users</a></li>
+<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/PUT_addUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html">Assign roles to account users</a></li>
+<li><a class="reference external" href="http://docs.rackspace.com/auth/api/v2.0/auth-client-devguide/content/DELETE_deleteUserRole__v2.0_users__userId__roles_OS-KSADM__roleid__Role_Calls.html">Delete roles from account users</a></li>
 </ul>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -123,58 +123,91 @@ to perform the following tasks:</p>
 additional roles because it already has full access to all capabilities.</p>
 </div>
 </div>
-<div class="section" id="roles-available-for-next-gen-cloud-servers">
-<h2>Roles Available for next gen Cloud Servers<a class="headerlink" href="#roles-available-for-next-gen-cloud-servers" title="Permalink to this headline">¶</a></h2>
-<p>Three roles (observer, creator, and admin) can be used to access the
-next gen Cloud Servers API specifically. The following table describes
-these roles and their permissions.</p>
-<p><strong>Next Gen Cloud Servers Product Roles and Permissions</strong></p>
-<p>nova:admin - This role provides Create, Read, Update, and Delete permissions in
-next gen Cloud Servers, where access is granted.</p>
-<dl class="docutils">
-<dt>nova:creator - This role provides Create, Read, and Update permissions in next</dt>
-<dd>gen Cloud Servers, where access is granted.</dd>
-</dl>
-<p>nova:observer - This role provides Read permission in next gen Cloud Servers,
-where access is granted.</p>
+<div class="section" id="roles-available-for-cloud-databases">
+<h2>Roles Available for Cloud Databases<a class="headerlink" href="#roles-available-for-cloud-databases" title="Permalink to this headline">¶</a></h2>
+<p>Three roles (observer, creator, and admin) can be used to access the Cloud Databases API
+specifically. The following table describes these roles and their permissions.</p>
+<p><strong>Table: Cloud Databases Product Roles and Capabilities</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Role Name</th>
+<th class="head">Role Permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>dbaas:admin</td>
+<td>This role provides Create, Read, Update, and Delete permissions
+in Cloud Databases, where access is granted.</td>
+</tr>
+<tr class="row-odd"><td>dbaas:creator</td>
+<td>This role provides Create, Read and Update permissions
+in Cloud Databases, where access is granted.</td>
+</tr>
+<tr class="row-even"><td>dbaas:observer</td>
+<td>This role provides Read permission in Cloud Databases,
+where access is granted.</td>
+</tr>
+</tbody>
+</table>
 <p>Additionally, two multiproduct roles apply to all products. Users with
 multiproduct roles inherit access to future products when those products
 become RBAC-enabled. The following table describes these roles and their
 permissions.</p>
-<p><strong>Multiproduct (Global) Roles and Permissions</strong></p>
-<p>admin - This role provides Create, Read, Update, and Delete permissions in all
-products, where access is granted.</p>
-<p>observer - This role provides Read permission in all products, where access is
-granted.</p>
+<p><strong>Table: Multiproduct (Global) Roles and Rermissions</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="13%" />
+<col width="87%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Role Name</th>
+<th class="head">Role Permissions</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>admin</td>
+<td>This role provides Create, Read, Update, and Delete permissions
+in all products, where access is granted.</td>
+</tr>
+<tr class="row-odd"><td>observer</td>
+<td>This role provides Read permission in all products, where
+access is granted.</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="section" id="resolving-conflicts-between-roles">
 <h2>Resolving Conflicts Between Roles<a class="headerlink" href="#resolving-conflicts-between-roles" title="Permalink to this headline">¶</a></h2>
-<p>The account owner can set roles for both multiproduct and next gen Cloud
-Servers scope, and it is important to understand how any potential
+<p>The account owner can set roles for both multiproduct and Cloud
+Databases scope, and it is important to understand how any potential
 conflicts among these roles are resolved. When two roles appear to
 conflict, the role that provides the more extensive permissions takes
 precedence. Therefore, admin roles take precedence over observer and
 creator roles, because admin roles provide more permissions.</p>
 <p>The following scenarios show examples of how potential conflicts
 between user roles in the Control Panel are resolved:</p>
-<p>Scenario 1:
-Configuration : User is assigned the following roles: multiproduct <strong>observer</strong> and next gen Cloud Servers <strong>admin</strong></p>
+<p><strong>Scenario 1:</strong>
+Configuration : User is assigned the following roles: multiproduct <strong>observer</strong> and Cloud Databases <strong>admin</strong></p>
 <p>View: Appears that the user has only the multiproduct <strong>observer</strong> role.</p>
-<p>Permissions: The user can perform product admin functions in the control panel
-for next gen Cloud Servers only. The user has the <strong>observer</strong> role for the
+<p>Permissions: The user can perform product admin functions in the Control Panel
+for Cloud Databases only. The user has the <strong>observer</strong> role for the
 rest of the products.</p>
-<p>Scenario 2:
+<p><strong>Scenario 2:</strong>
 Configuration: User is assigned the following roles: multiproduct <strong>admin</strong> and
-next gen Cloud Servers <strong>observer</strong></p>
+Cloud Databases <strong>observer</strong></p>
 <p>View: Appears that the user has only the multiproduct <strong>admin</strong> role.</p>
-<p>Permissions: The user can perform product admin functions in the control panel for all of the products. The next gen Cloud Servers <strong>observer</strong>
-role is ignored.</p>
+<p>Permissions: The user can perform product admin functions in the Control Panel for all of
+the products. The Cloud Databases <strong>observer</strong> role is ignored.</p>
 </div>
-<div class="section" id="rbac-permissions-cross-reference-to-next-gen-cloud-servers-api-operations">
-<h2>RBAC Permissions Cross-reference to next gen Cloud Servers API Operations<a class="headerlink" href="#rbac-permissions-cross-reference-to-next-gen-cloud-servers-api-operations" title="Permalink to this headline">¶</a></h2>
-<p>API operations for next gen Cloud Servers may or may not be available to
+<div class="section" id="rbac-permissions-cross-reference-to-cloud-databases-api-operations">
+<h2>RBAC Permissions Cross-reference to Cloud Databases API Operations<a class="headerlink" href="#rbac-permissions-cross-reference-to-cloud-databases-api-operations" title="Permalink to this headline">¶</a></h2>
+<p>API operations for Cloud Databases may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
-please review <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/permissions-matrix-for-next-generation-cloud-servers">the Knowledge Center
+please review <a class="reference external" href="https://www.rackspace.com/knowledge_center/article/permissions-matrix-for-cloud-databases">the Knowledge Center
 article</a>.</p>
 </div>
 </div>
@@ -229,9 +262,9 @@ article</a>.</p>
 <li class="toctree-l1"><a class="reference internal" href="using-ssl.html">Using SSL for Cloud Database instances</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Role Based Access Control</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#assigning-roles-to-account-users">Assigning Roles to Account Users</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#roles-available-for-next-gen-cloud-servers">Roles Available for next gen Cloud Servers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roles-available-for-cloud-databases">Roles Available for Cloud Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#resolving-conflicts-between-roles">Resolving Conflicts Between Roles</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rbac-permissions-cross-reference-to-next-gen-cloud-servers-api-operations">RBAC Permissions Cross-reference to next gen Cloud Servers API Operations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rbac-permissions-cross-reference-to-cloud-databases-api-operations">RBAC Permissions Cross-reference to Cloud Databases API Operations</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="configuration-management.html">Configuration management</a></li>

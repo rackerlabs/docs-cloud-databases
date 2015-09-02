@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-08-25</pubdate>
+        <pubdate>2015-09-02</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,57 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-09-02</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information for <xref
+                                   linkend="High-Availability-dle2648"
+                                />.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added information for backups to
+                                   <xref linkend="ha"/>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated description for acls
+                                parameter and example for Create HA
+                                database instance: JSON request for
+                                   <link
+                                       xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html"
+                                   >Create database instance</link>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Enhanced description for <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addReplicaToHaInstance__version___accountId__ha__haId__action_ha.html"
+                                >Add replica to HA instance</link>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added new operations <link
+                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_deleteReplicaFromHaInstance__version___accountId__ha__haId__action_ha.html"
+                                   >Remove replica from an HA
+                                   instance</link>, <link
+                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createBackupForHaInstance__version___accountId__backups_backups.html"
+                                   >Create backup for an HA
+                                   instance</link>, and <link
+                                       xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackupsForHaInstance__version___accountId__ha__haId__backups_backups.html"
+                                   >List backups of an HA
+                                   instance</link></para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples for <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackups__version___accountId__backups_backups.html"
+                                   >List backups</link>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Updated examples for <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackupById__version___accountId__backups__backupId__backups.html"
+                                   >List backups by ID</link>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-08-25</date>
                 <revdescription>
@@ -4075,9 +4126,43 @@
                     <listitem>
                         <para>The only allowed operations on instances
                             that are part of the HA group are Create
-                            users, Create databases (on source only),
-                            and Create backups. All other operations
-                            are blocked on these instances. </para>
+                            users and Create databases (on source
+                            only). All other operations are blocked on
+                            these instances. </para>
+                    </listitem>
+                    <listitem>
+                        <para> Currently all the nodes that are part
+                            of the HA group would need to be of the
+                            same flavor and size. </para>
+                    </listitem>
+                    <listitem>
+                        <para> In case a failover occurs, there will
+                            be an automatic failover to the replica
+                            closest to the failed database instance.
+                            Cloud Databases will remove the failed
+                            database instance. A new replica of the
+                            same flavor and volume as the other
+                            instances that are part of the HA group
+                            will be built and automatically added to
+                            this setup in order to maintain the HA
+                            node configuration. For the period when
+                            the new replica is being added, the HA
+                            state would be <code>ADDING_REPLICA</code>
+                            and would switch to <code>ACTIVE</code>
+                            once the node has been successfully added. </para>
+                        <para><warning>
+                                <para>Automatically adding a new
+                                   replica node would restart the MHA
+                                   manager service (which monitors the
+                                   source/replica instances to trigger
+                                   failover) and the haproxy service
+                                   on the load balancer nodes. Refer
+                                   to the KC article for more details
+                                   about these components at <link
+                                   xlink:href="http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
+                                   >High Availability for Cloud
+                                   Databases</link>. </para>
+                            </warning>para</para>
                     </listitem>
                     
                 </itemizedlist>
@@ -4109,31 +4194,19 @@
                                 region.</para>
                         </listitem>
                         <listitem>
-                            <para>Currently you cannot perform
-                                backups, resize, or apply
-                                configuration groups on HA group.
+                            <para>Currently you cannot resize or apply
+                                configuration groups on an HA group.
                                 These capabilities will be supported
                                 soon.</para>
-                        </listitem>
-                        <listitem>
-                            <para>In case a failover occurs, there
-                                will be an automatic failover to the
-                                replica closest to the failed database
-                                instance. Cloud Databases will remove
-                                the failed database instance. A new
-                                replica would have to manually be
-                                added to the HA group via the API call
-                                to Add replica to HA group (refer to
-                                   <link
-                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
-                                   >Add Replica to an HA instance</link>). Coming soon is a
-                                functionality where a replica will be
-                                automatically added to the HA group after
-                                the failover. </para>
                         </listitem>
                     </itemizedlist>
                 </para>
             </formalpara>
+            <para>For more details about HA groups refer to the KC
+                article at <link
+                    xlink:href="http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
+                    >High Availability for Cloud
+                Databases</link>.</para>
         </section>
     </chapter>
     
@@ -4320,6 +4393,7 @@
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
                 <wadl:resource href="../../../xsd/dbaas.wadl#backups">
                     <wadl:method href="createBackup"/>
+                    <wadl:method href="createBackupForHaInstance"/>
                     <wadl:method href="getBackups"/>
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#backupId">
@@ -4331,6 +4405,9 @@
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#instances">
                     <wadl:method href="restoreBackup"/>
+                </wadl:resource>
+                <wadl:resource href="../../../xsd/dbaas.wadl#backup3">
+                    <wadl:method href="getBackupsForHaInstance"/>
                 </wadl:resource>
             </wadl:resources>
         </section>
@@ -4405,6 +4482,39 @@
                 Availability (HA) for Cloud Databases.</para>
             <para>Refer to the list of limitations for HA at <xref
                     linkend="High-Availability-dle2648"/>.</para>
+            <para>For information about HA Instance Backups, see the following:<itemizedlist>
+                    <listitem>
+                        <para>To create an HA instance backup, see
+                                <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createBackupForHaInstance__version___accountId__backups_backups.html"
+                                >Create backup of an HA
+                                Instance</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>To get the details of a specified
+                            backup, see <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackupById__version___accountId__backups__backupId__backups.html"
+                                >List backup by ID</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>To list all available backups (HA/non
+                            HA), see <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackups__version___accountId__backups_backups.html"
+                                >List backups</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>To list backups for a specified HA
+                            instance only, see <link
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackupsForHaInstance__version___accountId__ha__haId__backups_backups.html"
+                                >List backups of an HA
+                            instance</link>.</para>
+                    </listitem>
+                    <listitem>
+                        <para>To delete a specified backup, see <link
+                                xlink:href="file:///Users/mike.asthalter/Documents/DBaaS/docs-cloud-databases/apidocs/target/docbkx/webhelp/cdb-devguide-external/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
+                                >Delete backup</link>.</para>
+                    </listitem>
+                </itemizedlist></para>
             <para>The HA API supports the following operations:</para>
             <wadl:resources
                 xmlns:wadl="http://wadl.dev.java.net/2009/02">
@@ -4425,6 +4535,7 @@
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#action">
                     <wadl:method href="addReplicaToHaInstance"/>
+                    <wadl:method href="deleteReplicaFromHaInstance"/>
                 </wadl:resource>
             </wadl:resources>
         </section>

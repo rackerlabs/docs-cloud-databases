@@ -1,0 +1,34 @@
+HTTP/1.1 202 Accepted
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.12)
+Content-Length: 535
+Date: Mon, 31 Aug 2015 22:16:25 GMT
+Connection: close
+Server: Jetty(8.0.y.z-SNAPSHOT)
+{  
+   "backup":{  
+      "status":"NEW",
+      "updated":"2015-08-31T22:16:25Z",
+      "description":"my_ha_backup1",
+      "datastore":{  
+         "version":"5.6",
+         "type":"mysql",
+         "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
+      },
+      "id":"0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e",
+      "size":null,
+      "is_automated":false,
+      "name":"ha-backup1",
+      "parent_id":null,
+      "created":"2015-08-31T22:16:25Z",
+      "flavor_ram":1024,
+      "instance_id":null,
+      "source":{  
+         "type":"ha",
+         "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+      },
+      "locationRef":null,
+      "type":"InnoBackupEx",
+      "volume_size":1
+   }
+}
