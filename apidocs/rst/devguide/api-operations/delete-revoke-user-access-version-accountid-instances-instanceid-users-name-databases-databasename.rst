@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename:
+.. _delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename:
 
 Revoke user access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,17 +110,22 @@ This operation does not accept a request body.
 **Example Revoke user access: JSON request**
 
 
+The following example shows the Revoke user access request:
+
 .. code::
 
-    DELETE /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser1/databases/databaseE HTTP/1.1
-    User-Agent: python-reddwarfclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   DELETE /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser1/databases/databaseE HTTP/1.1
+   User-Agent: python-reddwarfclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -138,13 +143,18 @@ Response
 **Example Revoke user access: JSON response**
 
 
+The following example shows the Revoke user access response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Wed, 08 May 2013 22:43:35 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Wed, 08 May 2013 22:43:35 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

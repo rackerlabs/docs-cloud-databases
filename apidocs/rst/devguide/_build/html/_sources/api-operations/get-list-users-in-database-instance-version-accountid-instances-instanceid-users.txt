@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-users-in-database-instance-version-accountid-instances-instanceid-users:
+.. _get-list-users-in-database-instance-version-accountid-instances-instanceid-users:
 
 List users in database instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -113,33 +113,43 @@ This operation does not accept a request body.
 **Example List users in database instance: JSON request**
 
 
+The following example shows the List users in database instance request:
+
 .. code::
 
-    GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 **Example List users in database instance paged request: JSON**
 
 
+The following example shows the paginated List users in database instance requests to return a limit of two users at a time ( ``users?limit=2`` ):
+
 .. code::
 
-    GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users?limit=2 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users?limit=2 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -157,103 +167,117 @@ Response
 **Example List users in database instance response: JSON**
 
 
+The following example shows the List users in database instance response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 322
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "users": [
-            {
-                "databases": [
-                    {
-                        "name": "databaseA"
-                    }
-                ], 
-                "host": "%", 
-                "name": "dbuser1"
-            }, 
-            {
-                "databases": [
-                    {
-                        "name": "databaseB"
-                    }, 
-                    {
-                        "name": "databaseC"
-                    }
-                ], 
-                "host": "%", 
-                "name": "dbuser2"
-            }, 
-            {
-                "databases": [
-                    {
-                        "name": "databaseD"
-                    }
-                ], 
-                "host": "%", 
-                "name": "dbuser3"
-            }, 
-            {
-                "databases": [
-                    {
-                        "name": "sampledb"
-                    }
-                ], 
-                "host": "%", 
-                "name": "demouser"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 322
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "users": [
+           {
+               "databases": [
+                   {
+                       "name": "databaseA"
+                   }
+               ], 
+               "host": "%", 
+               "name": "dbuser1"
+           }, 
+           {
+               "databases": [
+                   {
+                       "name": "databaseB"
+                   }, 
+                   {
+                       "name": "databaseC"
+                   }
+               ], 
+               "host": "%", 
+               "name": "dbuser2"
+           }, 
+           {
+               "databases": [
+                   {
+                       "name": "databaseD"
+                   }
+               ], 
+               "host": "%", 
+               "name": "dbuser3"
+           }, 
+           {
+               "databases": [
+                   {
+                       "name": "sampledb"
+                   }
+               ], 
+               "host": "%", 
+               "name": "demouser"
+           }
+       ]
+   }
+   
+
+
+Refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for a description of the ``host`` field.
+
+
 
 
 **Example List users in database instance paged response: JSON**
 
 
+The following example shows the paginated List users in database instance response.
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 336
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "links": [
-            {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users?marker=dbuser2%2540%2525&limit=2", 
-                "rel": "next"
-            }
-        ], 
-        "users": [
-            {
-                "databases": [
-                    {
-                        "name": "databaseA"
-                    }
-                ], 
-                "host": "%", 
-                "name": "dbuser1"
-            }, 
-            {
-                "databases": [
-                    {
-                        "name": "databaseB"
-                    }, 
-                    {
-                        "name": "databaseC"
-                    }
-                ], 
-                "host": "%", 
-                "name": "dbuser2"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 336
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "links": [
+           {
+               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users?marker=dbuser2%2540%2525&limit=2", 
+               "rel": "next"
+           }
+       ], 
+       "users": [
+           {
+               "databases": [
+                   {
+                       "name": "databaseA"
+                   }
+               ], 
+               "host": "%", 
+               "name": "dbuser1"
+           }, 
+           {
+               "databases": [
+                   {
+                       "name": "databaseB"
+                   }, 
+                   {
+                       "name": "databaseC"
+                   }
+               ], 
+               "host": "%", 
+               "name": "dbuser2"
+           }
+       ]
+   }
+   
+
+
+Note that the response contains the link ( ``href`` ) to the next set of users in the list ( ``users?marker=dbuser2%4010.0.0.1 & limit=2`` ), so using that link for the request will return the next two users in the list after ``dbuser2%4010.0.0.1``.
+
+
 

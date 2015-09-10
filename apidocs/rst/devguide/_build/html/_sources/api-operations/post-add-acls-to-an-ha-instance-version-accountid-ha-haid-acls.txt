@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls:
+.. _post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls:
 
 Add ACLs to an HA instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -16,7 +16,20 @@ This operation adds ACLs to an HA instance.
 
 The following table lists the required and optional attributes for creating ACLs for an HA setup.
 
-Required and optional attributes for Create databaseName DescriptionRequiredaddressSpecifies the CIDR notated IPV4 address. The IPV4 address to use should be CIDR notated.Yes
+.. table:: Required and optional attributes for Create database
+
+    
+    +--------------------------+-------------------------+-------------------------+
+    |Name                      |Description              |Required                 |
+    +==========================+=========================+=========================+
+    |address                   |Specifies the CIDR       |Yes                      |
+    |                          |notated IPV4 address.    |                         |
+    |                          |The IPV4 address to use  |                         |
+    |                          |should be CIDR notated.  |                         |
+    +--------------------------+-------------------------+-------------------------+
+    
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -100,17 +113,22 @@ This operation does not accept a request body.
 **Example Add ACLs to an HA instance: JSON request**
 
 
+The following example shows the Add ACLs to an HA instance request:
+
 .. code::
 
-    POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/acls HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
-    Accept: application/json
-    Content-Type: application/json
-    
-    {"address": "1.2.3.4/32"}
-    
+   POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/acls HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
+   Accept: application/json
+   Content-Type: application/json
+   
+   {"address": "1.2.3.4/32"}
+   
+
+
+
 
 
 Response
@@ -128,14 +146,19 @@ Response
 **Example Add ACLs to an HA instance: JSON response**
 
 
+The following example shows the Add ACLs to an HA instance response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.12)
-    Content-Length: 0
-    Date: Fri, 08 May 2015 19:25:15 GMT
-    Connection: close
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 0
+   Date: Fri, 08 May 2015 19:25:15 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

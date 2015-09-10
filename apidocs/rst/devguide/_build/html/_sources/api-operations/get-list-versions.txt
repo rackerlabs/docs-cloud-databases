@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-versions:
+.. _get-list-versions:
 
 List versions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -85,17 +85,22 @@ This operation does not accept a request body.
 **Example List versions: JSON request**
 
 
+The following example shows the List versions request:
+
 .. code::
 
-    GET / HTTP/1.1
-    User-Agent: python-example-client
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET / HTTP/1.1
+   User-Agent: python-example-client
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -113,27 +118,32 @@ Response
 **Example List versions: JSON response**
 
 
+The following example shows the List versions response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Content-Length: 153
-    Date: Wed, 25 Jan 2012 21:53:04 GMT
-    
-    {
-        "versions": [
-            {
-                "id": "v1.0", 
-                "links": [
-                    {
-                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/", 
-                        "rel": "self"
-                    }
-                ], 
-                "status": "CURRENT", 
-                "updated": "2012-01-01T00:00:00Z"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Content-Length: 153
+   Date: Wed, 25 Jan 2012 21:53:04 GMT
+   
+   {
+       "versions": [
+           {
+               "id": "v1.0", 
+               "links": [
+                   {
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/", 
+                       "rel": "self"
+                   }
+               ], 
+               "status": "CURRENT", 
+               "updated": "2012-01-01T00:00:00Z"
+           }
+       ]
+   }
+   
+
+
+
 

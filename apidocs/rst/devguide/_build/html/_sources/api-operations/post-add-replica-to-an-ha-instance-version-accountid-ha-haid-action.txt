@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action:
+.. _post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action:
 
 Add Replica to an HA instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -12,7 +12,7 @@ Add Replica to an HA instance
 
 Add a replica node to the HA group specified by {ha_id}.
 
-This operation adds a replica node to the HA group specified by {ha_id}.
+This operation adds a replica node to the HA group specified by {ha_id}. The HA instance goes into the ``ADDING_REPLICA`` state as a result of this action. It switches back to ``ACTIVE`` once the operation is complete.
 
 .. warning::
    Adding a new replica node would restart the mha manager service (which monitors the source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. Refer to the Knowledge Center article for more details about these components: `High Availability for Cloud Databases <https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases>`__.
@@ -106,27 +106,32 @@ This operation does not accept a request body.
 **Example Add Replica to an HA instance: JSON request**
 
 
+The following example shows the Add replica to an HA instance request:
+
 .. code::
 
-    POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/action HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
-    Accept: application/json
-    Content-Type: application/json
-     
-    {  
-       "add_replica":{  
-          "replica_details":{  
-             "volume":{  
-                "size":1
-             },
-             "flavorRef":"2",
-             "name":"new-replica2"
-          }
-       }
-    }
+   POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/action HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
+   Accept: application/json
+   Content-Type: application/json
     
+   {  
+      "add_replica":{  
+         "replica_details":{  
+            "volume":{  
+               "size":1
+            },
+            "flavorRef":"2",
+            "name":"new-replica2"
+         }
+      }
+   }
+   
+
+
+
 
 
 Response
@@ -144,14 +149,19 @@ Response
 **Example Add Replica to an HA instance: JSON response**
 
 
+The following example shows the Add replica to an HA instance response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.12)
-    Content-Length: 0
-    Date: Fri, 31 Jul 2015 16:53:03 GMT
-    Connection: close
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 0
+   Date: Fri, 31 Jul 2015 16:53:03 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

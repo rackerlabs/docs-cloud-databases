@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-grant-user-access-version-accountid-instances-instanceid-users-name-databases:
+.. _put-grant-user-access-version-accountid-instances-instanceid-users-name-databases:
 
 Grant user access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,23 +108,28 @@ This operation does not accept a request body.
 **Example Grant user access: JSON request**
 
 
+The following example shows the Grant user access request:
+
 .. code::
 
-    PUT /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser1/databases HTTP/1.1
-    User-Agent: python-reddwarfclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "databases": [
-            {
-                "name": "databaseE"
-            }
-        ]
-    }
-    
+   PUT /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser1/databases HTTP/1.1
+   User-Agent: python-reddwarfclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "databases": [
+           {
+               "name": "databaseE"
+           }
+       ]
+   }
+   
+
+
+
 
 
 Response
@@ -142,13 +147,18 @@ Response
 **Example Grant user access: JSON response**
 
 
+The following example shows the Grant user access response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Wed, 08 May 2013 22:43:35 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Wed, 08 May 2013 22:43:35 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

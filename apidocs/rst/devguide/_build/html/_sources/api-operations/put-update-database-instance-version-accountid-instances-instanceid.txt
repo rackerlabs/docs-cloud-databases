@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-update-database-instance-version-accountid-instances-instanceid:
+.. _put-update-database-instance-version-accountid-instances-instanceid:
 
 Update database instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,21 +106,26 @@ This operation does not accept a request body.
 **Example Update database instance: JSON request**
 
 
+The following example shows the Update database instance request:
+
 .. code::
 
-    PUT /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "instance": {
-            "configuration": ""
-        }
-    }
-    
+   PUT /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "instance": {
+           "configuration": ""
+       }
+   }
+   
+
+
+
 
 
 Response
@@ -138,13 +143,18 @@ Response
 **Example Update database instance: JSON response**
 
 
+The following example shows the Update database instance response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Thu, 13 Feb 2014 21:47:15 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Thu, 13 Feb 2014 21:47:15 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

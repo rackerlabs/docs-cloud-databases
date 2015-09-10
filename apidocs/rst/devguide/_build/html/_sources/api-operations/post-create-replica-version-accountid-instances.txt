@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-replica-version-accountid-instances:
+.. _post-create-replica-version-accountid-instances:
 
 Create replica
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,29 +42,70 @@ This operation asynchronously provisions a replica for the specified source data
 
 The following table lists the required and optional attributes for Create replica:
 
-Required and optional attributes for Create replicaApplies To Name DescriptionRequiredInstanceflavorRefReference (href) to a flavor as specified in the response from the List Flavors API call. This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.
+.. table:: Required and optional attributes for Create replica
 
-.. note::
-   Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.
-   
-   
+    
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |Applies To    |Name                                                                                                          |Description                                                                                                   |Required |
+    +==============+==============================================================================================================+==============================================================================================================+=========+
+    |Instance      |flavorRef                                                                                                     |Reference (href) to a flavor as specified in the response from the List Flavors API call. This is the actual  |Yes      |
+    |              |                                                                                                              |URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for   |         |
+    |              |                                                                                                              |an example of the flavorRef. .. note:: Rather than the flavor URI, you can also pass the flavor id (integer)  |         |
+    |              |                                                                                                              |as the value for flavorRef. Refer to `List flavors <http://docs.rackspace.com/cdb/api/v1.0/cdb-               |         |
+    |              |                                                                                                              |devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html>`__ for details.                   |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |(volume) size |Specifies the volume size in gigabytes (GB). The value specified must be between 1 and 300.                   |Yes                                                                                                           |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |name          |Name of the instance to create. The length of the name is limited to 255 characters and any characters are    |No                                                                                                            |         |
+    |              |permitted.                                                                                                    |                                                                                                              |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |replica_of    |Identifier of the source instance to replicate.                                                               |Yes                                                                                                           |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |configuration |Identifier of the configuration group to associate with the instance.                                         |No                                                                                                            |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |(datastore)   |Name or uuid of the datastore version and type to associate with the instance. If the datastore is not        |No                                                                                                            |         |
+    |version / type|specified, it defaults to mysql.                                                                              |                                                                                                              |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |Database      |name                                                                                                          |Specifies database names for creating databases on instance creation. Refer to `Create instance               |No       |
+    |              |                                                                                                              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-                                                                  |         |
+    |              |                                                                                                              |devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html>`__ for the      |         |
+    |              |                                                                                                              |required json format.                                                                                         |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |character_set |Set of symbols and encodings. The default character set is ``utf8``.                                          |No                                                                                                            |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |collate       |Set of rules for comparing characters in a character set. The default value for collate is                    |No                                                                                                            |         |
+    |              |``utf8_general_ci``.                                                                                          |                                                                                                              |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |User          |name                                                                                                          |Specifies user name for the database on instance creation. Refer to `Create user                              |No       |
+    |              |                                                                                                              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-                                                                  |         |
+    |              |                                                                                                              |devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__  |         |
+    |              |                                                                                                              |for the required json format.                                                                                 |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |password      |Specifies password for those users on instance creation. Refer to `Create user                                |No                                                                                                            |         |
+    |              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-                                                                  |                                                                                                              |         |
+    |              |devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__  |                                                                                                              |         |
+    |              |for the required json format.                                                                                 |                                                                                                              |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |(database)    |Specifies names of databases that those users can access on instance creation. Refer to `Create user          |No                                                                                                            |         |
+    |name          |<http://docs.rackspace.com/cdb/api/v1.0/cdb-                                                                  |                                                                                                              |         |
+    |              |devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__  |                                                                                                              |         |
+    |              |for the required json format.                                                                                 |                                                                                                              |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |host          |Specifies the host from which a user is allowed to connect to the database. Possible values are a string      |No                                                                                                            |         |
+    |              |containing an IPv4 address or "%" to allow connecting from any host. Refer to `User access restriction by     |                                                                                                              |         |
+    |              |host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-               |                                                                                                              |         |
+    |              |dle387.html>`__ for details. If ``host`` is not specified, it defaults to "%".                                |                                                                                                              |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    |Restore       |restorePoint                                                                                                  |Specifies the backup id from which to restore the database instance. .. note:: Notes * When you execute the   |No       |
+    |              |                                                                                                              |Restore Backup operation, a new database instance is created to store the backup whose id is specified by the |         |
+    |              |                                                                                                              |``restorePoint`` attribute. * All users/passwords/access that were on the instance at the time of the backup  |         |
+    |              |                                                                                                              |will be restored along with the databases. * You can create new users or databases if you want, but they      |         |
+    |              |                                                                                                              |cannot be the same as the ones from the instance that was backed up. * Refer to the Create Database Instance  |         |
+    |              |                                                                                                              |Restore Request and Response examples for the required json format and details.                               |         |
+    +--------------+--------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+---------+
+    
 
-Refer to `List flavors <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html>`__ for details.
-
-Yes(volume) sizeSpecifies the volume size in gigabytes (GB). The value specified must be between 1 and 300.YesnameName of the instance to create. The length of the name is limited to 255 characters and any characters are permitted.Noreplica_ofIdentifier of the source instance to replicate.YesconfigurationIdentifier of the configuration group to associate with the instance.No(datastore) version / typeName or uuid  of the datastore version and type to associate with the instance. If the datastore is not specified, it defaults to mysql.NoDatabasenameSpecifies database names for creating databases on instance creation. Refer to `Create instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html>`__ for the required json format.Nocharacter_setSet of symbols and encodings. The default character set is ``utf8``.NocollateSet of rules for comparing characters in a character set. The default value for collate is ``utf8_general_ci``.NoUsernameSpecifies user name for the database on instance creation. Refer to `Create user <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__ for the required json format.NopasswordSpecifies password for those users on instance creation. Refer to `Create user <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__ for the required json format.No(database) nameSpecifies names of databases that those users can access on instance creation. Refer to `Create user <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__ for the required json format.NohostSpecifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.                             Refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for details. If ``host`` is not specified, it defaults to "%".NoRestorerestorePointSpecifies the backup id from which to restore the database instance.
-
-.. note::
-   Notes 
-   
-   *  When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by the ``restorePoint`` attribute.
-   *  All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases.
-   *  You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up.
-   *  Refer to the Create Database Instance Restore Request and Response examples for the required json format and details.
-   
-   
-   
-
-NoRefer to `Database instance status <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html>`__ for a list of possible database instance statuses that may be returned.
+Refer to `Database instance status <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html>`__ for a list of possible database instance statuses that may be returned.
 
 
 
@@ -147,27 +188,32 @@ This operation does not accept a request body.
 **Example Create replica: JSON request**
 
 
+The following example shows the Create replica request:
+
 .. code::
 
-    POST /v1.0/1234/instances HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    {
-      "instance": {
-        "volume": {
-          "size": 1
-        },
-        "flavorRef": "9",
-        "name": "t2s1_ALT_GUEST",
-        "replica_of": "6bdca2fc-418e-40bd-a595-62abda61862d"
-      }
-    }
-    
+   POST /v1.0/1234/instances HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   {
+     "instance": {
+       "volume": {
+         "size": 1
+       },
+       "flavorRef": "9",
+       "name": "t2s1_ALT_GUEST",
+       "replica_of": "6bdca2fc-418e-40bd-a595-62abda61862d"
+     }
+   }
+   
+
+
+
 
 
 Response
@@ -185,66 +231,73 @@ Response
 **Example Create replica: JSON response**
 
 
+The following example shows the Create replica response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 697
-    Date: Thu, 13 Feb 2014 21:47:17 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-      "instance": {
-        "status": "BUILD",
-        "updated": "2014-10-14T18:42:15",
-        "name": "t2s1_ALT_GUEST",
-        "links": [
-          {
-            "href": "https://ord.databases.api.rackspacecloud.com/v1.0/5919009/instances/8367c312-7c40-4a66-aab1-5767478914fc",
-            "rel": "self"
-          },
-          {
-            "href": "https://ord.databases.api.rackspacecloud.com/instances/8367c312-7c40-4a66-aab1-5767478914fc",
-            "rel": "bookmark"
-          }
-        ],
-        "created": "2014-10-14T18:42:15",
-        "id": "8367c312-7c40-4a66-aab1-5767478914fc",
-        "volume": {
-          "size": 1
-        },
-        "flavor": {
-          "id": "9",
-          "links": [
-            {
-              "href": "https://ord.databases.api.rackspacecloud.com/v1.0/5919009/flavors/9",
-              "rel": "self"
-            },
-            {
-              "href": "https://ord.databases.api.rackspacecloud.com/flavors/9",
-              "rel": "bookmark"
-            }
-          ]
-        },
-        "datastore": {
-          "version": "5.6",
-          "type": "mysql"
-        },
-        "replica_of": {
-          "id": "6bdca2fc-418e-40bd-a595-62abda61862d",
-          "links": [
-            {
-              "href": "https://ord.databases.api.rackspacecloud.com/v1.0/5919009/instances/6bdca2fc-418e-40bd-a595-62abda61862d",
-              "rel": "self"
-            },
-            {
-              "href": "https://ord.databases.api.rackspacecloud.com/instances/6bdca2fc-418e-40bd-a595-62abda61862d",
-              "rel": "bookmark"
-            }
-          ]
-        }
-      }
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 697
+   Date: Thu, 13 Feb 2014 21:47:17 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+     "instance": {
+       "status": "BUILD",
+       "updated": "2014-10-14T18:42:15",
+       "name": "t2s1_ALT_GUEST",
+       "links": [
+         {
+           "href": "https://ord.databases.api.rackspacecloud.com/v1.0/5919009/instances/8367c312-7c40-4a66-aab1-5767478914fc",
+           "rel": "self"
+         },
+         {
+           "href": "https://ord.databases.api.rackspacecloud.com/instances/8367c312-7c40-4a66-aab1-5767478914fc",
+           "rel": "bookmark"
+         }
+       ],
+       "created": "2014-10-14T18:42:15",
+       "id": "8367c312-7c40-4a66-aab1-5767478914fc",
+       "volume": {
+         "size": 1
+       },
+       "flavor": {
+         "id": "9",
+         "links": [
+           {
+             "href": "https://ord.databases.api.rackspacecloud.com/v1.0/5919009/flavors/9",
+             "rel": "self"
+           },
+           {
+             "href": "https://ord.databases.api.rackspacecloud.com/flavors/9",
+             "rel": "bookmark"
+           }
+         ]
+       },
+       "datastore": {
+         "version": "5.6",
+         "type": "mysql"
+       },
+       "replica_of": {
+         "id": "6bdca2fc-418e-40bd-a595-62abda61862d",
+         "links": [
+           {
+             "href": "https://ord.databases.api.rackspacecloud.com/v1.0/5919009/instances/6bdca2fc-418e-40bd-a595-62abda61862d",
+             "rel": "self"
+           },
+           {
+             "href": "https://ord.databases.api.rackspacecloud.com/instances/6bdca2fc-418e-40bd-a595-62abda61862d",
+             "rel": "bookmark"
+           }
+         ]
+       }
+     }
+   }
+   
+
+
+For convenience, notice in the response example above that resources contain links to themselves. This allows a client to easily obtain resource URIs rather than to construct them. There are two kinds of link relations associated with resources. A ``self`` link contains a versioned link to the resource. These links should be used in cases where the link will be followed immediately. A ``bookmark`` link provides a permanent link to a resource that is appropriate for long term storage.
+
+
 

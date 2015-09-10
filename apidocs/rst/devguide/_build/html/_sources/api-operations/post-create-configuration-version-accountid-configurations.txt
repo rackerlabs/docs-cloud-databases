@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-configuration-version-accountid-configurations:
+.. _post-create-configuration-version-accountid-configurations:
 
 Create configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -136,31 +136,41 @@ This table shows the body parameters for the request:
 **Example Create configuration: JSON request**
 
 
+The following example shows the Create configuration request:
+
 .. code::
 
-    POST /v1.0/1234/configurations HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "configuration": {
-            "datastore": {
-                "type": "a00000a0-00a0-0a00-00a0-000a000000aa",
-                "version": "b00000b0-00b0-0b00-00b0-000b000000bb"
-            },
-            "description": "example description",
-            "name": "example-configuration-name",
-            "values": {
-                "collation_server": "latin1_swedish_ci",
-                "connect_timeout": 120
-            }
-        }
-    }
-    
-    
+   POST /v1.0/1234/configurations HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "configuration": {
+           "datastore": {
+               "type": "a00000a0-00a0-0a00-00a0-000a000000aa",
+               "version": "b00000b0-00b0-0b00-00b0-000b000000bb"
+           },
+           "description": "example description",
+           "name": "example-configuration-name",
+           "values": {
+               "collation_server": "latin1_swedish_ci",
+               "connect_timeout": 120
+           }
+       }
+   }
+   
+   
+
+
+.. note::
+   Each value provided for ``name`` and ``description`` must be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.
+   
+   
+
+
 
 
 Response
@@ -178,31 +188,36 @@ Response
 **Example Create configuration: JSON response**
 
 
+The following example shows the Create configuration response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.12)
-    Content-Length: 431
-    Date: Thu, 31 Jul 2014 15:07:26 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "configuration": {
-            "created": "2014-07-31T15:02:52",
-            "datastore_name": "mysql",
-            "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
-            "datastore_version_name": "5.6",
-            "description": "example description",
-            "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
-            "instance_count": 0,
-            "name": "example-configuration-name",
-            "updated": "2014-07-31T15:02:52",
-            "values": {
-                "collation_server": "latin1_swedish_ci",
-                "connect_timeout": 120
-            }
-        }
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 431
+   Date: Thu, 31 Jul 2014 15:07:26 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "configuration": {
+           "created": "2014-07-31T15:02:52",
+           "datastore_name": "mysql",
+           "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
+           "datastore_version_name": "5.6",
+           "description": "example description",
+           "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
+           "instance_count": 0,
+           "name": "example-configuration-name",
+           "updated": "2014-07-31T15:02:52",
+           "values": {
+               "collation_server": "latin1_swedish_ci",
+               "connect_timeout": 120
+           }
+       }
+   }
+   
+
+
+
 

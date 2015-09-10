@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-backup-version-accountid-backups:
+.. _post-create-backup-version-accountid-backups:
 
 Create backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -16,17 +16,39 @@ This operation asynchronously creates a new backup for the specified database in
 
 The following table lists the required and optional attributes for Create Backup:
 
-Required and optional attributes for Create backupNameDescriptionRequirednameSpecifies the short name of the backup.
+.. table:: Required and optional attributes for Create backup
 
-YesinstanceSpecifies the database instanceId to backup.
+    
+    +--------------------------+-------------------------+-------------------------+
+    |Name                      |Description              |Required                 |
+    +==========================+=========================+=========================+
+    |name                      |Specifies the short name |Yes                      |
+    |                          |of the backup.           |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |instance                  |Specifies the database   |Yes                      |
+    |                          |instanceId to backup.    |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |description               |Specifies a long         |No                       |
+    |                          |description of the       |                         |
+    |                          |backup.                  |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |parent_id                 |Specifies the backupId   |No                       |
+    |                          |from which to create an  |                         |
+    |                          |incremental backup.      |                         |
+    +--------------------------+-------------------------+-------------------------+
+    
 
-YesdescriptionSpecifies a long description of the backup.
+.. table:: Length restrictions for backup ``name`` parameter
 
-Noparent_idSpecifies the backupId from which to create an incremental backup.
+    
+    +---------------------------------------+--------------------------------------+
+    |Restriction                            |Value                                 |
+    +=======================================+======================================+
+    |name maximum length                    |64                                    |
+    +---------------------------------------+--------------------------------------+
+    
 
-NoLength restrictions for backup ``name`` parameterRestrictionValuename maximum length
-
-64.. note::
+.. note::
    Notes 
    
    *  During the backup process, database writes on MyISAM Databases will be disabled. InnoDB Databases will continue to allow all operations.
@@ -122,38 +144,62 @@ This operation does not accept a request body.
 **Example Create backup: JSON request**
 
 
+The following example shows the Create backup request:
+
 .. code::
 
-    POST /v1.0/1234/backups HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "backup": {
-            "description": "My Backup", 
-            "instance": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
-            "name": "snapshot"
-        }
-    }
-    
+   POST /v1.0/1234/backups HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "backup": {
+           "description": "My Backup", 
+           "instance": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+           "name": "snapshot"
+       }
+   }
+   
+
+
+
 
 
 **Example Create incremental backup request: JSON**
 
 
+The following example shows the Create incremental backup request:
+
 .. code::
 
-    POST /v1.0/1234/backups HTTP/1.1
-    User-Agent: python-troveclient
-    Host: troveapi.org
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
+   POST /v1.0/1234/backups HTTP/1.1
+   User-Agent: python-troveclient
+   Host: troveapi.org
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+
+
+.. code::
+
+   {
+       "backup": {
+           "description": "My Incremental Backup",
+           "instance": "44b277eb-39be-4921-be31-3d61b43651d7",
+           "name": "Incremental Snapshot",
+           "parent_id": "a9832168-7541-4536-b8d9-a8a9b79cf1b4"
+       }
+   }
+   
+   
+
+
+
 
 
 Response
@@ -171,41 +217,76 @@ Response
 **Example Create backup: JSON response**
 
 
+The following example shows the Create backup response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 300
-    Date: Thu, 13 Feb 2014 21:47:16 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "backup": {
-            "created": "2014-02-13T21:47:16", 
-            "description": "My Backup", 
-            "id": "61f12fef-edb1-4561-8122-e7c00ef26a82", 
-            "instance_id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
-            "locationRef": null, 
-            "name": "snapshot", 
-            "parent_id": null, 
-            "size": null, 
-            "status": "NEW", 
-            "updated": "2014-02-13T21:47:16"
-        }
-    }
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 300
+   Date: Thu, 13 Feb 2014 21:47:16 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "backup": {
+           "created": "2014-02-13T21:47:16", 
+           "description": "My Backup", 
+           "id": "61f12fef-edb1-4561-8122-e7c00ef26a82", 
+           "instance_id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+           "locationRef": null, 
+           "name": "snapshot", 
+           "parent_id": null, 
+           "size": null, 
+           "status": "NEW", 
+           "updated": "2014-02-13T21:47:16"
+       }
+   }
+   
+
+
+
 
 
 **Example Create incremental backup response: JSON**
 
 
+The following example shows the Create incremental backup response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Content-Length: 462
-    Date: Mon, 18 Mar 2013 19:09:17 GMT
-    
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Content-Length: 462
+   Date: Mon, 18 Mar 2013 19:09:17 GMT
+   
+   
+
+
+.. code::
+
+   {
+       "backup": {
+           "created": "2014-10-30T12:30:00",
+           "datastore": {
+               "type": "mysql",
+               "version": "5.5",
+               "version_id": "b00000b0-00b0-0b00-00b0-000b000000bb"
+           },
+           "description": "My Incremental Backup",
+           "id": "2e351a71-dd28-4bcb-a7d6-d36a5b487173",
+           "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+           "locationRef": null,
+           "name": "Incremental Snapshot",
+           "parent_id": "a9832168-7541-4536-b8d9-a8a9b79cf1b4",
+           "size": null,
+           "status": "NEW",
+           "updated": "2014-10-30T12:30:00"
+       }
+   }
+   
+   
+
+
+
 

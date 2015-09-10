@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-patch-update-some-configuration-parameters-version-accountid-configurations-configid:
+.. _patch-update-some-configuration-parameters-version-accountid-configurations-configid:
 
 Update some configuration parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,23 +97,28 @@ This operation does not accept a request body.
 **Example Update some configuration parameters: JSON request**
 
 
+The following example shows the Update some configuration parameters request:
+
 .. code::
 
-    PATCH /v1.0/1234/configurations/f5aaf933-86b2-440e-a9dc-36c24665b3b4 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "configuration": {
-            "values": {
-                "connect_timeout": 300
-            }
-        }
-    }
-    
+   PATCH /v1.0/1234/configurations/f5aaf933-86b2-440e-a9dc-36c24665b3b4 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "configuration": {
+           "values": {
+               "connect_timeout": 300
+           }
+       }
+   }
+   
+
+
+
 
 
 Response
@@ -131,13 +136,18 @@ Response
 **Example Update some configuration parameters: JSON response**
 
 
+The following example shows the Update some configuration parameters response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Thu, 13 Feb 2014 21:47:15 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Thu, 13 Feb 2014 21:47:15 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

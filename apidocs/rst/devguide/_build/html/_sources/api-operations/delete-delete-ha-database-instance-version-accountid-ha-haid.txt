@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-ha-database-instance-version-accountid-ha-haid:
+.. _delete-delete-ha-database-instance-version-accountid-ha-haid:
 
 Delete HA database instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,15 +99,20 @@ This operation does not accept a request body.
 **Example Delete HA database instance: JSON request**
 
 
+The following example shows the Delete HA database instance request:
+
 .. code::
 
-    DELETE /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
-    Accept: application/json
-    Content-Type: application/json
-    
+   DELETE /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
+   Accept: application/json
+   Content-Type: application/json
+   
+
+
+
 
 
 Response
@@ -125,14 +130,19 @@ Response
 **Example Delete HA database instance: JSON response**
 
 
+The following example shows the Delete HA database instance response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.12)
-    Content-Length: 0
-    Date: Fri, 08 May 2015 19:36:28 GMT
-    Connection: close
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 0
+   Date: Fri, 08 May 2015 19:36:28 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

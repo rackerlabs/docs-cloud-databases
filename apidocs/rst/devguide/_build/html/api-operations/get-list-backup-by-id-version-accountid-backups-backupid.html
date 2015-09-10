@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="list-backup-by-id">
-<span id="api-operations-get-list-backup-by-id-version-accountid-backups-backupid"></span><h1>List backup by ID<a class="headerlink" href="#list-backup-by-id" title="Permalink to this headline">¶</a></h1>
+<span id="get-list-backup-by-id-version-accountid-backups-backupid"></span><h1>List backup by ID<a class="headerlink" href="#list-backup-by-id" title="Permalink to this headline">¶</a></h1>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">backups</span><span class="o">/</span><span class="p">{</span><span class="n">backupId</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -208,6 +208,7 @@ specified backup.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 <p><strong>Example List backup by ID: JSON request</strong></p>
+<p>The following example shows the List backup by ID request:</p>
 <div class="code highlight-python"><div class="highlight"><pre>GET /v1.0/1234/backups/61f12fef-edb1-4561-8122-e7c00ef26a82 HTTP/1.1
 User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
@@ -220,31 +221,78 @@ Content-Type: application/json
 <div class="section" id="response">
 <h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
 <p><strong>Example List backup by ID: JSON response</strong></p>
+<p>The following example shows the List backup by ID response:</p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
 Content-Type: application/json
-Via: 1.1 Repose (Repose/2.6.7)
-Content-Length: 335
-Date: Thu, 13 Feb 2014 21:47:16 GMT
+Via: 1.1 Repose (Repose/2.12)
+Content-Length: 737
+Date: Tue, 01 Sep 2015 03:34:53 GMT
+Connection: close
 Server: Jetty(8.0.y.z-SNAPSHOT)
-
 {
-    &quot;backup&quot;: {
-        &quot;status&quot;: &quot;COMPLETED&quot;,
-        &quot;updated&quot;: &quot;2014-06-19T15:56:58&quot;,
-        &quot;description&quot;: &quot;Backup from Restored Instance&quot;,
-        &quot;datastore&quot;: {
-            &quot;version&quot;: &quot;5.1&quot;,
-            &quot;type&quot;: &quot;MySQL&quot;,
-            &quot;version_id&quot;: &quot;20000000-0000-0000-0000-000000000002&quot;
-        },
-        &quot;id&quot;: &quot;e2d3dfca-430f-4cd2-bec0-884cd7426f13&quot;,
-        &quot;size&quot;: 0.141026,
-        &quot;name&quot;: &quot;restored_backup&quot;,
-        &quot;created&quot;: &quot;2014-06-19T15:55:54&quot;,
-        &quot;instance_id&quot;: &quot;34d6c8bf-539e-47d1-8a06-2b7590521309&quot;,
-        &quot;parent_id&quot;: null,
-        &quot;locationRef&quot;: &quot;http://localhost/path/to/backup&quot;
-    }
+   &quot;backup&quot;:{
+      &quot;status&quot;:&quot;COMPLETED&quot;,
+      &quot;updated&quot;:&quot;2015-09-01T03:23:36Z&quot;,
+      &quot;description&quot;:&quot;My standalone instance backup1&quot;,
+      &quot;datastore&quot;:{
+         &quot;version&quot;:&quot;5.6&quot;,
+         &quot;type&quot;:&quot;percona&quot;,
+         &quot;version_id&quot;:&quot;c9760c5b-5675-4482-b097-dffdf50c22ab&quot;
+      },
+      &quot;id&quot;:&quot;61f12fef-edb1-4561-8122-e7c00ef26a82&quot;,
+      &quot;size&quot;:0.18,
+      &quot;is_automated&quot;:0,
+      &quot;name&quot;:&quot;test_instance-backup&quot;,
+      &quot;parent_id&quot;:null,
+      &quot;created&quot;:&quot;2015-09-01T03:23:28Z&quot;,
+      &quot;flavor_ram&quot;:1024,
+      &quot;instance_id&quot;:&quot;f4aaba46-fb5f-4316-988d-88da77759968&quot;,
+      &quot;source&quot;:{
+         &quot;type&quot;:&quot;instance&quot;,
+         &quot;id&quot;:&quot;f4aaba46-fb5f-4316-988d-88da77759968&quot;
+      },
+      &quot;locationRef&quot;:&quot;https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/d9f56b04-e17d-41f0-ae92-30a3b47b8d29.xbstream.gz&quot;,
+      &quot;type&quot;:&quot;InnoBackupEx&quot;,
+      &quot;volume_size&quot;:1
+   }
+}
+</pre></div>
+</div>
+<p><strong>Example List backup by ID: JSON response</strong></p>
+<p>The following example shows the Show details of an HA instance backup by ID response:</p>
+<div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.12)
+Content-Length: 713
+Date: Tue, 01 Sep 2015 03:39:25 GMT
+Connection: close
+Server: Jetty(8.0.y.z-SNAPSHOT)
+{
+   &quot;backup&quot;:{
+      &quot;status&quot;:&quot;COMPLETED&quot;,
+      &quot;updated&quot;:&quot;2015-08-31T22:26:29Z&quot;,
+      &quot;description&quot;:&quot;my_ha_backup2&quot;,
+      &quot;datastore&quot;:{
+         &quot;version&quot;:&quot;5.6&quot;,
+         &quot;type&quot;:&quot;mysql&quot;,
+         &quot;version_id&quot;:&quot;1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866&quot;
+      },
+      &quot;id&quot;:&quot;e1cb03fd-c108-4702-a04b-653491e41a91&quot;,
+      &quot;size&quot;:0.18,
+      &quot;is_automated&quot;:0,
+      &quot;name&quot;:&quot;ha-backup2&quot;,
+      &quot;parent_id&quot;:&quot;0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e&quot;,
+      &quot;created&quot;:&quot;2015-08-31T22:26:23Z&quot;,
+      &quot;flavor_ram&quot;:1024,
+      &quot;instance_id&quot;:null,
+      &quot;source&quot;:{
+         &quot;type&quot;:&quot;ha&quot;,
+         &quot;id&quot;:&quot;130922a2-b9ab-4e95-86be-9c5d79171b5e&quot;
+      },
+      &quot;locationRef&quot;:&quot;https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/e1cb03fd-c108-4702-a04b-653491e41a91.xbstream.gz&quot;,
+      &quot;type&quot;:&quot;InnoBackupExIncremental&quot;,
+      &quot;volume_size&quot;:1
+   }
 }
 </pre></div>
 </div>
@@ -323,6 +371,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances.html">List all replicas and replica source database instances</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">List backup by ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-for-instance-version-accountid-instances-instanceid-backups.html">List backups for instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups.html">List backups of an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-version-accountid-backups.html">List backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-details-version-accountid-configurations-configid.html">List configuration details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameter-details-version-accountid-datastores-datastoreid-versions-versionid-parameters-parameterid.html">List configuration parameter details</a></li>
@@ -356,6 +405,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="patch-update-some-configuration-parameters-version-accountid-configurations-configid.html">Update some configuration parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls.html">Add ACLs to an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html">Add Replica to an HA instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-backup-for-an-ha-instance-version-accountid-backups.html">Create backup for an HA Instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-backup-version-accountid-backups.html">Create backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-configuration-version-accountid-configurations.html">Create configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-database-instance-version-accountid-instances.html">Create database instance</a></li>
@@ -365,6 +415,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="post-create-scheduled-backup-version-accountid-schedules.html">Create scheduled backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-user-version-accountid-instances-instanceid-users.html">Create user</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-enable-root-user-version-accountid-instances-instanceid-root.html">Enable root user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action.html">Remove Replica from an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-version-accountid-instances-instanceid-action.html">Resize the instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-volume-version-accountid-instances-instanceid-action.html">Resize the instance volume</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-restart-instance-version-accountid-instances-instanceid-action.html">Restart instance</a></li>

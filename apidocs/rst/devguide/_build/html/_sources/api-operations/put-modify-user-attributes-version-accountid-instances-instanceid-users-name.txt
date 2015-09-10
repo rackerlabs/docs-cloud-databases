@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-modify-user-attributes-version-accountid-instances-instanceid-users-name:
+.. _put-modify-user-attributes-version-accountid-instances-instanceid-users-name:
 
 Modify user attributes
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,7 +18,29 @@ Refer to `Create user <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/conte
 
 The following table lists attributes for Modify User Attributes. Note that one or more of the attributes must be specified. Refer to the request examples for the required json format:
 
-Attributes for Modify user attributesNameDescriptionnameName of the user for the                            database.passwordUser password for database                            access.hostSpecifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.                            Refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for details. If ``host`` is not specified, it defaults to "%".
+.. table:: Attributes for Modify user attributes
+
+    
+    +------------------------------+-----------------------------------------------+
+    |Name                          |Description                                    |
+    +==============================+===============================================+
+    |name                          |Name of the user for the database.             |
+    +------------------------------+-----------------------------------------------+
+    |password                      |User password for database access.             |
+    +------------------------------+-----------------------------------------------+
+    |host                          |Specifies the host from which a user is        |
+    |                              |allowed to connect to the database. Possible   |
+    |                              |values are a string containing an IPv4 address |
+    |                              |or "%" to allow connecting from any host.      |
+    |                              |Refer to `User access restriction by host      |
+    |                              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
+    |                              |devguide/content/user_access_restrict_by_host- |
+    |                              |dle387.html>`__ for details. If ``host`` is    |
+    |                              |not specified, it defaults to "%".             |
+    +------------------------------+-----------------------------------------------+
+    
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -111,22 +133,27 @@ This operation does not accept a request body.
 **Example Modify user attributes: JSON request**
 
 
+The following example shows the Modify user attributes request:
+
 .. code::
 
-    PUT /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users/dbuser1 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "user": {
-            "name": "new_username", 
-            "password": "new_password"
-        }
-    }
-    
+   PUT /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users/dbuser1 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "user": {
+           "name": "new_username", 
+           "password": "new_password"
+       }
+   }
+   
+
+
+
 
 
 Response
@@ -144,13 +171,18 @@ Response
 **Example Modify user attributes: JSON response**
 
 
+The following example shows the Modify user attributes response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

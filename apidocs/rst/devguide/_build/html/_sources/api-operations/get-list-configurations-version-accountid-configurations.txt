@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-configurations-version-accountid-configurations:
+.. _get-list-configurations-version-accountid-configurations:
 
 List configurations
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -93,16 +93,21 @@ This operation does not accept a request body.
 **Example List configurations: JSON request**
 
 
+The following example shows the List configurations request:
+
 .. code::
 
-    GET /v1.0/1234/configurations HTTP/1.1
-    Host: ord.databases.api.rackspacecloud.com
-    User-Agent: python-troveclient
-    Accept: application/json
-    X-Auth-Token: 26640a608aa9482b888a1664376b8113
-    
-    
-    
+   GET /v1.0/1234/configurations HTTP/1.1
+   Host: ord.databases.api.rackspacecloud.com
+   User-Agent: python-troveclient
+   Accept: application/json
+   X-Auth-Token: 26640a608aa9482b888a1664376b8113
+   
+   
+   
+
+
+
 
 
 Response
@@ -120,27 +125,32 @@ Response
 **Example List configurations: JSON response**
 
 
+The following example shows the List configurations response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.12)
-    Content-Length: 336
-    Date: Thu, 31 Jul 2014 19:00:54 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "configurations": [
-            {
-                "created": "2014-07-31T18:56:09",
-                "datastore_name": "mysql",
-                "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
-                "datastore_version_name": "5.6",
-                "description": "example description",
-                "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
-                "name": "example-configuration-name",
-                "updated": "2014-07-31T18:56:09"
-            }
-        ]
-    }
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 336
+   Date: Thu, 31 Jul 2014 19:00:54 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "configurations": [
+           {
+               "created": "2014-07-31T18:56:09",
+               "datastore_name": "mysql",
+               "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
+               "datastore_version_name": "5.6",
+               "description": "example description",
+               "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
+               "name": "example-configuration-name",
+               "updated": "2014-07-31T18:56:09"
+           }
+       ]
+   }
+
+
+
 

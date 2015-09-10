@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-scheduled-backup-version-accountid-schedules:
+.. _post-create-scheduled-backup-version-accountid-schedules:
 
 Create scheduled backup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -16,17 +16,29 @@ This operation asynchronously creates a new schedule for running a backup period
 
 The following table lists the required and optional attributes for Create Backup:
 
-Required and optional attributes for Create scheduled backupNameDescriptionRequiredactionThe scheduled action: ``backup``.
+.. table:: Required and optional attributes for Create scheduled backup
 
-Yesday_of_weekThe day of the week. Sunday is ``0``.
+    
+    +--------------------------+-------------------------+-------------------------+
+    |Name                      |Description              |Required                 |
+    +==========================+=========================+=========================+
+    |action                    |The scheduled action:    |Yes                      |
+    |                          |``backup``.              |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |day_of_week               |The day of the week.     |Yes                      |
+    |                          |Sunday is ``0``.         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |hour                      |The hour of the day.     |Yes                      |
+    |                          |Midnight is 0.           |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |minute                    |The minute of the hour.  |Yes                      |
+    +--------------------------+-------------------------+-------------------------+
+    |instance                  |The database instanceId  |Yes                      |
+    |                          |to backup.               |                         |
+    +--------------------------+-------------------------+-------------------------+
+    
 
-YeshourThe hour of the day. Midnight is 0.
-
-YesminuteThe minute of the hour.
-
-YesinstanceThe database instanceId to backup.
-
-Yes.. note::
+.. note::
    Notes 
    
    *  During the backup process, database writes on MyISAM Databases will be disabled. InnoDB Databases will continue to allow all operations.
@@ -123,25 +135,30 @@ This operation does not accept a request body.
 **Example Create scheduled backup: JSON request**
 
 
+The following example shows the Create scheduled backup request:
+
 .. code::
 
-    POST /v1.0/1234/schedules HTTP/1.1
-    User-Agent: python-troveclient
-    Host: troveapi.org
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "schedule": {
-            "action": "backup",
-            "day_of_week": 0,
-            "hour": 14,
-            "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
-            "minute": 30
-        }
-    }
-    
+   POST /v1.0/1234/schedules HTTP/1.1
+   User-Agent: python-troveclient
+   Host: troveapi.org
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "schedule": {
+           "action": "backup",
+           "day_of_week": 0,
+           "hour": 14,
+           "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+           "minute": 30
+       }
+   }
+   
+
+
+
 
 
 Response
@@ -159,28 +176,33 @@ Response
 **Example Create scheduled backup: JSON response**
 
 
+The following example shows the Create scheduled backup response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Content-Length: 343
-    Date: Mon, 18 Mar 2013 19:09:17 GMT
-    
-    {
-        "schedule": {
-            "action": "backup",
-            "created": "2014-10-30T12:30:00",
-            "day_of_month": null,
-            "day_of_week": 0,
-            "hour": 14,
-            "id": "2e351a71-dd28-4bcb-a7d6-d36a5b487173",
-            "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
-            "last_scheduled": null,
-            "minute": 30,
-            "month": null,
-            "next_run": "2014-11-02T14:30:00",
-            "updated": "2014-10-30T12:30:00"
-        }
-    }
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Content-Length: 343
+   Date: Mon, 18 Mar 2013 19:09:17 GMT
+   
+   {
+       "schedule": {
+           "action": "backup",
+           "created": "2014-10-30T12:30:00",
+           "day_of_month": null,
+           "day_of_week": 0,
+           "hour": 14,
+           "id": "2e351a71-dd28-4bcb-a7d6-d36a5b487173",
+           "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+           "last_scheduled": null,
+           "minute": 30,
+           "month": null,
+           "next_run": "2014-11-02T14:30:00",
+           "updated": "2014-10-30T12:30:00"
+       }
+   }
+   
+
+
+
 

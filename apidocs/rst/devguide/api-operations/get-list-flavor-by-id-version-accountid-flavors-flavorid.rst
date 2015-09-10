@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-flavor-by-id-version-accountid-flavors-flavorid:
+.. _get-list-flavor-by-id-version-accountid-flavors-flavorid:
 
 List flavor by ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,17 +105,22 @@ This operation does not accept a request body.
 **Example List flavor by ID: JSON request**
 
 
+The following example shows the List flavor by ID request:
+
 .. code::
 
-    GET /v1.0/1234/flavors/1 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/flavors/1 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -133,31 +138,36 @@ Response
 **Example List flavor by ID: JSON response**
 
 
+The following example shows the List flavor by ID response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 206
-    Date: Thu, 13 Feb 2014 21:47:13 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "flavor": {
-            "id": 1, 
-            "links": [
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
-                    "rel": "self"
-                }, 
-                {
-                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
-                    "rel": "bookmark"
-                }
-            ], 
-            "name": "512MB Instance", 
-            "ram": 512
-        }
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 206
+   Date: Thu, 13 Feb 2014 21:47:13 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "flavor": {
+           "id": 1, 
+           "links": [
+               {
+                   "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                   "rel": "self"
+               }, 
+               {
+                   "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                   "rel": "bookmark"
+               }
+           ], 
+           "name": "512MB Instance", 
+           "ram": 512
+       }
+   }
+   
+
+
+
 

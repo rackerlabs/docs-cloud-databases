@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid:
+.. _delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid:
 
 Delete schedule for running backup by schedule ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,15 +99,20 @@ This operation does not accept a request body.
 **Example Delete schedule for running backup by schedule ID: JSON request**
 
 
+The following example shows the Delete schedule for backups by schedule ID request:
+
 .. code::
 
-    DELETE /v1.0/1234/schedules/2e351a71-dd28-4bcb-a7d6-d36a5b487173 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: troveapi.org
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
+   DELETE /v1.0/1234/schedules/2e351a71-dd28-4bcb-a7d6-d36a5b487173 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: troveapi.org
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+
+
+
 
 
 Response
@@ -125,11 +130,16 @@ Response
 **Example Delete schedule for running backup by schedule ID: JSON response**
 
 
+The following example shows the Delete schedule for backups by schedule ID response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Content-Length: 0
-    Date: Mon, 18 Mar 2013 19:09:17 GMT
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Content-Length: 0
+   Date: Mon, 18 Mar 2013 19:09:17 GMT
+   
+
+
+
 

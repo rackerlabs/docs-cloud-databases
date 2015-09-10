@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="detach-replica">
-<span id="api-operations-patch-detach-replica-version-accountid-instances-instanceid"></span><h1>Detach replica<a class="headerlink" href="#detach-replica" title="Permalink to this headline">¶</a></h1>
+<span id="patch-detach-replica-version-accountid-instances-instanceid"></span><h1>Detach replica<a class="headerlink" href="#detach-replica" title="Permalink to this headline">¶</a></h1>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PATCH</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -101,7 +101,32 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <p class="last">Detaching a replica will change the database instance status to DETACH_REPLICA. The status will change back to ACTIVE once the replica is completely detached from the source and is no longer a replica.</p>
 </div>
 <p>The following table lists the required attributes for Detach replica:</p>
-<p>Required and optional attributes for Detach replicaApplies To Name DescriptionRequiredInstancereplica_ofIdentifier of the source instance to replicate.YesRefer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html">Database instance status</a> for a list of possible database instance statuses that may be returned.</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Required and optional attributes for Detach replica</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="24%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Applies To</th>
+<th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Instance</td>
+<td>replica_of</td>
+<td>Identifier of the
+source instance to
+replicate.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p>Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html">Database instance status</a> for a list of possible database instance statuses that may be returned.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -216,6 +241,7 @@ instance.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 <p><strong>Example Detach replica: JSON request</strong></p>
+<p>The following example shows the Detach replica request:</p>
 <div class="code highlight-python"><div class="highlight"><pre>PATCH /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f HTTP/1.1
 User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
@@ -234,6 +260,7 @@ Content-Type: application/json
 <div class="section" id="response">
 <h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
 <p><strong>Example Detach replica: JSON response</strong></p>
+<p>The following example shows the Detach replica response:</p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
@@ -317,6 +344,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances.html">List all replicas and replica source database instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backup-by-id-version-accountid-backups-backupid.html">List backup by ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-for-instance-version-accountid-instances-instanceid-backups.html">List backups for instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups.html">List backups of an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-version-accountid-backups.html">List backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-details-version-accountid-configurations-configid.html">List configuration details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameter-details-version-accountid-datastores-datastoreid-versions-versionid-parameters-parameterid.html">List configuration parameter details</a></li>
@@ -350,6 +378,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="patch-update-some-configuration-parameters-version-accountid-configurations-configid.html">Update some configuration parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls.html">Add ACLs to an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html">Add Replica to an HA instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-backup-for-an-ha-instance-version-accountid-backups.html">Create backup for an HA Instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-backup-version-accountid-backups.html">Create backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-configuration-version-accountid-configurations.html">Create configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-database-instance-version-accountid-instances.html">Create database instance</a></li>
@@ -359,6 +388,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="post-create-scheduled-backup-version-accountid-schedules.html">Create scheduled backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-user-version-accountid-instances-instanceid-users.html">Create user</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-enable-root-user-version-accountid-instances-instanceid-root.html">Enable root user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action.html">Remove Replica from an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-version-accountid-instances-instanceid-action.html">Resize the instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-volume-version-accountid-instances-instanceid-action.html">Resize the instance volume</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-restart-instance-version-accountid-instances-instanceid-action.html">Restart instance</a></li>

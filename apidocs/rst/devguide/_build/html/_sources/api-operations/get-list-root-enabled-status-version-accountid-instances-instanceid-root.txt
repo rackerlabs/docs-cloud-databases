@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-root-enabled-status-version-accountid-instances-instanceid-root:
+.. _get-list-root-enabled-status-version-accountid-instances-instanceid-root:
 
 List root-enabled status
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -99,17 +99,22 @@ This operation does not accept a request body.
 **Example List root-enabled status: JSON request**
 
 
+The following example shows the Check root user access request:
+
 .. code::
 
-    GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/root HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/root HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -127,17 +132,22 @@ Response
 **Example List root-enabled status: JSON response**
 
 
+The following example show the Check root user access response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 21
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "rootEnabled": true
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 21
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "rootEnabled": true
+   }
+   
+
+
+
 

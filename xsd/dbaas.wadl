@@ -134,6 +134,7 @@
                             type="xsd:string" >
                             <doc>The schedule ID for the specified schedule.</doc></param>
                         <method href="#getAutomatedBackupById" />
+                        <method href="#updateAutomatedBackupById" />
                         <method href="#deleteAutomatedBackupById" />
                     </resource>   
                 </resource>
@@ -2183,6 +2184,8 @@
                 </tbody>
             </table> 
             
+            <para>The <code>day_of_week</code> attribute specifies the day in which a full backup will be made. 
+                After that day, the schedule will automatically run daily incremental backups until the next full backup.</para>
             
             <note><title>Notes</title>
                 <itemizedlist>
@@ -2294,6 +2297,66 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List scheduled backup by schedule ID response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-list-by-id-response.json"/>
+                </doc>
+            </representation>
+        </response>
+        &commonFaults;
+        &getFaults;
+    </method>
+    
+    <method name="PUT" id="updateAutomatedBackupById">
+        <wadl:doc xml:lang="EN" title="Update schedule for backups by schedule ID" xmlns="http://docbook.org/ns/docbook">
+            <para role="shortdesc">Updates the backup schedule for the specified schedule.</para>
+            <para>This operation updates the schedule for running backups for the specified schedule.</para>
+            <para>The following table shows the required and optional attributes for Update schedule for backups by schedule ID.</para>
+            <table rules="all">
+                <caption>Required and optional attributes for Update schedule for backups by schedule ID</caption>
+                <thead>
+                    <tr>
+                        <td colspan="1">Name </td>
+                        <td colspan="3">Description</td>
+                        <td colspan="1">Required</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="1">day_of_week</td>
+                        <td colspan="3">The day of the week. Sunday is <code>0</code>.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">hour</td>
+                        <td colspan="3">The hour of the day. Midnight is <code>0</code>.</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">minute</td>
+                        <td colspan="3">The minute of the hour..</td>
+                        <td colspan="1">Yes</td>
+                    </tr>
+                    <tr>
+                        <td colspan="1">run_now</td>
+                        <td colspan="3">Run the backup immediately.</td>
+                        <td colspan="1">No</td>
+                    </tr>
+                </tbody>
+            </table>
+        </wadl:doc>
+        <request>
+            <representation mediaType="application/json">
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update backup schedule by schedule ID request:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-update-by-id-request.json"/>
+                </doc>
+            </representation>
+        </request>
+        <response status="200">
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
+            <representation mediaType="application/json"
+                element="dbaas:Backup" >
+                <doc>
+                    <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update backup schedule by schedule ID response:</para>
+                    <xsdxt:code href="../apidocs/src/resources/samples/db-automated-backup-update-by-id-response.json"/>
                 </doc>
             </representation>
         </response>

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-put-change-user(s)-password-version-accountid-instances-instanceid-users:
+.. _put-change-user(s)-password-version-accountid-instances-instanceid-users:
 
 Change user(s) password
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,28 +105,33 @@ This operation does not accept a request body.
 **Example Change user(s) password: JSON request**
 
 
+The following example shows the Change user(s) password request:
+
 .. code::
 
-    PUT /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/users HTTP/1.1
-    User-Agent: python-example-client
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-       "users": [
-          {
-              "name": "dbuser1",
-              "password": "newpassword"
-          },
-          {
-               "name": "dbuser2",
-               "password": "anotherpassword"
-          }
-       ]
-    }
-    
+   PUT /v1.0/1234/instances/692d8418-7a8f-47f1-8060-59846c6e024f/users HTTP/1.1
+   User-Agent: python-example-client
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+      "users": [
+         {
+             "name": "dbuser1",
+             "password": "newpassword"
+         },
+         {
+              "name": "dbuser2",
+              "password": "anotherpassword"
+         }
+      ]
+   }
+   
+
+
+
 
 
 Response
@@ -144,12 +149,17 @@ Response
 **Example Change user(s) password: JSON response**
 
 
+The following example shows the Change user(s) password response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Content-Length: 152
-    Date: Wed, 21 Mar 2012 17:46:46 GMT
-    
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Content-Length: 152
+   Date: Wed, 21 Mar 2012 17:46:46 GMT
+   
+   
+
+
+
 

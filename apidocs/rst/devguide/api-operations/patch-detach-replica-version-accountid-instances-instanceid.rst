@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-patch-detach-replica-version-accountid-instances-instanceid:
+.. _patch-detach-replica-version-accountid-instances-instanceid:
 
 Detach replica
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -21,7 +21,19 @@ This operation detaches the specified replica instance from its replication sour
 
 The following table lists the required attributes for Detach replica:
 
-Required and optional attributes for Detach replicaApplies To Name DescriptionRequiredInstancereplica_ofIdentifier of the source instance to replicate.YesRefer to `Database instance status <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html>`__ for a list of possible database instance statuses that may be returned.
+.. table:: Required and optional attributes for Detach replica
+
+    
+    +-------------------+-------------------+-------------------+------------------+
+    |Applies To         |Name               |Description        |Required          |
+    +===================+===================+===================+==================+
+    |Instance           |replica_of         |Identifier of the  |Yes               |
+    |                   |                   |source instance to |                  |
+    |                   |                   |replicate.         |                  |
+    +-------------------+-------------------+-------------------+------------------+
+    
+
+Refer to `Database instance status <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html>`__ for a list of possible database instance statuses that may be returned.
 
 
 
@@ -109,21 +121,26 @@ This operation does not accept a request body.
 **Example Detach replica: JSON request**
 
 
+The following example shows the Detach replica request:
+
 .. code::
 
-    PATCH /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-      "instance": {
-         "replica_of": ""
-      }
-    }
-    
+   PATCH /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+     "instance": {
+        "replica_of": ""
+     }
+   }
+   
+
+
+
 
 
 Response
@@ -141,14 +158,19 @@ Response
 **Example Detach replica: JSON response**
 
 
+The following example shows the Detach replica response:
+
 .. code::
 
-    
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Tue, 21 Oct 2014 21:47:15 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Tue, 21 Oct 2014 21:47:15 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-backup-by-id-version-accountid-backups-backupid:
+.. _get-list-backup-by-id-version-accountid-backups-backupid:
 
 List backup by ID
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -98,17 +98,22 @@ This operation does not accept a request body.
 **Example List backup by ID: JSON request**
 
 
+The following example shows the List backup by ID request:
+
 .. code::
 
-    GET /v1.0/1234/backups/61f12fef-edb1-4561-8122-e7c00ef26a82 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/backups/61f12fef-edb1-4561-8122-e7c00ef26a82 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -126,33 +131,94 @@ Response
 **Example List backup by ID: JSON response**
 
 
+The following example shows the List backup by ID response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 335
-    Date: Thu, 13 Feb 2014 21:47:16 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "backup": {
-            "status": "COMPLETED",
-            "updated": "2014-06-19T15:56:58",
-            "description": "Backup from Restored Instance",
-            "datastore": {
-                "version": "5.1",
-                "type": "MySQL",
-                "version_id": "20000000-0000-0000-0000-000000000002"
-            },
-            "id": "e2d3dfca-430f-4cd2-bec0-884cd7426f13",
-            "size": 0.141026,
-            "name": "restored_backup",
-            "created": "2014-06-19T15:55:54",
-            "instance_id": "34d6c8bf-539e-47d1-8a06-2b7590521309",
-            "parent_id": null,
-            "locationRef": "http://localhost/path/to/backup"
-        }
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 737
+   Date: Tue, 01 Sep 2015 03:34:53 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   {  
+      "backup":{  
+         "status":"COMPLETED",
+         "updated":"2015-09-01T03:23:36Z",
+         "description":"My standalone instance backup1",
+         "datastore":{  
+            "version":"5.6",
+            "type":"percona",
+            "version_id":"c9760c5b-5675-4482-b097-dffdf50c22ab"
+         },
+         "id":"61f12fef-edb1-4561-8122-e7c00ef26a82",
+         "size":0.18,
+         "is_automated":0,
+         "name":"test_instance-backup",
+         "parent_id":null,
+         "created":"2015-09-01T03:23:28Z",
+         "flavor_ram":1024,
+         "instance_id":"f4aaba46-fb5f-4316-988d-88da77759968",
+         "source":{  
+            "type":"instance",
+            "id":"f4aaba46-fb5f-4316-988d-88da77759968"
+         },
+         "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/d9f56b04-e17d-41f0-ae92-30a3b47b8d29.xbstream.gz",
+         "type":"InnoBackupEx",
+         "volume_size":1
+      }
+   }
+   
+   
+
+
+
+
+
+**Example List backup by ID: JSON response**
+
+
+The following example shows the Show details of an HA instance backup by ID response:
+
+.. code::
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 713
+   Date: Tue, 01 Sep 2015 03:39:25 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   {  
+      "backup":{  
+         "status":"COMPLETED",
+         "updated":"2015-08-31T22:26:29Z",
+         "description":"my_ha_backup2",
+         "datastore":{  
+            "version":"5.6",
+            "type":"mysql",
+            "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
+         },
+         "id":"e1cb03fd-c108-4702-a04b-653491e41a91",
+         "size":0.18,
+         "is_automated":0,
+         "name":"ha-backup2",
+         "parent_id":"0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e",
+         "created":"2015-08-31T22:26:23Z",
+         "flavor_ram":1024,
+         "instance_id":null,
+         "source":{  
+            "type":"ha",
+            "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+         },
+         "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/e1cb03fd-c108-4702-a04b-653491e41a91.xbstream.gz",
+         "type":"InnoBackupExIncremental",
+         "volume_size":1
+      }
+   }
+   
+
+
+
 

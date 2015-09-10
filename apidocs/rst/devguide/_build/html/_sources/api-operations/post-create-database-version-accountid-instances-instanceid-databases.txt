@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-database-version-accountid-instances-instanceid-databases:
+.. _post-create-database-version-accountid-instances-instanceid-databases:
 
 Create database
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,7 +18,33 @@ The ``name`` of the database is a required attribute.
 
 The following additional attributes can be specified for each database: ``collate`` and ``character_set``.
 
-Required and optional attributes for Create databaseName DescriptionRequirednameSpecifies the database name for creating the database. Refer to the request examples for the required json format.Yescharacter_setSet of symbols and encodings. The default character set is ``utf8``.NocollateSet of rules for comparing characters in a character set. The default value for collate is ``utf8_general_ci``.NoSee the database service documentation for information about supported character sets and collations. Refer to `Datastore types and versions <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Datastore_Types_and_Versions-d1e9263.html>`__ for references to the documentation for each database service. For example, for MySQL information see `http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`__.
+.. table:: Required and optional attributes for Create database
+
+    
+    +--------------------------+-------------------------+-------------------------+
+    |Name                      |Description              |Required                 |
+    +==========================+=========================+=========================+
+    |name                      |Specifies the database   |Yes                      |
+    |                          |name for creating the    |                         |
+    |                          |database. Refer to the   |                         |
+    |                          |request examples for the |                         |
+    |                          |required json format.    |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |character_set             |Set of symbols and       |No                       |
+    |                          |encodings. The default   |                         |
+    |                          |character set is         |                         |
+    |                          |``utf8``.                |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |collate                   |Set of rules for         |No                       |
+    |                          |comparing characters in  |                         |
+    |                          |a character set. The     |                         |
+    |                          |default value for        |                         |
+    |                          |collate is               |                         |
+    |                          |``utf8_general_ci``.     |                         |
+    +--------------------------+-------------------------+-------------------------+
+    
+
+See the database service documentation for information about supported character sets and collations. Refer to `Datastore types and versions <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Datastore_Types_and_Versions-d1e9263.html>`__ for references to the documentation for each database service. For example, for MySQL information see `http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`__.
 
 .. note::
    The following database names are reserved and cannot be used for creating databases: lost+found, information_schema, and mysql.
@@ -27,7 +53,56 @@ Required and optional attributes for Create databaseName DescriptionRequiredname
 
 Refer to the following tables for information about characters that are valid/invalid for creating database names.
 
-Valid characters that can be used in a database nameCharacterLetters (upper and lower cases allowed)Numbers'@', '?', '#', and spaces are allowed, but not at the beginning and end of the database name'_' is allowed anywhere in the database nameCharacters that cannot be used in a database nameCharacterSingle quotesDouble quotesBack quotesSemicolonsCommasBackslashesForwardslashesLength restrictions for database nameRestrictionValueDatabase-name maximum length64
+.. table:: Valid characters that can be used in a database name
+
+    
+    +------------------------------------------------------------------------------+
+    |Character                                                                     |
+    +==============================================================================+
+    |Letters (upper and lower cases allowed)                                       |
+    +------------------------------------------------------------------------------+
+    |Numbers                                                                       |
+    +------------------------------------------------------------------------------+
+    |'@', '?', '#', and spaces are allowed, but not at the beginning and end of    |
+    |the database name                                                             |
+    +------------------------------------------------------------------------------+
+    |'_' is allowed anywhere in the database name                                  |
+    +------------------------------------------------------------------------------+
+    
+
+.. table:: Characters that cannot be used in a database name
+
+    
+    +------------------------------------------------------------------------------+
+    |Character                                                                     |
+    +==============================================================================+
+    |Single quotes                                                                 |
+    +------------------------------------------------------------------------------+
+    |Double quotes                                                                 |
+    +------------------------------------------------------------------------------+
+    |Back quotes                                                                   |
+    +------------------------------------------------------------------------------+
+    |Semicolons                                                                    |
+    +------------------------------------------------------------------------------+
+    |Commas                                                                        |
+    +------------------------------------------------------------------------------+
+    |Backslashes                                                                   |
+    +------------------------------------------------------------------------------+
+    |Forwardslashes                                                                |
+    +------------------------------------------------------------------------------+
+    
+
+.. table:: Length restrictions for database name
+
+    
+    +---------------------------------------+--------------------------------------+
+    |Restriction                            |Value                                 |
+    +=======================================+======================================+
+    |Database-name maximum length           |64                                    |
+    +---------------------------------------+--------------------------------------+
+    
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -113,31 +188,36 @@ This operation does not accept a request body.
 **Example Create database: JSON request**
 
 
+The following example shows the Create database request:
+
 .. code::
 
-    POST /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "databases": [
-            {
-                "character_set": "utf8", 
-                "collate": "utf8_general_ci", 
-                "name": "testingdb"
-            }, 
-            {
-                "name": "anotherdb"
-            }, 
-            {
-                "name": "oneMoreDB"
-            }
-        ]
-    }
-    
+   POST /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "databases": [
+           {
+               "character_set": "utf8", 
+               "collate": "utf8_general_ci", 
+               "name": "testingdb"
+           }, 
+           {
+               "name": "anotherdb"
+           }, 
+           {
+               "name": "oneMoreDB"
+           }
+       ]
+   }
+   
+
+
+
 
 
 Response
@@ -155,13 +235,18 @@ Response
 **Example Create database: JSON response**
 
 
+The following example shows the Create database response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

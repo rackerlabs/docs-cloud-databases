@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-user-access-version-accountid-instances-instanceid-users-name-databases:
+.. _get-list-user-access-version-accountid-instances-instanceid-users-name-databases:
 
 List user access
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -107,33 +107,45 @@ This operation does not accept a request body.
 **Example List user access: JSON request**
 
 
+The following example shows the List user access request:
+
 .. code::
 
-    GET /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser1/databases HTTP/1.1
-    User-Agent: python-reddwarfclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser1/databases HTTP/1.1
+   User-Agent: python-reddwarfclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 **Example List user access for restricted host request: JSON**
 
 
+The following example shows the List user access for restricted host request.
+
+This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name (refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for details):
+
 .. code::
 
-    GET /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser2%4010%252e0%252e0%252e1/databases HTTP/1.1
-    User-Agent: python-reddwarfclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser2%4010%252e0%252e0%252e1/databases HTTP/1.1
+   User-Agent: python-reddwarfclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -151,46 +163,58 @@ Response
 **Example List user access: JSON response**
 
 
+The following example shows the List user access response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 38
-    Date: Wed, 08 May 2013 22:43:35 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "databases": [
-            {
-                "name": "databaseE"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 38
+   Date: Wed, 08 May 2013 22:43:35 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "databases": [
+           {
+               "name": "databaseE"
+           }
+       ]
+   }
+   
+
+
+
 
 
 **Example List user access for restricted host response: JSON**
 
 
+The following example shows the List user access for restricted host response.
+
+This example shows the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name (refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for details):
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 61
-    Date: Wed, 08 May 2013 22:43:35 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "databases": [
-            {
-                "name": "databaseB"
-            }, 
-            {
-                "name": "databaseC"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 61
+   Date: Wed, 08 May 2013 22:43:35 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "databases": [
+           {
+               "name": "databaseB"
+           }, 
+           {
+               "name": "databaseC"
+           }
+       ]
+   }
+   
+
+
+
 

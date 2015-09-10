@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-datastore-type-version-accountid-datastores-datastoreid:
+.. _get-list-datastore-type-version-accountid-datastores-datastoreid:
 
 List datastore type
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -98,17 +98,22 @@ This operation does not accept a request body.
 **Example List datastore type: JSON request**
 
 
+The following example shows the List datastore type request:
+
 .. code::
 
-    GET /v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -126,62 +131,67 @@ Response
 **Example List datastore type: JSON response**
 
 
+The following example shows the List datastore type response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 360
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "datastore": {
-            "default_version": "7104c15f-ace0-479b-97ad-b368de32cb68",
-            "id": "a00000a0-00a0-0a00-00a0-000a000000aa",
-            "links": [
-                {
-                    "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/a00000a0-00a0-0a00-00a0-000a000000aa",
-                    "rel": "bookmark"
-                }
-            ],
-            "name": "mysql",
-            "versions": [
-                {
-                    "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
-                    "links": [
-                        {
-                            "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
-                            "rel": "self"
-                        },
-                        {
-                            "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
-                            "rel": "bookmark"
-                        }
-                    ],
-                    "name": "5.1"
-                },
-                {
-                    "id": "c00000b0-00c0-0c00-00c0-000b000000cc",
-                    "links": [
-                        {
-                            "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
-                            "rel": "self"
-                        },
-                        {
-                            "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
-                            "rel": "bookmark"
-                        }
-                    ],
-                    "name": "5.6"
-                }
-            ]
-        }
-    }
-    
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 360
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "datastore": {
+           "default_version": "7104c15f-ace0-479b-97ad-b368de32cb68",
+           "id": "a00000a0-00a0-0a00-00a0-000a000000aa",
+           "links": [
+               {
+                   "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa",
+                   "rel": "self"
+               },
+               {
+                   "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/a00000a0-00a0-0a00-00a0-000a000000aa",
+                   "rel": "bookmark"
+               }
+           ],
+           "name": "mysql",
+           "versions": [
+               {
+                   "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
+                   "links": [
+                       {
+                           "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
+                           "rel": "self"
+                       },
+                       {
+                           "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
+                           "rel": "bookmark"
+                       }
+                   ],
+                   "name": "5.1"
+               },
+               {
+                   "id": "c00000b0-00c0-0c00-00c0-000b000000cc",
+                   "links": [
+                       {
+                           "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
+                           "rel": "self"
+                       },
+                       {
+                           "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
+                           "rel": "bookmark"
+                       }
+                   ],
+                   "name": "5.6"
+               }
+           ]
+       }
+   }
+   
+   
+
+
+
 

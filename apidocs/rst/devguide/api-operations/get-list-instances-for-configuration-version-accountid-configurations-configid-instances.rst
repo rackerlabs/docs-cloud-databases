@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-instances-for-configuration-version-accountid-configurations-configid-instances:
+.. _get-list-instances-for-configuration-version-accountid-configurations-configid-instances:
 
 List instances for configuration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,17 +97,22 @@ This operation does not accept a request body.
 **Example List instances for configuration: JSON request**
 
 
+The following example shows the List instances for configuration request:
+
 .. code::
 
-    GET /v1.0/1234/configurations/f5aaf933-86b2-440e-a9dc-36c24665b3b4/instances HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/configurations/f5aaf933-86b2-440e-a9dc-36c24665b3b4/instances HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -125,22 +130,27 @@ Response
 **Example List instances for configuration: JSON response**
 
 
+The following example shows the List instances for configuration response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 93
-    Date: Thu, 13 Feb 2014 21:47:15 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "instances": [
-            {
-                "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
-                "name": "json_rack_instance"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 93
+   Date: Thu, 13 Feb 2014 21:47:15 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "instances": [
+           {
+               "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+               "name": "json_rack_instance"
+           }
+       ]
+   }
+   
+
+
+
 

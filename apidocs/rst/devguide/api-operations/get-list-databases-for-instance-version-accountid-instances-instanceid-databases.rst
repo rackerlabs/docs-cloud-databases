@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-databases-for-instance-version-accountid-instances-instanceid-databases:
+.. _get-list-databases-for-instance-version-accountid-instances-instanceid-databases:
 
 List databases for instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,33 +104,43 @@ This operation does not accept a request body.
 **Example List databases for instance: JSON request**
 
 
+The following example shows the List databases for instance request:
+
 .. code::
 
-    GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 **Example List databases for instance paged request: JSON**
 
 
+The following example shows the paginated List databases for instance request:
+
 .. code::
 
-    GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases?limit=1 HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases?limit=1 HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -148,61 +158,71 @@ Response
 **Example List databases for instance: JSON response**
 
 
+The following example shows the List databases for instance response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 129
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "databases": [
-            {
-                "name": "anotherdb"
-            }, 
-            {
-                "name": "nextround"
-            }, 
-            {
-                "name": "oneMoreDB"
-            }, 
-            {
-                "name": "sampledb"
-            }, 
-            {
-                "name": "testingdb"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 129
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "databases": [
+           {
+               "name": "anotherdb"
+           }, 
+           {
+               "name": "nextround"
+           }, 
+           {
+               "name": "oneMoreDB"
+           }, 
+           {
+               "name": "sampledb"
+           }, 
+           {
+               "name": "testingdb"
+           }
+       ]
+   }
+   
+
+
+
 
 
 **Example List databases for instance paged response: JSON**
 
 
+The following example shows the paginated List databases for instance response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 192
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "databases": [
-            {
-                "name": "anotherdb"
-            }
-        ], 
-        "links": [
-            {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases?marker=anotherdb&limit=1", 
-                "rel": "next"
-            }
-        ]
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 192
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "databases": [
+           {
+               "name": "anotherdb"
+           }
+       ], 
+       "links": [
+           {
+               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases?marker=anotherdb&limit=1", 
+               "rel": "next"
+           }
+       ]
+   }
+   
+
+
+
 

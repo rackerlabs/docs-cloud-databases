@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-replica-source-version-accountid-instances-instanceid:
+.. _get-list-replica-source-version-accountid-instances-instanceid:
 
 List replica source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -110,15 +110,20 @@ This operation does not accept a request body.
 **Example List replica source: JSON request**
 
 
+The following example shows the List replica source request:
+
 .. code::
 
-    GET /v1.0/1234/instances/8b499b45-52d6-402d-b398-f9d8f279c69a HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
+   GET /v1.0/1234/instances/8b499b45-52d6-402d-b398-f9d8f279c69a HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+
+
+
 
 
 Response
@@ -136,73 +141,78 @@ Response
 **Example List replica source: JSON response**
 
 
+The following example shows the List replica source response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 718
-    Date: Thu, 13 Feb 2014 21:47:15 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    
-    {
-      "instance": {
-        "status": "ACTIVE",
-        "updated": "2014-09-26T19:15:57",
-        "name": "t1_ALT_GUEST",
-        "links": [
-          {
-            "href": " https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/8b499b45-52d6-402d-b398-f9d8f279c69a",
-            "rel": "self"
-          },
-          {
-            "href": " https://ord.databases.api.rackspacecloud.com/instances /8b499b45-52d6-402d-b398-f9d8f279c69a",
-            "rel": "bookmark"
-          }
-        ],
-        "created": "2014-09-26T19:15:50",
-        "ip": [
-          "10.0.0.2"
-        ],
-        "replicas": [
-          {
-            "id": "3c691f06-bf9a-4618-b7ec-2817ce0cf254",
-            "links": [
-              {
-                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances /3c691f06-bf9a-4618-b7ec-2817ce0cf254",
-                "rel": "self"
-              },
-              {
-                "href": " https://ord.databases.api.rackspacecloud.com/instances /3c691f06-bf9a-4618-b7ec-2817ce0cf254",
-                "rel": "bookmark"
-              }
-            ]
-          }
-        ],
-        "id": "8b499b45-52d6-402d-b398-f9d8f279c69a",
-        "volume": {
-          "used": 0.54,
-          "size": 1
-        },
-        "flavor": {
-          "id": "9",
-          "links": [
-            {
-              "href": “https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/9",
-              "rel": "self"
-            },
-            {
-              "href": " https://ord.databases.api.rackspacecloud.com/flavors/9",
-              "rel": "bookmark"
-            }
-          ]
-        },
-        "datastore": {
-          "version": "5.6",
-          "type": "mysql"
-        }
-      }
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 718
+   Date: Thu, 13 Feb 2014 21:47:15 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   
+   {
+     "instance": {
+       "status": "ACTIVE",
+       "updated": "2014-09-26T19:15:57",
+       "name": "t1_ALT_GUEST",
+       "links": [
+         {
+           "href": " https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/8b499b45-52d6-402d-b398-f9d8f279c69a",
+           "rel": "self"
+         },
+         {
+           "href": " https://ord.databases.api.rackspacecloud.com/instances /8b499b45-52d6-402d-b398-f9d8f279c69a",
+           "rel": "bookmark"
+         }
+       ],
+       "created": "2014-09-26T19:15:50",
+       "ip": [
+         "10.0.0.2"
+       ],
+       "replicas": [
+         {
+           "id": "3c691f06-bf9a-4618-b7ec-2817ce0cf254",
+           "links": [
+             {
+               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances /3c691f06-bf9a-4618-b7ec-2817ce0cf254",
+               "rel": "self"
+             },
+             {
+               "href": " https://ord.databases.api.rackspacecloud.com/instances /3c691f06-bf9a-4618-b7ec-2817ce0cf254",
+               "rel": "bookmark"
+             }
+           ]
+         }
+       ],
+       "id": "8b499b45-52d6-402d-b398-f9d8f279c69a",
+       "volume": {
+         "used": 0.54,
+         "size": 1
+       },
+       "flavor": {
+         "id": "9",
+         "links": [
+           {
+             "href": “https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/9",
+             "rel": "self"
+           },
+           {
+             "href": " https://ord.databases.api.rackspacecloud.com/flavors/9",
+             "rel": "bookmark"
+           }
+         ]
+       },
+       "datastore": {
+         "version": "5.6",
+         "type": "mysql"
+       }
+     }
+   }
+   
+
+
+
 

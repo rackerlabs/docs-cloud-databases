@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-backups-version-accountid-backups:
+.. _get-list-backups-version-accountid-backups:
 
 List backups
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -108,33 +108,43 @@ This operation does not accept a request body.
 **Example List backups: JSON request**
 
 
+The following example shows the List backups request:
+
 .. code::
 
-    GET /v1.0/1234/backups HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/backups HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 **Example List backups query request: JSON**
 
 
+The following example shows the List backups query request:
+
 .. code::
 
-    GET /v1.0/1234/backups?datastore=mysql HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/backups?datastore=mysql HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -152,229 +162,220 @@ Response
 **Example List backups: JSON response**
 
 
+The following example shows the List backups response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 663
-    Date: Thu, 13 Feb 2014 21:47:16 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    
-    
-    {
-      "backups": [
-        {
-          "status": "COMPLETED",
-          "updated": "2014-06-19T15:56:58",
-          "description": "Backup from Restored Instance",
-          "datastore": {
-            "version": "5.1",
-            "type": "MySQL",
-            "version_id": "20000000-0000-0000-0000-000000000002"
-          },
-          "id": "e2d3dfca-430f-4cd2-bec0-884cd7426f13",
-          "size": 0.141026,
-          "name": "restored_backup",
-          "created": "2014-06-19T15:55:54",
-          "instance_id": "34d6c8bf-539e-47d1-8a06-2b7590521309",
-          "parent_id": null,
-          "locationRef": "http://localhost/path/to/backup"
-        },
-        {
-          "status": "COMPLETED",
-          "updated": "2014-06-19T15:26:10",
-          "description": "Backup from Restored Instance",
-          "datastore": {
-            "version": "5.1",
-            "type": "MySQL",
-            "version_id": "20000000-0000-0000-0000-000000000002"
-          },
-          "id": "5890e1cc-c5ad-460c-baec-cfdaf2ccf796",
-          "size": 0.141026,
-          "name": "restored_backup",
-          "created": "2014-06-19T15:25:06",
-          "instance_id": "c7855b60-2a50-4ed9-8de3-f35f2067fb2a",
-          "parent_id": null,
-          "locationRef": "http://localhost/path/to/backup"
-        },
-        {
-          "status": "COMPLETED",
-          "updated": "2014-06-19T15:20:04",
-          "description": "Backup from Restored Instance",
-          "datastore": {
-            "version": "5.1",
-            "type": "MySQL",
-            "version_id": "20000000-0000-0000-0000-000000000002"
-          },
-          "id": "6fdbf0cc-8950-481b-995f-1f041abda2b6",
-          "size": 0.141026,
-          "name": "restored_backup",
-          "created": "2014-06-19T15:19:00",
-          "instance_id": "e84b5d1c-97c9-4aa1-9f0a-dbf867f1087c",
-          "parent_id": null,
-          "locationRef": "http://localhost/path/to/backup"
-        },
-        {
-          "status": "COMPLETED",
-          "updated": "2014-06-19T15:05:23",
-          "description": "Backup from Restored Instance",
-          "datastore": {
-            "version": "5.1",
-            "type": "MySQL",
-            "version_id": "20000000-0000-0000-0000-000000000002"
-          },
-          "id": "b3b8ef8b-36a6-4043-9997-701b34a2b805",
-          "size": 0.141026,
-          "name": "restored_backup",
-          "created": "2014-06-19T15:04:19",
-          "instance_id": "3120d7eb-42fe-4d63-b8f6-98396f4c8590",
-          "parent_id": null,
-          "locationRef": "http://localhost/path/to/backup"
-        },
-        {
-          "status": "COMPLETED",
-          "updated": "2014-06-18T21:24:39",
-          "description": "Backup from Restored Instance",
-          "datastore": {
-            "version": "5.1",
-            "type": "MySQL",
-            "version_id": "20000000-0000-0000-0000-000000000002"
-          },
-          "id": "87972694-4be2-40f5-83f8-501656e0032a",
-          "size": 0.141026,
-          "name": "restored_backup",
-          "created": "2014-06-18T21:23:35",
-          "instance_id": "29af2cd9-0674-48ab-b87a-b160f00208e6",
-          "parent_id": null,
-          "locationRef": "http://localhost/path/to/backup"
-        },
-        {
-          "instance_id": "8814db50-da7d-4151-b271-6b3a64215b8e",
-          "status": "NEW",
-          "updated": "2014-06-06T17:44:56",
-          "locationRef": null,
-          "name": "main_backup_test",
-          "parent_id": null,
-          "created": "2014-06-06T17:44:56",
-          "size": null,
-          "id": "36d274f5-dfa9-42fc-afee-5f5117a16746",
-          "description": "this is the main backup created at the start"
-        }
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 2759
+   Date: Tue, 01 Sep 2015 03:23:52 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {  
+      "backups":[  
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-09-01T03:23:36Z",
+            "description":"My standalone instance backup1",
+            "datastore":{  
+               "version":"5.6",
+               "type":"percona",
+               "version_id":"c9760c5b-5675-4482-b097-dffdf50c22ab"
+            },
+            "id":"d9f56b04-e17d-41f0-ae92-30a3b47b8d29",
+            "size":0.18,
+            "is_automated":0,
+            "name":"test_instance-backup",
+            "parent_id":null,
+            "created":"2015-09-01T03:23:28Z",
+            "flavor_ram":1024,
+            "instance_id":"f4aaba46-fb5f-4316-988d-88da77759968",
+            "source":{  
+               "type":"instance",
+               "id":"f4aaba46-fb5f-4316-988d-88da77759968"
+            },
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/d9f56b04-e17d-41f0-ae92-30a3b47b8d29.xbstream.gz",
+            "type":"InnoBackupEx",
+            "volume_size":1
+         },
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-08-31T22:26:29Z",
+            "description":"my_ha_backup2",
+            "datastore":{  
+               "version":"5.6",
+               "type":"mysql",
+               "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
+            },
+            "id":"e1cb03fd-c108-4702-a04b-653491e41a91",
+            "size":0.18,
+            "is_automated":0,
+            "name":"ha-backup2",
+            "parent_id":"0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e",
+            "created":"2015-08-31T22:26:23Z",
+            "flavor_ram":1024,
+            "instance_id":null,
+            "source":{  
+               "type":"ha",
+               "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+            },
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/e1cb03fd-c108-4702-a04b-653491e41a91.xbstream.gz",
+            "type":"InnoBackupExIncremental",
+            "volume_size":1
+         },
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-08-31T22:22:52Z",
+            "description":"my_ha_backup2",
+            "datastore":{  
+               "version":"5.6",
+               "type":"mysql",
+               "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
+            },
+            "id":"c6bbca39-e530-41f3-b073-03144dea04e3",
+            "size":0.18,
+            "is_automated":0,
+            "name":"ha-backup2",
+            "parent_id":null,
+            "created":"2015-08-31T22:22:46Z",
+            "flavor_ram":1024,
+            "instance_id":null,
+            "source":{  
+               "type":"ha",
+               "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+            },
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/c6bbca39-e530-41f3-b073-03144dea04e3.xbstream.gz",
+            "type":"InnoBackupEx",
+            "volume_size":1
+         },
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-08-31T22:16:30Z",
+            "description":"my_ha_backup1",
+            "datastore":{  
+               "version":"5.6",
+               "type":"mysql",
+               "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
+            },
+            "id":"0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e",
+            "size":0.18,
+            "is_automated":0,
+            "name":"ha-backup1",
+            "parent_id":null,
+            "created":"2015-08-31T22:16:25Z",
+            "flavor_ram":1024,
+            "instance_id":null,
+            "source":{  
+               "type":"ha",
+               "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+            },
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e.xbstream.gz",
+            "type":"InnoBackupEx",
+            "volume_size":1
+         }
       ]
-    }
-    
-    
-    
+   }
+   
+
+
+
 
 
 **Example List backups query response: JSON**
 
 
+The following example shows the List backups query response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 663
-    Date: Thu, 13 Feb 2014 21:47:16 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    
-    {
-        "backups": [
-            {
-                "status": "COMPLETED",
-                "updated": "2014-06-19T15:56:58",
-                "description": "Backup from Restored Instance",
-                "datastore": {
-                    "version": "5.1",
-                    "type": "MySQL",
-                    "version_id": "20000000-0000-0000-0000-000000000002"
-                },
-                "id": "e2d3dfca-430f-4cd2-bec0-884cd7426f13",
-                "size": 0.141026,
-                "name": "restored_backup",
-                "created": "2014-06-19T15:55:54",
-                "instance_id": "34d6c8bf-539e-47d1-8a06-2b7590521309",
-                "parent_id": null,
-                "locationRef": "http://localhost/path/to/backup"
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 2032
+   Date: Tue, 01 Sep 2015 03:26:46 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   {  
+      "backups":[  
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-08-31T22:26:29Z",
+            "description":"my_ha_backup2",
+            "datastore":{  
+               "version":"5.6",
+               "type":"mysql",
+               "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
             },
-            {
-                "status": "COMPLETED",
-                "updated": "2014-06-19T15:26:10",
-                "description": "Backup from Restored Instance",
-                "datastore": {
-                    "version": "5.1",
-                    "type": "MySQL",
-                    "version_id": "20000000-0000-0000-0000-000000000002"
-                },
-                "id": "5890e1cc-c5ad-460c-baec-cfdaf2ccf796",
-                "size": 0.141026,
-                "name": "restored_backup",
-                "created": "2014-06-19T15:25:06",
-                "instance_id": "c7855b60-2a50-4ed9-8de3-f35f2067fb2a",
-                "parent_id": null,
-                "locationRef": "http://localhost/path/to/backup"
+            "id":"e1cb03fd-c108-4702-a04b-653491e41a91",
+            "size":0.18,
+            "is_automated":0,
+            "name":"ha-backup2",
+            "parent_id":"0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e",
+            "created":"2015-08-31T22:26:23Z",
+            "flavor_ram":1024,
+            "instance_id":null,
+            "source":{  },
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/e1cb03fd-c108-4702-a04b-653491e41a91.xbstream.gz",
+            "type":"InnoBackupExIncremental",
+            "volume_size":1
+         },
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-08-31T22:22:52Z",
+            "description":"my_ha_backup2",
+            "datastore":{  
+               "version":"5.6",
+               "type":"mysql",
+               "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
             },
-            {
-                "status": "COMPLETED",
-                "updated": "2014-06-19T15:20:04",
-                "description": "Backup from Restored Instance",
-                "datastore": {
-                    "version": "5.1",
-                    "type": "MySQL",
-                    "version_id": "20000000-0000-0000-0000-000000000002"
-                },
-                "id": "6fdbf0cc-8950-481b-995f-1f041abda2b6",
-                "size": 0.141026,
-                "name": "restored_backup",
-                "created": "2014-06-19T15:19:00",
-                "instance_id": "e84b5d1c-97c9-4aa1-9f0a-dbf867f1087c",
-                "parent_id": null,
-                "locationRef": "http://localhost/path/to/backup"
+            "id":"c6bbca39-e530-41f3-b073-03144dea04e3",
+            "size":0.18,
+            "is_automated":0,
+            "name":"ha-backup2",
+            "parent_id":null,
+            "created":"2015-08-31T22:22:46Z",
+            "flavor_ram":1024,
+            "instance_id":null,
+            "source":{  
+               "type":"ha",
+               "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
             },
-            {
-                "status": "COMPLETED",
-                "updated": "2014-06-19T15:05:23",
-                "description": "Backup from Restored Instance",
-                "datastore": {
-                    "version": "5.1",
-                    "type": "MySQL",
-                    "version_id": "20000000-0000-0000-0000-000000000002"
-                },
-                "id": "b3b8ef8b-36a6-4043-9997-701b34a2b805",
-                "size": 0.141026,
-                "name": "restored_backup",
-                "created": "2014-06-19T15:04:19",
-                "instance_id": "3120d7eb-42fe-4d63-b8f6-98396f4c8590",
-                "parent_id": null,
-                "locationRef": "http://localhost/path/to/backup"
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/c6bbca39-e530-41f3-b073-03144dea04e3.xbstream.gz",
+            "type":"InnoBackupEx",
+            "volume_size":1
+         },
+         {  
+            "status":"COMPLETED",
+            "updated":"2015-08-31T22:16:30Z",
+            "description":"my_ha_backup1",
+            "datastore":{  
+               "version":"5.6",
+               "type":"mysql",
+               "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
             },
-            {
-                "status": "COMPLETED",
-                "updated": "2014-06-18T21:24:39",
-                "description": "Backup from Restored Instance",
-                "datastore": {
-                    "version": "5.1",
-                    "type": "MySQL",
-                    "version_id": "20000000-0000-0000-0000-000000000002"
-                },
-                "id": "87972694-4be2-40f5-83f8-501656e0032a",
-                "size": 0.141026,
-                "name": "restored_backup",
-                "created": "2014-06-18T21:23:35",
-                "instance_id": "29af2cd9-0674-48ab-b87a-b160f00208e6",
-                "parent_id": null,
-                "locationRef": "http://localhost/path/to/backup"
-            }
-        ]
-    }
-    
-    
-    
-    
-    
-    
+            "id":"0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e",
+            "size":0.18,
+            "is_automated":0,
+            "name":"ha-backup1",
+            "parent_id":null,
+            "created":"2015-08-31T22:16:25Z",
+            "flavor_ram":1024,
+            "instance_id":null,
+            "source":{  
+               "type":"ha",
+               "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+            },
+            "locationRef":"https://snet-storage101.dfw1.clouddrive.com/v1/MossoCloudFS_938359/z_CLOUDDB_BACKUPS/0c1b5616-fdc5-45ae-b2dc-6f1440d55d0e.xbstream.gz",
+            "type":"InnoBackupEx",
+            "volume_size":1
+         }
+      ]
+   }
+   
+
+
+
 

@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid:
+.. _get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid:
 
 List configuration parameter details without datastore
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -101,17 +101,22 @@ This operation does not accept a request body.
 **Example List configuration parameter details without datastore: JSON request**
 
 
+The following example shows the List configuration parameter details without datastore request:
+
 .. code::
 
-    GET /v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb/parameters/innodb_file_per_table HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    
-    
+   GET /v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb/parameters/innodb_file_per_table HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   
+   
+
+
+
 
 
 Response
@@ -129,21 +134,26 @@ Response
 **Example List configuration parameter details without datastore: JSON response**
 
 
+The following example shows the List configuration parameter details without datastore response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 98
-    Date: Thu, 13 Feb 2014 21:47:15 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "max": 1, 
-        "min": 0, 
-        "name": "innodb_file_per_table", 
-        "restart_required": true, 
-        "type": "integer"
-    }
-    
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 98
+   Date: Thu, 13 Feb 2014 21:47:15 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "max": 1, 
+       "min": 0, 
+       "name": "innodb_file_per_table", 
+       "restart_required": true, 
+       "type": "integer"
+   }
+   
+
+
+
 

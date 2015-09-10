@@ -1,0 +1,15 @@
+PUT /v1.0/1234/schedules/2e351a71-dd28-4bcb-a7d6-d36a5b487173 HTTP/1.1
+User-Agent: python-troveclient
+Host: troveapi.org
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/json
+Content-Type: application/json
+
+{
+  "schedule": {
+    "day_of_week": 2,
+    "hour": 6,
+    "minute": 19,
+    "run_now": "true"
+  }
+}

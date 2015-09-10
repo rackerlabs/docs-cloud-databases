@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-user-version-accountid-instances-instanceid-users:
+.. _post-create-user-version-accountid-instances-instanceid-users:
 
 Create user
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,9 +18,35 @@ If the corresponding request cannot be fulfilled due to insufficient or invalid 
 
 The following table lists the required and optional attributes for Create User. Refer to the request examples for the required json format:
 
-Required and optional attributes for Create userApplies ToName DescriptionRequiredUsernameName of the user for the                            database.YespasswordUser password for database                            access.Yes(database) nameName of the database that the user can access.
+.. table:: Required and optional attributes for Create user
 
-NohostSpecifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.                             Refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for details. If ``host`` is not specified, it defaults to "%".No.. note::
+    
+    +-----------+-----------------------------------------------+------------+---------+
+    |Applies To |Name                                           |Description |Required |
+    +===========+===============================================+============+=========+
+    |User       |name                                           |Name of the |Yes      |
+    |           |                                               |user for    |         |
+    |           |                                               |the         |         |
+    |           |                                               |database.   |         |
+    +-----------+-----------------------------------------------+------------+---------+
+    |password   |User password for database access.             |Yes         |         |
+    +-----------+-----------------------------------------------+------------+---------+
+    |(database) |Name of the database that the user can access. |No          |         |
+    |name       |                                               |            |         |
+    +-----------+-----------------------------------------------+------------+---------+
+    |host       |Specifies the host from which a user is        |No          |         |
+    |           |allowed to connect to the database. Possible   |            |         |
+    |           |values are a string containing an IPv4 address |            |         |
+    |           |or "%" to allow connecting from any host.      |            |         |
+    |           |Refer to `User access restriction by host      |            |         |
+    |           |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |            |         |
+    |           |devguide/content/user_access_restrict_by_host- |            |         |
+    |           |dle387.html>`__ for details. If ``host`` is    |            |         |
+    |           |not specified, it defaults to "%".             |            |         |
+    +-----------+-----------------------------------------------+------------+---------+
+    
+
+.. note::
    Notes 
    
    *  A user is granted all privileges on the specified databases.
@@ -31,7 +57,69 @@ NohostSpecifies the host from which a user is allowed to connect to the database
 
 Refer to the following tables for information about characters that are valid/invalid for creating database names, user names, and passwords.
 
-Valid characters that can be used in a database name, user name, and passwordCharacterLetters (upper and lower cases allowed)Numbers'@', '?', '#', and spaces are allowed, but not at the beginning and end of the database name, user name, and password'.' is allowed, but must be escaped by replacing it with "%2E" before URL encoding occurs if it occurs in GET, DELETE,                             and PUT calls, where such a name is the last section of the request URL. Please refer to the Warning in `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for details and an example."_" is allowed anywhere in the database name, user name, and passwordCharacters that cannot be used in a database name, user name, and passwordCharacterSingle quotesDouble quotesBack quotesSemicolonsCommasBackslashesForwardslashesSpaces at the front or end of the user name or passwordLength restrictions for database name, user name, and passwordRestrictionValueDatabase name maximum length64User name maximum length16Password maximum lengthunlimited (no restrictions)
+.. table:: Valid characters that can be used in a database name, user name, and password
+
+    
+    +------------------------------------------------------------------------------+
+    |Character                                                                     |
+    +==============================================================================+
+    |Letters (upper and lower cases allowed)                                       |
+    +------------------------------------------------------------------------------+
+    |Numbers                                                                       |
+    +------------------------------------------------------------------------------+
+    |'@', '?', '#', and spaces are allowed, but not at the beginning and end of    |
+    |the database name, user name, and password                                    |
+    +------------------------------------------------------------------------------+
+    |'.' is allowed, but must be escaped by replacing it with "%2E" before URL     |
+    |encoding occurs if it occurs in GET, DELETE, and PUT calls, where such a name |
+    |is the last section of the request URL. Please refer to the Warning in `User  |
+    |access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-       |
+    |devguide/content/user_access_restrict_by_host-dle387.html>`__ for details and |
+    |an example.                                                                   |
+    +------------------------------------------------------------------------------+
+    |"_" is allowed anywhere in the database name, user name, and password         |
+    +------------------------------------------------------------------------------+
+    
+
+.. table:: Characters that cannot be used in a database name, user name, and password
+
+    
+    +------------------------------------------------------------------------------+
+    |Character                                                                     |
+    +==============================================================================+
+    |Single quotes                                                                 |
+    +------------------------------------------------------------------------------+
+    |Double quotes                                                                 |
+    +------------------------------------------------------------------------------+
+    |Back quotes                                                                   |
+    +------------------------------------------------------------------------------+
+    |Semicolons                                                                    |
+    +------------------------------------------------------------------------------+
+    |Commas                                                                        |
+    +------------------------------------------------------------------------------+
+    |Backslashes                                                                   |
+    +------------------------------------------------------------------------------+
+    |Forwardslashes                                                                |
+    +------------------------------------------------------------------------------+
+    |Spaces at the front or end of the user name or password                       |
+    +------------------------------------------------------------------------------+
+    
+
+.. table:: Length restrictions for database name, user name, and password
+
+    
+    +---------------------------------------+--------------------------------------+
+    |Restriction                            |Value                                 |
+    +=======================================+======================================+
+    |Database name maximum length           |64                                    |
+    +---------------------------------------+--------------------------------------+
+    |User name maximum length               |16                                    |
+    +---------------------------------------+--------------------------------------+
+    |Password maximum length                |unlimited (no restrictions)           |
+    +---------------------------------------+--------------------------------------+
+    
+
+
 
 This table shows the possible response codes for this operation:
 
@@ -117,50 +205,55 @@ This operation does not accept a request body.
 **Example Create user: JSON request**
 
 
+The following example shows the Create user request:
+
 .. code::
 
-    POST /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-    Accept: application/json
-    Content-Type: application/json
-    
-    {
-        "users": [
-            {
-                "databases": [
-                    {
-                        "name": "databaseA"
-                    }
-                ], 
-                "name": "dbuser1", 
-                "password": "password"
-            }, 
-            {
-                "databases": [
-                    {
-                        "name": "databaseB"
-                    }, 
-                    {
-                        "name": "databaseC"
-                    }
-                ], 
-                "name": "dbuser2", 
-                "password": "password"
-            }, 
-            {
-                "databases": [
-                    {
-                        "name": "databaseD"
-                    }
-                ], 
-                "name": "dbuser3", 
-                "password": "password"
-            }
-        ]
-    }
-    
+   POST /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+   
+   {
+       "users": [
+           {
+               "databases": [
+                   {
+                       "name": "databaseA"
+                   }
+               ], 
+               "name": "dbuser1", 
+               "password": "password"
+           }, 
+           {
+               "databases": [
+                   {
+                       "name": "databaseB"
+                   }, 
+                   {
+                       "name": "databaseC"
+                   }
+               ], 
+               "name": "dbuser2", 
+               "password": "password"
+           }, 
+           {
+               "databases": [
+                   {
+                       "name": "databaseD"
+                   }
+               ], 
+               "name": "dbuser3", 
+               "password": "password"
+           }
+       ]
+   }
+   
+
+
+
 
 
 Response
@@ -178,13 +271,18 @@ Response
 **Example Create user: JSON response**
 
 
+The following example shows the Create user response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: 0
-    Date: Thu, 13 Feb 2014 21:47:14 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: 0
+   Date: Thu, 13 Feb 2014 21:47:14 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+
+
+
 

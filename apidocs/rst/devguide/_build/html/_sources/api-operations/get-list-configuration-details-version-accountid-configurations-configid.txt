@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-get-list-configuration-details-version-accountid-configurations-configid:
+.. _get-list-configuration-details-version-accountid-configurations-configid:
 
 List configuration details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -97,14 +97,19 @@ This operation does not accept a request body.
 **Example List configuration details: JSON request**
 
 
+The following example shows the List configuration details request:
+
 .. code::
 
-    GET /v1.0/1234/configurations/005a8bb7-a8df-40ee-b0b7-fc144641abc2 HTTP/1.1
-    Host: ord.databases.api.rackspacecloud.com
-    User-Agent: python-troveclient
-    Accept: application/json
-    X-Auth-Token: 26640a608aa9482b888a1664376b8113
-    
+   GET /v1.0/1234/configurations/005a8bb7-a8df-40ee-b0b7-fc144641abc2 HTTP/1.1
+   Host: ord.databases.api.rackspacecloud.com
+   User-Agent: python-troveclient
+   Accept: application/json
+   X-Auth-Token: 26640a608aa9482b888a1664376b8113
+   
+
+
+
 
 
 Response
@@ -122,30 +127,35 @@ Response
 **Example List configuration details: JSON response**
 
 
+The following example shows the List configuration details response:
+
 .. code::
 
-    HTTP/1.1 200 OK
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.12)
-    Content-Length: 431
-    Date: Thu, 31 Jul 2014 15:25:07 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {
-        "configuration": {
-            "created": "2014-07-31T15:19:50",
-            "datastore_name": "mysql",
-            "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
-            "datastore_version_name": "5.6",
-            "description": "example description",
-            "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
-            "instance_count": 0,
-            "name": "example-configuration-name",
-            "updated": "2014-07-31T15:19:50",
-            "values": {
-                "collation_server": "latin1_swedish_ci",
-                "connect_timeout": 120
-            }
-        }
-    }
+   HTTP/1.1 200 OK
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 431
+   Date: Thu, 31 Jul 2014 15:25:07 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {
+       "configuration": {
+           "created": "2014-07-31T15:19:50",
+           "datastore_name": "mysql",
+           "datastore_version_id": "b00000b0-00b0-0b00-00b0-000b000000bb",
+           "datastore_version_name": "5.6",
+           "description": "example description",
+           "id": "005a8bb7-a8df-40ee-b0b7-fc144641abc2",
+           "instance_count": 0,
+           "name": "example-configuration-name",
+           "updated": "2014-07-31T15:19:50",
+           "values": {
+               "collation_server": "latin1_swedish_ci",
+               "connect_timeout": 120
+           }
+       }
+   }
+
+
+
 

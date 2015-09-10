@@ -90,21 +90,71 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="create-backup">
-<span id="api-operations-post-create-backup-version-accountid-backups"></span><h1>Create backup<a class="headerlink" href="#create-backup" title="Permalink to this headline">¶</a></h1>
+<span id="post-create-backup-version-accountid-backups"></span><h1>Create backup<a class="headerlink" href="#create-backup" title="Permalink to this headline">¶</a></h1>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">backups</span>
 </pre></div>
 </div>
 <p>Creates a new backup for a database instance.</p>
 <p>This operation asynchronously creates a new backup for the specified database instance. This call requires the user to specify an instance ID to backup and a name for the backup.</p>
 <p>The following table lists the required and optional attributes for Create Backup:</p>
-<p>Required and optional attributes for Create backupNameDescriptionRequirednameSpecifies the short name of the backup.</p>
-<p>YesinstanceSpecifies the database instanceId to backup.</p>
-<p>YesdescriptionSpecifies a long description of the backup.</p>
-<p>Noparent_idSpecifies the backupId from which to create an incremental backup.</p>
-<p>NoLength restrictions for backup <code class="docutils literal"><span class="pre">name</span></code> parameterRestrictionValuename maximum length</p>
-<dl class="docutils">
-<dt>64.. note::</dt>
-<dd><p class="first">Notes</p>
+<table border="1" class="docutils" id="id1">
+<caption><span class="caption-text">Required and optional attributes for Create backup</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="34%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Name</th>
+<th class="head">Description</th>
+<th class="head">Required</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name</td>
+<td>Specifies the short name
+of the backup.</td>
+<td>Yes</td>
+</tr>
+<tr class="row-odd"><td>instance</td>
+<td>Specifies the database
+instanceId to backup.</td>
+<td>Yes</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>Specifies a long
+description of the
+backup.</td>
+<td>No</td>
+</tr>
+<tr class="row-odd"><td>parent_id</td>
+<td>Specifies the backupId
+from which to create an
+incremental backup.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<table border="1" class="docutils" id="id2">
+<caption><span class="caption-text">Length restrictions for backup <code class="docutils literal"><span class="pre">name</span></code> parameter</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col width="51%" />
+<col width="49%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Restriction</th>
+<th class="head">Value</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>name maximum length</td>
+<td>64</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>Notes</p>
 <ul class="last simple">
 <li>During the backup process, database writes on MyISAM Databases will be disabled. InnoDB Databases will continue to allow all operations.</li>
 <li>While the instance is being backed up you will not be able to add/delete databases, add/delete users, or delete/stop/reboot the instance.</li>
@@ -115,8 +165,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
 <li>If a backup is deleted, all incremental backups created from it will also be deleted.</li>
 <li>You can create an incremental backup from another incremental backup. There is no limit to how many nested backups you can create, however the chances of a restore failure increase with the number of nested backups you create.</li>
 </ul>
-</dd>
-</dl>
+</div>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
 <colgroup>
@@ -224,6 +273,7 @@ instance.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 <p><strong>Example Create backup: JSON request</strong></p>
+<p>The following example shows the Create backup request:</p>
 <div class="code highlight-python"><div class="highlight"><pre>POST /v1.0/1234/backups HTTP/1.1
 User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
@@ -241,6 +291,7 @@ Content-Type: application/json
 </pre></div>
 </div>
 <p><strong>Example Create incremental backup request: JSON</strong></p>
+<p>The following example shows the Create incremental backup request:</p>
 <div class="code highlight-python"><div class="highlight"><pre>POST /v1.0/1234/backups HTTP/1.1
 User-Agent: python-troveclient
 Host: troveapi.org
@@ -249,10 +300,21 @@ Accept: application/json
 Content-Type: application/json
 </pre></div>
 </div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;backup&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;My Incremental Backup&quot;</span><span class="p">,</span>
+        <span class="s">&quot;instance&quot;</span><span class="p">:</span> <span class="s">&quot;44b277eb-39be-4921-be31-3d61b43651d7&quot;</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Incremental Snapshot&quot;</span><span class="p">,</span>
+        <span class="s">&quot;parent_id&quot;</span><span class="p">:</span> <span class="s">&quot;a9832168-7541-4536-b8d9-a8a9b79cf1b4&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="response">
 <h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
 <p><strong>Example Create backup: JSON response</strong></p>
+<p>The following example shows the Create backup response:</p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
@@ -277,10 +339,32 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </pre></div>
 </div>
 <p><strong>Example Create incremental backup response: JSON</strong></p>
+<p>The following example shows the Create incremental backup response:</p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 202 Accepted
 Content-Type: application/json
 Content-Length: 462
 Date: Mon, 18 Mar 2013 19:09:17 GMT
+</pre></div>
+</div>
+<div class="code highlight-python"><div class="highlight"><pre><span class="p">{</span>
+    <span class="s">&quot;backup&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&quot;created&quot;</span><span class="p">:</span> <span class="s">&quot;2014-10-30T12:30:00&quot;</span><span class="p">,</span>
+        <span class="s">&quot;datastore&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;mysql&quot;</span><span class="p">,</span>
+            <span class="s">&quot;version&quot;</span><span class="p">:</span> <span class="s">&quot;5.5&quot;</span><span class="p">,</span>
+            <span class="s">&quot;version_id&quot;</span><span class="p">:</span> <span class="s">&quot;b00000b0-00b0-0b00-00b0-000b000000bb&quot;</span>
+        <span class="p">},</span>
+        <span class="s">&quot;description&quot;</span><span class="p">:</span> <span class="s">&quot;My Incremental Backup&quot;</span><span class="p">,</span>
+        <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;2e351a71-dd28-4bcb-a7d6-d36a5b487173&quot;</span><span class="p">,</span>
+        <span class="s">&quot;instance_id&quot;</span><span class="p">:</span> <span class="s">&quot;44b277eb-39be-4921-be31-3d61b43651d7&quot;</span><span class="p">,</span>
+        <span class="s">&quot;locationRef&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;name&quot;</span><span class="p">:</span> <span class="s">&quot;Incremental Snapshot&quot;</span><span class="p">,</span>
+        <span class="s">&quot;parent_id&quot;</span><span class="p">:</span> <span class="s">&quot;a9832168-7541-4536-b8d9-a8a9b79cf1b4&quot;</span><span class="p">,</span>
+        <span class="s">&quot;size&quot;</span><span class="p">:</span> <span class="n">null</span><span class="p">,</span>
+        <span class="s">&quot;status&quot;</span><span class="p">:</span> <span class="s">&quot;NEW&quot;</span><span class="p">,</span>
+        <span class="s">&quot;updated&quot;</span><span class="p">:</span> <span class="s">&quot;2014-10-30T12:30:00&quot;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -305,7 +389,7 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 </ul>
 <ul>
   
-<a href="post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html"><<</a>
+<a href="post-create-backup-for-an-ha-instance-version-accountid-backups.html"><<</a>
 
 |
 
@@ -358,6 +442,7 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 <li class="toctree-l1"><a class="reference internal" href="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances.html">List all replicas and replica source database instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backup-by-id-version-accountid-backups-backupid.html">List backup by ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-for-instance-version-accountid-instances-instanceid-backups.html">List backups for instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups.html">List backups of an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-version-accountid-backups.html">List backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-details-version-accountid-configurations-configid.html">List configuration details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameter-details-version-accountid-datastores-datastoreid-versions-versionid-parameters-parameterid.html">List configuration parameter details</a></li>
@@ -391,6 +476,7 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 <li class="toctree-l1"><a class="reference internal" href="patch-update-some-configuration-parameters-version-accountid-configurations-configid.html">Update some configuration parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls.html">Add ACLs to an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html">Add Replica to an HA instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-backup-for-an-ha-instance-version-accountid-backups.html">Create backup for an HA Instance</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="">Create backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-configuration-version-accountid-configurations.html">Create configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-database-instance-version-accountid-instances.html">Create database instance</a></li>
@@ -400,6 +486,7 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 <li class="toctree-l1"><a class="reference internal" href="post-create-scheduled-backup-version-accountid-schedules.html">Create scheduled backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-user-version-accountid-instances-instanceid-users.html">Create user</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-enable-root-user-version-accountid-instances-instanceid-root.html">Enable root user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action.html">Remove Replica from an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-version-accountid-instances-instanceid-action.html">Resize the instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-volume-version-accountid-instances-instanceid-action.html">Resize the instance volume</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-restart-instance-version-accountid-instances-instanceid-action.html">Restart instance</a></li>

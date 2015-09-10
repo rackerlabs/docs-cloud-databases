@@ -65,7 +65,7 @@
         </copyright>  
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-09-02</pubdate>
+        <pubdate>2015-09-10</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -79,6 +79,26 @@
         </abstract>
         
         <revhistory>
+            <revision>
+                <date>2015-09-10</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Updated information on backup
+                                schedule for <link
+                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createAutoBackup__version___accountId__schedules_automated_backups.html"
+                                   >Create scheduled
+                                backup</link>.</para>
+                        </listitem>
+                        <listitem>
+                            <para>Added new API operation <link
+                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/cdb-devguide-external/content/PUT_updateAutomatedBackupById__version___accountId__schedules__scheduleId__automated_backups.html"
+                                   >Update schedule for backups by
+                                   schedule ID</link>.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-09-02</date>
                 <revdescription>
@@ -4449,6 +4469,7 @@
                 </wadl:resource>
                 <wadl:resource href="../../../xsd/dbaas.wadl#backup2Id">
                     <wadl:method href="getAutomatedBackupById"/>
+                    <wadl:method href="updateAutomatedBackupById"/>
                     <wadl:method href="deleteAutomatedBackupById"/>
                 </wadl:resource>
             </wadl:resources>

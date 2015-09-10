@@ -90,7 +90,7 @@ f=false,d=document;return{use_existing_jquery:function(){return use_existing_jqu
       <div class="body" role="main">
 
   <div class="section" id="list-datastore-version">
-<span id="api-operations-get-list-datastore-version-version-accountid-datastores-datastoreid-versions-versionid"></span><h1>List datastore version<a class="headerlink" href="#list-datastore-version" title="Permalink to this headline">¶</a></h1>
+<span id="get-list-datastore-version-version-accountid-datastores-datastoreid-versions-versionid"></span><h1>List datastore version<a class="headerlink" href="#list-datastore-version" title="Permalink to this headline">¶</a></h1>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">datastores</span><span class="o">/</span><span class="p">{</span><span class="n">datastoreId</span><span class="p">}</span><span class="o">/</span><span class="n">versions</span><span class="o">/</span><span class="p">{</span><span class="n">versionId</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -213,6 +213,7 @@ specified datastore.</td>
 </table>
 <p>This operation does not accept a request body.</p>
 <p><strong>Example List datastore version: JSON request</strong></p>
+<p>The following example shows the List datastore version request:</p>
 <div class="code highlight-python"><div class="highlight"><pre>GET /v1.0/1234/datastores/a00000a0-00a0-0a00-00a0-000a000000aa/versions/b00000b0-00b0-0b00-00b0-000b000000bb HTTP/1.1
 User-Agent: python-troveclient
 Host: ord.databases.api.rackspacecloud.com
@@ -225,6 +226,7 @@ Content-Type: application/json
 <div class="section" id="response">
 <h2>Response<a class="headerlink" href="#response" title="Permalink to this headline">¶</a></h2>
 <p><strong>Example List datastore version: JSON response</strong></p>
+<p>The following example shows the List datastore version response:</p>
 <div class="code highlight-python"><div class="highlight"><pre>HTTP/1.1 200 OK
 Content-Type: application/json
 Via: 1.1 Repose (Repose/2.6.7)
@@ -327,6 +329,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances.html">List all replicas and replica source database instances</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backup-by-id-version-accountid-backups-backupid.html">List backup by ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-for-instance-version-accountid-instances-instanceid-backups.html">List backups for instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups.html">List backups of an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-backups-version-accountid-backups.html">List backups</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-details-version-accountid-configurations-configid.html">List configuration details</a></li>
 <li class="toctree-l1"><a class="reference internal" href="get-list-configuration-parameter-details-version-accountid-datastores-datastoreid-versions-versionid-parameters-parameterid.html">List configuration parameter details</a></li>
@@ -360,6 +363,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="patch-update-some-configuration-parameters-version-accountid-configurations-configid.html">Update some configuration parameters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls.html">Add ACLs to an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.html">Add Replica to an HA instance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-create-backup-for-an-ha-instance-version-accountid-backups.html">Create backup for an HA Instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-backup-version-accountid-backups.html">Create backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-configuration-version-accountid-configurations.html">Create configuration</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-database-instance-version-accountid-instances.html">Create database instance</a></li>
@@ -369,6 +373,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="post-create-scheduled-backup-version-accountid-schedules.html">Create scheduled backup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-create-user-version-accountid-instances-instanceid-users.html">Create user</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-enable-root-user-version-accountid-instances-instanceid-root.html">Enable root user</a></li>
+<li class="toctree-l1"><a class="reference internal" href="post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action.html">Remove Replica from an HA instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-version-accountid-instances-instanceid-action.html">Resize the instance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-resize-the-instance-volume-version-accountid-instances-instanceid-action.html">Resize the instance volume</a></li>
 <li class="toctree-l1"><a class="reference internal" href="post-restart-instance-version-accountid-instances-instanceid-action.html">Restart instance</a></li>

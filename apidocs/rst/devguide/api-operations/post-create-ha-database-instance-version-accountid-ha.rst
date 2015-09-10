@@ -1,7 +1,7 @@
 
 .. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
 
-.. _api-operations-post-create-ha-database-instance-version-accountid-ha:
+.. _post-create-ha-database-instance-version-accountid-ha:
 
 Create HA database instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,19 +18,42 @@ The ``name`` of the HA instance is a required attribute.
 
 The following attributes are required for each HA instance:
 
-Required and optional attributes for Create HA instanceName DescriptionRequirednameSpecifies the name of the HA instance.                             The length should be limited to 255 characters and any characters are permitted.Yes(datastore)                            version/typeThe version and type of the datastore.Yesreplica_source                            (name/flavorRef/volume)The name, flavorRef, and volume of the replica source.                            For details of each of these parameters refer to the required and optional attributes for Create instance.Yesreplicas                            (name/flavorRef/volume                            of replicas)Name, flavorRef, and volume of the replicas.                            For details of each of these parameters refer to the required and optional attributes for Create instance.YesnetworksComma-separated list of networks to be associated with the HA group. For example: ``{“networks”:[“public”,“servicenet”]}``
+.. table:: Required and optional attributes for Create HA instance
 
-.. note::
-   Notes 
-   
-   *  By default (if not specified), it will be servicenet.
-   *  If a public network would be required in addition to the servicenet, it would have to be specified in the option: ``"networks": ["public”]``. Note that this will add a public network in addition to a servicenet/private network.
-   *  Both the networks as options: ``"networks": ["public", "servicenet"]``, can also be specified.
-   
-   
-   
+    
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    |Name                    |Description                                                                                |Required |
+    +========================+===========================================================================================+=========+
+    |name                    |Specifies the name of the HA instance. The length should be limited to 255 characters and  |Yes      |
+    |                        |any characters are permitted.                                                              |         |
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    |(datastore) version/type|The version and type of the datastore.                                                     |Yes      |
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    |replica_source          |The name, flavorRef, and volume of the replica source. For details of each of these        |Yes      |
+    |(name/flavorRef/volume) |parameters refer to the required and optional attributes for Create instance.              |         |
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    |replicas                |Name, flavorRef, and volume of the replicas. For details of each of these parameters refer |Yes      |
+    |(name/flavorRef/volume  |to the required and optional attributes for Create instance.                               |         |
+    |of replicas)            |                                                                                           |         |
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    |networks                |Comma-separated list of networks to be associated with the HA group. For example:          |No       |
+    |                        |``{“networks”:[“public”,“servicenet”]}`` .. note:: Notes * By default (if not specified),  |         |
+    |                        |it will be servicenet. * If a public network would be required in addition to the          |         |
+    |                        |servicenet, it would have to be specified in the option: ``"networks": ["public”]``. Note  |         |
+    |                        |that this will add a public network in addition to a servicenet/private network. * Both    |         |
+    |                        |the networks as options: ``"networks": ["public", "servicenet"]``, can also be specified.  |         |
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    |acls                    |Comma separated list of IP based ACLs in the CIDR format. This is required to allow the HA |No       |
+    |                        |group access to the specified IP. By default, the HA group access is blocked. For eg:      |         |
+    |                        |"acls": [{"address": "10.0.0.0/0"}, {"address": “1.2.3.4/5”}]. Additionally, if it is not  |         |
+    |                        |specified while creating the HA group, it can be added later. Refer to `Add ACLs to an HA  |         |
+    |                        |instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-                                      |         |
+    |                        |devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html>`__  |         |
+    |                        |for details.                                                                               |         |
+    +------------------------+-------------------------------------------------------------------------------------------+---------+
+    
 
-NoaclsIP based ACL in the CIDR format. For example: 1.2.3.4/32. This is required to allow the                             HA group access to the specified IP. By default, the HA group access is blocked. Additionally, if it                             is not specified while creating the HA group, it can be added later. Refer to `Add ACLs to an HA instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html>`__section 4.10.5 for details.No
+
 
 This table shows the possible response codes for this operation:
 
@@ -112,42 +135,60 @@ This operation does not accept a request body.
 **Example Create HA database instance: JSON request**
 
 
+The following example shows the Create HA request:
+
 .. code::
 
-    POST /v1.0/1234/ha HTTP/1.1
-    User-Agent: python-troveclient
-    Host: ord.databases.api.rackspacecloud.com
-    X-Auth-Token: e3b2c743aebf467fb6b91cbb644c036e
-    Accept: application/json
-    Content-Type: application/json
-    {  
-       "ha":{  
-          "datastore":{  
-             "version":"5.6",
-             "type":"MYSQL"
-          },
-          "replicas":[  
-             {  
-                "volume":{  
-                   "size":1
-                },
-                "flavorRef":"2",
-                "name":"source_replica1"
-             }
-          ],
-          "name":"ha-1",
-          "replica_source":[  
-             {  
-                "volume":{  
-                   "size":1
-                },
-                "flavorRef":"2",
-                "name":"source"
-             }
-          ]
-       }
-    }
-    
+   POST /v1.0/1234/ha HTTP/1.1
+   User-Agent: python-troveclient
+   Host: ord.databases.api.rackspacecloud.com
+   X-Auth-Token: e3b2c743aebf467fb6b91cbb644c036e
+   Accept: application/json
+   Content-Type: application/json
+   {  
+      "ha":{  
+         "datastore":{  
+            "version":"5.6",
+            "type":"MYSQL"
+         },
+         "replicas":[  
+            {  
+               "volume":{  
+                  "size":1
+               },
+               "flavorRef":"2",
+               "name":"source_replica1"
+            }
+         ],
+         "name":"ha-1",
+         "networks":[  
+            "servicenet",
+            "public"
+         ],
+         "acls":[  
+            {  
+               "address":"10.0.0.0/0"
+            },
+            {  
+               "address":"1.2.3.4/5"
+            }
+         ],
+         "replica_source":[  
+            {  
+               "volume":{  
+                  "size":1
+               },
+               "flavorRef":"2",
+               "name":"source"
+            }
+         ]
+      }
+   }
+   
+   
+
+
+
 
 
 Response
@@ -165,37 +206,42 @@ Response
 **Example Create HA database instance: JSON response**
 
 
+The following example shows the Create HA response:
+
 .. code::
 
-    HTTP/1.1 202 Accepted
-    Content-Type: application/json
-    Via: 1.1 Repose (Repose/2.6.7)
-    Content-Length: ‘219’
-    Date: Fri, 08 May 2015 13:03:06 GMT
-    Server: Jetty(8.0.y.z-SNAPSHOT)
-    
-    {  
-       "ha_instance":{  
-          "name":"ha-1",
-          "replicas":[  
-    
-          ],
-          "replica_source":[  
-    
-          ],
-          "id":"e7fdf90b-7140-4edb-b449-e093d55008fb",
-          "state":"BUILD",
-          "acls":[  
-    
-          ],
-          "datastore":{  
-             "version":"5.6",
-             "type":"mysql"
-          },
-          "networks":[  
-    
-          ]
-       }
-    }
-    
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.6.7)
+   Content-Length: ‘219’
+   Date: Fri, 08 May 2015 13:03:06 GMT
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+   
+   {  
+      "ha_instance":{  
+         "name":"ha-1",
+         "replicas":[  
+   
+         ],
+         "replica_source":[  
+   
+         ],
+         "id":"e7fdf90b-7140-4edb-b449-e093d55008fb",
+         "state":"BUILD",
+         "acls":[  
+   
+         ],
+         "datastore":{  
+            "version":"5.6",
+            "type":"mysql"
+         },
+         "networks":[  
+   
+         ]
+      }
+   }
+   
+
+
+
 
