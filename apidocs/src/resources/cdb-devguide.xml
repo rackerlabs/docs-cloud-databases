@@ -1701,7 +1701,6 @@
                     which you have subscribed rather than the sample
                     values shown here.</para>
                 <note>
-                    <title>Notes</title>
                     <itemizedlist>
                         <listitem>
                             <para>If you authenticate with username
@@ -3326,7 +3325,6 @@
                     </listitem>
                 </itemizedlist></para>
             <note>
-                <title>Notes:</title>
                 <itemizedlist spacing="compact">
                     
                     <listitem>
@@ -4108,7 +4106,7 @@
                 semi-synchronous replication.</para>
             <para>High Availability instance groups are supported for
                 MySQL 5.6, Percona 5.6, and MariaDB 10.</para>
-            <note><title>Notes</title>
+            <note>
                 <itemizedlist>
                     <listitem>
                         <para>Currently we are charging the same price
@@ -4445,7 +4443,7 @@
                     >Restore backup API operation</link>.</para>
             <para>All backups will be stored in Cloud Files and will
                 be charged a fee for Cloud Files. </para>
-            <note><title>Notes</title>
+            <note>
                 <itemizedlist>
                     <listitem>
                         <para>Scheduled backups are not yet supported

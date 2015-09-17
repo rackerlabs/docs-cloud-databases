@@ -322,7 +322,7 @@
     <wadl:doc xml:lang="EN" title="Create database instance"  xmlns="http://docbook.org/ns/docbook">
         <para role="shortdesc">Creates a new <glossterm>database instance</glossterm>.</para>
         <para>This operation asynchronously provisions a new database instance. This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. The service then provisions the instance with the requested flavor and sets up a volume of the specified size, which is the storage for the database instance.</para>
-        <note><title>Notes</title><itemizedlist>
+        <note><itemizedlist>
             <listitem>
                 <para>You can create only one database instance per <command>POST</command> request.</para>
             </listitem>
@@ -436,7 +436,7 @@
                     <td colspan="1" rowspan="1">Restore</td>
                     <td colspan="1">restorePoint</td>
                     <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
-                        <note><title>Notes</title><itemizedlist spacing="compact">
+                        <note><itemizedlist spacing="compact">
                             <listitem>
                                 <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by 
                                     the <code>restorePoint</code> attribute.</para>
@@ -1098,7 +1098,7 @@
                 </tbody>
             </table>
             
-            <note><title>Notes</title><itemizedlist>
+            <note><itemizedlist>
                 <listitem>
                     <para>A user is granted all privileges on the specified databases.</para>
                 </listitem>
@@ -1712,7 +1712,7 @@
                     </tr>
                 </tbody>
             </table> 
-            <note><title>Notes</title>
+            <note>
                 <itemizedlist>
                     <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
                         InnoDB Databases will continue to allow all operations.</para>
@@ -1848,7 +1848,7 @@
                     </tr>
                 </tbody>
             </table> 
-            <note><title>Notes</title>
+            <note>
                 <itemizedlist>
                     <listitem><para>To list, show details of a HA backup, refer to the following: <link
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getBackups__version___accountId__backups_backups.html"
@@ -2068,7 +2068,7 @@
                 </tbody>
             </table> 
             
-            <note><title>Notes</title><itemizedlist>
+            <note><itemizedlist>
                 <listitem>
                     <para>Refer to <link
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html"
@@ -2187,7 +2187,7 @@
             <para>The <code>day_of_week</code> attribute specifies the day in which a full backup will be made. 
                 After that day, the schedule will automatically run daily incremental backups until the next full backup.</para>
             
-            <note><title>Notes</title>
+            <note>
                 <itemizedlist>
                     <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
                         InnoDB Databases will continue to allow all operations.</para>
@@ -2950,7 +2950,7 @@
                 This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. 
                 It also requires specifying the source database instance using the <code>replica_of</code> attribute.
                 The service then provisions the replica with the requested flavor and sets up a volume of the specified size.</para>
-            <note><title>Notes</title>
+            <note>
               <itemizedlist>
                 <listitem><para>The replica will be created with the default configuration. 
                     If you wish to apply the same configuration as the source database instance or another configuration, 
@@ -3090,7 +3090,7 @@
                         <td colspan="1" rowspan="1">Restore</td>
                         <td colspan="1">restorePoint</td>
                         <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
-                            <note><title>Notes</title><itemizedlist spacing="compact">
+                            <note><itemizedlist spacing="compact">
                                 <listitem>
                                     <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by 
                                         the <code>restorePoint</code> attribute.</para>
@@ -3496,7 +3496,7 @@
                         </td>
                         <td colspan="3"><para>Comma-separated list of networks to be associated with the HA group. For example:
                             <code>{“networks”:[“public”,“servicenet”]}</code></para>
-                            <note><title>Notes</title>
+                            <note>
                                 <itemizedlist spacing="compact">
                                 <listitem><para>By default (if not specified), it will be servicenet.</para></listitem>
                                 <listitem><para>If a public network would be required in addition to the servicenet, 

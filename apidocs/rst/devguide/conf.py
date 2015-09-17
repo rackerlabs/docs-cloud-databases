@@ -29,7 +29,13 @@ import shlex
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = [
+    'sphinx.ext.ifconfig',
+    'sphinx.ext.todo',
+    'sphinx.ext.autodoc',
+    'sphinx.ext.autosummary',
+    'sphinx.ext.extlinks'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -44,6 +50,10 @@ source_suffix = '.rst'
 
 # The master toctree document.
 master_doc = 'index'
+
+# The builder to use when running via the deconst preparer
+# builder = 'deconst-serial'
+builder = 'deconst-single'
 
 # General information about the project.
 project = u'Rackspace Developer Portal'
@@ -74,7 +84,7 @@ language = None
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -94,6 +104,28 @@ exclude_patterns = ['_build']
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+# External link library
+extlinks = {
+    'rax': ('http://www.rackspace.com/%s', ''),
+    'rax-cloud': ('http://www.rackspace.com/cloud/%s', ''),
+    'rax-docs': ('http://docs.rackspace.com/%s', ''),
+    'rax-dev': ('https://developer.rackspace.com/%s', ''),
+    'rax-api': ('http://api.rackspace.com/%s', ''),
+    'rax-git': ('https://github.com/rackspace/%s', ''),
+    'mycloud': ('https://mycloud.rackspace.com/%s', ''),
+    'kc': ('http://www.rackspace.com/knowledge_center/%s', ''),
+    'kc-article': ('http://www.rackspace.com/knowledge_center/article/%s', ''),
+    'kc-faq': ('http://www.rackspace.com/knowledge_center/frequently-asked-question/%s', ''),
+    'kc-product-faq': ('http://www.rackspace.com/knowledge_center/product-faq/%s', ''),
+    'os': ('http://www.openstack.org/%s', ''),
+    'os-docs': ('http://docs.openstack.org/%s', ''),
+    'os-wiki': ('http://wiki.openstack.org/%s', ''),
+    'git-repo': ('https://github.com/rackerlabs/docs-core-infra-user-guide/%s', ''),
+    'rackerlabs': ('https://github.com/rackerlabs/%s', ''),
+    'rocket': ('https://objectrocket.com/%s', '')
+}
+
+
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
 
@@ -108,7 +140,7 @@ todo_include_todos = False
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -120,10 +152,10 @@ html_theme = 'alabaster'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
-#html_title = None
+html_title = 'Rackspace Cloud Databases version 1.0 API Developer Guide'
 
 # A shorter title for the navigation bar.  Default is the same as html_title.
-#html_short_title = None
+html_short_title = 'Rackspace Cloud Databases'
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
@@ -200,7 +232,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'RackspaceDeveloperPortaldoc'
+htmlhelp_basename = 'RackspaceCloudApiDatabasesDeveloperDoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -222,8 +254,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'RackspaceDeveloperPortal.tex', u'Rackspace Developer Portal Documentation',
-   u'Rackspace', 'manual'),
+  (master_doc, 'docs-cloud-databases.tex', 'Rackspace Cloud Databases API Developer Guide',
+   'mike.asthalter', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -251,9 +283,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'rackspacedeveloperportal', u'Rackspace Developer Portal Documentation',
-     [author], 1)
+man_pages = [('index', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Rackspace Cloud Databases API Developer Guide',['Rackspace'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -265,11 +295,7 @@ man_pages = [
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents = [
-  (master_doc, 'RackspaceDeveloperPortal', u'Rackspace Developer Portal Documentation',
-   author, 'RackspaceDeveloperPortal', 'One line description of project.',
-   'Miscellaneous'),
-]
+texinfo_documents = [('index', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Rackspace Cloud Databases API Developer Guide','Rackspace', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Learn about using the REST API for the Rackspace Cloud Databases service.','Miscellaneous'),]
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []

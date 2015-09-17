@@ -58,7 +58,7 @@ A replica is an exact copy of a database instance that is kept synchronized with
 .. cdb-dg-concepts-ha-instance-group:
 
 High Availability Instance Group
-~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A High Availability Instance Group includes a source database instance and one or two
 replicas. In the event that the primary source database instance becomes unavailable, it

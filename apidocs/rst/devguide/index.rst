@@ -1,62 +1,24 @@
-===============
-Cloud Databases
-===============
+.. _index:
 
-Overview
---------
+==========================================================
+Rackspace Cloud Databases version 1.0 API Developer Guide
+==========================================================
 
-.. toctree::
-    :maxdepth: 2
+Rackspace Cloud Databases is a fully managed database service based on Openstack. Using
+Cloud Databases, customers can easily provision database instances of varying virtual resource
+sizes without the need to maintain and/or update the database engine. Interactions
+with Cloud Databases occur programmatically via the Cloud Databases API as described in
+this developer guide.
 
-    overview
+..  note:: 
+    Rackspace recommends that Cloud Databases users back up their data using backups in Cloud Databases.
 
-Concepts
---------
+.. toctree:: :hidden:
+   :maxdepth: 3
 
-.. toctree::
-    :maxdepth: 2
-
-    concepts
-
-General API Information
------------------------
-
-.. toctree::
-    :maxdepth: 2
-
-    general-api-information
-    authenticate
-    contract-and-api-versions
-    request-and-response-types
-    limits
-    date-and-time-format
-    pagination
-    database-faults
-    database-instance-status
-    database-instance-accessibility
-    security
-    monitoring-cloud-databases
-    monitoring-read-replication
-    using-ssl
-    role-based-access-control
-    configuration-management
-    datastore-types-and-versions
-    replication
-    high-availability
-
-API Operations
---------------
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   api-operations/*
-
-Glossary
---------
-
-.. toctree::
-    :maxdepth: 2
-
-    glossary
+   overview
+   concepts
+   general-api-info/index
+   api-operations/index
+   glossary
+   
