@@ -10,7 +10,7 @@ List configuration parameters
 
     GET /{version}/{accountId}/datastores/{datastoreId}/versions/{versionId}/parameters
 
-Lists configuration parameter s that may be configured on the system.
+Lists configuration parameters that may be configured on the system.
 
 
 

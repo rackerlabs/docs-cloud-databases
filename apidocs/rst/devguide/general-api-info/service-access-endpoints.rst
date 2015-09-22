@@ -19,28 +19,29 @@ summarized in the table below.
   http://www.rackspace.com/knowledge_center/article/about-regions.
 
 Table 3.1. Regionalized service endpoints
-Region
-Endpoint
-Chicago (ORD)
-``https://ord.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/
-Dallas/Ft. Worth (DFW)
-``https://dfw.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/
-Northern Virginia (IAD)
-``https://iad.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/
-London (LON)
-``https://lon.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/
-Sydney (SYD)
-``https://syd.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/
-Hong Kong (HKG)
-``https://hkg.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/
+
++-------------------------+----------------------------------------------------------------------------+
+| Region                  | Endpoint                                                                   |
++=========================+============================================================================+
+| Chicago (ORD)           | ``https://ord.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
++-------------------------+----------------------------------------------------------------------------+
+| Dallas/Ft. Worth (DFW)  | ``https://dfw.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
++-------------------------+----------------------------------------------------------------------------+
+| Northern Virginia (IAD) | ``https://iad.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
++-------------------------+----------------------------------------------------------------------------+
+| London (LON)            | ``https://lon.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
++-------------------------+----------------------------------------------------------------------------+
+| Sydney (SYD)            | ``https://syd.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
++-------------------------+----------------------------------------------------------------------------+
+| Hong Kong (HKG)         | ``https://hkg.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
++-------------------------+----------------------------------------------------------------------------+
 
 Replace the sample account ID number, ``1234``, with your actual account
 number returned as part of the authentication service response.
 
 You will find the actual account number after the final '/' in the
 ``publicURL`` field returned by the authentication response. For
-example, in `Example 3.2, “Auth response for US endpoint:
-JSON” <Retrieving_Auth_Token.html#auth-response-example-json>`__ you can
+example, in the previous "Example: Authenticate: JSON Response" you can
 see from the ``publicURL`` field for ``cloudServers``
 ("https://servers.api.rackspacecloud.com/v1.0/**1100111**") that the
 account number is 1100111.

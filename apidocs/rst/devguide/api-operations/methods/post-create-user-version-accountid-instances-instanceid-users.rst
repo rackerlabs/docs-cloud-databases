@@ -20,30 +20,24 @@ The following table lists the required and optional attributes for Create User. 
 
 .. table:: Required and optional attributes for Create user
 
-    
-    +-----------+-----------------------------------------------+------------+---------+
-    |Applies To |Name                                           |Description |Required |
-    +===========+===============================================+============+=========+
-    |User       |name                                           |Name of the |Yes      |
-    |           |                                               |user for    |         |
-    |           |                                               |the         |         |
-    |           |                                               |database.   |         |
-    +-----------+-----------------------------------------------+------------+---------+
-    |password   |User password for database access.             |Yes         |         |
-    +-----------+-----------------------------------------------+------------+---------+
-    |(database) |Name of the database that the user can access. |No          |         |
-    |name       |                                               |            |         |
-    +-----------+-----------------------------------------------+------------+---------+
-    |host       |Specifies the host from which a user is        |No          |         |
-    |           |allowed to connect to the database. Possible   |            |         |
-    |           |values are a string containing an IPv4 address |            |         |
-    |           |or "%" to allow connecting from any host.      |            |         |
-    |           |Refer to `User access restriction by host      |            |         |
-    |           |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |            |         |
-    |           |devguide/content/user_access_restrict_by_host- |            |         |
-    |           |dle387.html>`__ for details. If ``host`` is    |            |         |
-    |           |not specified, it defaults to "%".             |            |         |
-    +-----------+-----------------------------------------------+------------+---------+
++------------+-----------------+------------------------------------------------+----------+
+| Applies To | Name            | Description                                    | Required |
++============+=================+================================================+==========+
+| User       | name            | Name of the user for the database.             | Yes      |
+|            +-----------------+------------------------------------------------+----------+
+|            | password        | User password for database access.             | Yes      |
+|            +-----------------+------------------------------------------------+----------+
+|            | (database) name | Name of the database that the user can access. | No       |
+|            +-----------------+------------------------------------------------+----------+
+|            | host            | Specifies the host from which a user is        | No       |
+|            |                 | allowed to connect to the database. Possible   |          |
+|            |                 | values are a string containing an IPv4         |          |
+|            |                 | address or "%" to allow connecting from any    |          |
+|            |                 | host. Refer to :ref:`User access restriction by|          |
+|            |                 | host <cdb-dg-generalapi-security-restriction>` |          |
+|            |                 | for details. If ``host`` is not specified, it  |          |
+|            |                 | defaults to "%".                               |          |
++------------+-----------------+------------------------------------------------+----------+
     
 
 .. note::

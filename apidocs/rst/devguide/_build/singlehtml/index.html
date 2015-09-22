@@ -71,27 +71,23 @@ this developer guide.</p>
 <div class="section" id="document-change-history">
 <span id="cdb-dg-overview-dochistory"></span><h3>Document change history<a class="headerlink" href="#document-change-history" title="Permalink to this headline">¶</a></h3>
 <p>This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:</p>
-<div class="section" id="june-25-2015">
-<span id="cdb-dg-overview-dochistory-25062015"></span><h4>June 25, 2015<a class="headerlink" href="#june-25-2015" title="Permalink to this headline">¶</a></h4>
-<p>Updated HA platform support information in <a class="reference internal" href="index.html#cdb-dg-generalapi-high-availability"><span>High availability for Cloud Databases</span></a> .</p>
+<div class="section" id="september-10-2015">
+<span id="cdb-dg-overview-dochistory-10092015"></span><h4>September 10, 2015<a class="headerlink" href="#september-10-2015" title="Permalink to this headline">¶</a></h4>
+<p>Updated information on backup schedule for <a class="reference internal" href="index.html#post-create-scheduled-backup-version-accountid-schedules"><span>Create scheduled backup</span></a>.</p>
+<p>Added new API operation <a class="reference internal" href="index.html#put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid"><span>Update schedule for backups by schedule ID</span></a>.</p>
 </div>
-<div class="section" id="june-15-2015">
-<span id="cdb-dg-overview-dochistory-15062015"></span><h4>June 15, 2015<a class="headerlink" href="#june-15-2015" title="Permalink to this headline">¶</a></h4>
-<p>Added information for incremental backups in Section 4.7, “On Demand Backups”.</p>
-<p>Added information for scheduled backups in Section 4.8, “Scheduled Backups”.</p>
-<p>Added information for High Availability database instances in Section 3.18, “High Availability for Cloud Databases” and Section 4.10, “High Availability”.</p>
-</div>
-<div class="section" id="april-29-2015">
-<span id="cdb-dg-overview-dochistory-29042015"></span><h4>April 29, 2015<a class="headerlink" href="#april-29-2015" title="Permalink to this headline">¶</a></h4>
-<p>Added note about access to Cloud Files in Section 4.7, “On Demand Backups” and Create replica.</p>
-<p>Removed warning about detaching replica in Section 3.17, “Replication”.</p>
-<p>Added DETACH_REPLICA status to Section 3.9, “Database instance status”.</p>
-<p>Changed warning to note and added information about DETACH_REPLICA status for Section 4.9.5, “Detach replica”.</p>
-</div>
-<div class="section" id="april-10-2015">
-<span id="cdb-dg-overview-dochistory-10042015"></span><h4>April 10, 2015<a class="headerlink" href="#april-10-2015" title="Permalink to this headline">¶</a></h4>
-<p>Added query parameter include_replicas in Section 4.2.2, “List all database instances” and Section 4.9.2, “List all replicas and replica source database instances”.</p>
-<p>Added new examples for List all instances/replica sources and filter out replicas in Section 4.9.2, “List all replicas and replica source database instances”.</p>
+<div class="section" id="september-2-2015">
+<span id="cdb-dg-overview-dochistory-02092015"></span><h4>September 2, 2015<a class="headerlink" href="#september-2-2015" title="Permalink to this headline">¶</a></h4>
+<p>Updated information for <a class="reference internal" href="index.html#cdb-dg-generalapi-high-availability"><span>High Availability for Cloud Databases</span></a>.</p>
+<p>Added information for backups to <a class="reference internal" href="index.html#high-availability-operations"><span>High Availability</span></a>.</p>
+<p>Updated description for acls parameter and example for Create HA database instance: JSON
+request for <a class="reference internal" href="index.html#post-create-database-instance-version-accountid-instances"><span>Create database instance</span></a>.</p>
+<p>Enhanced description for <a class="reference internal" href="index.html#post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action"><span>Add replica to HA instance</span></a>.</p>
+<p>Added new operations <a class="reference internal" href="index.html#post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action"><span>Remove replica from an HA instance</span></a>,
+<a class="reference internal" href="index.html#post-create-backup-for-an-ha-instance-version-accountid-backups"><span>Create backup for an HA instance</span></a>,
+and <a class="reference internal" href="index.html#get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups"><span>List backups of an HA instance</span></a>.</p>
+<p>Updated examples for <a class="reference internal" href="index.html#get-list-backups-version-accountid-backups"><span>List backups</span></a>.</p>
+<p>Updated examples for <a class="reference internal" href="index.html#get-list-backup-by-id-version-accountid-backups-backupid"><span>List backups by ID</span></a>.</p>
 </div>
 </div>
 <div class="section" id="additional-resources">
@@ -196,40 +192,10 @@ authentication response.</p>
 <em>Cloud Identity Client Developer Guide API v2.0</em>.</p>
 <div class="section" id="rackspace-cloud-identity-service-endpoints">
 <h4>Rackspace Cloud Identity Service Endpoints<a class="headerlink" href="#rackspace-cloud-identity-service-endpoints" title="Permalink to this headline">¶</a></h4>
-<div class="admonition important">
-<p class="first admonition-title">Important</p>
-<p class="last">Multiple Rackspace Cloud Identity Service endpoints exist. You
-may use any endpoint, regardless of where your account was created.</p>
+<p>Use the following endpoint to authenticate to the Rackspace Cloud Identity service:</p>
+<div class="code highlight-python"><div class="highlight"><pre>https://identity.api.rackspacecloud.com/v2.0
+</pre></div>
 </div>
-<p>When you authenticate, use one of the endpoints summarized in the table below.</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">To help you decide which regionalized endpoint to use, read about
-special considerations for choosing a data center at
-<a class="reference external" href="http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions">http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions</a>.</p>
-</div>
-<p><strong>Table:&nbsp;Rackspace Cloud Identity Service Endpoints</strong></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="26%" />
-<col width="74%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">National location</th>
-<th class="head">Rackspace Cloud Identity Service endpoint</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>US</td>
-<td><a class="reference external" href="https://identity.api.rackspacecloud.com/v2.0">https://identity.api.rackspacecloud.com/v2.0</a></td>
-</tr>
-<tr class="row-odd"><td>UK</td>
-<td><a class="reference external" href="https://lon.identity.api.rackspacecloud.com/v2.0">https://lon.identity.api.rackspacecloud.com/v2.0</a></td>
-</tr>
-</tbody>
-</table>
-<p>For information about support for legacy identity endpoints, search for
-alternate authentication endpoints here on this site.</p>
 </div>
 <div class="section" id="authentication-request">
 <h4>Authentication Request<a class="headerlink" href="#authentication-request" title="Permalink to this headline">¶</a></h4>
@@ -465,27 +431,43 @@ summarized in the table below.</p>
 special considerations for choosing a region at
 <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/about-regions">http://www.rackspace.com/knowledge_center/article/about-regions</a>.</p>
 </div>
-<p>Table&nbsp;3.1.&nbsp;Regionalized service endpoints
-Region
-Endpoint
-Chicago (ORD)
-<code class="docutils literal"><span class="pre">https://ord.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/
-Dallas/Ft. Worth (DFW)
-<code class="docutils literal"><span class="pre">https://dfw.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/
-Northern Virginia (IAD)
-<code class="docutils literal"><span class="pre">https://iad.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/
-London (LON)
-<code class="docutils literal"><span class="pre">https://lon.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/
-Sydney (SYD)
-<code class="docutils literal"><span class="pre">https://syd.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/
-Hong Kong (HKG)
-<code class="docutils literal"><span class="pre">https://hkg.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</p>
+<p>Table&nbsp;3.1.&nbsp;Regionalized service endpoints</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="75%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Region</th>
+<th class="head">Endpoint</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Chicago (ORD)</td>
+<td><code class="docutils literal"><span class="pre">https://ord.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</td>
+</tr>
+<tr class="row-odd"><td>Dallas/Ft. Worth (DFW)</td>
+<td><code class="docutils literal"><span class="pre">https://dfw.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</td>
+</tr>
+<tr class="row-even"><td>Northern Virginia (IAD)</td>
+<td><code class="docutils literal"><span class="pre">https://iad.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</td>
+</tr>
+<tr class="row-odd"><td>London (LON)</td>
+<td><code class="docutils literal"><span class="pre">https://lon.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</td>
+</tr>
+<tr class="row-even"><td>Sydney (SYD)</td>
+<td><code class="docutils literal"><span class="pre">https://syd.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</td>
+</tr>
+<tr class="row-odd"><td>Hong Kong (HKG)</td>
+<td><code class="docutils literal"><span class="pre">https://hkg.databases.api.rackspacecloud.com/v1.0/</span></code><code class="docutils literal"><span class="pre">1234</span></code>/</td>
+</tr>
+</tbody>
+</table>
 <p>Replace the sample account ID number, <code class="docutils literal"><span class="pre">1234</span></code>, with your actual account
 number returned as part of the authentication service response.</p>
 <p>You will find the actual account number after the final &#8216;/&#8217; in the
 <code class="docutils literal"><span class="pre">publicURL</span></code> field returned by the authentication response. For
-example, in <a class="reference external" href="Retrieving_Auth_Token.html#auth-response-example-json">Example&nbsp;3.2, “Auth response for US endpoint:
-JSON”</a> you can
+example, in the previous &#8220;Example: Authenticate: JSON Response&#8221; you can
 see from the <code class="docutils literal"><span class="pre">publicURL</span></code> field for <code class="docutils literal"><span class="pre">cloudServers</span></code>
 (&#8220;<a class="reference external" href="https://servers.api.rackspacecloud.com/v1.0/">https://servers.api.rackspacecloud.com/v1.0/</a><strong>1100111</strong>&#8221;) that the
 account number is 1100111.</p>
@@ -1525,59 +1507,82 @@ as you have for your source database instance.</li>
 </div>
 <span id="document-general-api-info/high-availability"></span><div class="section" id="high-availability-for-cloud-databases">
 <span id="cdb-dg-generalapi-high-availability"></span><h3>High availability for Cloud Databases<a class="headerlink" href="#high-availability-for-cloud-databases" title="Permalink to this headline">¶</a></h3>
-<p>High Availability for Cloud Databases means that Cloud Database users can run their critical
-production workloads without worrying about their database becoming unavailable.
-When using Cloud Databases High Availability instance group, users can choose to add one
-or a maximum of two replicas to the source database instance. When you use a High Availability
-instance group, it ensures that in case the master becomes unavailable, an automatic
-failover to the replicas is initiated within 10-30 seconds of downtime. Cloud Databases uses
-the <a class="reference external" href="https://code.google.com/p/mysql-master-ha/">MySQL MHA utility</a> to automate master failover. In case some of the slaves have not received
-the latest relay log events, MHA automatically identifies differential relay log events
-from the latest slave, and applies differential events to the other slaves. This ensures that all
-replicas can be consistent.</p>
-<p>In addition, users can also use replicas for scaling their read-heavy workloads. You can send
-only your read requests to your replica. All write requests can be sent only to the source
-database instance. Cloud Databases High Availability instance group uses semi-synchronous
+<p>High Availability for Cloud Databases means that Cloud Database users
+can run their critical production workloads without worrying about their
+database becoming unavailable. When using Cloud Databases High
+Availability instance group, users can choose to add one or a maximum of
+two replicas to the source database instance. When you use a High
+Availability instance group, it ensures that in case the master becomes
+unavailable, an automatic failover to the replicas is initiated within
+10-30 seconds of downtime. Cloud Databases uses the <a class="reference external" href="https://code.google.com/p/mysql-master-ha/">MySQL
+MHA</a> utility to automate
+master failover. In case some of the slaves have not received the latest
+relay log events, MHA automatically identifies differential relay log
+events from the latest slave, and applies differential events to the
+other slaves. This ensures that all replicas can be consistent.</p>
+<p>In addition, users can also use replicas for scaling their read-heavy
+workloads. You can send only your <em>read</em> requests to your replica. All
+<em>write</em> requests can be sent only to the source database instance. Cloud
+Databases High Availability instance group uses semi-synchronous
 replication.</p>
-<p>High Availability instance groups are supported for MySQL 5.6, Percona 5.6, and MariaDB 10.</p>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<ul class="last simple">
-<li>Currently we are charging the same price for High Availability database instances
-as for single instances for a limited time. In the future, there will be
-an increase in the price of High Availability database instances.</li>
-<li>Access Control Lists (ACLs) need to be added to the High Availability instance
-group before accessing the High Availability database instances. See <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html">Add ACLs to an HA instance</a>.</li>
-<li>There will be a single access point, hostname, for accessing the source database instance
-and replicas in the HA group. By default all the reads and writes will be directed to port
-3306. However you can direct read-only traffic to port 3307 and the reads will be done from
-each replica in a round robin fashion.</li>
-<li>There will be a lag between the source database instance and replicas. All of the updates
-will be applied to the replica after they occur on the master.</li>
-<li>The only allowed operations on instances that are part of the HA group are Create
-users, Create databases (on source only), and Create backups. All other operations
-are blocked on these instances.</li>
-</ul>
-</div>
-<p><strong>Recommendation</strong>. It is recommended to have two replicas on an HA group. Having two replicas will ensure that in case failover occurs, your database will still have a High Availability setup.</p>
-<div class="section" id="limitations">
-<span id="cdb-dg-generalapi-high-availability-limitations"></span><h4>Limitations<a class="headerlink" href="#limitations" title="Permalink to this headline">¶</a></h4>
+<p>High Availability instance groups are supported for MySQL 5.6, Percona
+5.6, and MariaDB 10.</p>
 <ul class="simple">
-<li>The maximum number of replicas allowed per source database instance is two. We will
-increase the limit on the number of replicas later.</li>
-<li>HA group is only available for instance flavors 1GB and above.</li>
-<li>Both source database instance and replicas should be in the same region.</li>
-<li>The source DB instance and replica should be in the same region.</li>
-<li>Currently you cannot perform backups, resize, or apply configuration groups on an HA
-group. These will be supported soon.</li>
-<li>In case a failover occurs, there will be an automatic failover to the replica closest
-to the failed database instance. Cloud Databases will remove the failed database
-instance. A new replica would have to manually be added to the HA group via the API
-call to Add replica to HA group (link to the section 4.10.8). Coming soon is a
-functionality where a replica will be automatically added to the HA group after the
-failover.</li>
+<li>Currently we are charging the same price for High Availability
+database instances as for single instances for a limited time. In the
+future, there will be an increase in the price of High Availability
+database instances.</li>
+<li>Access Control Lists (ACLs) need to be added to the High Availability
+instance group before accessing the High Availability database
+instances. See <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html">Add ACLs to an HA
+instance</a>.</li>
+<li>There will be a single access point, hostname, for accessing the
+source database instance and replicas in the HA group. By default all
+the reads and writes will be directed to port 3306. However you
+can&nbsp;direct read-only traffic&nbsp;to port 3307 and the reads will be done
+from each replica in a round robin fashion.</li>
+<li>There will be a lag between the source database instance and
+replicas. All of the updates will be applied to the replica after
+they occur on the master.</li>
+<li>The only allowed operations on instances that are part of the HA
+group are Create users and Create databases (on source only). All
+other operations are blocked on these instances.</li>
+<li>Currently all the nodes that are part of the HA group would need to
+be of the same flavor and size.</li>
+<li>In case a failover occurs, there will be an automatic failover to the
+replica closest to the failed database instance. Cloud Databases will
+remove the failed database instance. A new replica of the same flavor
+and volume as the other instances that are part of the HA group will
+be built and automatically added to this setup in order to maintain
+the HA node configuration. For the period when the new replica is
+being added, the HA state would be <code class="docutils literal"><span class="pre">ADDING_REPLICA</span></code> and would
+switch to <code class="docutils literal"><span class="pre">ACTIVE</span></code> once the node has been successfully added.</li>
 </ul>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Automatically adding a new replica node would restart the MHA manager
+service (which monitors the source/replica instances to trigger
+failover) and the haproxy service on the load balancer nodes. Refer
+to the KC article for more details about these components at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases">High
+Availability for Cloud
+Databases</a>.</p>
 </div>
+<p><strong>Recommendation.&nbsp;</strong>It is recommended to have two replicas on an HA
+group. Having two replicas will ensure that in case failover occurs,
+your database will still have a High Availability setup.</p>
+<p><strong>Limitations.&nbsp;</strong></p>
+<ul class="simple">
+<li>The maximum number of replicas allowed per source database instance
+is two. We will increase the limit on the number of replicas later.</li>
+<li>HA group is only available for instance flavors 1GB and above.</li>
+<li>Both source database instance and replicas should be in the same
+region.</li>
+<li>Currently you cannot resize or apply configuration groups on an HA
+group. These capabilities will be supported soon.</li>
+</ul>
+<p>For more details about HA groups refer to the KC article at <a class="reference external" href="http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases">High
+Availability for Cloud
+Databases</a>.</p>
 </div>
 </div>
 </div>
@@ -1906,38 +1911,34 @@ Date: Wed, 25 Jan 2012 21:53:04 GMT
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Instance</td>
+<tr class="row-even"><td rowspan="5">Instance</td>
 <td>flavorRef</td>
 <td>Reference (href) to a flavor as specified in the response from the List Flavors API call. This is the actual
 URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an
-example of the flavorRef. .. note:: Rather than the flavor URI, you can also pass the flavor id (integer) as
+example of the flavorRef. Note: Rather than the flavor URI, you can also pass the flavor id (integer) as
 the value for flavorRef. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html">List flavors</a> for details.</td>
 <td>Yes</td>
 </tr>
 <tr class="row-odd"><td>(volume) size</td>
 <td>Specifies the volume size in gigabytes (GB). The value specified must be between 1 and 300.</td>
 <td>Yes</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>name</td>
 <td>Name of the instance to create. The length of the name is limited to 255 characters and any characters are
-permitted.</td>
+permitted</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>configuration</td>
 <td>Identifier of the configuration group to associate with the instance.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>(datastore)
 version / type</td>
 <td>Name or uuid of the datastore version and type to associate with the instance. If the datastore is not
 specified, it defaults to mysql.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>Database</td>
+<tr class="row-odd"><td rowspan="3">Database</td>
 <td>name</td>
 <td>Specifies database names for creating databases on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_databases.html">Create database</a>
 for the required json format.</td>
@@ -1946,15 +1947,13 @@ for the required json format.</td>
 <tr class="row-even"><td>character_set</td>
 <td>Set of symbols and encodings. The default character set is <code class="docutils literal"><span class="pre">utf8</span></code>.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>collate</td>
 <td>Set of rules for comparing characters in a character set. The default value for collate is
 <code class="docutils literal"><span class="pre">utf8_general_ci</span></code>.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>User</td>
+<tr class="row-even"><td rowspan="4">User</td>
 <td>name</td>
 <td>Specifies user name for the database on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a>
 for the required json format.</td>
@@ -1964,29 +1963,26 @@ for the required json format.</td>
 <td>Specifies password for those users on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a>
 for the required json format.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>(database)
 name</td>
 <td>Specifies names of databases that those users can access on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a>
 for the required json format.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>host</td>
 <td>Specifies the host from which a user is allowed to connect to the database. Possible values are a string
 containing an IPv4 address or &#8220;%&#8221; to allow connecting from any host. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html">User access restriction by
 host</a> for details. If <code class="docutils literal"><span class="pre">host</span></code> is not specified, it defaults to &#8220;%&#8221;.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>Restore</td>
 <td>restorePoint</td>
-<td>Specifies the backup id from which to restore the database instance. .. note:: * When you execute the Restore
+<td>Specifies the backup id from which to restore the database instance. <strong>Note:</strong> When you execute the Restore
 Backup operation, a new database instance is created to store the backup whose id is specified by the
-<code class="docutils literal"><span class="pre">restorePoint</span></code> attribute. * All users/passwords/access that were on the instance at the time of the backup
-will be restored along with the databases. * You can create new users or databases if you want, but they cannot
-be the same as the ones from the instance that was backed up. * Refer to the Create Database Instance Restore
+<code class="docutils literal"><span class="pre">restorePoint</span></code> attribute. All users/passwords/access that were on the instance at the time of the backup
+will be restored along with the databases. You can create new users or databases if you want, but they cannot
+be the same as the ones from the instance that was backed up. Refer to the Create Database Instance Restore
 Request and Response examples for the required json format and details.</td>
 <td>No</td>
 </tr>
@@ -5755,20 +5751,20 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <span id="user-operations"></span><h3>Users<a class="headerlink" href="#users" title="Permalink to this headline">¶</a></h3>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#create-user" id="id22">Create user</a></li>
-<li><a class="reference internal" href="#list-users-in-database-instance" id="id23">List users in database instance</a></li>
-<li><a class="reference internal" href="#change-user-s-password" id="id24">Change user(s) password</a></li>
-<li><a class="reference internal" href="#modify-user-attributes" id="id25">Modify user attributes</a></li>
-<li><a class="reference internal" href="#list-user" id="id26">List user</a></li>
-<li><a class="reference internal" href="#delete-user" id="id27">Delete user</a></li>
-<li><a class="reference internal" href="#list-user-access" id="id28">List user access</a></li>
-<li><a class="reference internal" href="#grant-user-access" id="id29">Grant user access</a></li>
-<li><a class="reference internal" href="#revoke-user-access" id="id30">Revoke user access</a></li>
+<li><a class="reference internal" href="#create-user" id="id21">Create user</a></li>
+<li><a class="reference internal" href="#list-users-in-database-instance" id="id22">List users in database instance</a></li>
+<li><a class="reference internal" href="#change-user-s-password" id="id23">Change user(s) password</a></li>
+<li><a class="reference internal" href="#modify-user-attributes" id="id24">Modify user attributes</a></li>
+<li><a class="reference internal" href="#list-user" id="id25">List user</a></li>
+<li><a class="reference internal" href="#delete-user" id="id26">Delete user</a></li>
+<li><a class="reference internal" href="#list-user-access" id="id27">List user access</a></li>
+<li><a class="reference internal" href="#grant-user-access" id="id28">Grant user access</a></li>
+<li><a class="reference internal" href="#revoke-user-access" id="id29">Revoke user access</a></li>
 </ul>
 </div>
 <p>This section describes the operations that are supported for users.</p>
 <div class="section" id="create-user">
-<span id="post-create-user-version-accountid-instances-instanceid-users"></span><h4><a class="toc-backref" href="#id22">Create user</a><a class="headerlink" href="#create-user" title="Permalink to this headline">¶</a></h4>
+<span id="post-create-user-version-accountid-instances-instanceid-users"></span><h4><a class="toc-backref" href="#id21">Create user</a><a class="headerlink" href="#create-user" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span>
 </pre></div>
 </div>
@@ -5776,12 +5772,11 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <p>This operation asynchronously provisions a new user for the specified database instance based on the configuration defined in the request object. Once the request is validated and progress has started on the provisioning process, a 202 Accepted response object is returned.</p>
 <p>If the corresponding request cannot be fulfilled due to insufficient or invalid data, an HTTP 400 &#8220;Bad Request&#8221; error response is returned with information regarding the nature of the failure. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.</p>
 <p>The following table lists the required and optional attributes for Create User. Refer to the request examples for the required json format:</p>
-<table border="1" class="docutils" id="id17">
-<caption><span class="caption-text">Required and optional attributes for Create user</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils">
 <colgroup>
 <col width="14%" />
-<col width="59%" />
-<col width="15%" />
+<col width="20%" />
+<col width="55%" />
 <col width="11%" />
 </colgroup>
 <thead valign="bottom">
@@ -5792,34 +5787,29 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>User</td>
+<tr class="row-even"><td rowspan="4">User</td>
 <td>name</td>
-<td>Name of the
-user for
-the
-database.</td>
+<td>Name of the user for the database.</td>
 <td>Yes</td>
 </tr>
 <tr class="row-odd"><td>password</td>
 <td>User password for database access.</td>
 <td>Yes</td>
-<td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>(database)
-name</td>
+<tr class="row-even"><td>(database) name</td>
 <td>Name of the database that the user can access.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>host</td>
 <td>Specifies the host from which a user is
 allowed to connect to the database. Possible
-values are a string containing an IPv4 address
-or &#8220;%&#8221; to allow connecting from any host.
-Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html">User access restriction by host</a> for details. If <code class="docutils literal"><span class="pre">host</span></code> is
-not specified, it defaults to &#8220;%&#8221;.</td>
+values are a string containing an IPv4
+address or &#8220;%&#8221; to allow connecting from any
+host. Refer to <a class="reference internal" href="index.html#cdb-dg-generalapi-security-restriction"><span>User access restriction by
+host</span></a>
+for details. If <code class="docutils literal"><span class="pre">host</span></code> is not specified, it
+defaults to &#8220;%&#8221;.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -5831,8 +5821,8 @@ not specified, it defaults to &#8220;%&#8221;.</td>
 </ul>
 </div>
 <p>Refer to the following tables for information about characters that are valid/invalid for creating database names, user names, and passwords.</p>
-<table border="1" class="docutils" id="id18">
-<caption><span class="caption-text">Valid characters that can be used in a database name, user name, and password</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="id17">
+<caption><span class="caption-text">Valid characters that can be used in a database name, user name, and password</span><a class="headerlink" href="#id17" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="100%" />
 </colgroup>
@@ -5858,8 +5848,8 @@ an example.</td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="docutils" id="id19">
-<caption><span class="caption-text">Characters that cannot be used in a database name, user name, and password</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="id18">
+<caption><span class="caption-text">Characters that cannot be used in a database name, user name, and password</span><a class="headerlink" href="#id18" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="100%" />
 </colgroup>
@@ -5886,8 +5876,8 @@ an example.</td>
 </tr>
 </tbody>
 </table>
-<table border="1" class="docutils" id="id20">
-<caption><span class="caption-text">Length restrictions for database name, user name, and password</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="id19">
+<caption><span class="caption-text">Length restrictions for database name, user name, and password</span><a class="headerlink" href="#id19" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="51%" />
 <col width="49%" />
@@ -6083,7 +6073,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="list-users-in-database-instance">
-<span id="get-list-users-in-database-instance-version-accountid-instances-instanceid-users"></span><h4><a class="toc-backref" href="#id23">List users in database instance</a><a class="headerlink" href="#list-users-in-database-instance" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-users-in-database-instance-version-accountid-instances-instanceid-users"></span><h4><a class="toc-backref" href="#id22">List users in database instance</a><a class="headerlink" href="#list-users-in-database-instance" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span>
 </pre></div>
 </div>
@@ -6335,7 +6325,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="change-user-s-password">
-<span id="put-change-user-s-password-version-accountid-instances-instanceid-users"></span><h4><a class="toc-backref" href="#id24">Change user(s) password</a><a class="headerlink" href="#change-user-s-password" title="Permalink to this headline">¶</a></h4>
+<span id="put-change-user-s-password-version-accountid-instances-instanceid-users"></span><h4><a class="toc-backref" href="#id23">Change user(s) password</a><a class="headerlink" href="#change-user-s-password" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span>
 </pre></div>
 </div>
@@ -6495,7 +6485,7 @@ Date: Wed, 21 Mar 2012 17:46:46 GMT
 </div>
 </div>
 <div class="section" id="modify-user-attributes">
-<span id="put-modify-user-attributes-version-accountid-instances-instanceid-users-name"></span><h4><a class="toc-backref" href="#id25">Modify user attributes</a><a class="headerlink" href="#modify-user-attributes" title="Permalink to this headline">¶</a></h4>
+<span id="put-modify-user-attributes-version-accountid-instances-instanceid-users-name"></span><h4><a class="toc-backref" href="#id24">Modify user attributes</a><a class="headerlink" href="#modify-user-attributes" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">name</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -6503,8 +6493,8 @@ Date: Wed, 21 Mar 2012 17:46:46 GMT
 <p>This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. User in this case is user or <a class="reference external" href="mailto:user&#37;&#52;&#48;host">user<span>&#64;</span>host</a>, whichever is appropriate.</p>
 <p>Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a> for information about the characters that are valid for the user name and password.</p>
 <p>The following table lists attributes for Modify User Attributes. Note that one or more of the attributes must be specified. Refer to the request examples for the required json format:</p>
-<table border="1" class="docutils" id="id21">
-<caption><span class="caption-text">Attributes for Modify user attributes</span><a class="headerlink" href="#id21" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="id20">
+<caption><span class="caption-text">Attributes for Modify user attributes</span><a class="headerlink" href="#id20" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="39%" />
 <col width="61%" />
@@ -6683,7 +6673,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="list-user">
-<span id="get-list-user-version-accountid-instances-instanceid-users-name"></span><h4><a class="toc-backref" href="#id26">List user</a><a class="headerlink" href="#list-user" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-user-version-accountid-instances-instanceid-users-name"></span><h4><a class="toc-backref" href="#id25">List user</a><a class="headerlink" href="#list-user" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">name</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -6876,7 +6866,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="delete-user">
-<span id="delete-delete-user-version-accountid-instances-instanceid-users-name"></span><h4><a class="toc-backref" href="#id27">Delete user</a><a class="headerlink" href="#delete-user" title="Permalink to this headline">¶</a></h4>
+<span id="delete-delete-user-version-accountid-instances-instanceid-users-name"></span><h4><a class="toc-backref" href="#id26">Delete user</a><a class="headerlink" href="#delete-user" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">name</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -7028,7 +7018,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="list-user-access">
-<span id="get-list-user-access-version-accountid-instances-instanceid-users-name-databases"></span><h4><a class="toc-backref" href="#id28">List user access</a><a class="headerlink" href="#list-user-access" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-user-access-version-accountid-instances-instanceid-users-name-databases"></span><h4><a class="toc-backref" href="#id27">List user access</a><a class="headerlink" href="#list-user-access" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="o">/</span><span class="n">databases</span>
 </pre></div>
 </div>
@@ -7220,7 +7210,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="grant-user-access">
-<span id="put-grant-user-access-version-accountid-instances-instanceid-users-name-databases"></span><h4><a class="toc-backref" href="#id29">Grant user access</a><a class="headerlink" href="#grant-user-access" title="Permalink to this headline">¶</a></h4>
+<span id="put-grant-user-access-version-accountid-instances-instanceid-users-name-databases"></span><h4><a class="toc-backref" href="#id28">Grant user access</a><a class="headerlink" href="#grant-user-access" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PUT</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="o">/</span><span class="n">databases</span>
 </pre></div>
 </div>
@@ -7380,7 +7370,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="revoke-user-access">
-<span id="delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename"></span><h4><a class="toc-backref" href="#id30">Revoke user access</a><a class="headerlink" href="#revoke-user-access" title="Permalink to this headline">¶</a></h4>
+<span id="delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename"></span><h4><a class="toc-backref" href="#id29">Revoke user access</a><a class="headerlink" href="#revoke-user-access" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">DELETE</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">users</span><span class="o">/</span><span class="p">{</span><span class="n">name</span><span class="p">}</span><span class="o">/</span><span class="n">databases</span><span class="o">/</span><span class="p">{</span><span class="n">databaseName</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -11115,17 +11105,17 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 <span id="replication-operations"></span><h3>Replication<a class="headerlink" href="#replication" title="Permalink to this headline">¶</a></h3>
 <div class="contents local topic" id="contents">
 <ul class="simple">
-<li><a class="reference internal" href="#create-replica" id="id13">Create replica</a></li>
-<li><a class="reference internal" href="#list-all-replicas-and-replica-source-database-instances" id="id14">List all replicas and replica source database instances</a></li>
-<li><a class="reference internal" href="#list-replica-source" id="id15">List replica source</a></li>
-<li><a class="reference internal" href="#list-replica-details" id="id16">List replica details</a></li>
-<li><a class="reference internal" href="#detach-replica" id="id17">Detach replica</a></li>
-<li><a class="reference internal" href="#list-replicas-for-source-instance" id="id18">List replicas for source instance</a></li>
+<li><a class="reference internal" href="#create-replica" id="id12">Create replica</a></li>
+<li><a class="reference internal" href="#list-all-replicas-and-replica-source-database-instances" id="id13">List all replicas and replica source database instances</a></li>
+<li><a class="reference internal" href="#list-replica-source" id="id14">List replica source</a></li>
+<li><a class="reference internal" href="#list-replica-details" id="id15">List replica details</a></li>
+<li><a class="reference internal" href="#detach-replica" id="id16">Detach replica</a></li>
+<li><a class="reference internal" href="#list-replicas-for-source-instance" id="id17">List replicas for source instance</a></li>
 </ul>
 </div>
 <p>This section describes the operations that are supported for replication.</p>
 <div class="section" id="create-replica">
-<span id="post-create-replica-version-accountid-instances"></span><h4><a class="toc-backref" href="#id13">Create replica</a><a class="headerlink" href="#create-replica" title="Permalink to this headline">¶</a></h4>
+<span id="post-create-replica-version-accountid-instances"></span><h4><a class="toc-backref" href="#id12">Create replica</a><a class="headerlink" href="#create-replica" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">POST</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span>
 </pre></div>
 </div>
@@ -11154,12 +11144,12 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 </ul>
 </div>
 <p>The following table lists the required and optional attributes for Create replica:</p>
-<table border="1" class="docutils" id="id11">
-<caption><span class="caption-text">Required and optional attributes for Create replica</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
+<blockquote>
+<div><table border="1" class="docutils">
 <colgroup>
 <col width="6%" />
 <col width="45%" />
-<col width="45%" />
+<col width="46%" />
 <col width="4%" />
 </colgroup>
 <thead valign="bottom">
@@ -11170,60 +11160,53 @@ Date: Mon, 18 Mar 2013 19:09:17 GMT
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Instance</td>
+<tr class="row-even"><td rowspan="6">Instance</td>
 <td>flavorRef</td>
 <td>Reference (href) to a flavor as specified in the response from the List Flavors API call. This is the actual
-URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for
-an example of the flavorRef. .. note:: Rather than the flavor URI, you can also pass the flavor id (integer)
-as the value for flavorRef. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html">List flavors</a> for details.</td>
+URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an
+example of the flavorRef. Note: Rather than the flavor URI, you can also pass the flavor id (integer) as
+the value for flavorRef. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getFlavors__version___accountId__flavors_flavors.html">List flavors</a> for details.</td>
 <td>Yes</td>
 </tr>
 <tr class="row-odd"><td>(volume) size</td>
 <td>Specifies the volume size in gigabytes (GB). The value specified must be between 1 and 300.</td>
 <td>Yes</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>name</td>
 <td>Name of the instance to create. The length of the name is limited to 255 characters and any characters are
-permitted.</td>
+permitted</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>replica_of</td>
 <td>Identifier of the source instance to replicate.</td>
 <td>Yes</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>configuration</td>
 <td>Identifier of the configuration group to associate with the instance.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>(datastore)
 version / type</td>
 <td>Name or uuid of the datastore version and type to associate with the instance. If the datastore is not
 specified, it defaults to mysql.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
-<tr class="row-even"><td>Database</td>
+<tr class="row-even"><td rowspan="3">Database</td>
 <td>name</td>
-<td>Specifies database names for creating databases on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html">Create instance</a> for the
-required json format.</td>
+<td>Specifies database names for creating databases on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createDatabase__version___accountId__instances__instanceId__databases_databases.html">Create database</a>
+for the required json format.</td>
 <td>No</td>
 </tr>
 <tr class="row-odd"><td>character_set</td>
 <td>Set of symbols and encodings. The default character set is <code class="docutils literal"><span class="pre">utf8</span></code>.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>collate</td>
 <td>Set of rules for comparing characters in a character set. The default value for collate is
 <code class="docutils literal"><span class="pre">utf8_general_ci</span></code>.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
-<tr class="row-odd"><td>User</td>
+<tr class="row-odd"><td rowspan="4">User</td>
 <td>name</td>
 <td>Specifies user name for the database on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a>
 for the required json format.</td>
@@ -11233,34 +11216,32 @@ for the required json format.</td>
 <td>Specifies password for those users on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a>
 for the required json format.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>(database)
 name</td>
 <td>Specifies names of databases that those users can access on instance creation. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html">Create user</a>
 for the required json format.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-even"><td>host</td>
 <td>Specifies the host from which a user is allowed to connect to the database. Possible values are a string
 containing an IPv4 address or &#8220;%&#8221; to allow connecting from any host. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html">User access restriction by
 host</a> for details. If <code class="docutils literal"><span class="pre">host</span></code> is not specified, it defaults to &#8220;%&#8221;.</td>
 <td>No</td>
-<td>&nbsp;</td>
 </tr>
 <tr class="row-odd"><td>Restore</td>
 <td>restorePoint</td>
-<td>Specifies the backup id from which to restore the database instance. .. note:: * When you execute the Restore
+<td>Specifies the backup id from which to restore the database instance. <strong>Note:</strong> When you execute the Restore
 Backup operation, a new database instance is created to store the backup whose id is specified by the
-<code class="docutils literal"><span class="pre">restorePoint</span></code> attribute. * All users/passwords/access that were on the instance at the time of the backup
-will be restored along with the databases. * You can create new users or databases if you want, but they
-cannot be the same as the ones from the instance that was backed up. * Refer to the Create Database Instance
-Restore Request and Response examples for the required json format and details.</td>
+<code class="docutils literal"><span class="pre">restorePoint</span></code> attribute. All users/passwords/access that were on the instance at the time of the backup
+will be restored along with the databases. You can create new users or databases if you want, but they cannot
+be the same as the ones from the instance that was backed up. Refer to the Create Database Instance Restore
+Request and Response examples for the required json format and details.</td>
 <td>No</td>
 </tr>
 </tbody>
 </table>
+</div></blockquote>
 <p>Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html">Database instance status</a> for a list of possible database instance statuses that may be returned.</p>
 <p>This table shows the possible response codes for this operation:</p>
 <table border="1" class="docutils">
@@ -11460,7 +11441,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="list-all-replicas-and-replica-source-database-instances">
-<span id="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances"></span><h4><a class="toc-backref" href="#id14">List all replicas and replica source database instances</a><a class="headerlink" href="#list-all-replicas-and-replica-source-database-instances" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances"></span><h4><a class="toc-backref" href="#id13">List all replicas and replica source database instances</a><a class="headerlink" href="#list-all-replicas-and-replica-source-database-instances" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span>
 </pre></div>
 </div>
@@ -11899,7 +11880,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT
 </div>
 </div>
 <div class="section" id="list-replica-source">
-<span id="get-list-replica-source-version-accountid-instances-instanceid"></span><h4><a class="toc-backref" href="#id15">List replica source</a><a class="headerlink" href="#list-replica-source" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-replica-source-version-accountid-instances-instanceid"></span><h4><a class="toc-backref" href="#id14">List replica source</a><a class="headerlink" href="#list-replica-source" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -12110,7 +12091,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="list-replica-details">
-<span id="get-list-replica-details-version-accountid-instances-instanceid"></span><h4><a class="toc-backref" href="#id16">List replica details</a><a class="headerlink" href="#list-replica-details" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-replica-details-version-accountid-instances-instanceid"></span><h4><a class="toc-backref" href="#id15">List replica details</a><a class="headerlink" href="#list-replica-details" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -12319,7 +12300,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="detach-replica">
-<span id="patch-detach-replica-version-accountid-instances-instanceid"></span><h4><a class="toc-backref" href="#id17">Detach replica</a><a class="headerlink" href="#detach-replica" title="Permalink to this headline">¶</a></h4>
+<span id="patch-detach-replica-version-accountid-instances-instanceid"></span><h4><a class="toc-backref" href="#id16">Detach replica</a><a class="headerlink" href="#detach-replica" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">PATCH</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -12330,8 +12311,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <p class="last">Detaching a replica will change the database instance status to DETACH_REPLICA. The status will change back to ACTIVE once the replica is completely detached from the source and is no longer a replica.</p>
 </div>
 <p>The following table lists the required attributes for Detach replica:</p>
-<table border="1" class="docutils" id="id12">
-<caption><span class="caption-text">Required and optional attributes for Detach replica</span><a class="headerlink" href="#id12" title="Permalink to this table">¶</a></caption>
+<table border="1" class="docutils" id="id11">
+<caption><span class="caption-text">Required and optional attributes for Detach replica</span><a class="headerlink" href="#id11" title="Permalink to this table">¶</a></caption>
 <colgroup>
 <col width="25%" />
 <col width="25%" />
@@ -12501,7 +12482,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 </div>
 </div>
 <div class="section" id="list-replicas-for-source-instance">
-<span id="get-list-replicas-for-source-instance-version-accountid-instances-instanceid-replicas"></span><h4><a class="toc-backref" href="#id18">List replicas for source instance</a><a class="headerlink" href="#list-replicas-for-source-instance" title="Permalink to this headline">¶</a></h4>
+<span id="get-list-replicas-for-source-instance-version-accountid-instances-instanceid-replicas"></span><h4><a class="toc-backref" href="#id17">List replicas for source instance</a><a class="headerlink" href="#list-replicas-for-source-instance" title="Permalink to this headline">¶</a></h4>
 <div class="code highlight-python"><div class="highlight"><pre><span class="n">GET</span> <span class="o">/</span><span class="p">{</span><span class="n">version</span><span class="p">}</span><span class="o">/</span><span class="p">{</span><span class="n">accountId</span><span class="p">}</span><span class="o">/</span><span class="n">instances</span><span class="o">/</span><span class="p">{</span><span class="n">instanceId</span><span class="p">}</span><span class="o">/</span><span class="n">replicas</span>
 </pre></div>
 </div>
@@ -12832,16 +12813,16 @@ to the required and optional attributes for Create instance.</td>
 </tr>
 <tr class="row-even"><td>networks</td>
 <td>Comma-separated list of networks to be associated with the HA group. For example:
-<code class="docutils literal"><span class="pre">{“networks”:[“public”,“servicenet”]}</span></code> .. note:: * By default (if not specified), it
-will be servicenet. * If a public network would be required in addition to the servicenet,
+<code class="docutils literal"><span class="pre">{“networks”:[“public”,“servicenet”]}</span></code> <strong>Note:</strong> By default (if not specified), it
+will be servicenet. If a public network would be required in addition to the servicenet,
 it would have to be specified in the option: <code class="docutils literal"><span class="pre">&quot;networks&quot;:</span> <span class="pre">[&quot;public”]</span></code>. Note that this
-will add a public network in addition to a servicenet/private network. * Both the networks
+will add a public network in addition to a servicenet/private network. Both the networks
 as options: <code class="docutils literal"><span class="pre">&quot;networks&quot;:</span> <span class="pre">[&quot;public&quot;,</span> <span class="pre">&quot;servicenet&quot;]</span></code>, can also be specified.</td>
 <td>No</td>
 </tr>
 <tr class="row-odd"><td>acls</td>
 <td>Comma separated list of IP based ACLs in the CIDR format. This is required to allow the HA
-group access to the specified IP. By default, the HA group access is blocked. For eg:
+group access to the specified IP. By default, the HA group access is blocked. For example:
 &#8220;acls&#8221;: [{&#8220;address&#8221;: &#8220;10.0.0.0/0&#8221;}, {&#8220;address&#8221;: “1.2.3.4/5”}]. Additionally, if it is not
 specified while creating the HA group, it can be added later. Refer to <a class="reference external" href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html">Add ACLs to an HA
 instance</a>
@@ -14411,10 +14392,10 @@ configurations.</p>
 <p>You can also find additional configuration-related information in the
 descriptions for the following API operations:</p>
 <ul class="simple">
-<li>Create Instance</li>
-<li>List Database Instance Status and Details</li>
-<li>Get Default Configuration</li>
-<li>Update Database Instance</li>
+<li><a class="reference internal" href="index.html#post-create-database-instance-version-accountid-instances"><span>Create Instance</span></a></li>
+<li><a class="reference internal" href="index.html#get-list-database-instance-status-and-details-version-accountid-instances-instanceid"><span>List Database Instance Status and Details</span></a></li>
+<li><a class="reference internal" href="index.html#get-get-default-configuration-version-accountid-instances-instanceid-configuration"><span>Get Default Configuration</span></a></li>
+<li><a class="reference internal" href="index.html#put-update-database-instance-version-accountid-instances-instanceid"><span>Update Database Instance</span></a></li>
 </ul>
 <div class="section" id="list-configurations">
 <span id="get-list-configurations-version-accountid-configurations"></span><h4><a class="toc-backref" href="#id13">List configurations</a><a class="headerlink" href="#list-configurations" title="Permalink to this headline">¶</a></h4>
@@ -15273,6 +15254,7 @@ Date: Thu, 13 Feb 2014 21:47:15 GMT
 Server: Jetty(8.0.y.z-SNAPSHOT)
 </pre></div>
 </div>
+<p>This operation does not return a response body.</p>
 </div>
 </div>
 <div class="section" id="delete-configuration-group">
@@ -18437,10 +18419,8 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-overview">Overview</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="index.html#intended-audience">Intended audience</a></li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#document-change-history">Document change history</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#june-25-2015">June 25, 2015</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#june-15-2015">June 15, 2015</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#april-29-2015">April 29, 2015</a></li>
-<li class="toctree-l3"><a class="reference internal" href="index.html#april-10-2015">April 10, 2015</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#september-10-2015">September 10, 2015</a></li>
+<li class="toctree-l3"><a class="reference internal" href="index.html#september-2-2015">September 2, 2015</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="index.html#additional-resources">Additional resources</a></li>
@@ -18511,10 +18491,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)
 <li class="toctree-l3"><a class="reference internal" href="index.html#limitations">Limitations</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/high-availability">High availability for Cloud Databases</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="index.html#limitations">Limitations</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#document-general-api-info/high-availability">High availability for Cloud Databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="index.html#document-api-operations/index">API operations</a><ul>

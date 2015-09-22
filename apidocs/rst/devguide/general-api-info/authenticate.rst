@@ -33,27 +33,11 @@ For detailed information about the Identity Service v2.0, see the
 Rackspace Cloud Identity Service Endpoints
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important:: Multiple Rackspace Cloud Identity Service endpoints exist. You
-   may use any endpoint, regardless of where your account was created.
+Use the following endpoint to authenticate to the Rackspace Cloud Identity service: 
 
-When you authenticate, use one of the endpoints summarized in the table below.
-
-.. tip:: To help you decide which regionalized endpoint to use, read about
-   special considerations for choosing a data center at
-   http://ord.admin.kc.rakr.net/knowledge_center/article/about-regions.
-
-**Table: Rackspace Cloud Identity Service Endpoints**
-
-+--------------------+--------------------------------------------------------+
-| National location  | Rackspace Cloud Identity Service endpoint              |
-+====================+========================================================+
-| US                 | https://identity.api.rackspacecloud.com/v2.0           |
-+--------------------+--------------------------------------------------------+
-| UK                 | https://lon.identity.api.rackspacecloud.com/v2.0       |
-+--------------------+--------------------------------------------------------+
-
-For information about support for legacy identity endpoints, search for
-alternate authentication endpoints here on this site.
+.. code:: 
+   
+   https://identity.api.rackspacecloud.com/v2.0
 
 Authentication Request
 ~~~~~~~~~~~~~~~~~~~~~~

@@ -13,13 +13,13 @@ configurations.
 You can also find additional configuration-related information in the
 descriptions for the following API operations:
 
--  Create Instance
+-  :ref:`Create instance <post-create-database-instance-version-accountid-instances>`
 
--  List Database Instance Status and Details
+-  :ref:`List database instance status and details <get-list-database-instance-status-and-details-version-accountid-instances-instanceid>`
 
--  Get Default Configuration
+-  :ref:`Get default configuration <get-get-default-configuration-version-accountid-instances-instanceid-configuration>`
 
--  Update Database Instance
+-  :ref:`Update database instance <put-update-database-instance-version-accountid-instances-instanceid>`
 
 .. include:: methods/get-list-configurations-version-accountid-configurations.rst
 .. include:: methods/post-create-configuration-version-accountid-configurations.rst

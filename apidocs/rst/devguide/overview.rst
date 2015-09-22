@@ -30,45 +30,36 @@ Document change history
 
 This version of the Developer Guide replaces and obsolesces all previous versions. The most recent changes are described in the table below:
 
-.. _cdb-dg-overview-dochistory-25062015:
+.. _cdb-dg-overview-dochistory-10092015:
 
-June 25, 2015
---------------
+September 10, 2015
+---------------------
 
-Updated HA platform support information in :ref:`High availability for Cloud Databases <cdb-dg-generalapi-high-availability>` .
+Updated information on backup schedule for :ref:`Create scheduled backup <post-create-scheduled-backup-version-accountid-schedules>`.
 
-.. _cdb-dg-overview-dochistory-15062015:
+Added new API operation :ref:`Update schedule for backups by schedule ID <put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid>`.
 
-June 15, 2015
---------------
+.. _cdb-dg-overview-dochistory-02092015:
 
-Added information for incremental backups in Section 4.7, “On Demand Backups”.
+September 2, 2015
+---------------------
 
-Added information for scheduled backups in Section 4.8, “Scheduled Backups”.
+Updated information for :ref:`High Availability for Cloud Databases <cdb-dg-generalapi-high-availability>`.
 
-Added information for High Availability database instances in Section 3.18, “High Availability for Cloud Databases” and Section 4.10, “High Availability”.
+Added information for backups to :ref:`High Availability <high-availability-operations>`.
 
-.. _cdb-dg-overview-dochistory-29042015:
+Updated description for acls parameter and example for Create HA database instance: JSON
+request for :ref:`Create database instance <post-create-database-instance-version-accountid-instances>`.
 
-April 29, 2015
------------------
+Enhanced description for :ref:`Add replica to HA instance <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action>`.
 
-Added note about access to Cloud Files in Section 4.7, “On Demand Backups” and Create replica.
+Added new operations :ref:`Remove replica from an HA instance <post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action>`, 
+:ref:`Create backup for an HA instance <post-create-backup-for-an-ha-instance-version-accountid-backups>`,
+and :ref:`List backups of an HA instance <get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups>`.
 
-Removed warning about detaching replica in Section 3.17, “Replication”.
+Updated examples for :ref:`List backups <get-list-backups-version-accountid-backups>`.
 
-Added DETACH_REPLICA status to Section 3.9, “Database instance status”.
-
-Changed warning to note and added information about DETACH_REPLICA status for Section 4.9.5, “Detach replica”.
-
-.. _cdb-dg-overview-dochistory-10042015:
-
-April 10, 2015
-----------------
-
-Added query parameter include_replicas in Section 4.2.2, “List all database instances” and Section 4.9.2, “List all replicas and replica source database instances”.
-
-Added new examples for List all instances/replica sources and filter out replicas in Section 4.9.2, “List all replicas and replica source database instances”.
+Updated examples for :ref:`List backups by ID <get-list-backup-by-id-version-accountid-backups-backupid>`.
 
 .. _cdb-dg-overview-addtl:
 

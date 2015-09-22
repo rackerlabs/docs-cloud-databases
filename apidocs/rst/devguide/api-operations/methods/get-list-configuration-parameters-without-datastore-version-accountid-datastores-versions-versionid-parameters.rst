@@ -10,7 +10,7 @@ List configuration parameters without datastore
 
     GET /{version}/{accountId}/datastores/versions/{versionId}/parameters
 
-Lists the configuration parameter s that may be configured on the system without specifying a datastore.
+Lists the configuration parameters that may be configured on the system without specifying a datastore.
 
 
 

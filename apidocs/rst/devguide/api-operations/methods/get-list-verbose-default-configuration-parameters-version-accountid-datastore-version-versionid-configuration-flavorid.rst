@@ -10,7 +10,7 @@ List verbose default configuration parameters
 
     GET /{version}/{accountId}/datastore/version/{versionId}/configuration/{flavorId}
 
-Lists the default configuration parameter s for a datastore version flavor.
+Lists the default configuration parameters for a datastore version flavor.
 
 
 

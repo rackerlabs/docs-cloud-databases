@@ -37,14 +37,14 @@ The following attributes are required for each HA instance:
     |of replicas)            |                                                                                           |         |
     +------------------------+-------------------------------------------------------------------------------------------+---------+
     |networks                |Comma-separated list of networks to be associated with the HA group. For example:          |No       |
-    |                        |``{“networks”:[“public”,“servicenet”]}`` .. note:: * By default (if not specified), it     |         |
-    |                        |will be servicenet. * If a public network would be required in addition to the servicenet, |         |
+    |                        |``{“networks”:[“public”,“servicenet”]}`` **Note:** By default (if not specified), it       |         |
+    |                        |will be servicenet. If a public network would be required in addition to the servicenet,   |         |
     |                        |it would have to be specified in the option: ``"networks": ["public”]``. Note that this    |         |
-    |                        |will add a public network in addition to a servicenet/private network. * Both the networks |         |
+    |                        |will add a public network in addition to a servicenet/private network. Both the networks   |         |
     |                        |as options: ``"networks": ["public", "servicenet"]``, can also be specified.               |         |
     +------------------------+-------------------------------------------------------------------------------------------+---------+
     |acls                    |Comma separated list of IP based ACLs in the CIDR format. This is required to allow the HA |No       |
-    |                        |group access to the specified IP. By default, the HA group access is blocked. For eg:      |         |
+    |                        |group access to the specified IP. By default, the HA group access is blocked. For example: |         |
     |                        |"acls": [{"address": "10.0.0.0/0"}, {"address": “1.2.3.4/5”}]. Additionally, if it is not  |         |
     |                        |specified while creating the HA group, it can be added later. Refer to `Add ACLs to an HA  |         |
     |                        |instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-                                      |         |
