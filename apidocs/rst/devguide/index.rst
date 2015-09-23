@@ -16,9 +16,11 @@ this developer guide.
 .. toctree:: :hidden:
    :maxdepth: 3
 
-   overview
+   overview/index
+   developer-guide
    concepts
    general-api-info/index
+   api-reference
    api-operations/index
    glossary
    

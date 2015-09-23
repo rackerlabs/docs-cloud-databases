@@ -17,19 +17,19 @@ This operation asynchronously provisions a replica for the specified source data
 .. note::
    
    
-   *  The replica will be created with the default configuration. If you wish to apply the same configuration as the source database instance or another configuration, you will need to apply that configuration to the replica. Refer to `Update database instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances.html>`__ for details.
+   *  The replica will be created with the default configuration. If you wish to apply the same configuration as the source database instance or another configuration, you will need to apply that configuration to the replica. Refer to :ref:`put-update-database-instance-version-accountid-instances-instanceid` for details.
    *  Since the process of creating a replica makes a backup behind the scenes, the user calling the Create replica operation will need access to Cloud Files.
    
    
    
 
 .. warning::
-   Adding a replica will restart the MySQL service on the source database instance. However the state of the instance might not reflect that and still be ACTIVE. Wait for a couple of seconds for the process to be complete. The best way to verify whether the process is complete is to check the slave metrics as described in `Monitoring read replication <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Read_Replication-d1e3694.html>`__.
+   Adding a replica will restart the MySQL service on the source database instance. However the state of the instance might not reflect that and still be ACTIVE. Wait for a couple of seconds for the process to be complete. The best way to verify whether the process is complete is to check the slave metrics as described in :ref:`cdb-dg-generalapi-monitoringread`.
    
    
 
 .. note::
-   Notes
+   
    
    
    
@@ -37,7 +37,7 @@ This operation asynchronously provisions a replica for the specified source data
    *  You can create a database instance with one or more databases, and users associated to those databases.
    *  The default binding for the database instance is port 3306.
    *  When used with the ``restorePoint`` attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.
-   *  For information about using SSL with your database instance, refer to `Using SSL with Your Cloud Database Instances <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Using_SSL_for_Database_Instances.html>`__.
+   *  For information about using SSL with your database instance, refer to :ref:`cdb-dg-generalapi-ssl`.
    
    
    
@@ -183,7 +183,6 @@ This table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body.
 
 
 

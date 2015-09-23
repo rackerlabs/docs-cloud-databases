@@ -43,5 +43,5 @@ You will find the actual account number after the final '/' in the
 ``publicURL`` field returned by the authentication response. For
 example, in the previous "Example: Authenticate: JSON Response" you can
 see from the ``publicURL`` field for ``cloudServers``
-("https://servers.api.rackspacecloud.com/v1.0/**1100111**") that the
-account number is 1100111.
+("https://servers.api.rackspacecloud.com/v1.0/**010101**") that the
+account number is 010101.

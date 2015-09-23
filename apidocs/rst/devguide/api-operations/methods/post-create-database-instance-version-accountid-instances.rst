@@ -21,7 +21,7 @@ This operation asynchronously provisions a new database instance. This call requ
    *  You can create a database instance with one or more databases, and users associated to those databases.
    *  The default binding for the database instance is port 3306.
    *  When used with the ``restorePoint`` attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.
-   *  For information about using SSL with your database instance, refer to `Using SSL with Your Cloud Database Instances <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Using_SSL_for_Database_Instances.html>`__.
+   *  For information about using SSL with your database instance, refer to :ref:`cdb-dg-generalapi-ssl`.
    
    
    

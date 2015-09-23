@@ -28,7 +28,7 @@ The following table shows the required and optional attributes for Update schedu
     |hour                      |The hour of the day.     |Yes                      |
     |                          |Midnight is ``0``.       |                         |
     +--------------------------+-------------------------+-------------------------+
-    |minute                    |The minute of the hour.. |Yes                      |
+    |minute                    |The minute of the hour.  |Yes                      |
     +--------------------------+-------------------------+-------------------------+
     |run_now                   |Run the backup           |No                       |
     |                          |immediately.             |                         |
@@ -110,8 +110,6 @@ This table shows the URI parameters for the request:
 
 
 
-
-This operation does not accept a request body.
 
 
 

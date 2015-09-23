@@ -9,7 +9,8 @@ The Rackspace Cloud Databases API is implemented using a ReSTful web service int
 
 .. note:: 
    
-   All requests to authenticate and operate the service are performed using HTTPS on TCP port 443.
+   All requests to authenticate against and operate the service are performed using
+   SSL over HTTP (HTTPS) on TCP port 443.
 
 
 .. toctree:: :hidden:

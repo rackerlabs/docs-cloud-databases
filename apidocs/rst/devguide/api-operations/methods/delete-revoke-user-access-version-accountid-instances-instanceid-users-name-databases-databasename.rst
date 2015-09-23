@@ -155,6 +155,6 @@ The following example shows the Revoke user access response:
    Server: Jetty(8.0.y.z-SNAPSHOT)
    
 
-
+This operation does not return a response body.
 
 

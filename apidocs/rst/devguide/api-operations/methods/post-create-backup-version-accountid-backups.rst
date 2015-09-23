@@ -136,7 +136,6 @@ This table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body.
 
 
 
@@ -176,26 +175,42 @@ The following example shows the Create incremental backup request:
 .. code::
 
    POST /v1.0/1234/backups HTTP/1.1
+
    User-Agent: python-troveclient
+
    Host: troveapi.org
+
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+
    Accept: application/json
+
    Content-Type: application/json
+
    
+
    
 
 
 .. code::
 
    {
+
        "backup": {
+
            "description": "My Incremental Backup",
+
            "instance": "44b277eb-39be-4921-be31-3d61b43651d7",
+
            "name": "Incremental Snapshot",
+
            "parent_id": "a9832168-7541-4536-b8d9-a8a9b79cf1b4"
+
        }
+
    }
+
    
+
    
 
 
@@ -256,35 +271,60 @@ The following example shows the Create incremental backup response:
 .. code::
 
    HTTP/1.1 202 Accepted
+
    Content-Type: application/json
+
    Content-Length: 462
+
    Date: Mon, 18 Mar 2013 19:09:17 GMT
+
    
+
    
 
 
 .. code::
 
    {
+
        "backup": {
+
            "created": "2014-10-30T12:30:00",
+
            "datastore": {
+
                "type": "mysql",
+
                "version": "5.5",
+
                "version_id": "b00000b0-00b0-0b00-00b0-000b000000bb"
+
            },
+
            "description": "My Incremental Backup",
+
            "id": "2e351a71-dd28-4bcb-a7d6-d36a5b487173",
+
            "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+
            "locationRef": null,
+
            "name": "Incremental Snapshot",
+
            "parent_id": "a9832168-7541-4536-b8d9-a8a9b79cf1b4",
+
            "size": null,
+
            "status": "NEW",
+
            "updated": "2014-10-30T12:30:00"
+
        }
+
    }
+
    
+
    
 
 

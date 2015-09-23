@@ -20,24 +20,24 @@ The following table lists the required and optional attributes for Create User. 
 
 .. table:: Required and optional attributes for Create user
 
-+------------+-----------------+------------------------------------------------+----------+
-| Applies To | Name            | Description                                    | Required |
-+============+=================+================================================+==========+
-| User       | name            | Name of the user for the database.             | Yes      |
-|            +-----------------+------------------------------------------------+----------+
-|            | password        | User password for database access.             | Yes      |
-|            +-----------------+------------------------------------------------+----------+
-|            | (database) name | Name of the database that the user can access. | No       |
-|            +-----------------+------------------------------------------------+----------+
-|            | host            | Specifies the host from which a user is        | No       |
-|            |                 | allowed to connect to the database. Possible   |          |
-|            |                 | values are a string containing an IPv4         |          |
-|            |                 | address or "%" to allow connecting from any    |          |
-|            |                 | host. Refer to :ref:`User access restriction by|          |
-|            |                 | host <cdb-dg-generalapi-security-restriction>` |          |
-|            |                 | for details. If ``host`` is not specified, it  |          |
-|            |                 | defaults to "%".                               |          |
-+------------+-----------------+------------------------------------------------+----------+
+    +------------+-----------------+------------------------------------------------+----------+
+    | Applies To | Name            | Description                                    | Required |
+    +============+=================+================================================+==========+
+    | User       | name            | Name of the user for the database.             | Yes      |
+    |            +-----------------+------------------------------------------------+----------+
+    |            | password        | User password for database access.             | Yes      |
+    |            +-----------------+------------------------------------------------+----------+
+    |            | (database) name | Name of the database that the user can access. | No       |
+    |            +-----------------+------------------------------------------------+----------+
+    |            | host            | Specifies the host from which a user is        | No       |
+    |            |                 | allowed to connect to the database. Possible   |          |
+    |            |                 | values are a string containing an IPv4         |          |
+    |            |                 | address or "%" to allow connecting from any    |          |
+    |            |                 | host. Refer to :ref:`User access restriction by|          |
+    |            |                 | host <cdb-dg-generalapi-security-restriction>` |          |
+    |            |                 | for details. If ``host`` is not specified, it  |          |
+    |            |                 | defaults to "%".                               |          |
+    +------------+-----------------+------------------------------------------------+----------+
     
 
 .. note::
@@ -73,31 +73,7 @@ Refer to the following tables for information about characters that are valid/in
     +------------------------------------------------------------------------------+
     |"_" is allowed anywhere in the database name, user name, and password         |
     +------------------------------------------------------------------------------+
-    
-
-.. table:: Characters that cannot be used in a database name, user name, and password
-
-    
-    +------------------------------------------------------------------------------+
-    |Character                                                                     |
-    +==============================================================================+
-    |Single quotes                                                                 |
-    +------------------------------------------------------------------------------+
-    |Double quotes                                                                 |
-    +------------------------------------------------------------------------------+
-    |Back quotes                                                                   |
-    +------------------------------------------------------------------------------+
-    |Semicolons                                                                    |
-    +------------------------------------------------------------------------------+
-    |Commas                                                                        |
-    +------------------------------------------------------------------------------+
-    |Backslashes                                                                   |
-    +------------------------------------------------------------------------------+
-    |Forwardslashes                                                                |
-    +------------------------------------------------------------------------------+
-    |Spaces at the front or end of the user name or password                       |
-    +------------------------------------------------------------------------------+
-    
+       
 
 .. table:: Length restrictions for database name, user name, and password
 
@@ -277,6 +253,6 @@ The following example shows the Create user response:
    Server: Jetty(8.0.y.z-SNAPSHOT)
    
 
-
+This operation does not return a response body.
 
 

@@ -27,7 +27,7 @@ replication.
 High Availability instance groups are supported for MySQL 5.6, Percona
 5.6, and MariaDB 10.
 
-..  note:: 
+The following are guidelines for High Availability instance groups: 
 
 
 -  Currently we are charging the same price for High Availability

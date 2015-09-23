@@ -11,7 +11,7 @@ To take advantage of this capability, users can specify datastore type and optio
 ..  note:: 
     For the SYD and HKG datacenters only, the default database is MySQL 5.1 if users do not specify the datastore type and version at instance creation.
 
-Refer to http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/datastore_types_and_versions.html for the API operations for datastore types and versions.
+Refer to :ref:`datastore-types-versions-operations` for the API operations for datastore types and versions.
 
 For an example of using the `type` and `version` information in the Create Database Instance API request, see the "Create Database Instance *Datastore* Request: JSON" example for the Create Database Instance API operation.
 

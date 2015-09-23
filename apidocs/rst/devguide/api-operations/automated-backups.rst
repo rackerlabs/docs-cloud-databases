@@ -14,8 +14,7 @@ Cloud Databases allows you to create a schedule for running a weekly
 backup for your database instance. There is an incremental backup run at
 the end of every day and a full backup is run on the day as defined by
 the backup schedule. The backup can always be restored to a new database
-instance. For details, see the `Restore backup API
-operation <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_restoreBackup__version___accountId__instances_backups.html>`__.
+instance. For details, see :ref:`post-restore-backup-version-accountid-instances`.
 
 All backups will be stored in Cloud Files and will be charged a fee for
 Cloud Files.

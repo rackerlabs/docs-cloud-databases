@@ -14,7 +14,7 @@ roles. The account owner user assigns these roles, either global (multiproduct)
 or product-specific (for example, next gen Cloud Servers), to account
 users.
 
-Assigning Roles to Account Users
+Assigning roles to account users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner (identity:user-admin) can create account users on the
@@ -36,13 +36,13 @@ to perform the following tasks:
 .. note:: The account owner (identity:user-admin) role cannot hold any
    additional roles because it already has full access to all capabilities.
 
-Roles Available for Cloud Databases
+Roles available for Cloud Databases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Three roles (observer, creator, and admin) can be used to access the Cloud Databases API
 specifically. The following table describes these roles and their permissions.
 
-**Table: Cloud Databases Product Roles and Capabilities**
+**Table: Cloud Databases product roles and capabilities**
 
 +----------------+---------------------------------------------------------------------+
 | Role Name      | Role Permissions                                                    |
@@ -62,7 +62,7 @@ multiproduct roles inherit access to future products when those products
 become RBAC-enabled. The following table describes these roles and their
 permissions.
 
-**Table: Multiproduct (Global) Roles and Rermissions**
+**Table: Multiproduct (global) roles and permissions**
 
 +-----------+--------------------------------------------------------------------------+
 | Role Name | Role Permissions                                                         |
@@ -74,7 +74,7 @@ permissions.
 |           | access is granted.                                                       |
 +-----------+--------------------------------------------------------------------------+
 
-Resolving Conflicts Between Roles
+Resolving conflicts between roles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The account owner can set roles for both multiproduct and Cloud
@@ -105,7 +105,7 @@ View: Appears that the user has only the multiproduct **admin** role.
 Permissions: The user can perform product admin functions in the Control Panel for all of 
 the products. The Cloud Databases **observer** role is ignored.
 
-RBAC Permissions Cross-reference to Cloud Databases API Operations
+RBAC permissions cross-reference to Cloud Databases API operations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 API operations for Cloud Databases may or may not be available to

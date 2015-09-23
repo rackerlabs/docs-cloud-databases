@@ -56,7 +56,7 @@ master_doc = 'index'
 builder = 'deconst-single'
 
 # General information about the project.
-project = u'Rackspace Developer Portal'
+project = u'Rackspace Developer Documentation'
 copyright = u'2015, Rackspace'
 author = u'Rackspace'
 
@@ -232,7 +232,7 @@ html_static_path = ['_static']
 #html_search_scorer = 'scorer.js'
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'RackspaceCloudApiDatabasesDeveloperDoc'
+htmlhelp_basename = 'RackspaceCloudDatabasesDeveloperDoc'
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -254,8 +254,8 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-  (master_doc, 'docs-cloud-databases.tex', 'Rackspace Cloud Databases API Developer Guide',
-   'mike.asthalter', 'manual'),
+  (master_doc, 'RackspaceCloudDatabasesDeveloperDoc.tex', 'Rackspace Cloud Databases API Developer Guide',
+   'Rackspace', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of
@@ -283,7 +283,7 @@ latex_documents = [
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [('index', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Rackspace Cloud Databases API Developer Guide',['Rackspace'], 1)
+man_pages = [('index', 'RackspaceCloudDatabasesDeveloperDoc', 'Rackspace Cloud Databases API Developer Guide',['Rackspace'], 1)
 ]
 
 # If true, show URL addresses after external links.
@@ -295,7 +295,7 @@ man_pages = [('index', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Rackspace Clou
 # Grouping the document tree into Texinfo files. List of tuples
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
-texinfo_documents = [('index', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Rackspace Cloud Databases API Developer Guide','Rackspace', 'RackspaceCloudApiDatabasesDeveloperDoc', 'Learn about using the REST API for the Rackspace Cloud Databases service.','Miscellaneous'),]
+texinfo_documents = [('index', 'RackspaceCloudDatabasesDeveloperDoc', 'Rackspace Cloud Databases API Developer Guide','Rackspace', 'RackspaceCloudDatabasesDeveloperDoc', 'Learn about using the REST API for the Rackspace Cloud Databases service.','Miscellaneous'),]
 
 # Documents to append as an appendix to all manuals.
 #texinfo_appendices = []
