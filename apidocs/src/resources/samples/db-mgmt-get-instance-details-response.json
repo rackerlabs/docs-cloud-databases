@@ -1,0 +1,86 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 1539
+Date: Thu, 13 Feb 2014 21:47:19 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "instance": {
+        "created": "2014-02-13T21:47:13", 
+        "datastore": {
+            "type": "mysql", 
+            "version": "5.6"
+        }, 
+        "deleted": false, 
+        "deleted_at": null, 
+        "flavor": {
+            "id": "3", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
+                    "rel": "bookmark"
+                }
+            ]
+        }, 
+        "guest_status": {
+            "state_description": "running"
+        }, 
+        "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com", 
+        "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+        "links": [
+            {
+                "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f", 
+                "rel": "self"
+            }, 
+            {
+                "href": "https://ord.databases.api.rackspacecloud.com/instances/d4603f69-ec7e-4e9b-803f-600b9205576f", 
+                "rel": "bookmark"
+            }
+        ], 
+        "name": "json_rack_instance", 
+        "root_enabled": "2014-02-13T21:47:14", 
+        "root_enabled_by": "3000", 
+        "server": {
+            "addresses": {
+                "private": [
+                    {
+                        "addr": "123.123.123.123"
+                    }
+                ]
+            }, 
+            "deleted": false, 
+            "deleted_at": null, 
+            "host": "hostname_1", 
+            "id": "0a0bb560-362f-407a-90b6-3437f8b6e34f", 
+            "local_id": 0, 
+            "name": "d4603f69-ec7e-4e9b-803f-600b9205576f-lay", 
+            "status": "ACTIVE", 
+            "tenant_id": "3000"
+        }, 
+        "service_status": "ACTIVE", 
+        "status": "ACTIVE", 
+        "task_description": "No tasks for the instance.", 
+        "tenant_id": "3000", 
+        "updated": "2014-02-13T21:47:18", 
+        "volume": {
+            "attachments": [
+                {
+                    "device": "vdb", 
+                    "server_id": "0a0bb560-362f-407a-90b6-3437f8b6e34f"
+                }
+            ], 
+            "availability_zone": "fake-availability-zone", 
+            "created_at": "2001-01-01-12:30:30", 
+            "id": "VOL_221ca9a9-5620-4664-9446-0fe21b2a3c63", 
+            "size": 4, 
+            "status": "in-use", 
+            "total": 4.0, 
+            "used": 0.16
+        }
+    }
+}

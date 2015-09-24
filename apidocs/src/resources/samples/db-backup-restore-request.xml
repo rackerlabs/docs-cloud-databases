@@ -1,0 +1,12 @@
+POST /v1.0/1234/instances HTTP/1.1
+User-Agent: python-troveclient
+Host: ord.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/xml
+Content-Type: application/xml
+
+<instance xmlns="http://docs.openstack.org/database/api/v1.0" flavorRef="1" name="xml_restore">
+  <volume size="2"/>
+  <restorePoint backupRef="014cfa93-fd0e-4e9d-871f-da8bb2eeee3e"/>
+</instance>
+

@@ -1,0 +1,46 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 1584
+Date: Thu, 13 Feb 2014 21:47:15 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+<instances xmlns="http://docs.openstack.org/database/api/v1.0">
+    <instance id="d4603f69-ec7e-4e9b-803f-600b9205576f" name="json_rack_instance" status="ACTIVE">
+        <links>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/d4603f69-ec7e-4e9b-803f-600b9205576f" rel="bookmark"/>
+        </links>
+        <volume size="2"/>
+        <flavor id="1">
+            <links>
+                <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1" rel="self"/>
+                <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
+            </links>
+        </flavor>
+        <datastore>
+            <type>
+                mysql
+            </type>
+        </datastore>
+    </instance>
+    <instance id="dcf2c32b-241d-4c39-af70-1001dfe946d6" name="xml_rack_instance" status="ACTIVE">
+        <links>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6" rel="bookmark"/>
+        </links>
+        <volume size="2"/>
+        <flavor id="1">
+            <links>
+                <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1" rel="self"/>
+                <link href="https://ord.databases.api.rackspacecloud.com/flavors/1" rel="bookmark"/>
+            </links>
+        </flavor>
+        <datastore>
+            <type>
+                mysql
+            </type>
+        </datastore>
+    </instance>
+</instances>
+

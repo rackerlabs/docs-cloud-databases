@@ -1,0 +1,50 @@
+{
+   "instance": {
+       "created": "2012-01-25T21:53:09Z", 
+       "flavor": {
+           "id": "1", 
+           "links": [
+               {
+                   "href": "https://endpoint/v1.0/1234/flavors/1", 
+                   "rel": "self"
+               }, 
+               {
+                   "href": "https://endpoint/flavors/1", 
+                   "rel": "bookmark"
+               }
+           ]
+       },
+       "configuration": {
+          "id": "12345678-1111-2222-3333-444444444444",
+          "name": "MySQL Tuned Config",
+          "links": [
+              {
+                  "href": "https://endpoint/v1.0/1234/configurations/12345678-1111-2222-3333-444444444444", 
+                  "rel": "self"
+              }, 
+              {
+                  "href": "https://endpoint/configurations/12345678-1111-2222-3333-444444444444", 
+                  "rel": "bookmark"
+              }
+          ]
+      },
+       "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.hostname", 
+       "id": "dea5a2f7-3ec7-4496-adab-0abb5a42d635", 
+       "links": [
+           {
+               "href": "https://endpoint/v1.0/1234/instances/dea5a2f7-3ec7-4496-adab-0abb5a42d635", 
+               "rel": "self"
+           }, 
+           {
+               "href": "https://endpoint/instances/dea5a2f7-3ec7-4496-adab-0abb5a42d635", 
+               "rel": "bookmark"
+           }
+       ], 
+       "name": "json_rack_instance", 
+       "status": "BUILD", 
+       "updated": "2012-01-25T21:53:10Z", 
+       "volume": {
+           "size": 2
+       }
+   }
+}

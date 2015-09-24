@@ -1,0 +1,17 @@
+POST /v1.0/1234/backups HTTP/1.1
+User-Agent: python-troveclient
+Host: dfw.databases.api.rackspacecloud.com
+X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+Accept: application/json
+Content-Type: application/json
+{  
+   "backup":{  
+      "instance":null,
+      "description":"my_ha_backup1",
+      "name":"ha-backup1",
+      "source":{  
+         "type":"ha",
+         "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
+      }
+   }
+}

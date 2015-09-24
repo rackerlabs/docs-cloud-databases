@@ -1,0 +1,117 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 2160
+Date: Thu, 13 Feb 2014 21:47:19 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "instances": [
+        {
+            "created": "2014-02-13T21:47:13", 
+            "datastore": {
+                "type": "mysql", 
+                "version": "5.6"
+            }, 
+            "deleted": false, 
+            "deleted_at": null, 
+            "flavor": {
+                "id": "3", 
+                "links": [
+                    {
+                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
+                        "rel": "self"
+                    }, 
+                    {
+                        "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
+                        "rel": "bookmark"
+                    }
+                ]
+            }, 
+            "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com", 
+            "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/d4603f69-ec7e-4e9b-803f-600b9205576f", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "json_rack_instance", 
+            "server": {
+                "deleted": false, 
+                "deleted_at": null, 
+                "host": "hostname_1", 
+                "id": "0a0bb560-362f-407a-90b6-3437f8b6e34f", 
+                "local_id": 0, 
+                "name": "d4603f69-ec7e-4e9b-803f-600b9205576f-lay", 
+                "status": "ACTIVE", 
+                "tenant_id": "3000"
+            }, 
+            "service_status": "ACTIVE", 
+            "status": "ACTIVE", 
+            "task_description": "No tasks for the instance.", 
+            "tenant_id": "3000", 
+            "updated": "2014-02-13T21:47:18", 
+            "volume": {
+                "size": 4
+            }
+        }, 
+        {
+            "created": "2014-02-13T21:47:13", 
+            "datastore": {
+                "type": "mysql", 
+                "version": "5.6"
+            }, 
+            "deleted": false, 
+            "deleted_at": null, 
+            "flavor": {
+                "id": "3", 
+                "links": [
+                    {
+                        "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
+                        "rel": "self"
+                    }, 
+                    {
+                        "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
+                        "rel": "bookmark"
+                    }
+                ]
+            }, 
+            "hostname": "e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com", 
+            "id": "dcf2c32b-241d-4c39-af70-1001dfe946d6", 
+            "links": [
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6", 
+                    "rel": "self"
+                }, 
+                {
+                    "href": "https://ord.databases.api.rackspacecloud.com/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6", 
+                    "rel": "bookmark"
+                }
+            ], 
+            "name": "xml_rack_instance", 
+            "server": {
+                "deleted": false, 
+                "deleted_at": null, 
+                "host": "hostname_1", 
+                "id": "dc0f43fd-f76f-4e4b-b676-4bf82539ecb9", 
+                "local_id": 0, 
+                "name": "dcf2c32b-241d-4c39-af70-1001dfe946d6-lay", 
+                "status": "ACTIVE", 
+                "tenant_id": "3000"
+            }, 
+            "service_status": "ACTIVE", 
+            "status": "ACTIVE", 
+            "task_description": "No tasks for the instance.", 
+            "tenant_id": "3000", 
+            "updated": "2014-02-13T21:47:18", 
+            "volume": {
+                "size": 4
+            }
+        }
+    ]
+}

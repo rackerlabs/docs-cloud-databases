@@ -1,0 +1,7 @@
+GET /v1.0/1234/configurations HTTP/1.1
+Host: ord.databases.api.rackspacecloud.com
+User-Agent: python-troveclient
+Accept: application/json
+X-Auth-Token: 26640a608aa9482b888a1664376b8113
+
+

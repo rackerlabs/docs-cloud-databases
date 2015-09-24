@@ -1,0 +1,110 @@
+HTTP/1.1 200 OK
+Content-Type: application/xml
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 3598
+Date: Thu, 13 Feb 2014 21:47:19 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+<instances xmlns="http://docs.openstack.org/database/api/v1.0">
+    <instance created="2014-02-13 21:47:13.605990" deleted="False" deleted_at="None" hostname="e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com" id="d4603f69-ec7e-4e9b-803f-600b9205576f" name="json_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2014-02-13 21:47:18.660629">
+        <links>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/d4603f69-ec7e-4e9b-803f-600b9205576f" rel="bookmark"/>
+        </links>
+        <volume size="4"/>
+        <service_status>
+            ACTIVE
+        </service_status>
+        <flavor id="3">
+            <links>
+                <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3" rel="self"/>
+                <link href="https://ord.databases.api.rackspacecloud.com/flavors/3" rel="bookmark"/>
+            </links>
+        </flavor>
+        <server>
+            <status>
+                ACTIVE
+            </status>
+            <name>
+                d4603f69-ec7e-4e9b-803f-600b9205576f-lay
+            </name>
+            <deleted>
+                False
+            </deleted>
+            <tenant_id>
+                3000
+            </tenant_id>
+            <host>
+                hostname_1
+            </host>
+            <local_id>
+                0
+            </local_id>
+            <deleted_at>
+                None
+            </deleted_at>
+            <id>
+                0a0bb560-362f-407a-90b6-3437f8b6e34f
+            </id>
+        </server>
+        <datastore>
+            <version>
+                5.6
+            </version>
+            <type>
+                mysql
+            </type>
+        </datastore>
+    </instance>
+    <instance created="2014-02-13 21:47:13.733824" deleted="False" deleted_at="None" hostname="e09ad9a3f73309469cf1f43d11e79549caf9acf2.rackspaceclouddb.com" id="dcf2c32b-241d-4c39-af70-1001dfe946d6" name="xml_rack_instance" status="ACTIVE" task_description="No tasks for the instance." tenant_id="3000" updated="2014-02-13 21:47:18.737559">
+        <links>
+            <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6" rel="self"/>
+            <link href="https://ord.databases.api.rackspacecloud.com/instances/dcf2c32b-241d-4c39-af70-1001dfe946d6" rel="bookmark"/>
+        </links>
+        <volume size="4"/>
+        <service_status>
+            ACTIVE
+        </service_status>
+        <flavor id="3">
+            <links>
+                <link href="https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3" rel="self"/>
+                <link href="https://ord.databases.api.rackspacecloud.com/flavors/3" rel="bookmark"/>
+            </links>
+        </flavor>
+        <server>
+            <status>
+                ACTIVE
+            </status>
+            <name>
+                dcf2c32b-241d-4c39-af70-1001dfe946d6-lay
+            </name>
+            <deleted>
+                False
+            </deleted>
+            <tenant_id>
+                3000
+            </tenant_id>
+            <host>
+                hostname_1
+            </host>
+            <local_id>
+                0
+            </local_id>
+            <deleted_at>
+                None
+            </deleted_at>
+            <id>
+                dc0f43fd-f76f-4e4b-b676-4bf82539ecb9
+            </id>
+        </server>
+        <datastore>
+            <version>
+                5.6
+            </version>
+            <type>
+                mysql
+            </type>
+        </datastore>
+    </instance>
+</instances>
+

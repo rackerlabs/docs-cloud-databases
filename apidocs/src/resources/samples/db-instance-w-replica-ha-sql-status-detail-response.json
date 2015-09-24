@@ -1,0 +1,62 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: ‘1225’
+Date: Fri, 08 May 2015 16:32:09 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{  
+   "instance":{  
+      "status":"ACTIVE",
+      "updated":"2015-05-08T13:06:55Z",
+      "name":"source_replica1",
+      "links":[  
+         {  
+            "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/4eeeb7a6-0dee-4e66-b433-f6462d45c580",
+            "rel":"self"
+         },
+         {  
+            "href":"https://ord.databases.api.rackspacecloud.com/instances/4eeeb7a6-0dee-4e66-b433-f6462d45c580",
+            "rel":"bookmark"
+         }
+      ],
+      "created":"2015-05-08T13:05:41Z",
+      "hostname":"7e51adcbf8ded6ed1d41311e2e449d5836914dc2.ord.rackspaceclouddb.com",
+      "id":"4eeeb7a6-0dee-4e66-b433-f6462d45c580",
+      "volume":{  
+         "used":0.18,
+         "size":1
+      },
+      "ha_id":"e7fdf90b-7140-4edb-b449-e093d55008fb",
+      "flavor":{  
+         "id":"2",
+         "links":[  
+            {  
+               "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/2",
+               "rel":"self"
+            },
+            {  
+               "href":"https://ord.databases.api.rackspacecloud.com/flavors/2",
+               "rel":"bookmark"
+            }
+         ]
+      },
+      "datastore":{  
+         "version":"5.6",
+         "type":"mysql"
+      },
+      "replica_of":{  
+         "id":"82cba72c-26a3-4e61-a4f1-7c65647b1c9f",
+         "links":[  
+            {  
+               "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/82cba72c-26a3-4e61-a4f1-7c65647b1c9f",
+               "rel":"self"
+            },
+            {  
+               "href":"https://ord.databases.api.rackspacecloud.com/instances/82cba72c-26a3-4e61-a4f1-7c65647b1c9f",
+               "rel":"bookmark"
+            }
+         ]
+      }
+   }
+}

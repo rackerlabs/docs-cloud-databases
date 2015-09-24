@@ -1,0 +1,13 @@
+{
+   "instance": {
+       "name": "mysql_instance", 
+       "flavorRef": "https://endpoint/v1.0/1234/flavors/1", 
+       "volume": {
+           "size": 2
+       },
+       "datastore": {
+           "version": "5.1", 
+           "type": "MySQL"
+       } 
+   }
+}

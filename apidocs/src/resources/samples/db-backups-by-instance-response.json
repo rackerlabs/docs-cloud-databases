@@ -1,0 +1,26 @@
+HTTP/1.1 200 OK
+Content-Type: application/json
+Via: 1.1 Repose (Repose/2.6.7)
+Content-Length: 338
+Date: Thu, 13 Feb 2014 21:47:16 GMT
+Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "backup": {
+        "status": "COMPLETED",
+        "updated": "2014-06-19T15:56:58",
+        "description": "Backup from Restored Instance",
+        "datastore": {
+            "version": "5.1",
+            "type": "MySQL",
+            "version_id": "20000000-0000-0000-0000-000000000002"
+        },
+        "id": "e2d3dfca-430f-4cd2-bec0-884cd7426f13",
+        "size": 0.141026,
+        "name": "restored_backup",
+        "created": "2014-06-19T15:55:54",
+        "instance_id": "34d6c8bf-539e-47d1-8a06-2b7590521309",
+        "parent_id": null,
+        "locationRef": "http://localhost/path/to/backup"
+    }
+}

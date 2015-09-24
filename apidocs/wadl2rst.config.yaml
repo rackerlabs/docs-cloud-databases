@@ -1,0 +1,3 @@
+../xsd/dbaas.wadl:
+    title: Rackspace Cloud Databases Developer Guide 
+    output_directory: rst/devguide/api-operations/methods
