@@ -3,9 +3,6 @@
 High availability
 ~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 
 Refer to the list of limitations for HA at :ref:`cdb-dg-generalapi-high-availability`.

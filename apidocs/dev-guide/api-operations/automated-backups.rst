@@ -3,9 +3,6 @@
 Scheduled backups
 ~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 This section describes the operations for scheduled backups of database
 instances.

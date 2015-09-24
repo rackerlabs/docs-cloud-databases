@@ -3,9 +3,6 @@
 On demand backups
 ~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 
 

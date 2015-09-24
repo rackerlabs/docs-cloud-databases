@@ -3,9 +3,6 @@
 Datastore types and versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
 
 
 This section describes the operations that are supported for datastore types and versions.
