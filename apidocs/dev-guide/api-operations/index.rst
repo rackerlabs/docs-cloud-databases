@@ -16,7 +16,6 @@ Client, the SDK, or from the Cloud Control panel.
    api-versions
    database-instances
    database-instance-actions
-   database-instance-actions
    databases
    user-management
    flavors
