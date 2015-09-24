@@ -10,13 +10,13 @@ You can follow Rackspace updates and announcements via `Twitter`_.
 
 Use the links below to learn more about the Rackspace Cloud Databases service and API.
 
-- For more details about the databases service, see `Rackspace Cloud Databases`_. 
-  in the Rackspace Knowledge Center. This site also offers links to Rackspace's official 
+- For general information, see `Rackspace Cloud Databases`_. 
+  This site also offers links to Rackspace's official 
   support channels, including knowledge center articles, forums, phone, chat, and email.
   
-- To get started with the Cloud Databases API, see `Getting Started with Rackspace Cloud Databases`_
+- To get started with the API, see `Getting Started with Rackspace Cloud Databases`_
     
-- To get information about other Rackspace Cloud services APIs, see the
+- To get information about APIs for other Rackspace Cloud services, see the
   `Rackspace API Documentation`_.  
   
 - To learn about using Rackspace Cloud SDKs, see `Software Development Kits & Tools`_. 
