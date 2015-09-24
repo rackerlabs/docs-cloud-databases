@@ -3,9 +3,7 @@
 Database instance actions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. contents::
-   :depth: 1
-   :local:
+
 
 
 This section describes the operations that are supported for database instance actions.
