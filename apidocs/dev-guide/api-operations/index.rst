@@ -11,7 +11,7 @@ Client, the SDK, or from the Cloud Control panel.
    the trailing slash at the end). Rather, use **GET** /instances/detail instead.
 
 .. toctree:: :hidden:
-   :maxdepth: 3
+   :maxdepth: 2
    
    api-versions
    database-instances
