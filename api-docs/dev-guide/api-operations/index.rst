@@ -1,7 +1,4 @@
-.. _api-operatons-index:
 
-API operations 
-------------------
 
 You can use the Cloud DB API operations to interact directly with the Cloud Databases 
 service.  You can also run DB API operations by using the Rackspace Command Line 

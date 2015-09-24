@@ -6,6 +6,9 @@ Faults
 
 When an error occurs, the Database Service returns a fault object containing an HTTP error response code that denotes the type of error. In the body of the response, the system will return additional information about the fault.
 
+.. note:: 
+    Cloud Databases uses standard `HTTP 1.1 response codes`_.
+
 The following table lists possible fault types with their associated error codes and descriptions.
 
 +-----------------------+------------+------------------------------------------------------+
@@ -156,3 +159,5 @@ Synchronous versus asynchronous faults
 
 ..  note::
     Note that an asynchronous operation, if it fails, may not give the user an error, and the operation can error out without a failure notification.
+
+.. _HTTP 1.1 response codes: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
