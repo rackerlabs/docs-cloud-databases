@@ -1,8 +1,0 @@
-GET /v1.0/1234/instances/dcc5c518-73c7-4471-83e1-15fae67a98eb/users/dbuser2%4010%252e0%252e0%252e1/databases HTTP/1.1
-User-Agent: python-reddwarfclient
-Host: ord.databases.api.rackspacecloud.com
-X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-Accept: application/json
-Content-Type: application/json
-
-

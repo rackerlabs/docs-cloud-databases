@@ -1,6 +1,0 @@
-<books xmlns="http://docs.rackspace.com/olink">
-	<book path="src/resources/cdb-devguide.xml"/>
-    <book path="src/resources/cdb-getting-started.xml"/>
-    <book path="src/resources/cdb-releasenotes.xml"/>
-    <book path="src/resources/cdb-mgmt-devguide.xml"/>
-</books>

@@ -1,8 +1,0 @@
-POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/acls HTTP/1.1
-User-Agent: python-troveclient
-Host: ord.databases.api.rackspacecloud.com
-X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
-Accept: application/json
-Content-Type: application/json
-
-{"address": "1.2.3.4/32"}
