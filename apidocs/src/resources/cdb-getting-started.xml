@@ -50,13 +50,25 @@
         </copyright>
         <releaseinfo>API v1.0</releaseinfo>
         <productname>Rackspace Cloud Databases</productname>
-        <pubdate>2015-09-15</pubdate>
+        <pubdate>2015-09-25</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
             </annotation>
         </legalnotice>
         <revhistory>
+            <revision>
+                <date>2015-09-25</date>
+                <revdescription>
+                    <itemizedlist spacing="compact">
+                        <listitem>
+                            <para>Temporarily removed CLI commands for
+                                High Availability. They will return in
+                                the future.</para>
+                        </listitem>
+                    </itemizedlist>
+                </revdescription>
+            </revision>
             <revision>
                 <date>2015-09-15</date>
                 <revdescription>
@@ -78,9 +90,7 @@
                         <listitem>
                             <para>Added new operations Remove replica
                                 from HA instance and List backups of
-                                an HA instance in <xref
-                                   linkend="trove_summary_ha"
-                                />.</para>
+                                an HA instance.</para>
                         </listitem>
                         <listitem>
                             <para>Updated Create backup to also
@@ -97,9 +107,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new operation Add replica to
-                                HA instance in <xref
-                                   linkend="trove_summary_ha"
-                                />.</para>
+                                HA instance.</para>
                         </listitem>
                     </itemizedlist>
                 </revdescription>
@@ -137,9 +145,7 @@
                     <itemizedlist spacing="compact">
                         <listitem>
                             <para>Added new trove commands for High
-                                Availability in <xref
-                                   linkend="trove_summary_ha"/> and
-                                   <xref
+                                Availability and <xref
                                    linkend="trove_summary_replication"
                                 />.</para>
                         </listitem>
@@ -4231,7 +4237,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                 </varlistentry>
             </variablelist>
         </section>
-        <section xml:id="trove_summary_ha">
+        <section xml:id="trove_summary_ha" security="writeronly">
             <title>High Availability</title>
             <variablelist wordsize="10%">
                 <varlistentry>
@@ -4465,6 +4471,21 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                             the ID of the HA MySQL instance and
                                 <parameter>instance</parameter> is the
                             ID of the replica.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Resize volume for an
+                            HA instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-resize-volumes &lt;ha_instance&gt; &lt;size&gt;</programlisting>
+                        <para> Where
+                                <parameter>ha_instance</parameter> is
+                            the ID of the HA instance and
+                                <parameter>size</parameter> is the new
+                            size for the instance disk volume in
+                            GB.</para>
                     </listitem>
                 </varlistentry>
             </variablelist>
