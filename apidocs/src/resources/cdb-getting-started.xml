@@ -4489,6 +4489,20 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     </listitem>
                 </varlistentry>
             </variablelist>
+            <variablelist wordsize="10%">
+                <varlistentry>
+                    <term><emphasis role="bold">Resize flavor for an
+                        HA instance</emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-resize-flavor &lt;ha_instance&gt; &lt;flavor_id&gt;</programlisting>
+                        <para> Where
+                                <parameter>ha_instance</parameter> is
+                            the ID of the HA instance and
+                                <parameter>flavor_id</parameter> is
+                            the new flavor for the instance.</para>
+                    </listitem>
+                </varlistentry>
+            </variablelist>
         </section>
         <section xml:id="trove_summary_security_groups" security="writeronly">
             <title>Security Groups</title>
