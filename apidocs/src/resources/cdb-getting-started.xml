@@ -3629,7 +3629,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     <term><emphasis role="bold">Resize
                             instance</emphasis></term>
                     <listitem>
-                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove resize-flavor &lt;instance&gt; &lt;flavor&gt;</programlisting>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove resize-instance &lt;instance&gt; &lt;flavor&gt;</programlisting>
                         <para> Where <parameter>instance</parameter>
                             is the ID of the instance and
                                 <parameter>flavor</parameter> is the
