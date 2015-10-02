@@ -4223,6 +4223,9 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     </listitem>
                 </varlistentry>
             </variablelist>
+
+            
+
             <variablelist wordsize="10%">
                 <varlistentry>
                     <term><emphasis role="bold">Detach
@@ -4236,7 +4239,50 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                     </listitem>
                 </varlistentry>
             </variablelist>
+            
+            <variablelist wordsize="10%" security="writeronly">
+                <varlistentry>
+                    <term><emphasis role="bold">Convert replication setup to HA </emphasis></term>
+                    <listitem>
+                        <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove convert-to-ha &lt;instance_id&gt; &lt;name&gt;                             
+      [--networks &lt;networks>] [--acls &lt;acls>]    </programlisting>
+                        <itemizedlist>
+                            <title>Positional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <parameter>instance_id</parameter>.
+                                   The ID of the instance. </para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <parameter>name</parameter>. The
+                                   name of the HA instance. </para>
+                            </listitem>
+                        </itemizedlist>
+                        <itemizedlist>
+                            <title>Optional Arguments</title>
+                            <listitem>
+                                <para>
+                                   <option>--networks</option>
+                                   <parameter>networks</parameter>.
+                                   Comma-separated list of networks,
+                                   consisting of public and/or
+                                   servicenet.</para>
+                            </listitem>
+                            <listitem>
+                                <para>
+                                   <option>--acls</option>
+                                   <parameter>acls</parameter>.
+                                   Comma-separated list of
+                                   acls.</para>
+                            </listitem>
+                        </itemizedlist>
+                        
+                    </listitem>
+                </varlistentry>
+            </variablelist>
         </section>
+        
         <section xml:id="trove_summary_ha" security="writeronly">
             <title>High Availability</title>
             <variablelist wordsize="10%">
@@ -4497,7 +4543,7 @@ Server: Jetty(8.0.y.z-SNAPSHOT)</computeroutput></screen>
                         <programlisting language="bash" role="gutter: false"><prompt>$</prompt> trove ha-mysql-resize-flavor &lt;ha_instance&gt; &lt;flavor_id&gt;</programlisting>
                         <para> Where
                                 <parameter>ha_instance</parameter> is
-                            the ID of the HA instance and
+                            the ID of the HA MySQL instance and
                                 <parameter>flavor_id</parameter> is
                             the new flavor for the instance.</para>
                     </listitem>

@@ -19,6 +19,7 @@ For information about HA Instance Backups, see the following:
 
 -  To delete a specified backup, see :ref:`delete-delete-backup-version-accountid-backups-backupid`.
 
+-  To create an HA instance from an existing replication setup, see :ref:`post-convert-replication-setup-to-ha-version-accountid-instances`.
 
 This section describes the operations that are supported for High Availability (HA)
 for Cloud Databases.
@@ -32,6 +33,10 @@ for Cloud Databases.
 .. include:: methods/delete-delete-acls-from-an-ha-instance-version-accountid-ha-haid-acls-address.rst
 .. include:: methods/post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action.rst
 .. include:: methods/post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action.rst
+.. include:: methods/post-resize-volume-for-an-ha-instance-version-accountid-ha-haid-action.rst
+.. include:: methods/post-resize-flavor-for-an-ha-instance-version-accountid-ha-haid-action.rst
+
+
 
 
 
