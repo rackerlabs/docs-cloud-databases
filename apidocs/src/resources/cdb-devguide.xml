@@ -92,7 +92,7 @@
                         </listitem>
                         <listitem>
                             <para>Added new API operation <link
-                                   xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/cdb-devguide-external/content/PUT_updateAutomatedBackupById__version___accountId__schedules__scheduleId__automated_backups.html"
+                                xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateAutomatedBackupById__version___accountId__schedules__scheduleId__automated_backups.html"
                                    >Update schedule for backups by
                                    schedule ID</link>.</para>
                         </listitem>
@@ -4168,7 +4168,8 @@
                             state would be <code>ADDING_REPLICA</code>
                             and would switch to <code>ACTIVE</code>
                             once the node has been successfully added. </para>
-                        <para><warning>
+                        <para>
+                            <warning>
                                 <para>Automatically adding a new
                                    replica node would restart the MHA
                                    manager service (which monitors the
@@ -4180,7 +4181,8 @@
                                    xlink:href="http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
                                    >High Availability for Cloud
                                    Databases</link>. </para>
-                            </warning>para</para>
+                            </warning>
+                        </para>
                     </listitem>
                     
                 </itemizedlist>
