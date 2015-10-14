@@ -14,6 +14,11 @@ Adds Access Control Lists (ACLs) to an HA instance.
 
 This operation adds ACLs to an HA instance.
 
+.. note::
+
+   ACLs cannot be added when the HA instance is building (is in ``BUILD`` state).
+   
+
 The following table lists the required and optional attributes for creating ACLs for an HA setup.
 
 .. table:: Required and optional attributes for Create database

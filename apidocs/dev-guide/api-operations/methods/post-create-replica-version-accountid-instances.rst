@@ -24,7 +24,7 @@ This operation asynchronously provisions a replica for the specified source data
    
 
 .. warning::
-   Adding a replica will restart the MySQL service on the source database instance. However the state of the instance might not reflect that and still be ACTIVE. Wait for a couple of seconds for the process to be complete. The best way to verify whether the process is complete is to check the slave metrics as described in :ref:`cdb-dg-generalapi-monitoringread`.
+   Adding a replica will restart the MySQL service on the source database instance. The state of the source instance switches to ``RESTART`` for this period and back to ``ACTIVE`` when service restart completes.
    
    
 

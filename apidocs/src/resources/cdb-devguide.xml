@@ -3375,7 +3375,7 @@
                     for monitoring replication are present in the
                     monitoring agent running on your database
                     instance. You can monitor these variables using
-                        <link xlink:href="intelligence.rackspace.com"
+                        <link xlink:href="http://intelligence.rackspace.com"
                         >intelligence.rackspace.com</link> and also
                     set up alarms to be notified of the state of your
                     replica. You can also monitor these variables by

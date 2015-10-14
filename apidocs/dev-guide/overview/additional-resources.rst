@@ -32,6 +32,6 @@ Use the links below to learn more about the Rackspace Cloud Databases service an
 .. _Getting Started with Rackspace Cloud Databases: http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html
 .. _Rackspace API Documentation: https://developer.rackspace.com/docs/
 .. _Rackspace website: http://www.rackspace.com
-.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/#sdks
+.. _Software Development Kits & Tools: https://developer.rackspace.com/docs/
 .. _Twitter: https://twitter.com/rackspace
 .. _HTTP Status Code Definitions: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html

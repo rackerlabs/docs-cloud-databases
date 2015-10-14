@@ -41,6 +41,9 @@ The following table lists the required and optional attributes for Convert repli
    
    * By default the replication setup is asynchronous. But for an HA setup, the replication setup is changed to **semi-synchronous**.
    * While the source/replicas are being prepared for HA conversion, the instances switch to a ``CONVERT_TO_HA`` state.
+   * If a source/replica has automated backups enabled, the schedule will be converted to 
+     an HA group automated backup schedule with the source id set to the HA id. The day, 
+     hour, and minute settings will be the same as the source or replica schedule.
    * **Important**: Once the HA instance is ACTIVE, to be able to switch to using the HA 
      cluster, use the new hostname with the appropriate port type to connect to the 
      source/replicas as specified in the HA Group details. This hostname will remain 

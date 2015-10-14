@@ -7,6 +7,8 @@ High availability
 
 Refer to the list of limitations for HA at :ref:`cdb-dg-generalapi-high-availability`.
 
+Supported datastore versions for HA are MySQL 5.6, Percona 5.6, and MariaDB 10.
+
 For information about HA Instance Backups, see the following:
 
 -  To create an HA instance backup, see :ref:`post-create-backup-for-an-ha-instance-version-accountid-backups`.
@@ -19,7 +21,10 @@ For information about HA Instance Backups, see the following:
 
 -  To delete a specified backup, see :ref:`delete-delete-backup-version-accountid-backups-backupid`.
 
--  To create an HA instance from an existing replication setup, see :ref:`post-convert-replication-setup-to-ha-version-accountid-instances`.
+
+.. note::
+
+   To create an HA instance from an existing replication setup, see :ref:`post-convert-replication-setup-to-ha-version-accountid-instances`.
 
 This section describes the operations that are supported for High Availability (HA)
 for Cloud Databases.

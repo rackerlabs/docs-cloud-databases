@@ -219,6 +219,23 @@ The following example shows the Create HA response:
    {  
       "ha_instance":{  
          "name":"ha-1",
+         "tenant_id":"1234",
+         "volume":{  
+            "size":1
+         },
+         "flavor":{  
+            "id":9,
+            "links":[  
+               {  
+                 "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/9",
+                  "rel":"self"
+               },
+               {  
+                  "href":"https://ord.databases.api.rackspacecloud.com/flavors/9",
+                  "rel":"bookmark"
+               }
+            ]
+         },
          "replicas":[  
    
          ],
@@ -228,17 +245,20 @@ The following example shows the Create HA response:
          "id":"e7fdf90b-7140-4edb-b449-e093d55008fb",
          "state":"BUILD",
          "acls":[  
-   
+
          ],
          "datastore":{  
             "version":"5.6",
             "type":"mysql"
          },
          "networks":[  
-   
+
          ]
       }
    }
+
+ 
+
    
 
 
