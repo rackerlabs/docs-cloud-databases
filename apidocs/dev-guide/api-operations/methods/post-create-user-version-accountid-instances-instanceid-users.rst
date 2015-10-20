@@ -66,9 +66,9 @@ Refer to the following tables for information about characters that are valid/in
     +------------------------------------------------------------------------------+
     |'.' is allowed, but must be escaped by replacing it with "%2E" before URL     |
     |encoding occurs if it occurs in GET, DELETE, and PUT calls, where such a name |
-    |is the last section of the request URL. Please refer to the Warning in `User  |
-    |access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-       |
-    |devguide/content/user_access_restrict_by_host-dle387.html>`__ for details and |
+    |is the last section of the request URL. Please refer to the Warning in        |
+    |:ref:`User access restriction by host                                         |
+    |<cdb-dg-generalapi-security-restriction>` for details and                     |
     |an example.                                                                   |
     +------------------------------------------------------------------------------+
     |"_" is allowed anywhere in the database name, user name, and password         |

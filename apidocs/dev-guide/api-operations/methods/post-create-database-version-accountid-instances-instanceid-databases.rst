@@ -44,7 +44,7 @@ The following additional attributes can be specified for each database: ``collat
     +--------------------------+-------------------------+-------------------------+
     
 
-See the database service documentation for information about supported character sets and collations. Refer to `Datastore types and versions <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Datastore_Types_and_Versions-d1e9263.html>`__ for references to the documentation for each database service. For example, for MySQL information see `http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`__.
+See the database service documentation for information about supported character sets and collations. Refer to  :ref:`Datastore types and versions <cdb-dg-generalapi-datastore>` for references to the documentation for each database service. For example, for MySQL information see `http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`__.
 
 .. note::
    The following database names are reserved and cannot be used for creating databases: lost+found, information_schema, and mysql.

@@ -21,7 +21,7 @@ This operation lists the volume size in gigabytes (GB) and the approximate GB us
    
    
 
-Refer to `Database instance status <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html>`__ for a list of possible database instance statuses that may be returned.
+Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a list of possible database instance statuses that may be returned.
 
 The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.
 

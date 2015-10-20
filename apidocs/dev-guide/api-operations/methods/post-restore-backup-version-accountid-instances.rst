@@ -30,7 +30,7 @@ The following table lists the required and optional attributes for RestorePoint:
 .. note::
    
    
-   *  Refer to `Create instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html>`__ for details on other options available during the creation of a new instance.
+   *  Refer to :rax-devdocs:`Create instance <cloud-databases/v1/developer-guide/#create-database-instance>` for details on other options available during the creation of a new instance.
    *  All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases. You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up.
    *  You can restore from an incremental backup the same as from a full backup. The system automatically restores all parents first, and then applies the incremental backup.
    

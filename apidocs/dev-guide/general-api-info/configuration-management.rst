@@ -14,6 +14,6 @@ You can create a new configuration group, modify parameters of an existing confi
 
 The service attempts to dynamically update all associated database instances if the parameters changed in the configuration group are all dynamic. But if any of the parameters changed in the configuration group require a restart, then any instance that has the configuration group assigned to it will require a restart to apply the configuration group or any changes made to the configuration group.
 
-Rackspace configures the validation rules for key/value pairs that can be assigned to a configuration group. These rules can be retrieved by the user from the API through the configuration parameter's resource as described in http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/configuration_parameters.html.
+Rackspace configures the validation rules for key/value pairs that can be assigned to a configuration group. These rules can be retrieved by the user from the API through the configuration parameter's resource as described in :ref:`Configuration parameters <configuration-parameters-operations>`.
 
-Refer to http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/configurations.html for the API operations for configurations.
+Refer to :ref:`Configurations <configuration-operations>` for the API operations for configurations.

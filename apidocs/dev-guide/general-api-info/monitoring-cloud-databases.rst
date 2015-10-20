@@ -8,7 +8,7 @@ Monitoring is available for Cloud Databases to allow users to get more informati
 
 There is a 1:1 mapping of Cloud Databases to monitoring entities. The monitoring entity has a field called ``agent_id`` that is the same as the Cloud Database ``instance id``. 
 
-A user can list the monitoring checks available on the monitoring entity by calling the monitoring API List Checks call as described at http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/service-checks.html#service-checks-list.
+A user can list the monitoring checks available on the monitoring entity by calling the monitoring API List Checks call as described at :rax-devdocs:`List checks for an entity <cloud-monitoring/v1/developer-guide/#list-checks-for-an-entity>`.
 
 The following monitoring checks are available to users:
 
@@ -79,7 +79,7 @@ The following monitoring checks are available to users:
    -  innodb.rows\_read
 
 A user can exercise these checks by calling the monitoring API Test Existing Check call as described at
-http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/service-checks.html#service-checks-test-existing.
+:rax-devdocs:`Test an existing check <cloud-monitoring/v1/developer-guide/#test-an-existing-check>`.
 
 Monitoring alarms available to users include:
 
@@ -104,9 +104,10 @@ Monitoring alarms available to users include:
 
     -  Refer to the following information on the monitoring API for more details:
 
-      -  http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/overview.html
+      -  :rax-devdocs:`How cloud monitoring works <cloud-monitoring/v1/developer-guide/#how-cloud-monitoring-works>`
 
-      -  http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/service-checks.html
-
-      -  http://docs.rackspace.com/cm/api/v1.0/cm-devguide/content/appendix-check-types.html
+      -  :rax-devdocs:`Checks <cloud-monitoring/v1/developer-guide/#document-api-operations/check-operations>`
+      
+      -  :rax-devdocs:`Check types <cloud-monitoring/v1/developer-guide/#document-api-operations/check-type-operations>`
+      
 

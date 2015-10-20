@@ -33,7 +33,7 @@ The following table lists the required attributes for Detach replica:
     +-------------------+-------------------+-------------------+------------------+
     
 
-Refer to `Database instance status <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html>`__ for a list of possible database instance statuses that may be returned.
+Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a list of possible database instance statuses that may be returned.
 
 
 

@@ -224,7 +224,7 @@ The following example shows the List users in database instance response:
    
 
 
-Refer to `User access restriction by host <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html>`__ for a description of the ``host`` field.
+Refer to :ref:`User access restriction by host <cdb-dg-generalapi-security-restriction>` for a description of the ``host`` field.
 
 
 

@@ -85,10 +85,9 @@ This table shows the URI parameters for the request:
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
 |{name}         |String        |The name for the specified user. Refer to      |
-|               |              |`User access restriction by host               |
-|               |              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
-|               |              |devguide/content/user_access_restrict_by_host- |
-|               |              |dle387.html>`__ for details about restricting  |
+|               |              |:ref:`User access restriction by host          |
+|               |              |<cdb-dg-generalapi-security-restriction>`      |
+|               |              |for details about restricting                  |
 |               |              |the name to a particular host. Examples:       |
 |               |              |testuser, testuser@192.168.1.12 (to restrict   |
 |               |              |the user to connecting from a particular host  |

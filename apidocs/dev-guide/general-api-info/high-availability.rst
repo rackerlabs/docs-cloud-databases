@@ -37,8 +37,8 @@ The following are guidelines for High Availability instance groups:
 
 -  Access Control Lists (ACLs) need to be added to the High Availability
    instance group before accessing the High Availability database
-   instances. See `Add ACLs to an HA
-   instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html>`__.
+   instances. See 
+   :rax-devdocs:`Add ACLs to an HA instance <cloud-databases/v1/developer-guide/#add-acls-to-an-ha-instance>`.
 
 -  There will be a single access point, hostname, for accessing the
    source database instance and replicas in the HA group. By default all
@@ -73,9 +73,9 @@ The following are guidelines for High Availability instance groups:
    Automatically adding a new replica node would restart the MHA manager
    service (which monitors the source/replica instances to trigger
    failover) and the haproxy service on the load balancer nodes. Refer
-   to the KC article for more details about these components at `High
-   Availability for Cloud
-   Databases <http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases>`__.
+   to the KC article for more details about these components at 
+   :kc-article:`High availability for Cloud Databases
+   <high-availability-for-cloud-databases>`.
 
    
 
@@ -96,6 +96,6 @@ your database will still have a High Availability setup.
 -  Currently you cannot apply custom configurations on an HA
    group. This capability will be added soon.
 
-For more details about HA groups refer to the KC article at `High
-Availability for Cloud
-Databases <http://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases>`__.
+For more details about HA groups refer to the KC article at 
+:kc-article:`High availability for Cloud Databases
+<high-availability-for-cloud-databases>`.

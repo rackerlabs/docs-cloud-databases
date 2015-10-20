@@ -1,4 +1,4 @@
-.. configuration-operations:
+.. _configuration-operations:
 
 Configurations
 ~~~~~~~~~~~~~~~~~

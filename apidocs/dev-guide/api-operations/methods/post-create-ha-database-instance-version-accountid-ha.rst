@@ -46,9 +46,9 @@ The following attributes are required for each HA instance:
     |acls                    |Comma separated list of IP based ACLs in the CIDR format. This is required to allow the HA |No       |
     |                        |group access to the specified IP. By default, the HA group access is blocked. For example: |         |
     |                        |"acls": [{"address": "10.0.0.0/0"}, {"address": “1.2.3.4/5”}]. Additionally, if it is not  |         |
-    |                        |specified while creating the HA group, it can be added later. Refer to `Add ACLs to an HA  |         |
-    |                        |instance <http://docs.rackspace.com/cdb/api/v1.0/cdb-                                      |         |
-    |                        |devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html>`__  |         |
+    |                        |specified while creating the HA group, it can be added later. Refer to                     |         |
+    |                        |:rax-devdocs:`Add ACLs to an HA instance                                                   |         |
+    |                        |<cloud-databases/v1/developer-guide/#add-acls-to-an-ha-instance>`                          |         |
     |                        |for details.                                                                               |         |
     +------------------------+-------------------------------------------------------------------------------------------+---------+
     

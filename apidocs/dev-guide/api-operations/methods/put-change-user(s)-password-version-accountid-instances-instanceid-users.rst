@@ -15,7 +15,7 @@ Changes the database password of one or more users.
 This operation changes the database password of one or more users. 
 
 .. note::
-   For information about choosing a valid password, please refer to `Create user <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__ for details.
+   For information about choosing a valid password, please refer to :rax-devdocs:`Create user <cloud-databases/v1/developer-guide/#create-user>` for details.
    
    
 

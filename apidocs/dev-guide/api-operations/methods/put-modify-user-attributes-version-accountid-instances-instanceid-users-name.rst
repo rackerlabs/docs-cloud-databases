@@ -14,7 +14,7 @@ Modifies one or more of the following for the specified user: name, password, an
 
 This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. User in this case is user or user@host, whichever is appropriate.
 
-Refer to `Create user <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html>`__ for information about the characters that are valid for the user name and password.
+Refer to :rax-devdocs:`Create user <cloud-databases/v1/developer-guide/#create-user>` for information about the characters that are valid for the user name and password.
 
 The following table lists attributes for Modify User Attributes. Note that one or more of the attributes must be specified. Refer to the request examples for the required json format:
 
@@ -32,10 +32,9 @@ The following table lists attributes for Modify User Attributes. Note that one o
     |                              |allowed to connect to the database. Possible   |
     |                              |values are a string containing an IPv4 address |
     |                              |or "%" to allow connecting from any host.      |
-    |                              |Refer to `User access restriction by host      |
-    |                              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
-    |                              |devguide/content/user_access_restrict_by_host- |
-    |                              |dle387.html>`__ for details. If ``host`` is    |
+    |                              |Refer to :ref:`User access restriction by host |
+    |                              |<cdb-dg-generalapi-security-restriction>`      |
+    |                              |for details. If ``host`` is                    |
     |                              |not specified, it defaults to "%".             |
     +------------------------------+-----------------------------------------------+
     
@@ -111,10 +110,9 @@ This table shows the URI parameters for the request:
 |               |              |instance.                                      |
 +---------------+--------------+-----------------------------------------------+
 |{name}         |String        |The name for the specified user. Refer to      |
-|               |              |`User access restriction by host               |
-|               |              |<http://docs.rackspace.com/cdb/api/v1.0/cdb-   |
-|               |              |devguide/content/user_access_restrict_by_host- |
-|               |              |dle387.html>`__ for details about restricting  |
+|               |              |:ref:`User access restriction by host          |
+|               |              |<cdb-dg-generalapi-security-restriction>`      |
+|               |              |for details about restricting                  |
 |               |              |the name to a particular host. Examples:       |
 |               |              |testuser, testuser@192.168.1.12 (to restrict   |
 |               |              |the user to connecting from a particular host  |

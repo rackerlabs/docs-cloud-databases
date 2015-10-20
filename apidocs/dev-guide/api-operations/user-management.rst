@@ -7,6 +7,11 @@ Users
 
 This section describes the operations that are supported for users.
 
+In this section, "user has access to a database" means that the user has full create, read,
+update, and delete access to the given database. In other words, on a cloud database instance,
+a user named USER and a database named DATABASE exist, and within MySQL, a
+GRANT ALL ON DATABASE.* TO USER has been issued on the instance.
+
 
 .. include:: methods/post-create-user-version-accountid-instances-instanceid-users.rst
 .. include:: methods/get-list-users-in-database-instance-version-accountid-instances-instanceid-users.rst
