@@ -22,16 +22,20 @@ The following table shows the required and optional attributes for Update schedu
     +--------------------------+-------------------------+-------------------------+
     |Name                      |Description              |Required                 |
     +==========================+=========================+=========================+
-    |day_of_week               |The day of the week.     |Yes                      |
+    |day_of_week               |The day of the week.     |No                       |
     |                          |Sunday is ``0``.         |                         |
     +--------------------------+-------------------------+-------------------------+
-    |hour                      |The hour of the day.     |Yes                      |
+    |hour                      |The hour of the day.     |No                       |
     |                          |Midnight is ``0``.       |                         |
     +--------------------------+-------------------------+-------------------------+
-    |minute                    |The minute of the hour.  |Yes                      |
+    |minute                    |The minute of the hour.  |No                       |
     +--------------------------+-------------------------+-------------------------+
     |run_now                   |Run the backup           |No                       |
     |                          |immediately.             |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |full_backup_retention     |The number of full       |No                       |
+    |                          |automated backups to     |                         |
+    |                          |keep.                    |                         |
     +--------------------------+-------------------------+-------------------------+
     
 

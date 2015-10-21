@@ -33,12 +33,28 @@ The following table lists the required and optional attributes for Create Backup
     +--------------------------+-------------------------+-------------------------+
     |minute                    |The minute of the hour.  |Yes                      |
     +--------------------------+-------------------------+-------------------------+
-    |instance                  |The database instanceId  |Yes                      |
+    |instance_id               |The database instanceId  |Yes                      |
     |                          |to backup.               |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |source_id                 |The database instanceId  |No                       |
+    |                          |or haId to back up.      |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |source_type               |The type of backup for   |No                       |
+    |                          |the given source_id      |                         |
+    |                          |('instance' or 'ha',     |                         |
+    |                          |defaults to 'instance'). |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |full_backup_retention     |The number of full       |No                       |
+    |                          |automated backups to     |                         |
+    |                          |keep.                    |                         |
     +--------------------------+-------------------------+-------------------------+
     
 
 The ``day_of_week`` attribute specifies the day in which a full backup will be made. After that day, the schedule will automatically run daily incremental backups until the next full backup.
+
+The ``instance_id attribute`` is present for legacy compatibility and can only be used to create single instance automated backups. For HA groups, please use the ``source_id`` attribute, providing the HA group id and with the ``source_type`` set to 'ha'.
+
+By default, the full backup retention policy is set to two full backups. You can override this setting by providing the ``full_backup_retention`` attribute.
 
 .. note::
    
@@ -187,21 +203,29 @@ The following example shows the Create scheduled backup response:
    Date: Mon, 18 Mar 2013 19:09:17 GMT
    
    {
-       "schedule": {
-           "action": "backup",
-           "created": "2014-10-30T12:30:00",
-           "day_of_month": null,
-           "day_of_week": 0,
-           "hour": 14,
-           "id": "2e351a71-dd28-4bcb-a7d6-d36a5b487173",
-           "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
-           "last_scheduled": null,
-           "minute": 30,
-           "month": null,
-           "next_run": "2014-11-02T14:30:00",
-           "updated": "2014-10-30T12:30:00"
-       }
+     "schedule": {
+        "action": "backup",
+        "created": "2014-10-30T12:30:00",
+        "day_of_month": null,
+        "day_of_week": 0,
+        "full_backup_retention": null,
+        "hour": 14,
+        "id": "88b277eb-39be-4921-be31-3d61b43651d7",
+        "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+        "last_scheduled": null,
+        "minute": 30,
+        "month": null,
+        "next_run": "2014-10-30T14:30:00",
+        "running": false,
+        "source": {
+            "id": "44b277eb-39be-4921-be31-3d61b43651d7",
+            "type": "instance"
+        },
+        "updated": "2014-10-30T12:30:00"
+      }
    }
+
+   
    
 
 
