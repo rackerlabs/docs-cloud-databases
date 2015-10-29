@@ -139,7 +139,7 @@ rst_epilog = """
 
 
 #Software release.version currently deployed in production.
-release='v2.36'
+release='v2.'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
