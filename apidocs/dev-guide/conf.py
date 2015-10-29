@@ -84,7 +84,7 @@ today = 'October 20, 2015'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples', 'api-operations/methods*']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods*','release-information/releases*']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -129,6 +129,17 @@ extlinks = {
     'rocket': ('https://objectrocket.com/%s', '')
 }
 
+# Global variables that are replaced by the specified value during the build process.
+
+rst_epilog = """
+.. |apiservice| replace:: Rackspace Cloud Databases API
+.. |no changes| replace:: None for this release.
+.. |contract version| replace:: 1.0
+"""
+
+
+#Software release.version currently deployed in production.
+release='v2.36'
 
 # A list of ignored prefixes for module index sorting.
 #modindex_common_prefix = []
@@ -182,7 +193,7 @@ html_short_title = 'Rackspace Cloud Databases'
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = 'October 20, 2015'
+html_last_updated_fmt = 'October 29, 2015'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

@@ -1,8 +1,8 @@
 .. _index:
 
-=======================================
-Rackspace Cloud Databases 1.0 
-=======================================
+==============================================
+Rackspace Cloud Databases |contract version| 
+==============================================
 
 *Last updated:* |today|
 
@@ -21,6 +21,8 @@ Learn how to use the Rackspace Cloud Databases service by using the REST API.
    general-api-info/index
    api-reference
    api-operations/index
+   release-notes
+   release-information/index
    
    
    
