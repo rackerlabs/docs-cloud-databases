@@ -33,6 +33,3 @@ resolved issues, and other important details about |apiservice| |version| servic
    release-notes/cdbv2.0.13
    release-notes/cdbv2.0.12
    release-notes/cdbv2.0.11
-
-
-
