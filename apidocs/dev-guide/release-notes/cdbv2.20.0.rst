@@ -15,7 +15,7 @@ Resolved issues
 |no changes|
 
 
-Known Issues
+Known issues
 ~~~~~~~~~~~~~~~~~
 
 |no changes|

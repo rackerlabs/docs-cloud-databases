@@ -1,37 +1,27 @@
-=============================================================================
-v2.0.13, March 11, 2015 - Rackspace Cloud Databases Release Notes  - API v1.0
-=============================================================================
+.. version-v2.13.0-release-notes:
 
-.. rubric::  v2.0.13, March 11, 2015
-   :name: v2.0.13-march-11-2015
-   :class: title
+v2.13.0, April 10, 2015
+---------------------------
 
 What's new
 ~~~~~~~~~~~~
 
+This release includes the following updates:
+
 -  Add new API operation for List replicas for source instance. Refer to
-   the `API
-   Devguide <http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/GET_getReplicasBySourceInstance__version___accountId__instances__instanceId__replicas_replication.html>`__
-   for details.
+   the `API Devguide <get-list-replicas-for-source-instance-version-accountid-instances-instanceid-replicas>` for details.
 
--  Release bug fixes for backups to ensure successful completion of the
-   backup process.
+-  Add logic to prevent users from changing the password of the replica user and causing any inadvertent change.
+   
 
--  Add logic to prevent users from changing the password of the replica
-   user and causing any inadvertent change.
+Resolved issues
+~~~~~~~~~~~~~~~~~~
 
-**Resources**
+Fixed backup operations to ensure successful completion of the backup process.
 
--  Get started using the Cloud Databases API to create databases in
-   the Getting Started Guide at: http://docs.rackspace.com/api/.
 
--  Get reference information and examples in the Cloud Databases
-   Developer Guide at: http://docs.rackspace.com/api/.
+Known issues
+~~~~~~~~~~~~~~~~~
 
--  Support for Cloud Databases is available for US, UK, HKG, and SYD
-   customers 24x7x365 via phone, chat, or you may also `File a
-   Ticket <https://manage.rackspacecloud.com/Tickets/YourTickets.do>`__.
+|no changes|
 
--  Please visit our \ `Product Feedback
-   Forum <http://feedback.rackspace.com>`__ and let us know what you
-   think about Cloud Databases!

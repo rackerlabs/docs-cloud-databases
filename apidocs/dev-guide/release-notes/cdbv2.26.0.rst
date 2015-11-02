@@ -15,7 +15,7 @@ Resolved issues
 Updated API operations that had malformed instances.
 
 
-Known Issues
+Known issues
 ~~~~~~~~~~~~~~~~~
 
 |no changes|
