@@ -23,7 +23,7 @@ The following figure shows an overview of Cloud Databases Infrastructure:
    
    additional-resources
    pricing-and-service-level
-   api-software-updates
+   api-service-updates
    
 
 

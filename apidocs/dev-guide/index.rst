@@ -6,11 +6,12 @@ Rackspace Cloud Databases |contract version|
 
 *Last updated:* |today|
 
-Learn how to use the Rackspace Cloud Databases service by using the REST API. 
+Use the following links to get user and reference information for using the Rackspace Cloud Databases service 
+REST API. 
 
-- For details about using the API, see the :ref:`Developer Guide <developer-guide>`.
-- For details about API resources, operations, requests and responses, see the 
-  :ref:`API Reference <api-reference>`.
+- :ref:`Developer Guide <developer-guide>`
+- :ref:`API Reference <api-reference>`
+- :ref:`Release Notes <release-notes>`
 
 .. toctree:: :hidden:
    :maxdepth: 2
@@ -22,7 +23,6 @@ Learn how to use the Rackspace Cloud Databases service by using the REST API.
    api-reference
    api-operations/index
    release-notes
-   release-information/index
    
    
    
