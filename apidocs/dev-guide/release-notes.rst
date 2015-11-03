@@ -13,7 +13,6 @@ resolved issues, and other important details about |apiservice| |version| servic
    :maxdepth: 2
 
    
-   release-notes/cdbv2.38.0
    release-notes/cdbv2.36.0
    release-notes/cdbv2.34.0
    release-notes/cdbv2.32.0

@@ -76,17 +76,18 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
-			<revision>
+    		<revision security="internal">
 				<date>2015-10-29</date>
 				<revdescription>
 					<para>Updated for v2.38.0.</para>
 				</revdescription>
-			</revision><revision security="internal">
+			</revision>
+    	    <revision security="internal">
     		<date>2015-10-22</date>
     		<revdescription>
     			<para>Updated for v2.37.0.</para>
     		</revdescription>
-    	</revision>
+    	    </revision>
     		<revision>
 				<date>2015-10-14</date>
 				<revdescription>
@@ -754,7 +755,7 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.38.0">
+	<chapter xml:id="cdbv2.38.0" security="internal">
 		<title>v2.38.0, October 29, 2015</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
