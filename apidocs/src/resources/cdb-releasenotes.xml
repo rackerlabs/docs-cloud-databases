@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-10-29</pubdate>
+	<pubdate>2015-11-05</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2015-11-05</date>
+				<revdescription>
+					<para>Updated for v2.39.0.</para>
+				</revdescription>
+			</revision>
     		<revision security="internal">
 				<date>2015-10-29</date>
 				<revdescription>
@@ -746,6 +752,156 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml">File
 						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.39.0" security="internal">
+		<title>v2.39.0, November 5, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Scheduled Backup Features:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-433"
+							>DSMYSQL-433: </link>Create schedule when HA cluster is created.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para>HA MySQL Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1457"
+								>PR-1457: </link>Add back HA resize
+							hack.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-409"
+							>DSMYSQL-409: </link>Ensure tracking works without redis.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-449"
+								>DSMYSQL-449: </link>Block failover
+							from happening.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-453"
+							>DSMYSQL-453: </link>HA backup fixes.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-413"
+							>DSMYSQL-413: </link>HA flavor resize fixes.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1446"
+							>PR-1446: </link>HA test fixes.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1451"
+							>PR-1451: </link>Archive MHA manager logs.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1454"
+							>PR-1454: </link>Restart MHA service after writing script.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-415"
+							>DSMYSQL-415: </link>Fix failover testing in quick mode.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1455"
+							>PR-1455: </link>Work with mha ignore_fail flag.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem security="internal">
+				<para>Other Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-471"
+								>DSMYSQL-471: </link>Update runner to
+							set white_box config.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1443"
+							>PR-1443: </link>Claim empty file to block apt.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1418"
+								>PR-1418: </link>Fix vm.clear
+							vm.install.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-425"
+								>DSMYSQL-425: </link>Fix nova provider
+							delete.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-390"
+								>DSMYSQL-390: </link>Add provider for
+							instances.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem security="internal">
+				<para>Puppet Changes:</para>
+				<itemizedlist spacing="compact">
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1324"
+							>PR-1324: </link>Add ignore_fail flag to slave servers in mha config.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1316"
+							>PR-1316: </link>Update MySQL 5.7 packages to GA: 5.7.9.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also file a ticket.</para>
 			</listitem>
 			<listitem>
 				<para>Please visit our <link
