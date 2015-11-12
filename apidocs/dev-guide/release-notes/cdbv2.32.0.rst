@@ -7,7 +7,9 @@ v2.30.0, September 17, 2015 
 What's new
 ~~~~~~~~~~~~
 
-Added support to allow users to configure the number of full backups.
+A new feature was added to allow users to configure the number of full backups.
+For details see 
+:rax-devdocs:`Create scheduled backups <cloud-databases/v1/developer-guide/#create-scheduled-backup>`. 
 
 Resolved issues
 ~~~~~~~~~~~~~~~

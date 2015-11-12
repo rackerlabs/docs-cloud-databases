@@ -6,13 +6,13 @@ v2.34.0, October 1, 2015
 What's new
 ~~~~~~~~~~~~
 
-Added the following API operations:
+The following API operations were added:
 
-   -  Convert replication setup to HA.
+   -  Convert replication setup to HA
 
-   -  Resize volume for an HA instance.
+   -  Resize volume for an HA instance
 
-   -  Resize flavor for an HA instance.
+   -  Resize flavor for an HA instance
 
 For details, see the :ref:`API reference <api-reference>`.
 

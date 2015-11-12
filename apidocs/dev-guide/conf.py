@@ -78,7 +78,7 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'November 3, 2015'
+today = 'November 12, 2015'
 # Else, today_fmt is used as the format for a strftime call.
 #today_fmt = '%B %d, %Y'
 
@@ -193,7 +193,7 @@ html_short_title = 'Rackspace Cloud Databases'
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = 'October 29, 2015'
+html_last_updated_fmt = 'November 12, 2015'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

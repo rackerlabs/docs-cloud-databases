@@ -6,11 +6,9 @@ v2.18.0, June 4, 2015 
 What's new
 ~~~~~~~~~~~~
 
-This release includes the following updates:
+-  A feature was added to prevent actions on a replica for instance users and databases.
 
--  Prevent actions on replica instance users/databases.
-
--  Actually delete backup files from Cloud Files.
+-  A feature was added to actually delete backup files from Cloud Files.
 
 
 Resolved issues

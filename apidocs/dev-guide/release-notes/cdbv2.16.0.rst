@@ -6,15 +6,13 @@ v2.16.0, May 11, 2015
 What's new
 ~~~~~~~~~~~~
 
--  Automatically fail incomplete backups when deleting an instance.
-
--  Fixed replica\_of in the slave.
+when you delete an instance, incomplete backups of the instance will now fail.
 
 
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-|no changes|
+The replica\_of attribute in the slave instance was fixed.
 
 
 Known issues

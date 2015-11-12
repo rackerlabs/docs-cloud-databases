@@ -6,7 +6,8 @@ v2.27.0,  August 11, 2015  
 What's new
 ~~~~~~~~~~~~
 
-Added the :ref:`Add replica to HA Instance Group <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action>`. 
+The :ref:`Add replica to HA Instance Group <post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action>`
+operation was added. This operation adds a replica node to the HA group. 
 
 
 Resolved issues

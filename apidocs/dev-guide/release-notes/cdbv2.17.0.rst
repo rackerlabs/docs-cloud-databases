@@ -6,13 +6,11 @@ v2.17.0, May 19, 2015
 What's new
 ~~~~~~~~~~~~
 
-This release includes the following updates:
+-  An issue was identified that MySQL sql\_mode ANSI\_QUOTES breaks guest agent queries.
 
--  MySQL sql\_mode ANSI\_QUOTES breaks guest agent queries.
+-  A feature was added to enforce minimum instance size rules for replication.
 
--  Enforce minimum instance size rules for replication.
-
--  String quoting in instance configurations.
+-  A feature was added to support string quoting in instance configurations.
 
 
 Resolved issues

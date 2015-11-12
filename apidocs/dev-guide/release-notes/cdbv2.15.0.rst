@@ -6,14 +6,14 @@ v2.15.0, April 29, 2015
 What's new
 ~~~~~~~~~~~~
 
-This release includes an update ot fix an incorrect timestamp that was listed on 
-instance creation. 
+|no changes|
 
 
 Resolved issues
 ~~~~~~~~~~~~~~~
 
-|no changes|
+This release includes an update to fix an incorrect time stamp that was listed on 
+instance creation. 
 
 
 Known issues

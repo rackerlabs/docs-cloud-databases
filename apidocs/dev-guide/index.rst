@@ -16,6 +16,8 @@ REST API.
 .. toctree:: :hidden:
    :maxdepth: 2
 
+   Cloud Databases 1.0 <self>
+   API Status <http://www.rackspacestatus.com/>
    overview/index
    developer-guide
    concepts

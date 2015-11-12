@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-11-05</pubdate>
+	<pubdate>2015-11-12</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2015-11-12</date>
+				<revdescription>
+					<para>Updated for v2.40.0.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2015-11-05</date>
 				<revdescription>
@@ -752,6 +758,96 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml">File
 						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.40.0">
+		<title>v2.40.0, November 12, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1450"
+								>PR-1450: </link>Fixed a bug in the
+							update call for scheduled backups.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1433"
+								>PR-1433: </link>Refactored task
+							manager.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1430"
+								>PR-1430: </link>Deleted unused files.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1440"
+								>PR-1440: </link>Added note on conditional API fields to guidelines.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://jira.rax.io/browse/DSMYSQL-405"
+								>DSMYSQL-405: </link>Added feature to
+							clean up replica after it has been removed
+							from the HA cluster.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem security="internal">
+				<para>Puppet Changes:</para>
+				<itemizedlist spacing="compact">
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1345"
+								>PR-1345: </link>Updated MySQL 5.7
+							config group validation rules.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem>
+				<para>Documentation:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para>Added the new API operation Change database instance name.
+							Refer to the <emphasis role="italic">Cloud
+								Databases Developer Guide</emphasis>
+							for details.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also file a ticket.</para>
 			</listitem>
 			<listitem>
 				<para>Please visit our <link

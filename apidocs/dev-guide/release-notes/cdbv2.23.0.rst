@@ -6,14 +6,12 @@ v2.23.0, July 8, 2015   
 What's new
 ~~~~~~~~~~~~
 
-This release includes the following changes and enhancements. 
+-  Incremental backups are no longer labeled as *incremental*.
 
--  Stopped naming incremental backups with `incremental`.
+-  A 1-to-1 relationship between a schedule and an instance has been established.
 
--  1 to 1 relationship of schedule to instance.
-
--  Specifying a :code:`full day!=today` means no incremental backup until after
-   full date.
+-  When you specify that a :code:`full day!=today`, no incremental backup is performed
+   until after the full date.
 
 Resolved issues
 ~~~~~~~~~~~~~~~

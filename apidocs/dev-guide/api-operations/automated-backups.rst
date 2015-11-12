@@ -7,6 +7,10 @@ Scheduled backups
 This section describes the operations for scheduled backups of database
 instances.
 
+.. note::
+
+  Scheduled backups are not available in the SYD and HKG regions.
+
 Cloud Databases allows you to create a schedule for running a weekly
 backup for your database instance. There is an incremental backup run at
 the end of every day and a full backup is run on the day as defined by
@@ -18,8 +22,8 @@ Cloud Files.
 
 ..  note:: 
 
-  -  Any user calling the scheduled backup operations for Cloud DB will
-     need access to Cloud Files.
+  Any user calling the scheduled backup operations for Cloud DB will need access to 
+  Cloud Files.
 
 Supported datastore versions for HA are MySQL 5.6, Percona 5.6, and MariaDB 10.
 

@@ -12,7 +12,7 @@ resolved issues, and other important details about |apiservice| |version| servic
 .. toctree::
    :maxdepth: 2
 
-   
+   release-notes/cdbv2.40.0
    release-notes/cdbv2.36.0
    release-notes/cdbv2.34.0
    release-notes/cdbv2.32.0

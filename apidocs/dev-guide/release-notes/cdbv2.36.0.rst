@@ -8,12 +8,12 @@ What's new
 
 -  Scheduled Backup Fixes:
 
-   -  Convert automated backup schedule when m/s setup is converted to
-      HA.
+   -  When a replication setup is converted to high availability (HA), the automated 
+      backup schedule for the replication is converted as well.
 
 -  HA MySQL Fixes:
 
-   -  Checks for HA group actions.
+   -  Added checks for HA group actions.
    
 
 Resolved issues
@@ -33,13 +33,14 @@ Documentation Changes
 
 The :ref:`API reference <api-reference>` documentation includes the following updates: 
 
--  Added volume and flavor info to the API operation List HA database instance details.
+-  Added volume and flavor info to the List HA database instance details API operation.
 
--  Added note about converting automated backup schedule, if a source/replica has automated 
-   backups enabled, to the Convert replication setup to HA API operation. In this case, 
-   the schedule will be converted to an HA group automated backup schedule with the source 
-   id set to the HA id. The day, hour and minute settings will be the same as the source or 
+-  Added a note about converting an automated backup schedule, if a source/replica has automated 
+   backups enabled, to the Convert replication setup to HA API operation section.  
+   The schedule is converted to an HA group automated backup schedule, with the source 
+   ID set to the HA ID. The day, hour and minute settings are the same as the source or 
    replica schedule.
 
--  Source changes to RESTART state when enabling as master during replication setup.
+-  Added a warning about the source instance changing to the RESTART state when it is
+   enabled as the master during replication setup.
 
