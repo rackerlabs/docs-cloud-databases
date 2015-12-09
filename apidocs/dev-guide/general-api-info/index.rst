@@ -16,7 +16,7 @@ The Rackspace Cloud Databases API is implemented using a ReSTful web service int
 .. toctree:: :hidden:
    :maxdepth: 3
    
-   authenticate
+   authentication-gen-api
    service-access-endpoints
    contract-and-api-versions
    request-and-response-types

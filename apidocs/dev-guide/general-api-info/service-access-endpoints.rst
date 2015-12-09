@@ -1,4 +1,4 @@
-.. _cdb-dg-generalapi-service-access-endpoints:
+.. _service-access-endpoints:
 
 ========================
 Service access endpoints
@@ -36,12 +36,10 @@ Table 3.1. Regionalized service endpoints
 | Hong Kong (HKG)         | ``https://hkg.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
 +-------------------------+----------------------------------------------------------------------------+
 
-Replace the sample account ID number, ``1234``, with your actual account
-number returned as part of the authentication service response.
+Replace the ``1234`` with your Rackspace Cloud account number.
 
-You will find the actual account number after the final '/' in the
-``publicURL`` field returned by the authentication response. For
-example, in the previous "Example: Authenticate: JSON Response" you can
-see from the ``publicURL`` field for ``cloudServers``
-("https://servers.api.rackspacecloud.com/v1.0/**010101**") that the
-account number is 010101.
+You can find the complete endpoint URI with your account number appended in the service catalog 
+that is returned in the :ref:`authentication response <review-auth-resp>`. Search the 
+catalog for the service name, ``"rax:database`` . Then copy the URI from the publicURL field 
+for the region you want to use.
+
