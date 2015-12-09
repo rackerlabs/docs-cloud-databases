@@ -23,17 +23,17 @@ Table 3.1. Regionalized service endpoints
 +-------------------------+----------------------------------------------------------------------------+
 | Region                  | Endpoint                                                                   |
 +=========================+============================================================================+
-| Chicago (ORD)           | ``https://ord.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
+| Chicago (ORD)           | ``https://ord.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
-| Dallas/Ft. Worth (DFW)  | ``https://dfw.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
+| Dallas/Ft. Worth (DFW)  | ``https://dfw.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
-| Northern Virginia (IAD) | ``https://iad.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
+| Northern Virginia (IAD) | ``https://iad.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
-| London (LON)            | ``https://lon.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
+| London (LON)            | ``https://lon.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
-| Sydney (SYD)            | ``https://syd.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
+| Sydney (SYD)            | ``https://syd.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
-| Hong Kong (HKG)         | ``https://hkg.databases.api.rackspacecloud.com/v1.0/``\ ``1234``/          |
+| Hong Kong (HKG)         | ``https://hkg.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
 
 Replace the ``1234`` with your Rackspace Cloud account number.

@@ -13,7 +13,7 @@ database, and also how to add custom time zone information to an existing config
 
 
 .. note:: 
-      After updating the settings, :ref:`check the server time <check-server-time-zone>` to 
+      After updating the settings, :ref:`checking the server time zone <check-server-time-zone>` to 
       verify that updates were successful.
 
 
@@ -182,6 +182,6 @@ confirm that the settings have been accepted. The operation does not return a re
        Server: Jetty(8.0.y.z-SNAPSHOT)
 
  
-After updating the settings, :ref:`check the server time <check-server-time-zone>` to 
+After updating the settings, :ref:`checking the server time zone <check-server-time-zone>` to 
 verify that updates were successful.
 

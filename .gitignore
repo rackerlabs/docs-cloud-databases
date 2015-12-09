@@ -12,6 +12,7 @@ apidocs/target
 static/
 templates/
 rst/devguide/_build
+apidocs/dev-guide/glossary.txt
 xsd/management-summarized.html
 xsd/normalized/
 .DS_Store

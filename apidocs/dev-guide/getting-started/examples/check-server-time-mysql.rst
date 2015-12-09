@@ -1,6 +1,6 @@
 .. _check-server-time-zone:
 
-Check the server time zone
+Checking the server time zone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can check the current time zone setting for an instance by
