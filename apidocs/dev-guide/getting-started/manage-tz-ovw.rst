@@ -51,7 +51,7 @@ zone:
 .. include:: examples/check-server-time-mysql.rst
 
 
-.. Below are link definitions for above time zone info
+.. Below are links definitions for above time zone info
 
 .. _MySQL documentation: http://dev.mysql.com/doc/refman/5.6/en/time-zone-support.html
 .. _UTC (Coordinated Universal Time): https://en.wikipedia.org/wiki/Coordinated_Universal_Time
