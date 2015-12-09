@@ -9,7 +9,7 @@ Managing the time zone with cURL
    
 This section shows how to use trove client commands to manage the time zones for 
 a database instance. You'll learn how to create the configuration group, apply it to the 
-database, and also how add custom time zone information to an existing configuration group.  
+database, and also how to add custom time zone information to an existing configuration group.  
 
 
 .. note:: 
