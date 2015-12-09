@@ -40,6 +40,6 @@ Replace the ``1234`` with your Rackspace Cloud account number.
 
 You can find the complete endpoint URI with your account number appended in the service catalog 
 that is returned in the :ref:`authentication response <review-auth-resp>`. Search the 
-catalog for the service name, ``"rax:database`` . Then copy the URI from the publicURL field 
+catalog for the service type, ``rax:database`` . Then copy the URI from the publicURL field 
 for the region you want to use.
 
