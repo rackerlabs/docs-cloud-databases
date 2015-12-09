@@ -63,7 +63,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2015-12-03</pubdate>
+	<pubdate>2015-12-10</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -76,6 +76,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2015-12-10</date>
+				<revdescription>
+					<para>Updated for v2.43.0.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2015-12-03</date>
 				<revdescription>
@@ -776,6 +782,102 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml">File
 						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.43.0" security="internal">
+		<title>v2.43.0, December 10, 2015</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1473"
+								>PR-1473: </link>Fixed issues with how
+							trove-guest agents close connections to
+							rabbit.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1452"
+							>PR-1452: </link>Switched back to the dev branch of puppet.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1481"
+							>PR-1481: </link>Fixed config values for ha-mysql timeouts.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1457"
+							>PR-1457: </link>Fixed MGMT API for force failover.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1488"
+							>PR-1488: </link>Fixed V1 code issues; added tests for Janus in V1.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1504"
+							>PR-1504: </link>Fixed HA Resize bugs.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1503"
+							>PR-1503: </link>Fixed the sphinx requirement for internal API docs.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1508"
+							>PR-1508: </link>Fixed python 2.6 issues.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1509"
+							>PR-1509: </link>Fixed python 2.6 issues, part 2.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem security="internal">
+				<para>Puppet changes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1409"
+							>PR-1409: </link>Changed alembic source location script for vm.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also file a ticket.</para>
 			</listitem>
 			<listitem>
 				<para>Please visit our <link
