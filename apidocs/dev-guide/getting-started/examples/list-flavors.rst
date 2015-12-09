@@ -66,7 +66,7 @@ The following example shows the cURL request and corresponding response to list 
 
 **JSON response**
 
- .. code::  
+.. code::  
 
    HTTP/1.1 200 OK
    Content-Type: application/json
