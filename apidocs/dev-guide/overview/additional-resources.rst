@@ -10,8 +10,6 @@ Use the links below to learn more about the Rackspace Cloud Databases service an
 
 - For general information about Cloud Databases , see the `Cloud Databases FAQ`_ in 
   the Rackspace Knowledge Center.
-  
-- To get started with the API, see `Getting Started with Rackspace Cloud Databases`_
     
 - To get information about APIs for other Rackspace Cloud services, see the
   `Rackspace API Documentation`_.  
@@ -29,7 +27,6 @@ Use the links below to learn more about the Rackspace Cloud Databases service an
   
 .. _Rackspace Product Feedback Forum: http://feedback.rackspace.com 
 .. _Cloud Databases FAQ: http://www.rackspace.com/knowledge_center/product-faq/cloud-databases 
-.. _Getting Started with Rackspace Cloud Databases: http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html
 .. _Rackspace API Documentation: https://developer.rackspace.com/docs/
 .. _Rackspace website: http://www.rackspace.com
 .. _Software Development Kits & Tools: https://developer.rackspace.com/docs/

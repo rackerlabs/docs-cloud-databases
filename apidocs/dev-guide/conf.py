@@ -38,7 +38,7 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+#templates_path = ['_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -56,9 +56,9 @@ master_doc = 'index'
 builder = 'deconst-single'
 
 # General information about the project.
-project = u'Rackspace Developer Documentation'
-copyright = u'2015, Rackspace'
-author = u'Rackspace'
+project = 'Rackspace Developer Documentation'
+copyright = '2015, Rackspace'
+author = 'Rackspace'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -78,13 +78,15 @@ language = None
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
-today = 'November 12, 2015'
+today = ''
 # Else, today_fmt is used as the format for a strftime call.
-#today_fmt = '%B %d, %Y'
+today_fmt = 'December 15, 2015'
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ['_build', 'samples', 'api-operations/methods*','release-information/releases*']
+exclude_patterns = ['_build', 'samples', 'api-operations/methods*',
+                    'release-information/releases*', 'common-gs', 
+                    'getting-started/examples']
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -135,6 +137,7 @@ rst_epilog = """
 .. |apiservice| replace:: Rackspace Cloud Databases API
 .. |no changes| replace:: None for this release.
 .. |contract version| replace:: 1.0
+.. |product name| replace:: Rackspace Cloud Databases
 """
 
 
@@ -193,7 +196,7 @@ html_short_title = 'Rackspace Cloud Databases'
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
-html_last_updated_fmt = 'November 12, 2015'
+html_last_updated_fmt = 'December 15, 2015'
 
 # If true, SmartyPants will be used to convert quotes and dashes to
 # typographically correct entities.

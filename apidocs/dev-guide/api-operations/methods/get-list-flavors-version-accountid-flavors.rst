@@ -10,18 +10,16 @@ List flavors
 
     GET /{version}/{accountId}/flavors
 
-Lists information for all available flavors.
 
 This operation lists information for all available flavors.
 
-This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.
+The flavors resource is same as the OpenStack Nova API flavor resource, but without 
+the disk property.
 
 The larger 32GB and 64GB flavors are available in all US and UK datacenters.
 
 
-
-This table shows the possible response codes for this operation:
-
+The following table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -74,10 +72,7 @@ This table shows the possible response codes for this operation:
 Request
 """"""""""""""""
 
-
-
-
-This table shows the URI parameters for the request:
+The following table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
 |Name                      |Type                     |Description              |
@@ -86,9 +81,6 @@ This table shows the URI parameters for the request:
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
 
 
 This operation does not accept a request body.
@@ -111,23 +103,9 @@ The following example shows the List flavors request:
    Content-Type: application/json
    
    
-   
-
-
-
-
 
 Response
 """"""""""""""""
-
-
-
-
-
-
-
-
-
 
 **Example List flavors: JSON response**
 
