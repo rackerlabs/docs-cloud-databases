@@ -79,11 +79,11 @@ database instance. For response examples with these values, see
 
 .. _setup-gui-client:
 
-MySQL and GUI administration
+Administering your database using a GUI client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you want to access your database using the command line MySQL client,
-then you have now completed the *Getting Started*.
+then you have now completed the *Getting Started Guide*.
 
 Otherwise, you can use a GUI tool such as phpMyAdmin to interact with
 your database instance. Common operations include managing databases,
