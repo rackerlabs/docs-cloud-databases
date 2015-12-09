@@ -40,8 +40,9 @@ are not shown. The values shown in this and other examples vary because the info
 returned is specific to your account. 
 
 .. note:: 
-     For details about the authentication response schema and attributes, see 
-     :rax-devdocs:`annotated authentication response<cloud-identity/v2/developer-guide/#annotated-authentication-request-and-response>` .
+     For details about the authentication response, see 
+     :rax-devdocs:`annotated authentication request and response<cloud-identity/v2/developer-guide/#annotated-authentication-request-and-response>` 
+     in the Rackspace Cloud API documentation.
       
 **Example: Authentication response**  
     

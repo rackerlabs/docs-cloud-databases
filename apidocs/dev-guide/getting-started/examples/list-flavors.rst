@@ -60,7 +60,7 @@ The following example shows the cURL request and corresponding response to list 
     curl -s \
          -H "X-Auth-Token: $AUTH_TOKEN" \
          -H "Accept: application/json" \
-         $ENDPOINT/flavors \
+         $API_ENDPOINT/flavors \
          | python -m json.tool
 
 

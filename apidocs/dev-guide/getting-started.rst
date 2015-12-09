@@ -4,7 +4,7 @@
 **Getting Started Guide**
 ==========================
 
-Use this Getting Started Guide to to create and access your database instances via 
+Use this Getting Started Guide to create and access your database instances via 
 Rackspace Cloud Servers. The examples presented in this guide create a MySQL database 
 instance. You'll learn how to authenticate, send API requests, 
 and complete the basic operations for using the Cloud Databases API by using the cURL 

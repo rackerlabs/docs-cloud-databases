@@ -20,9 +20,9 @@ To set the time zone using named time zones, use the appropriate name
 for your zone, such as "Europe/London" or "US/Eastern" to set the
 ``default_time_zone``, for example:
 
--  ``{"default_time_zone”:"Europe/London”}``
+-  ``{"default_time_zone":"Europe/London"}``
 
--  ``{"default_time_zone”:"US/Eastern”}``
+-  ``{"default_time_zone":"US/Eastern"}``
 
 For more information about named time zones, see the `MySQL documentation`_ .
 

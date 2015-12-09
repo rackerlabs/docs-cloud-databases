@@ -7,9 +7,9 @@ After you add a database to an instance, you can use the list databases
 operation to confirm that it was successfully created. 
 
 You need to specify the ID for the database instance in the API request. 
-The Instance ID is the unique identifier assigned when the database was created. The 
-following examples, uses the instance ID from the 
-`:ref:Create database instance <creating-database-instance-and-user>` examples. 
+The instance ID is the unique identifier assigned when the database was created. The 
+following examples use the instance ID from the 
+:ref:`Create database instance <creating-database-instance-and-user>` examples. 
 
 Following are two methods for listing database instances:
 
@@ -46,26 +46,25 @@ Run the following cURL command to create the instance, replacing
     curl -s \
          -H "X-Auth-Token: $AUTH_TOKEN" \
          -H "Content-Type: application/json" \
-          $ENDPOINT/instances/instance_id/databases | python -m json.tool
+          $API_ENDPOINT/instances/instance_id/databases | python -m json.tool
 
 
 **JSON response**
 
 .. code::  
 
-	 HTTP/1.1 200 OK
-	 Content-Type: application/json
-	 Content-Length: 37
-	 Date: Thu, 05 Apr 2012 18:13:53 GMT
+     HTTP/1.1 200 OK
+     Content-Type: application/json
+     Content-Length: 37
+     Date: Thu, 05 Apr 2012 18:13:53 GMT
 
-	 {
-			 "databases": [
-					 {
-							 "name": "sampledb"
-					 }
-			 ]
-	 }
-
+     {
+       "databases": [
+         {
+           "name": "sampledb"
+         }
+       ]
+     }
 
 
 

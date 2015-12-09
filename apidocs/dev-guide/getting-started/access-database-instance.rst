@@ -44,18 +44,12 @@ Create a Cloud Server by using the Cloud Control Panel
 
 1. Click **Servers** to view the Cloud Servers page.
 
-2. Using the **Region** drop-down menu, select the appropriate region,
-   depending on whether you want to create a first generation Cloud
-   Server or a next generation Cloud Server. (The type of Cloud Server
-   does not matter for this exercise.)
+2. Click **Create Server**, then select the **Region**, and specify the **Server Name**.
 
 3. Select an image from a list of different operating systems, including
-   Linux Distributions and Windows Images:
+   Linux distributions and Windows images.
 
-   .. image:: ../_images/Choose_CS_Image_CCP.png
-
-4. Specify the **Server Name** and select a **Size** for your Cloud
-   Server, then click **Create Server**.
+4. Specify the **Flavor** for your Cloud Server, then click **Create Server**. 
 
 .. note:: 
 
@@ -64,7 +58,7 @@ Create a Cloud Server by using the Cloud Control Panel
    
 .. _configure-application-to-use-db:
 
-Configuring an application connect to a database
+Configuring an application to connect to a database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are configuring an application to use your database on a Cloud
@@ -78,7 +72,7 @@ database instance. For response examples with these values, see
 
 .. note::
     For more detailed information about connecting to a Cloud database instance, read the  
-    kc-article:`Connect to a Cloud Database instance <connect-to-a-cloud-databases-instance>` 
+    :kc-article:`Connect to a Cloud Database instance <connect-to-a-cloud-databases-instance>` 
     article in the Rackspace Knowledge Center.
 
 

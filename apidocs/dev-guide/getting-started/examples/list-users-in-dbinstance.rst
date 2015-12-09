@@ -1,15 +1,15 @@
 .. _list-users-db-instance:
 
-Listing users in a databases instance
+Listing users in a database instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After you add a database user to an instance, you can use the list users  
 operation to confirm that the user was successfully created. 
 
 You need to specify the ID for the database instance in the API request. 
-The Instance ID is the unique identifier assigned when the database was created. The 
-following examples, uses the instance ID from the 
-`:ref:Create database instance <creating-database-instance-and-user>` examples. 
+The instance ID is the unique identifier assigned when the database was created. The 
+following examples use the instance ID from the 
+:ref:`Create database instance <creating-database-instance-and-user>` examples. 
 
 Following are two methods to list users:
  
@@ -48,7 +48,7 @@ Run the following cURL command to create the instance, replacing
     curl -s \
          -H "X-Auth-Token: $AUTH_TOKEN" \
          -H "Content-Type: application/json" \
-         $ENDPOINT/instances/instance_id/users | python -m json.tool
+         $API_ENDPOINT/instances/instance_id/users | python -m json.tool
          
 
 **JSON Response**

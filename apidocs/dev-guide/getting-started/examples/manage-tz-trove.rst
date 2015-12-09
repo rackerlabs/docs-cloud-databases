@@ -72,8 +72,8 @@ group.
 Remember to replace the variables in the example above with their
 actual respective values:
 
--  **config\_id** — as returned in the response to the create configuration command
-   (see Step 1 above).
+-  **config\_id** — as returned in your response to the 
+   :ref:`create configuration command <gs-create-a-config-group-client>` .
 
 -  **instance\_id** — as returned in your create instance response
    (See the the client example in 

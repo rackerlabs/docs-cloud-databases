@@ -1,6 +1,6 @@
 .. _backup-dbinstance-client:
 
-Backing up by using the client
+Backing up by using the trove client
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can back up a database instance by using the
@@ -49,9 +49,6 @@ information:
 Backing up by using cURL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can create a configuration group to manage time zones by using the 
-create configuration operation. 
-
 The following example shows the cURL request to backup data for a specified 
 database instance. You need to include the ID for the database instance in the request. 
 
@@ -73,7 +70,7 @@ This operation does not require a request body.
     }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
-    $ENDPOINT/backups | python -m json.tool
+    $API_ENDPOINT/backups | python -m json.tool
 
 Remember to replace the names in the example above with their actual
 respective values:
@@ -110,12 +107,10 @@ The following example shows a successful response for the back up database reque
             "name": "snapshot", 
                "status": "NEW", 
                "updated": "2013-06-27T19:47:55"
-           }
-       }
+        }
+    }
 
-   | 
 
-   You can see that the backups were successfully created.
 
-This concludes the *Getting Started*. Thank you for using Rackspace
-Cloud products.
+You can see that the backups were successfully created.
+

@@ -160,7 +160,7 @@ Submit the following cURL request to create the instance:
    }' \
     -H "X-Auth-Token: $AUTH_TOKEN" \
     -H "Content-Type: application/json" \
-    $ENDPOINT/instances | python -m json.tool
+    $API_ENDPOINT/instances | python -m json.tool
 
 .. note:: 
 
