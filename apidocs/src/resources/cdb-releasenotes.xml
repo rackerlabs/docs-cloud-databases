@@ -845,6 +845,33 @@
 							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1509"
 							>PR-1509: </link>Fixed python 2.6 issues, part 2.</para>
 					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1510"
+								>PR-1510: </link>Fixed python 2.6
+							issues, part 3.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1493"
+							>PR-1493: </link>Updated replication configs on promoted replica.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1480"
+							>PR-1480: </link>Added MariaDB 10.1 support.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+							xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1477"
+							>PR-1477: </link>Unblocked action to rename instances part of HA group.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1513"
+								>PR-1513: </link>Fixed book
+							tests.</para>
+					</listitem>
 				</itemizedlist>
 			</listitem>
 			<listitem security="internal">
@@ -855,17 +882,33 @@
 								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1409"
 							>PR-1409: </link>Changed alembic source location script for vm.</para>
 					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1396"
+							>PR-1396: </link>]Increased haproxy timeout values.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1397"
+							>PR-1397: </link>Added MariaDB 10.1 support.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1442"
+								>PR-1442: </link>Made MariaDB 10.1
+							invisible.</para>
+					</listitem>
 				</itemizedlist>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
 			<title>Resources</title>
 			<listitem>
-				<para>Get started using the Cloud Databases API to
-					create databases in the <emphasis role="italic"
-						>Getting Started Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html"
-						>http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html</link>.</para>
+				<para>Get started using the Cloud Databases API to create
+					databases in the <emphasis role="italic">Getting
+						Started Guide</emphasis> at: <link
+							xlink:href="http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started"
+							>http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started</link>.</para>
 			</listitem>
 			<listitem>
 				<para>Get reference information and examples in
