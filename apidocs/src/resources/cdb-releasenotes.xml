@@ -64,7 +64,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2016-01-11</pubdate>
+	<pubdate>2016-01-07</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -78,9 +78,9 @@
         </abstract>
     	<revhistory>
 			<revision security="internal">
-				<date>2016-01-11</date>
+				<date>2016-01-07</date>
 				<revdescription>
-					<para>Updated for v2.44.0.</para>
+					<para>Updated for v2.43.1.</para>
 				</revdescription>
 			</revision>
 			<revision security="internal">
@@ -798,7 +798,7 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.44.0" security="internal">
+	<chapter xml:id="cdbv2.44.0" security="writeronly">
 		<title>v2.44.0, January 11, 2016</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
@@ -873,6 +873,83 @@
 								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1526"
 							>PR-1526: </link>Add aws us-east endpoints for building images.</para>
 					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1545"
+								>PR-1545: </link>Fix pep8 for nova
+							filters.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1548"
+							>PR-1548: </link>Hot fixes for Inova.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1549"
+								>PR-1549: </link>Fix inova
+							boot.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1506"
+							>PR-1506: </link>Bump nova version to fix amqp bug.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1505"
+							>PR-1505: </link>Normalize the way redis and mysql create cdbproxy cluster.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1545"
+							>PR-1545: </link>Fix pep8 for nova filters.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1519"
+								>PR-1519: </link>Change local-mgmt supernova user to repose admin.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1512"
+							>PR-1512: </link>Do not allow maria on other operating systems except wheezy.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1524"
+							>PR-1524: </link>Fix oddity in cdbproxy daemon scripts.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1507"
+							>PR-1507: </link>Use internal cdbproxy client in quick tests.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1289"
+							>PR-1289: </link>Change nova-conductor init script to source nova-conductor.conf instead of nova.conf.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1518"
+							>PR-1518: </link>Modularize Proxy Code.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1551"
+							>PR-1551: </link>Fix pep8 for HA code.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1552"
+							>PR-1552: </link>Allow inova.boot to create jenkins slaves.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1553"
+							>PR-1553: </link>Update secrets repo.</para>
+					</listitem>
 				</itemizedlist>
 			</listitem>
 			<listitem security="internal">
@@ -895,6 +972,52 @@
 						>Getting Started Guide</emphasis> at: <link
 						xlink:href="http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started"
 						>http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also file a ticket.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.43.1" security="internal">
+		<title>v2.43.1, January 7, 2016</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para>
+							<link
+								xlink:href="https://jira.rax.io/browse/DSINFRA-941"
+								>DSINFRA-941: </link>Fixes the MySQL
+							server has gone away issue.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html"
+						>http://docs.rackspace.com/cdb/api/v1.0/cdb-getting-started/content/DB_Overview.html</link>.</para>
 			</listitem>
 			<listitem>
 				<para>Get reference information and examples in
