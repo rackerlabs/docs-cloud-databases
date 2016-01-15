@@ -64,7 +64,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2016-01-07</pubdate>
+	<pubdate>2016-01-14</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2016-01-14</date>
+				<revdescription>
+					<para>Updated for v2.44.0.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2016-01-07</date>
 				<revdescription>
@@ -798,8 +804,8 @@
 			</listitem>
 		</itemizedlist>
 	</chapter>
-	<chapter xml:id="cdbv2.44.0" security="writeronly">
-		<title>v2.44.0, January 11, 2016</title>
+	<chapter xml:id="cdbv2.44.0" security="internal">
+		<title>v2.44.0, January 14, 2016</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem security="internal">
@@ -898,7 +904,9 @@
 					<listitem>
 						<para><link security="internal"
 								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1505"
-							>PR-1505: </link>Normalize the way redis and mysql create cdbproxy cluster.</para>
+								>PR-1505: </link>Normalize the way
+							Redis and MySQL create cdbproxy
+							cluster.</para>
 					</listitem>
 					<listitem>
 						<para><link security="internal"
@@ -913,7 +921,9 @@
 					<listitem>
 						<para><link security="internal"
 								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1512"
-							>PR-1512: </link>Do not allow maria on other operating systems except wheezy.</para>
+								>PR-1512: </link>Do not allow Maria on
+							other operating systems except
+							wheezy.</para>
 					</listitem>
 					<listitem>
 						<para><link security="internal"
@@ -932,23 +942,33 @@
 					</listitem>
 					<listitem>
 						<para><link security="internal"
-								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1518"
-							>PR-1518: </link>Modularize Proxy Code.</para>
-					</listitem>
-					<listitem>
-						<para><link security="internal"
-								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1551"
-							>PR-1551: </link>Fix pep8 for HA code.</para>
-					</listitem>
-					<listitem>
-						<para><link security="internal"
 								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1552"
-							>PR-1552: </link>Allow inova.boot to create jenkins slaves.</para>
+								>PR-1552: </link>Allow inova.boot to
+							create jenkins slaves.</para>
 					</listitem>
 					<listitem>
 						<para><link security="internal"
 								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1553"
-							>PR-1553: </link>Update secrets repo.</para>
+								>PR-1553: </link>Update secrets
+							repo.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1558"
+								>PR-1558: </link>Fix staging
+							build.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1559"
+								>PR-1559: </link>Fix req template for
+							guest agent.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1561"
+								>PR-1561: </link>Fix dpkg conf
+							options.</para>
 					</listitem>
 				</itemizedlist>
 			</listitem>
