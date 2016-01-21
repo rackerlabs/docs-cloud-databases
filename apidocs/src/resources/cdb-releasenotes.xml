@@ -64,7 +64,7 @@
 		</copyright>
         <releaseinfo>API v1.0</releaseinfo>
     	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2016-01-14</pubdate>
+	<pubdate>2016-01-21</pubdate>
         <legalnotice role="rs-api">
             <annotation>
                 <remark>Copyright details are filled in by the template.</remark>
@@ -77,6 +77,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
         </abstract>
     	<revhistory>
+			<revision security="internal">
+				<date>2016-01-21</date>
+				<revdescription>
+					<para>Updated for v2.45.0.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2016-01-14</date>
 				<revdescription>
@@ -795,6 +801,121 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml">File
 						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.45.0" security="internal">
+		<title>v2.45.0, January 21, 2016</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1565"
+							>PR-1565: </link>Pin python-keystone client.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1566"
+							>PR-1566: </link>Update cdbproxy-agent sha to reflect Redis changes.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1573"
+							>PR-1573: </link>Move keystone in requirements txt.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1571"
+							>PR-1571: </link>Fix nova requirements.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1515"
+							>PR-1515: </link>Rotate cdbproxy logs, fix endpoint logging config.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1523"
+							>PR-1523: </link>Move CDBProxy jinja template files to CDB repo.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1574"
+							>PR-1574: </link>Fix Jenkins user.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1575"
+							>PR-1575: </link>Pin more packages to fix v2 glance.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1576"
+							>PR-1576: </link>Fix Jenkins user part 2.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1557"
+							>PR-1557: </link>Refactor CDBProxy Individual and Global Proxy Code.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1514"
+							>PR-1514: </link>Add sleep between apt-get update attempts in guestagent.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1520"
+							>PR-1520: </link>Add Sensu alert strategy.</para>
+					</listitem>
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1577"
+							>PR-1577: </link>Fix global proxy pep8.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+			<listitem security="writeronly">
+				<para>Puppet changes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1454"
+								>PR-1454: </link>Change
+							cdbproxy_config_dir owner to trove.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started"
+						>http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also file a ticket.</para>
 			</listitem>
 			<listitem>
 				<para>Please visit our <link
