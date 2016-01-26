@@ -719,8 +719,8 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml"
 						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html</link>.</para>
-				<para security="internal">For details about the
-					Monitoring Mgmt API refer to <link
+				<para security="internal">For details about Monitoring Mgmt API
+					refer to <link
 						xlink:href="http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html"
 						xmlns:svg="http://www.w3.org/2000/svg"
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
