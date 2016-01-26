@@ -56,7 +56,7 @@ Content | File
 |API Reference index|[api-operations/index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/apidocs/dev-guide/api-operations/index.rst)
 |API operations methods, including code samples|[api-operations/methods](https://github.com/rackerlabs/docs-cloud-databases/tree/master/apidocs/dev-guide/api-operations/methods) 
 |Release notes introduction and index|[release-notes.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/apidocs/dev-guide/release-notes.rst)
-|Release notes by version|[release notes folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/apidocs/dev-guide/release-notes)
+|Release notes by version|[release notes folder](https://github.com/meker12/docs-cloud-databases/tree/master/apidocs/dev-guide/release-notes)
 |**make.bat**|Windows build script
 |**Makefile**| Linux and OS X build
 
