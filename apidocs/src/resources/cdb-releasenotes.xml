@@ -43,40 +43,47 @@
 	<title>Rackspace Cloud Databases Release Notes</title>
 	<titleabbrev>Rackspace Cloud DBs Rel Notes</titleabbrev>
     <info>
-        <author>
-            <personname>
-                <firstname/>
-                <surname/>
-            </personname>
-            <affiliation>
-                <orgname>Rackspace Cloud</orgname>
-            </affiliation>
-        </author>
-        <copyright>
+		<author>
+			<personname>
+				<firstname/>
+				<surname/>
+			</personname>
+			<affiliation>
+				<orgname>Rackspace Cloud</orgname>
+			</affiliation>
+		</author>
+		<copyright>
 			<year>2010</year>
 			<year>2011</year>
 			<year>2012</year>
 			<year>2013</year>
 			<year>2014</year>
 			<year>2015</year>
-        	<year>2016</year>
+			<year>2016</year>
 			<holder>Rackspace US, Inc.</holder>
 		</copyright>
-        <releaseinfo>API v1.0</releaseinfo>
-    	<productname>Rackspace Cloud Databases</productname>
-	<pubdate>2016-01-21</pubdate>
-        <legalnotice role="rs-api">
-            <annotation>
-                <remark>Copyright details are filled in by the template.</remark>
-            </annotation>
-	</legalnotice>
-        <abstract>
-        	<para>This document is intended for software developers
+		<releaseinfo>API v1.0</releaseinfo>
+		<productname>Rackspace Cloud Databases</productname>
+		<pubdate>2016-01-25</pubdate>
+		<legalnotice role="rs-api">
+			<annotation>
+				<remark>Copyright details are filled in by the
+					template.</remark>
+			</annotation>
+		</legalnotice>
+		<abstract>
+			<para>This document is intended for software developers
 				interested in developing applications using the
 				Rackspace Cloud Databases Application Program
 				Interface (<abbrev>API</abbrev>). </para>
-        </abstract>
-    	<revhistory>
+		</abstract>
+		<revhistory>
+			<revision security="internal">
+				<date>2016-01-25</date>
+				<revdescription>
+					<para>Updated for v2.46.0.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2016-01-21</date>
 				<revdescription>
@@ -131,25 +138,25 @@
 					<para>Updated for v2.39.0.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2015-10-29</date>
 				<revdescription>
 					<para>Updated for v2.38.0.</para>
 				</revdescription>
 			</revision>
-    	    <revision security="internal">
-    		<date>2015-10-22</date>
-    		<revdescription>
-    			<para>Updated for v2.37.0.</para>
-    		</revdescription>
-    	    </revision>
-    		<revision>
+			<revision security="internal">
+				<date>2015-10-22</date>
+				<revdescription>
+					<para>Updated for v2.37.0.</para>
+				</revdescription>
+			</revision>
+			<revision>
 				<date>2015-10-14</date>
 				<revdescription>
 					<para>Updated for v2.36.0.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2015-10-08</date>
 				<revdescription>
 					<para>Updated for v2.35.0.</para>
@@ -185,7 +192,7 @@
 					<para>Updated for v2.30.0.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2015-08-27</date>
 				<revdescription>
 					<para>Updated for v2.29.0.</para>
@@ -215,7 +222,7 @@
 					<para>Updated for v2.25.0.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2015-07-16</date>
 				<revdescription>
 					<para>Updated for v2.24.0.</para>
@@ -299,7 +306,7 @@
 					<para>Updated for v2.0.11.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2015-01-06</date>
 				<revdescription>
 					<para>Updated for v2.0.10.</para>
@@ -347,8 +354,8 @@
 				<date>2014-08-13</date>
 				<revdescription>
 					<para>Updated for v2.0.1. Updated link to <link
-						xlink:href="http://feedback.rackspace.com"
-						>Product Feedback Forum</link>.</para>
+							xlink:href="http://feedback.rackspace.com"
+							>Product Feedback Forum</link>.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -468,7 +475,7 @@
 						Maintenance.</para>
 				</revdescription>
 			</revision>
-    		<revision>
+			<revision>
 				<date>2013-06-06</date>
 				<revdescription>
 					<para>Updated for v1.0.26.</para>
@@ -486,7 +493,7 @@
 					<para>Updated for v1.0.24.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2013-04-11</date>
 				<revdescription>
 					<para>Updated for v1.0.24.</para>
@@ -504,7 +511,7 @@
 					<para>Updated for v1.0.22.</para>
 				</revdescription>
 			</revision>
-    		<revision>
+			<revision>
 				<date>2013-03-28</date>
 				<revdescription>
 					<para>Updated for v1.0.21 + Hotfix.</para>
@@ -519,7 +526,8 @@
 			<revision>
 				<date>2013-03-12</date>
 				<revdescription>
-					<para>Updated for v1.0.20 configuration changes.</para>
+					<para>Updated for v1.0.20 configuration
+						changes.</para>
 				</revdescription>
 			</revision>
 			<revision>
@@ -579,7 +587,7 @@
 						>Updated for v1.0.17.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2012-12-13</date>
 				<revdescription>
 					<para xmlns:svg="http://www.w3.org/2000/svg"
@@ -615,7 +623,7 @@
 						>Updated for v1.0.14.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2012-10-02</date>
 				<revdescription>
 					<para xmlns:svg="http://www.w3.org/2000/svg"
@@ -624,7 +632,7 @@
 						>Updated for v1.0.13.</para>
 				</revdescription>
 			</revision>
-    		<revision security="internal">
+			<revision security="internal">
 				<date>2012-09-17</date>
 				<revdescription>
 					<para xmlns:svg="http://www.w3.org/2000/svg"
@@ -670,13 +678,14 @@
 						for Rackspace Cloud Databases.</para>
 				</revdescription>
 			</revision>
-    	</revhistory>
-    <raxm:metadata xmlns:raxm="http://docs.rackspace.com/api/metadata">
-      <raxm:displayname>Release Notes</raxm:displayname>
-      <raxm:product version="v1.0">cdb</raxm:product>
-      <raxm:priority>50</raxm:priority>
-    </raxm:metadata> 
-    </info>
+		</revhistory>
+		<raxm:metadata
+			xmlns:raxm="http://docs.rackspace.com/api/metadata">
+			<raxm:displayname>Release Notes</raxm:displayname>
+			<raxm:product version="v1.0">cdb</raxm:product>
+			<raxm:priority>50</raxm:priority>
+		</raxm:metadata>
+	</info>
 	<chapter xml:id="doc_change_history">
 		<title>Document Change History</title>
 		<para>This version of the Release Notes replaces and obsoletes all
@@ -801,6 +810,50 @@
 						xmlns:m="http://www.w3.org/1998/Math/MathML"
 						xmlns:html="http://www.w3.org/1999/xhtml">File
 						a Ticket</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Please visit our <link
+						xlink:href="http://feedback.rackspace.com"
+						>Product Feedback Forum</link> and let us know
+					what you think about Cloud Databases! </para>
+			</listitem>
+		</itemizedlist>
+	</chapter>
+	<chapter xml:id="cdbv2.46.0" security="internal">
+		<title>v2.46.0, January 25, 2016</title>
+		<itemizedlist spacing="compact">
+			<title>What's New</title>
+			<listitem security="internal">
+				<para>Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem>
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1391"
+							>PR-1391: </link>Running masterless puppet on LB nodes.</para>
+					</listitem>
+				</itemizedlist>
+			</listitem>
+		</itemizedlist>
+		<itemizedlist spacing="compact">
+			<title>Resources</title>
+			<listitem>
+				<para>Get started using the Cloud Databases API to
+					create databases in the <emphasis role="italic"
+						>Getting Started Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started"
+						>http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Get reference information and examples in
+						the <emphasis role="italic">Cloud Databases
+						Developer Guide</emphasis> at: <link
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
+			</listitem>
+			<listitem>
+				<para>Support for Cloud Databases is available for US,
+					UK, HKG, and SYD customers 24x7x365 via phone,
+					chat, or you may also file a ticket.</para>
 			</listitem>
 			<listitem>
 				<para>Please visit our <link
