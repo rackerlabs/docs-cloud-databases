@@ -22,5 +22,4 @@ The following figure shows an overview of Cloud Databases Infrastructure:
    :maxdepth: 3
    
    additional-resources
-   pricing-and-service-level
    api-service-updates

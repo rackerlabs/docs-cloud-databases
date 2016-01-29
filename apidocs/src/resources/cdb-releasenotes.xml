@@ -64,7 +64,7 @@
 		</copyright>
 		<releaseinfo>API v1.0</releaseinfo>
 		<productname>Rackspace Cloud Databases</productname>
-		<pubdate>2016-01-25</pubdate>
+		<pubdate>2016-01-28</pubdate>
 		<legalnotice role="rs-api">
 			<annotation>
 				<remark>Copyright details are filled in by the
@@ -78,6 +78,12 @@
 				Interface (<abbrev>API</abbrev>). </para>
 		</abstract>
 		<revhistory>
+			<revision security="internal">
+				<date>2016-01-28</date>
+				<revdescription>
+					<para>Updated for v2.47.0.</para>
+				</revdescription>
+			</revision>
 			<revision security="internal">
 				<date>2016-01-25</date>
 				<revdescription>
@@ -693,90 +699,70 @@
 			in the table below:</para>
 		<?rax revhistory?>
 	</chapter>
-	<chapter xml:id="Monitoring_Maintenance" security="writeronly">
-		<title>Monitoring Maintenance, September 3, 2013</title>
-		<para>This is not a code release, but rather maintenance to
-			support monitoring for Cloud Databases instances.</para>
-		<itemizedlist spacing="compact">
-			<title>What's New</title>
-			<listitem security="writeronly">
-				<para>Added support for backups. For details refer to
-						<link
-						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link>.</para>
-			</listitem>
-			<listitem>
-				<para>Added support for monitoring
-						<emphasis>all</emphasis> Cloud Databases
-					instances, not just those that were created after
-					the v1.0.27 release on July 29, 2013. For details
-					refer to <link
-						xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Cloud_Databases-d1e4673.html</link>.</para>
-				<para security="internal">For details about Monitoring Mgmt API
-					refer to <link
-						xlink:href="http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs-internal.rackspace.com/cdb/api/v1.0/cdb-mgmt-devguide/content/Monitoring.html</link>.</para>
-			</listitem>
-		</itemizedlist>
-		<itemizedlist spacing="compact">
-			<title>Resources</title>
-			<listitem>
-				<para> Get started using the Cloud Databases API to
-					create databases in the <emphasis role="italic"
-						>Getting Started Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/api/"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/api/</link>.</para>
-			</listitem>
-			<listitem>
-				<para> Get reference information and examples in
-						the <emphasis role="italic">Cloud Databases
-						Developer Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/api/"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/api/</link>.</para>
-			</listitem>
-			<listitem>
-				<para> Support for Cloud Databases is available for
-					US, UK, and SYD customers 24x7x365 via phone,
-					chat, or you may also <link
-						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml">File
-						a Ticket</link>.</para>
-			</listitem>
-			<listitem>
-				<para> Please visit our <link
-						xlink:href="http://feedback.rackspace.com"
-						>Product Feedback Forum</link> and let us know
-					what you think about Cloud Databases! </para>
-			</listitem>
-		</itemizedlist>
-	</chapter>
-	<chapter xml:id="cdbv2.0.11b" security="writeronly">
-		<title>v2.0.10, December 18, 2014</title>
+	<chapter xml:id="cdbv2.47.0">
+		<title>v2.47.0, January 28, 2016</title>
 		<itemizedlist spacing="compact">
 			<title>What's New</title>
 			<listitem>
-				<para>Added support for incremental backups. Refer to <link
-					xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html"
-					>http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/backups.html</link> for
-					details.</para>
+				<para>Additions/Fixes:</para>
+				<itemizedlist spacing="compact">
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1582"
+							>PR-1582: </link>Update puppet sha.</para>
+					</listitem>
+					<listitem>
+						<para><link 
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1479"
+							>PR-1479: </link>Change wording and behavior of public client.</para>
+					</listitem>
+					<listitem>
+						<para><link 
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1562"
+								>PR-1562: </link>Move keystone in
+							requirements txtAdds "schedule" field to HA GET call.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1679"
+							>PR-1679: </link>Attempting to fix nova scheduler additions.</para>
+					</listitem> 
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1581"
+							>PR-1581: </link>Bump keyring for novaclient.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1583"
+							>PR-1583: </link>Add aws region for cdb-ci.check_env function.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1585"
+							>PR-1585: </link>Remove reference to deprecated hiera var: rabbit_server_ip.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1584"
+							>PR-1584: </link>Make guestagent apt-get update attempts config driven.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1458"
+							>PR-1458: </link>Rework delete call.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1587"
+							>PR-1587: </link>Fix alembic script number.</para>
+					</listitem>
+					<listitem security="internal">
+						<para><link security="internal"
+								xlink:href="https://github.rackspace.com/Cloud-Database/Cloud-Database/pull/1588"
+							>PR-1588: </link>Fix Alembic version.</para>
+					</listitem>
+				</itemizedlist>
 			</listitem>
 		</itemizedlist>
 		<itemizedlist spacing="compact">
@@ -785,31 +771,20 @@
 				<para>Get started using the Cloud Databases API to
 					create databases in the <emphasis role="italic"
 						>Getting Started Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/api/"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/api/</link>.</para>
+						xlink:href="http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started"
+						>http://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started</link>.</para>
 			</listitem>
 			<listitem>
 				<para>Get reference information and examples in
 						the <emphasis role="italic">Cloud Databases
 						Developer Guide</emphasis> at: <link
-						xlink:href="http://docs.rackspace.com/api/"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml"
-						>http://docs.rackspace.com/api/</link>.</para>
+						xlink:href="http://developer.rackspace.com/docs/"
+						>http://developer.rackspace.com/docs/</link>.</para>
 			</listitem>
 			<listitem>
 				<para>Support for Cloud Databases is available for US,
 					UK, HKG, and SYD customers 24x7x365 via phone,
-					chat, or you may also <link
-						xlink:href="https://manage.rackspacecloud.com/Tickets/YourTickets.do"
-						xmlns:svg="http://www.w3.org/2000/svg"
-						xmlns:m="http://www.w3.org/1998/Math/MathML"
-						xmlns:html="http://www.w3.org/1999/xhtml">File
-						a Ticket</link>.</para>
+					chat, or you may also file a ticket.</para>
 			</listitem>
 			<listitem>
 				<para>Please visit our <link
