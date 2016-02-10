@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-database-instance-status-and-details-version-accountid-instances-instanceid:
 
 List database instance status and details

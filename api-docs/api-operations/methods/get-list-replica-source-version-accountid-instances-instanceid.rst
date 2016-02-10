@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-replica-source-version-accountid-instances-instanceid:
 
 List replica source

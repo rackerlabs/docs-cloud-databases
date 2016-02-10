@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-flavor-by-id-version-accountid-flavors-flavorid:
 
 List flavor by ID

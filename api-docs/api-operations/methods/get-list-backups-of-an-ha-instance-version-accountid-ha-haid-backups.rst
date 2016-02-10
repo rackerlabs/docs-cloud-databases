@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups:
 
 List backups of an HA instance

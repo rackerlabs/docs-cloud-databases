@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-flavors-for-datastore-version-version-accountid-datastores-datastoretype-versions-versionid-flavors:
 
 List flavors for datastore version

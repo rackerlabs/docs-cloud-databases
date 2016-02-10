@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _patch-detach-replica-version-accountid-instances-instanceid:
 
 Detach replica

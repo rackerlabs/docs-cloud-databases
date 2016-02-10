@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-restart-instance-version-accountid-instances-instanceid-action:
 
 Restart instance

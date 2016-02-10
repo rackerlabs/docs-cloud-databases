@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-enable-root-user-version-accountid-instances-instanceid-root:
 
 Enable root user

@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-backup-by-id-version-accountid-backups-backupid:
 
 List backup by ID

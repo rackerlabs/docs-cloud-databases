@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid:
 
 List configuration parameter details without datastore

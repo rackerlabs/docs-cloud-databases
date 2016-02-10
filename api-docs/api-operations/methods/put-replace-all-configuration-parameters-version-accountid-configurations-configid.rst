@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-replace-all-configuration-parameters-version-accountid-configurations-configid:
 
 Replace all configuration parameters

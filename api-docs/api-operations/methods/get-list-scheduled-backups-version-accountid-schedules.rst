@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-scheduled-backups-version-accountid-schedules:
 
 List scheduled backups

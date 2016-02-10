@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid:
 
 Update schedule for backups by schedule ID

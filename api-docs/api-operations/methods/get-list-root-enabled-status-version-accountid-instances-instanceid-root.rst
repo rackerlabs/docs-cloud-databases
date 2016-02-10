@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-root-enabled-status-version-accountid-instances-instanceid-root:
 
 List root-enabled status

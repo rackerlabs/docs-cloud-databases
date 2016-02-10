@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action:
 
 Add Replica to an HA instance

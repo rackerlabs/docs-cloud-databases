@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-users-in-database-instance-version-accountid-instances-instanceid-users:
 
 List users in database instance

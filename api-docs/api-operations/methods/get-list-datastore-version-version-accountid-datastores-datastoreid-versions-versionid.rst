@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-datastore-version-version-accountid-datastores-datastoreid-versions-versionid:
 
 List datastore version

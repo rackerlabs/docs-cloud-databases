@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _patch-update-some-configuration-parameters-version-accountid-configurations-configid:
 
 Update some configuration parameters

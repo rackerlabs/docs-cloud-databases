@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid:
 
 Delete schedule for running backup by schedule ID

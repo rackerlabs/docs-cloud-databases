@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-get-default-configuration-version-accountid-instances-instanceid-configuration:
 
 Get default configuration

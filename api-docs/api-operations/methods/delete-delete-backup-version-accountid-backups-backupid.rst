@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-backup-version-accountid-backups-backupid:
 
 Delete backup

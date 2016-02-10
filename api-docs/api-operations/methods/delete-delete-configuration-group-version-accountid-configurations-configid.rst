@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-configuration-group-version-accountid-configurations-configid:
 
 Delete configuration group

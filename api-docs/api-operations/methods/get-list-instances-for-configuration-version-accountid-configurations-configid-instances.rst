@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-instances-for-configuration-version-accountid-configurations-configid-instances:
 
 List instances for configuration

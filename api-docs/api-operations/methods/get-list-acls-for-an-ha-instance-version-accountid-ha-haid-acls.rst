@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-acls-for-an-ha-instance-version-accountid-ha-haid-acls:
 
 List ACLs for an HA instance
