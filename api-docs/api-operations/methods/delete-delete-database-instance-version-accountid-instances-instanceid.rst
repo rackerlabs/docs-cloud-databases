@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-database-instance-version-accountid-instances-instanceid:
 
 Delete database instance

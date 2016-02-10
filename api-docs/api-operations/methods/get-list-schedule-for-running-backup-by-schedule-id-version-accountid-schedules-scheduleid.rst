@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid:
 
 List schedule for running backup by schedule ID

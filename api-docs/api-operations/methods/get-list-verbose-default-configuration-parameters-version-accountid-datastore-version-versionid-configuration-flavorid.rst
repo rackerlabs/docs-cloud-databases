@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-verbose-default-configuration-parameters-version-accountid-datastore-version-versionid-configuration-flavorid:
 
 List verbose default configuration parameters

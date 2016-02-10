@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename:
 
 Revoke user access

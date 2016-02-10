@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-ha-database-instance-details-version-accountid-ha-haid:
 
 List HA database instance details

@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-resize-the-instance-volume-version-accountid-instances-instanceid-action:
 
 Resize the instance volume

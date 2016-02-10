@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls:
 
 Add ACLs to an HA instance

@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _get-list-replicas-for-source-instance-version-accountid-instances-instanceid-replicas:
 
 List replicas for source instance

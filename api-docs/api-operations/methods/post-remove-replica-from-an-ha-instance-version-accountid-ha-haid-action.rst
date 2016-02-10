@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action:
 
 Remove Replica from an HA instance

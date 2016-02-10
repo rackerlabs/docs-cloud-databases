@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-change-user(s)-password-version-accountid-instances-instanceid-users:
 
 Change user(s) password

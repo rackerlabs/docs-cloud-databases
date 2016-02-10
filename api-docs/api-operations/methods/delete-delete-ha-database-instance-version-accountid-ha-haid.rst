@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-ha-database-instance-version-accountid-ha-haid:
 
 Delete HA database instance

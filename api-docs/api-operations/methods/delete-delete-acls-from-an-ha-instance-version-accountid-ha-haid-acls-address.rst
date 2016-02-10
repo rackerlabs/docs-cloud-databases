@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _delete-delete-acls-from-an-ha-instance-version-accountid-ha-haid-acls-address:
 
 Delete ACLs from an HA instance

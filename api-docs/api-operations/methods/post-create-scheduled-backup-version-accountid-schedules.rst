@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _post-create-scheduled-backup-version-accountid-schedules:
 
 Create scheduled backup

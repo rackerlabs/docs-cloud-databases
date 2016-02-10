@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _patch-change-database-instance-name-version-accountid-instances-instanceid.rst:
 
 Change database instance name

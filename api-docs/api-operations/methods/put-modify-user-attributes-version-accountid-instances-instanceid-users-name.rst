@@ -1,6 +1,4 @@
 
-.. THIS OUTPUT IS GENERATED FROM THE WADL. DO NOT EDIT.
-
 .. _put-modify-user-attributes-version-accountid-instances-instanceid-users-name:
 
 Modify user attributes
