@@ -1,17 +1,17 @@
 
-.. _get-list-ha-database-instance-details-version-accountid-ha-haid:
+.. _patch-attach-configuration-group-to-ha-instance-version-accountid-ha-haid.rst:
 
-List HA database instance details
+Attach Configuration Group to HA Instance 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
-    GET /{version}/{accountId}/ha/{haId}
+    PATCH /{version}/{accountId}/ha/{haId}
 
-Lists details for a specified HA instance.
+Attaches a specified :ref:`configuration group <cdb-dg-concepts-configgroup>` to the HA Instance.
 
-This operation lists the details of the specified HA instance.
-
+.. note::
+   If the configuration group has non-dynamic configuration parameters, the HA instance will be put in a ``RESTART_REQUIRED`` state. To enable the parameters on all the nodes (source and replicas of the HA group), :ref:`restart the HA instance<post-restart-ha-instance-version-accountid-ha-haid-action>`.
 
 
 This table shows the possible response codes for this operation:
@@ -20,7 +20,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |Success                  |Request succeeded.       |
+|202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
@@ -88,24 +88,27 @@ This table shows the URI parameters for the request:
 
 
 
-This operation does not accept a request body.
 
 
 
+**Example Attach Configuration Group to HA Instance: JSON request**
 
-**Example List HA database instance details: JSON request**
 
-
-The following example shows the List HA instance status and details request:
+The following example shows the attach configuration group to HA Instance request:
 
 .. code::
 
-   GET /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb HTTP/1.1
+   PATCH /v1.0/1234/ha/3a493f8c-9b9c-4ca1-845b-e3689abb1f5c HTTP/1.1
    User-Agent: python-troveclient
    Host: ord.databases.api.rackspacecloud.com
-   X-Auth-Token: e3b2c743aebf467fb6b91cbb644c036e
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
+   {      
+       "ha_instance":{
+          "configuration": "bbbcdf40-e4cc-423d-8e4b-1f0c7190dac4"
+       } 
+   }
    
 
 
@@ -124,10 +127,27 @@ Response
 
 
 
-**Example List HA database instance details: JSON response**
+**Example Attach Configuration Group to HA Instance: JSON response**
 
 
-The following example shows the List HA instance status and details response:
+The following example shows the attach configuration group to HA Instance response:
+
+.. code::
+
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 0
+   Date: Tue, 15 Mar 2016 16:13:15 GMT
+   Connection: close
+   Server: Jetty(8.0.y.z-SNAPSHOT)
+
+
+
+**Example List HA database instance details after configuration group attached: JSON response**
+
+
+The following example shows the List HA instance status and details response after configuration group is attached:
 
 .. code::
 
@@ -247,7 +267,20 @@ The following example shows the List HA instance status and details response:
          "version":"5.6",
          "type":"mysql"
       },
-      "configuration": null,
+      "configuration":{
+         "id":"bbbcdf40-e4cc-423d-8e4b-1f0c7190dac4",
+         "links":[
+            {
+               "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/configurations/bbbcdf40-e4cc-423d-8e4b-1f0c7190dac4",
+               "rel":"self"
+            },
+            {
+               "href":"https://ord.databases.api.rackspacecloud.com/configurations/bbbcdf40-e4cc-423d-8e4b-1f0c7190dac4",
+               "rel":"bookmark"
+            }
+         ],
+         "name":"database-configuration-1"
+      },
       "networks":[  
          {  
             "access":"read",
@@ -266,6 +299,12 @@ The following example shows the List HA instance status and details response:
   }
 
    
+   
+
+
+
+
+
    
 
 
