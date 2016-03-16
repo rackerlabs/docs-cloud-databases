@@ -15,7 +15,7 @@ builds the documentation. Successful builds are deployed to production.
 ### Support and feedback
 
 We welcome feedback, comments, and bug reports. Follow the 
-[contributor guidelines](CONTRIBUTING.md) 
+[contributor guidelines](../CONTRIBUTING.md) 
 to propose a source file change, or [submit a GitHub issue](https://github.com/rackerlabs/docs-cloud-databases/issues/new) 
 to request an update or to provide feedback.
 
