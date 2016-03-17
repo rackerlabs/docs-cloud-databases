@@ -1,5 +1,5 @@
 
-.. _post-restart-ha-instance-version-accountid-ha-haid-action.rst:
+.. _post-restart-ha-instance-version-accountid-ha-haid-action:
 
 Restart an HA Instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
