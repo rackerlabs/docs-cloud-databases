@@ -4,11 +4,17 @@
 Monitoring Cloud Databases
 ==========================
 
-Monitoring is available for Cloud Databases to allow users to get more information about their database instances via the monitoring checks that are available. The monitoring capability now applies to all instances, not just those that were created after the v1.0.27 release on July 29, 2013.
+Monitoring is available for Cloud Databases to allow users to get more information about 
+their database instances via the monitoring checks that are available. The monitoring 
+capability now applies to all instances, not just those that were created after the 
+v1.0.27 release on July 29, 2013.
 
-There is a 1:1 mapping of Cloud Databases to monitoring entities. The monitoring entity has a field called ``agent_id`` that is the same as the Cloud Database ``instance id``. 
+There is a 1:1 mapping of Cloud Databases to monitoring entities. The monitoring entity 
+has a field called ``agent_id`` that is the same as the Cloud Database ``instance id``. 
 
-A user can list the monitoring checks available on the monitoring entity by calling the monitoring API List Checks call as described at :rax-devdocs:`List checks for an entity <cloud-monitoring/v1/developer-guide/#list-checks-for-an-entity>`.
+A user can list the monitoring checks available on the monitoring entity by using the
+:rax-devdocs:`List Checks for an entity <rackspace-monitoring/v1/developer-guide/#list-checks-for-an-entity>` 
+operation available in the Rackspace Monitoring API.
 
 The following monitoring checks are available to users:
 
@@ -78,8 +84,9 @@ The following monitoring checks are available to users:
 
    -  innodb.rows\_read
 
-A user can exercise these checks by calling the monitoring API Test Existing Check call as described at
-:rax-devdocs:`Test an existing check <cloud-monitoring/v1/developer-guide/#test-an-existing-check>`.
+A user can exercise these checks by submitting a
+:rax-devdocs:`Test an existing check <rackspace-monitoring/v1/developer-guide/#test-an-existing-check>` 
+API request using the Rackspace Monitoring service.
 
 Monitoring alarms available to users include:
 
@@ -104,10 +111,10 @@ Monitoring alarms available to users include:
 
     -  Refer to the following information on the monitoring API for more details:
 
-      -  :rax-devdocs:`How cloud monitoring works <cloud-monitoring/v1/developer-guide/#how-cloud-monitoring-works>`
+      -  :rax-devdocs:`How cloud monitoring works <rackspace-monitoring/v1/developer-guide/#how-rackspace-monitoring-works>`
 
-      -  :rax-devdocs:`Checks <cloud-monitoring/v1/developer-guide/#document-api-operations/check-operations>`
+      -  :rax-devdocs:`Checks <rackspace-monitoring/v1/developer-guide/#document-api-operations/check-operations>`
       
-      -  :rax-devdocs:`Check types <cloud-monitoring/v1/developer-guide/#document-api-operations/check-type-operations>`
+      -  :rax-devdocs:`Check types <rackspace-monitoring/v1/developer-guide/#document-api-operations/check-type-operations>`
       
 
