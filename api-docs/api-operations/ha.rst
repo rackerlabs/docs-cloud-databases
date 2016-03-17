@@ -40,6 +40,9 @@ for Cloud Databases.
 .. include:: methods/post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action.rst
 .. include:: methods/post-resize-volume-for-an-ha-instance-version-accountid-ha-haid-action.rst
 .. include:: methods/post-resize-flavor-for-an-ha-instance-version-accountid-ha-haid-action.rst
+.. include:: methods/post-restart-ha-instance-version-accountid-ha-haid-action.rst
+.. include:: methods/patch-attach-configuration-group-to-ha-instance-version-accountid-ha-haid.rst
+.. include:: methods/patch-remove-configuration-group-from-ha-instance-version-accountid-ha-haid.rst
 
 
 
