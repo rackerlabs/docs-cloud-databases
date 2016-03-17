@@ -78,11 +78,13 @@ Information about the environment variables is provided after the example.
 
 .. code::
 
-     export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
-     export OS_USERNAME=yourUserName
-     export OS_TENANT_ID=yourTenantId
-     export OS_REGION_NAME=yourRegionName
-     export OS_PASSWORD=yourPassword
+	 export OS_AUTH_URL=https://identity.api.rackspacecloud.com/v2.0/
+	 export OS_USERNAME=yourUserName
+	 export OS_TENANT_ID=yourTenantId
+	 export OS_REGION_NAME=yourRegionName
+	 export OS_PASSWORD=yourPassword
+
+	 export TROVE_SERVICE_TYPE=rax:database
 
 The following table describes the environment variables:
 
