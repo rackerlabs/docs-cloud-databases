@@ -10,10 +10,17 @@ Remove Replica from an HA instance
 
 Removes a replica node from the HA setup specified by {ha_id}.
 
-This operation removes/detaches a replica node from the HA group. The HA instance goes into the ``REMOVING_REPLICA`` state as a result of this action. It switches back to ``ACTIVE`` once the operation is complete. The instance that is detached also goes into a ``DETACH_REPLICA`` state when it is being disabled as a replica and switches back to ``ACTIVE`` once detached.
+This operation removes/detaches a replica node from the HA group. The HA instance goes 
+into the ``REMOVING_REPLICA`` state as a result of this action. It switches back to 
+``ACTIVE`` once the operation is complete. The instance that is detached also goes 
+into a ``DETACH_REPLICA`` state when it is being disabled as a replica and switches back 
+to ``ACTIVE`` once detached.
 
 .. warning::
-   Removing a replica node would restart the MHA manager service (which monitors the source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. Refer to the Knowledge Center article for more details about these components: `High Availability for Cloud Databases <https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases>`__.
+   Removing a replica node would restart the MHA manager service (which monitors the 
+   source/replica instances to trigger failover) and the haproxy service on the load 
+   balancer nodes. For more information, see 
+   :how-to:`High Availability for Cloud Databases <high-availability-for-cloud-databases>`.
    
    
 

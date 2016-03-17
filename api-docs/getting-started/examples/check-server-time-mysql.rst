@@ -5,7 +5,7 @@ Checking the server time zone
 
 You can check the current time zone setting for an instance by
 logging in to the MySQL console 
-(see the KC article :kc-article:`Connect to a Cloud Database instance <connect-to-a-cloud-databases-instance>`) 
+(see the KC article :how-to:`Connect to a Cloud Database instance <connect-to-a-cloud-databases-instance>`) 
 and querying the value of ``global.time_zone``:
 
 .. code::  

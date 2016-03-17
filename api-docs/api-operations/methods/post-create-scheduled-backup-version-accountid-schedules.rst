@@ -48,31 +48,50 @@ The following table lists the required and optional attributes for Create Backup
     +--------------------------+-------------------------+-------------------------+
     
 
-The ``day_of_week`` attribute specifies the day in which a full backup will be made. After that day, the schedule will automatically run daily incremental backups until the next full backup.
+The ``day_of_week`` attribute specifies the day in which a full backup will be made. 
+After that day, the schedule will automatically run daily incremental backups until the 
+next full backup.
 
-The ``instance_id attribute`` is present for legacy compatibility and can only be used to create single instance automated backups. For HA groups, please use the ``source_id`` attribute, providing the HA group id and with the ``source_type`` set to 'ha'.
+The ``instance_id attribute`` is present for legacy compatibility and can only be used to 
+create single instance automated backups. For HA groups, please use the ``source_id`` 
+attribute, providing the HA group id and with the ``source_type`` set to 'ha'.
 
-By default, the full backup retention policy is set to two full backups. You can override this setting by providing the ``full_backup_retention`` attribute.
+By default, the full backup retention policy is set to two full backups. You can override 
+this setting by providing the ``full_backup_retention`` attribute.
 
 .. note::
    
    
-   *  During the backup process, database writes on MyISAM Databases will be disabled. InnoDB Databases will continue to allow all operations.
-   *  While the instance is being backed up you will not be able to add/delete databases, add/delete users, or delete/stop/reboot the instance.
-   *  Users can only run one backup at a time. Duplicate requests will receive a 422 error.
-   *  Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` for details.
-   *  During backup the files will be streamed to your Cloud Files account. The process creates a container called ``z_CLOUDDB_BACKUPS`` and places all the files in it. In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. You will be charged the normal Cloud Files rate for storage of these files. For pricing details, refer to :ref:`Pricing and service level <pricing-and-service-level>`. No additional Cloud Databases fee applies for creating backups. You can delete old backups through the API. Refer to :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` for details.
-   *  In the unlikely event that the backup fails to perform correctly and is in the state ``FAILED``, there may be some files that were placed in the container. You should use the API to delete the backup to remove any leftover files. Refer to :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` for details.
-   *  If a backup is deleted, all incremental backups created from it will also be deleted.
-   *  You can create an incremental backup from another incremental backup. There is no limit to how many nested backups you can create, however the chances of a restore failure increase with the number of nested backups you create.
+   *  During the backup process, database writes on MyISAM Databases are disabled. 
+      InnoDB Databases will continue to allow all operations.
+   *  While the instance is being backed up,  you cannot add or delete databases or users. 
+      and you cannot delete, stop, or reboot the instance.
+   *  Users can only run one backup at a time. Duplicate requests return a 422 error.
+   *  Backups are not deleted when the instance is deleted. You must manually remove any 
+      backups created using the Backups API. For details, see the 
+      :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+      operation.
+   *  During backup, the files are streamed to your Cloud Files account. The process 
+      creates a container called ``z_CLOUDDB_BACKUPS`` and places all the files in it. 
+      In order for the restore and deletion of backups to work properly, do not move, 
+      rename, or delete any of the files from this container. You will be charged the 
+      normal Cloud Files rate for storage of these files. For pricing details, 
+      see the :rax:`Rackspace Cloud Calculator <calculator>`. No additional Cloud Databases 
+      fee applies for creating backups. You can delete old backups through the API. 
+      For details, see the :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+      operation.
+   *  In the unlikely event that the backup fails to perform correctly and is in a 
+      ``FAILED`` state, there might be some files that were placed in the container. 
+      Use the API to delete the backup to remove any leftover files. For details, see 
+      the :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+      operation. 
+   *  When a backup is deleted, all incremental backups created from it are also be deleted.
+   *  You can create an incremental backup from another incremental backup. There is no 
+      limit to how many nested backups you can create. However, the more nested backups you 
+      create, the higher the chances of a restore failure.  
    
-   
-   
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |

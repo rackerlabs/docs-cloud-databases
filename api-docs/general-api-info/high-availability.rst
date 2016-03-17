@@ -74,7 +74,7 @@ The following are guidelines for High Availability instance groups:
    service (which monitors the source/replica instances to trigger
    failover) and the haproxy service on the load balancer nodes. Refer
    to the KC article for more details about these components at 
-   :kc-article:`High availability for Cloud Databases
+   :how-to:`High availability for Cloud Databases
    <high-availability-for-cloud-databases>`.
 
    
@@ -94,5 +94,5 @@ your database will still have a High Availability setup.
    region.
 
 For more details about HA groups refer to the KC article at 
-:kc-article:`High availability for Cloud Databases
+:how-to:`High availability for Cloud Databases
 <high-availability-for-cloud-databases>`.

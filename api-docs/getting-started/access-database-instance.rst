@@ -72,8 +72,8 @@ database instance. For response examples with these values, see
 
 .. note::
     For more detailed information about connecting to a Cloud database instance, read the  
-    :kc-article:`Connect to a Cloud Database instance <connect-to-a-cloud-databases-instance>` 
-    article in the Rackspace Knowledge Center.
+    :how-to:`Connect to a Cloud Database instance <connect-to-a-cloud-databases-instance>` 
+    article in the Rackspace .
 
 
 
