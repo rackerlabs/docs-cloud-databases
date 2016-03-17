@@ -93,9 +93,6 @@ your database will still have a High Availability setup.
 -  Both source database instance and replicas should be in the same
    region.
 
--  Currently you cannot apply custom configurations on an HA
-   group. This capability will be added soon.
-
 For more details about HA groups refer to the KC article at 
 :kc-article:`High availability for Cloud Databases
 <high-availability-for-cloud-databases>`.
