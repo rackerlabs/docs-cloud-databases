@@ -4,14 +4,20 @@
 Replication
 ===========
 
-Replication allows users of Cloud Databases to create a read replica of a database instance that can be used for scaling out read-heavy workloads or for ensuring availability of your database in case of instance failure. As the term implies, you can send only your *read* requests to your replica. All the write requests can be sent only to the source database instance. When you create a read replica, you should specify an existing database instance as the source of the replica. Rackspace Cloud Databases uses asynchronous replication.
+Replication allows users of Cloud Databases to create a read replica of a database 
+instance that can be used for scaling out read-heavy workloads or for ensuring 
+availability of your database in case of instance failure. As the term implies, you can 
+send only your *read* requests to your replica. All the write requests can be sent only to 
+the source database instance. When you create a read replica, you should specify an existing 
+database instance as the source of the replica. Rackspace Cloud Databases uses asynchronous 
+replication.
 
-Replication is supported for MySQL 5.6, Percona 5.6, and MariaDB 10. For instances running MySQL 5.1, please `upgrade to MySQL`_ 5.6.
-
-.. _upgrade to MySQL: http://www.rackspace.com/knowledge_center/article/upgrade-a-cloud-databases-instance-from-mysql-51-to-mysql-56
+Replication is supported for MySQL 5.6, Percona 5.6, and MariaDB 10. For instances running 
+MySQL 5.1, :how-to:`upgrade to MySQL 5.6 <upgrade-a-cloud-databases-instance-from-mysql-51-to-mysql-56>`
 
 ..  note::
-    There will be a lag between the source database instance and the replica. All the updates will be applied to the replica after they occur on the master.
+    There is a lag between the source database instance and the replica. All the 
+    updates are applied to the replica after they occur on the master.
 
 .. _cdb-dg-generalapi-replication-limitations:
 

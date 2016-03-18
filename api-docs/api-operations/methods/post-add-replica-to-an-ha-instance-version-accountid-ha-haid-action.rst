@@ -10,10 +10,15 @@ Add Replica to an HA instance
 
 Add a replica node to the HA group specified by {ha_id}.
 
-This operation adds a replica node to the HA group specified by {ha_id}. The HA instance goes into the ``ADDING_REPLICA`` state as a result of this action. It switches back to ``ACTIVE`` once the operation is complete.
+This operation adds a replica node to the HA group specified by {ha_id}. The HA instance 
+goes into the ``ADDING_REPLICA`` state as a result of this action. It switches back to 
+``ACTIVE`` once the operation is complete.
 
 .. warning::
-   Adding a new replica node would restart the mha manager service (which monitors the source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. Refer to the Knowledge Center article for more details about these components: `High Availability for Cloud Databases <https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases>`__.
+   Adding a new replica node would restart the mha manager service (which monitors the 
+   source/replica instances to trigger failover) and the haproxy service on the load 
+   balancer nodes. Refer to the  article for more details about these components: 
+   :how-to:`High Availability for Cloud Databases <high-availability-for-cloud-databases>`.
    
    
 

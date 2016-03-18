@@ -59,14 +59,33 @@ The following table lists the required and optional attributes for Create Backup
 .. note::
    
    
-   *  To list, show details of a HA backup, refer to the following: :rax-devdocs:`List backups <cloud-databases/v1/developer-guide/#list-backups>`.
-   *  To list backups for a specified HA instance, refer to :rax-devdocs:`List backups of an HA instance <cloud-databases/v1/developer-guide/#list-backups-of-an-ha-instance>`.
-   *  While creating a backup of a HA Instance, the backup of the latest replica instance (the one closest to the source) is taken.
+   *  To show details of a HA backup, see the 
+      :rax-devdocs:`List backups <cloud-databases/v1/developer-guide/#list-backups>` 
+      operation.
+   *  To list backups for a specified HA instance, see the :rax-devdocs:`List backups 
+      of an HA instance <cloud-databases/v1/developer-guide/#list-backups-of-an-ha-instance>` 
+      operation.
+   *  While creating a backup of a HA Instance, the backup of the latest replica instance 
+      (the one closest to the source) is taken.
    *  The HA instance goes into a ``BACKUP`` state if it has a running backup.
-   *  Backups are not deleted when the instance is deleted. You must manually remove any backups created using the Backups API. Refer to :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` for details.
-   *  During backup the files will be streamed to your Cloud Files account. The process creates a container called z_CLOUDDB_BACKUPS and places all the files in it. In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. You will be charged the normal Cloud Files rate for storage of these files. For pricing details, refer to :ref:`Pricing and service level <pricing-and-service-level>`. No additional Cloud Databases fee applies for creating backups. You can delete old backups through the API. For details see  :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>`.
-   *  In the unlikely event that the backup fails to perform correctly and is in the state ``FAILED``, there may be some files that were placed in the container. You should use the API to delete the backup to remove any leftover files. Refer to :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` for details.
-   *  If a backup is deleted, all incremental backups created from it will also be deleted.
+   *  Backups are not deleted when the instance is deleted. You must manually remove any 
+      backups created using the Backups API. See the   
+      :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+      operation for details.
+   *  During the back up process, files are streamed to your Cloud Files account. The process 
+      creates a container called z_CLOUDDB_BACKUPS and places all the files in it. In order 
+      for the restore and deletion of backups to work properly, do not move, 
+      rename, or delete any of the files from this container. You will be charged the 
+      normal Cloud Files rate for storage of these files. For pricing details, see 
+      :rax:`Rackspace Cloud Caculator <calculator>`. No additional Cloud Databases fee 
+      applies for creating backups. You can delete old backups through the API. For details 
+      see  :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>`.
+   *  In the unlikely event that the backup fails to perform correctly and is in a 
+      ``FAILED`` state, some files might have been placed in the container. In this case,  
+      use the API to delete the backup, removing any leftover files. 
+      See the :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+      operation for details.
+   *  When a backup is deleted, all incremental backups created from it are also deleted.
    
    
    

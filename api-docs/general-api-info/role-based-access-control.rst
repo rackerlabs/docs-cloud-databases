@@ -110,8 +110,7 @@ RBAC permissions cross-reference to Cloud Databases API operations
 
 API operations for Cloud Databases may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
-please review `the Knowledge Center
-article <https://www.rackspace.com/knowledge_center/article/permissions-matrix-for-cloud-databases>`__.
+see :how-to:`Permissions matrix for Cloud Databases <permissions-matrix-for-cloud-databases>`.
 
 
 

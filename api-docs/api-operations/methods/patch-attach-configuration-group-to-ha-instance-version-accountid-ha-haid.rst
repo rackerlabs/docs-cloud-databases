@@ -8,7 +8,7 @@ Attach Configuration Group to HA Instance
 
     PATCH /{version}/{accountId}/ha/{haId}
 
-Attaches a specified :ref:`configuration group <cdb-dg-concepts-configgroup>` to the HA Instance.
+Attaches a specified :ref:`configuration group <concepts-configgroup>` to the HA Instance.
 
 .. note::
    If the configuration group has non-dynamic configuration parameters, the HA instance will be put in a ``RESTART_REQUIRED`` state. To enable the parameters on all the nodes (source and replicas of the HA group), :ref:`restart the HA instance<post-restart-ha-instance-version-accountid-ha-haid-action>`.

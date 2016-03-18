@@ -15,8 +15,7 @@ summarized in the table below.
 ..  tip:: 
 
   To help you decide which regionalized endpoint to use, read about
-  special considerations for choosing a region at
-  http://www.rackspace.com/knowledge_center/article/about-regions.
+  :how-to:`special considerations <about-regions>` for choosing a region. 
 
 Table 3.1. Regionalized service endpoints
 

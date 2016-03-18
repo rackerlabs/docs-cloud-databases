@@ -18,8 +18,8 @@ to ``ACTIVE`` once the action is complete.
 
    Resizing the flavor of the HA cluster would restart the MHA manager service 
    (which monitors the source/replica instances to trigger failover) and the haproxy 
-   service on the load balancer nodes. See `High Availability for Cloud Databases`_ in 
-   the Rackspace Knowledge Center for more details about these components.
+   service on the load balancer nodes. See :how-to:`High Availability for Cloud Databases` 
+   in the Rackspace  for more details about these components.
    
    
 
@@ -142,7 +142,6 @@ The following example shows the Resize flavor for an HA instance response:
 
 
 
-.. _High Availability for Cloud Databases: https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases    
 
 
 
