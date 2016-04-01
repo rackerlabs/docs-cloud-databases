@@ -1,6 +1,6 @@
 # Rackspace Cloud Databases API documentation
 
-[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-databases/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-databases/)
+[![build badge](https://build.developer.rackspace.com/rackerlabs/docs-cloud-databases/badge?branch=master)](https://build.developer.rackspace.com/rackerlabs/docs-cloud-databases/)
 
 This repository contains the source files that generate the following Cloud databases API documentation: 
 
