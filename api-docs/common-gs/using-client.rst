@@ -13,12 +13,74 @@ have to install the client and set environment variables.
 
 Prerequisites
 ^^^^^^^^^^^^^^^^^^^
+Run the trove client on Linux, Ubuntu, or Debian or Mac OS X. You also 
+need a Rackspace Cloud account and access to Rackspace Cloud Orchestration.
 
-- Linux or Mac OS X
-- Python 2.7 or later
-- **setuptools** package, installed by default on Mac OS X
-- **pip** package
-- Rackspace Cloud account and access to Rackspace Cloud Orchestration
+
+Before you begin, install the following prerequisite software:
+
++--------------------------+-------------------------------------------------------------+
+| Prerequisite             | Description                                                 |
++==========================+=============================================================+
+| Python 2.7 or later      | Currently, the trove client is tested with Python 2.7.      |
+|                          |                                                             |
+|                          | On Mac OS X, run the following command to install Python    |
+|                          | `Homebrew`_. This command also installs                     |
+|                          | the ``setuptools`` and ``pip`` packages.                    |
+|                          |                                                             |
+|                          | .. code:: bash                                              |
+|                          |                                                             |
+|                          |    $ brew install python                                    |
+|                          |                                                             |
++--------------------------+-------------------------------------------------------------+
+| ``pip`` package          | To install the trove client on a Mac OS X or Linux system,  |
+|                          | use ``pip`` to ensure that you get the                      |
+|                          | latest version of the trove client from the                 | 
+|                          | `Python Package Index`_. You can also use it to update the  |
+|                          | package later on.                                           |
+|                          |                                                             |
+|                          | Install ``pip`` through the package manager for your        |
+|                          | system:                                                     |
+|                          |                                                             |
+|                          | **Mac OS X**                                                |
+|                          |                                                             |
+|                          | .. code:: bash                                              |
+|                          |                                                             |
+|                          |    $ sudo easy_install pip                                  |
+|                          |                                                             | 
++--------------------------+-------------------------------------------------------------+
+|`apt get`_                | **Ubuntu**, **Debian**                                      |
+|                          |                                                             |
+|                          | .. code:: bash                                              |
+|                          |                                                             |
+|                          |    $ apt-get install python-pip                             |
+|                          |                                                             |
+|                          |                                                             |
+|                          | If the python-pip package is not found, run                 |
+|                          | `apt-get update`` to update the package list.               |
+|                          |                                                             | 
++--------------------------+-------------------------------------------------------------+
+| `yum`_                   | **Fedora**                                                  |
+|                          |                                                             |
+|                          | .. code:: bash                                              |
+|                          |                                                             |
+|                          |    $ yum install python-pip                                 |
+|                          |                                                             |
+|                          |                                                             |
+|                          | -  CentOS, or RHEL                                          |
+|                          |    (from EPEL or another 3rd party repository)              |
+|                          |                                                             |
+|                          |    .. code:: bash                                           |
+|                          |                                                             |
+|                          |        $ yum install python-pip                             |
++--------------------------+-------------------------------------------------------------+
+
+.. Comment Link reference for link in table.
+
+.. _Homebrew: https:\\brew.sh
+.. _Python Package Index: http://pypi.python.org/pypi/python-novaclient
+.. _apt get: https://help.ubuntu.com/community/AptGet/Howto
+.. _Yum: https://docs.fedoraproject.org/en-US/Fedora_Core/5/html-single/Software_Management_Guide/
 
 
 Install the trove client
@@ -29,7 +91,7 @@ The python-troveclient package contains the trove client.
 Run the following commands for your operating system to install the python-troveclient 
 package:
 
-For Ubuntu, Debian, or OS X:
+For Ubuntu or Debian:
 
 .. code::
 
@@ -37,34 +99,42 @@ For Ubuntu, Debian, or OS X:
 
     $ sudo pip install python-troveclient
     
+
+For Mac OS X
+
+.. code:: 
+
+    $ sudo pip install python-troveclient
+    
+    
 For RHEL, CentOS, or Fedora:
 
 .. code::
 
-     $ sudo pip install python-troveclient
+   $ sudo pip install python-troveclient
      
      
-.. note::
-    If you previously installed the python-troveclient package, run the following command 
-    for your operating system to upgrade it:
+.. note:: 
 
-    For Ubuntu, Debian, or OS X:
+    If you previously installed the ``python-troveclient`` package, run
+    the following command to upgrade it:
 
-    .. code:: 
+    .. code:: bash
+
+        $ sudo pip install --upgrade python-troveclient
     
-         $ sudo pip install --upgrade python-troveclient
-         
-    For RHEL, CentOS, or Fedora:
-
-    .. code::
     
-         $ sudo pip install --upgrade python-troveclient
+    If you installed with apt get or aptitude, re-run the install command 
+    to get the latest version of the client. 
+    
+       
          
      
 .. _set-environment-variables-client:
 
 Configure environment variables for client
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 Edit your **bash.profile** file or **.bashrc** file to add and set environment
 variables that enable the trove client to connect to your Rackspace
 Cloud account. Use nano, or a text editor of your choice, to edit the file.
