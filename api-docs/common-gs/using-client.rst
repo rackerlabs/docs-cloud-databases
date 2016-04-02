@@ -67,19 +67,19 @@ Before you begin, install the following prerequisite software:
 |                          |    $ yum install python-pip                                 |
 |                          |                                                             |
 |                          |                                                             |
-|                          | -  CentOS, or RHEL                                          | 
-|                          |    (from EPEL or another 3rd party repository)              |                                                                                                                                                                                                                              |
-|                          |                                                             |                                                                                                                                                                                                                                                                            |
-|                          |    .. code:: bash                                           |                                                                                                                                                                                                                                                              |
-|                          |                                                             |                                                                                                                                                                                                                                                           |
-|                          |        $ yum install python-pip                             |                                                                                                                                                                                                                                                             |
+|                          | -  CentOS, or RHEL                                          |
+|                          |    (from EPEL or another 3rd party repository)              |
+|                          |                                                             |
+|                          |    .. code:: bash                                           |
+|                          |                                                             |
+|                          |        $ yum install python-pip                             |
 +--------------------------+-------------------------------------------------------------+
 
 .. Comment Link reference for link in table.
 
 .. _Homebrew: https:\\brew.sh
 .. _Python Package Index: http://pypi.python.org/pypi/python-novaclient
-.. _AptGet: https://help.ubuntu.com/community/AptGet/Howto
+.. _apt get: https://help.ubuntu.com/community/AptGet/Howto
 .. _Yum: https://docs.fedoraproject.org/en-US/Fedora_Core/5/html-single/Software_Management_Guide/
 
 
