@@ -67,12 +67,12 @@ Before you begin, install the following prerequisite software:
 |                          |    $ yum install python-pip                                 |
 |                          |                                                             |
 |                          |                                                             |
-|                          | **CentOS**, **RHEL**                                        |
+|                          | **CentOS**, *RHEL**                                         |
 |                          |    (from EPEL or another 3rd party repository)              |
 |                          |                                                             |
-|                          |    .. code:: bash                                           |
+|                          | .. code:: bash                                              |
 |                          |                                                             |
-|                          |        $ yum install python-pip                             |
+|                          |     $ yum install python-pip                                |
 +--------------------------+-------------------------------------------------------------+
 
 .. Comment Link reference for link in table.
