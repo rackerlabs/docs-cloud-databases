@@ -13,7 +13,7 @@ Cloud Databases installs a certificate on the database instance at the time of p
 
 To use SSL, perform the following steps:
 
--  For encrypting connections using SSL, download the certificate:
+-  For encrypting connections using SSL, download the certificate from one of the following URLs:
 
    - For servers created before March 1, 2016: http://ssl.rackspaceclouddb.com/ca-cert.pem.
    - For servers created on or after March 1, 2016: http://ssl.rackspaceclouddb.com/rackspace-ca-2016.pem.
