@@ -24,7 +24,7 @@ To use SSL, perform the following steps:
 
        mysql —ssl-ca=/path/to/rackspace-ca-2016.pem
 
-   The official MySQL docs for using SSL are located at http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html.
+   For additional information, see the `MySQL documentation <http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html>`_.
 
 -  (Optional) To set up restrictions on a user to require SSL for communicating with the database, MySQL supports GRANT statement modifier “REQUIRE SSL”. For example, to restrict ‘database\_user’ to read, write, delete on prod\_database only using secure SSL connection, login to MySQL as root and then issue the following command:
 
