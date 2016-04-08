@@ -13,15 +13,18 @@ Cloud Databases installs a certificate on the database instance at the time of p
 
 To use SSL, perform the following steps:
 
--  For encrypting connections using SSL, download the certificate from http://ssl.rackspaceclouddb.com/ca-cert.pem.
+-  For encrypting connections using SSL, download the certificate from one of the following URLs:
 
--  To use SSL with the default MySQL command line, pass the SSL certificate to the client at startup:
+   - For servers created before March 1, 2016: http://ssl.rackspaceclouddb.com/ca-cert.pem.
+   - For servers created on or after March 1, 2016: http://ssl.rackspaceclouddb.com/rackspace-ca-2016.pem.
 
-   .. code::  
+-  To use SSL with the default MySQL command line, pass the downloaded SSL certificate to the client at startup:
 
-       mysql —ssl-ca=/path/to/ca-cert.pem
+   .. code::
 
-   The official MySQL docs for using SSL are located at http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html.
+       mysql —ssl-ca=/path/to/rackspace-ca-2016.pem
+
+   For additional information, see the `MySQL documentation <http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html>`_.
 
 -  (Optional) To set up restrictions on a user to require SSL for communicating with the database, MySQL supports GRANT statement modifier “REQUIRE SSL”. For example, to restrict ‘database\_user’ to read, write, delete on prod\_database only using secure SSL connection, login to MySQL as root and then issue the following command:
 
