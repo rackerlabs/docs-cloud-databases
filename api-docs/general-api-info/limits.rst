@@ -96,7 +96,7 @@ Refer to the following table for the absolute limits that are set.
 +================+==========================================================================+=======+
 | Instances      | Maximum number of instances allowed for your account                     |    25 |
 +----------------+--------------------------------------------------------------------------+-------+
-| Volume Size    | Maximum volume size per instance in gigabytes (GB) for your account      |   300 |
+| Volume Size    | Maximum volume size per instance in gigabytes (GB) for your account      |  1024 |
 +----------------+--------------------------------------------------------------------------+-------+
 
 
