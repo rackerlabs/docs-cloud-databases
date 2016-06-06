@@ -1,8 +1,0 @@
-DELETE /v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users/demouser HTTP/1.1
-User-Agent: python-troveclient
-Host: ord.databases.api.rackspacecloud.com
-X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-Accept: application/json
-Content-Type: application/json
-
-
