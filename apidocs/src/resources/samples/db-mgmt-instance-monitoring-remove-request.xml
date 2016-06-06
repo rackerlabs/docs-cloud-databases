@@ -1,9 +1,0 @@
-POST /v1.0/1234/mgmt/instances/accb85a9-f2cd-4e18-88ed-4201f781d67b/monitoring/action HTTP/1.1
-User-Agent: python-troveclient
-Host: ord.databases.api.rackspacecloud.com
-X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
-Accept: application/xml
-Content-Type: application/xml
-
-<remove xmlns="http://docs.openstack.org/database/api/v1.0"/>
-

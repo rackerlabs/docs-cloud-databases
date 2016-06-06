@@ -1,7 +1,0 @@
-POST /v1.0/1234/ha/e7fdf90b-7140-4edb-b449-e093d55008fb/action HTTP/1.1
-User-Agent: python-troveclient
-Host: ord.databases.api.rackspacecloud.com
-X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
-Accept: application/json
-Content-Type: application/json
-'{"remove_replica": "130922a2-b9ab-4e95-86be-9c5d79171b5"}'
