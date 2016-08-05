@@ -35,5 +35,6 @@ The Rackspace Cloud Databases API is implemented using a ReSTful web service int
    datastore-types-and-versions
    replication
    high-availability
+   ha-database-instance-status
       
    
