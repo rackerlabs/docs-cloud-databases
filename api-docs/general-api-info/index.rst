@@ -1,21 +1,26 @@
 .. _general-api-index:
 
+=======================
 General API information
--------------------------
+=======================
 
-Ideas explained here are relevant to all operations of the API. See the API Operations chapter for details about specific operations.
+Ideas explained here are relevant to all operations of the API. See the API
+Operations chapter for details about specific operations.
 
-The Rackspace Cloud Databases API is implemented using a ReSTful web service interface. Like other products in the Rackspace Cloud suite, the DB service shares a common token-based authentication system that allows seamless access between products and services.
+The Rackspace Cloud Databases API is implemented using a ReSTful web service
+interface. Like other products in the Rackspace Cloud suite, the DB service
+shares a common token-based authentication system that allows seamless access
+between products and services.
 
-.. note:: 
-   
+.. note::
+
    All requests to authenticate against and operate the service are performed using
    SSL over HTTP (HTTPS) on TCP port 443.
 
 
 .. toctree:: :hidden:
    :maxdepth: 3
-   
+
    authentication-gen-api
    service-access-endpoints
    contract-and-api-versions
@@ -35,6 +40,3 @@ The Rackspace Cloud Databases API is implemented using a ReSTful web service int
    datastore-types-and-versions
    replication
    high-availability
-   ha-database-instance-status
-      
-   

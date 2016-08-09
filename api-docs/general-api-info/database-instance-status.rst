@@ -7,13 +7,13 @@ Database instance status
 When you submit an API request to create, list, or delete database instances,
 the response returns the current status information for each instance.
 
-The following table lists the status values that can be included in the
-response.
+following table lists the status values that can be included in the response.
 
 .. csv-table:: Database instance status values
-  :header: "Status", "Description"
   :widths: 25 75
+  :header-rows: 1
 
+  "Status", "Description"
   "``BUILD``", "The database instance is being provisioned."
   "``REBOOT``", "The database instance is rebooting."
   "``ACTIVE``", "The database instance is online and available to take
@@ -40,8 +40,8 @@ response.
   "``DELETION_PENDING``", "The database instance is scheduled for deletion."
   "``REPLICATION_ERROR``", "Replication is broken on the database instance."
 
-.. note:: 
-   
+.. note::
+
    The status values are different for a database instance included in a high
    availability instance group. For details, see :ref:`Database instance
    status values for high availability configurations <ha-dbinstance-status>`.
