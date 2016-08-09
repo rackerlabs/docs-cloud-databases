@@ -99,8 +99,8 @@ For more details about HA groups refer to the KC article at
 
 .. _ha-dbinstance-status:
 
-HA Database instance status
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+HA database instance group status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When you perform actions on a high availability database group, the API
 service return current cluster status information in the response.
