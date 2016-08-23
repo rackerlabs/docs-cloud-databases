@@ -2,7 +2,7 @@
 .. _post-resize-volume-for-an-ha-instance-version-accountid-ha-haid-action:
 
 Resize volume for an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,16 +10,14 @@ Resize volume for an HA instance
 
 Resize the volume of an HA instance specified by {ha_id}.
 
-This operation resizes the volume of an HA instance specified by {ha_id}. For the duration 
-of this action, the HA instance goes into a ``RESIZING_VOLUME`` state and switches back 
-to ``ACTIVE`` once the action is complete across the entire HA cluster.
+This operation resizes the volume of an HA instance specified by {ha_id}. For
+the duration of this action, the HA instance goes into a ``RESIZING_VOLUME``
+state and switches back to ``ACTIVE`` once the action is complete across the
+entire HA cluster.
 
 Only increasing the size is allowed. Resize down is prevented.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -69,12 +67,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -89,15 +83,7 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Resize volume for an HA instance: JSON request**
-
 
 The following example shows the Resize volume for an HA instance request:
 
@@ -109,20 +95,17 @@ The following example shows the Resize volume for an HA instance request:
    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
    Accept: application/json
    Content-Type: application/json
-   
+
    {
       "resize_volumes":{
          "size":4
       }
    }
 
-   
 Response
-""""""""""""""""
-
+""""""""
 
 **Example Resize volume for an HA instance: JSON response**
-
 
 The following example shows the Resize volume for an HA instance response:
 
@@ -135,10 +118,3 @@ The following example shows the Resize volume for an HA instance response:
    Date: Mon, 14 Sep 2015 16:46:48 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-
-
-   
-
-
-
-

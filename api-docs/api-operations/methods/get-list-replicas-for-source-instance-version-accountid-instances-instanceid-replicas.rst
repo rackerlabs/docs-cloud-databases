@@ -2,7 +2,7 @@
 .. _get-list-replicas-for-source-instance-version-accountid-instances-instanceid-replicas:
 
 List replicas for source instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists replicas for a specified source instance.
 
 This operation lists replicas for a specified source instance.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -85,17 +78,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List replicas for source instance: JSON request**
-
 
 The following example shows the List replicas for source instance request:
 
@@ -107,26 +92,11 @@ The following example shows the List replicas for source instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List replicas for source instance: JSON response**
-
 
 The following example shows the List replicas for source instance response:
 
@@ -138,105 +108,105 @@ The following example shows the List replicas for source instance response:
    Content-Length: 718
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-   {  
-      "instances":[  
-         {  
+
+   {
+      "instances":[
+         {
             "status":"ACTIVE",
             "name":"replica1",
-            "links":[  
-               {  
+            "links":[
+               {
                   "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/1b1fc872-00bb-4fc7-894f-b02e83609ae6",
                   "rel":"self"
                },
-               {  
+               {
                   "href":"https://ord.databases.api.rackspacecloud.com/instances/1b1fc872-00bb-4fc7-894f-b02e83609ae6",
                   "rel":"bookmark"
                }
             ],
-            "ip":[  
+            "ip":[
                "10.0.0.3"
             ],
             "id":"1b1fc872-00bb-4fc7-894f-b02e83609ae6",
-            "volume":{  
+            "volume":{
                "size":1
             },
-            "flavor":{  
+            "flavor":{
                "id":"9",
-               "links":[  
-                  {  
+               "links":[
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/9",
                      "rel":"self"
                   },
-                  {  
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/flavors/9",
                      "rel":"bookmark"
                   }
                ]
             },
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql"
             },
-            "replica_of":{  
+            "replica_of":{
                "id":"df9e5206-cc95-4131-9ea4-f928c99f1aec",
-               "links":[  
-                  {  
+               "links":[
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/df9e5206-cc95-4131-9ea4-f928c99f1aec",
                      "rel":"self"
                   },
-                  {  
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/instances/df9e5206-cc95-4131-9ea4-f928c99f1aec",
                      "rel":"bookmark"
                   }
                ]
             }
          },
-         {  
+         {
             "status":"ACTIVE",
             "name":"replica2",
-            "links":[  
-               {  
+            "links":[
+               {
                   "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/3ac8641f-293d-4533-ab7a-9be25070b98f",
                   "rel":"self"
                },
-               {  
+               {
                   "href":"https://ord.databases.api.rackspacecloud.com/instances/3ac8641f-293d-4533-ab7a-9be25070b98f",
                   "rel":"bookmark"
                }
             ],
-            "ip":[  
+            "ip":[
                "10.0.0.4"
             ],
             "id":"3ac8641f-293d-4533-ab7a-9be25070b98f",
-            "volume":{  
+            "volume":{
                "size":1
             },
-            "flavor":{  
+            "flavor":{
                "id":"9",
-               "links":[  
-                  {  
+               "links":[
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/9",
                      "rel":"self"
                   },
-                  {  
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/flavors/9",
                      "rel":"bookmark"
                   }
                ]
             },
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql"
             },
-            "replica_of":{  
+            "replica_of":{
                "id":"df9e5206-cc95-4131-9ea4-f928c99f1aec",
-               "links":[  
-                  {  
+               "links":[
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/df9e5206-cc95-4131-9ea4-f928c99f1aec",
                      "rel":"self"
                   },
-                  {  
+                  {
                      "href":"https://ord.databases.api.rackspacecloud.com/instances/df9e5206-cc95-4131-9ea4-f928c99f1aec",
                      "rel":"bookmark"
                   }
@@ -245,9 +215,3 @@ The following example shows the List replicas for source instance response:
          }
       ]
    }
-   
-   
-
-
-
-

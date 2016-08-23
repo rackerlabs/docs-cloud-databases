@@ -1,8 +1,7 @@
-
 .. _post-create-ha-database-instance-version-accountid-ha:
 
 Create HA database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -18,7 +17,6 @@ The following attributes are required for each HA instance:
 
 .. table:: Required and optional attributes for Create HA instance
 
-    
     +------------------------+-------------------------------------------------------------------------------------------+---------+
     |Name                    |Description                                                                                |Required |
     +========================+===========================================================================================+=========+
@@ -49,12 +47,8 @@ The following attributes are required for each HA instance:
     |                        |<cloud-databases/v1/developer-guide/#add-acls-to-an-ha-instance>`                          |         |
     |                        |for details.                                                                               |         |
     +------------------------+-------------------------------------------------------------------------------------------+---------+
-    
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -104,12 +98,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -121,16 +111,7 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Create HA database instance: JSON request**
-
 
 The following example shows the Create HA request:
 
@@ -142,15 +123,15 @@ The following example shows the Create HA request:
    X-Auth-Token: e3b2c743aebf467fb6b91cbb644c036e
    Accept: application/json
    Content-Type: application/json
-   {  
-      "ha":{  
-         "datastore":{  
+   {
+      "ha":{
+         "datastore":{
             "version":"5.6",
             "type":"MYSQL"
          },
-         "replicas":[  
-            {  
-               "volume":{  
+         "replicas":[
+            {
+               "volume":{
                   "size":1
                },
                "flavorRef":"2",
@@ -158,21 +139,21 @@ The following example shows the Create HA request:
             }
          ],
          "name":"ha-1",
-         "networks":[  
+         "networks":[
             "servicenet",
             "public"
          ],
-         "acls":[  
-            {  
+         "acls":[
+            {
                "address":"10.0.0.0/0"
             },
-            {  
+            {
                "address":"1.2.3.4/5"
             }
          ],
-         "replica_source":[  
-            {  
-               "volume":{  
+         "replica_source":[
+            {
+               "volume":{
                   "size":1
                },
                "flavorRef":"2",
@@ -181,27 +162,11 @@ The following example shows the Create HA request:
          ]
       }
    }
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Create HA database instance: JSON response**
-
 
 The following example shows the Create HA response:
 
@@ -213,52 +178,44 @@ The following example shows the Create HA response:
    Content-Length: ‘219’
    Date: Fri, 08 May 2015 13:03:06 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-   {  
-      "ha_instance":{  
+
+   {
+      "ha_instance":{
          "name":"ha-1",
          "tenant_id":"1234",
-         "volume":{  
+         "volume":{
             "size":1
          },
-         "flavor":{  
+         "flavor":{
             "id":9,
-            "links":[  
-               {  
+            "links":[
+               {
                  "href":"https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/9",
                   "rel":"self"
                },
-               {  
+               {
                   "href":"https://ord.databases.api.rackspacecloud.com/flavors/9",
                   "rel":"bookmark"
                }
             ]
          },
-         "replicas":[  
-   
+         "replicas":[
+
          ],
-         "replica_source":[  
-   
+         "replica_source":[
+
          ],
          "id":"e7fdf90b-7140-4edb-b449-e093d55008fb",
          "state":"BUILD",
-         "acls":[  
+         "acls":[
 
          ],
-         "datastore":{  
+         "datastore":{
             "version":"5.6",
             "type":"mysql"
          },
-         "networks":[  
+         "networks":[
 
          ]
       }
    }
-
- 
-
-   
-
-
-
-

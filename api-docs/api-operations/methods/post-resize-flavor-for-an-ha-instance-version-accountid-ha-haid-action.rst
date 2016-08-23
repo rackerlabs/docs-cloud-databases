@@ -2,7 +2,7 @@
 .. _post-resize-flavor-for-an-ha-instance-version-accountid-ha-haid-action:
 
 Resize flavor for an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,23 +10,19 @@ Resize flavor for an HA instance
 
 Resize the flavor of an HA instance specified by {ha_id}.
 
-This operation resizes the volume of an HA instance specified by {ha_id}. For the duration 
-of this action, the HA instance goes into a ``RESIZING_FLAVOR`` state and switches back 
-to ``ACTIVE`` once the action is complete.
+This operation resizes the volume of an HA instance specified by {ha_id}. For
+the duration of this action, the HA instance goes into a ``RESIZING_FLAVOR``
+state and switches back to ``ACTIVE`` once the action is complete.
 
 .. warning::
 
-   Resizing the flavor of the HA cluster would restart the MHA manager service 
-   (which monitors the source/replica instances to trigger failover) and the haproxy 
-   service on the load balancer nodes. See :how-to:`High Availability for Cloud Databases` 
-   in the Rackspace  for more details about these components.
-   
-   
-
-
+   Resizing the flavor of the HA cluster would restart the MHA manager service
+   (which monitors the source/replica instances to trigger failover) and the
+   haproxy service on the load balancer nodes. See
+   :how-to:`High Availability for Cloud Databases` in the Rackspace  for more
+   details about these components.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -76,12 +72,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -96,15 +88,7 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Resize flavor for an HA instance: JSON request**
-
 
 The following example shows the Resize flavor for an HA instance request:
 
@@ -116,17 +100,13 @@ The following example shows the Resize flavor for an HA instance request:
    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
    Accept: application/json
    Content-Type: application/json
-   
+
    {"resize_flavor": "3"}
 
-
-   
 Response
-""""""""""""""""
-
+""""""""
 
 **Example Resize flavor for an HA instance: JSON response**
-
 
 The following example shows the Resize flavor for an HA instance response:
 
@@ -139,10 +119,3 @@ The following example shows the Resize flavor for an HA instance response:
    Date: Mon, 14 Sep 2015 16:46:48 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-
-
-
-
-
-
-

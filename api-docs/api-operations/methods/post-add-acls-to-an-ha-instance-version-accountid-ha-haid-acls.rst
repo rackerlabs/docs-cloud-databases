@@ -2,7 +2,7 @@
 .. _post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls:
 
 Add ACLs to an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -14,28 +14,24 @@ This operation adds ACLs to an HA instance.
 
 .. note::
 
-   ACLs cannot be added when the HA instance is building (is in ``BUILD`` state).
-   
+   ACLs cannot be added when the HA instance is building (is in ``BUILD``
+   state).
 
-The following table lists the required and optional attributes for creating ACLs for an HA setup.
+The following table lists the required and optional attributes for creating
+ACLs for an HA setup.
 
 .. table:: Required and optional attributes for Create database
 
-    
-    +--------------------------+-------------------------+-------------------------+
-    |Name                      |Description              |Required                 |
-    +==========================+=========================+=========================+
-    |address                   |Specifies the CIDR       |Yes                      |
-    |                          |notated IPV4 address.    |                         |
-    |                          |The IPV4 address to use  |                         |
-    |                          |should be CIDR notated.  |                         |
-    +--------------------------+-------------------------+-------------------------+
-    
-
-
+    +--------------------------+-------------------------+--------------------+
+    |Name                      |Description              |Required            |
+    +==========================+=========================+====================+
+    |address                   |Specifies the CIDR       |Yes                 |
+    |                          |notated IPV4 address.    |                    |
+    |                          |The IPV4 address to use  |                    |
+    |                          |should be CIDR notated.  |                    |
+    +--------------------------+-------------------------+--------------------+
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -84,12 +80,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -104,16 +96,7 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Add ACLs to an HA instance: JSON request**
-
 
 The following example shows the Add ACLs to an HA instance request:
 
@@ -125,28 +108,13 @@ The following example shows the Add ACLs to an HA instance request:
    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
    Accept: application/json
    Content-Type: application/json
-   
+
    {"address": "1.2.3.4/32"}
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Add ACLs to an HA instance: JSON response**
-
 
 The following example shows the Add ACLs to an HA instance response:
 
@@ -159,8 +127,3 @@ The following example shows the Add ACLs to an HA instance response:
    Date: Fri, 08 May 2015 19:25:15 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

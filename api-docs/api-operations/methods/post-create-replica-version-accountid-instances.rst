@@ -2,49 +2,53 @@
 .. _post-create-replica-version-accountid-instances:
 
 Create replica
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 .. code::
 
     POST /{version}/{accountId}/instances
 
-Creates a replica of the source instance, as specified by the value of the ``replica_of`` attribute.
+Creates a replica of the source instance, as specified by the value of the
+``replica_of`` attribute.
 
-This operation asynchronously provisions a replica for the specified source database instance. This call requires the user to specify a flavor and a volume size. It also requires specifying the source database instance using the ``replica_of`` attribute. The service then provisions the replica with the requested flavor and sets up a volume of the specified size.
+This operation asynchronously provisions a replica for the specified source
+database instance. This call requires the user to specify a flavor and a
+volume size. It also requires specifying the source database instance using
+the ``replica_of`` attribute. The service then provisions the replica with
+the requested flavor and sets up a volume of the specified size.
 
 .. note::
-   
-   
-   *  The replica will be created with the default configuration. If you wish to apply the same configuration as the source database instance or another configuration, you will need to apply that configuration to the replica. Refer to :ref:`put-update-database-instance-version-accountid-instances-instanceid` for details.
-   *  Since the process of creating a replica makes a backup behind the scenes, the user calling the Create replica operation will need access to Cloud Files.
-   
-   
-   
+
+   *  The replica will be created with the default configuration. If you wish
+      to apply the same configuration as the source database instance or
+      another configuration, you will need to apply that configuration to the
+      replica. Refer to
+      :ref:`put-update-database-instance-version-accountid-instances-instanceid`
+      for details.
+   *  Since the process of creating a replica makes a backup behind the scenes,
+      the user calling the Create replica operation will need access to Cloud
+      Files.
 
 .. warning::
-   Adding a replica will restart the MySQL service on the source database instance. The state of the source instance switches to ``RESTART`` for this period and back to ``ACTIVE`` when service restart completes.
-   
-   
+   Adding a replica will restart the MySQL service on the source database
+   instance. The state of the source instance switches to ``RESTART`` for this
+   period and back to ``ACTIVE`` when service restart completes.
 
 .. note::
-   
-   
-   
-   
+
    *  You can create only one database instance per ``POST`` request.
-   *  You can create a database instance with one or more databases, and users associated to those databases.
+   *  You can create a database instance with one or more databases, and users
+      associated to those databases.
    *  The default binding for the database instance is port 3306.
-   *  When used with the ``restorePoint`` attribute, this call performs the Restore Backup operation, creating a new database instance to store the backup.
-   *  For information about using SSL with your database instance, refer to :ref:`cdb-dg-generalapi-ssl`.
-   
-   
-   
+   *  When used with the ``restorePoint`` attribute, this call performs the
+      Restore Backup operation, creating a new database instance to store the
+      backup.
+   *  For information about using SSL with your database instance, refer to
+      :ref:`cdb-dg-generalapi-ssl`.
 
-The following table lists the required and optional attributes for Create replica:
+The following table lists the required and optional attributes for Create
+replica:
 
-
-
-    
     +--------------+--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
     |Applies To    |Name                                                                                                          |Description                                                                                                     |Required |
     +==============+==============================================================================================================+================================================================================================================+=========+
@@ -100,14 +104,10 @@ The following table lists the required and optional attributes for Create replic
     |              |                                                                                                              |Request and Response examples for the required json format and details.                                         |         |
     +--------------+--------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+---------+
 
-
-
-Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a list of possible database instance statuses that may be returned.
-
-
+Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a
+list of possible database instance statuses that may be returned.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -156,12 +156,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -173,16 +169,7 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Create replica: JSON request**
-
 
 The following example shows the Create replica request:
 
@@ -194,8 +181,8 @@ The following example shows the Create replica request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
+
+
    {
      "instance": {
        "volume": {
@@ -206,26 +193,11 @@ The following example shows the Create replica request:
        "replica_of": "6bdca2fc-418e-40bd-a595-62abda61862d"
      }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Create replica: JSON response**
-
 
 The following example shows the Create replica response:
 
@@ -237,7 +209,7 @@ The following example shows the Create replica response:
    Content-Length: 697
    Date: Thu, 13 Feb 2014 21:47:17 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
      "instance": {
        "status": "BUILD",
@@ -290,10 +262,11 @@ The following example shows the Create replica response:
        }
      }
    }
-   
 
-
-For convenience, notice in the response example above that resources contain links to themselves. This allows a client to easily obtain resource URIs rather than to construct them. There are two kinds of link relations associated with resources. A ``self`` link contains a versioned link to the resource. These links should be used in cases where the link will be followed immediately. A ``bookmark`` link provides a permanent link to a resource that is appropriate for long term storage.
-
-
-
+For convenience, notice in the response example above that resources contain
+links to themselves. This allows a client to easily obtain resource URIs rather
+than to construct them. There are two kinds of link relations associated with
+resources. A ``self`` link contains a versioned link to the resource. These
+links should be used in cases where the link will be followed immediately. A
+``bookmark`` link provides a permanent link to a resource that is appropriate
+for long term storage.

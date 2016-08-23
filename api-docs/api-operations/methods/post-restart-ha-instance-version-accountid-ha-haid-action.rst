@@ -2,20 +2,24 @@
 .. _post-restart-ha-instance-version-accountid-ha-haid-action:
 
 Restart an HA Instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /{version}/{accountId}/ha/{haId}/action
 
-Restarts an HA instance. During the restart process, the HA Instance goes into a ``REBOOT`` state. After the operation completes, the status changes to ``ACTIVE``.
+Restarts an HA instance. During the restart process, the HA Instance goes into
+a ``REBOOT`` state. After the operation completes, the status changes to
+``ACTIVE``.
 
 .. warning::
-   When the HA Instance Group is started, auto-failover is turned off (MHA stopped), then the mysql service on the replica nodes is restarted followed by the source node. Finally, auto-failover is turned on again. See the :how-to:`High Availability for Cloud Databases <high-availability-for-cloud-databases>` article in the Rackspace How To collection.
-
+   When the HA Instance Group is started, auto-failover is turned off (MHA
+   stopped), then the mysql service on the replica nodes is restarted followed
+   by the source node. Finally, auto-failover is turned on again. See the
+   :how-to:`High Availability for Cloud Databases <high-availability-for-cloud-databases>`
+   article in the Rackspace How To collection.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +68,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -84,15 +84,7 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Restart HA Instance: JSON request**
-
 
 The following example shows the restart HA instance request:
 
@@ -108,26 +100,11 @@ The following example shows the restart HA instance request:
        "restart":{ 
        } 
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Restart HA Instance: JSON response**
-
 
 The following example shows the restart HA instance response:
 
@@ -140,9 +117,3 @@ The following example shows the restart HA instance response:
    Date: Tue, 15 Mar 2016 16:36:48 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-
-   
-
-
-
-

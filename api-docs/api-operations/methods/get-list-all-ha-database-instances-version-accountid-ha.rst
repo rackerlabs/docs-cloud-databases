@@ -2,7 +2,7 @@
 .. _get-list-all-ha-database-instances-version-accountid-ha:
 
 List all HA database instances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,12 +10,9 @@ List all HA database instances
 
 Lists all the HA database instances.
 
-This operation lists all the HA database instances..
-
-
+This operation lists all the HA database instances.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -81,17 +74,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List all HA database instances: JSON request**
-
 
 The following example shows the List all HA database instances request:
 
@@ -103,26 +88,11 @@ The following example shows the List all HA database instances request:
    X-Auth-Token: e3b2c743aebf467fb6b91cbb644c036e
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List all HA database instances: JSON response**
-
 
 The following example shows the List all HA database instances response:
 
@@ -134,22 +104,22 @@ The following example shows the List all HA database instances response:
    Content-Length: ‘2917’
    Date: Fri, 08 May 2015 14:53:05 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-   {  
-      "ha_instances":[  
-         {  
+
+   {
+      "ha_instances":[
+         {
             "state":"DELETION-ERROR",
             "id":"1ca4d721-d194-4e1d-9bef-73608d52a969",
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql"
             },
             "name":"try1-HA-2"
          },
-         {  
+         {
             "state":"ACTIVE",
             "id":"e7fdf90b-7140-4edb-b449-e093d55008fb",
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql"
             },
@@ -157,8 +127,3 @@ The following example shows the List all HA database instances response:
          }
       ]
    }
-   
-
-
-
-

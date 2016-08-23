@@ -2,7 +2,7 @@
 .. _delete-revoke-user-access-version-accountid-instances-instanceid-users-name-databases-databasename:
 
 Revoke user access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Removes access to the specified database for the specified user.
 
 This operation removes access to the specified database for the specified user.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +62,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -95,17 +88,9 @@ This table shows the URI parameters for the request:
 |{databaseName} |String        |The name for the specified database.           |
 +---------------+--------------+-----------------------------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Revoke user access: JSON request**
-
 
 The following example shows the Revoke user access request:
 
@@ -117,28 +102,11 @@ The following example shows the Revoke user access request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Revoke user access: JSON response**
-
 
 The following example shows the Revoke user access response:
 
@@ -150,8 +118,5 @@ The following example shows the Revoke user access response:
    Content-Length: 0
    Date: Wed, 08 May 2013 22:43:35 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
 
 This operation does not return a response body.
-
-

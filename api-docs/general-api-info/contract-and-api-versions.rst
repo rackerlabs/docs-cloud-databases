@@ -9,7 +9,10 @@ Contract version & API version
 Contract version
 ~~~~~~~~~~~~~~~~
 
-The contract version denotes the data model and behavior that the API supports. The requested contract version is included in all request URLs. Different contract versions of the API may be available at any given time and are not guaranteed to be compatible with one another.
+The contract version denotes the data model and behavior that the API supports.
+The requested contract version is included in all request URLs. Different
+contract versions of the API may be available at any given time and are not
+guaranteed to be compatible with one another.
 
 **Example Request URL**::
 
@@ -23,4 +26,5 @@ The contract version denotes the data model and behavior that the API supports. 
 API version
 ~~~~~~~~~~~
 
-The API List Versions call is available to show the current API version as well as information about all versions of the API.
+The API List Versions call is available to show the current API version as well
+as information about all versions of the API.

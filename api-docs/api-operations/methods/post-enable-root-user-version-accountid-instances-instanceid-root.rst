@@ -2,20 +2,19 @@
 .. _post-enable-root-user-version-accountid-instances-instanceid-root:
 
 Enable root user
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /{version}/{accountId}/instances/{instanceId}/root
 
-Enables the root user for the specified database instance and returns the root password.
+Enables the root user for the specified database instance and returns the
+root password.
 
-This operation enables login from any host for the root user and provides the user with a generated root password.
-
-
+This operation enables login from any host for the root user and provides the
+user with a generated root password.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +63,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -85,17 +80,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Enable root user: JSON request**
-
 
 The following example shows the Enable root user request:
 
@@ -107,28 +94,12 @@ The following example shows the Enable root user request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
 
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Enable root user: JSON response**
-
 
 The following example shows the Enable root user response:
 
@@ -140,15 +111,10 @@ The following example shows the Enable root user response:
    Content-Length: 47
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "user": {
-           "name": "root", 
+           "name": "root",
            "password": "12345"
        }
    }
-   
-
-
-
-

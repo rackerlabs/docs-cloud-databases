@@ -2,18 +2,19 @@
 .. _post-convert-replication-setup-to-ha-version-accountid-instances:
 
 Convert replication setup to HA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /{version}/{accountId}/instances/{instanceId}/action
 
-Converts the replication setup to HA. The specified instance_Id can be the source or replica ID.
+Converts the replication setup to HA. The specified instance_Id can be the
+source or replica ID.
 
 This operation converts the replication setup to HA.
-   
 
-The following table lists the required and optional attributes for Convert replication setup to HA:
+The following table lists the required and optional attributes for Convert
+replication setup to HA:
 
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------------------+
 | Name                       | Description                                                                                                             | Required              |
@@ -35,26 +36,25 @@ The following table lists the required and optional attributes for Convert repli
 |                            | :ref:`post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls` for details.                                      |                       |
 +----------------------------+-------------------------------------------------------------------------------------------------------------------------+-----------------------+
 
-    
+.. note::
 
-.. note::  
-   
-   * By default the replication setup is asynchronous. But for an HA setup, the replication setup is changed to **semi-synchronous**.
-   * While the source/replicas are being prepared for HA conversion, the instances switch to a ``CONVERT_TO_HA`` state.
-   * If a source/replica has automated backups enabled, the schedule will be converted to 
-     an HA group automated backup schedule with the source id set to the HA id. The day, 
-     hour, and minute settings will be the same as the source or replica schedule.
-   * **Important**: Once the HA instance is ACTIVE, to be able to switch to using the HA 
-     cluster, use the new hostname with the appropriate port type to connect to the 
-     source/replicas as specified in the HA Group details. This hostname will remain 
-     constant in case of a source failure and replica promotion. ACLs will also let you 
-     explicitly add an IP that would require access to this HA group. For more details 
-     for an HA group refer to :ref:`high-availability-operations`.
-
-
+   * By default the replication setup is asynchronous. But for an HA setup, the
+     replication setup is changed to **semi-synchronous**.
+   * While the source/replicas are being prepared for HA conversion, the
+     instances switch to a ``CONVERT_TO_HA`` state.
+   * If a source/replica has automated backups enabled, the schedule will be
+     converted to an HA group automated backup schedule with the source id set
+     to the HA id. The day, hour, and minute settings will be the same as the
+     source or replica schedule.
+   * **Important**: Once the HA instance is ACTIVE, to be able to switch to
+     using the HA cluster, use the new hostname with the appropriate port type
+     to connect to the source/replicas as specified in the HA Group details.
+     This hostname will remain constant in case of a source failure and replica
+     promotion. ACLs will also let you explicitly add an IP that would require
+     access to this HA group. For more details for an HA group refer to
+     :ref:`high-availability-operations`.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -103,12 +103,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -124,16 +120,7 @@ This table shows the URI parameters for the request:
 |                          |                         |or replica ID.            |
 +--------------------------+-------------------------+--------------------------+
 
-
-
-
-
-
-
-
-
 **Example Convert replication setup to HA: JSON request**
-
 
 The following example shows the Convert replication setup to HA request:
 
@@ -145,8 +132,8 @@ The following example shows the Convert replication setup to HA request:
    X-Auth-Token: e3b2c743aebf467fb6b91cbb644c036e
    Accept: application/json
    Content-Type: application/json
-   
-   
+
+
    {
      "convert_to_ha": {
        "acls": [
@@ -158,24 +145,10 @@ The following example shows the Convert replication setup to HA request:
      }
    }
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Convert replication setup to HA: JSON response**
-
 
 The following example shows the Convert replication setup to HA response:
 
@@ -187,7 +160,7 @@ The following example shows the Convert replication setup to HA response:
    Content-Length: 697
    Date: Thu, 13 Feb 2014 21:47:17 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
     "ha_instance": {
         "name": "ha-convert-1",
@@ -283,10 +256,11 @@ The following example shows the Convert replication setup to HA response:
         "id": "65640327-64dd-4fd0-80b3-1f64e66e0558"
     }
   }
-   
-
-
-For convenience, notice in the response example above that resources contain links to themselves. This allows a client to easily obtain resource URIs rather than to construct them. There are two kinds of link relations associated with resources. A ``self`` link contains a versioned link to the resource. These links should be used in cases where the link will be followed immediately. A ``bookmark`` link provides a permanent link to a resource that is appropriate for long term storage.
-
-
-
+  
+For convenience, notice in the response example above that resources contain
+links to themselves. This allows a client to easily obtain resource URIs rather
+than to construct them. There are two kinds of link relations associated with
+resources. A ``self`` link contains a versioned link to the resource. These
+links should be used in cases where the link will be followed immediately. A
+``bookmark`` link provides a permanent link to a resource that is appropriate
+for long term storage.

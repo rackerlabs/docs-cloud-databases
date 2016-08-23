@@ -2,7 +2,7 @@
 .. _get-list-versions:
 
 List versions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists information about all versions of the API.
 
 This operation lists information about all versions of the API.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,24 +61,12 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
-
-
-
-
+"""""""
 
 This operation does not accept a request body.
 
-
-
-
 **Example List versions: JSON request**
-
 
 The following example shows the List versions request:
 
@@ -93,28 +78,11 @@ The following example shows the List versions request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List versions: JSON response**
-
 
 The following example shows the List versions response:
 
@@ -124,24 +92,19 @@ The following example shows the List versions response:
    Content-Type: application/json
    Content-Length: 153
    Date: Wed, 25 Jan 2012 21:53:04 GMT
-   
+
    {
        "versions": [
            {
-               "id": "v1.0", 
+               "id": "v1.0",
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/",
                        "rel": "self"
                    }
-               ], 
-               "status": "CURRENT", 
+               ],
+               "status": "CURRENT",
                "updated": "2012-01-01T00:00:00Z"
            }
        ]
    }
-   
-
-
-
-

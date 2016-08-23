@@ -2,7 +2,7 @@
 .. _post-create-database-version-accountid-instances-instanceid-databases:
 
 Create database
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -14,11 +14,11 @@ This operation creates a new database within the specified instance.
 
 The ``name`` of the database is a required attribute.
 
-The following additional attributes can be specified for each database: ``collate`` and ``character_set``.
+The following additional attributes can be specified for each database:
+``collate`` and ``character_set``.
 
 .. table:: Required and optional attributes for Create database
 
-    
     +--------------------------+-------------------------+-------------------------+
     |Name                      |Description              |Required                 |
     +==========================+=========================+=========================+
@@ -40,20 +40,23 @@ The following additional attributes can be specified for each database: ``collat
     |                          |collate is               |                         |
     |                          |``utf8_general_ci``.     |                         |
     +--------------------------+-------------------------+-------------------------+
-    
 
-See the database service documentation for information about supported character sets and collations. Refer to  :ref:`Datastore types and versions <cdb-dg-generalapi-datastore>` for references to the documentation for each database service. For example, for MySQL information see `http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`__.
+See the database service documentation for information about supported
+character sets and collations. Refer to
+:ref:`Datastore types and versions <cdb-dg-generalapi-datastore>` for
+references to the documentation for each database service. For example, for
+MySQL information see
+`http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html <http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html>`__.
 
 .. note::
-   The following database names are reserved and cannot be used for creating databases: lost+found, information_schema, and mysql.
-   
-   
+   The following database names are reserved and cannot be used for creating
+   databases: lost+found, information_schema, and mysql.
 
-Refer to the following tables for information about characters that are valid/invalid for creating database names.
+Refer to the following tables for information about characters that are
+valid/invalid for creating database names.
 
 .. table:: Valid characters that can be used in a database name
 
-    
     +------------------------------------------------------------------------------+
     |Character                                                                     |
     +==============================================================================+
@@ -66,23 +69,16 @@ Refer to the following tables for information about characters that are valid/in
     +------------------------------------------------------------------------------+
     |'_' is allowed anywhere in the database name                                  |
     +------------------------------------------------------------------------------+
-    
-    
 
 .. table:: Length restrictions for database name
 
-    
     +---------------------------------------+--------------------------------------+
     |Restriction                            |Value                                 |
     +=======================================+======================================+
     |Database-name maximum length           |64                                    |
     +---------------------------------------+--------------------------------------+
-    
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -132,12 +128,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -153,17 +145,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Create database: JSON request**
-
 
 The following example shows the Create database request:
 
@@ -175,42 +159,27 @@ The following example shows the Create database request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "databases": [
            {
-               "character_set": "utf8", 
-               "collate": "utf8_general_ci", 
+               "character_set": "utf8",
+               "collate": "utf8_general_ci",
                "name": "testingdb"
-           }, 
+           },
            {
                "name": "anotherdb"
-           }, 
+           },
            {
                "name": "oneMoreDB"
            }
        ]
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Create database: JSON response**
-
 
 The following example shows the Create database response:
 
@@ -222,8 +191,3 @@ The following example shows the Create database response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

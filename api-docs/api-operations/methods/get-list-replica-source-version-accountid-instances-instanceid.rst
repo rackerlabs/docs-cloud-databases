@@ -2,7 +2,7 @@
 .. _get-list-replica-source-version-accountid-instances-instanceid:
 
 List replica source
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,23 +10,31 @@ List replica source
 
 Lists status and details for a specified replica source instance.
 
-This operation lists the status and details of the specified replica source instance. The operation also lists the configuration group id/name if the running instance has been associated with a configuration group.
+This operation lists the status and details of the specified replica source
+instance. The operation also lists the configuration group id/name if the
+running instance has been associated with a configuration group.
 
-This operation lists the volume size in gigabytes (GB) and the approximate GB used.
+This operation lists the volume size in gigabytes (GB) and the approximate
+GB used.
 
 .. note::
-   After instance creation, the ``used`` size of your volume will be greater than 0. This is expected and due to the automatic creation of non-empty transaction logs for database optimization. The ``used`` attribute is not returned in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.
-   
-   
+   After instance creation, the ``used`` size of your volume will be greater
+   than 0. This is expected and due to the automatic creation of non-empty
+   transaction logs for database optimization. The ``used`` attribute is not
+   returned in the response when the status for the instance is BUILD, REBOOT,
+   RESIZE, or ERROR.
 
-Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a list of possible database instance statuses that may be returned.
+Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a
+list of possible database instance statuses that may be returned.
 
-The list operations return a DNS-resolvable hostname associated with the database instance instead of an IP address. Since the hostname always resolves to the correct IP address of the database instance, this relieves the user from the task of maintaining the mapping. Note that although the IP address may likely change on resizing, migrating, and so forth, the hostname always resolves to the correct database instance.
-
-
+The list operations return a DNS-resolvable hostname associated with the
+database instance instead of an IP address. Since the hostname always resolves
+to the correct IP address of the database instance, this relieves the user
+from the task of maintaining the mapping. Note that although the IP address
+may likely change on resizing, migrating, and so forth, the hostname always
+resolves to the correct database instance.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -75,12 +83,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -96,17 +100,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List replica source: JSON request**
-
 
 The following example shows the List replica source request:
 
@@ -118,26 +114,11 @@ The following example shows the List replica source request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List replica source: JSON response**
-
 
 The following example shows the List replica source response:
 
@@ -149,8 +130,7 @@ The following example shows the List replica source response:
    Content-Length: 718
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-   
+
    {
      "instance": {
        "status": "ACTIVE",
@@ -209,8 +189,3 @@ The following example shows the List replica source response:
        }
      }
    }
-   
-
-
-
-

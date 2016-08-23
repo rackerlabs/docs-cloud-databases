@@ -2,7 +2,7 @@
 .. _post-add-replica-to-an-ha-instance-version-accountid-ha-haid-action:
 
 Add Replica to an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,24 +10,21 @@ Add Replica to an HA instance
 
 Add a replica node to the HA group specified by {ha_id}.
 
-This operation adds a replica node to the HA group specified by {ha_id}. The HA instance 
-goes into the ``ADDING_REPLICA`` state as a result of this action. It switches back to 
-``ACTIVE`` once the operation is complete.
+This operation adds a replica node to the HA group specified by {ha_id}. The
+HA instance goes into the ``ADDING_REPLICA`` state as a result of this action.
+It switches back to ``ACTIVE`` once the operation is complete.
 
 .. warning::
-   Adding a new replica node would restart the mha manager service (which monitors the 
-   source/replica instances to trigger failover) and the haproxy service on the load 
-   balancer nodes. Refer to the  article for more details about these components: 
+   Adding a new replica node would restart the mha manager service (which
+   monitors the source/replica instances to trigger failover) and the haproxy
+   service on the load balancer nodes. Refer to the  article for more details
+   about these components:
    :how-to:`High Availability for Cloud Databases <high-availability-for-cloud-databases>`.
-   
-   
 
-The following table lists the required and optional attributes for creating a replica for an HA instance.
-
-
+The following table lists the required and optional attributes for creating a
+replica for an HA instance.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -77,12 +74,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -97,15 +90,7 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Add Replica to an HA instance: JSON request**
-
 
 The following example shows the Add replica to an HA instance request:
 
@@ -117,11 +102,11 @@ The following example shows the Add replica to an HA instance request:
    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
    Accept: application/json
    Content-Type: application/json
-    
-   {  
-      "add_replica":{  
-         "replica_details":{  
-            "volume":{  
+
+   {
+      "add_replica":{
+         "replica_details":{
+            "volume":{
                "size":1
             },
             "flavorRef":"2",
@@ -129,26 +114,11 @@ The following example shows the Add replica to an HA instance request:
          }
       }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Add Replica to an HA instance: JSON response**
-
 
 The following example shows the Add replica to an HA instance response:
 
@@ -161,8 +131,3 @@ The following example shows the Add replica to an HA instance response:
    Date: Fri, 31 Jul 2015 16:53:03 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

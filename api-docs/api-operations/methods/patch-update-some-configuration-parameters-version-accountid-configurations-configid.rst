@@ -2,18 +2,16 @@
 .. _patch-update-some-configuration-parameters-version-accountid-configurations-configid:
 
 Update some configuration parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     PATCH /{version}/{accountId}/configurations/{configId}
 
-Updates some of the configuration parameter s associated with the specified configuration group.
-
-
+Updates some of the configuration parameter s associated with the specified
+configuration group.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +60,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -83,16 +77,7 @@ This table shows the URI parameters for the request:
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Update some configuration parameters: JSON request**
-
 
 The following example shows the Update some configuration parameters request:
 
@@ -104,7 +89,7 @@ The following example shows the Update some configuration parameters request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "configuration": {
            "values": {
@@ -112,26 +97,11 @@ The following example shows the Update some configuration parameters request:
            }
        }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Update some configuration parameters: JSON response**
-
 
 The following example shows the Update some configuration parameters response:
 
@@ -143,8 +113,3 @@ The following example shows the Update some configuration parameters response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

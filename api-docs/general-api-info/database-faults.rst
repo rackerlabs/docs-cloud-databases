@@ -4,12 +4,15 @@
 Faults
 ======
 
-When an error occurs, the Database Service returns a fault object containing an HTTP error response code that denotes the type of error. In the body of the response, the system will return additional information about the fault.
+When an error occurs, the Database Service returns a fault object containing an
+HTTP error response code that denotes the type of error. In the body of the
+response, the system will return additional information about the fault.
 
-.. note:: 
+.. note::
     Cloud Databases uses standard `HTTP 1.1 response codes`_.
 
-The following table lists possible fault types with their associated error codes and descriptions.
+The following table lists possible fault types with their associated error
+codes and descriptions.
 
 +-----------------------+------------+------------------------------------------------------+
 |      Fault Type       | Associated |                     Description                      |
@@ -50,11 +53,12 @@ The following table lists possible fault types with their associated error codes
 |``serviceUnavailable`` | 503        | The Database Service is not available.               |
 +-----------------------+------------+------------------------------------------------------+
 
-The following ``instanceFault`` example shows errors when the server has erred or cannot perform the requested operation:
+The following ``instanceFault`` example shows errors when the server has erred
+or cannot perform the requested operation:
 
 **Example fault response: JSON**
 
-.. code::  
+.. code::
 
     HTTP/1.1 500 Internal Server Error
     Content-Length: 120
@@ -68,15 +72,22 @@ The following ``instanceFault`` example shows errors when the server has erred o
         }
     }
 
-The error code (``code``) is returned in the body of the response for convenience. The ``message`` element returns a human-readable message that is appropriate for display to the end user. The ``details`` element is optional and may contain information that is useful for tracking down an error, such as a stack trace. The ``details`` element may or may not be appropriate for display to an end user, depending on the role and experience of the end user.
+The error code (``code``) is returned in the body of the response for
+convenience. The ``message`` element returns a human-readable message that is
+appropriate for display to the end user. The ``details`` element is optional
+and may contain information that is useful for tracking down an error, such as
+a stack trace. The ``details`` element may or may not be appropriate for
+display to an end user, depending on the role and experience of the end user.
 
-The fault's root element (for example, ``instanceFault``) may change depending on the type of error.
+The fault's root element (for example, ``instanceFault``) may change depending
+on the type of error.
 
-The following ``badRequest`` example shows errors when the volume size is invalid:
+The following ``badRequest`` example shows errors when the volume size is
+invalid:
 
 **Example badRequest fault on volume size errors: JSON**
 
-.. code::  
+.. code::
 
     HTTP/1.1 400 None
     Content-Length: 120
@@ -94,7 +105,7 @@ The next example shows ``itemNotFound`` errors:
 
 **Example itemNotFound fault: JSON**
 
-.. code::  
+.. code::
 
     HTTP/1.1 404 Not Found
     Content-Length: 78
@@ -113,7 +124,10 @@ The next example shows ``itemNotFound`` errors:
 Synchronous versus asynchronous faults
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Synchronous* faults occur at request time. When a synchronous fault occurs, the fault contains an HTTP error response code, a human readable message, and optional details about the error. The following Database API calls are synchronous and may produce synchronous faults:
+*Synchronous* faults occur at request time. When a synchronous fault occurs,
+the fault contains an HTTP error response code, a human readable message, and
+optional details about the error. The following Database API calls are
+synchronous and may produce synchronous faults:
 
 -  List Users
 
@@ -137,7 +151,13 @@ Synchronous versus asynchronous faults
 
 -  List Version Details
 
-*Asynchronous* faults occur in the background while an instance, database, or user is being built or an instance is executing an action. When an asynchronous fault occurs, the system places the instance, database, or user in an ERROR state and embeds the fault in the offending instance, database, or user. When an asynchronous fault occurs, the fault contains an HTTP error response code, a human readable message, and optional details about the error. The following Database API calls are asynchronous and may produce asynchronous faults:
+*Asynchronous* faults occur in the background while an instance, database, or
+user is being built or an instance is executing an action. When an asynchronous
+fault occurs, the system places the instance, database, or user in an ERROR
+state and embeds the fault in the offending instance, database, or user. When
+an asynchronous fault occurs, the fault contains an HTTP error response code,
+a human readable message, and optional details about the error. The following
+Database API calls are asynchronous and may produce asynchronous faults:
 
 -  Create Instance
 
@@ -158,6 +178,7 @@ Synchronous versus asynchronous faults
 -  Restart Instance
 
 ..  note::
-    Note that an asynchronous operation, if it fails, may not give the user an error, and the operation can error out without a failure notification.
+    Note that an asynchronous operation, if it fails, may not give the user an
+    error, and the operation can error out without a failure notification.
 
 .. _HTTP 1.1 response codes: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html

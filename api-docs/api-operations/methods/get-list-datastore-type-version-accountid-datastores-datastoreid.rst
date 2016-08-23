@@ -2,7 +2,7 @@
 .. _get-list-datastore-type-version-accountid-datastores-datastoreid:
 
 List datastore type
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists datastore type.
 
 This operation lists datastore type for the specified datastore.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -84,17 +77,9 @@ This table shows the URI parameters for the request:
 |                          |                         |datastore.               |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List datastore type: JSON request**
-
 
 The following example shows the List datastore type request:
 
@@ -106,28 +91,11 @@ The following example shows the List datastore type request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List datastore type: JSON response**
-
 
 The following example shows the List datastore type response:
 
@@ -139,7 +107,7 @@ The following example shows the List datastore type response:
    Content-Length: 360
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "datastore": {
            "default_version": "7104c15f-ace0-479b-97ad-b368de32cb68",
@@ -187,9 +155,3 @@ The following example shows the List datastore type response:
            ]
        }
    }
-   
-   
-
-
-
-

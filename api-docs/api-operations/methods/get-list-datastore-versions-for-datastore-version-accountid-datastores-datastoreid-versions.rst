@@ -2,7 +2,7 @@
 .. _get-list-datastore-versions-for-datastore-version-accountid-datastores-datastoreid-versions:
 
 List datastore versions for datastore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists all datastore versions for the specified datastore.
 
 This operation lists all datastore versions for the specified datastore.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -84,19 +77,12 @@ This table shows the URI parameters for the request:
 |                          |                         |datastore.               |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example List datastore versions for datastore: JSON request**
 
-
-The following example shows the List all datastore versions for datastore request:
+The following example shows the List all datastore versions for datastore
+request:
 
 .. code::
 
@@ -106,30 +92,14 @@ The following example shows the List all datastore versions for datastore reques
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List datastore versions for datastore: JSON response**
 
-
-The following example shows the List all datastore versions for datastore response:
+The following example shows the List all datastore versions for datastore
+response:
 
 .. code::
 
@@ -139,42 +109,38 @@ The following example shows the List all datastore versions for datastore respon
    Content-Length: 377
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "versions": [
            {
-               "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa", 
+               "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa",
                "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
                "links": [
                    {
                        "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
                        "rel": "self"
-                   }, 
+                   },
                    {
                        "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
                        "rel": "bookmark"
                    }
-               ], 
+               ],
                "name": "5.1"
-           }, 
+           },
            {
-               "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa", 
+               "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa",
                "id": "c00000b0-00c0-0c00-00c0-000b000000cc",
                "links": [
                    {
                        "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
                        "rel": "self"
-                   }, 
+                   },
                    {
                        "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
                        "rel": "bookmark"
                    }
-               ], 
+               ],
                "name": "5.6"
            }
        ]
    }
-
-
-
-

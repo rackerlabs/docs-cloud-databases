@@ -27,7 +27,7 @@ the account is created.
 See the *Cloud Identity Client Developer Guide* for information about how
 to perform the following tasks:
 
--  :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>` 
+-  :rax-devdocs:`Add user <cloud-identity/v2/developer-guide/#add-user>`
 
 -  :rax-devdocs:`Add role to user <cloud-identity/v2/developer-guide/#add-role-to-user>`
 
@@ -39,8 +39,9 @@ to perform the following tasks:
 Roles available for Cloud Databases
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Three roles (observer, creator, and admin) can be used to access the Cloud Databases API
-specifically. The following table describes these roles and their permissions.
+Three roles (observer, creator, and admin) can be used to access the Cloud
+Databases API specifically. The following table describes these roles and their
+permissions.
 
 **Table: Cloud Databases product roles and capabilities**
 
@@ -88,7 +89,8 @@ The following scenarios show examples of how potential conflicts
 between user roles in the Control Panel are resolved:
 
 **Scenario 1:**
-Configuration : User is assigned the following roles: multiproduct **observer** and Cloud Databases **admin**
+Configuration : User is assigned the following roles: multiproduct **observer**
+and Cloud Databases **admin**.
 
 View: Appears that the user has only the multiproduct **observer** role.
 
@@ -102,15 +104,12 @@ Cloud Databases **observer**
 
 View: Appears that the user has only the multiproduct **admin** role.
 
-Permissions: The user can perform product admin functions in the Control Panel for all of 
-the products. The Cloud Databases **observer** role is ignored.
+Permissions: The user can perform product admin functions in the Control Panel
+for all of the products. The Cloud Databases **observer** role is ignored.
 
 RBAC permissions cross-reference to Cloud Databases API operations
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 API operations for Cloud Databases may or may not be available to
 all roles. To see which operations are permitted to invoke which calls,
 see :how-to:`Permissions matrix for Cloud Databases <permissions-matrix-for-cloud-databases>`.
-
-
-

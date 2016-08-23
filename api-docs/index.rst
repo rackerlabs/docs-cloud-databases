@@ -1,13 +1,14 @@
 .. _index:
 
-==============================================
-Rackspace Cloud Databases |contract version| 
-==============================================
+============================================
+Rackspace Cloud Databases |contract version|
+============================================
 
 *Last updated:* |today|
 
-Use the following links to get user and reference information for using the Rackspace Cloud Databases service 
-REST API. 
+Use the following links to get user and reference information for using the
+Rackspace Cloud Databases service
+REST API.
 
 - :ref:`Getting Started Guide <getting-started>`
 - :ref:`Developer Guide <developer-guide>`

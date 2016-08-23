@@ -1,24 +1,30 @@
-
 .. _put-modify-user-attributes-version-accountid-instances-instanceid-users-name:
 
 Modify user attributes
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     PUT /{version}/{accountId}/instances/{instanceId}/users/{name}
 
-Modifies one or more of the following for the specified user: name, password, and host from which the user is allowed to connect to the database. 
+Modifies one or more of the following for the specified user: name, password,
+and host from which the user is allowed to connect to the database.
 
-This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. User in this case is user or user@host, whichever is appropriate.
+This operation modifies one or more of the following for the specified user:
+user name, password, and host from which the user is allowed to connect to the
+database. User in this case is user or user@host, whichever is appropriate.
 
-Refer to :rax-devdocs:`Create user <cloud-databases/v1/developer-guide/#create-user>` for information about the characters that are valid for the user name and password.
+Refer to
+:rax-devdocs:`Create user <cloud-databases/v1/developer-guide/#create-user>`
+for information about the characters that are valid for the user name and
+password.
 
-The following table lists attributes for Modify User Attributes. Note that one or more of the attributes must be specified. Refer to the request examples for the required json format:
+The following table lists attributes for Modify User Attributes. Note that one
+or more of the attributes must be specified. Refer to the request examples for
+the required json format:
 
 .. table:: Attributes for Modify user attributes
 
-    
     +------------------------------+-----------------------------------------------+
     |Name                          |Description                                    |
     +==============================+===============================================+
@@ -35,12 +41,8 @@ The following table lists attributes for Modify User Attributes. Note that one o
     |                              |for details. If ``host`` is                    |
     |                              |not specified, it defaults to "%".             |
     +------------------------------+-----------------------------------------------+
-    
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -89,12 +91,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -117,17 +115,9 @@ This table shows the URI parameters for the request:
 |               |              |IP).                                           |
 +---------------+--------------+-----------------------------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Modify user attributes: JSON request**
-
 
 The following example shows the Modify user attributes request:
 
@@ -139,33 +129,18 @@ The following example shows the Modify user attributes request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "user": {
-           "name": "new_username", 
+           "name": "new_username",
            "password": "new_password"
        }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Modify user attributes: JSON response**
-
 
 The following example shows the Modify user attributes response:
 
@@ -177,8 +152,3 @@ The following example shows the Modify user attributes response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

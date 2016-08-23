@@ -2,7 +2,7 @@
 .. _put-change-user(s)-password-version-accountid-instances-instanceid-users:
 
 Change user(s) password
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,17 +10,14 @@ Change user(s) password
 
 Changes the database password of one or more users.
 
-This operation changes the database password of one or more users. 
+This operation changes the database password of one or more users.
 
 .. note::
-   For information about choosing a valid password, please refer to :rax-devdocs:`Create user <cloud-databases/v1/developer-guide/#create-user>` for details.
-   
-   
-
-
+   For information about choosing a valid password, please refer to
+   :rax-devdocs:`Create user <cloud-databases/v1/developer-guide/#create-user>`
+   for details.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -70,12 +67,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -91,17 +84,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Change user(s) password: JSON request**
-
 
 The following example shows the Change user(s) password request:
 
@@ -113,7 +98,7 @@ The following example shows the Change user(s) password request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
       "users": [
          {
@@ -126,26 +111,11 @@ The following example shows the Change user(s) password request:
          }
       ]
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Change user(s) password: JSON response**
-
 
 The following example shows the Change user(s) password response:
 
@@ -155,9 +125,3 @@ The following example shows the Change user(s) password response:
    Content-Type: application/json
    Content-Length: 152
    Date: Wed, 21 Mar 2012 17:46:46 GMT
-   
-   
-
-
-
-

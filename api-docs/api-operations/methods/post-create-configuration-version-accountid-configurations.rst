@@ -2,18 +2,16 @@
 .. _post-create-configuration-version-accountid-configurations:
 
 Create configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     POST /{version}/{accountId}/configurations
 
-Creates a new configuration group based on the parameters supplied in the request body.
-
-
+Creates a new configuration group based on the parameters supplied in the
+request body.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +60,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -78,10 +72,6 @@ This table shows the URI parameters for the request:
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-
-
-
-
 
 This table shows the body parameters for the request:
 
@@ -127,12 +117,7 @@ This table shows the body parameters for the request:
 |                          |                         |by a comma.              |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 **Example Create configuration: JSON request**
-
 
 The following example shows the Create configuration request:
 
@@ -144,7 +129,7 @@ The following example shows the Create configuration request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "configuration": {
            "datastore": {
@@ -159,32 +144,16 @@ The following example shows the Create configuration request:
            }
        }
    }
-   
-   
-
 
 .. note::
-   Each value provided for ``name`` and ``description`` must be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.
-   
-   
-
-
-
+   Each value provided for ``name`` and ``description`` must be a string
+   composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase
+   alpha characters may be used.
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Create configuration: JSON response**
-
 
 The following example shows the Create configuration response:
 
@@ -196,7 +165,7 @@ The following example shows the Create configuration response:
    Content-Length: 431
    Date: Thu, 31 Jul 2014 15:07:26 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "configuration": {
            "created": "2014-07-31T15:02:52",
@@ -214,8 +183,3 @@ The following example shows the Create configuration response:
            }
        }
    }
-   
-
-
-
-

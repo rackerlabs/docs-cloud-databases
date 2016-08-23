@@ -2,7 +2,7 @@
 .. _get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups:
 
 List backups of an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists backups for the HA instance specified by ha_id.
 
 This operation lists the backups of the HA instance specified by ha_id.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -84,17 +77,9 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List backups of an HA instance: JSON request**
-
 
 The following example shows the List backups of an HA instance request:
 
@@ -106,26 +91,11 @@ The following example shows the List backups of an HA instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List backups of an HA instance: JSON response**
-
 
 The following example shows the List backups of an HA instance response:
 
@@ -138,13 +108,13 @@ The following example shows the List backups of an HA instance response:
    Date: Tue, 01 Sep 2015 03:47:08 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-     
-      "backups":[  
-         {  
+
+      "backups":[
+         {
             "status":"COMPLETED",
             "updated":"2015-08-31T22:26:29Z",
             "description":"my_ha_backup2",
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql",
                "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
@@ -157,7 +127,7 @@ The following example shows the List backups of an HA instance response:
             "created":"2015-08-31T22:26:23Z",
             "flavor_ram":1024,
             "instance_id":null,
-            "source":{  
+            "source":{
                "type":"ha",
                "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
             },
@@ -165,11 +135,11 @@ The following example shows the List backups of an HA instance response:
             "type":"InnoBackupExIncremental",
             "volume_size":1
          },
-         {  
+         {
             "status":"COMPLETED",
             "updated":"2015-08-31T22:22:52Z",
             "description":"my_ha_backup2",
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql",
                "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
@@ -182,7 +152,7 @@ The following example shows the List backups of an HA instance response:
             "created":"2015-08-31T22:22:46Z",
             "flavor_ram":1024,
             "instance_id":null,
-            "source":{  
+            "source":{
                "type":"ha",
                "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
             },
@@ -190,11 +160,11 @@ The following example shows the List backups of an HA instance response:
             "type":"InnoBackupEx",
             "volume_size":1
          },
-         {  
+         {
             "status":"COMPLETED",
             "updated":"2015-08-31T22:16:30Z",
             "description":"my_ha_backup1",
-            "datastore":{  
+            "datastore":{
                "version":"5.6",
                "type":"mysql",
                "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
@@ -207,7 +177,7 @@ The following example shows the List backups of an HA instance response:
             "created":"2015-08-31T22:16:25Z",
             "flavor_ram":1024,
             "instance_id":null,
-            "source":{  
+            "source":{
                "type":"ha",
                "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
             },
@@ -217,8 +187,3 @@ The following example shows the List backups of an HA instance response:
          }
       ]
    }
-   
-
-
-
-

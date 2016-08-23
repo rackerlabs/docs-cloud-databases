@@ -2,7 +2,7 @@
 .. _delete-delete-backup-version-accountid-backups-backupid:
 
 Delete backup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,12 +10,10 @@ Delete backup
 
 Deletes the specified backup.
 
-This operation deletes the specified backup. When a backup is deleted, all incremental backups created from it will also be deleted.
-
-
+This operation deletes the specified backup. When a backup is deleted, all
+incremental backups created from it will also be deleted.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +63,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -85,17 +79,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified backup.        |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete backup: JSON request**
-
 
 The following example shows the Delete backup request:
 
@@ -107,25 +93,9 @@ The following example shows the Delete backup request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Delete backup: JSON response**
 
@@ -140,8 +110,3 @@ The following example shows the Delete backup response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:17 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

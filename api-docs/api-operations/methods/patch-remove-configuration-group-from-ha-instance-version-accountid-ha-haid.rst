@@ -1,8 +1,8 @@
 
 .. _patch-remove-configuration-group-from-ha-instance-version-accountid-ha-haid.rst:
 
-Remove Configuration Group from HA Instance 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Remove Configuration Group from HA Instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -11,11 +11,12 @@ Remove Configuration Group from HA Instance
 Detach configuration group from the HA Instance.
 
 .. note::
-   If the configuration group has non-dynamic configuration parameters, the HA instance will be put in a ``RESTART_REQUIRED`` state. To disable the parameters on all the nodes (source and replicas of the HA group), :ref:`restart the HA instance<post-restart-ha-instance-version-accountid-ha-haid-action>`.
-
+   If the configuration group has non-dynamic configuration parameters, the HA
+   instance will be put in a ``RESTART_REQUIRED`` state. To disable the
+   parameters on all the nodes (source and replicas of the HA group),
+   :ref:`restart the HA instance<post-restart-ha-instance-version-accountid-ha-haid-action>`.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +65,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -84,17 +81,10 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Remove Configuration Group from HA Instance: JSON request**
 
-
-The following example shows the remove configuration group from HA Instance request:
+The following example shows the remove configuration group from HA Instance
+request:
 
 .. code::
 
@@ -109,28 +99,14 @@ The following example shows the remove configuration group from HA Instance requ
           "configuration": ""
        } 
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Remove Configuration Group from HA Instance: JSON response**
 
-
-The following example shows the remove configuration group from HA Instance response:
+The following example shows the remove configuration group from HA Instance
+response:
 
 .. code::
 
@@ -141,10 +117,3 @@ The following example shows the remove configuration group from HA Instance resp
    Date: Tue, 15 Mar 2016 16:13:15 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-
-
-   
-
-
-
-

@@ -2,7 +2,7 @@
 .. _get-list-configuration-details-version-accountid-configurations-configid:
 
 List configuration details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,10 +10,7 @@ List configuration details
 
 Lists details for the specified configuration group.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +59,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -83,17 +76,9 @@ This table shows the URI parameters for the request:
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List configuration details: JSON request**
-
 
 The following example shows the List configuration details request:
 
@@ -104,26 +89,11 @@ The following example shows the List configuration details request:
    User-Agent: python-troveclient
    Accept: application/json
    X-Auth-Token: 26640a608aa9482b888a1664376b8113
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List configuration details: JSON response**
-
 
 The following example shows the List configuration details response:
 
@@ -135,7 +105,7 @@ The following example shows the List configuration details response:
    Content-Length: 431
    Date: Thu, 31 Jul 2014 15:25:07 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "configuration": {
            "created": "2014-07-31T15:19:50",
@@ -153,7 +123,3 @@ The following example shows the List configuration details response:
            }
        }
    }
-
-
-
-

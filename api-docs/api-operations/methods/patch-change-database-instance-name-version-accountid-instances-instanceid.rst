@@ -2,7 +2,7 @@
 .. _patch-change-database-instance-name-version-accountid-instances-instanceid.rst:
 
 Change database instance name
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,7 +10,8 @@ Change database instance name
 
 Changes the name of the instance to the new specified name.
 
-The following table lists the required and optional attributes for Change database instance name:
+The following table lists the required and optional attributes for Change
+database instance name:
 
 .. table:: Required attributes for Create instance
 
@@ -23,10 +24,8 @@ The following table lists the required and optional attributes for Change databa
     |                          |255 characters and any   |                         |
     |                          |characters are permitted.|                         |
     +--------------------------+-------------------------+-------------------------+
-    
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -75,12 +74,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -96,16 +91,7 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Change database instance name: JSON request**
-
 
 The following example shows the Change database instance name request:
 
@@ -122,26 +108,11 @@ The following example shows the Change database instance name request:
           "name":"test-instance-2" 
        } 
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Change database instance name: JSON response**
-
 
 The following example shows the Change database instance name response:
 
@@ -154,9 +125,3 @@ The following example shows the Change database instance name response:
    Date: Fri, 06 Nov 2015 16:22:52 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-
-   
-
-
-
-

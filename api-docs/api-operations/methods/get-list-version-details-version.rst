@@ -2,7 +2,7 @@
 .. _get-list-version-details-version:
 
 List version details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,12 +10,10 @@ List version details
 
 Returns detailed information about the specified version of the API.
 
-This operation returns detailed information about the specified version of the API.
-
-
+This operation returns detailed information about the specified version of
+the API.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,24 +63,12 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
-
-
-
-
+"""""""
 
 This operation does not accept a request body.
 
-
-
-
 **Example List version details: JSON request**
-
 
 The following example shows the List version details request:
 
@@ -94,28 +80,11 @@ The following example shows the List version details request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List version details: JSON response**
-
 
 The following example shows the List version details response:
 
@@ -125,22 +94,17 @@ The following example shows the List version details response:
    Content-Type: application/json
    Content-Length: 150
    Date: Wed, 25 Jan 2012 21:53:04 GMT
-   
+
    {
        "version": {
-           "id": "v1.0", 
+           "id": "v1.0",
            "links": [
                {
-                   "href": "https://ord.databases.api.rackspacecloud.com/v1.0/", 
+                   "href": "https://ord.databases.api.rackspacecloud.com/v1.0/",
                    "rel": "self"
                }
-           ], 
-           "status": "CURRENT", 
+           ],
+           "status": "CURRENT",
            "updated": "2012-01-01T00:00:00Z"
        }
    }
-   
-
-
-
-

@@ -2,7 +2,7 @@
 .. _post-restart-instance-version-accountid-instances-instanceid-action:
 
 Restart instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,19 +10,16 @@ Restart instance
 
 Restarts the database service on the instance.
 
-The restart operation will restart only the database service on the instance. Restarting the database service will erase any dynamic configuration settings that you have made within the database service.
+The restart operation will restart only the database service on the instance.
+Restarting the database service will erase any dynamic configuration settings
+that you have made within the database service.
 
 .. note::
    The database service will be unavailable until the instance restarts.
-   
-   
 
 This operation returns a 202 Accepted response.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -78,12 +75,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -99,17 +92,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Restart instance: JSON request**
-
 
 The following example shows the Restart instance request:
 
@@ -121,30 +106,15 @@ The following example shows the Restart instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "restart": {}
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Restart instance: JSON response**
-
 
 The following example shows the Restart instance response:
 
@@ -156,8 +126,3 @@ The following example shows the Restart instance response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:18 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

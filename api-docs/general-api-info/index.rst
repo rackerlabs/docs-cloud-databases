@@ -14,9 +14,8 @@ between products and services.
 
 .. note::
 
-   All requests to authenticate against and operate the service are performed using
-   SSL over HTTP (HTTPS) on TCP port 443.
-
+   All requests to authenticate against and operate the service are performed
+   using SSL over HTTP (HTTPS) on TCP port 443.
 
 .. toctree:: :hidden:
    :maxdepth: 3

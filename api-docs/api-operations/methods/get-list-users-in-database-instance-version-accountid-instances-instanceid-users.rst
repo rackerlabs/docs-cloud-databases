@@ -2,7 +2,7 @@
 .. _get-list-users-in-database-instance-version-accountid-instances-instanceid-users:
 
 List users in database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,26 +10,23 @@ List users in database instance
 
 Lists the users in the specified database instance.
 
-This operation lists the users in the specified database instance, along with the associated databases for that user. 
+This operation lists the users in the specified database instance, along with
+the associated databases for that user.
 
 .. note::
-   This operation does not return the system users (database administrators that administer the health of the database). Also, this operation returns the "root" user only if "root" user has been enabled.
-   
-   
+   This operation does not return the system users (database administrators
+   that administer the health of the database). Also, this operation returns
+   the "root" user only if "root" user has been enabled.
 
 The following notes apply to database users:
 
-
-
 *  User names can be up to 16 characters long.
-*  When you create accounts with INSERT, you must use FLUSH PRIVILEGES to tell the server to reload the grant tables.
-*  For additional information, refer to: `http://dev.mysql.com/doc/refman/5.1/en/user-account-management.html <http://dev.mysql.com/doc/refman/5.1/en/user-account-management.html>`__
-
-
-
+*  When you create accounts with INSERT, you must use FLUSH PRIVILEGES to tell
+   the server to reload the grant tables.
+*  For additional information, refer to
+   `http://dev.mysql.com/doc/refman/5.1/en/user-account-management.html <http://dev.mysql.com/doc/refman/5.1/en/user-account-management.html>`__
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -78,13 +75,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
-
+"""""""
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -99,17 +91,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List users in database instance: JSON request**
-
 
 The following example shows the List users in database instance request:
 
@@ -121,18 +105,11 @@ The following example shows the List users in database instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 **Example List users in database instance paged request: JSON**
 
-
-The following example shows the paginated List users in database instance requests to return a limit of two users at a time ( ``users?limit=2`` ):
+The following example shows the paginated List users in database instance
+requests to return a limit of two users at a time ( ``users?limit=2`` ).
 
 .. code::
 
@@ -142,28 +119,11 @@ The following example shows the paginated List users in database instance reques
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List users in database instance response: JSON**
-
 
 The following example shows the List users in database instance response:
 
@@ -175,7 +135,7 @@ The following example shows the List users in database instance response:
    Content-Length: 322
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "users": [
            {
@@ -183,54 +143,51 @@ The following example shows the List users in database instance response:
                    {
                        "name": "databaseA"
                    }
-               ], 
-               "host": "%", 
+               ],
+               "host": "%",
                "name": "dbuser1"
-           }, 
+           },
            {
                "databases": [
                    {
                        "name": "databaseB"
-                   }, 
+                   },
                    {
                        "name": "databaseC"
                    }
-               ], 
-               "host": "%", 
+               ],
+               "host": "%",
                "name": "dbuser2"
-           }, 
+           },
            {
                "databases": [
                    {
                        "name": "databaseD"
                    }
-               ], 
-               "host": "%", 
+               ],
+               "host": "%",
                "name": "dbuser3"
-           }, 
+           },
            {
                "databases": [
                    {
                        "name": "sampledb"
                    }
-               ], 
-               "host": "%", 
+               ],
+               "host": "%",
                "name": "demouser"
            }
        ]
    }
-   
 
-
-Refer to :ref:`User access restriction by host <cdb-dg-generalapi-security-restriction>` for a description of the ``host`` field.
-
-
-
+Refer to
+:ref:`User access restriction by host <cdb-dg-generalapi-security-restriction>`
+for a description of the ``host`` field.
 
 **Example List users in database instance paged response: JSON**
 
-
-The following example shows the paginated List users in database instance response.
+The following example shows the paginated List users in database instance
+response.
 
 .. code::
 
@@ -240,42 +197,40 @@ The following example shows the paginated List users in database instance respon
    Content-Length: 336
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "links": [
            {
-               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users?marker=dbuser2%2540%2525&limit=2", 
+               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/users?marker=dbuser2%2540%2525&limit=2",
                "rel": "next"
            }
-       ], 
+       ],
        "users": [
            {
                "databases": [
                    {
                        "name": "databaseA"
                    }
-               ], 
-               "host": "%", 
+               ],
+               "host": "%",
                "name": "dbuser1"
-           }, 
+           },
            {
                "databases": [
                    {
                        "name": "databaseB"
-                   }, 
+                   },
                    {
                        "name": "databaseC"
                    }
-               ], 
-               "host": "%", 
+               ],
+               "host": "%",
                "name": "dbuser2"
            }
        ]
    }
-   
 
-
-Note that the response contains the link ( ``href`` ) to the next set of users in the list ( ``users?marker=dbuser2%4010.0.0.1 & limit=2`` ), so using that link for the request will return the next two users in the list after ``dbuser2%4010.0.0.1``.
-
-
-
+Note that the response contains the link ( ``href`` ) to the next set of users
+in the list ( ``users?marker=dbuser2%4010.0.0.1 & limit=2`` ), so using that
+link for the request will return the next two users in the list after
+``dbuser2%4010.0.0.1``.

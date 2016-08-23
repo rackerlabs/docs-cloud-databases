@@ -2,20 +2,19 @@
 .. _get-list-user-version-accountid-instances-instanceid-users-name:
 
 List user
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^
 
 .. code::
 
     GET /{version}/{accountId}/instances/{instanceId}/users/{name}
 
-Lists the specified user's name and a list of databases that the user can access.
+Lists the specified user's name and a list of databases that the user can
+access.
 
-This operation lists the specified user's name and a list of databases that the user can access.
-
-
+This operation lists the specified user's name and a list of databases that
+the user can access.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +63,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -92,17 +87,9 @@ This table shows the URI parameters for the request:
 |               |              |IP).                                           |
 +---------------+--------------+-----------------------------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List user: JSON request**
-
 
 The following example shows the List user request:
 
@@ -114,20 +101,16 @@ The following example shows the List user request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 **Example List user access for restricted host request: JSON**
 
-
 The following example shows the List user for restricted host request.
 
-This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:
+This example shows using the host parameter syntax (user@host) to restrict the
+user to connecting from a particular host for the call. In this example,
+user@host has been URL encoded by the client, so the parameter dbuser1@% is URL
+encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In
+this case, since % is used for the host, the user can connect from any host.
 
 .. code::
 
@@ -137,28 +120,11 @@ This example shows using the host parameter syntax (user@host) to restrict the u
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List user: JSON response**
-
 
 The following example shows the List user responses:
 
@@ -182,18 +148,16 @@ The following example shows the List user responses:
          ]
       }
    }
-   
-
-
-
-
 
 **Example List user access for restricted host response: JSON**
 
-
 The following example shows the List user for restricted host response.
 
-This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:
+This example shows using the host parameter syntax (user@host) to restrict the
+user to connecting from a particular host for the call. In this example,
+user@host has been URL encoded by the client, so the parameter dbuser1@% is URL
+encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In
+this case, since % is used for the host, the user can connect from any host.
 
 .. code::
 
@@ -203,16 +167,11 @@ This example shows using the host parameter syntax (user@host) to restrict the u
    Content-Length: 59
    Date: Wed, 08 May 2013 22:43:35 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "user": {
-           "databases": [], 
-           "host": "%", 
+           "databases": [],
+           "host": "%",
            "name": "dbuser1"
        }
    }
-   
-
-
-
-

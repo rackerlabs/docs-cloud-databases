@@ -2,7 +2,7 @@
 .. _post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action:
 
 Remove Replica from an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,31 +10,26 @@ Remove Replica from an HA instance
 
 Removes a replica node from the HA setup specified by {ha_id}.
 
-This operation removes/detaches a replica node from the HA group. The HA instance goes 
-into the ``REMOVING_REPLICA`` state as a result of this action. It switches back to 
-``ACTIVE`` once the operation is complete. The instance that is detached also goes 
-into a ``DETACH_REPLICA`` state when it is being disabled as a replica and switches back 
-to ``ACTIVE`` once detached.
+This operation removes/detaches a replica node from the HA group. The HA
+instance goes into the ``REMOVING_REPLICA`` state as a result of this action.
+It switches back to ``ACTIVE`` once the operation is complete. The instance
+that is detached also goes into a ``DETACH_REPLICA`` state when it is being
+disabled as a replica and switches back to ``ACTIVE`` once detached.
 
 .. warning::
-   Removing a replica node would restart the MHA manager service (which monitors the 
-   source/replica instances to trigger failover) and the haproxy service on the load 
-   balancer nodes. For more information, see 
+   Removing a replica node would restart the MHA manager service (which
+   monitors the source/replica instances to trigger failover) and the haproxy
+   service on the load balancer nodes. For more information, see
    :how-to:`High Availability for Cloud Databases <high-availability-for-cloud-databases>`.
-   
-   
 
 .. warning::
-   Detaching a replica from the HA setup will cause a MySQL service restart on the detached instance.
-   
-   
+   Detaching a replica from the HA setup will cause a MySQL service restart on
+   the detached instance.
 
-The following table lists the required and optional attributes for creating a replica for an HA instance.
-
-
+The following table lists the required and optional attributes for creating a
+replica for an HA instance.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -84,12 +79,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -104,15 +95,7 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Remove Replica from an HA instance: JSON request**
-
 
 The following example shows the Remove replica from an HA instance request:
 
@@ -125,26 +108,11 @@ The following example shows the Remove replica from an HA instance request:
    Accept: application/json
    Content-Type: application/json
    '{"remove_replica": "130922a2-b9ab-4e95-86be-9c5d79171b5"}'
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Remove Replica from an HA instance: JSON response**
-
 
 The following example shows the Remove replica from an HA instance response:
 
@@ -157,8 +125,3 @@ The following example shows the Remove replica from an HA instance response:
    Date: Fri, 31 Jul 2015 18:33:09 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

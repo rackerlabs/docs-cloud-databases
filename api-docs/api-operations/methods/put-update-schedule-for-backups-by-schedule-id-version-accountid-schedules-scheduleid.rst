@@ -2,7 +2,7 @@
 .. _put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid:
 
 Update schedule for backups by schedule ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,13 +10,14 @@ Update schedule for backups by schedule ID
 
 Updates the backup schedule for the specified schedule.
 
-This operation updates the schedule for running backups for the specified schedule.
+This operation updates the schedule for running backups for the specified
+schedule.
 
-The following table shows the required and optional attributes for Update schedule for backups by schedule ID.
+The following table shows the required and optional attributes for Update
+schedule for backups by schedule ID.
 
 .. table:: Required and optional attributes for Update schedule for backups by schedule ID
 
-    
     +--------------------------+-------------------------+-------------------------+
     |Name                      |Description              |Required                 |
     +==========================+=========================+=========================+
@@ -35,12 +36,8 @@ The following table shows the required and optional attributes for Update schedu
     |                          |automated backups to     |                         |
     |                          |keep.                    |                         |
     +--------------------------+-------------------------+-------------------------+
-    
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -89,12 +86,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -109,15 +102,7 @@ This table shows the URI parameters for the request:
 |                          |                         |specified schedule.      |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Update schedule for backups by schedule ID: JSON request**
-
 
 The following example shows the Update backup schedule by schedule ID request:
 
@@ -129,7 +114,7 @@ The following example shows the Update backup schedule by schedule ID request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
      "schedule": {
        "day_of_week": 2,
@@ -139,24 +124,10 @@ The following example shows the Update backup schedule by schedule ID request:
      }
    }
 
-
-
-
-
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Update schedule for backups by schedule ID: JSON response**
-
 
 The following example shows the Update backup schedule by schedule ID response:
 
@@ -166,8 +137,3 @@ The following example shows the Update backup schedule by schedule ID response:
    Content-Type: application/json
    Content-Length: 0
    Date: Mon, 18 Mar 2013 19:09:17 GMT
-   
-
-
-
-
