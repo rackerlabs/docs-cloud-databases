@@ -2,7 +2,7 @@
 .. _put-update-database-instance-version-accountid-instances-instanceid:
 
 Update database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,19 +10,16 @@ Update database instance
 
 Associates a specified database instance with a configuration group.
 
-This operation associates a specified database instance with a configuration group.
-
-
+This operation associates a specified database instance with a configuration
+group.
 
 .. note::
-   If any of the parameters in the configuration require a restart, then you will need to reboot the Database instance after associating the configuration. You can call the API operation List Configuration Parameters to find out which of the configuration parameters require a restart.
-   
-   
-
-
+   If any of the parameters in the configuration require a restart, then you
+   will need to reboot the Database instance after associating the
+   configuration. You can call the API operation List Configuration Parameters
+   to find out which of the configuration parameters require a restart.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -71,12 +68,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -92,17 +85,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Update database instance: JSON request**
-
 
 The following example shows the Update database instance request:
 
@@ -114,32 +99,17 @@ The following example shows the Update database instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "instance": {
            "configuration": ""
        }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Update database instance: JSON response**
-
 
 The following example shows the Update database instance response:
 
@@ -151,8 +121,3 @@ The following example shows the Update database instance response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

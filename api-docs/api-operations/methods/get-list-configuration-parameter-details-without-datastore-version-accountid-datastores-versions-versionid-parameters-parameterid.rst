@@ -2,18 +2,16 @@
 .. _get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid:
 
 List configuration parameter details without datastore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     GET /{version}/{accountId}/datastores/versions/{versionId}/parameters/{parameterId}
 
-Lists the details of a specified configuration parameter that may be configured on the system without specifying a datastore.
-
-
+Lists the details of a specified configuration parameter that may be configured
+on the system without specifying a datastore.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +60,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -87,19 +81,12 @@ This table shows the URI parameters for the request:
 |                          |                         |version.                 |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
-
-
-
 
 **Example List configuration parameter details without datastore: JSON request**
 
-
-The following example shows the List configuration parameter details without datastore request:
+The following example shows the List configuration parameter details without
+datastore request:
 
 .. code::
 
@@ -109,30 +96,14 @@ The following example shows the List configuration parameter details without dat
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List configuration parameter details without datastore: JSON response**
 
-
-The following example shows the List configuration parameter details without datastore response:
+The following example shows the List configuration parameter details without
+datastore response:
 
 .. code::
 
@@ -142,16 +113,11 @@ The following example shows the List configuration parameter details without dat
    Content-Length: 98
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
-       "max": 1, 
-       "min": 0, 
-       "name": "innodb_file_per_table", 
-       "restart_required": true, 
+       "max": 1,
+       "min": 0,
+       "name": "innodb_file_per_table",
+       "restart_required": true,
        "type": "integer"
    }
-   
-
-
-
-

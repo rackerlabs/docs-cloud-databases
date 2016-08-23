@@ -2,7 +2,7 @@
 .. _post-resize-the-instance-volume-version-accountid-instances-instanceid-action:
 
 Resize the instance volume
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,19 +10,17 @@ Resize the instance volume
 
 Resizes the volume attached to the Instance.
 
-This operation supports resizing the attached volume for an instance. It supports only increasing the volume size and does not support decreasing the size. The volume size is in gigabytes (GB) and must be an integer.
+This operation supports resizing the attached volume for an instance. It
+supports only increasing the volume size and does not support decreasing the
+size. The volume size is in gigabytes (GB) and must be an integer.
 
 .. note::
-   You cannot increase the volume to a size larger than the API volume size limit specifies.
-   
-   
+   You cannot increase the volume to a size larger than the API volume size
+   limit specifies.
 
 This operation returns a 202 Accepted response.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -78,12 +76,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -99,17 +93,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Resize the instance volume: JSON request**
-
 
 The following example shows the Resize instance volume request:
 
@@ -121,7 +107,7 @@ The following example shows the Resize instance volume request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "resize": {
            "volume": {
@@ -129,26 +115,11 @@ The following example shows the Resize instance volume request:
            }
        }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Resize the instance volume: JSON response**
-
 
 The following example shows the Resize instance volume response:
 
@@ -160,8 +131,3 @@ The following example shows the Resize instance volume response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:18 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

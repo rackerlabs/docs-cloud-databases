@@ -2,7 +2,7 @@
 .. _get-list-flavors-for-datastore-version-version-accountid-datastores-datastoretype-versions-versionid-flavors:
 
 List flavors for datastore version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists flavors for a datastore version.
 
 This operation lists the flavors for a datastore version.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -87,17 +80,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified datastore.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List flavors for datastore version: JSON request**
-
 
 The following example shows the Lists flavors for datastore version request:
 
@@ -109,26 +94,11 @@ The following example shows the Lists flavors for datastore version request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List flavors for datastore version: JSON response**
-
 
 The following example shows the Lists flavors for datastore version response:
 
@@ -140,133 +110,128 @@ The following example shows the Lists flavors for datastore version response:
    Content-Length: 1186
    Date: Thu, 13 Feb 2014 21:47:13 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "flavors": [
            {
-               "id": 1, 
+               "id": 1,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/1",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "512MB Instance", 
+               ],
+               "name": "512MB Instance",
                "ram": 512
-           }, 
+           },
            {
-               "id": 2, 
+               "id": 2,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/2", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/2",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/2", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/2",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "1GB Instance", 
+               ],
+               "name": "1GB Instance",
                "ram": 1024
-           }, 
+           },
            {
-               "id": 3, 
+               "id": 3,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/3",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/3", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/3",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "2GB Instance", 
+               ],
+               "name": "2GB Instance",
                "ram": 2048
-           }, 
+           },
            {
-               "id": 4, 
+               "id": 4,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/4", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/4",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/4", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/4",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "4GB Instance", 
+               ],
+               "name": "4GB Instance",
                "ram": 4096
-           }, 
+           },
            {
-               "id": 5, 
+               "id": 5,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/5", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/5",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/5", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/5",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "8GB Instance", 
+               ],
+               "name": "8GB Instance",
                "ram": 8192
-           }, 
+           },
            {
-               "id": 6, 
+               "id": 6,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/6", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/6",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/6", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/6",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "16GB Instance", 
+               ],
+               "name": "16GB Instance",
                "ram": 16384
            },
            {
-               "id": 7, 
+               "id": 7,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/647683/flavors/7", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/647683/flavors/7",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/7", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/7",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "32GB Instance", 
+               ],
+               "name": "32GB Instance",
                "ram": 32768
-           }, 
+           },
            {
-               "id": 8, 
+               "id": 8,
                "links": [
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/647683/flavors/8", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/v1.0/647683/flavors/8",
                        "rel": "self"
-                   }, 
+                   },
                    {
-                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/8", 
+                       "href": "https://ord.databases.api.rackspacecloud.com/flavors/8",
                        "rel": "bookmark"
                    }
-               ], 
-               "name": "64GB Instance", 
+               ],
+               "name": "64GB Instance",
                "ram": 65536
            }
        ]
    }
-   
-
-
-
-

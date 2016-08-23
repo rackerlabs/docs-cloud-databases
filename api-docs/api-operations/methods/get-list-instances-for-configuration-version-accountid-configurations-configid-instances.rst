@@ -2,7 +2,7 @@
 .. _get-list-instances-for-configuration-version-accountid-configurations-configid-instances:
 
 List instances for configuration
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,10 +10,7 @@ List instances for configuration
 
 Lists instances that are associated with the specified configuration group.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +59,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -83,17 +76,9 @@ This table shows the URI parameters for the request:
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List instances for configuration: JSON request**
-
 
 The following example shows the List instances for configuration request:
 
@@ -105,28 +90,11 @@ The following example shows the List instances for configuration request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List instances for configuration: JSON response**
-
 
 The following example shows the List instances for configuration response:
 
@@ -138,17 +106,12 @@ The following example shows the List instances for configuration response:
    Content-Length: 93
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "instances": [
            {
-               "id": "d4603f69-ec7e-4e9b-803f-600b9205576f", 
+               "id": "d4603f69-ec7e-4e9b-803f-600b9205576f",
                "name": "json_rack_instance"
            }
        ]
    }
-   
-
-
-
-

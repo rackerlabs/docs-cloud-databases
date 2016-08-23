@@ -1,10 +1,10 @@
 .. _create-database-instance:
 
 Create and use a database instance
--------------------------------------------------
+----------------------------------
 
-Use the examples in the following sections to 
-create, use, and manage a database instance, database, and 
+Use the examples in the following sections to
+create, use, and manage a database instance, database, and
 database users.
 
 You'll learn how to complete the following tasks:
@@ -13,9 +13,7 @@ You'll learn how to complete the following tasks:
 - Create a database instance, a database, and a database user
 - Verify that the database and user have been created by using list operations.
 
-
 .. include:: ../common-gs/default-env-variables.txt
-     
 
 .. include:: examples/list-flavors.rst
 .. include:: examples/create-db-instance.rst

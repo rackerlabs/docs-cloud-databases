@@ -2,7 +2,7 @@
 .. _get-list-flavor-by-id-version-accountid-flavors-flavorid:
 
 List flavor by ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,19 +10,18 @@ List flavor by ID
 
 Lists all flavor information about the specified flavor ID.
 
-This operation lists all information for the specified flavor ID with details of the RAM.
+This operation lists all information for the specified flavor ID with details
+of the RAM.
 
-This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.
+This resource is identical to the flavors found in the OpenStack Nova API, but
+without the disk property.
 
 .. note::
-   The flavorId parameter should be an integer. If a floating point value is used for the flavorId parameter, the decimal portion is truncated and the integer portion is used as the value of the flavorId.
-   
-   
-
-
+   The flavorId parameter should be an integer. If a floating point value is
+   used for the flavorId parameter, the decimal portion is truncated and the
+   integer portion is used as the value of the flavorId.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -71,12 +70,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -91,17 +86,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified flavor.        |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List flavor by ID: JSON request**
-
 
 The following example shows the List flavor by ID request:
 
@@ -113,25 +100,9 @@ The following example shows the List flavor by ID request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List flavor by ID: JSON response**
 
@@ -146,26 +117,21 @@ The following example shows the List flavor by ID response:
    Content-Length: 206
    Date: Thu, 13 Feb 2014 21:47:13 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "flavor": {
-           "id": 1, 
+           "id": 1,
            "links": [
                {
-                   "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1", 
+                   "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/1",
                    "rel": "self"
-               }, 
+               },
                {
-                   "href": "https://ord.databases.api.rackspacecloud.com/flavors/1", 
+                   "href": "https://ord.databases.api.rackspacecloud.com/flavors/1",
                    "rel": "bookmark"
                }
-           ], 
-           "name": "512MB Instance", 
+           ],
+           "name": "512MB Instance",
            "ram": 512
        }
    }
-   
-
-
-
-

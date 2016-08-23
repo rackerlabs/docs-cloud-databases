@@ -29,7 +29,6 @@ High Availability instance groups are supported for MySQL 5.6, Percona
 
 The following are guidelines for High Availability instance groups:
 
-
 -  Currently we are charging the same price for High Availability
    database instances as for single instances for a limited time. In the
    future, there will be an increase in the price of High Availability
@@ -66,8 +65,6 @@ The following are guidelines for High Availability instance groups:
    being added, the HA state would be ``ADDING_REPLICA`` and would
    switch to ``ACTIVE`` once the node has been successfully added.
 
-
-
 ..  warning::
 
    Automatically adding a new replica node would restart the MHA manager
@@ -76,8 +73,6 @@ The following are guidelines for High Availability instance groups:
    to the KC article for more details about these components at
    :how-to:`High availability for Cloud Databases
    <high-availability-for-cloud-databases>`.
-
-
 
 **Recommendation. **\ It is recommended to have two replicas on an HA
 group. Having two replicas will ensure that in case failover occurs,

@@ -1,8 +1,8 @@
 .. _manage-tz-dbinstance-using-config-grp:
 
 Manage time zone configuration
----------------------------------------------------
-   
+------------------------------
+
 The server time zone for a set of current and future database instances
 can be set using the configuration groups feature of Cloud Databases.
 Suppose you want to set the default time zone for a set of database
@@ -27,8 +27,8 @@ for your zone, such as "Europe/London" or "US/Eastern" to set the
 For more information about named time zones, see the `MySQL documentation`_ .
 
 To set the ``default_time_zone`` using offsets of the time zone from
-`UTC (Coordinated Universal Time)`_  use the appropriate offset value for your zone. 
-For example the CST (Central Standard Time) time zone would be "-6:00":
+`UTC (Coordinated Universal Time)`_  use the appropriate offset value for your
+zone. For example the CST (Central Standard Time) time zone would be "-6:00":
 
 ``{"default_time_zone":"-6:00”}``
 
@@ -40,16 +40,15 @@ applied to your database instance. You can create a new configuration
 group just for the time zone management, or add the time zone parameter
 to an existing configuration group.
 
-After you update time zone settings on a database instance, you can 
+After you update time zone settings on a database instance, you can
 :ref:`check the server time <check-server-time-zone>` to verify the change.
 
-Following are two methods for using a configuration group to set the default time 
-zone:
+Following are two methods for using a configuration group to set the default
+time zone:
 
 .. include:: examples/manage-tz-trove.rst
 .. include:: examples/manage-tz-curl.rst
 .. include:: examples/check-server-time-mysql.rst
-
 
 .. Below are links definitions for above time zone info
 

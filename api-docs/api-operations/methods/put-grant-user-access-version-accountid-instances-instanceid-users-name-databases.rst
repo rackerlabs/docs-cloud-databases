@@ -2,20 +2,21 @@
 .. _put-grant-user-access-version-accountid-instances-instanceid-users-name-databases:
 
 Grant user access
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 .. code::
 
     PUT /{version}/{accountId}/instances/{instanceId}/users/{name}/databases
 
-Grants access for the specified user to one or more databases for the specified instance.
+Grants access for the specified user to one or more databases for the specified
+instance.
 
-This operation grants access for the specified user to one or more databases for the specified instance. The user is granted ALL privileges on the database. Refer to the information at the beginning of :ref:`Users <user-operations>` for more details on access.
-
-
+This operation grants access for the specified user to one or more databases
+for the specified instance. The user is granted ALL privileges on the database.
+Refer to the information at the beginning of :ref:`Users <user-operations>`
+for more details on access.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +66,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -93,17 +90,9 @@ This table shows the URI parameters for the request:
 |               |              |IP).                                           |
 +---------------+--------------+-----------------------------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Grant user access: JSON request**
-
 
 The following example shows the Grant user access request:
 
@@ -115,7 +104,7 @@ The following example shows the Grant user access request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "databases": [
            {
@@ -123,26 +112,11 @@ The following example shows the Grant user access request:
            }
        ]
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Grant user access: JSON response**
-
 
 The following example shows the Grant user access response:
 
@@ -154,8 +128,3 @@ The following example shows the Grant user access response:
    Content-Length: 0
    Date: Wed, 08 May 2013 22:43:35 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

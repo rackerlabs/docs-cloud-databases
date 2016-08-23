@@ -2,7 +2,7 @@
 .. _get-list-datastore-version-version-accountid-datastores-datastoreid-versions-versionid:
 
 List datastore version
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists datastore version.
 
 This operation lists the datastore version for the specified version.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -87,17 +80,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified datastore.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List datastore version: JSON request**
-
 
 The following example shows the List datastore version request:
 
@@ -109,28 +94,11 @@ The following example shows the List datastore version request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List datastore version: JSON response**
-
 
 The following example shows the List datastore version response:
 
@@ -142,7 +110,7 @@ The following example shows the List datastore version response:
    Content-Length: 374
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "version": {
            "datastore": "10000000-0000-0000-0000-000000000001",
@@ -161,8 +129,3 @@ The following example shows the List datastore version response:
            "name": "5.1"
        }
    }
-   
-
-
-
-

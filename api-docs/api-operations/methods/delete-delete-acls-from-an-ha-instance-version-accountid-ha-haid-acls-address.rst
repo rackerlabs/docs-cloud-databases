@@ -2,7 +2,7 @@
 .. _delete-delete-acls-from-an-ha-instance-version-accountid-ha-haid-acls-address:
 
 Delete ACLs from an HA instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Deletes ACLs from an HA instance.
 
 This operation deletes ACLs from an HA instance.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +62,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -90,17 +83,9 @@ This table shows the URI parameters for the request:
 |                          |                         |CIDR notated.            |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete ACLs from an HA instance: JSON request**
-
 
 The following example shows the Delete ACLs from an HA instance request:
 
@@ -112,31 +97,16 @@ The following example shows the Delete ACLs from an HA instance request:
    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
    Accept: application/json
    Content-Type: application/json
-   
-
 
 .. note::
-   Note that the string "%25252F" near the end of the IP address in the request refers to the special character for the forward slash ('/') that is used with the IP address in CIDR format ("1.2.3.4/32").
-   
-   
-
-
-
+   Note that the string "%25252F" near the end of the IP address in the request
+   refers to the special character for the forward slash ('/') that is used
+   with the IP address in CIDR format ("1.2.3.4/32").
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Delete ACLs from an HA instance: JSON response**
-
 
 The following example shows the Delete ACLs from an HA instance response:
 
@@ -149,8 +119,3 @@ The following example shows the Delete ACLs from an HA instance response:
    Date: Fri, 08 May 2015 19:36:28 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

@@ -2,7 +2,7 @@
 .. _get-list-configurations-version-accountid-configurations:
 
 List configurations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,10 +10,7 @@ List configurations
 
 Lists all defined configuration group s for the tenant.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +59,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -79,17 +72,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List configurations: JSON request**
-
 
 The following example shows the List configurations request:
 
@@ -100,28 +85,11 @@ The following example shows the List configurations request:
    User-Agent: python-troveclient
    Accept: application/json
    X-Auth-Token: 26640a608aa9482b888a1664376b8113
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List configurations: JSON response**
-
 
 The following example shows the List configurations response:
 
@@ -133,7 +101,7 @@ The following example shows the List configurations response:
    Content-Length: 336
    Date: Thu, 31 Jul 2014 19:00:54 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "configurations": [
            {
@@ -148,7 +116,3 @@ The following example shows the List configurations response:
            }
        ]
    }
-
-
-
-

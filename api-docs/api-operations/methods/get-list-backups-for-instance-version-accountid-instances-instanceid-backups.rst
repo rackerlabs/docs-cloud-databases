@@ -2,7 +2,7 @@
 .. _get-list-backups-for-instance-version-accountid-instances-instanceid-backups:
 
 List backups for instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists all backups for a specified instance.
 
 This operation lists all backups for a specified instance.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -85,17 +78,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List backups for instance: JSON request**
-
 
 The following example shows the List backups for instance request:
 
@@ -107,28 +92,11 @@ The following example shows the List backups for instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List backups for instance: JSON response**
-
 
 The following example shows the List backups for instance response:
 
@@ -140,7 +108,7 @@ The following example shows the List backups for instance response:
    Content-Length: 338
    Date: Thu, 13 Feb 2014 21:47:16 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "backup": {
            "status": "COMPLETED",
@@ -160,7 +128,3 @@ The following example shows the List backups for instance response:
            "locationRef": "http://localhost/path/to/backup"
        }
    }
-
-
-
-

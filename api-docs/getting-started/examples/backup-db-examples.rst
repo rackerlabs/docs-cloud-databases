@@ -1,29 +1,29 @@
 .. _backup-dbinstance-client:
 
 Backing up by using the trove client
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can back up a database instance by using the
-**backup-create** command. You need to include the 
+**backup-create** command. You need to include the
 ID for the database instance and supply a name for the backup.
 
-You can also include an optional backup description, enclosed in 
+You can also include an optional backup description, enclosed in
 double quotation marks, for example ``"backup for my favorite database"``
 
-The following example creates a back up of the ``mytroveinstance`` database 
-created by the example in 
+The following example creates a back up of the ``mytroveinstance`` database
+created by the example in
 :ref:`Create a Database Instance <creating-database-instance-and-user>` .
 
 Run the ``backup-create`` command to back up a database instance.
 
-.. code::  
+.. code::
 
     $ trove backup-create <instance_id> <name> --description <description>
 
 The command returns the name and id for the backup among the other
 information:
 
-.. code::  
+.. code::
 
     +-------------+--------------------------------------+
     |   Property  |                Value                 |
@@ -40,25 +40,20 @@ information:
     |   updated   |         2014-04-29T13:53:08          |
     +-------------+--------------------------------------+
 
-
-
-
-
 .. _backup-dbinstance-curl:
 
 Backing up by using cURL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-The following example shows the cURL request to backup data for a specified 
-database instance. You need to include the ID for the database instance in the request. 
-
+The following example shows the cURL request to backup data for a specified
+database instance. You need to include the ID for the database instance in the
+request.
 
 This operation does not require a request body.
-
     
 **Example Backup Database Instance cURL request**
 
-.. code::  
+.. code::
 
     curl -s -d \
     '{
@@ -78,17 +73,17 @@ respective values:
 -  **backup\_description** — description for the backup
 
 -  **instance\_id** — as returned in your create instance response
-   (See the the cURL example in 
-   :ref:`Create a Database Instance <creating-database-instance-and-user>` .)
+   (See the the cURL example in
+   :ref:`Create a Database Instance <creating-database-instance-and-user>`.)
 
 -  **backup\_name** — name of the backup
 
-
-The following example shows a successful response for the back up database request.
+The following example shows a successful response for the back up database
+request.
     
 **JSON response**
 
-.. code::  
+.. code::
 
     HTTP/1.1 202 Accepted
     Content-Type: application/json
@@ -96,21 +91,18 @@ The following example shows a successful response for the back up database reque
     Content-Length: 267
     Date: Thu, 27 Jun 2013 19:47:55 GMT
     Server: Jetty(8.0.y.z-SNAPSHOT)
-        
+
     {
         "backup": {
-            "created": "2013-06-27T19:47:55", 
-            "description": "My Backup", 
-            "id": "8c40f9c2-6fe8-4b6b-a823-8a6b1d181f09", 
-            "instance_id": "f07ac506-1a99-4a2a-9a32-869b453019ef", 
-            "locationRef": null, 
-            "name": "snapshot", 
-               "status": "NEW", 
+            "created": "2013-06-27T19:47:55",
+            "description": "My Backup",
+            "id": "8c40f9c2-6fe8-4b6b-a823-8a6b1d181f09",
+            "instance_id": "f07ac506-1a99-4a2a-9a32-869b453019ef",
+            "locationRef": null,
+            "name": "snapshot",
+               "status": "NEW",
                "updated": "2013-06-27T19:47:55"
         }
     }
 
-
-
 You can see that the backups were successfully created.
-

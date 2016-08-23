@@ -1,19 +1,16 @@
-
 .. _put-replace-all-configuration-parameters-version-accountid-configurations-configid:
 
 Replace all configuration parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
     PUT /{version}/{accountId}/configurations/{configId}
 
-Replaces all of the configuration parameter s associated with the specified configuration group.
-
-
+Replaces all of the configuration parameter s associated with the specified
+configuration group.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -62,12 +59,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -83,16 +76,7 @@ This table shows the URI parameters for the request:
 |                          |                         |configuration group.     |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Replace all configuration parameters: JSON request**
-
 
 The following example shows the Replace all configuration parameters request:
 
@@ -104,39 +88,25 @@ The following example shows the Replace all configuration parameters request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "configuration": {
-           "description": "example updated description", 
-           "name": "example-updated-name", 
+           "description": "example updated description",
+           "name": "example-updated-name",
            "values": {
-               "collation_server": "utf8_unicode_ci", 
+               "collation_server": "utf8_unicode_ci",
                "connect_timeout": 150
            }
        }
    }
-   
-
 
 .. note::
-   Each value provided for ``name`` and ``description`` must be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.
-   
-   
-
-
-
+   Each value provided for ``name`` and ``description`` must be a string
+   composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase
+   alpha characters may be used.
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Replace all configuration parameters: JSON response**
 
@@ -151,9 +121,5 @@ The following example shows the Replace all configuration parameters response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
 This operation does not return a response body.
-
-
-
-

@@ -4,14 +4,19 @@
 Limits
 ======
 
-All accounts, by default, have a preconfigured set of thresholds (or limits) to manage capacity and prevent abuse of the system. The system recognizes two kinds of limits: *rate limits* and *absolute limits*. Rate limits are thresholds that are reset after a certain amount of time passes. Absolute limits are fixed.
+All accounts, by default, have a preconfigured set of thresholds (or limits)
+to manage capacity and prevent abuse of the system. The system recognizes two
+kinds of limits: *rate limits* and *absolute limits*. Rate limits are
+thresholds that are reset after a certain amount of time passes. Absolute
+limits are fixed.
 
 .. _cdb-dg-generalapi-limits-rate:
 
 Rate limits
 ~~~~~~~~~~~
 
-The following table specifies the default rate limits for all Rackspace Cloud Databases API operations:
+The following table specifies the default rate limits for all Rackspace Cloud
+Databases API operations:
 
 +---------------------------------+----------------------------------------------------------------------+------------+
 |          API Operation          |                              API Action                              | Rate Limit |
@@ -82,7 +87,9 @@ The following table specifies the default rate limits for all Rackspace Cloud Da
 | (same as create instance)       |                                                                      |            |
 +---------------------------------+----------------------------------------------------------------------+------------+
 
-If you exceed the thresholds established for your account, a 413 (rate Control) HTTP response will be returned with a ``Retry-After`` header to notify the client when it can attempt to try again.
+If you exceed the thresholds established for your account, a 413 (rate Control)
+HTTP response will be returned with a ``Retry-After`` header to notify the
+client when it can attempt to try again.
 
 .. _cdb-dg-generalapi-limits-absolute:
 
@@ -98,5 +105,3 @@ Refer to the following table for the absolute limits that are set.
 +----------------+--------------------------------------------------------------------------+-------+
 | Volume Size    | Maximum volume size per instance in gigabytes (GB) for your account      |  1024 |
 +----------------+--------------------------------------------------------------------------+-------+
-
-

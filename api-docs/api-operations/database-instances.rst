@@ -1,12 +1,9 @@
 .. _database-instances-operations:
 
 Database instances
-~~~~~~~~~~~~~~~~~~~
-
-
+~~~~~~~~~~~~~~~~~~
 
 This section describes the operations that are supported for database instances.
-
 
 .. include:: methods/post-create-database-instance-version-accountid-instances.rst
 .. include:: methods/get-list-all-database-instances-version-accountid-instances.rst
@@ -17,5 +14,3 @@ This section describes the operations that are supported for database instances.
 .. include:: methods/get-get-default-configuration-version-accountid-instances-instanceid-configuration.rst
 .. include:: methods/post-enable-root-user-version-accountid-instances-instanceid-root.rst
 .. include:: methods/get-list-root-enabled-status-version-accountid-instances-instanceid-root.rst
-
-

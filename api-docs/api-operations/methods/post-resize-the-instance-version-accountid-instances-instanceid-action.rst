@@ -2,7 +2,7 @@
 .. _post-resize-the-instance-version-accountid-instances-instanceid-action:
 
 Resize the instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,12 +10,10 @@ Resize the instance
 
 Resizes the memory of the instance.
 
-This operation changes the memory size of the instance, assuming a valid flavorRef is provided. Restarts the database service in the process.
-
-
+This operation changes the memory size of the instance, assuming a valid
+flavorRef is provided. Restarts the database service in the process.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -71,12 +69,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -92,17 +86,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Resize the instance: JSON request**
-
 
 The following example shows the Resize instance request:
 
@@ -114,32 +100,17 @@ The following example shows the Resize instance request:
    X-Auth-Token: 2eeb3252-0164-40f5-8fb7-85df5faa2698
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "resize": {
            "flavorRef": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/flavors/2"
        }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Resize the instance: JSON response**
-
 
 The following example shows the Resize instance response:
 
@@ -149,10 +120,3 @@ The following example shows the Resize instance response:
    Content-Type: text/plain; charset=UTF-8
    Content-Length: 58
    Date: Mon, 06 Feb 2012 21:28:10 GMT
-   
-      
-   
-
-
-
-

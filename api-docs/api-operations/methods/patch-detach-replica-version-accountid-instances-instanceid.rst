@@ -2,7 +2,7 @@
 .. _patch-detach-replica-version-accountid-instances-instanceid:
 
 Detach replica
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,18 +10,19 @@ Detach replica
 
 Detaches the specified replica instance from its replication source instance.
 
-This operation detaches the specified replica instance from its replication source instance. This call requires the user to specify id of the replica instance to detach.
+This operation detaches the specified replica instance from its replication
+source instance. This call requires the user to specify id of the replica
+instance to detach.
 
 .. note::
-   Detaching a replica will change the database instance status to DETACH_REPLICA. The status will change back to ACTIVE once the replica is completely detached from the source and is no longer a replica.
-   
-   
+   Detaching a replica will change the database instance status to
+   DETACH_REPLICA. The status will change back to ACTIVE once the replica
+   is completely detached from the source and is no longer a replica.
 
 The following table lists the required attributes for Detach replica:
 
 .. table:: Required and optional attributes for Detach replica
 
-    
     +-------------------+-------------------+-------------------+------------------+
     |Applies To         |Name               |Description        |Required          |
     +===================+===================+===================+==================+
@@ -29,14 +30,11 @@ The following table lists the required attributes for Detach replica:
     |                   |                   |source instance to |                  |
     |                   |                   |replicate.         |                  |
     +-------------------+-------------------+-------------------+------------------+
-    
 
-Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a list of possible database instance statuses that may be returned.
-
-
+Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>` for a
+list of possible database instance statuses that may be returned.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -86,12 +84,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -107,13 +101,6 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
 **Example Detach replica: JSON request**
 
 
@@ -127,46 +114,26 @@ The following example shows the Detach replica request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
      "instance": {
         "replica_of": ""
      }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Detach replica: JSON response**
-
 
 The following example shows the Detach replica response:
 
 .. code::
 
-   
+
    HTTP/1.1 202 Accepted
    Content-Type: application/json
    Via: 1.1 Repose (Repose/2.6.7)
    Content-Length: 0
    Date: Tue, 21 Oct 2014 21:47:15 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

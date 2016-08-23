@@ -2,7 +2,7 @@
 .. _delete-delete-database-instance-version-accountid-instances-instanceid:
 
 Delete database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -16,13 +16,8 @@ Refer to :ref:`Database instance status <cdb-dg-generalapi-dbinstance>`.
 
 .. note::
    This operation is not allowed when the instance status is ``BUILD``.
-   
-   
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -72,12 +67,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -93,17 +84,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete database instance: JSON request**
-
 
 The following example shows the Delete database instance request:
 
@@ -115,28 +98,11 @@ The following example shows the Delete database instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Delete database instance: JSON response**
-
 
 The following example shows the Delete database instance response:
 
@@ -148,8 +114,3 @@ The following example shows the Delete database instance response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:19 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

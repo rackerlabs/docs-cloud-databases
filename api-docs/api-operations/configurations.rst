@@ -1,8 +1,7 @@
 .. _configuration-operations:
 
 Configurations
-~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~
 
 This section describes the operations that are supported for
 configurations.
@@ -25,5 +24,3 @@ descriptions for the following API operations:
 .. include:: methods/put-replace-all-configuration-parameters-version-accountid-configurations-configid.rst
 .. include:: methods/delete-delete-configuration-group-version-accountid-configurations-configid.rst
 .. include:: methods/get-list-instances-for-configuration-version-accountid-configurations-configid-instances.rst
-
-

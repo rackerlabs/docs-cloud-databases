@@ -2,7 +2,7 @@
 .. _post-create-scheduled-backup-version-accountid-schedules:
 
 Create scheduled backup
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,13 +10,15 @@ Create scheduled backup
 
 Creates a schedule for running a backup periodically.
 
-This operation asynchronously creates a new schedule for running a backup periodically. This call requires the user to specify an instance ID to backup and the date/time when the backup should be made. 
+This operation asynchronously creates a new schedule for running a backup
+periodically. This call requires the user to specify an instance ID to backup
+and the date/time when the backup should be made.
 
-The following table lists the required and optional attributes for Create Backup:
+The following table lists the required and optional attributes for Create
+Backup:
 
 .. table:: Required and optional attributes for Create scheduled backup
 
-    
     +--------------------------+-------------------------+-------------------------+
     |Name                      |Description              |Required                 |
     +==========================+=========================+=========================+
@@ -46,50 +48,54 @@ The following table lists the required and optional attributes for Create Backup
     |                          |automated backups to     |                         |
     |                          |keep.                    |                         |
     +--------------------------+-------------------------+-------------------------+
-    
 
-The ``day_of_week`` attribute specifies the day in which a full backup will be made. 
-After that day, the schedule will automatically run daily incremental backups until the 
-next full backup.
+The ``day_of_week`` attribute specifies the day in which a full backup will be
+made. After that day, the schedule will automatically run daily incremental
+backups until the next full backup.
 
-The ``instance_id attribute`` is present for legacy compatibility and can only be used to 
-create single instance automated backups. For HA groups, please use the ``source_id`` 
-attribute, providing the HA group id and with the ``source_type`` set to 'ha'.
+The ``instance_id attribute`` is present for legacy compatibility and can only
+be used to create single instance automated backups. For HA groups, please use
+the ``source_id`` attribute, providing the HA group id and with the
+``source_type`` set to 'ha'.
 
-By default, the full backup retention policy is set to two full backups. You can override 
-this setting by providing the ``full_backup_retention`` attribute.
+By default, the full backup retention policy is set to two full backups. You
+can override this setting by providing the ``full_backup_retention`` attribute.
 
 .. note::
-   
-   
-   *  During the backup process, database writes on MyISAM Databases are disabled. 
-      InnoDB Databases will continue to allow all operations.
-   *  While the instance is being backed up,  you cannot add or delete databases or users. 
-      and you cannot delete, stop, or reboot the instance.
-   *  Users can only run one backup at a time. Duplicate requests return a 422 error.
-   *  Backups are not deleted when the instance is deleted. You must manually remove any 
-      backups created using the Backups API. For details, see the 
-      :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+
+   *  During the backup process, database writes on MyISAM Databases are
+      disabled. InnoDB Databases will continue to allow all operations.
+   *  While the instance is being backed up,  you cannot add or delete
+      databases or users, and you cannot delete, stop, or reboot the instance.
+   *  Users can only run one backup at a time. Duplicate requests return a 422
+      error.
+   *  Backups are not deleted when the instance is deleted. You must manually
+      remove any backups created using the Backups API. For details, see the
+      :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>`
       operation.
-   *  During backup, the files are streamed to your Cloud Files account. The process 
-      creates a container called ``z_CLOUDDB_BACKUPS`` and places all the files in it. 
-      In order for the restore and deletion of backups to work properly, do not move, 
-      rename, or delete any of the files from this container. You will be charged the 
-      normal Cloud Files rate for storage of these files. For pricing details, 
-      see the :rax:`Rackspace Cloud Calculator <calculator>`. No additional Cloud Databases 
-      fee applies for creating backups. You can delete old backups through the API. 
-      For details, see the :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
+   *  During backup, the files are streamed to your Cloud Files account. The
+      process creates a container called ``z_CLOUDDB_BACKUPS`` and places all
+      the files in it. In order for the restore and deletion of backups to work
+      properly, do not move, rename, or delete any of the files from this
+      container. You will be charged the normal Cloud Files rate for storage of
+      these files. For pricing details, see the
+      :rax:`Rackspace Cloud Calculator <calculator>`. No additional Cloud
+      Databases fee applies for creating backups. You can delete old backups
+      through the API. For details, see the
+      :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>`
       operation.
-   *  In the unlikely event that the backup fails to perform correctly and is in a 
-      ``FAILED`` state, there might be some files that were placed in the container. 
-      Use the API to delete the backup to remove any leftover files. For details, see 
-      the :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>` 
-      operation. 
-   *  When a backup is deleted, all incremental backups created from it are also be deleted.
-   *  You can create an incremental backup from another incremental backup. There is no 
-      limit to how many nested backups you can create. However, the more nested backups you 
-      create, the higher the chances of a restore failure.  
-   
+   *  In the unlikely event that the backup fails to perform correctly and is
+      in a ``FAILED`` state, there might be some files that were placed in the
+      container. Use the API to delete the backup to remove any leftover files.
+      For details, see the
+      :rax-devdocs:`Delete backup <cloud-databases/v1/developer-guide/#delete-backup>`
+      operation.
+   *  When a backup is deleted, all incremental backups created from it are
+      also be deleted.
+   *  You can create an incremental backup from another incremental backup.
+      There is no limit to how many nested backups you can create. However, the
+      more nested backups you create, the higher the chances of a restore
+      failure.
 
 This table shows the possible response codes for this operation:
 
@@ -141,12 +147,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -158,16 +160,7 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
-
-
-
-
 **Example Create scheduled backup: JSON request**
-
 
 The following example shows the Create scheduled backup request:
 
@@ -179,7 +172,7 @@ The following example shows the Create scheduled backup request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "schedule": {
            "action": "backup",
@@ -189,26 +182,11 @@ The following example shows the Create scheduled backup request:
            "minute": 30
        }
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Create scheduled backup: JSON response**
-
 
 The following example shows the Create scheduled backup response:
 
@@ -218,7 +196,7 @@ The following example shows the Create scheduled backup response:
    Content-Type: application/json
    Content-Length: 343
    Date: Mon, 18 Mar 2013 19:09:17 GMT
-   
+
    {
      "schedule": {
         "action": "backup",
@@ -241,10 +219,3 @@ The following example shows the Create scheduled backup response:
         "updated": "2014-10-30T12:30:00"
       }
    }
-
-   
-   
-
-
-
-

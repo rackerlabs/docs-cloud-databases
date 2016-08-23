@@ -2,7 +2,7 @@
 .. _get-list-backup-by-id-version-accountid-backups-backupid:
 
 List backup by ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Lists details about a specified backup.
 
 This operation lists the details for a specified backup.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -64,12 +61,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -84,17 +77,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified backup.        |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List backup by ID: JSON request**
-
 
 The following example shows the List backup by ID request:
 
@@ -106,28 +91,11 @@ The following example shows the List backup by ID request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List backup by ID: JSON response**
-
 
 The following example shows the List backup by ID response:
 
@@ -140,12 +108,12 @@ The following example shows the List backup by ID response:
    Date: Tue, 01 Sep 2015 03:34:53 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   {  
-      "backup":{  
+   {
+      "backup":{
          "status":"COMPLETED",
          "updated":"2015-09-01T03:23:36Z",
          "description":"My standalone instance backup1",
-         "datastore":{  
+         "datastore":{
             "version":"5.6",
             "type":"percona",
             "version_id":"c9760c5b-5675-4482-b097-dffdf50c22ab"
@@ -158,7 +126,7 @@ The following example shows the List backup by ID response:
          "created":"2015-09-01T03:23:28Z",
          "flavor_ram":1024,
          "instance_id":"f4aaba46-fb5f-4316-988d-88da77759968",
-         "source":{  
+         "source":{
             "type":"instance",
             "id":"f4aaba46-fb5f-4316-988d-88da77759968"
          },
@@ -167,15 +135,8 @@ The following example shows the List backup by ID response:
          "volume_size":1
       }
    }
-   
-   
-
-
-
-
 
 **Example List backup by ID: JSON response**
-
 
 The following example shows the Show details of an HA instance backup by ID response:
 
@@ -188,12 +149,12 @@ The following example shows the Show details of an HA instance backup by ID resp
    Date: Tue, 01 Sep 2015 03:39:25 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   {  
-      "backup":{  
+   {
+      "backup":{
          "status":"COMPLETED",
          "updated":"2015-08-31T22:26:29Z",
          "description":"my_ha_backup2",
-         "datastore":{  
+         "datastore":{
             "version":"5.6",
             "type":"mysql",
             "version_id":"1379cc8b-4bc5-4c4a-9e9d-7a9ad27c0866"
@@ -206,7 +167,7 @@ The following example shows the Show details of an HA instance backup by ID resp
          "created":"2015-08-31T22:26:23Z",
          "flavor_ram":1024,
          "instance_id":null,
-         "source":{  
+         "source":{
             "type":"ha",
             "id":"130922a2-b9ab-4e95-86be-9c5d79171b5e"
          },
@@ -215,8 +176,3 @@ The following example shows the Show details of an HA instance backup by ID resp
          "volume_size":1
       }
    }
-   
-
-
-
-

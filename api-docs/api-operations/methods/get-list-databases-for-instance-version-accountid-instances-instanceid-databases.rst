@@ -2,7 +2,7 @@
 .. _get-list-databases-for-instance-version-accountid-instances-instanceid-databases:
 
 List databases for instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -13,14 +13,11 @@ Lists databases for the specified instance.
 This operation lists the databases for the specified instance.
 
 .. note::
-   This operation returns only the user-defined databases, not the system databases. The system databases (mysql, information_schema, lost+found) can only be viewed by a database administrator.
-   
-   
-
-
+   This operation returns only the user-defined databases, not the system
+   databases. The system databases (mysql, information_schema, lost+found)
+   can only be viewed by a database administrator.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -69,12 +66,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -90,17 +83,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example List databases for instance: JSON request**
-
 
 The following example shows the List databases for instance request:
 
@@ -112,16 +97,8 @@ The following example shows the List databases for instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 **Example List databases for instance paged request: JSON**
-
 
 The following example shows the paginated List databases for instance request:
 
@@ -133,28 +110,11 @@ The following example shows the paginated List databases for instance request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example List databases for instance: JSON response**
-
 
 The following example shows the List databases for instance response:
 
@@ -166,34 +126,28 @@ The following example shows the List databases for instance response:
    Content-Length: 129
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "databases": [
            {
                "name": "anotherdb"
-           }, 
+           },
            {
                "name": "nextround"
-           }, 
+           },
            {
                "name": "oneMoreDB"
-           }, 
+           },
            {
                "name": "sampledb"
-           }, 
+           },
            {
                "name": "testingdb"
            }
        ]
    }
-   
-
-
-
-
 
 **Example List databases for instance paged response: JSON**
-
 
 The following example shows the paginated List databases for instance response:
 
@@ -205,22 +159,17 @@ The following example shows the paginated List databases for instance response:
    Content-Length: 192
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
+
    {
        "databases": [
            {
                "name": "anotherdb"
            }
-       ], 
+       ],
        "links": [
            {
-               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases?marker=anotherdb&limit=1", 
+               "href": "https://ord.databases.api.rackspacecloud.com/v1.0/1234/instances/d4603f69-ec7e-4e9b-803f-600b9205576f/databases?marker=anotherdb&limit=1",
                "rel": "next"
            }
        ]
    }
-   
-
-
-
-

@@ -2,7 +2,7 @@
 .. _delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid:
 
 Delete schedule for running backup by schedule ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Deletes schedule for running backups for a specified schedule ID.
 
 This operation deletes the schedule for running backups for a specified schedule ID.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +62,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -85,17 +78,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified schedule.      |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete schedule for running backup by schedule ID: JSON request**
-
 
 The following example shows the Delete schedule for backups by schedule ID request:
 
@@ -107,26 +92,11 @@ The following example shows the Delete schedule for backups by schedule ID reque
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Delete schedule for running backup by schedule ID: JSON response**
-
 
 The following example shows the Delete schedule for backups by schedule ID response:
 
@@ -136,8 +106,3 @@ The following example shows the Delete schedule for backups by schedule ID respo
    Content-Type: application/json
    Content-Length: 0
    Date: Mon, 18 Mar 2013 19:09:17 GMT
-   
-
-
-
-

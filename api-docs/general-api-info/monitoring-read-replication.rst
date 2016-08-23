@@ -4,9 +4,16 @@
 Monitoring read replication
 ===========================
 
-After setting up replication, you should periodically monitor your replicas to ensure that they are in a healthy state. See the table below for the mysql variables that you should monitor.
+After setting up replication, you should periodically monitor your replicas to
+ensure that they are in a healthy state. See the table below for the mysql
+variables that you should monitor.
 
-All the variables mentioned in the table below for monitoring replication are present in the monitoring agent running on your database instance. You can monitor these variables using https://intelligence.rackspace.com and also set up alarms to be notified of the state of your replica. You can also monitor these variables by executing the ‘SHOW GLOBAL STATUS’ and ‘SHOW SLAVE STATUS’ commands.
+All the variables mentioned in the table below for monitoring replication are
+present in the monitoring agent running on your database instance. You can
+monitor these variables using https://intelligence.rackspace.com and also set
+up alarms to be notified of the state of your replica. You can also monitor
+these variables by executing the ‘SHOW GLOBAL STATUS’ and ‘SHOW SLAVE STATUS’
+commands.
 
 **Variables for Monitoring Read Replication**
 

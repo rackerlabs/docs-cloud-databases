@@ -1,8 +1,7 @@
 .. _scheduled-backup-operations:
 
 Scheduled backups
-~~~~~~~~~~~~~~~~~~
-
+~~~~~~~~~~~~~~~~~
 
 This section describes the operations for scheduled backups of database
 instances.
@@ -20,10 +19,10 @@ instance. For details, see :ref:`post-restore-backup-version-accountid-instance
 All backups will be stored in Cloud Files and will be charged a fee for
 Cloud Files.
 
-..  note:: 
+..  note::
 
-  Any user calling the scheduled backup operations for Cloud DB will need access to 
-  Cloud Files.
+  Any user calling the scheduled backup operations for Cloud DB will need
+  access to Cloud Files.
 
 Supported datastore versions for HA are MySQL 5.6, Percona 5.6, and MariaDB 10.
 
@@ -34,6 +33,3 @@ The Scheduled backups API supports the following operations:
 .. include:: methods/get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.rst
 .. include:: methods/put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid.rst
 .. include:: methods/delete-delete-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.rst
-
-
-

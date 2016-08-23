@@ -12,10 +12,10 @@ to other Cloud Databases servers.
 You can find the available service access/endpoints for Cloud Databases
 summarized in the table below.
 
-..  tip:: 
+..  tip::
 
   To help you decide which regionalized endpoint to use, read about
-  :how-to:`special considerations <about-regions>` for choosing a region. 
+  :how-to:`special considerations <about-regions>` for choosing a region.
 
 Table 3.1. Regionalized service endpoints
 
@@ -37,8 +37,8 @@ Table 3.1. Regionalized service endpoints
 
 Replace the ``1234`` with your Rackspace Cloud account number.
 
-You can find the complete endpoint URI with your account number appended in the service catalog 
-that is returned in the :ref:`authentication response <review-auth-resp>`. Search the 
-catalog for the service type, ``rax:database`` . Then copy the URI from the publicURL field 
+You can find the complete endpoint URI with your account number appended in
+the service catalog that is returned in the \
+:ref:`authentication response <review-auth-resp>`. Search the catalog for the
+service type, ``rax:database`` . Then copy the URI from the publicURL field
 for the region you want to use.
-

@@ -2,7 +2,7 @@
 .. _delete-delete-ha-database-instance-version-accountid-ha-haid:
 
 Delete HA database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -12,10 +12,7 @@ Deletes an HA database instance.
 
 This operation deletes the specified HA database instance.
 
-
-
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +62,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -85,17 +78,9 @@ This table shows the URI parameters for the request:
 |                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete HA database instance: JSON request**
-
 
 The following example shows the Delete HA database instance request:
 
@@ -107,26 +92,11 @@ The following example shows the Delete HA database instance request:
    X-Auth-Token: f47d99adabe14bc8bd7bccda88292918
    Accept: application/json
    Content-Type: application/json
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Delete HA database instance: JSON response**
-
 
 The following example shows the Delete HA database instance response:
 
@@ -139,8 +109,3 @@ The following example shows the Delete HA database instance response:
    Date: Fri, 08 May 2015 19:36:28 GMT
    Connection: close
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-

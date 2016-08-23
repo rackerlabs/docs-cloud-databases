@@ -2,7 +2,7 @@
 .. _post-create-user-version-accountid-instances-instanceid-users:
 
 Create user
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 .. code::
 
@@ -10,11 +10,19 @@ Create user
 
 Creates a user for the specified database instance.
 
-This operation asynchronously provisions a new user for the specified database instance based on the configuration defined in the request object. Once the request is validated and progress has started on the provisioning process, a 202 Accepted response object is returned.
+This operation asynchronously provisions a new user for the specified database
+instance based on the configuration defined in the request object. Once the
+request is validated and progress has started on the provisioning process, a
+202 Accepted response object is returned.
 
-If the corresponding request cannot be fulfilled due to insufficient or invalid data, an HTTP 400 "Bad Request" error response is returned with information regarding the nature of the failure. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.
+If the corresponding request cannot be fulfilled due to insufficient or invalid
+data, an HTTP 400 "Bad Request" error response is returned with information
+regarding the nature of the failure. Failures in the validation process are
+non-recoverable and require the caller to correct the cause of the failure and
+POST the request again.
 
-The following table lists the required and optional attributes for Create User. Refer to the request examples for the required json format:
+The following table lists the required and optional attributes for Create User.
+Refer to the request examples for the required json format:
 
 .. table:: Required and optional attributes for Create user
 
@@ -36,22 +44,19 @@ The following table lists the required and optional attributes for Create User. 
     |            |                 | for details. If ``host`` is not specified, it  |          |
     |            |                 | defaults to "%".                               |          |
     +------------+-----------------+------------------------------------------------+----------+
-    
+
 
 .. note::
-   
-   
-   *  A user is granted all privileges on the specified databases.
-   *  The following user name is reserved and cannot be used for creating users: root.
-   
-   
-   
 
-Refer to the following tables for information about characters that are valid/invalid for creating database names, user names, and passwords.
+   *  A user is granted all privileges on the specified databases.
+   *  The following user name is reserved and cannot be used for creating
+      users: root.
+
+Refer to the following tables for information about characters that are
+valid/invalid for creating database names, user names, and passwords.
 
 .. table:: Valid characters that can be used in a database name, user name, and password
 
-    
     +------------------------------------------------------------------------------+
     |Character                                                                     |
     +==============================================================================+
@@ -71,11 +76,9 @@ Refer to the following tables for information about characters that are valid/in
     +------------------------------------------------------------------------------+
     |"_" is allowed anywhere in the database name, user name, and password         |
     +------------------------------------------------------------------------------+
-       
 
 .. table:: Length restrictions for database name, user name, and password
 
-    
     +---------------------------------------+--------------------------------------+
     |Restriction                            |Value                                 |
     +=======================================+======================================+
@@ -85,12 +88,8 @@ Refer to the following tables for information about characters that are valid/in
     +---------------------------------------+--------------------------------------+
     |Password maximum length                |unlimited (no restrictions)           |
     +---------------------------------------+--------------------------------------+
-    
-
-
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -140,12 +139,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -161,17 +156,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Create user: JSON request**
-
 
 The following example shows the Create user request:
 
@@ -183,7 +170,7 @@ The following example shows the Create user request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
+
    {
        "users": [
            {
@@ -191,53 +178,38 @@ The following example shows the Create user request:
                    {
                        "name": "databaseA"
                    }
-               ], 
-               "name": "dbuser1", 
+               ],
+               "name": "dbuser1",
                "password": "password"
-           }, 
+           },
            {
                "databases": [
                    {
                        "name": "databaseB"
-                   }, 
+                   },
                    {
                        "name": "databaseC"
                    }
-               ], 
-               "name": "dbuser2", 
+               ],
+               "name": "dbuser2",
                "password": "password"
-           }, 
+           },
            {
                "databases": [
                    {
                        "name": "databaseD"
                    }
-               ], 
-               "name": "dbuser3", 
+               ],
+               "name": "dbuser3",
                "password": "password"
            }
        ]
    }
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Create user: JSON response**
-
 
 The following example shows the Create user response:
 
@@ -249,8 +221,5 @@ The following example shows the Create user response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
 
 This operation does not return a response body.
-
-

@@ -2,7 +2,7 @@
 .. _delete-delete-database-version-accountid-instances-instanceid-databases-databasename:
 
 Delete database
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -10,12 +10,10 @@ Delete database
 
 Deletes the specified database.
 
-This operation deletes the requested database within the specified database instance. Note that all data associated with the database is also deleted.
-
-
+This operation deletes the requested database within the specified database
+instance. Note that all data associated with the database is also deleted.
 
 This table shows the possible response codes for this operation:
-
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
@@ -65,12 +63,8 @@ This table shows the possible response codes for this operation:
 |                          |                         |available.               |
 +--------------------------+-------------------------+-------------------------+
 
-
 Request
-""""""""""""""""
-
-
-
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -89,17 +83,9 @@ This table shows the URI parameters for the request:
 |                          |                         |specified database.      |
 +--------------------------+-------------------------+-------------------------+
 
-
-
-
-
 This operation does not accept a request body.
 
-
-
-
 **Example Delete database: JSON request**
-
 
 The following example shows the Delete database request:
 
@@ -111,28 +97,11 @@ The following example shows the Delete database request:
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-   
-   
-   
-
-
-
-
 
 Response
-""""""""""""""""
-
-
-
-
-
-
-
-
-
+""""""""
 
 **Example Delete database: JSON response**
-
 
 The following example shows the Delete database response:
 
@@ -144,8 +113,3 @@ The following example shows the Delete database response:
    Content-Length: 0
    Date: Thu, 13 Feb 2014 21:47:14 GMT
    Server: Jetty(8.0.y.z-SNAPSHOT)
-   
-
-
-
-
