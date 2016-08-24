@@ -1,8 +1,8 @@
 .. _cdb-dg-generalapi-versions:
 
-==============================
-Contract version & API version
-==============================
+================================
+Contract version and API version
+================================
 
 .. _cdb-dg-generalapi-versions-contract:
 

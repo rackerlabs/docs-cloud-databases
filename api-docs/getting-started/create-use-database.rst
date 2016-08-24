@@ -13,7 +13,7 @@ You'll learn how to complete the following tasks:
 - Create a database instance, a database, and a database user
 - Verify that the database and user have been created by using list operations.
 
-.. include:: ../common-gs/default-env-variables.txt
+.. include:: ../common-gs/default-env-variables.rst
 
 .. include:: examples/list-flavors.rst
 .. include:: examples/create-db-instance.rst
