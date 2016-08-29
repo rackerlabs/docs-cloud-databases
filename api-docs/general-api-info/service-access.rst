@@ -41,6 +41,4 @@ located  after the  final slash (/) in the ``publicURL`` field.
 The service catalog returned in the authentication response specifies the
 correct service access endpoint for your account to use for accessing
 |product name|. Use the service type (``rax:database``) to locate the
-correct endpoint in the service catalog. For an example of the service
-catalog, see
-:ref:`authentication response examples <authentication-response-examples>`.
+correct endpoint in the service catalog. 
