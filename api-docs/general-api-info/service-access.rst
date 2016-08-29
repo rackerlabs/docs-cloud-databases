@@ -4,20 +4,19 @@
 Service access endpoints
 ========================
 
-The Database Service is a regionalized service. The user of the service
+The |apiservice| service is a regionalized service. The user of the service
 is therefore responsible for appropriate replication, caching, and
 overall maintenance of Cloud Databases data across regional boundaries
 to other Cloud Databases servers.
 
-You can find the available service access/endpoints for Cloud Databases
-summarized in the table below.
+The following table lists the |product name| endpoints that are available
+for each region.
 
-..  tip::
+.. tip::
+   To help you decide which regionalized endpoint to use, read about
+   :how-to:`special considerations for choosing a region <about-regions>`.
 
-  To help you decide which regionalized endpoint to use, read about
-  :how-to:`special considerations <about-regions>` for choosing a region.
-
-Table 3.1. Regionalized service endpoints
+**Regionalized service endpoints**
 
 +-------------------------+----------------------------------------------------------------------------+
 | Region                  | Endpoint                                                                   |
@@ -35,10 +34,13 @@ Table 3.1. Regionalized service endpoints
 | Hong Kong (HKG)         | ``https://hkg.databases.api.rackspacecloud.com/v1.0/1234``                 |
 +-------------------------+----------------------------------------------------------------------------+
 
-Replace the ``1234`` with your Rackspace Cloud account number.
+Replace the sample account ID number, ``1234``, with your actual account number
+that is returned as part of the authentication response. The account number is
+located  after the  final slash (/) in the ``publicURL`` field.
 
-You can find the complete endpoint URI with your account number appended in
-the service catalog that is returned in the \
-:ref:`authentication response <review-auth-resp>`. Search the catalog for the
-service type, ``rax:database`` . Then copy the URI from the publicURL field
-for the region you want to use.
+The service catalog returned in the authentication response specifies the
+correct service access endpoint for your account to use for accessing
+|product name|. Use the service type (``rax:database``) to locate the
+correct endpoint in the service catalog. For an example of the service
+catalog, see
+:ref:`authentication response examples <authentication-response-examples>`.

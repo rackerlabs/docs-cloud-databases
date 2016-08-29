@@ -27,7 +27,7 @@ access between products and services.
    request-response
    pagination
    limits
-   database-faults
+   faults
    date-time-format  
    database-instance-status
    database-instance-accessibility
