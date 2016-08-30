@@ -1,7 +1,7 @@
 .. _database-operations:
 
 Databases
-~~~~~~~~~
+=========
 
 This section describes the operations that are supported for databases.
 

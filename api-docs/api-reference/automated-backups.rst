@@ -1,7 +1,8 @@
 .. _scheduled-backup-operations:
 
+=================
 Scheduled backups
-~~~~~~~~~~~~~~~~~
+=================
 
 This section describes the following API operations for scheduled backups of
 database instances.

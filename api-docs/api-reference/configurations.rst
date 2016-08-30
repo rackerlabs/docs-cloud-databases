@@ -1,7 +1,8 @@
 .. _configuration-operations:
 
+==============
 Configurations
-~~~~~~~~~~~~~~
+==============
 
 This section describes the following API operations that are supported for
 configurations.

@@ -1,9 +1,10 @@
 .. _api-versions-operations:
 
+============
 API versions
-~~~~~~~~~~~~
+============
 
-This section describes the API operations that are supported for getting API 
+This section describes the API operations that are supported for getting API
 version information.
 
 .. include:: methods/get-list-versions.rst

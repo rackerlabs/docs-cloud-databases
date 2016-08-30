@@ -1,7 +1,8 @@
 .. _high-availability-operations:
 
+=================
 High availability
-~~~~~~~~~~~~~~~~~
+=================
 
 Refer to the list of limitations for HA at
 :ref:`cdb-dg-generalapi-high-availability`.

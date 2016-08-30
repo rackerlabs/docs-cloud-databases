@@ -1,7 +1,8 @@
 .. _configuration-parameters-operations:
 
+========================
 Configuration parameters
-~~~~~~~~~~~~~~~~~~~~~~~~
+========================
 
 This section describes the following API operations that are supported for
 configuration parameters.

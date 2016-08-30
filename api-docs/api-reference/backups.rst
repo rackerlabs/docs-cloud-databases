@@ -1,7 +1,8 @@
 .. _on-demand-backup-operations:
 
+=================
 On demand backups
-~~~~~~~~~~~~~~~~~~
+=================
 
 This section describes the following API operations for backups of database
 instances.

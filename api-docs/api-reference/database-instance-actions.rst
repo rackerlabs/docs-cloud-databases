@@ -1,7 +1,8 @@
 .. _database-instance-actions-operations:
 
+=========================
 Database instance actions
-~~~~~~~~~~~~~~~~~~~~~~~~~
+=========================
 
 This section describes the API operations that are supported for database
 instance actions.

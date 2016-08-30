@@ -1,7 +1,8 @@
 .. _database-instances-operations:
 
+==================
 Database instances
-~~~~~~~~~~~~~~~~~~
+==================
 
 This section describes the following API operations to manage database instances.
 

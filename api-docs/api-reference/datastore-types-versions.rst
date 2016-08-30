@@ -1,7 +1,8 @@
 .. _datastore-types-versions-operations:
 
+============================
 Datastore types and versions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================
 
 This section describes the following API operations that are supported for
 datastore types and versions.

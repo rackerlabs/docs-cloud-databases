@@ -1,7 +1,8 @@
 .. _replication-operations:
 
+===========
 Replication
-~~~~~~~~~~~
+===========
 
 This section describes the following API operations that are supported for
 replication.
