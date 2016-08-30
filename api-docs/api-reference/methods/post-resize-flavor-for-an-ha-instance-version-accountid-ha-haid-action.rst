@@ -1,7 +1,8 @@
+
 .. _post-resize-flavor-for-an-ha-instance-version-accountid-ha-haid-action:
 
 Resize flavor for an HA instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -72,7 +73,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -103,7 +104,7 @@ The following example shows the Resize flavor for an HA instance request:
    {"resize_flavor": "3"}
 
 Response
---------
+""""""""
 
 **Example Resize flavor for an HA instance: JSON response**
 

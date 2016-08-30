@@ -1,7 +1,8 @@
+
 .. _get-list-scheduled-backups-version-accountid-schedules:
 
 List scheduled backups
-~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -62,7 +63,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -90,7 +91,7 @@ The following example shows the List scheduled backups request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List scheduled backups: JSON response**
 

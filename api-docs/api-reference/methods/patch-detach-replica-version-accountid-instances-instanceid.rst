@@ -1,7 +1,8 @@
+
 .. _patch-detach-replica-version-accountid-instances-instanceid:
 
 Detach replica
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 .. code::
 
@@ -84,7 +85,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -121,7 +122,7 @@ The following example shows the Detach replica request:
    }
 
 Response
---------
+""""""""
 
 **Example Detach replica: JSON response**
 

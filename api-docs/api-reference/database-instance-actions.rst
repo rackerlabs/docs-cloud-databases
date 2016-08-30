@@ -1,14 +1,10 @@
 .. _database-instance-actions-operations:
 
-=========================
 Database instance actions
-=========================
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the following operations to manage database instances:
-
-.. contents::
-   :local:
-   :depth: 1
+This section describes the API operations that are supported for database
+instance actions.
 
 .. include:: methods/post-restart-instance-version-accountid-instances-instanceid-action.rst
 .. include:: methods/post-resize-the-instance-version-accountid-instances-instanceid-action.rst

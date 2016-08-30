@@ -1,7 +1,7 @@
 .. _post-create-ha-database-instance-version-accountid-ha:
 
 Create HA database instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -99,7 +99,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -164,7 +164,7 @@ The following example shows the Create HA request:
    }
 
 Response
---------
+""""""""
 
 **Example Create HA database instance: JSON response**
 

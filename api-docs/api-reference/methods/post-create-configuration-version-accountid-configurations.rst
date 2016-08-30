@@ -1,7 +1,8 @@
+
 .. _post-create-configuration-version-accountid-configurations:
 
 Create configuration
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -60,7 +61,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -150,7 +151,7 @@ The following example shows the Create configuration request:
    alpha characters may be used.
 
 Response
---------
+""""""""
 
 **Example Create configuration: JSON response**
 

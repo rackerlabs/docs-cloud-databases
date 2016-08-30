@@ -1,8 +1,7 @@
 .. _flavor-operations:
 
-=======
 Flavors
-=======
+~~~~~~~
 
 This section describes the operations that are supported for flavors.
 

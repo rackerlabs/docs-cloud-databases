@@ -1,7 +1,8 @@
+
 .. _post-create-user-version-accountid-instances-instanceid-users:
 
 Create user
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. code::
 
@@ -139,7 +140,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -206,7 +207,7 @@ The following example shows the Create user request:
    }
 
 Response
---------
+""""""""
 
 **Example Create user: JSON response**
 

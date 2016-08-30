@@ -1,7 +1,8 @@
+
 .. _post-create-scheduled-backup-version-accountid-schedules:
 
 Create scheduled backup
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -147,7 +148,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -183,7 +184,7 @@ The following example shows the Create scheduled backup request:
    }
 
 Response
---------
+""""""""
 
 **Example Create scheduled backup: JSON response**
 

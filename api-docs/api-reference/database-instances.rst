@@ -1,10 +1,13 @@
 .. _database-instances-operations:
 
-==================
 Database instances
-==================
+~~~~~~~~~~~~~~~~~~
 
-This section describes the operations that are supported for database instances.
+This section describes the following API operations to manage database instances.
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. include:: methods/post-create-database-instance-version-accountid-instances.rst
 .. include:: methods/get-list-all-database-instances-version-accountid-instances.rst

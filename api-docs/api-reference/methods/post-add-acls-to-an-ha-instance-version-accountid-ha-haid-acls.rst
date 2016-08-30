@@ -1,7 +1,8 @@
+
 .. _post-add-acls-to-an-ha-instance-version-accountid-ha-haid-acls:
 
 Add ACLs to an HA instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -80,7 +81,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -111,7 +112,7 @@ The following example shows the Add ACLs to an HA instance request:
    {"address": "1.2.3.4/32"}
 
 Response
---------
+""""""""
 
 **Example Add ACLs to an HA instance: JSON response**
 

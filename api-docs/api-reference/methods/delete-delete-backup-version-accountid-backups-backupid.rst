@@ -1,7 +1,8 @@
+
 .. _delete-delete-backup-version-accountid-backups-backupid:
 
 Delete backup
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 .. code::
 
@@ -63,7 +64,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -94,7 +95,7 @@ The following example shows the Delete backup request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example Delete backup: JSON response**
 

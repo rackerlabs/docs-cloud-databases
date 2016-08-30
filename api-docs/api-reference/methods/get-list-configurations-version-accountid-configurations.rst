@@ -1,7 +1,8 @@
+
 .. _get-list-configurations-version-accountid-configurations:
 
 List configurations
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -59,7 +60,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -86,7 +87,7 @@ The following example shows the List configurations request:
    X-Auth-Token: 26640a608aa9482b888a1664376b8113
 
 Response
---------
+""""""""
 
 **Example List configurations: JSON response**
 

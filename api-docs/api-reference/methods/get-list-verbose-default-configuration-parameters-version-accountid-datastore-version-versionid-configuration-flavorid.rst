@@ -1,7 +1,8 @@
+
 .. _get-list-verbose-default-configuration-parameters-version-accountid-datastore-version-versionid-configuration-flavorid:
 
 List verbose default configuration parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -59,7 +60,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -94,7 +95,7 @@ request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List verbose default configuration parameters: JSON response**
 

@@ -1,8 +1,7 @@
 .. _high-availability-operations:
 
-=================
 High availability
-=================
+~~~~~~~~~~~~~~~~~
 
 Refer to the list of limitations for HA at
 :ref:`cdb-dg-generalapi-high-availability`.
@@ -28,10 +27,15 @@ For information about HA Instance Backups, see the following:
 
 .. note::
 
-   To create an HA instance from an existing replication setup, see :ref:`post-convert-replication-setup-to-ha-version-accountid-instances`.
+   To create an HA instance from an existing replication setup, see
+   :ref:`post-convert-replication-setup-to-ha-version-accountid-instances`.
 
-This section describes the operations that are supported for High Availability
-(HA) for Cloud Databases.
+This section describes the following API operations that are supported for
+High Availability (HA) for Cloud Databases.
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. include:: methods/post-create-ha-database-instance-version-accountid-ha.rst
 .. include:: methods/get-list-all-ha-database-instances-version-accountid-ha.rst

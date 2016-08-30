@@ -1,7 +1,8 @@
+
 .. _get-list-backups-for-instance-version-accountid-instances-instanceid-backups:
 
 List backups for instance
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -61,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -93,7 +94,7 @@ The following example shows the List backups for instance request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List backups for instance: JSON response**
 

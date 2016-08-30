@@ -1,7 +1,8 @@
+
 .. _delete-delete-acls-from-an-ha-instance-version-accountid-ha-haid-acls-address:
 
 Delete ACLs from an HA instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -62,7 +63,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -103,7 +104,7 @@ The following example shows the Delete ACLs from an HA instance request:
    with the IP address in CIDR format ("1.2.3.4/32").
 
 Response
---------
+""""""""
 
 **Example Delete ACLs from an HA instance: JSON response**
 

@@ -1,7 +1,8 @@
+
 .. _get-list-replica-source-version-accountid-instances-instanceid:
 
 List replica source
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -83,7 +84,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -115,7 +116,7 @@ The following example shows the List replica source request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List replica source: JSON response**
 
