@@ -4,9 +4,9 @@
 
 This repository contains the source files that generate the following Cloud databases API documentation: 
 
-* [Getting Started Guide](https://developer.rackspace.com/docs/cloud-databases/v2/developer-guide/#document-getting-started)
-* [Developer Guide](https://developer.rackspace.com/docs/cloud-databases/v2/developer-guide/#document-developer-guide)
-* [API Reference](https://developer.rackspace.com/docs/cloud-databases/v2/developer-guide/#api-reference)
+* [Getting Started Guide](https://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-getting-started)
+* [Developer Guide](https://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#document-developer-guide)
+* [API Reference](https://developer.rackspace.com/docs/cloud-databases/v1/developer-guide/#api-reference)
 
 When you commit changes to the master branch of this repository, the 
 [Strider CI/CD build job](https://build.developer.rackspace.com/rackerlabs/docs-cloud-databases/) 
