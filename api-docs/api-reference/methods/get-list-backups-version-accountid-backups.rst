@@ -1,7 +1,8 @@
+
 .. _get-list-backups-version-accountid-backups:
 
 List backups
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 .. code::
 
@@ -63,7 +64,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -114,7 +115,7 @@ The following example shows the List backups query request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List backups: JSON response**
 

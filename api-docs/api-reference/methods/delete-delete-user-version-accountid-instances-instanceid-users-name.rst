@@ -1,7 +1,8 @@
+
 .. _delete-delete-user-version-accountid-instances-instanceid-users-name:
 
 Delete user
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 .. code::
 
@@ -62,7 +63,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -101,7 +102,7 @@ The following example shows the Delete user request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example Delete user: JSON response**
 

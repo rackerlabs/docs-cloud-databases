@@ -1,7 +1,8 @@
+
 .. _get-list-configuration-parameter-details-version-accountid-datastores-datastoreid-versions-versionid-parameters-parameterid:
 
 List configuration parameter details
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -59,7 +60,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -98,7 +99,7 @@ The following example shows the List configuration parameter details request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List configuration parameter details: JSON response**
 

@@ -1,7 +1,8 @@
+
 .. _get-get-default-configuration-version-accountid-instances-instanceid-configuration:
 
 Get default configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -63,7 +64,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-~~~~~~~
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -95,7 +96,7 @@ The following example shows the Get default configuration request:
    Content-Type: application/json
 
 Response
-~~~~~~~~
+""""""""
 
 **Example Get default configuration: JSON response**
 

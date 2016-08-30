@@ -1,7 +1,8 @@
+
 .. _patch-attach-configuration-group-to-ha-instance-version-accountid-ha-haid.rst:
 
 Attach Configuration Group to HA Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -66,7 +67,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -101,7 +102,7 @@ request:
    }
 
 Response
---------
+""""""""
 
 **Example Attach Configuration Group to HA Instance: JSON response**
 

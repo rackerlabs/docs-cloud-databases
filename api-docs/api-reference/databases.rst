@@ -1,6 +1,5 @@
 .. _database-operations:
 
-=========
 Databases
 =========
 

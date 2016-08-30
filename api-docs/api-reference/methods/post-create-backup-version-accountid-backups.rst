@@ -1,7 +1,8 @@
+
 .. _post-create-backup-version-accountid-backups:
 
 Create backup
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 .. code::
 
@@ -128,7 +129,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -198,7 +199,7 @@ The following example shows the Create incremental backup request:
    }
 
 Response
---------
+""""""""
 
 **Example Create backup: JSON response**
 

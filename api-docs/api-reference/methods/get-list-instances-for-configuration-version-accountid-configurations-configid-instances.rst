@@ -1,7 +1,8 @@
+
 .. _get-list-instances-for-configuration-version-accountid-configurations-configid-instances:
 
 List instances for configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -59,7 +60,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -91,7 +92,7 @@ The following example shows the List instances for configuration request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List instances for configuration: JSON response**
 

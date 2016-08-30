@@ -1,7 +1,8 @@
+
 .. _post-remove-replica-from-an-ha-instance-version-accountid-ha-haid-action:
 
 Remove Replica from an HA instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -79,7 +80,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -109,7 +110,7 @@ The following example shows the Remove replica from an HA instance request:
    '{"remove_replica": "130922a2-b9ab-4e95-86be-9c5d79171b5"}'
 
 Response
---------
+""""""""
 
 **Example Remove Replica from an HA instance: JSON response**
 

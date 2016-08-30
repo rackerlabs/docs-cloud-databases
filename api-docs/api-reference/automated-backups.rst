@@ -4,8 +4,12 @@
 Scheduled backups
 =================
 
-This section describes the operations for scheduled backups of database
-instances.
+This section describes the following API operations for scheduled backups of
+database instances.
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. note::
 

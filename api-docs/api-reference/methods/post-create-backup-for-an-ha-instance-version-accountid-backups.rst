@@ -1,7 +1,8 @@
+
 .. _post-create-backup-for-an-ha-instance-version-accountid-backups:
 
 Create backup for an HA Instance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -16,43 +17,46 @@ for the backup.
 The following table lists the required and optional attributes for Create
 Backup for an HA Instance:
 
-+--------------------------+-------------------------+-------------------------+
-|Name                      |Description              |Required                 |
-+==========================+=========================+=========================+
-|name                      |Specifies the short name |Yes                      |
-|                          |of the backup.           |                         |
-+--------------------------+-------------------------+-------------------------+
-|instance                  |Specifies the database   |Yes                      |
-|                          |instanceId to backup.    |                         |
-|                          |But since we would need  |                         |
-|                          |to create a backup of    |                         |
-|                          |the entire HA group, the |                         |
-|                          |value of this field      |                         |
-|                          |should be empty.         |                         |
-+--------------------------+-------------------------+-------------------------+
-|description               |Specifies a long         |No                       |
-|                          |description of the       |                         |
-|                          |backup.                  |                         |
-+--------------------------+-------------------------+-------------------------+
-|parent_id                 |Specifies the backupId   |No                       |
-|                          |from which to create an  |                         |
-|                          |incremental backup.      |                         |
-+--------------------------+-------------------------+-------------------------+
-|source                    |Specifies the source     |Yes (to create HA group  |
-|                          |type (instance/ha) and   |backups)                 |
-|                          |source id                |                         |
-|                          |(instanceID/haID).       |                         |
-+--------------------------+-------------------------+-------------------------+
+.. table:: Required and optional attributes for Create backup
 
-**Length restrictions for backup ``name`` parameter**
+    +--------------------------+-------------------------+-------------------------+
+    |Name                      |Description              |Required                 |
+    +==========================+=========================+=========================+
+    |name                      |Specifies the short name |Yes                      |
+    |                          |of the backup.           |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |instance                  |Specifies the database   |Yes                      |
+    |                          |instanceId to backup.    |                         |
+    |                          |But since we would need  |                         |
+    |                          |to create a backup of    |                         |
+    |                          |the entire HA group, the |                         |
+    |                          |value of this field      |                         |
+    |                          |should be empty.         |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |description               |Specifies a long         |No                       |
+    |                          |description of the       |                         |
+    |                          |backup.                  |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |parent_id                 |Specifies the backupId   |No                       |
+    |                          |from which to create an  |                         |
+    |                          |incremental backup.      |                         |
+    +--------------------------+-------------------------+-------------------------+
+    |source                    |Specifies the source     |Yes (to create HA group  |
+    |                          |type (instance/ha) and   |backups)                 |
+    |                          |source id                |                         |
+    |                          |(instanceID/haID).       |                         |
+    +--------------------------+-------------------------+-------------------------+
 
-+---------------------------------------+-------------------------------------+
-|Restriction                            |Value                                |
-+=======================================+=====================================+
-|name maximum length                    |64                                   |
-+---------------------------------------+-------------------------------------+
+.. table:: Length restrictions for backup ``name`` parameter
+
+    +---------------------------------------+--------------------------------------+
+    |Restriction                            |Value                                 |
+    +=======================================+======================================+
+    |name maximum length                    |64                                    |
+    +---------------------------------------+--------------------------------------+
 
 .. note::
+
 
    *  To show details of a HA backup, see the
       :rax-devdocs:`List backups <cloud-databases/v1/developer-guide/#list-backups>`
@@ -136,7 +140,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -201,7 +205,7 @@ The following example shows the Create incremental backup request:
    }
 
 Response
---------
+""""""""
 
 **Example Create backup for an HA Instance: JSON response**
 

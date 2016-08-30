@@ -1,7 +1,8 @@
+
 .. _get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances:
 
 List all replicas and replica source database instances
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -65,7 +66,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -125,7 +126,7 @@ The following example shows the List all instances/replica sources and filter ou
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List all replicas and replica source database instances: JSON response**
 

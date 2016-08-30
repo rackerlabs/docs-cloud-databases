@@ -1,7 +1,8 @@
+
 .. _get-list-root-enabled-status-version-accountid-instances-instanceid-root:
 
 List root-enabled status
-~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code::
 
@@ -64,7 +65,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+------------------------+
 
 Request
--------
+"""""""
 
 This table shows the URI parameters for the request:
 
@@ -96,7 +97,7 @@ The following example shows the Check root user access request:
    Content-Type: application/json
 
 Response
---------
+""""""""
 
 **Example List root-enabled status: JSON response**
 
