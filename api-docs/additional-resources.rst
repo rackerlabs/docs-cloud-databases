@@ -7,7 +7,7 @@ We welcome feedback, comments, and bug reports. Visit the
 `Rackspace Product Feedback Forum`_ to let us know what you think about
 Cloud Databases.
 
-Use the links below to learn more about the Rackspace Cloud Databases service
+Use the following links to learn more about the Rackspace Cloud Databases service
 and API.
 
 - For general information about Cloud Databases , see the
