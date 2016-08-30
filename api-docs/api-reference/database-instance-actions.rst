@@ -4,8 +4,11 @@
 Database instance actions
 =========================
 
-This section describes the operations that are supported for database instance
-actions.
+Use the following operations to manage database instances:
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. include:: methods/post-restart-instance-version-accountid-instances-instanceid-action.rst
 .. include:: methods/post-resize-the-instance-version-accountid-instances-instanceid-action.rst
