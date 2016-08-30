@@ -1,13 +1,10 @@
 .. _cdb-dg-generalapi-versions:
 
-==============================
-Contract version & API version
-==============================
+================
+Contract version
+================
 
 .. _cdb-dg-generalapi-versions-contract:
-
-Contract version
-~~~~~~~~~~~~~~~~
 
 The contract version denotes the data model and behavior that the API supports.
 The requested contract version is included in all request URLs. Different
@@ -19,12 +16,8 @@ guaranteed to be compatible with one another.
   https://ord.databases.api.rackspacecloud.com/v1.0/1234
 
 .. note::
-  This document pertains to contract version 1.0.
 
-.. _cdb-dg-generalapi-versions-api:
+   This document pertains to contract version 1.0.
 
-API version
-~~~~~~~~~~~
-
-The API List Versions call is available to show the current API version as well
-as information about all versions of the API.
+You can use the :ref:`Version <api-versions-operations>` API operations to get
+more detailed information about the |apiservice| contract version.

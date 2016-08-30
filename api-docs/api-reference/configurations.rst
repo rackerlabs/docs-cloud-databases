@@ -1,10 +1,15 @@
 .. _configuration-operations:
 
+==============
 Configurations
-~~~~~~~~~~~~~~
+==============
 
-This section describes the operations that are supported for
+This section describes the following API operations that are supported for
 configurations.
+
+.. contents::
+   :local:
+   :depth: 1
 
 You can also find additional configuration-related information in the
 descriptions for the following API operations:

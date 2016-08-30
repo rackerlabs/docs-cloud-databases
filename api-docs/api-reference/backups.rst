@@ -1,9 +1,15 @@
 .. _on-demand-backup-operations:
 
+=================
 On demand backups
-~~~~~~~~~~~~~~~~~~
+=================
 
-This section describes the operations for backups of database instances.
+This section describes the following API operations for backups of database
+instances.
+
+.. contents::
+   :local:
+   :depth: 1
 
 ..  note::
 

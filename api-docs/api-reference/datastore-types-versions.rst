@@ -1,10 +1,15 @@
 .. _datastore-types-versions-operations:
 
+============================
 Datastore types and versions
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+============================
 
-This section describes the operations that are supported for datastore types
-and versions.
+This section describes the following API operations that are supported for
+datastore types and versions.
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. include:: methods/get-list-all-datastore-types-version-accountid-datastores.rst
 .. include:: methods/get-list-datastore-type-version-accountid-datastores-datastoreid.rst

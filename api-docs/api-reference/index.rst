@@ -1,3 +1,13 @@
+.. _api-reference:
+
+=============
+API Reference
+=============
+
+Learn about the available |apiservice| resources and operations, and
+see request and response examples. You can use the |apiservice| operations
+to interact directly with the service.
+
 You can use the Cloud DB API operations to interact directly with the Cloud
 Databases service.  You can also run DB API operations by using the Rackspace
 Command Line Client, the SDK, or from the Cloud Control panel.

@@ -2,8 +2,9 @@
 
 .. Comment This file includes the current release information at the top of the document.
 
+===============
 Service updates
----------------
+===============
 
 Rackspace provides service updates to introduce backward-compatible updates and
 modifications to |apiservice| |contract version|. These changes are not
@@ -12,4 +13,4 @@ applications, scripts, and so on). However, you might want to update or extend
 your code to use new features and enhancements.
 
 To learn about updates and changes included in this and other releases, see the
-:ref:`Release Notes <release-notes>`. 
+:ref:`Release Notes <release-notes-collection>`. 

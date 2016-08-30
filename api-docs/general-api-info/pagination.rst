@@ -8,10 +8,10 @@ Pagination provides the ability to limit the size of the returned data in the
 response body as well as retrieve a specified subset of a large data set.
 Pagination has two key concepts: *limit* and *marker*.
 
--  Limit is the restriction on the maximum number of items for that type
+-  *Limit* is the restriction on the maximum number of items for that type
    that can be returned.
 
--  Marker is the ID of the last item in the previous list returned.
+-  *Marker* is the ID of the last item in the previous list returned.
 
    The ID is the UUID in the case of instances, the name in the case of
    databases, and "*name@host*" for users. For example, a query could request

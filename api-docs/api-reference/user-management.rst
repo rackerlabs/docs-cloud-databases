@@ -1,9 +1,15 @@
 .. _user-operations:
 
+=====
 Users
-~~~~~
+=====
 
-This section describes the operations that are supported for users.
+This section describes the following API operations that are supported for
+users.
+
+.. contents::
+   :local:
+   :depth: 1
 
 In this section, "user has access to a database" means that the user has full
 create, read, update, and delete access to the given database. In other words,

@@ -1,10 +1,11 @@
 .. _api-versions-operations:
 
+============
 API versions
-~~~~~~~~~~~~
+============
 
-This section describes the versions that are supported for the Cloud
-Databases API.
+This section describes the API operations that are supported for getting API
+version information.
 
 .. include:: methods/get-list-versions.rst
 .. include:: methods/get-list-version-details-version.rst

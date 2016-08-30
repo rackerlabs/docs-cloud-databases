@@ -36,9 +36,9 @@ Create Instance, Create User, and Change User Password calls. In the case of
 the List User, List User Access, Grant User Access, and Revoke User Access
 calls, the username is part of the request URL instead of a JSON message body.
 In these cases, the host can be specified with the username using the format
-of username@host, for example ``testuser@192.168.1.12``. Should a username
+of *username@host*, for example ``testuser@192.168.1.12``. Should a username
 contain the character '@', the hostname must be specified explicitly, as in
-user@name@%.
+*user@name@%*.
 
 .. warning::
     Due to a limitation of the routing middleware, users with periods (.) in

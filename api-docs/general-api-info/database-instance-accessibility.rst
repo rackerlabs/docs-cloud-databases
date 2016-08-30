@@ -20,4 +20,4 @@ following steps:
    specify your database instance hostname as a node, or use the API to add
    your instance hostname as a node to an existing public load balancer.
    For details refer to the *Cloud Load Balancers Developer Guide* at
-   :rax-devguide:`Cloud Load Balancers Developer Guide <cloud-load-balancers/v1>`.
+   :rax-devdocs:`Cloud Load Balancers Developer Guide <cloud-load-balancers/v1>`.

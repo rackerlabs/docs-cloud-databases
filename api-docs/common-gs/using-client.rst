@@ -172,7 +172,7 @@ The following table describes the environment variables:
 | OS_REGION_NAME        | The regional endpoint (for example, DFW) where  |
 |                       | you want to deploy the Cloud Databases          |
 |                       | resources. For details, see                     |
-|                       | :ref:`service-access-endpoints`.                |
+|                       | :ref:`service-access`.                          |
 +-----------------------+-------------------------------------------------+
 
 After adding the environment variables, complete the following steps to set

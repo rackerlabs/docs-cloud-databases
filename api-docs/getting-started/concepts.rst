@@ -1,11 +1,19 @@
 .. _concepts:
 
-========
-Concepts
-========
+==================
+|service| concepts
+==================
 
 To use the Cloud Databases API effectively, you should understand several key
-concepts:
+concepts.
+
+.. _concepts-backup:
+
+Backup
+~~~~~~
+
+A copy of computer data for a database instance that can be used to restore the
+original instance if necessary.
 
 .. _concepts-configgroup:
 
@@ -56,6 +64,23 @@ A flavor is an available hardware configuration for a database instance. Each
 flavor is optimized for performance and has a unique combination of memory
 capacity, priority for CPU time, and network bandwidth.
 
+.. _concepts-ha-instance-group:
+
+High Availability Instance Group
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A High Availability Instance Group includes a source database instance and one
+or two replicas. In the event that the primary source database instance becomes
+unavailable, it triggers an automatic failover to one of the replicas attached.
+
+.. _concepts-replica:
+
+Replica
+~~~~~~~
+
+A replica is an exact copy of a database instance that is kept synchronized
+with its database instance source.
+
 .. _concepts-volume:
 
 Volume
@@ -70,19 +95,3 @@ protected through both local and network RAID-10. Additionally, network RAID
 provides synchronous replication of volumes with automatic failover and load
 balancing across available storage clusters.
 
-.. _concepts-replica:
-
-Replica
-~~~~~~~
-
-A replica is an exact copy of a database instance that is kept synchronized
-with its database instance source.
-
-.. _concepts-ha-instance-group:
-
-High Availability Instance Group
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A High Availability Instance Group includes a source database instance and one
-or two replicas. In the event that the primary source database instance becomes
-unavailable, it triggers an automatic failover to one of the replicas attached.

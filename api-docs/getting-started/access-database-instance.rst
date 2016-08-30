@@ -15,7 +15,7 @@ In the following sections, you'll learn how to complete the following
 - Configure an application to connect to your database.
 - Configure myPHPAdmin GUI client to manage your database instance
 
-.. include:: ../common-gs/default-env-variables.txt
+.. include:: ../common-gs/default-env-variables.rst
 
 .. _create-cloud-server:
 

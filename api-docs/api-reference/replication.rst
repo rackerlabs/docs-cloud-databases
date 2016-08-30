@@ -1,9 +1,15 @@
 .. _replication-operations:
 
+===========
 Replication
-~~~~~~~~~~~
+===========
 
-This section describes the operations that are supported for replication.
+This section describes the following API operations that are supported for
+replication.
+
+.. contents::
+   :local:
+   :depth: 1
 
 .. include:: methods/post-create-replica-version-accountid-instances.rst
 .. include:: methods/get-list-all-replicas-and-replica-source-database-instances-version-accountid-instances.rst

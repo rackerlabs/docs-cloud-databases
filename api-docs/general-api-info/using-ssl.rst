@@ -26,7 +26,7 @@ To use SSL, perform the following steps:
      http://ssl.rackspaceclouddb.com/rackspace-ca-2016.pem.
 
 -  To use SSL with the default MySQL command line, pass the downloaded SSL
-certificate to the client at startup:
+   certificate to the client at startup:
 
    .. code::
 
