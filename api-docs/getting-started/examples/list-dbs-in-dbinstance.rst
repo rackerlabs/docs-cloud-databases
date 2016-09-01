@@ -14,7 +14,7 @@ created. The following examples use the instance ID from the
 Following are two methods for listing database instances:
 
 Listing database instances by using the trove client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
  
 Run the ``database-list`` command with ID for the database instance:
 
@@ -33,7 +33,7 @@ The command returns the database name(s) for the instance:
     +-----------+
 
 Listing database instances by using cURL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 
 Run the following cURL command to create the instance, replacing
 ``instance_id`` with the ID for the database instance.

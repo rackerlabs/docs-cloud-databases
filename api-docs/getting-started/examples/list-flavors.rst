@@ -15,7 +15,7 @@ Following are two methods to list flavors:
 .. _list-flavors-using-client:
 
 List flavors by using the trove client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------------
 
 Run the '`flavor-list`` command from the command line to list available
 hardware configuration flavors:
@@ -49,7 +49,7 @@ use the flavor ID for the 512MB Standard Instance, which is 1.
 .. _list-flavors-using-curl:
 
 List flavors by using the cURL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 
 The following example shows the cURL request and corresponding response to list
 flavors.
@@ -218,4 +218,4 @@ used to reference the flavor configuration.
 
 The examples in
 :ref:`Create a database instance <creating-database-instance-and-user>`
-use the flavor ID for the 512MB Standard Instance, which is 1.  
+use the flavor ID for the 512MB Standard Instance, which is 1.

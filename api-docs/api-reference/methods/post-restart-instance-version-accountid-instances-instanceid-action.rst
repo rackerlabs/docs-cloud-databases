@@ -2,7 +2,7 @@
 .. _post-restart-instance-version-accountid-instances-instanceid-action:
 
 Restart instance
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -76,7 +76,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -112,7 +112,7 @@ The following example shows the Restart instance request:
    }
 
 Response
-""""""""
+--------
 
 **Example Restart instance: JSON response**
 

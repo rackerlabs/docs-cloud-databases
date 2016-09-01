@@ -2,7 +2,7 @@
 .. _get-list-users-in-database-instance-version-accountid-instances-instanceid-users:
 
 List users in database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -76,7 +76,8 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
+
 This table shows the URI parameters for the request:
 
 +--------------------------+-------------------------+-------------------------+
@@ -121,7 +122,7 @@ requests to return a limit of two users at a time ( ``users?limit=2`` ).
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List users in database instance response: JSON**
 

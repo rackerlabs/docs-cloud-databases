@@ -2,7 +2,7 @@
 .. _get-list-version-details-version:
 
 List version details
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -64,7 +64,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This operation does not accept a request body.
 
@@ -82,7 +82,7 @@ The following example shows the List version details request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List version details: JSON response**
 

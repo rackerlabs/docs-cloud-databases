@@ -1,7 +1,7 @@
 .. _put-replace-all-configuration-parameters-version-accountid-configurations-configid:
 
 Replace all configuration parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -60,7 +60,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -106,7 +106,7 @@ The following example shows the Replace all configuration parameters request:
    alpha characters may be used.
 
 Response
-""""""""
+--------
 
 **Example Replace all configuration parameters: JSON response**
 

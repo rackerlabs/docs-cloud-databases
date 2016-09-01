@@ -14,7 +14,7 @@ created. The following examples use the instance ID from the
 Following are two methods to list users:
  
 List users for an instance by using the trove client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
 
 Run the ``database-list`` command with the ID for the database instance:
 
@@ -34,7 +34,7 @@ that the user can access:
     +-------------+------+-----------+
 
 List users for an instance by using the trove client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ 
+---------------------------------------------------- 
 
 Run the following cURL command to create the instance, replacing
 ``instance_id`` with the ID for the database instance.

@@ -2,7 +2,7 @@
 .. _delete-delete-configuration-group-version-accountid-configurations-configid:
 
 Delete configuration group
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -61,7 +61,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -93,7 +93,7 @@ The following example shows the Delete configuration group request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example Delete configuration group: JSON response**
 

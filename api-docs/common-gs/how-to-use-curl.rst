@@ -133,7 +133,7 @@ If you do not want to pretty-print JSON output, omit this code.
 .. _convert-cURL-examples-for-windows:
 
 Convert cURL examples to run on Windows
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 
 The cURL examples in the Rackspace API documentation use syntax supported on Mac
 OS® X, Linux, and UNIX systems. Microsoft Windows does not support the same

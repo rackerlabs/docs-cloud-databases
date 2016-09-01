@@ -2,7 +2,7 @@
 .. _post-create-database-instance-version-accountid-instances:
 
 Create database instance
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -138,7 +138,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -260,7 +260,7 @@ The following example shows the Create database instance datastore request:
    }
 
 Response
-""""""""
+--------
 
 **Example Create database instance: JSON response**
 

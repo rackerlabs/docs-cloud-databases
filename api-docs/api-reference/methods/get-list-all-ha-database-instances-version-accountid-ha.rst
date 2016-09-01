@@ -2,7 +2,7 @@
 .. _get-list-all-ha-database-instances-version-accountid-ha:
 
 List all HA database instances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -90,7 +90,7 @@ The following example shows the List all HA database instances request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List all HA database instances: JSON response**
 

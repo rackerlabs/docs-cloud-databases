@@ -20,7 +20,7 @@ existing configuration group.
 .. _gs-create-a-config-group-curl:
 
 Create a configuration group (cURL)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------------
 
 You can create a configuration group to manage time zones by using the
 create configuration operation.
@@ -79,7 +79,7 @@ to apply the configuration group to a database instance.
 
 
 Apply the time zone configuration group to an existing database instance (cURL)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------------------------------
 
 You can apply a configuration group to an existing database instance. You need
 to include
@@ -136,7 +136,7 @@ return a request body.
     configuration settings.
  
 Add custom time zone information to an existing configuration group by using cURL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------------------------------------------------
 
 You can update settings in an existing configuration group by using the
 update configuration operation. You need to include

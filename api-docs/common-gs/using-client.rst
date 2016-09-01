@@ -12,7 +12,8 @@ Cloud Databases API methods. To send requests using the client, you
 have to install the client and set environment variables.
 
 Prerequisites
-^^^^^^^^^^^^^
+-------------
+
 Run the trove client on Linux, Ubuntu, or Debian or Mac OS X. You also
 need a Rackspace Cloud account and access to Rackspace Cloud Orchestration.
 
@@ -83,7 +84,7 @@ Before you begin, install the following prerequisite software:
 .. _Yum: https://docs.fedoraproject.org/en-US/Fedora_Core/5/html-single/Software_Management_Guide/
 
 Install the trove client
-^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------
 
 The python-troveclient package contains the trove client.
 
@@ -125,7 +126,7 @@ For RHEL, CentOS, or Fedora:
 .. _set-environment-variables-client:
 
 Configure environment variables for client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------
 
 Edit your **bash.profile** file or **.bashrc** file to add and set environment
 variables that enable the trove client to connect to your Rackspace
@@ -179,7 +180,7 @@ After adding the environment variables, complete the following steps to set
 file permissions and apply the updates.
 
 Set permissions on the bash profile or .bashrc file
-...................................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Change the file permissions so that other people cannot steal the
 password that you included in the file.
@@ -189,7 +190,7 @@ password that you included in the file.
       $ chmod 600 ~/.bash_profile
 
 Source the environment variables
-................................
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To apply the updates to your current shell environment, source the updated
 file. If you added the environment variables to your bash_profile, run the
@@ -207,7 +208,7 @@ command.
       $ source ~/.bashrc
 
 Test the client
-...............
+^^^^^^^^^^^^^^^
 
 To verify that you can talk to the API server, run the following command to
 authenticate and list flavors:
@@ -223,7 +224,7 @@ Then, list database instances:
      $ trove list
 
 Get trove-client help
-.....................
+^^^^^^^^^^^^^^^^^^^^^
 
 Run the following help command to get information about using the trove client.
 

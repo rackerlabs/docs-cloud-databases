@@ -2,7 +2,7 @@
 .. _get-list-backup-by-id-version-accountid-backups-backupid:
 
 List backup by ID
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -93,7 +93,7 @@ The following example shows the List backup by ID request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List backup by ID: JSON response**
 

@@ -2,7 +2,7 @@
 .. _delete-delete-ha-database-instance-version-accountid-ha-haid:
 
 Delete HA database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -63,7 +63,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -94,7 +94,7 @@ The following example shows the Delete HA database instance request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example Delete HA database instance: JSON response**
 

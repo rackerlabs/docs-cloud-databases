@@ -2,7 +2,7 @@
 .. _get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid:
 
 List schedule for running backup by schedule ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -93,7 +93,7 @@ The following example shows the List scheduled backup by schedule ID request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List schedule for running backup by schedule ID: JSON response**
 

@@ -2,7 +2,7 @@
 .. _delete-delete-database-instance-version-accountid-instances-instanceid:
 
 Delete database instance
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -68,7 +68,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -100,7 +100,7 @@ The following example shows the Delete database instance request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example Delete database instance: JSON response**
 

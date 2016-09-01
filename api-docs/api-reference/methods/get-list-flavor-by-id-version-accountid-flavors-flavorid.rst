@@ -2,7 +2,7 @@
 .. _get-list-flavor-by-id-version-accountid-flavors-flavorid:
 
 List flavor by ID
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -71,7 +71,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -102,7 +102,7 @@ The following example shows the List flavor by ID request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List flavor by ID: JSON response**
 

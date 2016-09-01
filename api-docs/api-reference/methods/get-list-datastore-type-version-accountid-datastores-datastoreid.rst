@@ -2,7 +2,7 @@
 .. _get-list-datastore-type-version-accountid-datastores-datastoreid:
 
 List datastore type
-^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -93,7 +93,7 @@ The following example shows the List datastore type request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List datastore type: JSON response**
 

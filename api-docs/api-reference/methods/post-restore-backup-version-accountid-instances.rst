@@ -1,7 +1,7 @@
 .. _post-restore-backup-version-accountid-instances:
 
 Restore backup
-^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~
 
 .. code::
 
@@ -88,7 +88,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -127,7 +127,7 @@ The following example shows the Restore backup request:
    }
 
 Response
-""""""""
+--------
 
 **Example Restore backup: JSON response**
 

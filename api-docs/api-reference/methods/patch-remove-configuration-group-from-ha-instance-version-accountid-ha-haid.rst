@@ -1,8 +1,8 @@
 
 .. _patch-remove-configuration-group-from-ha-instance-version-accountid-ha-haid.rst:
 
-Remove Configuration Group from HA Instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Remove configuration group from HA instance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -66,7 +66,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -101,7 +101,7 @@ request:
    }
 
 Response
-""""""""
+--------
 
 **Example Remove Configuration Group from HA Instance: JSON response**
 

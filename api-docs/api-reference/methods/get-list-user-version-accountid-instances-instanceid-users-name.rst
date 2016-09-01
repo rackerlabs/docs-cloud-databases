@@ -2,7 +2,7 @@
 .. _get-list-user-version-accountid-instances-instanceid-users-name:
 
 List user
-^^^^^^^^^
+~~~~~~~~~
 
 .. code::
 
@@ -64,7 +64,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -122,7 +122,7 @@ this case, since % is used for the host, the user can connect from any host.
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List user: JSON response**
 

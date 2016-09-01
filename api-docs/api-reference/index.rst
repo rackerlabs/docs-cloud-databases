@@ -1,7 +1,7 @@
 .. _api-reference:
 
 =============
-API Reference
+API reference
 =============
 
 Learn about the available |apiservice| resources and operations, and
@@ -19,7 +19,7 @@ Command Line Client, the SDK, or from the Cloud Control panel.
    ``GET /instances/detail/`` (with the trailing slash at the end). Rather, use
    ``GET /instances/detail`` instead.
 
-.. toctree:: :hidden:
+.. toctree::
    :maxdepth: 2
 
    api-versions
