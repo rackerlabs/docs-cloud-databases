@@ -20,7 +20,7 @@ an existing configuration group.
 .. _gs-create-a-config-group-client:
 
 Create a configuration group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
 The following example creates a configuration group
 named ``TimeConfig`` that sets the time zone to CST (Central Standard Time).
@@ -56,7 +56,7 @@ client commands that require it, for example the ``configuration-attach``
 command used to apply the configuration group to a database instance.
 
 Apply the time zone configuration group to an existing database instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------------------------------------------------
 
 You can apply a configuration group to an existing database instance. You need
 to include the ID values for the database instance and configuration group in
@@ -87,7 +87,7 @@ The ``configuration-attach`` command does not return any output.
     configuration settings.
 
 Add custom time zone information to an existing configuration group
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------------------------------------------
 
 You can update settings in an existing configuration group by using the
 **configuration-patch** command. You need to include

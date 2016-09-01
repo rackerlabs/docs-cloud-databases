@@ -43,7 +43,7 @@ information:
 .. _backup-dbinstance-curl:
 
 Backing up by using cURL
-~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------
 
 The following example shows the cURL request to backup data for a specified
 database instance. You need to include the ID for the database instance in the

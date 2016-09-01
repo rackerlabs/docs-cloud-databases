@@ -1,7 +1,7 @@
 .. _put-modify-user-attributes-version-accountid-instances-instanceid-users-name:
 
 Modify user attributes
-^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -92,7 +92,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -138,7 +138,7 @@ The following example shows the Modify user attributes request:
    }
 
 Response
-""""""""
+--------
 
 **Example Modify user attributes: JSON response**
 

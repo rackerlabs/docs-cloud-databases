@@ -2,7 +2,7 @@
 .. _get-list-versions:
 
 List versions
-^^^^^^^^^^^^^
+~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This operation does not accept a request body.
 
@@ -80,7 +80,7 @@ The following example shows the List versions request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List versions: JSON response**
 

@@ -1,8 +1,8 @@
 
 .. _put-change-user(s)-password-version-accountid-instances-instanceid-users:
 
-Change user(s) password
-^^^^^^^^^^^^^^^^^^^^^^^
+Change user or users password
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -68,7 +68,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -113,7 +113,7 @@ The following example shows the Change user(s) password request:
    }
 
 Response
-""""""""
+--------
 
 **Example Change user(s) password: JSON response**
 

@@ -1,7 +1,8 @@
 .. _create-database-instance:
 
+==================================
 Create and use a database instance
-----------------------------------
+==================================
 
 Use the examples in the following sections to
 create, use, and manage a database instance, database, and

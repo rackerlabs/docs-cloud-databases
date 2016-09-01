@@ -2,7 +2,7 @@
 .. _put-grant-user-access-version-accountid-instances-instanceid-users-name-databases:
 
 Grant user access
-^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -67,7 +67,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -114,7 +114,7 @@ The following example shows the Grant user access request:
    }
 
 Response
-""""""""
+--------
 
 **Example Grant user access: JSON response**
 

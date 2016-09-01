@@ -2,7 +2,7 @@
 .. _patch-update-some-configuration-parameters-version-accountid-configurations-configid:
 
 Update some configuration parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -61,7 +61,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -99,7 +99,7 @@ The following example shows the Update some configuration parameters request:
    }
 
 Response
-""""""""
+--------
 
 **Example Update some configuration parameters: JSON response**
 

@@ -2,7 +2,7 @@
 .. _get-list-datastore-versions-for-datastore-version-accountid-datastores-datastoreid-versions:
 
 List datastore versions for datastore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -94,7 +94,7 @@ request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List datastore versions for datastore: JSON response**
 

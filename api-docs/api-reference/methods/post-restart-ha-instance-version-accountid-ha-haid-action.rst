@@ -1,8 +1,8 @@
 
 .. _post-restart-ha-instance-version-accountid-ha-haid-action:
 
-Restart an HA Instance
-^^^^^^^^^^^^^^^^^^^^^^
+Restart an HA instance
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -69,7 +69,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -102,7 +102,7 @@ The following example shows the restart HA instance request:
    }
 
 Response
-""""""""
+--------
 
 **Example Restart HA Instance: JSON response**
 

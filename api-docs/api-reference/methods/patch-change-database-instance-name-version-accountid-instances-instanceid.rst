@@ -2,7 +2,7 @@
 .. _patch-change-database-instance-name-version-accountid-instances-instanceid.rst:
 
 Change database instance name
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -75,7 +75,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -110,7 +110,7 @@ The following example shows the Change database instance name request:
    }
 
 Response
-""""""""
+--------
 
 **Example Change database instance name: JSON response**
 

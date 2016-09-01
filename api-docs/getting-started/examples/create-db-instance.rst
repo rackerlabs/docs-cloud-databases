@@ -31,7 +31,7 @@ Following are two methods for creating a database instance:
 .. _create-database-by-using-trove:
 
 Create a database instance by using the trove client
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
 
 The following example creates a MySQL database instance ``mytroveinstance``,
 with the following configuration and user settings:
@@ -92,7 +92,7 @@ operation.
 .. _create-db-instance-by-using-curl:
 
 Create a database instance by using cURL
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 
 The following example creates a MySQL database instance ``myrackinstance``,
 with the following configuration and user settings:

@@ -2,7 +2,7 @@
 .. _post-convert-replication-setup-to-ha-version-accountid-instances:
 
 Convert replication setup to HA
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -104,7 +104,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -146,7 +146,7 @@ The following example shows the Convert replication setup to HA request:
    }
 
 Response
-""""""""
+--------
 
 **Example Convert replication setup to HA: JSON response**
 
@@ -256,7 +256,7 @@ The following example shows the Convert replication setup to HA response:
         "id": "65640327-64dd-4fd0-80b3-1f64e66e0558"
     }
   }
-  
+
 For convenience, notice in the response example above that resources contain
 links to themselves. This allows a client to easily obtain resource URIs rather
 than to construct them. There are two kinds of link relations associated with

@@ -1,7 +1,8 @@
 .. _manage-tz-dbinstance-using-config-grp:
 
+==============================
 Manage time zone configuration
-------------------------------
+==============================
 
 The server time zone for a set of current and future database instances
 can be set using the configuration groups feature of Cloud Databases.

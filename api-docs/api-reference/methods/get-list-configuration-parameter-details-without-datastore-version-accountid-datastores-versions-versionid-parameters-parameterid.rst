@@ -2,7 +2,7 @@
 .. _get-list-configuration-parameter-details-without-datastore-version-accountid-datastores-versions-versionid-parameters-parameterid:
 
 List configuration parameter details without datastore
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -61,7 +61,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -98,7 +98,7 @@ datastore request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List configuration parameter details without datastore: JSON response**
 

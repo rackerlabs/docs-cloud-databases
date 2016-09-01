@@ -1,7 +1,8 @@
 .. _Connect-to-db:
 
+==========================
 Access a database instance
---------------------------
+==========================
 
 After you've set up your database instance and databases, you
 need to use a Cloud Server to connect to the databases hosted on your
@@ -39,7 +40,7 @@ Panel`_ ).
 .. _create-cloud-server-curl:
 
 Create a Cloud Server by using the Cloud Control Panel
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Click **Servers** to view the Cloud Servers page.
 
@@ -99,7 +100,7 @@ phpMyAdmin documentation at: http://www.phpmyadmin.net/documentation/.
 .. _install-configure-phpMyAdmin:
 
 Install and configure phpMyAdmin on an Ubuntu 11.04 Cloud Server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Install phpMyAdmin:
 

@@ -40,4 +40,5 @@ assigned to a configuration group. These rules can be retrieved by the user
 from the API through the configuration parameter's resource as described in
 :ref:`Configuration parameters <configuration-parameters-operations>`.
 
-Refer to :ref:`Configurations <configuration-operations>` for the API operations for configurations.
+Refer to :ref:`Configurations <configuration-operations>` for the API
+operations for configurations.

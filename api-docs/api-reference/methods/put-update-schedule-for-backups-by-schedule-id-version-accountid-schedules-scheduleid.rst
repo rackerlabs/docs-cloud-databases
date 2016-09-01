@@ -2,7 +2,7 @@
 .. _put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid:
 
 Update schedule for backups by schedule ID
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -87,7 +87,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -125,7 +125,7 @@ The following example shows the Update backup schedule by schedule ID request:
    }
 
 Response
-""""""""
+--------
 
 **Example Update schedule for backups by schedule ID: JSON response**
 

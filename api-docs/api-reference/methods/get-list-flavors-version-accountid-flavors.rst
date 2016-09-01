@@ -2,7 +2,7 @@
 .. _get-list-flavors-version-accountid-flavors:
 
 List flavors
-^^^^^^^^^^^^
+~~~~~~~~~~~~
 
 .. code::
 
@@ -65,7 +65,7 @@ The following table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 The following table shows the URI parameters for the request:
 
@@ -93,7 +93,7 @@ The following example shows the List flavors request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List flavors: JSON response**
 

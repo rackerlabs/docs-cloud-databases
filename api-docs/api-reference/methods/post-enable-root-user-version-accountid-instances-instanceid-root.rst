@@ -2,7 +2,7 @@
 .. _post-enable-root-user-version-accountid-instances-instanceid-root:
 
 Enable root user
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -64,7 +64,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -97,7 +97,7 @@ The following example shows the Enable root user request:
 
 
 Response
-""""""""
+--------
 
 **Example Enable root user: JSON response**
 

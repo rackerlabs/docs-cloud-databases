@@ -2,7 +2,7 @@
 .. _put-update-database-instance-version-accountid-instances-instanceid:
 
 Update database instance
-^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -69,7 +69,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -107,7 +107,7 @@ The following example shows the Update database instance request:
    }
 
 Response
-""""""""
+--------
 
 **Example Update database instance: JSON response**
 

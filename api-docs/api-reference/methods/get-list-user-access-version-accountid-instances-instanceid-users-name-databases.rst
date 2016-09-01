@@ -2,7 +2,7 @@
 .. _get-list-user-access-version-accountid-instances-instanceid-users-name-databases:
 
 List user access
-^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -62,7 +62,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -122,7 +122,7 @@ for details):
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List user access: JSON response**
 

@@ -2,7 +2,7 @@
 .. _get-list-all-database-instances-version-accountid-instances:
 
 List all database instances
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -67,7 +67,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -139,7 +139,7 @@ The following example shows the List all instances and filter out instances part
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List all database instances: JSON response**
 
@@ -227,7 +227,7 @@ The following example shows the List all database instances response:
            }
        ]
    }
-   
+
 **Example List all sources and replicas part of an HA instance response: JSON**
 
 The following example shows the List all sources and replicas part of an HA instance response:

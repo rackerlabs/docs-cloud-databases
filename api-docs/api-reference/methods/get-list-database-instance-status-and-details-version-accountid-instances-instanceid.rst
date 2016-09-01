@@ -2,7 +2,7 @@
 .. _get-list-database-instance-status-and-details-version-accountid-instances-instanceid:
 
 List database instance status and details
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
@@ -86,7 +86,7 @@ This table shows the possible response codes for this operation:
 +--------------------------+-------------------------+-------------------------+
 
 Request
-"""""""
+-------
 
 This table shows the URI parameters for the request:
 
@@ -163,7 +163,7 @@ a replica instance in an HA setup request:
    Content-Type: application/json
 
 Response
-""""""""
+--------
 
 **Example List database instance status and details: JSON response**
 
