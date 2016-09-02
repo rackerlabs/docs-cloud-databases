@@ -4,7 +4,7 @@ These guidelines provide the general process for maintaining source code that bu
 Rackspace Cloud databases developer documentation. 
 
 - [Project description](#project-description)
-- [Updating and adding content](#updating-and-adding-content)
+- [Editing and adding content](#Editing and adding content)
 - [General style guidelines](#general-style-guidelines)
 - [Submitting your content](#submitting-changes)
 - [Previewing changes](#previewing-changes)
