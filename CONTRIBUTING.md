@@ -22,24 +22,18 @@ parser component of [Python Docutils](http://docutils.sourceforge.net/index.html
 Content | File
 --- | ---
 |Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/conf.py) (Typically, this file does not require changes.)
-|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/index.rst)
-|About the API index| [overview/index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/overview/index.rst)
-|Getting Started introduction| [getting-started.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/getting-started.rst)
-|Getting Started index|[getting-started/index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/getting-started/index.rst)
-|Developer Guide introduction|[developer-guide.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/developer-guide.rst)
-|Concepts section| [concepts.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/concepts.rst)
-|General API information index|[general-api-info/index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/general-api-info/index.rst)
-|API Reference introduction|[api-reference.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/api-reference.rst)
-|API Reference index|[api-operations/index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/api-operations/index.rst)
-|API operations methods, including code samples|[api-operations/methods](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/api-operations/methods) 
-|Release notes introduction and index|[release-notes.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/release-notes.rst)
-|Release notes by version|[release notes folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/release-notes)
+|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/index.rstt)
+|Getting started| [getting-started folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/getting-started)
+|General API information|[general-api-info folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/general-api-info)
+|API reference|[api-reference folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/api-reference)
+|API reference methods, including code samples|[api-reference/methods](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/api-reference/methods) 
+|Release notes|[release-notes folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/release-notes)
 |**make.bat**|Windows build script
 |**Makefile**| Linux and OS X build
 
 ## Editing and adding content
 
-To work with the existing source files or add new ones, follow the [GitHub workflow](GITHUBING.md) for this repository.
+To work with the existing source files or add new ones, follow the [GitHub workflow](https://github.com/rackerlabs/docs-cloud-databases/blob/master/GITHUBING.md) for this repository.
 
 * Update source files by using the GitHub editor or any plain text editor.
 * Format source files with 
