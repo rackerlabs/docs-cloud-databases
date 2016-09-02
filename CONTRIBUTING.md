@@ -22,7 +22,7 @@ parser component of [Python Docutils](http://docutils.sourceforge.net/index.html
 Content | File
 --- | ---
 |Sphinx documentation configuration file| [conf.py](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/conf.py) (Typically, this file does not require changes.)
-|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/index.rstt)
+|Index page for the main content structure| [index.rst](https://github.com/rackerlabs/docs-cloud-databases/blob/master/api-docs/index.rst)
 |Getting started| [getting-started folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/getting-started)
 |General API information|[general-api-info folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/general-api-info)
 |API reference|[api-reference folder](https://github.com/rackerlabs/docs-cloud-databases/tree/master/api-docs/api-reference)
