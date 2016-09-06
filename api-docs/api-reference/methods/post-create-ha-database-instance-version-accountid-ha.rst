@@ -31,23 +31,23 @@ operation.
    * - datastore.\ **version**
      - String *(Required)*
      - The database software release for the datastore.
-   * - datastore.\**type**
+   * - datastore.\ **type**
      - String *(Required)*
      - The database type for the datastore, for example ``MYSQL``.
    * - replica_source
      - Object 
      - Specifies properties for the replica.
-   * - replica_source.\**name**
+   * - replica_source.\ **name**
      - String *(Required)*
      - Specifies the name for the replica. Refer to the request example
        for the required json format.
-   * - replica_source.\**flavor**
+   * - replica_source.\ **flavor**
      - String *(Required)*
      - The flavor ID that specifies the database hardware
        configuration for the replica. You can find the available flavor IDs
        in the response returned by the
        :ref:`List Flavors <listing flavors>` API operation.
-   * - replica_source.\**volume**
+   * - replica_source.\ **volume**
      - String *(Required)*
      - Specifies the volume size in gigabytes (GB) for the replica.
        The value specified must be between 1 and 300.
