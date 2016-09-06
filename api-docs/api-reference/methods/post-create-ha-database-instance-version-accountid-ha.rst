@@ -28,7 +28,7 @@ operation.
    * - datastore
      - Object
      - Specifies database version and type for the datastore.
-   * - datastore.\**version**
+   * - datastore.\ **version**
      - String *(Required)*
      - The database software release for the datastore.
    * - datastore.\**type**
