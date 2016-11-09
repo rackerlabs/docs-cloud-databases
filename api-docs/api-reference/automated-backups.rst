@@ -29,7 +29,7 @@ Cloud Files.
   Any user calling the scheduled backup operations for Cloud DB will need
   access to Cloud Files.
 
-Supported datastore versions for HA are MySQL 5.6, Percona 5.6, and MariaDB 10.
+Supported datastore versions for Scheduled Backups are MySQL 5.6, Percona 5.6, and MariaDB 10.
 
 The Scheduled backups API supports the following operations:
 
