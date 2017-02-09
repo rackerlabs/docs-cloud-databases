@@ -12,6 +12,16 @@
 # All configuration values have a default; values that are commented out
 # serve to show the default.
 
+import os
+import sys
+import shlex
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
+sys.path.insert(0, os.path.abspath('.'))
+
+
 try:
     import sphinx_rtd_theme
 except ImportError:
@@ -19,6 +29,7 @@ except ImportError:
 
 try:
     from sphinxcontrib import spelling
+
 except:
     spelling = None
 
@@ -39,9 +50,12 @@ except:
 extensions = [
     'sphinx.ext.ifconfig',
     'sphinx.ext.todo',
+    'sphinx.ext.extlinks',
     'sphinx.ext.autodoc',
     'sphinx.ext.autosummary',
-    'sphinx.ext.extlinks'
+    'chios.bolditalic',
+    'chios.remotecode',
+    'chios.remoteinclude'
 ]
 
 if spelling is not None:
@@ -129,7 +143,6 @@ extlinks = {
     'rax-git': ('https://github.com/rackspace/%s', ''),
     'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'rax-glossary': ('https://developer.rackspace.com/docs/glossary/%s', ''),
-    'mycloud': ('https://mycloud.rackspace.com/%s', ''),
     'how-to': ('http://support.rackspace.com/how-to/%s', ''),
     'os': ('http://www.openstack.org/%s', ''),
     'os-docs': ('http://docs.openstack.org/%s', ''),
@@ -140,17 +153,12 @@ extlinks = {
     'rocket': ('https://objectrocket.com/%s', '')
 }
 
+
 # Global variables that are replaced by the specified value during the build
 # process.
+from replacements import replacements
 
-rst_epilog = """
-
-.. |service| replace:: Cloud Databases
-.. |apiservice| replace:: Rackspace Cloud Databases API
-.. |no changes| replace:: None for this release
-.. |contract version| replace:: v1.0
-.. |product name| replace:: Cloud Databases
-"""
+rst_epilog = replacements
 
 # Software release.version currently deployed in production.
 release = 'v1.0'
