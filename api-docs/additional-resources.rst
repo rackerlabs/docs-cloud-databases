@@ -3,9 +3,9 @@
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
-We welcome feedback, comments, and bug reports. Visit the
-`Rackspace Product Feedback Forum`_ to let us know what you think about
-Cloud Databases.
+We welcome feedback, comments, and bug reports. Email 
+`<infodev@rackspace.com>`__ with your comments, suggestions, and
+feedback.
 
 Use the following links to learn more about the Rackspace Cloud Databases service
 and API.
@@ -26,6 +26,5 @@ and API.
 - This API uses standard HTTP 1.1 response codes as documented at
   `HTTP Status Code Definitions`_.
 
-.. _Rackspace Product Feedback Forum: https://community.rackspace.com/feedback/default
 .. _Twitter: https://twitter.com/rackspace
 .. _HTTP Status Code Definitions: http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
