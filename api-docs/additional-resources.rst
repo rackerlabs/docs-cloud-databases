@@ -3,8 +3,8 @@
 Additional resources
 ~~~~~~~~~~~~~~~~~~~~
 
-We welcome feedback, comments, and bug reports.
-Email `<infodev@rackspace.com>`__ with your comments, suggestions, and
+We welcome feedback, comments, and bug reports. Email 
+`<infodev@rackspace.com>`__ with your comments, suggestions, and
 feedback.
 
 Use the following links to learn more about the Rackspace Cloud Databases service
