@@ -43,4 +43,4 @@ following items:
   :ref:`cURL <configure-environment-variables>` or
   :ref:`trove client <set-environment-variables-client>`
 
-.. _Rackspace Cloud Control Panel: https://mycloud.rackspace.com
+.. _Rackspace Cloud Control Panel: https://login.rackspace.com
