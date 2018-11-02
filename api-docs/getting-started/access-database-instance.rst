@@ -35,7 +35,7 @@ Create a Cloud Server using the Cloud Servers section of the Cloud
 Control Panel (login here: `Cloud Control
 Panel`_ ).
 
-.. _Cloud Control Panel: http://login.rackspace.com
+.. _Cloud Control Panel: https://login.rackspace.com
 
 .. _create-cloud-server-curl:
 
