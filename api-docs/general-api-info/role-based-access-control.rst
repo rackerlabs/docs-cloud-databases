@@ -29,7 +29,7 @@ users specific permissions for accessing the capabilities of the
 is assigned by default to any Rackspace Cloud account when the account is
 created.
 
-See the Cloud Identity API guide for information about how to
+See the Rackspace Identity API guide for information about how to
 perform the following tasks:
 
 * :rax-devdocs:`Add account users \
@@ -67,7 +67,7 @@ The following table describes the roles that can be used to access the
        in |product name|, where access is granted.
    * - dbaas:creator
      - This role provides Create, Read, and Update permissions in
-       |product name|, where access is granted.   
+       |product name|, where access is granted.
    * - dbaas:observer
      - This role provides Read permission in |product name|, where access
        is granted.
