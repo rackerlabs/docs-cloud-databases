@@ -166,7 +166,7 @@ The following table describes the environment variables:
 |                       | trove client to access. Specify ``rax:database``|
 |                       | for Cloud Databases.                            |
 +-----------------------+-------------------------------------------------+
-| OS_AUTH_URL           | The endpoint for the Rackspace Identity         |
+| OS_AUTH_URL           | The endpoint for the Identity                   |
 |                       | service, which the trove client uses for        |
 |                       | authentication.                                 |
 +-----------------------+-------------------------------------------------+
