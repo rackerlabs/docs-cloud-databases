@@ -32,10 +32,10 @@
                     <method href="#createInstance" />
                     <method href="#getInstance" />
                     <method href="#restoreBackup" />
-                    <method href="#createReplica" /> 
+                    <method href="#createReplica" />
                     <method href="#getReplicasOrReplicaSources" />
-                    
-                    
+
+
                     <resource id="instanceId" path="{instanceId}">
                         <param name="instanceId" style="template"
                             type="xsd:string" >
@@ -71,12 +71,12 @@
                             <resource id="userId" path="{name}">
                                 <param name="name" style="template"
                                     type="xsd:string" >
-                                    <doc>The name for the specified user. 
-                                        Refer to 
+                                    <doc>The name for the specified user.
+                                        Refer to
                                         <link xmlns="http://docbook.org/ns/docbook"
                                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                                             >User access restriction by host</link>
-                                             for details about restricting the name to a particular host. 
+                                             for details about restricting the name to a particular host.
                                              Examples: testuser, testuser@192.168.1.12 (to restrict the user to connecting from a particular host IP).</doc></param>
                                 <method href="#deleteUser" />
                                 <method href="#listUser" />
@@ -90,7 +90,7 @@
                                             <doc>The name for the specified database.</doc></param>
                                         <method href="#revokeUserAccess" />
                                     </resource>
-                                </resource>  
+                                </resource>
                             </resource>
                         </resource>
                         <resource id="configuration" path="configuration">
@@ -107,7 +107,7 @@
                 </resource>
                 <resource id="flavors" path="flavors">
                     <method href="#getFlavors" />
-                    
+
                     <resource id="flavorId" path="{flavorId}">
                         <param name="flavorId" style="template" type="xsd:string" >
                             <doc>The flavor ID for the specified flavor.</doc></param>
@@ -123,9 +123,9 @@
                             <doc>The backup ID for the specified backup.</doc></param>
                         <method href="#getBackupById" />
                         <method href="#deleteBackup" />
-                    </resource>          
+                    </resource>
                 </resource>
-                
+
                 <resource id="automatedbackups" path="schedules">
                     <method href="#createAutoBackup" />
                     <method href="#getAutomatedBackups" />
@@ -136,9 +136,9 @@
                         <method href="#getAutomatedBackupById" />
                         <method href="#updateAutomatedBackupById" />
                         <method href="#deleteAutomatedBackupById" />
-                    </resource>   
+                    </resource>
                 </resource>
-                
+
                 <resource id="configurations" path="configurations">
                     <method href="#getConfigurations" />
                     <method href="#createConfiguration" />
@@ -148,13 +148,13 @@
                         <method href="#getConfigurationById" />
                         <method href="#updateSomeConfigParmsById" />
                         <method href="#replaceAllConfigParmsById" />
-                        <method href="#deleteConfigGroup" /> 
+                        <method href="#deleteConfigGroup" />
                         <resource id="instances2" path="instances">
                             <method href="#getInstancesForConfiguration" />
                         </resource>
-                    </resource>          
+                    </resource>
                 </resource>
-                
+
                 <resource id="datastore" path="datastore">
                     <resource id="versions5" path="version">
                         <resource id="version5Id" path="{versionId}">
@@ -166,12 +166,12 @@
                                         <doc>The flavor ID for the specified flavor.</doc></param>
                                     <method href="#getVerboseDefaultConfigurationParameters" />
                                 </resource>
-                            </resource>    
+                            </resource>
                         </resource>
                     </resource>
                 </resource>
-                
-                
+
+
                 <resource id="datastores" path="datastores">
                     <method href="#getDatastoreTypes" />
                     <resource id="versions3" path="versions">
@@ -188,8 +188,8 @@
                             </resource>
                         </resource>
                     </resource>
-                    
-                    
+
+
                     <resource id="datastoreId" path="{datastoreId}">
                         <param name="datastoreId" style="template" type="xsd:string" >
                             <doc>The ID for the specified datastore.</doc></param>
@@ -211,7 +211,7 @@
                             </resource>
                         </resource>
                    </resource>
-                    
+
                    <resource id="datastoreType" path="{datastoreType}">
                         <param name="datastoreType" style="template" type="xsd:string" >
                             <doc>The datastore type, for example mysql.</doc></param>
@@ -224,13 +224,13 @@
                                 </resource>
                             </resource>
                         </resource>
-                    </resource> 
+                    </resource>
                  </resource>
-                
+
                 <resource id="ha" path="ha">
                     <method href="#createHa" />
                     <method href="#getHa" />
-                    
+
                     <resource id="haId" path="{haId}">
                         <param name="haId" style="template" type="xsd:string" >
                             <doc>The ID for the specified HA instance.</doc></param>
@@ -253,8 +253,8 @@
                             </resource>
                         </resource>
                     </resource>
-                </resource> 
-                
+                </resource>
+
             </resource>
         </resource>
     </resources>
@@ -265,7 +265,7 @@
         <wadl:doc xml:lang="EN" title="List version details" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">
                 Returns detailed information about the specified version of the API.
-            </para>  
+            </para>
             <para>This operation returns detailed information about the specified version of the API.</para>
         </wadl:doc>
         <request>
@@ -356,7 +356,7 @@
                 <tr>
                     <td colspan="1" rowspan="5">Instance</td>
                     <td colspan="1">flavorRef</td>
-                    <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
+                    <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call.
                         This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
                          <note><para>Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.</para></note>
                         <para>Refer to <link
@@ -426,7 +426,7 @@
                 </tr>
                 <tr>
                     <td colspan="1">host</td>
-                    <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
+                    <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.
                         Refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                             >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".</td>
@@ -438,7 +438,7 @@
                     <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
                         <note><itemizedlist spacing="compact">
                             <listitem>
-                                <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by 
+                                <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by
                                     the <code>restorePoint</code> attribute.</para>
                             </listitem>
                             <listitem>
@@ -455,11 +455,11 @@
                 </tr>
             </tbody>
         </table>
-        
+
         <para>Refer to <link
             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
             >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
-        
+
     </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -467,28 +467,28 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-request.json"/>
                 </doc>
-            </representation> 
+            </representation>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance restore request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance restore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance configuration request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance datastore request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-request.json"/>
                 </doc>
-            </representation> 
-            
+            </representation>
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -510,7 +510,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create database instance config response: JSON">
@@ -519,15 +519,15 @@
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create database instance datastore response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance datastore response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-response.json"/>
                 </doc>
-            </representation> 
-            
+            </representation>
+
         </response>
     &commonFaults;
     &getFaults;
@@ -636,7 +636,7 @@
             <para role="shortdesc">Associates a specified database instance with a <glossterm>configuration group</glossterm>.</para>
             <para>This operation associates a specified database instance with a configuration group.</para>
             <para><remark>Reviewer: should the description note that this can be used for attaching or detaching configurations from an instance?</remark></para>
-            
+
             <note><para>If any of the parameters in the configuration require a restart, then you will need to reboot the Database instance after associating the configuration.
                 You can call the API operation List Configuration Parameters to find out which of the configuration parameters require a restart.</para></note>
         </wadl:doc>
@@ -646,7 +646,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Update database instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-detach-from-instance-request.json"/>
                 </doc>
-            </representation>          
+            </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -658,7 +658,7 @@
               </doc>
             </representation>
         </response>
-        
+
         &commonFaults;
         &getFaults;
     </method>
@@ -666,15 +666,15 @@
     <method name="GET" id="getInstanceById">
         <wadl:doc xml:lang="EN" title="List database instance status and details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified database instance.</para>
-            <para>This operation lists the status and details of the specified database instance. <phrase>The operation also lists 
+            <para>This operation lists the status and details of the specified database instance. <phrase>The operation also lists
                 the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase>
             For HA instances, lists details for the source instance part or the replica instance part, depending on the ID specified.
             </para>
-            
+
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
-                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
+                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
@@ -688,28 +688,28 @@
                         <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                     </doc>
                 </representation>
-            
+
                 <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                    <doc title="List database instance status and details with configuration request: JSON">
                        <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details with configuration request:</para>
                        <xsdxt:code href="../apidocs/src/resources/samples/db-instance-status-detail-request.json"/>
                    </doc>
                 </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List details of a source instance in an HA setup request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details of a source instance in an HA setup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-w-ha-sql-status-detail-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List details of a replica instance in an HA setup request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List database instance status and details of a replica instance in an HA setup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-w-replica-ha-sql-status-detail-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -870,12 +870,12 @@
                 </tbody>
             </table>
 
-            <para>See the database service documentation for information about supported character sets and collations. Refer to <link 
+            <para>See the database service documentation for information about supported character sets and collations. Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Datastore_Types_and_Versions-d1e9263.html"
                 >Datastore types and versions</link> for references to the documentation for each database service. For example, for MySQL information see <link
                 xlink:href="http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html"
                 >http://dev.mysql.com/doc/refman/5.1/en/charset-mysql.html</link>.</para>
-            
+
 
             <note><para>The following database names are reserved and cannot be used for creating databases: lost+found, information_schema, and mysql.</para></note>
             <para>Refer to the following tables for information about characters that are valid/invalid for creating database names.</para>
@@ -970,7 +970,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-databases-response.json"/>
                 </doc>
-            </representation> 
+            </representation>
         </response>
     &commonFaults;
     &getFaults;
@@ -981,7 +981,7 @@
         <wadl:doc xml:lang="EN" title="List databases for instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists databases for the specified instance.</para>
             <para>This operation lists the databases for the specified instance.</para>
-            <note><para>This operation returns only the user-defined databases, not the system databases. The system databases (mysql, 
+            <note><para>This operation returns only the user-defined databases, not the system databases. The system databases (mysql,
                 information_schema, lost+found) can only be viewed by a database administrator.</para></note>
         </wadl:doc>
         <request>
@@ -991,7 +991,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List databases for instance paged request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List databases for instance request:</para>
@@ -1008,7 +1008,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-databases-response.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:Databases" >
                 <doc title="List databases for instance paged response: JSON">
@@ -1056,10 +1056,10 @@
             <para>If the corresponding request cannot be fulfilled due to insufficient or invalid data, an HTTP 400 "Bad Request" error response is returned with information regarding the nature of the failure. Failures in the validation process are non-recoverable and require the caller to correct the cause of the failure and POST the request again.</para>
 
             <para>The following table lists the required and optional attributes for Create User. Refer to the request examples for the required json format:</para>
-            
+
             <table rules="all" width="500">
                 <caption>Required and optional attributes for Create user</caption>
-                
+
                 <thead>
                     <tr>
                         <td colspan="1">Applies To</td>
@@ -1089,15 +1089,15 @@
                     </tr>
                     <tr>
                         <td colspan="1">host</td>
-                        <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
-                            Refer to <link 
+                        <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.
+                            Refer to <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                                 >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                         <td colspan="1">No</td>
                     </tr>
                 </tbody>
             </table>
-            
+
             <note><itemizedlist>
                 <listitem>
                     <para>A user is granted all privileges on the specified databases.</para>
@@ -1128,8 +1128,8 @@
                         <td>'@', '?', '#', and spaces are allowed, but <emphasis>not</emphasis> at the beginning and end of the database name, user name, and password</td>
                     </tr>
                     <tr>
-                        <td>'.' is allowed, but must be escaped by replacing it with "%2E" before URL encoding occurs if it occurs in GET, DELETE, 
-                            and PUT calls, where such a name is the last section of the request URL. Please refer to the Warning in <link 
+                        <td>'.' is allowed, but must be escaped by replacing it with "%2E" before URL encoding occurs if it occurs in GET, DELETE,
+                            and PUT calls, where such a name is the last section of the request URL. Please refer to the Warning in <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                                 >User access restriction by host</link> for details and an example.
                         </td>
@@ -1226,7 +1226,7 @@
         <wadl:doc xml:lang="EN" title="List users in database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the users in the specified database instance.</para>
             <para>This operation lists the users in the specified database instance, along with the associated databases for that user. </para>
-            <note><para>This operation does not return the system users (database administrators that administer the health of the database). 
+            <note><para>This operation does not return the system users (database administrators that administer the health of the database).
                 Also, this operation returns the "root" user only if "root" user has been enabled.</para></note>
 
             <para>The following notes apply to database users:</para>
@@ -1251,7 +1251,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-request.json"/>
                 </doc>
             </representation>
-         
+
             <representation mediaType="application/json">
                 <doc title="List users in database instance paged request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List users in database instance requests to return a limit of two users at a time (<code>users?limit=2</code>):</para>
@@ -1266,21 +1266,21 @@
                 <doc title="List users in database instance response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List users in database instance response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-response.json"/>
-                    <para xmlns="http://docbook.org/ns/docbook">Refer to <link 
+                    <para xmlns="http://docbook.org/ns/docbook">Refer to <link
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                         >User access restriction by host</link> for a description of the <code>host</code> field.</para>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:Users" >
                 <doc title="List users in database instance paged response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the <emphasis>paginated</emphasis> List users in database instance response.</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-users-pagination-response.json"/>
                     <para xmlns="http://docbook.org/ns/docbook">Note that the response contains the link (<code>href</code>) to the next set of users in the list (<code>users?marker=dbuser2%4010.0.0.1&amp;limit=2</code>), so using that link for the request will return the next two users in the list after <code>dbuser2%4010.0.0.1</code>.</para>
-                </doc>   
+                </doc>
             </representation>
-            
+
         </response>
     &commonFaults;
     &getFaults;
@@ -1290,10 +1290,10 @@
         <wadl:doc xml:lang="EN" title="Change user(s) password"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Changes the database password of one or more users.</para>
             <para>This operation changes the database password of one or more users. </para>
-            <note><para>For information about choosing a valid password, please refer to 
+            <note><para>For information about choosing a valid password, please refer to
                 <link
                     xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
-                    >Create user</link> for details.</para></note>         
+                    >Create user</link> for details.</para></note>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:Users">
@@ -1322,7 +1322,7 @@
         <wadl:doc xml:lang="EN" title="Delete user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the user identified by {name} for the specified database instance.</para>
             <para>This operation deletes the specified user for the specified database instance.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -1344,7 +1344,7 @@
     &commonFaults;
     &getFaults;
     </method>
-    
+
     <method name="GET" id="listUser">
         <wadl:doc xml:lang="EN" title="List user"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the specified user's name and a list of databases that the user can access.</para>
@@ -1357,16 +1357,16 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List user access for restricted host request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user for restricted host request.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call.
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200" >
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -1376,26 +1376,26 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-dbs-response.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List user access for restricted host response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user for restricted host response.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call.
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser1@% is URL encoded to dbuser1%40%25, since the '@' is 40 hex and the '%' is 25 hex. In this case, since % is used for the host, the user can connect from any host:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-with-host-response.json"/>
                 </doc>
             </representation>
-            
+
         </response>
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getUserAccess">
         <wadl:doc xml:lang="EN" title="List user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Shows a list of all databases a user has access to.</para>
             <para>This operation shows a list of all databases a user has access to.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -1404,20 +1404,20 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List user access for restricted host request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access for restricted host request.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call.
+
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
-                        (refer to <link 
+                        (refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                             >User access restriction by host</link> for details):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200" >
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -1427,35 +1427,35 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-user-access-response.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json">
                 <doc title="List user access for restricted host response: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List user access for restricted host response.</para>
-                    <para xmlns="http://docbook.org/ns/docbook">This example shows the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call. 
-                        
+                    <para xmlns="http://docbook.org/ns/docbook">This example shows the results of using the host parameter syntax (user@host) to restrict the user to connecting from a particular host for the call.
+
                         In this example, user@host has been URL encoded by the client, so the parameter dbuser2@10.0.0.1 is URL encoded in the request example to dbuser2%4010%252E0%252E0%252E1 to escape the periods in the host component of the name
-                        (refer to <link 
+                        (refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                             >User access restriction by host</link> for details):</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-get-user-access-with-host-response.json"/>
                 </doc>
             </representation>
-            
+
         </response>
-        
+
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="PUT" id="grantUserAccess">
         <wadl:doc xml:lang="EN" title="Grant user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Grants access for the specified user to one or more databases for the specified instance.</para>
-            <para>This operation grants access for the specified user to one or more databases for the specified instance. 
+            <para>This operation grants access for the specified user to one or more databases for the specified instance.
                 The user is granted ALL privileges on the database. Refer to the information at the beginning of <link
                     xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_management.html"
-                    >Users</link> 
+                    >Users</link>
                 for more details on access.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:Database">
@@ -1477,12 +1477,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="DELETE" id="revokeUserAccess">
         <wadl:doc xml:lang="EN" title="Revoke user access"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Removes access to the specified database for the specified user.</para>
             <para>This operation removes access to the specified database for the specified user.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -1504,7 +1504,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <!-- Get Default Config -->
     <method name="GET" id="getDefaultConfig">
         <wadl:doc xml:lang="EN" title="Get default configuration"  xmlns="http://docbook.org/ns/docbook">
@@ -1521,7 +1521,7 @@
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DefaultConfig">
                 <doc>
@@ -1596,7 +1596,7 @@
             <para role="shortdesc">Lists information for all available <glossterm baseform="flavor">flavors</glossterm>.</para>
             <para>This operation lists information for all available flavors.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
-            
+
             <para>The larger 32GB and 64GB flavors are available in all US and UK datacenters.</para>
         </wadl:doc>
         <request>
@@ -1622,14 +1622,14 @@
     &getFaults;
     </method>
 
-    
+
 
     <method name="GET" id="getFlavorById">
         <wadl:doc xml:lang="EN" title="List flavor by ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all flavor information about the specified flavor ID.</para>
             <para>This operation lists all information for the specified flavor ID with details of the RAM.</para>
             <para>This resource is identical to the flavors found in the OpenStack Nova API, but without the disk property.</para>
-            <note><para>The flavorId parameter should be an integer. If a floating point value is used for the flavorId parameter, 
+            <note><para>The flavorId parameter should be an integer. If a floating point value is used for the flavorId parameter,
                 the decimal portion is truncated and the integer portion is used as the value of the flavorId.</para></note>
             <remark>Reviewer / Writer: need to confirm that this behavior is not changed in subsequent releases, and if it is prevented, remove the Note above.</remark>
         </wadl:doc>
@@ -1654,16 +1654,16 @@
     &commonFaults;
     &getFaults;
     </method>
-    
+
 <!-- On Demand Backups -->
-    
+
     <method name="POST" id="createBackup">
         <wadl:doc xml:lang="EN" title="Create backup" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new <glossterm>backup</glossterm> for a database instance.</para>
-            <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified database instance. 
+            <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified database instance.
                 This call requires the user to specify an instance ID to backup and a name for the backup. </para>
             <para>The following table lists the required and optional attributes for Create Backup:</para>
-            
+
            <table rules="all">
                <caption>Required and optional attributes for Create backup</caption>
                <thead>
@@ -1695,8 +1695,8 @@
                        <td colspan="1">No</td>
                    </tr>
                </tbody>
-           </table> 
-            
+           </table>
+
             <table rules="all">
                 <caption>Length restrictions for backup <code>name</code> parameter</caption>
                 <thead>
@@ -1711,10 +1711,10 @@
                         <td colspan="1">64</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
             <note>
                 <itemizedlist>
-                    <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
+                    <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled.
                         InnoDB Databases will continue to allow all operations.</para>
                     </listitem>
                     <listitem><para>While the instance is being backed up you will not be able to add/delete databases, add/delete users, or delete/stop/reboot the instance.</para>
@@ -1725,9 +1725,9 @@
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                         >Delete backup</link> for details.</para>
                     </listitem>
-                    <listitem><para>During backup the files will be streamed to your Cloud Files account. 
-                        The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it. 
-                        In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. 
+                    <listitem><para>During backup the files will be streamed to your Cloud Files account.
+                        The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it.
+                        In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container.
                         You will be charged the normal Cloud Files rate for storage of these files. For pricing details, refer to <link xmlns="http://docbook.org/ns/docbook"
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
                             >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
@@ -1737,15 +1737,15 @@
                             >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
-                        there may be some files that were placed in the container. 
+                        there may be some files that were placed in the container.
                         You should use the API to delete the backup to remove any leftover files. Refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                             >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
                     </listitem>
-                    <listitem><para>You can create an incremental backup from another incremental backup. 
-                        There is no limit to how many nested backups you can create, however the chances of 
+                    <listitem><para>You can create an incremental backup from another incremental backup.
+                        There is no limit to how many nested backups you can create, however the chances of
                         a restore failure increase with the number of nested backups you create.</para>
                     </listitem>
                 </itemizedlist></note>
@@ -1785,14 +1785,14 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="POST" id="createBackupForHaInstance">
         <wadl:doc xml:lang="EN" title="Create backup for an HA Instance" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new <glossterm>backup</glossterm> for the specified HA instance.</para>
-            <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified HA instance. 
+            <para>This operation asynchronously creates a new <glossterm>backup</glossterm> for the specified HA instance.
                 This call requires the user to specify an HA ID to backup and a name for the backup. </para>
             <para>The following table lists the required and optional attributes for Create Backup for an HA Instance:</para>
-            
+
             <table rules="all">
                 <caption>Required and optional attributes for Create backup</caption>
                 <thead>
@@ -1811,7 +1811,7 @@
                     <tr>
                         <td colspan="1">instance</td>
                         <td colspan="3"><para>Specifies the database instanceId to backup.
-                            But since we would need to create a backup of the entire HA group, 
+                            But since we would need to create a backup of the entire HA group,
                             the value of this field should be empty.</para></td>
                         <td colspan="1">Yes</td>
                     </tr>
@@ -1831,8 +1831,8 @@
                         <td colspan="1">Yes (to create HA group backups)</td>
                     </tr>
                 </tbody>
-            </table> 
-            
+            </table>
+
             <table rules="all">
                 <caption>Length restrictions for backup <code>name</code> parameter</caption>
                 <thead>
@@ -1847,7 +1847,7 @@
                         <td colspan="1">64</td>
                     </tr>
                 </tbody>
-            </table> 
+            </table>
             <note>
                 <itemizedlist>
                     <listitem><para>To list, show details of a HA backup, refer to the following: <link
@@ -1868,25 +1868,25 @@
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                             >Delete backup</link> for details.</para>
                     </listitem>
-                    <listitem><para>During backup the files will be streamed to your Cloud Files account. The process creates a container called 
-                        z_CLOUDDB_BACKUPS and places all the files in it. In order for the restore and deletion of backups to work properly, 
-                        you should not move, rename, or delete any of the files from this container. You will be charged the normal Cloud Files 
+                    <listitem><para>During backup the files will be streamed to your Cloud Files account. The process creates a container called
+                        z_CLOUDDB_BACKUPS and places all the files in it. In order for the restore and deletion of backups to work properly,
+                        you should not move, rename, or delete any of the files from this container. You will be charged the normal Cloud Files
                         rate for storage of these files. For pricing details, refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
                             >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
-                        No additional Cloud Databases fee applies for creating backups. You can delete old backups through the API. 
+                        No additional Cloud Databases fee applies for creating backups. You can delete old backups through the API.
                         For details see <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                             >Delete backup</link>.</para>
                     </listitem>
                     <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
-                        there may be some files that were placed in the container. 
+                        there may be some files that were placed in the container.
                         You should use the API to delete the backup to remove any leftover files. Refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                             >Delete backup</link> for details.</para>
                     </listitem>
-                    
-                    
+
+
                     <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
                     </listitem>
                 </itemizedlist></note>
@@ -1926,12 +1926,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getBackups">
         <wadl:doc xml:lang="EN" title="List backups" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all backups for all database instances.</para>
             <para>This operation returns a list of all backups for all database instances.</para>
-            <para>You can filter by datastore type using the <emphasis>datastore</emphasis> query parameter.</para>         
+            <para>You can filter by datastore type using the <emphasis>datastore</emphasis> query parameter.</para>
         </wadl:doc>
         <request>
             <param style="query" type="string" name="datastore"
@@ -1972,12 +1972,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getBackupById">
         <wadl:doc xml:lang="EN" title="List backup by ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists details about a specified backup.</para>
             <para>This operation lists the details for a specified backup.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2042,14 +2042,14 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="POST" id="restoreBackup">
         <wadl:doc xml:lang="EN" title="Restore backup" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a new database instance from a <glossterm>backup</glossterm>.</para>
             <para>This operation restores a backup onto a new database instance.</para>
-            
+
             <para>The following table lists the required and optional attributes for RestorePoint:</para>
-            
+
             <table rules="all">
                 <caption>Required and optional attributes for RestorePoint</caption>
                 <thead>
@@ -2066,25 +2066,25 @@
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
-            </table> 
-            
+            </table>
+
             <note><itemizedlist>
                 <listitem>
                     <para>Refer to <link
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createInstance__version___accountId__instances_Database_Instances.html"
-                        >Create instance</link> 
+                        >Create instance</link>
                         for details on other options available during the creation of a new instance.</para>
                 </listitem>
                 <listitem>
-                    <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases. 
+                    <para>All users/passwords/access that were on the instance at the time of the backup will be restored along with the databases.
                         You can create new users or databases if you want, but they cannot be the same as the ones from the instance that was backed up. </para>
                 </listitem>
                 <listitem>
-                    <para>You can restore from an incremental backup the same as from a full backup. The system automatically restores all parents first, 
+                    <para>You can restore from an incremental backup the same as from a full backup. The system automatically restores all parents first,
                         and then applies the incremental backup.</para>
                 </listitem>
             </itemizedlist></note>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
@@ -2107,13 +2107,13 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
 
     <method name="DELETE" id="deleteBackup">
         <wadl:doc xml:lang="EN" title="Delete backup"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes the specified backup.</para>
             <para>This operation deletes the specified backup. <phrase>When a backup is deleted, all incremental backups created from it will also be deleted.</phrase></para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2124,7 +2124,7 @@
             </representation>
         </request>
         <response status="202" >
-            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>       
+            <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
             <representation mediaType="application/json" element="dbaas:unprocessableEntity">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete backup response:</para>
@@ -2142,10 +2142,10 @@
     <method name="POST" id="createAutoBackup">
         <wadl:doc xml:lang="EN" title="Create scheduled backup" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a schedule for running a <glossterm>backup</glossterm> periodically.</para>
-            <para>This operation asynchronously creates a new schedule for running a <glossterm>backup</glossterm> periodically. 
+            <para>This operation asynchronously creates a new schedule for running a <glossterm>backup</glossterm> periodically.
                 This call requires the user to specify an instance ID to backup and the date/time when the backup should be made. </para>
             <para>The following table lists the required and optional attributes for Create Backup:</para>
-            
+
             <table rules="all">
                 <caption>Required and optional attributes for Create scheduled backup</caption>
                 <thead>
@@ -2182,14 +2182,14 @@
                         <td colspan="1">Yes</td>
                     </tr>
                 </tbody>
-            </table> 
-            
-            <para>The <code>day_of_week</code> attribute specifies the day in which a full backup will be made. 
+            </table>
+
+            <para>The <code>day_of_week</code> attribute specifies the day in which a full backup will be made.
                 After that day, the schedule will automatically run daily incremental backups until the next full backup.</para>
-            
+
             <note>
                 <itemizedlist>
-                    <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled. 
+                    <listitem><para>During the backup process, database writes on MyISAM Databases will be disabled.
                         InnoDB Databases will continue to allow all operations.</para>
                     </listitem>
                     <listitem><para>While the instance is being backed up you will not be able to add/delete databases, add/delete users, or delete/stop/reboot the instance.</para>
@@ -2200,9 +2200,9 @@
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                         >Delete backup</link> for details.</para>
                     </listitem>
-                    <listitem><para>During backup the files will be streamed to your Cloud Files account. 
-                        The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it. 
-                        In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container. 
+                    <listitem><para>During backup the files will be streamed to your Cloud Files account.
+                        The process creates a container called <code>z_CLOUDDB_BACKUPS</code> and places all the files in it.
+                        In order for the restore and deletion of backups to work properly, you should not move, rename, or delete any of the files from this container.
                         You will be charged the normal Cloud Files rate for storage of these files. For pricing details, refer to <link xmlns="http://docbook.org/ns/docbook"
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html"
                             >http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Pricing_SLA-d1e1362.html</link>
@@ -2212,15 +2212,15 @@
                             >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem><para>In the unlikely event that the backup fails to perform correctly and is in the state <code>FAILED</code>,
-                        there may be some files that were placed in the container. 
+                        there may be some files that were placed in the container.
                         You should use the API to delete the backup to remove any leftover files. Refer to <link
                             xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/DELETE_deleteBackup__version___accountId__backups__backupId__backups.html"
                             >Delete backup</link> for details.</para>
                     </listitem>
                     <listitem><para>If a backup is deleted, all incremental backups created from it will also be deleted.</para>
                     </listitem>
-                    <listitem><para>You can create an incremental backup from another incremental backup. 
-                        There is no limit to how many nested backups you can create, however the chances of 
+                    <listitem><para>You can create an incremental backup from another incremental backup.
+                        There is no limit to how many nested backups you can create, however the chances of
                         a restore failure increase with the number of nested backups you create.</para>
                     </listitem>
                 </itemizedlist></note>
@@ -2231,7 +2231,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create scheduled backup request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-automated-request.json"/>
                 </doc>
-            </representation>  
+            </representation>
         </request>
         <response status="202">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
@@ -2242,17 +2242,17 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-create-automated-response.json"/>
                 </doc>
             </representation>
-            
+
         </response>
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getAutomatedBackups">
         <wadl:doc xml:lang="EN" title="List scheduled backups" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all scheduled backups for all database instances for an account.</para>
             <para>This operation returns a list of all scheduled backups for all database instances for an account.</para>
-                     
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2275,12 +2275,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getAutomatedBackupById">
         <wadl:doc xml:lang="EN" title="List schedule for running backup by schedule ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists schedule for running backup for a specified schedule.</para>
             <para>This operation lists the schedule for running backups for a specified schedule.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2303,7 +2303,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="PUT" id="updateAutomatedBackupById">
         <wadl:doc xml:lang="EN" title="Update schedule for backups by schedule ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Updates the backup schedule for the specified schedule.</para>
@@ -2363,12 +2363,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="DELETE" id="deleteAutomatedBackupById">
         <wadl:doc xml:lang="EN" title="Delete schedule for running backup by schedule ID" xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes schedule for running backups for a specified schedule ID.</para>
             <para>This operation deletes the schedule for running backups for a specified schedule ID.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2391,21 +2391,21 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
 <!-- Users -->
- 
+
     <method name="PUT" id="modifyUser">
         <wadl:doc xml:lang="EN" title="Modify user attributes"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Modifies one or more of the following for the specified user: name, password, and host from which the user is allowed to connect to the database. </para>
-            <para>This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database. 
+            <para>This operation modifies one or more of the following for the specified user: user name, password, and host from which the user is allowed to connect to the database.
                 User in this case is user or user@host, whichever is appropriate.</para>
-        
+
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_createUser__version___accountId__instances__instanceId__users_user_management.html"
                 >Create user</link> for information about the characters that are valid for the user name and password.</para>
-            <para>The following table lists attributes for Modify User Attributes. Note that <emphasis>one or more</emphasis> of the attributes must be specified. 
+            <para>The following table lists attributes for Modify User Attributes. Note that <emphasis>one or more</emphasis> of the attributes must be specified.
                 Refer to the request examples for the required json format:</para>
-            
+
             <table rules="all" width="400">
                 <caption>Attributes for Modify user attributes</caption>
                 <col width="30%"/>
@@ -2430,16 +2430,16 @@
                     <tr>
                         <td>host</td>
                         <td>Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.
-                            Refer to <link 
+                            Refer to <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                                 >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".
                         </td>
-                    </tr> 
+                    </tr>
                 </tbody>
             </table>
-       
-        
-        
+
+
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:User">
@@ -2448,8 +2448,8 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-request.json"/>
                 </doc>
             </representation>
-            
-            
+
+
         </request>
         <response status="200" >
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -2459,16 +2459,16 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-change-user-attributes-response.json"/>
                 </doc>
             </representation>
-            
-            
+
+
         </response>
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getConfigurations">
         <wadl:doc xml:lang="EN" title="List configurations" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists all defined <glossterm>configuration group</glossterm>s for the tenant.</para>        
+            <para role="shortdesc">Lists all defined <glossterm>configuration group</glossterm>s for the tenant.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2490,17 +2490,17 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="POST" id="createConfiguration">
         <wadl:doc xml:lang="EN" title="Create configuration" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Creates a new <glossterm>configuration group</glossterm> based on the parameters supplied in the request body.</para>        
+            <para role="shortdesc">Creates a new <glossterm>configuration group</glossterm> based on the parameters supplied in the request body.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-create-request.json"/>
-                    <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must 
+                    <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must
                         be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.</para></note>
                 </doc>
                 <param name="datastore" style="plain" required="false" type="object" path="$.datastore">
@@ -2525,8 +2525,8 @@
                 </param>
                 <param name="values" style="plain" required="true" type="object" path="$.values">
                     <wadl:doc xmlns="http://docbook.org/ns/docbook"
-                        xml:lang="EN"><para>The values for the configuration. The key value pairs "values" should be in JSON format with no spaces. 
-                            The key and the value are strings and must be enclosed in double quotation marks. For example: "default_time_zone": "-6:00". 
+                        xml:lang="EN"><para>The values for the configuration. The key value pairs "values" should be in JSON format with no spaces.
+                            The key and the value are strings and must be enclosed in double quotation marks. For example: "default_time_zone": "-6:00".
                             Each key value pair should be separated by a comma.</para></wadl:doc>
                 </param>
             </representation>
@@ -2544,10 +2544,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getConfigurationById">
         <wadl:doc xml:lang="EN" title="List configuration details" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists details for the specified <glossterm>configuration group</glossterm>.</para>        
+            <para role="shortdesc">Lists details for the specified <glossterm>configuration group</glossterm>.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2570,10 +2570,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="PATCH" id="updateSomeConfigParmsById">
         <wadl:doc xml:lang="EN" title="Update some configuration parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Updates some of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>        
+            <para role="shortdesc">Updates some of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -2593,15 +2593,15 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-edit-parameters-response.json"/>
                 </doc>
             </representation>
-        </response>          
-        
+        </response>
+
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="PUT" id="replaceAllConfigParmsById">
         <wadl:doc xml:lang="EN" title="Replace all configuration parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Replaces all of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>        
+            <para role="shortdesc">Replaces all of the <glossterm>configuration parameter</glossterm>s associated with the specified <glossterm>configuration group</glossterm>.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json"
@@ -2609,7 +2609,7 @@
                 <doc>
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Replace all configuration parameters request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-update-parameters-request.json"/>
-                    <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must 
+                    <note xmlns="http://docbook.org/ns/docbook"><para>Each value provided for <code>name</code> and <code>description</code> must
                         be a string composed of 1 to 255 alphanumeric characters. Both uppercase and lowercase alpha characters may be used.</para></note>
                 </doc>
             </representation>
@@ -2625,13 +2625,13 @@
             </representation>
         </response>
         &commonFaults;
-        &getFaults;          
-        
+        &getFaults;
+
     </method>
-    
+
     <method name="DELETE" id="deleteConfigGroup">
         <wadl:doc xml:lang="EN" title="Delete configuration group" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Deletes the specified <glossterm>configuration group</glossterm>. No message body is expected in the request.</para>        
+            <para role="shortdesc">Deletes the specified <glossterm>configuration group</glossterm>. No message body is expected in the request.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2649,16 +2649,16 @@
                         <para xmlns="http://docbook.org/ns/docbook">The following example shows the Delete configuration group response:</para>
                         <xsdxt:code href="../apidocs/src/resources/samples/db-configuration-delete-response.json"/>
                     </doc>
-                </representation>         
-        </response>      
+                </representation>
+        </response>
         &commonFaults;
-        &getFaults;          
-        
+        &getFaults;
+
     </method>
 
     <method name="GET" id="getInstancesForConfiguration">
         <wadl:doc xml:lang="EN" title="List instances for configuration" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists instances that are associated with the specified <glossterm>configuration group</glossterm>.</para>        
+            <para role="shortdesc">Lists instances that are associated with the specified <glossterm>configuration group</glossterm>.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2681,10 +2681,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getConfigurationParameters">
         <wadl:doc xml:lang="EN" title="List configuration parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists <glossterm>configuration parameter</glossterm>s that may be configured on the system.</para>        
+            <para role="shortdesc">Lists <glossterm>configuration parameter</glossterm>s that may be configured on the system.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2707,10 +2707,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getConfigurationParameterDetails">
         <wadl:doc xml:lang="EN" title="List configuration parameter details" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system.</para>        
+            <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2733,10 +2733,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getConfigurationParameterDetailsWithoutDatastore">
         <wadl:doc xml:lang="EN" title="List configuration parameter details without datastore" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system without specifying a datastore.</para> 
+            <para role="shortdesc">Lists the details of a specified <glossterm>configuration parameter</glossterm> that may be configured on the system without specifying a datastore.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2759,10 +2759,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getConfigurationParametersWithoutDatastore">
         <wadl:doc xml:lang="EN" title="List configuration parameters without datastore" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the <glossterm>configuration parameter</glossterm>s that may be configured on the system without specifying a datastore.</para> 
+            <para role="shortdesc">Lists the <glossterm>configuration parameter</glossterm>s that may be configured on the system without specifying a datastore.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2785,10 +2785,10 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getVerboseDefaultConfigurationParameters">
         <wadl:doc xml:lang="EN" title="List verbose default configuration parameters" xmlns="http://docbook.org/ns/docbook">
-            <para role="shortdesc">Lists the default <glossterm>configuration parameter</glossterm>s for a datastore version flavor.</para> 
+            <para role="shortdesc">Lists the default <glossterm>configuration parameter</glossterm>s for a datastore version flavor.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -2811,7 +2811,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getDatastoreTypes">
         <wadl:doc xml:lang="EN" title="List all datastore types"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all datastore types.</para>
@@ -2837,7 +2837,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getDatastoreTypesById">
         <wadl:doc xml:lang="EN" title="List datastore type"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists datastore type.</para>
@@ -2863,7 +2863,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getDatastoreVersionsById">
         <wadl:doc xml:lang="EN" title="List datastore versions for datastore"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all datastore versions for the specified datastore.</para>
@@ -2889,7 +2889,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getDatastoreVersionByVersionId">
         <wadl:doc xml:lang="EN" title="List datastore version"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists datastore version.</para>
@@ -2915,7 +2915,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getFlavorsByDatastoreVersion">
         <wadl:doc xml:lang="EN" title="List flavors for datastore version"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists flavors for a datastore version.</para>
@@ -2941,33 +2941,33 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <!-- Instance -->
     <method name="POST" id="createReplica">
         <wadl:doc xml:lang="EN" title="Create replica"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Creates a replica of the source instance, as specified by the value of the <code>replica_of</code> attribute.</para>
-            <para>This operation asynchronously provisions a replica for the specified source database instance. 
-                This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size. 
+            <para>This operation asynchronously provisions a replica for the specified source database instance.
+                This call requires the user to specify a <glossterm>flavor</glossterm> and a <glossterm>volume</glossterm> size.
                 It also requires specifying the source database instance using the <code>replica_of</code> attribute.
                 The service then provisions the replica with the requested flavor and sets up a volume of the specified size.</para>
             <note>
               <itemizedlist>
-                <listitem><para>The replica will be created with the default configuration. 
-                    If you wish to apply the same configuration as the source database instance or another configuration, 
-                    you will need to apply that configuration to the replica. 
+                <listitem><para>The replica will be created with the default configuration.
+                    If you wish to apply the same configuration as the source database instance or another configuration,
+                    you will need to apply that configuration to the replica.
                     Refer to <link
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/PUT_updateInstance__version___accountId__instances__instanceId__Database_Instances.html"
                         >Update database instance</link> for details.</para></listitem>
                 <listitem>
                     <para>Since the process of creating a replica makes a backup behind the scenes, the user calling the Create replica operation will need access to Cloud Files.</para>
-                </listitem> 
+                </listitem>
               </itemizedlist>
             </note>
-            
+
             <warning>
-                <para>Adding a replica will restart the MySQL service on the source database instance. 
-                    However the state of the instance might not reflect that and still be ACTIVE. 
-                    Wait for a couple of seconds for the process to be complete. 
+                <para>Adding a replica will restart the MySQL service on the source database instance.
+                    However the state of the instance might not reflect that and still be ACTIVE.
+                    Wait for a couple of seconds for the process to be complete.
                     The best way to verify whether the process is complete is to check the slave metrics as described in <link
                         xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/Monitoring_Read_Replication-d1e3694.html"
                         >Monitoring read replication</link>.</para></warning>
@@ -3005,7 +3005,7 @@
                     <tr>
                         <td colspan="1" rowspan="6">Instance</td>
                         <td colspan="1">flavorRef</td>
-                        <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call. 
+                        <td colspan="3"><para>Reference (href) to a flavor as specified in the response from the List Flavors API call.
                             This is the actual URI as specified by the href field in the link. Refer to the List Flavors response examples that follow for an example of the flavorRef.</para>
                             <note><para>Rather than the flavor URI, you can also pass the flavor id (integer) as the value for flavorRef.</para></note>
                             <para>Refer to <link
@@ -3080,8 +3080,8 @@
                     </tr>
                     <tr>
                         <td colspan="1">host</td>
-                        <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host. 
-                            Refer to <link 
+                        <td colspan="3">Specifies the host from which a user is allowed to connect to the database. Possible values are a string containing an IPv4 address or "%" to allow connecting from any host.
+                            Refer to <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/user_access_restrict_by_host-dle387.html"
                                 >User access restriction by host</link> for details. If <code>host</code> is not specified, it defaults to "%".</td>
                         <td colspan="1">No</td>
@@ -3092,7 +3092,7 @@
                         <td colspan="3"><para>Specifies the backup id from which to restore the database instance.</para>
                             <note><itemizedlist spacing="compact">
                                 <listitem>
-                                    <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by 
+                                    <para>When you execute the Restore Backup operation, a new database instance is created to store the backup whose id is specified by
                                         the <code>restorePoint</code> attribute.</para>
                                 </listitem>
                                 <listitem>
@@ -3109,11 +3109,11 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
                 >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
@@ -3121,28 +3121,28 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create replica request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-replica-request.json"/>
                 </doc>
-            </representation> 
+            </representation>
      <!--         <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance restore request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance restore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance configuration request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance datastore request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-request.json"/>
                 </doc>
             </representation> -->
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3164,7 +3164,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create database instance config response: JSON">
@@ -3173,7 +3173,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create database instance datastore response: JSON">
@@ -3181,22 +3181,22 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-response.json"/>
                 </doc>
             </representation>  -->
-            
+
         </response>
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getReplicaSource">
         <wadl:doc xml:lang="EN" title="List replica source"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified replica source instance.</para>
-            <para>This operation lists the status and details of the specified replica source instance. <phrase>The operation also lists 
+            <para>This operation lists the status and details of the specified replica source instance. <phrase>The operation also lists
                 the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase></para>
-            
+
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
-                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
+                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
@@ -3209,7 +3209,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replica source request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replica-source-request.json"/>
                 </doc>
-            </representation>      
+            </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3224,17 +3224,17 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getReplica">
         <wadl:doc xml:lang="EN" title="List replica details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists status and details for a specified replica.</para>
-            <para>This operation lists the status and details of the specified replica. <phrase>The operation also lists 
+            <para>This operation lists the status and details of the specified replica. <phrase>The operation also lists
                 the <glossterm>configuration group</glossterm> id/name if the running instance has been associated with a configuration group.</phrase></para>
-            
+
             <para>This operation lists the volume size in gigabytes (GB) and the approximate GB used.</para>
             <note><para>After instance creation, the <code>used</code> size of your volume will be
                 greater than 0. This is expected and due to the automatic creation of
-                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned 
+                non-empty transaction logs for database optimization. The <code>used</code> attribute is <emphasis>not</emphasis> returned
                 in the response when the status for the instance is BUILD, REBOOT, RESIZE, or ERROR.</para> </note>
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
@@ -3247,7 +3247,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replica details request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replica-request.json"/>
                 </doc>
-            </representation>      
+            </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3262,11 +3262,11 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getReplicasBySourceInstance">
         <wadl:doc xml:lang="EN" title="List replicas for source instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists replicas for a specified source instance.</para>
-            <para>This operation lists replicas for a specified source instance.</para>      
+            <para>This operation lists replicas for a specified source instance.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
@@ -3274,7 +3274,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the List replicas for source instance request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-replicas-source-instance-request.json"/>
                 </doc>
-            </representation>      
+            </representation>
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3289,7 +3289,7 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
       <method name="GET" id="getReplicasOrReplicaSources">
         <wadl:doc xml:lang="EN" title="List all replicas and replica source database instances"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists the status and information for all replicas and replica sources.</para>
@@ -3334,21 +3334,21 @@
         </response>
         &commonFaults;
         &getFaults;
-    </method> 
-    
+    </method>
+
     <method name="PATCH" id="detachReplica">
         <wadl:doc xml:lang="EN" title="Detach replica"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Detaches the specified replica instance from its replication source instance.</para>
-            <para>This operation detaches the specified replica instance from its replication source instance. 
+            <para>This operation detaches the specified replica instance from its replication source instance.
                 This call requires the user to specify id of the replica instance to detach.
             </para>
             <note>
                 <para>Detaching a replica will change the
-                    database instance status to DETACH_REPLICA. 
-                    The status will change back to ACTIVE once the replica is completely 
+                    database instance status to DETACH_REPLICA.
+                    The status will change back to ACTIVE once the replica is completely
                     detached from the source and is no longer a replica.</para>
             </note>
-            
+
        <para>The following table lists the required attributes for Detach replica:</para>
             <table rules="all">
                 <caption>Required and optional attributes for Detach replica</caption>
@@ -3369,10 +3369,10 @@
                     </tr>
                 </tbody>
             </table>
-            
+
             <para>Refer to <link
                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/database_instance_status.html"
-                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>               
+                >Database instance status</link> for a list of possible database instance statuses that may be returned.</para>
         </wadl:doc>
         <request>
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
@@ -3380,28 +3380,28 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Detach replica request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-detach-replica-request.json"/>
                 </doc>
-            </representation> 
+            </representation>
             <!--         <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance restore request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance restore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance configuration request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance configuration request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-config-request.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json" element="dbaas:DatabaseInstance">
                 <doc title="Create database instance datastore request: JSON">
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create database instance datastore request:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-request.json"/>
                 </doc>
             </representation> -->
-            
+
         </request>
         <response status="202">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
@@ -3418,7 +3418,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-backup-restore-response.json"/>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create database instance config response: JSON">
@@ -3427,7 +3427,7 @@
                     <para xmlns="http://docbook.org/ns/docbook">Notice in the response example above the configuration named "MySQL Tuned Config" is returned in the response.</para>
                 </doc>
             </representation>
-            
+
             <representation mediaType="application/json"
                 element="dbaas:DatabaseInstance" >
                 <doc title="Create database instance datastore response: JSON">
@@ -3435,12 +3435,12 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-instance-datastore-response.json"/>
                 </doc>
             </representation>  -->
-            
+
         </response>
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <!-- HA -->
     <method name="POST" id="createHa">
         <wadl:doc xml:lang="EN" title="Create HA database instance"  xmlns="http://docbook.org/ns/docbook">
@@ -3448,7 +3448,7 @@
             <para>This operation creates a new HA instance.</para>
             <para>The <code>name</code> of the HA instance is a required attribute.</para>
             <para>The following attributes are required for each HA instance:</para>
-            
+
             <table rules="all">
                 <caption>Required and optional attributes for Create HA instance</caption>
                 <thead>
@@ -3461,7 +3461,7 @@
                 <tbody>
                     <tr>
                         <td colspan="1">name</td>
-                        <td colspan="3">Specifies the name of the HA instance. 
+                        <td colspan="3">Specifies the name of the HA instance.
                             The length should be limited to 255 characters and any characters are permitted.</td>
                         <td colspan="1">Yes</td>
                     </tr>
@@ -3499,31 +3499,31 @@
                             <note>
                                 <itemizedlist spacing="compact">
                                 <listitem><para>By default (if not specified), it will be servicenet.</para></listitem>
-                                <listitem><para>If a public network would be required in addition to the servicenet, 
-                                    it would have to be specified in the option: <code>"networks":  ["public”]</code>. 
+                                <listitem><para>If a public network would be required in addition to the servicenet,
+                                    it would have to be specified in the option: <code>"networks":  ["public”]</code>.
                                     Note that this will add a public network in addition to a servicenet/private network.</para></listitem>
-                                <listitem><para>Both the networks as options: <code>"networks": ["public", "servicenet"]</code>, can 
+                                <listitem><para>Both the networks as options: <code>"networks": ["public", "servicenet"]</code>, can
                                     also be specified.</para></listitem>
-                                
+
                                 </itemizedlist>
                             </note>
                         </td>
-                        <td colspan="1">No</td>  
+                        <td colspan="1">No</td>
                     </tr>
                     <tr>
                         <td colspan="1">acls
                         </td>
                         <td colspan="3">Comma
-                            separated list of IP based ACLs in the CIDR format. This is required to allow the HA group access to the 
-                            specified IP. By default, the HA group access is blocked. For eg: "acls": 
-                            [{"address": "10.0.0.0/0"}, {"address":  “1.2.3.4/5”}].  Additionally, if it is not specified while 
+                            separated list of IP based ACLs in the CIDR format. This is required to allow the HA group access to the
+                            specified IP. By default, the HA group access is blocked. For eg: "acls":
+                            [{"address": "10.0.0.0/0"}, {"address":  “1.2.3.4/5”}].  Additionally, if it is not specified while
                             creating the HA group, it can be added later. Refer to <link
                                 xlink:href="http://docs.rackspace.com/cdb/api/v1.0/cdb-devguide/content/POST_addAclToHaInstance__version___accountId__ha__haId__acls_ha.html"
                                 >Add ACLs to an HA instance</link> for details.
                         </td>
                         <td colspan="1">No</td>
                     </tr>
-                    
+
                 </tbody>
             </table>
         </wadl:doc>
@@ -3543,17 +3543,17 @@
                     <para xmlns="http://docbook.org/ns/docbook">The following example shows the Create HA response:</para>
                     <xsdxt:code href="../apidocs/src/resources/samples/db-create-ha-sql-response.json"/>
                 </doc>
-            </representation> 
+            </representation>
         </response>
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getHa">
         <wadl:doc xml:lang="EN" title="List all HA database instances"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists all the HA database instances.</para>
             <para>This operation lists all the HA database instances..</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3562,7 +3562,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-ha-sql-instances-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3577,12 +3577,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getInstanceByHaId">
         <wadl:doc xml:lang="EN" title="List HA database instance details"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists details for a specified HA instance.</para>
             <para>This operation lists the details of the specified HA instance.</para>
-            
+
             </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3591,7 +3591,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-ha-sql-status-detail-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3606,12 +3606,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="getBackupsForHaInstance">
         <wadl:doc xml:lang="EN" title="List backups of an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists backups for the HA instance specified by ha_id.</para>
             <para>This operation lists the backups of the HA instance specified by ha_id.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3620,7 +3620,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-instance-ha-backups-get-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3635,12 +3635,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="DELETE" id="deleteInstanceByHaId">
         <wadl:doc xml:lang="EN" title="Delete HA database instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes an HA database instance.</para>
             <para>This operation deletes the specified HA database instance.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3649,7 +3649,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-delete-ha-sql-instance-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="202">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
@@ -3664,23 +3664,23 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="POST" id="addReplicaToHaInstance">
         <wadl:doc xml:lang="EN" title="Add Replica to an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Add a replica node to the HA group specified by {ha_id}.</para>
             <para>This operation adds a replica node to the HA group specified by {ha_id}.
-                The HA instance goes into the <code>ADDING_REPLICA</code> state as a result of this action. 
+                The HA instance goes into the <code>ADDING_REPLICA</code> state as a result of this action.
                 It switches back to <code>ACTIVE</code> once the operation is complete.</para>
-            <warning><para>Adding a new replica node would restart the mha manager service (which monitors the 
-                source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. 
-                Refer to the Knowledge Center article for more details about these components: 
+            <warning><para>Adding a new replica node would restart the mha manager service (which monitors the
+                source/replica instances to trigger failover) and the haproxy service on the load balancer nodes.
+                Refer to the How-To article for more details about these components:
                 <link
                     xlink:href="https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
                     >High Availability for Cloud Databases</link>.
             </para></warning>
-            <para>The following table lists the required and optional attributes for creating a replica for an 
+            <para>The following table lists the required and optional attributes for creating a replica for an
                 HA instance.</para>
-            
+
             <!--      <table rules="all">
                 <caption>Required and optional attributes for Create database</caption>
                 <thead>
@@ -3698,7 +3698,7 @@
                     </tr>
                 </tbody>
             </table>   -->
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3707,7 +3707,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-add-replica-to-ha-instance-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="202">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
@@ -3722,27 +3722,27 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="POST" id="deleteReplicaFromHaInstance">
         <wadl:doc xml:lang="EN" title="Remove Replica from an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Removes a replica node from the HA setup specified by {ha_id}.</para>
             <para>This operation removes/detaches a replica node from the HA group. The HA instance goes into
-                the <code>REMOVING_REPLICA</code> state as a result of this action. It switches back to 
+                the <code>REMOVING_REPLICA</code> state as a result of this action. It switches back to
                 <code>ACTIVE</code> once the operation is complete. The instance that is detached also goes into a
-                <code>DETACH_REPLICA</code> state when it is being disabled as a replica and switches back to 
+                <code>DETACH_REPLICA</code> state when it is being disabled as a replica and switches back to
                 <code>ACTIVE</code> once detached.</para>
-            <warning><para>Removing a replica node would restart the MHA manager service (which monitors the 
-                source/replica instances to trigger failover) and the haproxy service on the load balancer nodes. 
-                Refer to the Knowledge Center article for more details about these components: 
+            <warning><para>Removing a replica node would restart the MHA manager service (which monitors the
+                source/replica instances to trigger failover) and the haproxy service on the load balancer nodes.
+                Refer to the How-To article for more details about these components:
                 <link
                     xlink:href="https://www.rackspace.com/knowledge_center/article/high-availability-for-cloud-databases"
                     >High Availability for Cloud Databases</link>.
             </para></warning>
-            <warning><para> Detaching a replica from the HA setup will cause a MySQL service restart on the detached 
+            <warning><para> Detaching a replica from the HA setup will cause a MySQL service restart on the detached
                 instance.</para></warning>
-            <para>The following table lists the required and optional attributes for creating a replica for an 
+            <para>The following table lists the required and optional attributes for creating a replica for an
                 HA instance.</para>
-            
+
             <!--      <table rules="all">
                 <caption>Required and optional attributes for Create database</caption>
                 <thead>
@@ -3760,7 +3760,7 @@
                     </tr>
                 </tbody>
             </table>   -->
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3769,7 +3769,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-remove-replica-from-ha-instance-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="202">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
@@ -3784,14 +3784,14 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="POST" id="addAclToHaInstance">
         <wadl:doc xml:lang="EN" title="Add ACLs to an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Adds Access Control Lists (ACLs) to an HA instance.</para>
             <para>This operation adds ACLs to an HA instance.</para>
-            <para>The following table lists the required and optional attributes for creating ACLs for an 
+            <para>The following table lists the required and optional attributes for creating ACLs for an
                 HA setup.</para>
-            
+
             <table rules="all">
                 <caption>Required and optional attributes for Create database</caption>
                 <thead>
@@ -3809,7 +3809,7 @@
                     </tr>
                 </tbody>
             </table>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3818,7 +3818,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-add-acls-to-ha-instance-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3833,12 +3833,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="GET" id="listAclsForHaInstance">
         <wadl:doc xml:lang="EN" title="List ACLs for an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Lists ACLs for an HA instance.</para>
             <para>This operation lists ACLs for an HA instance.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3847,7 +3847,7 @@
                     <xsdxt:code href="../apidocs/src/resources/samples/db-list-acls-for-ha-instance-request.json"/>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="200">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Success" xml:lang="EN">Request succeeded.</wadl:doc>
@@ -3862,12 +3862,12 @@
         &commonFaults;
         &getFaults;
     </method>
-    
+
     <method name="DELETE" id="deleteAclsFromHaInstance">
         <wadl:doc xml:lang="EN" title="Delete ACLs from an HA instance"  xmlns="http://docbook.org/ns/docbook">
             <para role="shortdesc">Deletes ACLs from an HA instance.</para>
             <para>This operation deletes ACLs from an HA instance.</para>
-            
+
         </wadl:doc>
         <request>
             <representation mediaType="application/json">
@@ -3878,7 +3878,7 @@
                         refers to the special character for the forward slash ('/') that is used with the IP address in CIDR format ("1.2.3.4/32").</para></note>
                 </doc>
             </representation>
-            
+
         </request>
         <response status="202">
             <wadl:doc xmlns="http://docbook.org/ns/docbook" title="Accepted" xml:lang="EN">The request has been accepted for processing.</wadl:doc>
