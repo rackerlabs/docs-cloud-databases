@@ -14,3 +14,4 @@ instance actions.
 .. include:: methods/post-restart-instance-version-accountid-instances-instanceid-action.rst
 .. include:: methods/post-resize-the-instance-version-accountid-instances-instanceid-action.rst
 .. include:: methods/post-resize-the-instance-volume-version-accountid-instances-instanceid-action.rst
+.. include:: methods/post-save-instance-logs-version-accountid-instances-instanceid-action.rst
