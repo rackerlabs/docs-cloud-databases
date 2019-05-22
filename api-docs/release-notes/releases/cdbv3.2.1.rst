@@ -1,7 +1,7 @@
-.. version-3.2.0-release-notes:
+.. version-3.2.1-release-notes:
 
-v3.2.0, April 8, 2019
----------------------
+v3.2.1, April 22, 2019
+----------------------
 
 What's new
 ~~~~~~~~~~
