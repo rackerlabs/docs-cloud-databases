@@ -18,6 +18,7 @@ resolved issues, and other important details about |apiservice|
 
 
 
+.. include:: releases/cdbv3.3.0.rst
 .. include:: releases/cdbv3.2.1.rst
 .. include:: releases/cdbv3.2.0.rst
 .. include:: releases/cdbv3.1.0.rst
