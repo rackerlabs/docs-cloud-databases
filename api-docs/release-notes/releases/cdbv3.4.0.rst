@@ -6,9 +6,9 @@ v3.4.0, September 24, 2019
 What's new
 ~~~~~~~~~~
 
--  MySQL version, 8.0, available for Instance and HA Group provisioning
+- MySQL version, 8.0, available for Instance and HA Group provisioning
 
-- The 64Gb flavor has been modified to use 16 CPUs instead of 14.
+- Modified the 64Gb flavor to use 16 CPUs instead of 14
 
 Resolved issues
 ~~~~~~~~~~~~~~~
