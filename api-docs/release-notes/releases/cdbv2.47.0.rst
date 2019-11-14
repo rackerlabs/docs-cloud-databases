@@ -10,7 +10,7 @@ This release includes the following updates:
 
 -  Change wording and behavior of public client.
 
--  Move keystone in requirements txtAdds "schedule" field to HA GET call.
+-  Move keystone in the requirements txtAdds "schedule" field to HA GET call.
 
 Resolved issues
 ~~~~~~~~~~~~~~~
