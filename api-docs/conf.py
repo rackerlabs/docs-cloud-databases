@@ -19,7 +19,7 @@ import shlex
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath('.'))
+# sys.path.insert(0, os.path.abspath('.'))
 
 
 try:
@@ -52,10 +52,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.extlinks',
     'sphinx.ext.autodoc',
-    'sphinx.ext.autosummary',
-    'chios.bolditalic',
-    'chios.remotecode',
-    'chios.remoteinclude'
+    'sphinx.ext.autosummary'
 ]
 
 if spelling is not None:
@@ -156,9 +153,14 @@ extlinks = {
 
 # Global variables that are replaced by the specified value during the build
 # process.
-from replacements import replacements
 
-rst_epilog = replacements
+rst_epilog = """
+.. |service| replace:: Cloud Databases
+.. |apiservice| replace:: Rackspace Cloud Databases API
+.. |no changes| replace:: None for this release
+.. |contract version| replace:: v1.0
+.. |product name| replace:: Cloud Databases
+"""
 
 # Software release.version currently deployed in production.
 release = 'v1.0'
