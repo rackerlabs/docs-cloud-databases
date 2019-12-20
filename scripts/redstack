@@ -267,7 +267,8 @@ catalog.RegionOne.reddwarf.name = Reddwarf
 function install_reddwarf_packages() {
     # Called after devstack.
     exclaim "Installing dependencies (part 2)..."
-    # The default version of pip Ubuntu installs is old.
+    # The default version of pip that the Ubuntu operating
+    system installs is old.
     cd /tmp
     sudo pip install --upgrade pip
 
@@ -1079,5 +1080,3 @@ function run_command() {
 }
 
 run_command $@
-
-

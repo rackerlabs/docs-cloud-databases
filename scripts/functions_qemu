@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Additional functions that would mostly just pertain to a Ubuntu + Qemu setup
+# Additional functions that would mostly just pertain to the Ubuntu operating system + Qemu setup
 #
 
 function install_prep_packages() {
