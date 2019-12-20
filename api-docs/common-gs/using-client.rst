@@ -14,7 +14,7 @@ have to install the client and set environment variables.
 Prerequisites
 -------------
 
-Run the trove client on Linux, the Ubuntu operating sytems, or Debian or
+Run the trove client on Linux, the Ubuntu operating sytem, or Debian or
 Mac OS X. You also
 need a Rackspace Cloud account and access to Rackspace Cloud Orchestration.
 
@@ -51,7 +51,7 @@ Before you begin, install the following prerequisite software:
 |                          |    $ sudo easy_install pip                                  |
 |                          |                                                             |
 +--------------------------+-------------------------------------------------------------+
-|`apt get`_                | **the Ubuntu operating system**, **Debian**                 |
+|`apt get`_                | **The Ubuntu operating system**, **Debian**                 |
 |                          |                                                             |
 |                          | .. code:: bash                                              |
 |                          |                                                             |
