@@ -1,17 +1,16 @@
 
 .. _post-save-instance-logs-version-accountid-instances-instanceid-action:
 
-Save the DB logs for an instance
+Upgrade an instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
     POST /{version}/{accountId}/instances/{instanceId}/action
 
-Saves DB logs of the instance.
+Upgrades a single instance to a later datastore version.
 
-The logs are saved in Cloud Files in the z_MYSQL_LOGS container.
-Only mysqld.log, mysql-slow.log, and /var/log/daemon.log are saved.
+MySQL 5.1/5.6 can be upgraded to MySQL 5.7 and MariaDB 10/10.1 can be upgraded to MariaDB 10.4.
 
 This operation returns a 202 Accepted response.
 
@@ -88,9 +87,9 @@ This table shows the URI parameters for the request:
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
 
-**Example Save instance logs: JSON request**
+**Example Upgrade instance: JSON request**
 
-The following example shows the Save instance logs request:
+The following example shows the Upgrade instance request:
 
 .. code::
 
@@ -102,23 +101,86 @@ The following example shows the Save instance logs request:
    Content-Type: application/json
 
    {
-       "save_logs": {
-           "allow_ha": true
+       "upgrade": {
+           "datastore_type": datastore_type,
+           "datastore_version": datastore_version
        }
    }
 
 Response
 --------
 
-**Example Save instance logs: JSON response**
+**Example Upgrade instance: JSON response**
 
-The following example shows the Save instance logs response:
+The following example shows the Upgrade instance response:
 
 .. code::
 
    HTTP/1.1 202 Accepted
    Content-Type: application/json
-   Via: 1.1 Repose (Repose/2.6.7)
-   Content-Length: 0
+   Via: 1.1 Repose (Repose/8.5.0.1)
+   Content-Length: 1292
    Date: Thu, 13 Feb 2014 21:47:18 GMT
-   Server: Jetty(8.0.y.z-SNAPSHOT)
+
+{
+    "instance": {
+        "status": "BUILD",
+        "available_upgrades": {
+            "current_version": "UNKNOWN",
+            "upgrades": []
+        },
+        "updated": "2020-04-16T19:38:54Z",
+        "name": "kea-mysql56_upgrade",
+        "links": [
+            {
+                "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/instances/daa7586a-e5bf-4028-86a5-055569ab5996",
+                "rel": "self"
+            },
+            {
+                "href": "https://dev.databases.api.rackspacecloud.com/instances/daa7586a-e5bf-4028-86a5-055569ab5996",
+                "rel": "bookmark"
+            }
+        ],
+        "schedule": {
+            "enabled": false
+        },
+        "hostname": "5a72baf219d347257bba56ec4fe09c14ff25b8b4.staging.rackspaceclouddb.com",
+        "created": "2020-04-16T19:38:54Z",
+        "volume": {
+            "size": 1
+        },
+        "replica_of": {
+            "id": "aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
+            "links": [
+                {
+                    "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/instances/aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dev.databases.api.rackspacecloud.com/instances/aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
+                    "rel": "bookmark"
+                }
+            ]
+        },
+        "flavor": {
+            "ram": 2048,
+            "id": "3",
+            "links": [
+                {
+                    "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/flavors/3",
+                    "rel": "self"
+                },
+                {
+                    "href": "https://dev.databases.api.rackspacecloud.com/flavors/3",
+                    "rel": "bookmark"
+                }
+            ],
+            "name": "2GB Instance"
+        },
+        "id": "daa7586a-e5bf-4028-86a5-055569ab5996",
+        "datastore": {
+            "version": "5.7",
+            "type": "mysql"
+        }
+    }
+}
