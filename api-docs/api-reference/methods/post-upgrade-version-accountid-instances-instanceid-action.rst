@@ -1,5 +1,5 @@
 
-.. _post-save-instance-logs-version-accountid-instances-instanceid-action:
+.. _post-upgrade-version-accountid-instances-instanceid-action:
 
 Upgrade an instance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
