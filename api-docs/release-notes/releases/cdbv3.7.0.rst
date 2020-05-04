@@ -7,6 +7,7 @@ What's new
 ~~~~~~~~~~
 
 -  On-demand upgrade for single instances of MySQL 5.1/5.6 and MariaDB 10/10.1:
+
    - You can upgrade MySQL 5.1/5.6 to MySQL 5.7.
    - You can upgrade MariaDB 10/10.1 to MariaDB 10.4.
 
