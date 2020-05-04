@@ -122,65 +122,65 @@ The following example shows the Upgrade instance response:
    Content-Length: 1292
    Date: Thu, 13 Feb 2014 21:47:18 GMT
 
-{
-    "instance": {
-        "status": "BUILD",
-        "available_upgrades": {
-            "current_version": "UNKNOWN",
-            "upgrades": []
-        },
-        "updated": "2020-04-16T19:38:54Z",
-        "name": "kea-mysql56_upgrade",
-        "links": [
-            {
-                "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/instances/daa7586a-e5bf-4028-86a5-055569ab5996",
-                "rel": "self"
-            },
-            {
-                "href": "https://dev.databases.api.rackspacecloud.com/instances/daa7586a-e5bf-4028-86a5-055569ab5996",
-                "rel": "bookmark"
-            }
-        ],
-        "schedule": {
-            "enabled": false
-        },
-        "hostname": "5a72baf219d347257bba56ec4fe09c14ff25b8b4.staging.rackspaceclouddb.com",
-        "created": "2020-04-16T19:38:54Z",
-        "volume": {
-            "size": 1
-        },
-        "replica_of": {
-            "id": "aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
-            "links": [
-                {
-                    "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/instances/aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://dev.databases.api.rackspacecloud.com/instances/aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
-                    "rel": "bookmark"
-                }
-            ]
-        },
-        "flavor": {
-            "ram": 2048,
-            "id": "3",
-            "links": [
-                {
-                    "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/flavors/3",
-                    "rel": "self"
-                },
-                {
-                    "href": "https://dev.databases.api.rackspacecloud.com/flavors/3",
-                    "rel": "bookmark"
-                }
-            ],
-            "name": "2GB Instance"
-        },
-        "id": "daa7586a-e5bf-4028-86a5-055569ab5996",
-        "datastore": {
-            "version": "5.7",
-            "type": "mysql"
-        }
-    }
-}
+   {
+       "instance": {
+           "status": "BUILD",
+           "available_upgrades": {
+               "current_version": "UNKNOWN",
+               "upgrades": []
+           },
+           "updated": "2020-04-16T19:38:54Z",
+           "name": "kea-mysql56_upgrade",
+           "links": [
+               {
+                   "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/instances/daa7586a-e5bf-4028-86a5-055569ab5996",
+                   "rel": "self"
+               },
+               {
+                   "href": "https://dev.databases.api.rackspacecloud.com/instances/daa7586a-e5bf-4028-86a5-055569ab5996",
+                   "rel": "bookmark"
+               }
+           ],
+           "schedule": {
+               "enabled": false
+           },
+           "hostname": "5a72baf219d347257bba56ec4fe09c14ff25b8b4.staging.rackspaceclouddb.com",
+           "created": "2020-04-16T19:38:54Z",
+           "volume": {
+               "size": 1
+           },
+           "replica_of": {
+               "id": "aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
+               "links": [
+                   {
+                       "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/instances/aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
+                       "rel": "self"
+                   },
+                   {
+                       "href": "https://dev.databases.api.rackspacecloud.com/instances/aa961d20-8ecf-4fb5-b2ce-ec0c539f4563",
+                       "rel": "bookmark"
+                   }
+               ]
+           },
+           "flavor": {
+               "ram": 2048,
+               "id": "3",
+               "links": [
+                   {
+                       "href": "https://dev.databases.api.rackspacecloud.com/v1.0/5821443/flavors/3",
+                       "rel": "self"
+                   },
+                   {
+                       "href": "https://dev.databases.api.rackspacecloud.com/flavors/3",
+                       "rel": "bookmark"
+                   }
+               ],
+               "name": "2GB Instance"
+           },
+           "id": "daa7586a-e5bf-4028-86a5-055569ab5996",
+           "datastore": {
+               "version": "5.7",
+               "type": "mysql"
+           }
+       }
+   }
