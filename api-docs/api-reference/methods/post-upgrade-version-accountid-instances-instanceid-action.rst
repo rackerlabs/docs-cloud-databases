@@ -8,9 +8,16 @@ Upgrade an instance
 
     POST /{version}/{accountId}/instances/{instanceId}/action
 
-Upgrades a single instance to a later datastore version.
+Upgrades a single instance to a later datastore version or, in limited cases,
+to a different datastore type.
 
-MySQL 5.1/5.6 can be upgraded to MySQL 5.7 and MariaDB 10/10.1 can be upgraded to MariaDB 10.4.
+- MySQL 5.1 can be upgraded to MySQL 5.7
+
+- MySQL 5.6 can be upgraded to MySQL 5.7 and MariaDB 10.4enc.
+
+- MariaDB 10/10.1 can be upgraded to MariaDB 10.4.
+
+- MariaDB 10.4 can be upgraded to MariaDB 10.4enc.
 
 This operation returns a 202 Accepted response.
 
@@ -102,8 +109,8 @@ The following example shows the Upgrade instance request:
 
    {
        "upgrade": {
-           "datastore_type": datastore_type,
-           "datastore_version": datastore_version
+           "datastore_type": "mysql",
+           "datastore_version": "5.7"
        }
    }
 
