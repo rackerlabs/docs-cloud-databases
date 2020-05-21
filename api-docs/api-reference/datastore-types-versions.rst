@@ -12,6 +12,6 @@ datastore types and versions.
    :depth: 1
 
 .. include:: methods/get-list-all-datastore-types-version-accountid-datastores.rst
-.. include:: methods/get-list-datastore-type-version-accountid-datastores-datastoreid.rst
+.. include:: methods/get-show-datastore-type-version-accountid-datastores-datastoreid.rst
 .. include:: methods/get-list-datastore-versions-for-datastore-version-accountid-datastores-datastoreid-versions.rst
-.. include:: methods/get-list-datastore-version-version-accountid-datastores-datastoreid-versions-versionid.rst
+.. include:: methods/get-show-datastore-version-version-accountid-datastores-datastoreid-versions-versionid.rst
