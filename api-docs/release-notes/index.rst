@@ -17,6 +17,7 @@ resolved issues, and other important details about |apiservice|
    :ref:`documentation overview <index>`.
 
 
+.. include:: releases/cdbv3.8.0.rst
 .. include:: releases/cdbv3.7.0.rst
 .. include:: releases/cdbv3.6.1.rst
 .. include:: releases/cdbv3.6.0.rst
