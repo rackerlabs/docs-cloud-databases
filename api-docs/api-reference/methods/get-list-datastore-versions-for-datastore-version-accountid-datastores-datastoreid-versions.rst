@@ -103,44 +103,279 @@ response:
 
 .. code::
 
-   HTTP/1.1 200 OK
-   Content-Type: application/json
-   Via: 1.1 Repose (Repose/2.6.7)
-   Content-Length: 377
-   Date: Thu, 13 Feb 2014 21:47:14 GMT
-   Server: Jetty(8.0.y.z-SNAPSHOT)
+    HTTP/1.1 200 OK
+    Content-Type: application/json
+    Via: 1.1 Repose (Repose/8.5.0.1)
+    Content-Length: 4952
+    Date: Thu, 13 Feb 2014 21:47:14 GMT
 
-   {
-       "versions": [
-           {
-               "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa",
-               "id": "b00000b0-00b0-0b00-00b0-000b000000bb",
-               "links": [
-                   {
-                       "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
-                       "rel": "self"
-                   },
-                   {
-                       "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/b00000b0-00b0-0b00-00b0-000b000000bb",
-                       "rel": "bookmark"
-                   }
-               ],
-               "name": "5.1"
-           },
-           {
-               "datastore": "a00000a0-00a0-0a00-00a0-000a000000aa",
-               "id": "c00000b0-00c0-0c00-00c0-000b000000cc",
-               "links": [
-                   {
-                       "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/1234/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
-                       "rel": "self"
-                   },
-                   {
-                       "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/c00000b0-00c0-0c00-00c0-000b000000cc",
-                       "rel": "bookmark"
-                   }
-               ],
-               "name": "5.6"
-           }
-       ]
-   }
+    {
+        "versions": [
+            {
+                "flavors": [
+                    {
+                        "ram": 1024,
+                        "id": 2,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/2",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/2",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "1GB Instance"
+                    },
+                    {
+                        "ram": 2048,
+                        "id": 3,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/3",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/3",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "2GB Instance"
+                    },
+                    {
+                        "ram": 4096,
+                        "id": 4,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/4",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/4",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "4GB Instance"
+                    },
+                    {
+                        "ram": 8192,
+                        "id": 5,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/5",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/5",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "8GB Instance"
+                    },
+                    {
+                        "ram": 16384,
+                        "id": 6,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/6",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/6",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "16GB Instance"
+                    },
+                    {
+                        "ram": 32768,
+                        "id": 7,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/7",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/7",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "32GB Instance"
+                    },
+                    {
+                        "ram": 65536,
+                        "id": 8,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/8",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/8",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "64GB Instance"
+                    }
+                ],
+                "scheduled_backup_supported": true,
+                "name": "5.7",
+                "links": [
+                    {
+                        "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/datastores/versions/564490bd-ddb9-4d84-a714-868370e36f48",
+                        "rel": "self"
+                    },
+                    {
+                        "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/564490bd-ddb9-4d84-a714-868370e36f48",
+                        "rel": "bookmark"
+                    }
+                ],
+                "deprecated": false,
+                "databases_supported": true,
+                "id": "564490bd-ddb9-4d84-a714-868370e36f48",
+                "replication_supported": true,
+                "ha_supported": true,
+                "users_supported": true,
+                "backup_supported": true,
+                "configurations_supported": true,
+                "datastore": "749239dc-4805-4d9c-a5c3-3befee6e572f",
+                "volumes_supported": true,
+                "monitoring_supported": true,
+                "at_rest_encryption_supported": false
+            },
+            {
+                "flavors": [
+                    {
+                        "ram": 1024,
+                        "id": 2,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/2",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/2",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "1GB Instance"
+                    },
+                    {
+                        "ram": 2048,
+                        "id": 3,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/3",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/3",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "2GB Instance"
+                    },
+                    {
+                        "ram": 4096,
+                        "id": 4,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/4",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/4",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "4GB Instance"
+                    },
+                    {
+                        "ram": 8192,
+                        "id": 5,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/5",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/5",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "8GB Instance"
+                    },
+                    {
+                        "ram": 16384,
+                        "id": 6,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/6",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/6",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "16GB Instance"
+                    },
+                    {
+                        "ram": 32768,
+                        "id": 7,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/7",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/7",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "32GB Instance"
+                    },
+                    {
+                        "ram": 65536,
+                        "id": 8,
+                        "links": [
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/flavors/8",
+                                "rel": "self"
+                            },
+                            {
+                                "href": "https://api.staging.ord1.clouddb.rackspace.net/flavors/8",
+                                "rel": "bookmark"
+                            }
+                        ],
+                        "name": "64GB Instance"
+                    }
+                ],
+                "scheduled_backup_supported": true,
+                "name": "8.0",
+                "links": [
+                    {
+                        "href": "https://api.staging.ord1.clouddb.rackspace.net/v1.0/5821443/datastores/versions/0b058cca-ed2b-46e7-8736-abbb4242df83",
+                        "rel": "self"
+                    },
+                    {
+                        "href": "https://api.staging.ord1.clouddb.rackspace.net/datastores/versions/0b058cca-ed2b-46e7-8736-abbb4242df83",
+                        "rel": "bookmark"
+                    }
+                ],
+                "deprecated": false,
+                "databases_supported": true,
+                "id": "0b058cca-ed2b-46e7-8736-abbb4242df83",
+                "replication_supported": true,
+                "ha_supported": true,
+                "users_supported": true,
+                "backup_supported": true,
+                "configurations_supported": true,
+                "datastore": "749239dc-4805-4d9c-a5c3-3befee6e572f",
+                "volumes_supported": true,
+                "monitoring_supported": true,
+                "at_rest_encryption_supported": false
+            }
+        ]
+    }
