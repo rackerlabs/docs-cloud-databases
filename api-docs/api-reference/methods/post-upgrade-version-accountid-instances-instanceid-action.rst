@@ -8,10 +8,10 @@ Upgrade an instance
 
     POST /{version}/{accountId}/instances/{instanceId}/action
 
-Upgrades a single instance to a later datastore version or, in limited cases,
+Upgrades a single instance to a later datastore version, or in limited cases,
 to a different datastore type.
 
-- MySQL 5.1 can be upgraded to MySQL 5.7
+- MySQL 5.1 can be upgraded to MySQL 5.7.
 
 - MySQL 5.6 can be upgraded to MySQL 5.7 and MariaDB 10.4enc.
 
