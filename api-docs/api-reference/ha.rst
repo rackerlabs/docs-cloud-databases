@@ -7,7 +7,8 @@ High availability
 Refer to the list of limitations for HA at
 :ref:`cdb-dg-generalapi-high-availability`.
 
-Supported datastore versions for HA are MySQL 5.6, Percona 5.6, and MariaDB 10.
+Supported datastore versions for HA are MySQL 5.7, MySQL 8.0, Percona 5.7,
+MariaDB 10.4, and MariaDB 10.4enc.
 
 For information about HA Instance Backups, see the following:
 
@@ -52,3 +53,4 @@ High Availability (HA) for Cloud Databases.
 .. include:: methods/post-restart-ha-instance-version-accountid-ha-haid-action.rst
 .. include:: methods/patch-attach-configuration-group-to-ha-instance-version-accountid-ha-haid.rst
 .. include:: methods/patch-remove-configuration-group-from-ha-instance-version-accountid-ha-haid.rst
+.. include:: methods/post-upgrade-ha-instance-version-accountid-ha-haid-action.rst
