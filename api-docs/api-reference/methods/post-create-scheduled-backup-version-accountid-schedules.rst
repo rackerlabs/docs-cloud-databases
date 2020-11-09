@@ -26,7 +26,8 @@ Backup:
     |                          |``backup``.              |                         |
     +--------------------------+-------------------------+-------------------------+
     |day_of_week               |The day of the week.     |Yes                      |
-    |                          |Sunday is ``0``.         |                         |
+    |                          |0(sun)-6(sat) or 7 for   |                         |
+    |                          |full backup every day    |                         |
     +--------------------------+-------------------------+-------------------------+
     |hour                      |The hour of the day.     |Yes                      |
     |                          |Midnight is 0.           |                         |
@@ -50,8 +51,8 @@ Backup:
     +--------------------------+-------------------------+-------------------------+
 
 The ``day_of_week`` attribute specifies the day in which a full backup will be
-made. After that day, the schedule will automatically run daily incremental
-backups until the next full backup.
+made. When ``day_of_week`` is 0-6, after that day, the schedule automatically
+runs daily incremental backups until the next full backup.
 
 The ``instance_id attribute`` is present for legacy compatibility and can only
 be used to create single instance automated backups. For HA groups, please use

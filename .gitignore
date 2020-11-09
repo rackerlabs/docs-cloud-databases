@@ -5,6 +5,7 @@ run_tests.log
 host-syslog.log
 scripts/test-def.conf
 .tox
+.idea
 *.pyc
 *.coverage
 tests/integration/Reddwarf_Integration_Tests.egg-info/*

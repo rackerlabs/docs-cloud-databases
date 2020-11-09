@@ -1,53 +1,34 @@
 
-.. _put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid:
+.. _post-upgrade-ha-instance-version-accountid-ha-haid-action:
 
-Update schedule for backups by schedule ID
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Upgrade an HA instance
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. code::
 
-    PUT /{version}/{accountId}/schedules/{scheduleId}
+    POST /{version}/{accountId}/ha/{haId}/action
 
-Updates the backup schedule for the specified schedule.
+Upgrades an HA instance to a later datastore version, or in limited cases,
+to a different datastore type.
 
-This operation updates the schedule for running backups for the specified
-schedule.
+You can make the following upgrades:
 
-The following table shows the required and optional attributes for Update
-schedule for backups by schedule ID.
+-  MySQL 5.1 to MySQL 5.7
 
-.. table:: Required and optional attributes for Update schedule for backups by schedule ID
+-  MySQL 5.6 to MySQL 5.7 and MariaDB 10.4enc
 
-    +--------------------------+-------------------------+-------------------------+
-    |Name                      |Description              |Required                 |
-    +==========================+=========================+=========================+
-    |day_of_week               |The day of the week.     |No                       |
-    |                          |0(sun)-6(sat) or 7 for   |                         |
-    |                          |full backup every day    |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |hour                      |The hour of the day.     |No                       |
-    |                          |Midnight is ``0``.       |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |minute                    |The minute of the hour.  |No                       |
-    +--------------------------+-------------------------+-------------------------+
-    |run_now                   |Run the backup           |No                       |
-    |                          |immediately.             |                         |
-    +--------------------------+-------------------------+-------------------------+
-    |full_backup_retention     |The number of full       |No                       |
-    |                          |automated backups to     |                         |
-    |                          |keep.                    |                         |
-    +--------------------------+-------------------------+-------------------------+
+-  MariaDB 10/10.1 to MariaDB 10.4
 
-The ``day_of_week`` attribute specifies the day in which a full backup will be
-made. When ``day_of_week`` is 0-6, after that day, the schedule automatically
-runs daily incremental backups until the next full backup.
+-  MariaDB 10.4  to MariaDB 10.4enc
+
+This operation returns a 202 Accepted response.
 
 This table shows the possible response codes for this operation:
 
 +--------------------------+-------------------------+-------------------------+
 |Response Code             |Name                     |Description              |
 +==========================+=========================+=========================+
-|200                       |Success                  |Request succeeded.       |
+|202                       |Success                  |Request succeeded.       |
 +--------------------------+-------------------------+-------------------------+
 |400                       |Bad Request              |The request is missing   |
 |                          |                         |one or more elements, or |
@@ -103,42 +84,54 @@ This table shows the URI parameters for the request:
 |                          |                         |owner of the specified   |
 |                          |                         |instance.                |
 +--------------------------+-------------------------+-------------------------+
-|{scheduleId}              |String                   |The schedule ID for the  |
-|                          |                         |specified schedule.      |
+|{haId}                    |String                   |The ID for the specified |
+|                          |                         |HA instance.             |
 +--------------------------+-------------------------+-------------------------+
 
-**Example Update schedule for backups by schedule ID: JSON request**
+**Example Upgrade HA Instance: JSON request**
 
-The following example shows the Update backup schedule by schedule ID request:
+The following example shows the upgrade HA instance request:
 
 .. code::
 
-   PUT /v1.0/1234/schedules/2e351a71-dd28-4bcb-a7d6-d36a5b487173 HTTP/1.1
+   POST /v1.0/1234/ha/67a59adb-d678-4092-b9a9-8cbe4ca39b4b/action HTTP/1.1
    User-Agent: python-troveclient
-   Host: troveapi.org
+   Host: ord.databases.api.rackspacecloud.com
    X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
    Accept: application/json
    Content-Type: application/json
-
    {
-     "schedule": {
-       "day_of_week": 2,
-       "hour": 6,
-       "minute": 19,
-       "run_now": "true"
-     }
+       "upgrade": {
+           "datastore_type": "mysql",
+           "datastore_version": "5.7"
+       }
    }
 
 Response
 --------
 
-**Example Update schedule for backups by schedule ID: JSON response**
+**Example Upgrade HA Instance: JSON response**
 
-The following example shows the Update backup schedule by schedule ID response:
+The following example shows the upgrade HA instance response:
 
 .. code::
 
    HTTP/1.1 202 Accepted
    Content-Type: application/json
-   Content-Length: 0
-   Date: Mon, 18 Mar 2013 19:09:17 GMT
+   Via: 1.1 Repose (Repose/2.12)
+   Content-Length: 192
+   Date: Tue, 15 Mar 2016 16:36:48 GMT
+   Connection: close
+
+   {
+       "ha_instance": {
+           "tenant_id": "1234",
+           "state": "UPGRADING",
+           "id": "67a59adb-d678-4092-b9a9-8cbe4ca39b4b",
+           "datastore": {
+               "version": "5.6",
+               "type": "mysql"
+           },
+           "name": "test-upgrade-ha-mysql56"
+       }
+   }
