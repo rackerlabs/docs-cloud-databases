@@ -34,6 +34,7 @@ Supported datastore versions for Scheduled Backups are MySQL 5.6, Percona 5.6, a
 The Scheduled backups API supports the following operations:
 
 .. include:: methods/post-create-scheduled-backup-version-accountid-schedules.rst
+.. include:: methods/post-create-scheduled-backup-with-copy.rst
 .. include:: methods/get-list-scheduled-backups-version-accountid-schedules.rst
 .. include:: methods/get-list-schedule-for-running-backup-by-schedule-id-version-accountid-schedules-scheduleid.rst
 .. include:: methods/put-update-schedule-for-backups-by-schedule-id-version-accountid-schedules-scheduleid.rst
