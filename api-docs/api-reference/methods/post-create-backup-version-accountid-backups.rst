@@ -36,6 +36,9 @@ Backup:
     |                          |from which to create an  |                         |
     |                          |incremental backup.      |                         |
     +--------------------------+-------------------------+-------------------------+
+    |copy_to                   |Copies the completed     |No                       |
+    |                          |backup to remote regions.|                         |
+    +--------------------------+-------------------------+-------------------------+
 
 .. table:: Length restrictions for backup ``name`` parameter
 
@@ -78,6 +81,10 @@ Backup:
       There is no limit to the number of nested backups you can create.
       However, the more nested backups you create, the higher the chances of a
       restore failure.
+   *  The ``copy_to`` attribute can be DFW, IAD, ORD, HKG, SYD.
+      The region of LON is not supported.
+   *  In the case of copying an incremental backup, a 400 Bad Request will
+      return if the backup's parent is not found in the destination region.
 
 This table shows the possible response codes for this operation:
 
@@ -196,6 +203,27 @@ The following example shows the Create incremental backup request:
 
        }
 
+   }
+
+**Example Create backup with copying: JSON request**
+
+The following example shows the Create backup request with copy_to:
+
+.. code::
+
+   POST /v1.0/1234/backups HTTP/1.1
+   Host: dfw.databases.api.rackspacecloud.com
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+
+   {
+       "backup": {
+           "description": "My Backup",
+           "instance": "d4603f69-ec7e-4e9b-803f-600b9205576f",
+           "name": "snapshot",
+           "copy_to": ["IAD", "ORD"]
+       }
    }
 
 Response

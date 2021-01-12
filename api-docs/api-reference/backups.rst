@@ -39,7 +39,6 @@ The Backup API supports the following operations:
 
 .. include:: methods/post-create-backup-version-accountid-backups.rst
 .. include:: methods/post-create-backup-for-an-ha-instance-version-accountid-backups.rst
-.. include:: methods/post-create-backup-with-copy.rst
 .. include:: methods/get-list-backups-version-accountid-backups.rst
 .. include:: methods/get-list-backup-by-id-version-accountid-backups-backupid.rst
 .. include:: methods/delete-delete-backup-version-accountid-backups-backupid.rst
