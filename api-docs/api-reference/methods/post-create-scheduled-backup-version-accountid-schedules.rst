@@ -49,12 +49,15 @@ Backup:
     |                          |automated backups to     |                         |
     |                          |keep.                    |                         |
     +--------------------------+-------------------------+-------------------------+
+    |copy_to                   |Copies the completed     |No                       |
+    |                          |backup to remote regions.|                         |
+    +--------------------------+-------------------------+-------------------------+
 
 The ``day_of_week`` attribute specifies the day in which a full backup will be
 made. When ``day_of_week`` is 0-6, after that day, the schedule automatically
 runs daily incremental backups until the next full backup.
 
-The ``instance_id attribute`` is present for legacy compatibility and can only
+The ``instance_id`` attribute is present for legacy compatibility and can only
 be used to create single instance automated backups. For HA groups, please use
 the ``source_id`` attribute, providing the HA group id and with the
 ``source_type`` set to 'ha'.
@@ -97,6 +100,10 @@ can override this setting by providing the ``full_backup_retention`` attribute.
       There is no limit to how many nested backups you can create. However, the
       more nested backups you create, the higher the chances of a restore
       failure.
+   *  The ``copy_to`` attribute can be DFW, IAD, ORD, HKG, SYD.
+      The region of LON is not supported.
+   *  In the case of copying an incremental backup, a 400 Bad Request will
+      return if the backup's parent is not found in the destination region.
 
 This table shows the possible response codes for this operation:
 
@@ -184,6 +191,26 @@ The following example shows the Create scheduled backup request:
        }
    }
 
+**Example Create scheduled backup with copy_to: JSON request**
+
+.. code::
+
+   POST /v1.0/1234/schedules HTTP/1.1
+   X-Auth-Token: 87c6033c-9ff6-405f-943e-2deb73f278b7
+   Accept: application/json
+   Content-Type: application/json
+
+   {
+       "schedule": {
+           "action": "backup",
+           "day_of_week": 0,
+           "hour": 14,
+           "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+           "minute": 30,
+           "copy_to": ["IAD", "ORD"]
+       }
+   }
+
 Response
 --------
 
@@ -218,5 +245,38 @@ The following example shows the Create scheduled backup response:
             "type": "instance"
         },
         "updated": "2014-10-30T12:30:00"
+      }
+   }
+
+**Example Create scheduled backup with copy_to: JSON response**
+
+.. code::
+
+   HTTP/1.1 202 Accepted
+   Content-Type: application/json
+   Content-Length: 490
+   Date: Sat, 14 Nov 2020 07:28:17 GMT
+
+   {
+     "schedule": {
+        "action": "backup",
+        "created": "2020-11-14T07:28:17",
+        "day_of_month": null,
+        "day_of_week": 0,
+        "full_backup_retention": 2,
+        "hour": 14,
+        "id": "88b277eb-39be-4921-be31-3d61b43651d7",
+        "instance_id": "44b277eb-39be-4921-be31-3d61b43651d7",
+        "last_scheduled": null,
+        "minute": 30,
+        "month": null,
+        "next_run": "2020-11-14T14:30:00",
+        "running": 0,
+        "source": {
+            "id": "44b277eb-39be-4921-be31-3d61b43651d7",
+            "type": "instance"
+        },
+        "updated": "2020-11-14T07:28:17",
+        "copy_to": ["ORD", "IAD"]
       }
    }

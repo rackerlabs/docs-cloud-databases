@@ -45,3 +45,4 @@ The Backup API supports the following operations:
 .. include:: methods/get-list-backups-for-instance-version-accountid-instances-instanceid-backups.rst
 .. include:: methods/post-restore-backup-version-accountid-instances.rst
 .. include:: methods/get-list-backups-of-an-ha-instance-version-accountid-ha-haid-backups.rst
+.. include:: methods/post-action-backup-copy.rst
