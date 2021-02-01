@@ -1,20 +1,51 @@
-*.sublime-project
-*.sublime-workspace
-scripts/.screenrc
-run_tests.log
-host-syslog.log
-scripts/test-def.conf
-.tox
-.idea
-*.pyc
-*.coverage
-tests/integration/Reddwarf_Integration_Tests.egg-info/*
-apidocs/target
-static/
-templates/
-rst/devguide/_build
-apidocs/dev-guide/glossary.txt
-xsd/management-summarized.html
-xsd/normalized/
 .DS_Store
-_build
+*.xpr
+.idea
+.eggs
+
+# Build results
+target/
+/publish-docs/
+/www/output/
+/generated/
+.doctrees
+
+build/
+_build/
+/build-*.log.gz
+*.pdf
+glossary.rst
+*.mo
+
+# Python compiled files
+*.pyc
+
+# Ignore Vagrant Related Files
+acceptance_config.yml
+boxes/*
+/.vagrant
+
+# Testenvironment
+.tox/
+
+# Virtualenv
+.venv/
+ENV/
+
+# Editors
+*~
+.*.swp
+.bak
+/.project
+.python-version
+node_modules
+.vscode
+Gemfile.lock
+.env
+Pipfile.lock
+docs/_build/
+docs/build/
+doc/_build/
+doc/build/
+api-docs/_build/
+api-docs/build/
