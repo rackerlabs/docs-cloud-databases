@@ -17,20 +17,17 @@ of provisioning.
 
 To use SSL, perform the following steps:
 
--  For encrypting connections using SSL, download the certificate from one of
-   the following URLs:
+-  For encrypting connections using SSL, download the certificate from
+   the following URL:
 
-   - For servers created before March 1, 2016:
-     http://ssl.rackspaceclouddb.com/ca-cert.pem.
-   - For servers created on or after March 1, 2016:
-     http://ssl.rackspaceclouddb.com/rackspace-ca-2016.pem.
+     http://ssl.rackspaceclouddb.com/rackspace-ca-2021.pem.
 
 -  To use SSL with the default MySQL command line, pass the downloaded SSL
    certificate to the client at startup:
 
    .. code::
 
-       mysql —ssl-ca=/path/to/rackspace-ca-2016.pem
+       mysql —ssl-ca=/path/to/rackspace-ca-2021.pem
 
    For additional information, see the
    `MySQL documentation <http://dev.mysql.com/doc/refman/5.6/en/using-ssl-connections.html>`_.
