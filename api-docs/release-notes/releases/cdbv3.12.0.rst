@@ -1,6 +1,6 @@
 .. version-3.12.0-release-notes:
 
-v3.12.0, March 4, 2021
+v3.12.0, May 4, 2021
 -------------------------
 
 What's new
